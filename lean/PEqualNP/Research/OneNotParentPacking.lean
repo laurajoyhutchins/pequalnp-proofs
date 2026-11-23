@@ -1,7 +1,7 @@
 import Mathlib
 
 set_option maxHeartbeats 4000000 in
-theorem PEqualNP.Research.OneNotParentPacking : ∀ (n m s : ℕ) (S : Fin m → Finset (Fin n))
+theorem PEqualNP.Research.parentPackingReserve : ∀ (n m s : ℕ) (S : Fin m → Finset (Fin n))
   (W : ℕ → Finset (Fin n) → Prop) (o a b : Fin m → ℕ) (k : Fin m → Bool),
   (∀ i, 2 ≤ (S i).card) →
   (∀ i j, i ≠ j → (S i ∩ S j).card ≤ 1) →
@@ -12,9 +12,11 @@ theorem PEqualNP.Research.OneNotParentPacking : ∀ (n m s : ℕ) (S : Fin m →
   (∀ i w, w < o i → ¬ (∀ x, W w x ↔ ∃ v ∈ S i, v ∈ x)) →
   (∀ i, k i = true → ∀ x, W (o i) x ↔ W (a i) x ∧ W (b i) x) →
   (∀ i, k i = false → ∀ x, W (o i) x ↔ W (a i) x ∨ W (b i) x) →
-  m + (Finset.univ.filter (fun i : Fin m => 3 ≤ (S i).card)).card ≤ s := by
+  ∀ R : Finset ℕ, R ⊆ Finset.Ico n (n+s) →
+  (∀ w ∈ R, ∀ x y : Finset (Fin n), x ⊆ y → W w y → W w x) →
+  m + (Finset.univ.filter (fun i : Fin m => 3 ≤ (S i).card)).card + R.card ≤ s := by
   classical
-  intro n m s S W o a b k hsize hlin hinput hob hparents hout hearly hand hor
+  intro n m s S W o a b k hsize hlin hinput hob hparents hout hearly hand hor R hR hanti
   let F : Fin m → Finset (Fin n) → Prop := fun i x => ∃ v ∈ S i, v ∈ x
   let P : ℕ → Finset (Fin n) := fun w => Finset.univ.filter (fun v => W w {v})
   have hF (i : Fin m) (v : Fin n) : F i {v} ↔ v ∈ S i := by
@@ -178,6 +180,71 @@ theorem PEqualNP.Research.OneNotParentPacking : ∀ (n m s : ℕ) (S : Fin m →
     · obtain ⟨j, _, rfl⟩ := Finset.mem_image.mp hw
       exact Finset.mem_Ico.mpr ⟨hpbound (p j) (hp j).2.1,
         (hparentlt j.val (p j) (hp j).1).trans (hob j.val).2⟩
-  have hc := Finset.card_le_card hb
-  rw [Finset.card_union_of_disjoint hOA, hO, hA] at hc
+  have hFempty (i : Fin m) : ¬ F i ∅ := by simp [F]
+  have hFfull (i : Fin m) : F i Finset.univ := by
+    obtain ⟨v, hv⟩ := Finset.card_pos.mp (show 0 < (S i).card from by have := hsize i; omega)
+    exact ⟨v, hv, Finset.mem_univ v⟩
+  have hOR : Disjoint O R := by
+    refine Finset.disjoint_left.mpr ?_
+    intro w hwO hwR
+    obtain ⟨i, _, rfl⟩ := Finset.mem_image.mp hwO
+    exact hFempty i ((hW i ∅).mp
+      (hanti (o i) hwR ∅ Finset.univ (Finset.empty_subset _) ((hW i _).mpr (hFfull i))))
+  have hAR : Disjoint A R := by
+    refine Finset.disjoint_left.mpr ?_
+    intro w hwA hwR
+    obtain ⟨i, _, rfl⟩ := Finset.mem_image.mp hwA
+    obtain ⟨hpa, hcard, hki⟩ := hp i
+    rcases hki with hk | ⟨hk, _⟩
+    · obtain ⟨v, hv⟩ := Finset.card_pos.mp (show 0 < (P (p i)).card from by omega)
+      have hvtrue : W (p i) {v} := (Finset.mem_filter.mp hv).2
+      exact hFempty i.val (hsub i.val (p i) hk hpa ∅
+        (hanti (p i) hwR ∅ {v} (Finset.empty_subset _) hvtrue))
+    · have hwfull : W (p i) Finset.univ := hsup i.val (p i) hk hpa _ (hFfull i.val)
+      have hwall (x : Finset (Fin n)) : W (p i) x :=
+        hanti (p i) hwR x Finset.univ (Finset.subset_univ _) hwfull
+      rcases hpa with hpa | hpa
+      · have hconst (x : Finset (Fin n)) : W (a i.val) x := hpa ▸ hwall x
+        apply hearly i.val (b i.val) (hparents i.val).2
+        intro x
+        have h := (hand i.val hk x).symm.trans (hW i.val x)
+        simpa only [hconst x, true_and] using h
+      · have hconst (x : Finset (Fin n)) : W (b i.val) x := hpa ▸ hwall x
+        apply hearly i.val (a i.val) (hparents i.val).1
+        intro x
+        have h := (hand i.val hk x).symm.trans (hW i.val x)
+        simpa only [hconst x, and_true] using h
+  have hOAR : Disjoint (O ∪ A) R := by
+    refine Finset.disjoint_left.mpr ?_
+    intro w hw hwr
+    rcases Finset.mem_union.mp hw with hw | hw
+    · exact Finset.disjoint_left.mp hOR hw hwr
+    · exact Finset.disjoint_left.mp hAR hw hwr
+  have hbound : O ∪ A ∪ R ⊆ Finset.Ico n (n+s) := by
+    intro w hw
+    rcases Finset.mem_union.mp hw with hw | hw
+    · exact hb hw
+    · exact hR hw
+  have hc := Finset.card_le_card hbound
+  rw [Finset.card_union_of_disjoint hOAR, Finset.card_union_of_disjoint hOA, hO, hA] at hc
   simpa [T] using hc
+
+-- The original interface is the empty-reservation instance.
+theorem PEqualNP.Research.OneNotParentPacking : ∀ (n m s : ℕ) (S : Fin m → Finset (Fin n))
+  (W : ℕ → Finset (Fin n) → Prop) (o a b : Fin m → ℕ) (k : Fin m → Bool),
+  (∀ i, 2 ≤ (S i).card) →
+  (∀ i j, i ≠ j → (S i ∩ S j).card ≤ 1) →
+  (∀ v : Fin n, ∀ x, W v.val x ↔ v ∈ x) →
+  (∀ i, n ≤ o i ∧ o i < n + s) →
+  (∀ i, a i < o i ∧ b i < o i) →
+  (∀ i x, W (o i) x ↔ ∃ v ∈ S i, v ∈ x) →
+  (∀ i w, w < o i → ¬ (∀ x, W w x ↔ ∃ v ∈ S i, v ∈ x)) →
+  (∀ i, k i = true → ∀ x, W (o i) x ↔ W (a i) x ∧ W (b i) x) →
+  (∀ i, k i = false → ∀ x, W (o i) x ↔ W (a i) x ∨ W (b i) x) →
+  m + (Finset.univ.filter (fun i : Fin m => 3 ≤ (S i).card)).card ≤ s := by
+  classical
+  intro n m s S W o a b k hs hl hi ho hp hf hm ha hb
+  have h := PEqualNP.Research.parentPackingReserve n m s S W o a b k hs hl hi ho hp hf hm ha hb
+    (∅ : Finset ℕ) (by simp) (by simp)
+  simpa using h
+
