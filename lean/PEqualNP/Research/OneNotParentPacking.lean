@@ -102,8 +102,8 @@ theorem PEqualNP.Research.OneNotParentPacking : ∀ (n m s : ℕ) (S : Fin m →
       have hu := Finset.card_union_le (P (a i)) (P (b i))
       have ht : 3 ≤ (S i).card := (Finset.mem_filter.mp hi).2
       by_cases ha : 2 ≤ (P (a i)).card
-      · exact ⟨a i, Or.inl rfl, ha, Or.inl hk⟩
-      · exact ⟨b i, Or.inr rfl, by omega, Or.inl hk⟩
+      · exact ⟨a i, Or.inl rfl, ha, Or.inl (by simp [hk])⟩
+      · exact ⟨b i, Or.inr rfl, by omega, Or.inl (by simp [hk])⟩
     | true =>
       by_cases ha : shared i (a i)
       · by_cases hb : shared i (b i)
@@ -121,8 +121,8 @@ theorem PEqualNP.Research.OneNotParentPacking : ∀ (n m s : ℕ) (S : Fin m →
           rcases hpx with rfl | rfl
           · exact False.elim (hui hpi)
           · exact False.elim (hvi hpi)
-        · exact ⟨b i, Or.inr rfl, hlarge i (b i) hk (Or.inr rfl), Or.inr ⟨hk, hb⟩⟩
-      · exact ⟨a i, Or.inl rfl, hlarge i (a i) hk (Or.inl rfl), Or.inr ⟨hk, ha⟩⟩
+        · exact ⟨b i, Or.inr rfl, hlarge i (b i) hk (Or.inr rfl), Or.inr ⟨by simp [hk], hb⟩⟩
+      · exact ⟨a i, Or.inl rfl, hlarge i (a i) hk (Or.inl rfl), Or.inr ⟨by simp [hk], ha⟩⟩
   choose p hp using (fun i : {i : Fin m // i ∈ T} => haux i.val i.property)
   have hpinj : Function.Injective p := by
     intro i j h
@@ -146,7 +146,7 @@ theorem PEqualNP.Research.OneNotParentPacking : ∀ (n m s : ℕ) (S : Fin m →
       · have he : i.val = j.val := hcontain i.val j.val (fun x hx =>
           hsub j.val (p j) hkj hj x (h ▸ hsup i.val (p i) hki hi x hx))
         exact hij he
-      · exact hsi ⟨j.val, Ne.symm hij, hkj, h ▸ hj⟩
+      · exact hsi ⟨j.val, Ne.symm hij, hkj, h.symm ▸ hj⟩
   have hdis (i : Fin m) (j : {i : Fin m // i ∈ T}) : o i ≠ p j := by
     intro he
     obtain ⟨hj, hcj, hkj⟩ := hp j
@@ -155,6 +155,7 @@ theorem PEqualNP.Research.OneNotParentPacking : ∀ (n m s : ℕ) (S : Fin m →
       · exact hcontain i j.val (fun x hx => hsub j.val (p j) hk hj x (he ▸ (hW i x).mpr hx))
       · exact (hcontain j.val i (fun x hx => (hW i x).mp (he.symm ▸ hsup j.val (p j) hk hj x hx))).symm
     have hl := hparentlt j.val (p j) hj
+    subst i
     omega
   let O : Finset ℕ := Finset.univ.image o
   let A : Finset ℕ := Finset.univ.image p
