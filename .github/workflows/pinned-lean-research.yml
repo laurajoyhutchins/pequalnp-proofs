@@ -3,14 +3,14 @@ name: Pinned Lean research verification
 on:
   push:
     branches:
-      - research/pinned-lean-verification
+      - research/petersen-cut-profiles
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: pinned-lean-research
+  group: pinned-lean-petersen-cut-profiles
   cancel-in-progress: false
 
 jobs:
