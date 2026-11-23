@@ -1,0 +1,110 @@
+name: Pinned Lean research verification
+
+on:
+  push:
+    branches:
+      - research/pinned-lean-verification
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pinned-lean-research
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Checkout fork research branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify exact upstream pins
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(cat lean/lean-toolchain)" = "leanprover/lean4:v4.36.0"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          pins = json.loads(Path("lean/lake-manifest.json").read_text())
+          p = next(x for x in pins["packages"] if x["name"] == "mathlib")
+          assert p["rev"] == "fc4f59e577feb1a4956671bc04ac18aaaf8cd842", p
+          PY
+          git rev-parse HEAD
+          sha256sum lean/lean-toolchain lean/lake-manifest.json lean/lakefile.toml tools/check-lean.mjs lean/CheckLemma.lean
+          node --version
+      - name: Install pinned Lean
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/elan" toolchain install "$(cat lean/lean-toolchain)"
+      - name: Fetch pinned Mathlib cache
+        working-directory: lean
+        run: |
+          set -euo pipefail
+          lean --version
+          lake --version
+          lake exe cache get
+          test "$(git -C .lake/packages/mathlib rev-parse HEAD)" = fc4f59e577feb1a4956671bc04ac18aaaf8cd842
+          test -f .lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean
+      - name: Provision checker memory
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo rm -rf /usr/local/lib/android /opt/ghc /usr/local/.ghcup /usr/share/swift /opt/hostedtoolcache/CodeQL
+          d=$(df -m --output=avail,target / /mnt 2>/dev/null | awk 'NR>1' | sort -rn | awk 'NR==1{print $2}')
+          mb=$(( $(df -m --output=avail "$d" | awk 'NR==2{print $1}') - 6144 ))
+          [ "$mb" -le 12288 ] || mb=12288
+          if [ "$mb" -ge 1024 ]; then
+            f="${d%/}/pnp-research-swap"
+            sudo fallocate -l "${mb}M" "$f" && sudo chmod 600 "$f"
+            sudo mkswap -q "$f" && sudo swapon "$f"
+          fi
+          free -m
+      - name: Run upstream checker on a positive and a negative control
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p lean/PEqualNP/Research "$RUNNER_TEMP/evidence"
+          cat > lean/PEqualNP/Research/Smoke.lean <<'LEAN'
+          import Mathlib
+          theorem PEqualNP.Research.Smoke : ∀ (x y : ℂ), (x + y) * (x - y) = x^2 - y^2 := by
+            intro x y
+            ring
+          LEAN
+          printf '%s\n' '∀ (x y : ℂ), (x + y) * (x - y) = x^2 - y^2' > "$RUNNER_TEMP/positive.txt"
+          printf '%s\n' '∀ (x y : ℂ), (x + y) * (x - y) = x^2 + y^2' > "$RUNNER_TEMP/negative.txt"
+          node tools/check-lean.mjs lean/PEqualNP/Research/Smoke.lean "$RUNNER_TEMP/positive.txt" check 2>&1 | tee "$RUNNER_TEMP/evidence/positive.log"
+          grep -q '^ACCEPTED (check)' "$RUNNER_TEMP/evidence/positive.log"
+          set +e
+          node tools/check-lean.mjs lean/PEqualNP/Research/Smoke.lean "$RUNNER_TEMP/negative.txt" check > "$RUNNER_TEMP/evidence/negative.log" 2>&1
+          code=$?
+          set -e
+          cat "$RUNNER_TEMP/evidence/negative.log"
+          test "$code" -eq 1
+          grep -q '^REJECTED ' "$RUNNER_TEMP/evidence/negative.log"
+      - name: Check research files against independent statement text
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          for f in lean/PEqualNP/Research/*.statement.txt; do
+            leanfile="${f%.statement.txt}.lean"
+            test -f "$leanfile"
+            log="$RUNNER_TEMP/evidence/$(basename "$leanfile").log"
+            node tools/check-lean.mjs "$leanfile" "$f" check 2>&1 | tee "$log"
+            grep -q '^ACCEPTED (check)' "$log"
+          done
+      - name: Preserve checker receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pinned-lean-checker-receipts
+          path: ${{ runner.temp }}/evidence/
+          if-no-files-found: warn
