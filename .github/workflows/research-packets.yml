@@ -82,7 +82,7 @@ jobs:
               expected.update(f'packets/{gid}/{name}' for name in ('packet.json','statement.txt','Skeleton.lean'))
           expected.update(('knowledge/summary.json','knowledge/strategy.json'))
           for p in (root/'knowledge').iterdir():
-              assert re.fullmatch(r'(?:summary|strategy|program-[a-z0-9]+|L-[a-z0-9]+-[0-9]{3,})\.json',p.name)
+              assert re.fullmatch(r'(?:summary|strategy|program-[a-z0-9]+|search-[0-9a-z]|L-[a-z0-9]+-[0-9]{3,})\.json',p.name)
               expected.add(p.relative_to(root).as_posix())
           actual=set()
           for p in root.rglob('*'):

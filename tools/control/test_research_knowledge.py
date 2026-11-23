@@ -1,6 +1,6 @@
 import hashlib
 import unittest
-from research_knowledge import graph, reachable, normalized_detail, join_packet
+from research_knowledge import graph, reachable, normalized_detail, join_packet, normalize_search, search_intersection, posted_restrictions
 
 def h(s):return "sha256:"+hashlib.sha256(s.encode()).hexdigest()
 class KnowledgeTests(unittest.TestCase):
@@ -32,4 +32,12 @@ class KnowledgeTests(unittest.TestCase):
     def test_invalid_graph(self):
         with self.assertRaises(ValueError):
             graph([{"key":"meta","program":"meta_complexity","nodes":[[1,"j",["bad"],"a"*12,0,0,0]]}])
+    def test_search_and_reserved_marker(self):
+        c,missing=normalize_search({"circuit":{"meta":[1,2,99]}},self.nodes)
+        self.assertEqual(missing,["L-meta-099"])
+        p,_=normalize_search({"proof":{"meta":[2],"lib":[3]}},self.nodes)
+        self.assertEqual(search_intersection({"c":c,"p":p},["circuit","proof"]),["L-meta-002"])
+        self.assertEqual(search_intersection({"c":c},["circuit","absent"]),[])
+        self.assertEqual(posted_restrictions({"context":"Reserved: the fleet supplies the closing file. Not for lease."}),["Not for lease","Reserved:"])
+        self.assertEqual(posted_restrictions({"context":"Open research question."}),[])
 if __name__=="__main__":unittest.main()

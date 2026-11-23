@@ -14,7 +14,7 @@ ROOT="https://data.pequalnp.com/"
 ID=re.compile(r"L-[a-z0-9]+-[0-9]{3,}")
 KEY=re.compile(r"[a-z0-9]+")
 REF=re.compile(r"[0-9a-f]{12}")
-PATH=re.compile(r"(?:head\.json|data/(?:map/overview|map/program/[a-z0-9_]+|plan|lemma/L-[a-z0-9]+-[0-9]{3,})\.[0-9a-f]{12}\.json)")
+PATH=re.compile(r"(?:head\.json|data/(?:map/overview|map/program/[a-z0-9_]+|plan|search/(?:index|[0-9a-z])|lemma/L-[a-z0-9]+-[0-9]{3,})\.[0-9a-f]{12}\.json)")
 def require(x,msg):
     if not x: raise ValueError(msg)
 def sha(data):return hashlib.sha256(data).hexdigest()
@@ -97,6 +97,37 @@ def join_packet(packet,n,detail,details,nodes):
             "direct_users":detail["used_by"],"recorded_downstream":reachable(nodes,n["id"]),
             "prerequisites":[neighbor(d) for d in deps],"direct_user_details":[neighbor(d) for d in detail["used_by"]],
             "attempts":detail["attempts"],"artifact":detail.get("artifact")}
+def normalize_search(raw,nodes):
+    """Convert public exact-token postings into explicit IDs, retaining unmapped hits."""
+    require(isinstance(raw,dict),"invalid search shard")
+    result={};missing=set()
+    for word,groups in raw.items():
+        require(isinstance(word,str) and word and isinstance(groups,dict),"invalid search token")
+        ids=[]
+        for key,numbers in groups.items():
+            require(KEY.fullmatch(key) and isinstance(numbers,list),"invalid search posting")
+            ids.extend(identifier(key,n) for n in numbers)
+        result[word]=sorted(set(ids))
+        missing.update(g for g in ids if g not in nodes)
+    return result,sorted(missing)
+def search_intersection(shards,terms):
+    """Exact token conjunction only; no inferred synonyms or relevance score."""
+    require(bool(terms),"empty search")
+    hits=None
+    for term in terms:
+        require(isinstance(term,str) and bool(term),"invalid search token")
+        ids=set(shards.get(term[0],{}).get(term,[]))
+        hits=ids if hits is None else hits&ids
+    return sorted(hits)
+def posted_restrictions(context):
+    # Only literal cues in the posted text, no inferred lease status.
+    fields=[context.get(k,"") for k in ("title","context")]
+    markers=[]
+    for field in fields:
+        if not isinstance(field,str):continue
+        for pattern in (r"not for lease",r"reserved for (?:the )?(?:fleet|closing)",r"reserved:"):
+            for m in re.finditer(pattern,field,re.I):markers.append(m.group(0))
+    return sorted(set(markers))
 def enrich(out):
     index=read(out/"index.json")
     head,head_hash=public("head.json")
@@ -142,6 +173,16 @@ def enrich(out):
         write(knowledge/("program-"+key+".json"),{"program_key":key,"nodes":rows})
     # Store only requested, source-identified normalized lemma records. One per file allows precise retrieval.
     for gid,d in sorted(details.items()):write(knowledge/(gid+".json"),d)
+    # Copy official lexical search postings, normalized to explicit IDs.
+    search,search_hash=public(head["files"]["search"]);sources[head["files"]["search"]]=search_hash
+    require(isinstance(search["shards"],dict) and all(re.fullmatch(r"[0-9a-z]",k) for k in search["shards"]),"unknown search shard scheme")
+    search_shards={};search_missing=set()
+    for key,path in sorted(search["shards"].items()):
+        require(path.startswith("data/search/"+key+"."),"search shard identity mismatch")
+        data,digest=public(path);sources[path]=digest
+        postings,missing=normalize_search(data,nodes)
+        search_shards[key]=postings;search_missing.update(missing)
+        write(knowledge/("search-"+key+".json"),{"source":ROOT+path,"source_sha256":digest,"tokens":postings,"unmapped_ids":missing})
     # Strategy text/plan are explicitly official inputs, not ranking instructions from this tool.
     strategy={"source":ROOT+head["files"]["plan"],"head_source":ROOT+"head.json","generated_at":head.get("generated_at"),
               "strategy_update":{k:head["status"][k] for k in ("at","text") if k in head.get("status",{})},
@@ -162,6 +203,8 @@ def enrich(out):
         # Transparent evidence dimensions only; never score missing information as zero.
         row["official_plan_reference"]=gid in target_ids
         row["closure_clear"]=row["closure_blocker"] is None and not row["path_exists"]
+        row["posted_restriction_markers"]=posted_restrictions(p.get("context",{}))
+        p["posted_restriction_markers"]=row["posted_restriction_markers"]
         row["prerequisite_statuses"]=[{"id":d["id"],"status":d["status"]} for d in joined.get("prerequisites",[])] if joined["join"]=="exact_statement" else None
         counts[joined["join"]]+=1;write(file,p)
         rows.append(row)
@@ -173,6 +216,7 @@ def enrich(out):
             "recorded_prerequisites":ids(lambda r:bool(r["public_dependencies"])),
             "nonempty_prior_attempts":ids(lambda r:r["prior_attempt_count"]>0),
             "closure_blockers":sorted(r["id"] for r in rows if not r["closure_clear"]),
+            "posted_restriction_markers":sorted(r["id"] for r in rows if r["posted_restriction_markers"]),
             "nonconjecture_or_unavailable":sorted(r["id"] for r in rows if r["public_status"]!="conjecture")}
     summary={"schema":"pnp-export/2","generated_at":head.get("generated_at"),"observed_at":now(),
              "source_version":head.get("version"),"source_sha256":sources,
@@ -180,16 +224,17 @@ def enrich(out):
              "recorded_edges":sum(len(n["depends_on"]) for n in nodes.values()),
              "unmapped_edges":sum(len(n["unmapped_dependencies"]) for n in nodes.values()),
              "details_requested":len(selected),"details_retrieved":len(details),"detail_errors":errors,
+             "search_shards":len(search_shards),"search_tokens":sum(len(x) for x in search_shards.values()),"search_unmapped_ids":sorted(search_missing),
              "posted_join_counts":dict(counts),"strategy":"knowledge/strategy.json","selection_evidence":slices,
              "interpretation":"Recorded edges are not exhaustive mathematical or Lean import dependencies. No ranking or live ownership is inferred."}
     write(knowledge/"summary.json",summary)
     index["public_research"]={k:summary[k] for k in ("schema","generated_at","source_version","generator_sha256","graph_nodes",
-             "recorded_edges","unmapped_edges","details_requested","details_retrieved","posted_join_counts","selection_evidence","strategy")}
+             "recorded_edges","unmapped_edges","details_requested","details_retrieved","posted_join_counts","selection_evidence","strategy","search_shards","search_tokens","search_unmapped_ids")}
     index["public_research"]["summary"]="knowledge/summary.json"
     # Include changes in sources even if gap feed/base are unchanged; not observation-time churn.
     index["public_research_sha256"]=sha(json.dumps({"sources":{k:v for k,v in sources.items() if k!="head.json"},
        "strategy":strategy["strategy_update"],"errors":errors,"generator":summary["generator_sha256"]},sort_keys=True).encode())
     write(out/"index.json",index)
-    print("Public research enrichment:",json.dumps({k:summary[k] for k in ("graph_nodes","recorded_edges","unmapped_edges","details_requested","details_retrieved","posted_join_counts","selection_evidence")},sort_keys=True))
+    print("Public research enrichment:",json.dumps({k:summary[k] for k in ("graph_nodes","recorded_edges","unmapped_edges","details_requested","details_retrieved","posted_join_counts","selection_evidence","search_shards","search_tokens","search_unmapped_ids")},sort_keys=True))
 if __name__=="__main__":
     p=argparse.ArgumentParser();p.add_argument("out",type=Path);a=p.parse_args();enrich(a.out)
