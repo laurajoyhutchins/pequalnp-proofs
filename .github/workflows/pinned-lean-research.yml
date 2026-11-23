@@ -5,6 +5,15 @@ on:
     branches:
       - research/workstation
       - 'research/workstation/**'
+    paths:
+      - 'lean/**'
+      - 'tools/research/**'
+      - 'tools/check-lean.mjs'
+      - 'tools/build.sh'
+      - 'tools/bin/**'
+      - '.github/scripts/**'
+      - '.github/workflows/pinned-lean-research.yml'
+      - 'research/diagnostic-targets.txt'
   workflow_dispatch:
 
 permissions:
@@ -22,7 +31,7 @@ jobs:
         with:
           persist-credentials: false
       - run: python3 -m unittest discover -s tools/research -p 'test_*.py' -v
-      - run: bash -n tools/research/check-candidate.sh
+      - run: bash -n tools/research/check-candidate.sh && bash -n tools/research/diagnose.sh
   verify:
     needs: tools
     runs-on: ubuntu-24.04
@@ -68,7 +77,24 @@ jobs:
           lake exe cache get
           test "$(git -C .lake/packages/mathlib rev-parse HEAD)" = fc4f59e577feb1a4956671bc04ac18aaaf8cd842
           test -f .lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean
+      - name: Target-only diagnostic (not a proof verdict)
+        if: ${{ startsWith(github.ref, 'refs/heads/research/workstation/diagnostic/') }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s research/diagnostic-targets.txt
+          mkdir -p "$RUNNER_TEMP/evidence"
+          n=0
+          rc=0
+          while IFS= read -r target || [[ -n "$target" ]]; do
+            [[ -n "$target" ]] || continue
+            n=$((n+1))
+            bash tools/research/diagnose.sh "$target" "$RUNNER_TEMP/evidence/diagnostic-$n" || rc=1
+          done < research/diagnostic-targets.txt
+          test "$n" -gt 0
+          exit "$rc"
       - name: Provision checker memory
+        if: ${{ !startsWith(github.ref, 'refs/heads/research/workstation/diagnostic/') }}
         shell: bash
         run: |
           set -euo pipefail
@@ -83,6 +109,7 @@ jobs:
           fi
           free -m
       - name: Run upstream checker on a positive and a negative control
+        if: ${{ !startsWith(github.ref, 'refs/heads/research/workstation/diagnostic/') }}
         shell: bash
         run: |
           set -euo pipefail
@@ -105,6 +132,7 @@ jobs:
           test "$code" -eq 1
           grep -q '^REJECTED ' "$RUNNER_TEMP/evidence/negative.log"
       - name: Check research files against independent statement text
+        if: ${{ !startsWith(github.ref, 'refs/heads/research/workstation/diagnostic/') }}
         shell: bash
         run: |
           set -euo pipefail

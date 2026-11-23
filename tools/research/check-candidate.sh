@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # Local preflight only. Run inside an isolated credential-free disposable environment.
 set -euo pipefail
+mode=full
+if [[ "${1:-}" == --diagnostic ]]; then mode=diagnostic; shift; fi
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
 if [ "$#" -ne 6 ]; then
-  echo 'usage: bash check-candidate.sh BASE SNAPSHOT GAP FILE CANDIDATE RECEIPTS' >&2; exit 2
+  echo 'usage: bash check-candidate.sh [--diagnostic] BASE SNAPSHOT GAP FILE CANDIDATE RECEIPTS' >&2; exit 2
 fi
 base=$(realpath "$1"); snapshot=$(realpath "$2"); gap=$3; file=$4
 candidate=$(realpath "$5"); mkdir -p "$6"; receipt=$(realpath "$6")
@@ -28,6 +31,15 @@ mkdir -p "$(dirname "$file")"
 (set -o noclobber; cat "$candidate" > "$file")
 trap 'rm -f -- "$file"' EXIT
 cmp "$candidate" "$file"
+if [[ "$mode" == diagnostic ]]; then
+  set +e
+  bash "$script_dir/diagnose.sh" "$file" "$receipt/diagnostic"
+  code=$?
+  set -e
+  cmp "$candidate" "$file"
+  sha256sum --check "$receipt/input.sha256"
+  exit "$code"
+fi
 set +e
 node tools/check-lean.mjs "$file" "$receipt/statement.txt" check 2>&1 | tee "$receipt/checker.log"
 codes=("${PIPESTATUS[@]}")
