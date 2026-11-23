@@ -3,14 +3,14 @@ name: Pinned Lean research verification
 on:
   push:
     branches:
-      - research/pinned-lean-verification
+      - research/meta-1402-depth-certificate
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: pinned-lean-research
+  group: meta-1402-depth-certificate
   cancel-in-progress: false
 
 jobs:
