@@ -1,0 +1,66 @@
+∀ (U V : BitVec 10) (orient extra : BitVec 15) (selU selV : BitVec 10),
+  let hit := fun (x y : BitVec 10) => (x &&& y) != 0
+  let hit15 := fun (x y : BitVec 15) => (x &&& y) != 0
+  let pop := fun (x : BitVec 10) => ((if hit x 1 then (1 : BitVec 6) else 0)) + ((if hit x 2 then (1 : BitVec 6) else 0)) + ((if hit x 4 then (1 : BitVec 6) else 0)) + ((if hit x 8 then (1 : BitVec 6) else 0)) + ((if hit x 16 then (1 : BitVec 6) else 0)) + ((if hit x 32 then (1 : BitVec 6) else 0)) + ((if hit x 64 then (1 : BitVec 6) else 0)) + ((if hit x 128 then (1 : BitVec 6) else 0)) + ((if hit x 256 then (1 : BitVec 6) else 0)) + ((if hit x 512 then (1 : BitVec 6) else 0))
+  let bad := ((hit U 1) && (hit V 973)) || ((hit U 2) && (hit V 954)) || ((hit U 4) && (hit V 885)) || ((hit U 8) && (hit V 747)) || ((hit U 16) && (hit V 502)) || ((hit U 32) && (hit V 638)) || ((hit U 64) && (hit V 253)) || ((hit U 128) && (hit V 475)) || ((hit U 256) && (hit V 919)) || ((hit U 512) && (hit V 815))
+  let sepU := ((hit U 50) && (!(hit V 50))) || ((hit U 69) && (!(hit V 69))) || ((hit U 104) && (!(hit V 104))) || ((hit U 116) && (!(hit V 116))) || ((hit U 138) && (!(hit V 138))) || ((hit U 201) && (!(hit V 201))) || ((hit U 208) && (!(hit V 208))) || ((hit U 276) && (!(hit V 276))) || ((hit U 385) && (!(hit V 385))) || ((hit U 402) && (!(hit V 402))) || ((hit U 521) && (!(hit V 521))) || ((hit U 548) && (!(hit V 548))) || ((hit U 554) && (!(hit V 554))) || ((hit U 770) && (!(hit V 770))) || ((hit U 773) && (!(hit V 773)))
+  let sepV := ((hit V 50) && (!(hit U 50))) || ((hit V 69) && (!(hit U 69))) || ((hit V 104) && (!(hit U 104))) || ((hit V 116) && (!(hit U 116))) || ((hit V 138) && (!(hit U 138))) || ((hit V 201) && (!(hit U 201))) || ((hit V 208) && (!(hit U 208))) || ((hit V 276) && (!(hit U 276))) || ((hit V 385) && (!(hit U 385))) || ((hit V 402) && (!(hit U 402))) || ((hit V 521) && (!(hit U 521))) || ((hit V 548) && (!(hit U 548))) || ((hit V 554) && (!(hit U 554))) || ((hit V 770) && (!(hit U 770))) || ((hit V 773) && (!(hit U 773)))
+  let universal0 := ((hit U 1) && (!(hit V 973))) || ((hit V 1) && (!(hit U 973)))
+  let universal1 := ((hit U 2) && (!(hit V 954))) || ((hit V 2) && (!(hit U 954)))
+  let universal2 := ((hit U 4) && (!(hit V 885))) || ((hit V 4) && (!(hit U 885)))
+  let universal3 := ((hit U 8) && (!(hit V 747))) || ((hit V 8) && (!(hit U 747)))
+  let universal4 := ((hit U 16) && (!(hit V 502))) || ((hit V 16) && (!(hit U 502)))
+  let universal5 := ((hit U 32) && (!(hit V 638))) || ((hit V 32) && (!(hit U 638)))
+  let universal6 := ((hit U 64) && (!(hit V 253))) || ((hit V 64) && (!(hit U 253)))
+  let universal7 := ((hit U 128) && (!(hit V 475))) || ((hit V 128) && (!(hit U 475)))
+  let universal8 := ((hit U 256) && (!(hit V 919))) || ((hit V 256) && (!(hit U 919)))
+  let universal9 := ((hit U 512) && (!(hit V 815))) || ((hit V 512) && (!(hit U 815)))
+  let eligible0 := (((hit U 1) && (hit V 2)) || ((hit V 1) && (hit U 2))) && ((universal0) || (universal1))
+  let req0 := !eligible0 || hit15 extra 1
+  let eligible1 := (((hit U 2) && (hit V 4)) || ((hit V 2) && (hit U 4))) && ((universal1) || (universal2))
+  let req1 := !eligible1 || hit15 extra 2
+  let eligible2 := (((hit U 4) && (hit V 8)) || ((hit V 4) && (hit U 8))) && ((universal2) || (universal3))
+  let req2 := !eligible2 || hit15 extra 4
+  let eligible3 := (((hit U 8) && (hit V 16)) || ((hit V 8) && (hit U 16))) && ((universal3) || (universal4))
+  let req3 := !eligible3 || hit15 extra 8
+  let eligible4 := (((hit U 16) && (hit V 1)) || ((hit V 16) && (hit U 1))) && ((universal4) || (universal0))
+  let req4 := !eligible4 || hit15 extra 16
+  let eligible5 := (((hit U 1) && (hit V 32)) || ((hit V 1) && (hit U 32))) && ((universal0) || (universal5))
+  let req5 := !eligible5 || hit15 extra 32
+  let eligible6 := (((hit U 2) && (hit V 64)) || ((hit V 2) && (hit U 64))) && ((universal1) || (universal6))
+  let req6 := !eligible6 || hit15 extra 64
+  let eligible7 := (((hit U 4) && (hit V 128)) || ((hit V 4) && (hit U 128))) && ((universal2) || (universal7))
+  let req7 := !eligible7 || hit15 extra 128
+  let eligible8 := (((hit U 8) && (hit V 256)) || ((hit V 8) && (hit U 256))) && ((universal3) || (universal8))
+  let req8 := !eligible8 || hit15 extra 256
+  let eligible9 := (((hit U 16) && (hit V 512)) || ((hit V 16) && (hit U 512))) && ((universal4) || (universal9))
+  let req9 := !eligible9 || hit15 extra 512
+  let eligible10 := (((hit U 32) && (hit V 128)) || ((hit V 32) && (hit U 128))) && ((universal5) || (universal7))
+  let req10 := !eligible10 || hit15 extra 1024
+  let eligible11 := (((hit U 128) && (hit V 512)) || ((hit V 128) && (hit U 512))) && ((universal7) || (universal9))
+  let req11 := !eligible11 || hit15 extra 2048
+  let eligible12 := (((hit U 512) && (hit V 64)) || ((hit V 512) && (hit U 64))) && ((universal9) || (universal6))
+  let req12 := !eligible12 || hit15 extra 4096
+  let eligible13 := (((hit U 64) && (hit V 256)) || ((hit V 64) && (hit U 256))) && ((universal6) || (universal8))
+  let req13 := !eligible13 || hit15 extra 8192
+  let eligible14 := (((hit U 256) && (hit V 32)) || ((hit V 256) && (hit U 32))) && ((universal8) || (universal5))
+  let req14 := !eligible14 || hit15 extra 16384
+  let L0 := (if req0 && !(hit15 orient 1) then (2 : BitVec 10) else 0) ||| (if req4 && (hit15 orient 16) then (16 : BitVec 10) else 0) ||| (if req5 && !(hit15 orient 32) then (32 : BitVec 10) else 0)
+  let L1 := (if req0 && (hit15 orient 1) then (1 : BitVec 10) else 0) ||| (if req1 && !(hit15 orient 2) then (4 : BitVec 10) else 0) ||| (if req6 && !(hit15 orient 64) then (64 : BitVec 10) else 0)
+  let L2 := (if req1 && (hit15 orient 2) then (2 : BitVec 10) else 0) ||| (if req2 && !(hit15 orient 4) then (8 : BitVec 10) else 0) ||| (if req7 && !(hit15 orient 128) then (128 : BitVec 10) else 0)
+  let L3 := (if req2 && (hit15 orient 4) then (4 : BitVec 10) else 0) ||| (if req3 && !(hit15 orient 8) then (16 : BitVec 10) else 0) ||| (if req8 && !(hit15 orient 256) then (256 : BitVec 10) else 0)
+  let L4 := (if req3 && (hit15 orient 8) then (8 : BitVec 10) else 0) ||| (if req4 && !(hit15 orient 16) then (1 : BitVec 10) else 0) ||| (if req9 && !(hit15 orient 512) then (512 : BitVec 10) else 0)
+  let L5 := (if req5 && (hit15 orient 32) then (1 : BitVec 10) else 0) ||| (if req10 && !(hit15 orient 1024) then (128 : BitVec 10) else 0) ||| (if req14 && (hit15 orient 16384) then (256 : BitVec 10) else 0)
+  let L6 := (if req6 && (hit15 orient 64) then (2 : BitVec 10) else 0) ||| (if req12 && (hit15 orient 4096) then (512 : BitVec 10) else 0) ||| (if req13 && !(hit15 orient 8192) then (256 : BitVec 10) else 0)
+  let L7 := (if req7 && (hit15 orient 128) then (4 : BitVec 10) else 0) ||| (if req10 && (hit15 orient 1024) then (32 : BitVec 10) else 0) ||| (if req11 && !(hit15 orient 2048) then (512 : BitVec 10) else 0)
+  let L8 := (if req8 && (hit15 orient 256) then (8 : BitVec 10) else 0) ||| (if req13 && (hit15 orient 8192) then (64 : BitVec 10) else 0) ||| (if req14 && !(hit15 orient 16384) then (32 : BitVec 10) else 0)
+  let L9 := (if req9 && (hit15 orient 512) then (16 : BitVec 10) else 0) ||| (if req11 && (hit15 orient 2048) then (128 : BitVec 10) else 0) ||| (if req12 && !(hit15 orient 4096) then (64 : BitVec 10) else 0)
+  let unionU := (if hit selU 1 then L0 &&& U else 0) ||| (if hit selU 2 then L1 &&& U else 0) ||| (if hit selU 4 then L2 &&& U else 0) ||| (if hit selU 8 then L3 &&& U else 0) ||| (if hit selU 16 then L4 &&& U else 0) ||| (if hit selU 32 then L5 &&& U else 0) ||| (if hit selU 64 then L6 &&& U else 0) ||| (if hit selU 128 then L7 &&& U else 0) ||| (if hit selU 256 then L8 &&& U else 0) ||| (if hit selU 512 then L9 &&& U else 0)
+  let unionV := (if hit selV 1 then L0 &&& V else 0) ||| (if hit selV 2 then L1 &&& V else 0) ||| (if hit selV 4 then L2 &&& V else 0) ||| (if hit selV 8 then L3 &&& V else 0) ||| (if hit selV 16 then L4 &&& V else 0) ||| (if hit selV 32 then L5 &&& V else 0) ||| (if hit selV 64 then L6 &&& V else 0) ||| (if hit selV 128 then L7 &&& V else 0) ||| (if hit selV 256 then L8 &&& V else 0) ||| (if hit selV 512 then L9 &&& V else 0)
+  let centers := ((if L0 != 0 then (1 : BitVec 6) else 0)) + ((if L1 != 0 then (1 : BitVec 6) else 0)) + ((if L2 != 0 then (1 : BitVec 6) else 0)) + ((if L3 != 0 then (1 : BitVec 6) else 0)) + ((if L4 != 0 then (1 : BitVec 6) else 0)) + ((if L5 != 0 then (1 : BitVec 6) else 0)) + ((if L6 != 0 then (1 : BitVec 6) else 0)) + ((if L7 != 0 then (1 : BitVec 6) else 0)) + ((if L8 != 0 then (1 : BitVec 6) else 0)) + ((if L9 != 0 then (1 : BitVec 6) else 0))
+  let edges := ((if req0 then (1 : BitVec 6) else 0)) + ((if req1 then (1 : BitVec 6) else 0)) + ((if req2 then (1 : BitVec 6) else 0)) + ((if req3 then (1 : BitVec 6) else 0)) + ((if req4 then (1 : BitVec 6) else 0)) + ((if req5 then (1 : BitVec 6) else 0)) + ((if req6 then (1 : BitVec 6) else 0)) + ((if req7 then (1 : BitVec 6) else 0)) + ((if req8 then (1 : BitVec 6) else 0)) + ((if req9 then (1 : BitVec 6) else 0)) + ((if req10 then (1 : BitVec 6) else 0)) + ((if req11 then (1 : BitVec 6) else 0)) + ((if req12 then (1 : BitVec 6) else 0)) + ((if req13 then (1 : BitVec 6) else 0)) + ((if req14 then (1 : BitVec 6) else 0))
+  let special := ((U == 50) && (V == 69)) || ((U == 69) && (V == 50)) || ((U == 69) && (V == 138)) || ((U == 138) && (V == 69)) || ((U == 138) && (V == 276)) || ((U == 276) && (V == 138)) || ((U == 276) && (V == 521)) || ((U == 521) && (V == 276)) || ((U == 521) && (V == 50)) || ((U == 50) && (V == 521)) || ((U == 50) && (V == 385)) || ((U == 385) && (V == 50)) || ((U == 69) && (V == 770)) || ((U == 770) && (V == 69)) || ((U == 138) && (V == 548)) || ((U == 548) && (V == 138)) || ((U == 276) && (V == 104)) || ((U == 104) && (V == 276)) || ((U == 521) && (V == 208)) || ((U == 208) && (V == 521)) || ((U == 385) && (V == 548)) || ((U == 548) && (V == 385)) || ((U == 548) && (V == 208)) || ((U == 208) && (V == 548)) || ((U == 208) && (V == 770)) || ((U == 770) && (V == 208)) || ((U == 770) && (V == 104)) || ((U == 104) && (V == 770)) || ((U == 104) && (V == 385)) || ((U == 385) && (V == 104))
+  let extraB := ((eligible0) && (hit15 extra 1)) || ((eligible1) && (hit15 extra 2)) || ((eligible2) && (hit15 extra 4)) || ((eligible3) && (hit15 extra 8)) || ((eligible4) && (hit15 extra 16)) || ((eligible5) && (hit15 extra 32)) || ((eligible6) && (hit15 extra 64)) || ((eligible7) && (hit15 extra 128)) || ((eligible8) && (hit15 extra 256)) || ((eligible9) && (hit15 extra 512)) || ((eligible10) && (hit15 extra 1024)) || ((eligible11) && (hit15 extra 2048)) || ((eligible12) && (hit15 extra 4096)) || ((eligible13) && (hit15 extra 8192)) || ((eligible14) && (hit15 extra 16384))
+  let bound : BitVec 6 := if special && !extraB then 19 else 20
+  U ≠ 0 → V ≠ 0 → U &&& V = 0 → bad = true → sepU = true → sepV = true →
+  bound + pop unionU + pop unionV ≤ edges + centers + pop U + pop V + pop selU + pop selV - 1
