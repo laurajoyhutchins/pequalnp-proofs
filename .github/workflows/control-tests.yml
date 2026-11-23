@@ -1,0 +1,16 @@
+name: Research control plane tests
+on:
+  push:
+    branches: [research/workstation]
+    paths: ['tools/control/**','.github/workflows/control-tests.yml','.github/workflows/prepare-submission.yml','.github/workflows/reconcile-verdicts.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s tools/control -p 'test_*.py' -v

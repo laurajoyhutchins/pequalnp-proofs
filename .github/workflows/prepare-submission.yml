@@ -1,0 +1,148 @@
+name: Prepare single-file submission
+
+on:
+  workflow_run:
+    workflows: [Shared candidate verification]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Successful live candidate verification run ID
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: export-${{ github.event.workflow_run.id || inputs.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.repository == 'laurajoyhutchins/pequalnp-proofs' && github.ref == 'refs/heads/research/workstation' && (github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Authenticate exact-head local run and stage candidate as data
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN: ${{ github.event.workflow_run.id || inputs.run_id }}
+        run: |
+          set -euo pipefail
+          [[ "$RUN" =~ ^[1-9][0-9]*$ ]]
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN" > "$RUNNER_TEMP/run.json"
+          read -r head gap < <(python3 - "$RUNNER_TEMP/run.json" "$GITHUB_REPOSITORY" <<'PY'
+          import json,re,sys
+          r=json.load(open(sys.argv[1]))
+          assert r['repository']['full_name']==sys.argv[2] and r['head_repository']['full_name']==sys.argv[2]
+          assert r['path']=='.github/workflows/candidate-verification.yml' and r['event']=='push'
+          assert r['status']=='completed' and r['conclusion']=='success'
+          assert re.fullmatch('[0-9a-f]{40}',r['head_sha'])
+          m=re.fullmatch(r'research/candidate-(L-[a-z0-9]+(?:-[a-z0-9]+)*)',r['head_branch'])
+          assert m
+          print(r['head_sha'],m[1])
+          PY
+          )
+          git init -q "$RUNNER_TEMP/candidate"
+          git -C "$RUNNER_TEMP/candidate" fetch -q --depth 1 "https://github.com/$GITHUB_REPOSITORY.git" "$head"
+          test "$(git -C "$RUNNER_TEMP/candidate" rev-parse FETCH_HEAD)" = "$head"
+          git -C "$RUNNER_TEMP/candidate" show "$head:.github/workflows/candidate-verification.yml" > "$RUNNER_TEMP/candidate-workflow.yml"
+          cmp .github/workflows/candidate-verification.yml "$RUNNER_TEMP/candidate-workflow.yml"
+          path="research/candidates/$gap.lean"
+          [[ "$(git -C "$RUNNER_TEMP/candidate" ls-tree "$head" -- "$path")" == "100644 blob "* ]]
+          test "$(git -C "$RUNNER_TEMP/candidate" cat-file -s "$head:$path")" -le 524288
+          git -C "$RUNNER_TEMP/candidate" show "$head:$path" > "$RUNNER_TEMP/proof.lean"
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN/artifacts?per_page=100" > "$RUNNER_TEMP/artifacts.json"
+          artifact=$(python3 - "$RUNNER_TEMP/artifacts.json" <<'PY'
+          import json,sys
+          a=json.load(open(sys.argv[1]))
+          assert a['total_count']<=100
+          x=[x for x in a['artifacts'] if x['name']=='candidate-verification-receipt' and not x['expired']]
+          assert len(x)==1 and x[0]['size_in_bytes']<=67108864
+          print(x[0]['id'])
+          PY
+          )
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$artifact/zip" > "$RUNNER_TEMP/receipt.zip"
+          python3 - "$RUNNER_TEMP/receipt.zip" "$RUNNER_TEMP/receipt" <<'PY'
+          import pathlib,sys,zipfile
+          root=pathlib.Path(sys.argv[2]); root.mkdir()
+          required={'candidate.identity.json','local-verdict.txt','before.sha256','after.sha256','checker.out'}
+          with zipfile.ZipFile(sys.argv[1]) as z:
+              infos=z.infolist()
+              assert len(infos)<=20 and len({i.filename for i in infos})==len(infos)
+              assert sum(i.file_size for i in infos)<=134217728
+              assert required.issubset({i.filename for i in infos})
+              for name in required:
+                  (root/name).write_bytes(z.read(name))
+          PY
+          git clone -q --depth 1 --single-branch --branch main https://github.com/brilliant-hq/pequalnp-proofs.git "$RUNNER_TEMP/base"
+          curl -fsS --proto '=https' --max-redirs 0 --max-filesize 5000000 --max-time 60 https://data.pequalnp.com/data/desk/gaps.json > "$RUNNER_TEMP/gaps.json"
+          python3 tools/control/export_candidate.py "$RUNNER_TEMP/base" "$RUNNER_TEMP/receipt" "$RUNNER_TEMP/gaps.json" "$head" "$gap" "$RUNNER_TEMP/proof.lean" "$RUNNER_TEMP/export" "$RUN"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prepared-submission
+          path: ${{ runner.temp }}/export/
+          if-no-files-found: error
+
+  publish:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: prepared-submission
+          path: ${{ runner.temp }}/export
+      - name: Publish deterministic branch only (never submit or claim)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone -q --depth 1 --single-branch --branch main https://github.com/brilliant-hq/pequalnp-proofs.git "$RUNNER_TEMP/base"
+          curl -fsS --proto '=https' --max-redirs 0 --max-filesize 5000000 --max-time 60 https://data.pequalnp.com/data/desk/gaps.json > "$RUNNER_TEMP/gaps.json"
+          PYTHONPATH=tools/control python3 - "$RUNNER_TEMP/base" "$RUNNER_TEMP/export" "$RUNNER_TEMP/gaps.json" "$RUNNER_TEMP/ref.txt" <<'PY'
+          import json,pathlib,re,sys
+          from export_candidate import construct,digest,require,GAP,SHA,FILE
+          base,out,snapshot,ref=map(pathlib.Path,sys.argv[1:])
+          require({x.name for x in out.iterdir()}=={'proof.lean','export.json'},'bad export layout')
+          require(all(x.is_file() and not x.is_symlink() for x in out.iterdir()),'not plain files')
+          x=json.loads((out/'export.json').read_bytes()); proof=(out/'proof.lean').read_bytes()
+          require(x['scope']=='prepared_not_authorized' and GAP.fullmatch(x['gap']) and SHA.fullmatch(x['candidate_sha']) and SHA.fullmatch(x['upstream_sha']) and FILE.fullmatch(x['file']),'invalid export')
+          g=[g for g in json.loads(snapshot.read_bytes())['gaps'] if g.get('id')==x['gap']]
+          require(len(g)==1 and g[0]['file']==x['file'] and digest(g[0]['statement'].encode())==x['statement_sha256'],'gap changed or closed')
+          require(digest(proof)==x['proof_sha256'],'proof changed')
+          c,b=construct(base,x['upstream_sha'],x['file'],proof,x['gap'])
+          require(c==x['commit'] and b==x['blob'],'export differs')
+          branch='submission/'+x['gap']+'/'+x['candidate_sha']+'-'+x['upstream_sha'][:12]
+          require(branch==x['branch'],'bad branch')
+          ref.write_text(c+' refs/heads/'+branch+'\n')
+          PY
+      - name: Push exact prepared commit without force
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          read -r commit ref < "$RUNNER_TEMP/ref.txt"
+          [[ "$commit" =~ ^[0-9a-f]{40}$ && "$ref" =~ ^refs/heads/submission/L-[a-z0-9-]+/[0-9a-f]{40}-[0-9a-f]{12}$ ]]
+          cd "$RUNNER_TEMP/base"
+          git remote add fork "https://github.com/$GITHUB_REPOSITORY.git"
+          gh auth setup-git --hostname github.com
+          existing=$(git ls-remote fork "$ref" | cut -f1)
+          if [ -n "$existing" ]; then
+            test "$existing" = "$commit"
+          else
+            git push --porcelain fork "$commit:$ref"
+          fi
+          test "$(git ls-remote fork "$ref" | cut -f1)" = "$commit"
+          echo "Prepared branch: $ref (not submitted; confirm live ownership before opening upstream PR)" >> "$GITHUB_STEP_SUMMARY"
