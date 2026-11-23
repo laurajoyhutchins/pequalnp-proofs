@@ -1,5 +1,6 @@
 import unittest
-from reconcile_verdicts import parse_log,UPSTREAM
+from reconcile_verdicts import parse_log,public_credit,UPSTREAM
+import hashlib
 
 class VerdictTests(unittest.TestCase):
     def test_exact_head_and_unquoted_only(self):
@@ -20,4 +21,18 @@ class VerdictTests(unittest.TestCase):
         self.assertIsNone(parse_log(log,pr,dict(run,path=".github/workflows/advisory.yml"),file))
         self.assertIsNone(parse_log(log,pr,dict(run,conclusion="failure"),file))
         self.assertIsNone(parse_log(log+"\nVERDICT: REJECTED (checker exit 1)",pr,run,file))
+    def test_public_credit_binds_pr_and_proof(self):
+        h=lambda x: "sha256:"+hashlib.sha256(x).hexdigest()
+        pr={"merged":True,"number":7,"html_url":"https://github.com/"+UPSTREAM+"/pull/7",
+            "user":{"login":"researcher"},"head":{"sha":"a"*40}}
+        f={"filename":"lean/PEqualNP/Outside/L_test_1.lean"}
+        c={"id":"L-test-1","ref":"b"*12}
+        d={"id":c["id"],"status":"checked","formal_statement":"True","statement_hash":h(b"True"),
+            "contributor":{"github":"researcher","pr_url":pr["html_url"]},
+            "artifact":{"lean_file":f["filename"],"content_hash":h(b"proof"),
+                        "runner_url":"https://github.com/"+UPSTREAM+"/actions/runs/8"}}
+        self.assertEqual(public_credit(d,c,pr,f,b"proof")["kind"],"CHECKED_CREDIT")
+        self.assertIsNone(public_credit(d,c,pr,f,b"changed"))
+        self.assertIsNone(public_credit(d,c,dict(pr,merged=False),f,b"proof"))
+        self.assertIsNone(public_credit(dict(d,status="conjecture"),c,pr,f,b"proof"))
 if __name__=="__main__":unittest.main()

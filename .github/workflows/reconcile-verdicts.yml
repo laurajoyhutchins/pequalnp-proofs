@@ -35,7 +35,9 @@ jobs:
           import json,sys
           r=json.load(open(sys.argv[1]))['prs'][0]
           assert r['pr_state']=='merged' and r['author']=='c4ss'
-          print('Historical exact-head verdict:',r['authoritative_exact_head_verdict'],'errors:',r['evidence_errors'])
+          print('Historical exact-head verdict:',r['authoritative_exact_head_verdict'],'public checked credit:',r['public_checked_credit'],'errors:',r['evidence_errors'])
+          assert r['public_checked_credit']['kind']=='CHECKED_CREDIT'
+          assert r['public_checked_credit']['proof_sha256']=='c5aacf87b3e81fd3ac88b7534e37a9a76b4adc2798a270896f5328ed5b1f6c43'
           # API/log access can be restricted across repositories. Preserve UNKNOWN, never infer acceptance from a merge.
           if r['authoritative_exact_head_verdict'] is not None:
               assert r['authoritative_exact_head_verdict']=='ACCEPTED'
