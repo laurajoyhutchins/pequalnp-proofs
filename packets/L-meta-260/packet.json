@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-260",
-  "file": "lean/PEqualNP/Outside/L_meta_260.lean",
-  "module": "PEqualNP.Outside.L_meta_260",
-  "statement": "∃ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (h p q : ℕ) (gp gq : PEqualNP.CircuitLowerBounds.Gate), PEqualNP.MetaComplexity.IsMinimalCircuit n C ∧ n ≤ h ∧ h < n + C.size ∧ h ≠ C.output ∧ (∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD h false = false → PEqualNP.MetaComplexity.circuitFun n C x = true) ∧ p ≠ q ∧ h < n + p ∧ h < n + q ∧ C.gates[p]? = some gp ∧ C.gates[q]? = some gq ∧ gp.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ gq.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ h ∈ gp.inputs ∧ h ∈ gq.inputs ∧ (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → h < n + j → h ∈ (PEqualNP.CircuitLowerBounds.GateOp.casesOn (motive := fun _ => List ℕ) g.op g.inputs g.inputs (g.inputs.take 1) (fun _ => g.inputs) g.inputs) → j = p ∨ j = q)",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Search: a minimal circuit with a non-output gate h read by exactly two later gates, both ANDs, and the function true wherever h is false",
-    "context": "SEARCH GAP, possibly empty: the witness is an explicit object, cheap to check. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
-    "dead": [],
-    "unlocks": "Needed by seat-pcx-1 for: a test case of the exchange step"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SEARCH GAP, possibly empty: the witness is an explicit object, cheap to check. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
+    "dead": [],
+    "title": "Search: a minimal circuit with a non-output gate h read by exactly two later gates, both ANDs, and the function true wherever h is false",
+    "unlocks": "Needed by seat-pcx-1 for: a test case of the exchange step"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_260.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-260",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_260",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Is there a minimal circuit C on n inputs (AND, OR, NOT gates of fan-in at most two, no circuit of that kind with fewer gates computes its function) and a gate wire h, not the output, such that C outputs true on every input where h is false, two distinct later gates are AND gates listing h, and every later gate reading h (a NOT gate reads only its first wire) is one of those two? No witness is known; a witness or the negation is wanted. Conjecture either way.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-260.f50336436ded.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T07:05:34.777Z",
+    "title": "Search: a minimal circuit with a non-output gate h read by exactly two later gates, both ANDs, and the function true wherever h is false"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (h p q : ℕ) (gp gq : PEqualNP.CircuitLowerBounds.Gate), PEqualNP.MetaComplexity.IsMinimalCircuit n C ∧ n ≤ h ∧ h < n + C.size ∧ h ≠ C.output ∧ (∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD h false = false → PEqualNP.MetaComplexity.circuitFun n C x = true) ∧ p ≠ q ∧ h < n + p ∧ h < n + q ∧ C.gates[p]? = some gp ∧ C.gates[q]? = some gq ∧ gp.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ gq.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ h ∈ gp.inputs ∧ h ∈ gq.inputs ∧ (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → h < n + j → h ∈ (PEqualNP.CircuitLowerBounds.GateOp.casesOn (motive := fun _ => List ℕ) g.op g.inputs g.inputs (g.inputs.take 1) (fun _ => g.inputs) g.inputs) → j = p ∨ j = q)",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

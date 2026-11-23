@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-005185",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:cfc700cf206f539662303f285d65619dcccb47e8f3a6ba7ca8dbd247634bf0d6",
+    "lean_file": "lean/PEqualNP/Library/L106.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T18:31:16.349Z",
+      "outcome": "checked",
+      "when": "2026-11-22T18:27:25.502Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (V : Type) [Fintype V] [DecidableEq V] (side : V → Bool) (F : Set (PEqualNP.ProofComplexity.Clause V)) (π : List (PEqualNP.Search.CPLine V)), PEqualNP.Search.IsCPRefutation F π → ∃ ρ : List (Set (V → Bool)), PEqualNP.Search.IsTriDagFor side F ρ ∧ ρ.length ≤ π.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-106",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "For any CNF F, any split of its variables and any cutting planes refutation of F over the integers, the falsified sets of its lines form a triangle dag solving the search problem of F with at most as many nodes. Known result formalized: Sokolov (STOC 2017) and Hrubes-Pudlak (IPL 2017); reproved as Proposition 1.6 of ECCC TR25-057.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-106.447208c9daf0.json",
+  "statement_hash": "sha256:369441080aba5dcd4e47133997a9107343fdea286ad7b9532cf8108bc4bd7039",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T18:31:16.349Z",
+  "title": "Cutting planes refutations give triangle dags of no more nodes, under any split",
+  "used_by": []
+}

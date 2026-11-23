@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ T ∈ ({0xeaeaea80, 0xeee0e8e0, 0xeee0eac0, 0xeee8e888, 0xeee8e8a0, 0xfee8e880, 0xeaaaaaaa, 0xeaaaeaa8, 0xeae8e8e8, 0xeae8eaa8} : Finset ℕ), ∀ (gates : List PEqualNP.CircuitLowerBounds.Gate) (o : ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) → (∀ i j : Fin gates.length, (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → (gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not → i = j) → (∀ x : Fin 5 → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, o⟩ (List.ofFn x) = Nat.testBit T (∑ i : Fin 5, if x i then 2 ^ (i : ℕ) else 0)) → ∃ (gates' : List PEqualNP.CircuitLowerBounds.Gate) (o' : ℕ), (∀ g ∈ gates', (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length ≤ 2) ∧ gates'.length ≤ gates.length ∧ ∀ x : Fin 5 → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates', o'⟩ (List.ofFn x) = Nat.testBit T (∑ i : Fin 5, if x i then 2 ^ (i : ℕ) else 0)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1433",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For each monotone function of five inputs with truth table among 0xeaeaea80, 0xeee0e8e0, 0xeee0eac0, 0xeee8e888, 0xeee8e8a0, 0xfee8e880, 0xeaaaaaaa, 0xeaaaeaa8, 0xeae8e8e8, 0xeae8eaa8 (bit r is the value at the input whose i-th bit is bit i of r), every list of AND, OR and NOT gates reading at most two wires, with at most one NOT gate, computing it, can be replaced by a list of AND and OR gates only, reading at most two wires, computing it and no longer. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1433.7b9aa4e4ef8b.json",
+  "statement_hash": "sha256:0590ad71c11c30e39bedb30118149a4f31950f2d41c06078037c1df247c467fb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T23:18:20.130Z",
+  "title": "One NOT gate saves nothing on 10 monotone functions of five inputs (shard 10 of 18), fan-in-two AND/OR/NOT lists",
+  "used_by": []
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004887",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:85cd2b8966d4e18aa75441d1eb4cd978bb433620e822556675f0d560012f2092",
+    "lean_file": "lean/PEqualNP/Gct/L070.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T18:08:15.817Z",
+      "outcome": "checked",
+      "when": "2026-11-22T18:08:15.817Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ m n : ℕ, 3 ≤ m → PEqualNP.Gct.HasBorderDetExpression (PEqualNP.Gct.permPoly ℂ m) n → 2 * m ^ 2 + 11 ≤ 3 * n + 10 * m",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-070",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Every border determinantal expression of perm_m over C, m >= 3, has size n with 3n >= 2m^2 - 10m + 11: the assembly of L-gct-064 with the border subspace reduction in place of L-gct-035, the zero J - mE_11, L-gct-062 and L-gct-061 unchanged. Past the refereed border bound m^2/2 (L-gct-010) for m >= 20.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-070.38d323271cd6.json",
+  "statement_hash": "sha256:0abe93292f3b411bd4b327505f55fe8de1e809e846c6a39a94a29c08961aeae3",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T18:08:15.817Z",
+  "title": "TARGET: border dc(perm_m) >= (2m^2 - 10m + 11)/3, the border form of L-gct-064",
+  "used_by": []
+}

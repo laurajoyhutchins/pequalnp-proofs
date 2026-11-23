@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (n m : ℕ) (S : Fin m → Finset (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit) (o : Fin m → ℕ) (t : ℕ) (y : Finset (Fin n)), (∀ i j : Fin m, i ≠ j → (S i ∩ S j).card ≤ 1) ∧ (∀ g ∈ C.gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) ∧ (∀ i : Fin C.gates.length, (C.gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → (i : ℕ) = t) ∧ (∀ (i : Fin m) (x : Fin n → Bool), (C.wires (List.ofFn x)).getD (o i) false = decide (∃ p ∈ S i, x p = true)) ∧ (∀ x : Fin n → Bool, (Finset.univ.filter (fun v : Fin n => x v = true)).card < y.card → (C.wires (List.ofFn x)).getD (n + t) false = true) ∧ (C.wires (List.ofFn (fun v : Fin n => decide (v ∈ y)))).getD (n + t) false = false ∧ C.gates.length + (Finset.univ.filter (fun g : Fin C.gates.length => (∃ i : Fin m, ∀ p : Fin n, (C.wires (List.ofFn (fun v : Fin n => decide (v = p)))).getD (n + g) false = true ↔ p ∈ S i) ∧ (∃ i : Fin m, Disjoint (S i) y ∧ ∀ p : Fin n, p ∉ y → ((C.wires (List.ofFn (fun v : Fin n => decide (v ∈ y ∨ v = p)))).getD (n + g) false = true ↔ p ∈ S i)))).card + m < (∑ i : Fin m, if Disjoint (S i) y then (S i).card else min y.card (S i).card)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-999",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There are m sets of n points, two sharing at most one point, a list of AND, OR and NOT gates on at most two wires, every NOT at index t, computing each set's OR on every input, and y with the wire of gate t true below weight |y| and false on y, such that the gate count plus m plus the number of gates whose single points (p with the gate true when only p is true) form a whole set and whose single points over y form a whole set missing y is less than the sum over sets meeting y of min(|y|, |S|) plus the sum over sets missing y of |S|.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-999.81667f2de182.json",
+  "statement_hash": "sha256:ade7f7ef88f1cddc652cad33d4181f9df89b39257d67aafae8aec0a30c39f140",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T18:32:16.524Z",
+  "title": "Search: a list with every NOT gate at one index t computing set-ORs below the two-window count, refunds counted",
+  "used_by": []
+}

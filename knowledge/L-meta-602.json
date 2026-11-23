@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n k : ℕ) (G : SimpleGraph (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit), (∀ v : Fin n, (G.neighborSet v).ncard ≤ 3) → (∀ (v : Fin n) (c : G.Walk v v), c.IsCycle → 5 ≤ c.length) → (∀ T : Finset (Fin n), (∀ i j : Fin n, G.Adj i j → i ∈ T ∨ j ∈ T) → k ≤ T.card) → PEqualNP.MetaComplexity.Monotone2 C → (∀ x : Fin n → Bool, C.eval (List.ofFn x) = true ↔ ∃ u v : Fin n, G.Adj u v ∧ x u = true ∧ x v = true) → G.edgeSet.ncard + k ≤ C.size + 1",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-602",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let G be a graph on vertices 0..n-1, every degree at most 3, no cycle of length 3 or 4, E its edge set, and k at most the size of every vertex cover (a vertex set meeting every edge). Let C be a circuit of AND and OR gates only, each reading at most two wires, every gate counted, whose output is true at an input exactly when both ends of some edge are true. Then |E| + k is at most the number of gates plus 1. Break this: such a graph and a circuit with |E| + tau - 2 gates, tau the least cover size, verified by evaluation on all 2^n inputs.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-602.94e089ceca99.json",
+  "statement_hash": "sha256:d0d0285ce2947425df3b4e33135d32257e84a6a6765f9e18fcbdd7e66c2f6554",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T12:35:11.316Z",
+  "title": "Degree at most 3, no cycle of length 3 or 4: every circuit of AND and OR gates for the edge function has at least |E| + tau - 1 gates",
+  "used_by": []
+}

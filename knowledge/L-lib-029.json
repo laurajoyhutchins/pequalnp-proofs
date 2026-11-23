@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003126",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:69c522721c10e866bc3a25f586ca095c0b3ba8914ddac04d0cedeca9d7a27f88",
+    "lean_file": "lean/PEqualNP/Library/L029.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T15:18:17.420Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:59:56.201Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.Search.SAT ∈ PEqualNP.Library.NP",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-029",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "SAT is in NP: a satisfying assignment is a polynomial-length witness checkable in polynomial time. Cook (STOC 1971).",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-029.887bf5e18172.json",
+  "statement_hash": "sha256:167f910d8e77b075ff393f644fedf73b4e84061b7d2b1c4073f8b6852384e432",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T15:18:17.420Z",
+  "title": "SAT is in NP",
+  "used_by": []
+}

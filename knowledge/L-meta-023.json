@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-009692",
+    "checker_version": "check-lean 3, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:24681a8a1ef2e346cbd1fd1dbede113bbeb29801737170e491ea48ff8af019e7",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L023.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T15:03:07.893Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:47:47.019Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (V : Set (List Bool × List Bool)) (a : ℕ), PEqualNP.Library.DecidableInPolyTime PEqualNP.Library.encodePair V ∧ (∀ y c : List Bool, (y, c) ∈ V → y ∈ PEqualNP.MetaComplexity.PartialMCSP) ∧ ∀ (n s t : ℕ) (T : List (Option Bool)) (f : (Fin n → Bool) → Bool), T.length = 2 ^ n → PEqualNP.MetaComplexity.Consistent n T f → PEqualNP.MetaComplexity.HasCircuitSize n f t → t ≤ s → ∃ c : List Bool, c.length ≤ a * (n + t + 1) ^ 2 ∧ (List.replicate s true ++ false :: PEqualNP.MetaComplexity.encodePartial T, c) ∈ V",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-023",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There is a polynomial-time relation V, sound for partial MCSP on every string, such that an instance with a consistent function of circuit size t at most the bound s has a V-witness of length at most a (n + t + 1)^2, independent of the table length 2^n. Our own strengthening of L-meta-021; the witness is one row, expanded by the verifier. Needed by L-meta-016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-023.faba1d4ccb27.json",
+  "statement_hash": "sha256:41c866f404da483a2932bb0e5607ca072cbd602021ece76a9c06bf75d0f975f5",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T15:03:07.893Z",
+  "title": "Partial MCSP has a verifier whose witness is short when the circuit is small",
+  "used_by": []
+}

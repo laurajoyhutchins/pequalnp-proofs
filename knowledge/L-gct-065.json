@@ -1,0 +1,35 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004512",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:8f1f999a405faf066472e6d0ade55b95859206385f41b352fdd66c496aa08556",
+    "lean_file": "lean/PEqualNP/Gct/L065.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:42:19.851Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:28:19.889Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (S T St : Submodule ℂ (Fin n → ℂ)), S ≠ ⊥ → T ≠ ⊥ → (∀ x, x ∈ St ↔ ∀ v ∈ S * T, x * v ∈ S * T) → Module.finrank ℂ S + Module.finrank ℂ T ≤ Module.finrank ℂ (S * T) + Module.finrank ℂ St",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-065",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For nonzero subspaces S, T of C^n with coordinatewise product S*T and stabilizer St = {x : x*(S*T) inside S*T}, dim S + dim T <= dim S*T + dim St. Mirandola and Zemor, Critical pairs for the Product Singleton Bound, IEEE Trans. Inf. Theory 61(9), 2015, arXiv:1501.06419, Theorem 3.3 (any field). The one external input of L-gct-061.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-065.5a55041c1aba.json",
+  "statement_hash": "sha256:307830416be4da946ad7d944e89e14a101625b73649c8b5e58af9c065473bfe3",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:42:19.851Z",
+  "title": "Kneser for codes over C (Mirandola-Zemor 2015, Thm 3.3): dim S*T >= dim S + dim T - dim St(S*T)",
+  "used_by": [
+    "L-gct-067",
+    "L-gct-079",
+    "L-gct-163"
+  ]
+}

@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-pcx-105",
-  "file": "lean/PEqualNP/Outside/L_pcx_105.lean",
-  "module": "PEqualNP.Outside.L_pcx_105",
-  "statement": "(∀ Fi : Set (PEqualNP.ProofComplexity.Clause (Fin 8 ⊕ (ℕ × ℕ))), Fi = {Cei | ∃ eei ∈ ([(0, 1), (0, 3), (0, 5), (0, 7), (2, 1), (2, 3), (2, 5), (2, 7), (4, 1), (4, 3), (4, 5), (4, 7), (6, 1), (6, 3), (6, 5), (6, 7)] : List (Fin 8 × Fin 8)), Cei = {(((Sum.inl eei.1) : Fin 8 ⊕ (ℕ × ℕ)), true), (((Sum.inl eei.2) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cai | ∃ iai : Fin 8, iai.val + 1 < 8 ∧ Cai = {(((Sum.inl iai) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (iai.val, 0)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cbi | ∃ (ibi : Fin 8) (hbi jbi : ℕ), ibi.val = hbi + 1 ∧ ibi.val + 1 < 8 ∧ jbi < 3 ∧ Cbi = {(((Sum.inr (hbi, jbi)) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ibi.val, jbi)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cci | ∃ (ici : Fin 8) (hci gci : ℕ), ici.val = hci + 1 ∧ ici.val + 1 < 8 ∧ gci + 1 < 3 ∧ Cci = {(((Sum.inl ici) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hci, gci)) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ici.val, gci + 1)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cdi | ∃ (idi : Fin 8) (hdi : ℕ), idi.val = hdi + 1 ∧ Cdi = {(((Sum.inl idi) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hdi, 2)) : Fin 8 ⊕ (ℕ × ℕ)), false)}} ∪ {Cfi | ∃ jfi : ℕ, 1 ≤ jfi ∧ jfi < 3 ∧ Cfi = {(((Sum.inr (0, jfi)) : Fin 8 ⊕ (ℕ × ℕ)), false)}} → PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fi) 3 ∧ ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fi) 2) ∧ (∀ Fs : Set (PEqualNP.ProofComplexity.Clause (Fin 12 ⊕ (ℕ × ℕ))), Fs = {Ces | ∃ ees ∈ ([(0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10), (2, 11), (3, 6), (3, 7), (3, 8), (3, 9), (3, 10), (3, 11), (4, 6), (4, 7), (4, 8), (4, 9), (4, 10), (4, 11), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11)] : List (Fin 12 × Fin 12)), Ces = {(((Sum.inl ees.1) : Fin 12 ⊕ (ℕ × ℕ)), true), (((Sum.inl ees.2) : Fin 12 ⊕ (ℕ × ℕ)), true)}} ∪ {Cas | ∃ ias : Fin 12, ias.val + 1 < 12 ∧ Cas = {(((Sum.inl ias) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ias.val, 0)) : Fin 12 ⊕ (ℕ × ℕ)), true)}} ∪ {Cbs | ∃ (ibs : Fin 12) (hbs jbs : ℕ), ibs.val = hbs + 1 ∧ ibs.val + 1 < 12 ∧ jbs < 5 ∧ Cbs = {(((Sum.inr (hbs, jbs)) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ibs.val, jbs)) : Fin 12 ⊕ (ℕ × ℕ)), true)}} ∪ {Ccs | ∃ (ics : Fin 12) (hcs gcs : ℕ), ics.val = hcs + 1 ∧ ics.val + 1 < 12 ∧ gcs + 1 < 5 ∧ Ccs = {(((Sum.inl ics) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hcs, gcs)) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ics.val, gcs + 1)) : Fin 12 ⊕ (ℕ × ℕ)), true)}} ∪ {Cds | ∃ (ids : Fin 12) (hds : ℕ), ids.val = hds + 1 ∧ Cds = {(((Sum.inl ids) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hds, 4)) : Fin 12 ⊕ (ℕ × ℕ)), false)}} ∪ {Cfs | ∃ jfs : ℕ, 1 ≤ jfs ∧ jfs < 5 ∧ Cfs = {(((Sum.inr (0, jfs)) : Fin 12 ⊕ (ℕ × ℕ)), false)}} → (∃ πas, PEqualNP.ProofComplexity.IsRefutation Fs πas ∧ ∀ Das ∈ πas, Das.card ≤ 3) ∧ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fs) 4 ∧ ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fs) 3)",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Probe: Probe: counter-encoded cover formula: F2 degree 3 on K_(4,4) interleaved; degree 4 and a width-3 refutation on K_(6,6) side by side",
-    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A breadth probe: either answer moves the scouts' map."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Probe: Probe: counter-encoded cover formula: F2 degree 3 on K_(4,4) interleaved; degree 4 and a width-3 refutation on K_(6,6) side by side",
+    "unlocks": "A breadth probe: either answer moves the scouts' map."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_pcx_105.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-pcx-105",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_pcx_105",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "The counter formula of G in a vertex order: x(v) per vertex, an edge clause x(u) or x(v) per edge, and the sequential counter s(i,j) (at least j + 1 of x(0..i)) for at most tau(G) - 1 chosen. Degree: least B with a degree-B polynomial calculus refutation over F2 of the clause polynomials and x^2 + x. On K_(4,4) with sides {0,2,4,6} and {1,3,5,7} the degree is 3. On K_(6,6) with sides 0..5 and 6..11 the degree is 4 and some resolution refutation has every clause of at most 3 literals. Conjecture.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-pcx-105.a89d4a8a4546.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T22:59:46.061Z",
+    "title": "Probe: counter-encoded cover formula: F2 degree 3 on K_(4,4) interleaved; degree 4 and a width-3 refutation on K_(6,6) side by side"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "(∀ Fi : Set (PEqualNP.ProofComplexity.Clause (Fin 8 ⊕ (ℕ × ℕ))), Fi = {Cei | ∃ eei ∈ ([(0, 1), (0, 3), (0, 5), (0, 7), (2, 1), (2, 3), (2, 5), (2, 7), (4, 1), (4, 3), (4, 5), (4, 7), (6, 1), (6, 3), (6, 5), (6, 7)] : List (Fin 8 × Fin 8)), Cei = {(((Sum.inl eei.1) : Fin 8 ⊕ (ℕ × ℕ)), true), (((Sum.inl eei.2) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cai | ∃ iai : Fin 8, iai.val + 1 < 8 ∧ Cai = {(((Sum.inl iai) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (iai.val, 0)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cbi | ∃ (ibi : Fin 8) (hbi jbi : ℕ), ibi.val = hbi + 1 ∧ ibi.val + 1 < 8 ∧ jbi < 3 ∧ Cbi = {(((Sum.inr (hbi, jbi)) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ibi.val, jbi)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cci | ∃ (ici : Fin 8) (hci gci : ℕ), ici.val = hci + 1 ∧ ici.val + 1 < 8 ∧ gci + 1 < 3 ∧ Cci = {(((Sum.inl ici) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hci, gci)) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ici.val, gci + 1)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cdi | ∃ (idi : Fin 8) (hdi : ℕ), idi.val = hdi + 1 ∧ Cdi = {(((Sum.inl idi) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hdi, 2)) : Fin 8 ⊕ (ℕ × ℕ)), false)}} ∪ {Cfi | ∃ jfi : ℕ, 1 ≤ jfi ∧ jfi < 3 ∧ Cfi = {(((Sum.inr (0, jfi)) : Fin 8 ⊕ (ℕ × ℕ)), false)}} → PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fi) 3 ∧ ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fi) 2) ∧ (∀ Fs : Set (PEqualNP.ProofComplexity.Clause (Fin 12 ⊕ (ℕ × ℕ))), Fs = {Ces | ∃ ees ∈ ([(0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10), (2, 11), (3, 6), (3, 7), (3, 8), (3, 9), (3, 10), (3, 11), (4, 6), (4, 7), (4, 8), (4, 9), (4, 10), (4, 11), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11)] : List (Fin 12 × Fin 12)), Ces = {(((Sum.inl ees.1) : Fin 12 ⊕ (ℕ × ℕ)), true), (((Sum.inl ees.2) : Fin 12 ⊕ (ℕ × ℕ)), true)}} ∪ {Cas | ∃ ias : Fin 12, ias.val + 1 < 12 ∧ Cas = {(((Sum.inl ias) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ias.val, 0)) : Fin 12 ⊕ (ℕ × ℕ)), true)}} ∪ {Cbs | ∃ (ibs : Fin 12) (hbs jbs : ℕ), ibs.val = hbs + 1 ∧ ibs.val + 1 < 12 ∧ jbs < 5 ∧ Cbs = {(((Sum.inr (hbs, jbs)) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ibs.val, jbs)) : Fin 12 ⊕ (ℕ × ℕ)), true)}} ∪ {Ccs | ∃ (ics : Fin 12) (hcs gcs : ℕ), ics.val = hcs + 1 ∧ ics.val + 1 < 12 ∧ gcs + 1 < 5 ∧ Ccs = {(((Sum.inl ics) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hcs, gcs)) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ics.val, gcs + 1)) : Fin 12 ⊕ (ℕ × ℕ)), true)}} ∪ {Cds | ∃ (ids : Fin 12) (hds : ℕ), ids.val = hds + 1 ∧ Cds = {(((Sum.inl ids) : Fin 12 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hds, 4)) : Fin 12 ⊕ (ℕ × ℕ)), false)}} ∪ {Cfs | ∃ jfs : ℕ, 1 ≤ jfs ∧ jfs < 5 ∧ Cfs = {(((Sum.inr (0, jfs)) : Fin 12 ⊕ (ℕ × ℕ)), false)}} → (∃ πas, PEqualNP.ProofComplexity.IsRefutation Fs πas ∧ ∀ Das ∈ πas, Das.card ≤ 3) ∧ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fs) 4 ∧ ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fs) 3)",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

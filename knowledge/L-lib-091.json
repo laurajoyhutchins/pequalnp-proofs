@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002738",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:7bf18316f0d902c2c87783636c50c64a595f4950a374598a2fb0f53206c8d132",
+    "lean_file": "lean/PEqualNP/Library/L091.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:54:02.043Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:50:06.167Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-lib-089"
+  ],
+  "formal_statement": "∀ p : Polynomial ℕ, ∃ l : ℕ, ∀ π : List (PEqualNP.Search.QLine (Fin (2 ^ l + 1) × Fin l)), PEqualNP.Search.IsResLinQRefutation (PEqualNP.ProofComplexity.BPHP (2 ^ l + 1) l) π → (∀ L ∈ π, L.length ≤ 4 * l ∧ ∀ e ∈ L, ∀ v, (e.1 v).natAbs ≤ 2 ^ l) → p.eval (2 ^ l) < π.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-091",
+  "kind": "known",
+  "layer": 1,
+  "plain_statement": "Every Res(lin) refutation over the integers of bit PHP (2^l+1 pigeons, n = 2^l holes) whose lines have at most 4l equations and whose coefficients have absolute value at most n has superpolynomially many lines. Follows from L-lib-089 and the Beame-Whitmeyer rectangle-dag bound; no source we found states it. The restricted form of L-alg-004.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-091.3787ece1e810.json",
+  "statement_hash": "sha256:1eaf62654f87ffe58338119a3dd0a52dab8cf11a576c69d78a01599573642b8d",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:54:02.043Z",
+  "title": "Restricted R(lin) lower bound: bit PHP needs superpolynomial refutations with lines of O(log n) equations and coefficients up to n",
+  "used_by": []
+}

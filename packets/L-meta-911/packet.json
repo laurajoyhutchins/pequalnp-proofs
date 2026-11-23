@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-911",
-  "file": "lean/PEqualNP/Outside/L_meta_911.lean",
-  "module": "PEqualNP.Outside.L_meta_911",
-  "statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, ∃ o : Fin 3 → Fin 3 → ℕ,\n    PEqualNP.MetaComplexity.FanInTwo C ∧\n    (∀ i j : Fin C.gates.length, (C.gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not →\n      (C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not → i = j) ∧\n    C.size ≤ 18 ∧\n    (C.size = 18 → ∃ i : Fin C.gates.length, (C.gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧\n    ∀ x : Fin 9 → Bool, ∀ a b : Fin 3,\n      ((C.wires (List.ofFn x)).getD (o a b) false = true ↔\n        ∃ c : Fin 3, ∃ k : Fin 9, (k : ℕ) = 3 * (c : ℕ) + ((a * c + b : Fin 3) : ℕ) ∧ x k = true)",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Nine affine-line ORs over Z_3: some fan-in-two circuit with at most 17 AND/OR gates and at most one NOT gate computes all nine",
-    "context": "SKETCH: SAT: one-hot selectors for each gate's two inputs and a type bit, plus one NOT position; values on the 46 inputs of weight at most 2 (UNSAT there is UNSAT on all 512; a SAT answer must be verified on 512). Suggested cubes: the wire the NOT gate reads. Controls: XOR needs 3 AND/OR with one NOT; In-house check: Python, gate-list semantics of the root: the 18-OR circuit is correct on 512 inputs; the nine outputs are distinct; (computed, not checked). Data lane: run it on your own machine. No sorry, no new axiom. Put every declaration inside its own namespace.",
-    "dead": [],
-    "unlocks": "An exact small value: data for the public table"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: SAT: one-hot selectors for each gate's two inputs and a type bit, plus one NOT position; values on the 46 inputs of weight at most 2 (UNSAT there is UNSAT on all 512; a SAT answer must be verified on 512). Suggested cubes: the wire the NOT gate reads. Controls: XOR needs 3 AND/OR with one NOT; In-house check: Python, gate-list semantics of the root: the 18-OR circuit is correct on 512 inputs; the nine outputs are distinct; (computed, not checked). Data lane: run it on your own machine. No sorry, no new axiom. Put every declaration inside its own namespace.",
+    "dead": [],
+    "title": "Nine affine-line ORs over Z_3: some fan-in-two circuit with at most 17 AND/OR gates and at most one NOT gate computes all nine",
+    "unlocks": "An exact small value: data for the public table"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_911.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-911",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_911",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Inputs x_(c,y) for c, y in Z_3, input number 3c + y. Outputs f_(a,b) = OR over c in Z_3 of x_(c, ac+b mod 3), for all nine (a,b). Circuits of AND, OR, NOT gates of fan-in at most two, any wire may be an output, at most one NOT gate, NOT not counted. Some such circuit with at most 17 AND/OR gates computes all nine outputs on all 512 inputs.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-911.99e435f676f3.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T16:51:22.005Z",
+    "title": "Nine affine-line ORs over Z_3: some fan-in-two circuit with at most 17 AND/OR gates and at most one NOT gate computes all nine"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, ∃ o : Fin 3 → Fin 3 → ℕ,\n    PEqualNP.MetaComplexity.FanInTwo C ∧\n    (∀ i j : Fin C.gates.length, (C.gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not →\n      (C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not → i = j) ∧\n    C.size ≤ 18 ∧\n    (C.size = 18 → ∃ i : Fin C.gates.length, (C.gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧\n    ∀ x : Fin 9 → Bool, ∀ a b : Fin 3,\n      ((C.wires (List.ofFn x)).getD (o a b) false = true ↔\n        ∃ c : Fin 3, ∃ k : Fin 9, (k : ℕ) = 3 * (c : ℕ) + ((a * c + b : Fin 3) : ℕ) ∧ x k = true)",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

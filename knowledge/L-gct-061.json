@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004553",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:1d77c245ff6c8b543747a4bf7e481983afac9157dd4e2218f15dfcdadd169d3c",
+    "lean_file": "lean/PEqualNP/Gct/L061.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:45:00.099Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:12:01.048Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (M : ℕ) (W : Submodule ℂ (Fin M → ℂ)), (∀ x ∈ W, ∑ i, x i ^ 2 = 0) → (∀ x ∈ W, ∑ i, x i ^ 3 = 0) → 3 * Module.finrank ℂ W ≤ M",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-061",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If W in C^M is a linear subspace with sum x_i^2 = 0 and sum x_i^3 = 0 for every x in W, then dim W <= M/3. Sharp (blocks (1,a,b) with 1+a^2+b^2 = 1+a^3+b^3 = 0). Conjecture of this project; numerics agree for M <= 12. With L-gct-035 and the Sigma_m reduction it gives dc(perm_m) >= 2m^2/3 - O(m).",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-061.6fbfdf57518a.json",
+  "statement_hash": "sha256:ee4cccbdf2a91ebd8d11ff1a4ce924a9ac9ad2bb5d1f69050a96276e97454d40",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:45:00.099Z",
+  "title": "Fermat lemma: a complex linear space on which both power sums x1^2+...+xM^2 and x1^3+...+xM^3 vanish has dimension at most M/3",
+  "used_by": [
+    "L-gct-064"
+  ]
+}

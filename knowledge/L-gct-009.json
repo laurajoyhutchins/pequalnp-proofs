@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-001140",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:979da7e3424fb8b9bdb8fb214fb2c341ffdcd3c345994dbd0980ddc0945c6d1c",
+    "lean_file": "lean/PEqualNP/Gct/L009.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T13:40:25.149Z",
+      "outcome": "checked",
+      "when": "2026-11-22T13:38:48.453Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ m n : ℕ, PEqualNP.Gct.HasDetExpression (PEqualNP.Gct.permPoly ℂ m) n → m ^ 2 ≤ 2 * n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-009",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Over C, any determinantal expression of perm_m has size at least m^2/2 (Mignon and Ressayre, Int. Math. Res. Not. 2004).",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-009.d621a1e8299b.json",
+  "statement_hash": "sha256:cce0c8d58d4e36d3cebd22d65454dab6412ee7f7f304acf30938401436ab5a73",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T13:40:25.149Z",
+  "title": "Mignon and Ressayre: dc(perm_m) >= m^2/2",
+  "used_by": [
+    "L-gct-015"
+  ]
+}

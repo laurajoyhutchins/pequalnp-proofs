@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004126",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:5142b3f8bf0e4ed60d73bfc295f8bf140c85cb5cdf35972fb1a2ad7b4f9bb351",
+    "lean_file": "lean/PEqualNP/Gct/L024.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:04:06.140Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:39:32.692Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (d r n : ℕ) (G : MvPolynomial (Fin d) ℂ), 2 ≤ d → 2 ≤ r → G.IsHomogeneous r → (∀ x : Fin d → ℂ, (∀ i, MvPolynomial.eval x (MvPolynomial.pderiv i G) = 0) → x = 0) → PEqualNP.Gct.HasBorderDetExpression G n → (r - 1) * (d - 1) ≤ 11 * n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-024",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Chain link 3, NOT routine (its Theorem 2.3, 4e rounded up to 11): a complex form of degree r in d variables whose partials vanish together only at the origin needs border determinantal size at least (r-1)(d-1)/(4e). Method: r(r-1)^(d-2) simple polar points persist under perturbation and are bounded for a determinant by a multihomogeneous Bezout number. Source: the unrefereed manuscript of 24 September 2026 on a cubic lower bound for border dc of the permanent (cited by arXiv:2610.40484); read once by a leg, not verified here.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-024.bd385cb3afed.json",
+  "statement_hash": "sha256:d0a02f41f26e9171796cf54065ce1c4153a2cb79504c0df023f72e7d93e47f8a",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:04:06.140Z",
+  "title": "A smooth form of degree r in d variables has border determinantal complexity at least (r-1)(d-1)/11",
+  "used_by": [
+    "L-gct-026"
+  ]
+}

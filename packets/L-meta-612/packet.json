@@ -1,28 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-612",
-  "file": "lean/PEqualNP/Outside/L_meta_612.lean",
-  "module": "PEqualNP.Outside.L_meta_612",
-  "statement": "∀ (n t : ℕ) (G : SimpleGraph (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit), (∃ u v : Fin n, G.Adj u v) → (∀ a b c d : Fin n, a ≠ b → a ≠ c → a ≠ d → b ≠ c → b ≠ d → c ≠ d → G.Adj a b → G.Adj b c → G.Adj c d → ¬ G.Adj d a) → (∃ S : Finset (Fin n), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover G S ∧ S.card = t) → (∀ S : Finset (Fin n), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover G S → t ≤ S.card) → PEqualNP.MetaComplexity.Monotone2 C → (∀ x : Fin n → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin n, G.Adj u v ∧ x u = true ∧ x v = true)) → G.edgeSet.ncard + t ≤ C.size + 1",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Graphs without a 4-cycle: every circuit of AND and OR gates for the edge function has at least |E| + tau - 1 gates",
-    "context": "SKETCH: the statement elaborates on current main with import PEqualNP.Defs (measured 18:04 UTC); fetch main first, an older clone lacks the root modules it uses. TRACTABLE. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
-    "shard_spec": "0: prove it by a count of AND gates and OR gates together\n1: refute: a bipartite graph with no 4-cycle and a circuit of AND and OR gates below the count, smallest graphs first\n2: the case where every vertex on one side has degree at most 3",
-    "dead": [],
-    "unlocks": "Needed by seat-meta-1 and seat-meta-2 for: circuits of AND and OR gates only on graphs without short cycles, the direction whose target grows with the degree"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -90,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -425,10 +404,48 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: the statement elaborates on current main with import PEqualNP.Defs (measured 18:04 UTC); fetch main first, an older clone lacks the root modules it uses. TRACTABLE. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
+    "dead": [],
+    "shard_spec": "0: prove it by a count of AND gates and OR gates together\n1: refute: a bipartite graph with no 4-cycle and a circuit of AND and OR gates below the count, smallest graphs first\n2: the case where every vertex on one side has degree at most 3",
+    "title": "Graphs without a 4-cycle: every circuit of AND and OR gates for the edge function has at least |E| + tau - 1 gates",
+    "unlocks": "Needed by seat-meta-1 and seat-meta-2 for: circuits of AND and OR gates only on graphs without short cycles, the direction whose target grows with the degree"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_612.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-612",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_612",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Let G be a graph on n vertices with at least one edge and no 4-cycle (no four distinct vertices a, b, c, d with ab, bc, cd, da all edges); triangles and every degree are allowed. Let t be its vertex cover number. Every circuit of AND and OR gates only, each reading at most two wires, every gate counted, that computes the edge function of G (true exactly when both ends of some edge are true) has at least |E| + t - 1 gates.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-612.b880515a708a.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T12:42:39.115Z",
+    "title": "Graphs without a 4-cycle: every circuit of AND and OR gates for the edge function has at least |E| + tau - 1 gates"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ (n t : ℕ) (G : SimpleGraph (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit), (∃ u v : Fin n, G.Adj u v) → (∀ a b c d : Fin n, a ≠ b → a ≠ c → a ≠ d → b ≠ c → b ≠ d → c ≠ d → G.Adj a b → G.Adj b c → G.Adj c d → ¬ G.Adj d a) → (∃ S : Finset (Fin n), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover G S ∧ S.card = t) → (∀ S : Finset (Fin n), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover G S → t ≤ S.card) → PEqualNP.MetaComplexity.Monotone2 C → (∀ x : Fin n → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin n, G.Adj u v ∧ x u = true ∧ x v = true)) → G.edgeSet.ncard + t ≤ C.size + 1",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

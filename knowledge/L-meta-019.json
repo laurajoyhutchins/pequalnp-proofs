@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-001028",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:b3b68da832a39bacd608f5ce044225cf608cb80dcc253d24726a98bb2a69bb0b",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L019.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T13:34:40.741Z",
+      "outcome": "checked",
+      "when": "2026-11-22T13:34:20.521Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (s : ℕ → ℕ) (L : Language Bool), L ∈ PEqualNP.CircuitLowerBounds.SIZE s ↔ ∀ n : ℕ, ∃ f : (Fin n → Bool) → Bool, (∀ x : Fin n → Bool, f x = true ↔ List.ofFn x ∈ L) ∧ PEqualNP.MetaComplexity.HasCircuitSize n f (s n)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-019",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "A language is in SIZE(s) exactly when, at every length n, its slice as a Boolean function has a circuit with at most s(n) gates. A bridge between the two definitions, by unfolding; needed to turn a P/poly bound for a language into a circuit for one function in L-meta-016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-019.ceb48c8da002.json",
+  "statement_hash": "sha256:632d42c5a108ace0c457b016a8d90c6b4e19e3e0866942a5c1df292d14accb68",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T13:34:40.741Z",
+  "title": "SIZE and HasCircuitSize agree on every slice of a language",
+  "used_by": []
+}

@@ -1,31 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-gct-086",
-  "file": "lean/PEqualNP/Outside/L_gct_086.lean",
-  "module": "PEqualNP.Outside.L_gct_086",
-  "statement": "∃ C : ℕ, ∀ (n : ℕ) (L : Submodule ℂ (Fin n × Fin n → ℂ)), (∀ t ∈ L, MvPolynomial.eval (fun p => 1 + t p) (PEqualNP.Gct.permPoly ℂ n) = (Nat.factorial n : ℂ)) → Module.finrank ℂ L ≤ C * n",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Open, a hard one: do linear spaces on which the permanent near the all-ones matrix stays constant have dimension at most a constant times n? It may be false",
-    "context": "OPEN: A HARD ONE. Checked so far: a space of dimension 2n - 3 exists (L-gct-080); the problem reduces to doubly centred spaces (L-gct-092); the 3 by 3 case (L-gct-094); product-type parts are bounded (L-gct-090). A proof must use Taylor orders growing with n. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
-    "dead": [
-      "Every form of 'a level space splits into a row part and a column part' (exact counterexamples)",
-      "arguments of bounded order",
-      "the determinant's analogue is quadratic, so the proof must use something the permanent has and the determinant lacks"
-    ],
-    "unlocks": "With the checked reduction L-gct-077 it gives border size m^2 - O(m) for the permanent"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -93,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -428,10 +404,58 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "OPEN: A HARD ONE. Checked so far: a space of dimension 2n - 3 exists (L-gct-080); the problem reduces to doubly centred spaces (L-gct-092); the 3 by 3 case (L-gct-094); product-type parts are bounded (L-gct-090). A proof must use Taylor orders growing with n. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
+    "dead": [
+      "Every form of 'a level space splits into a row part and a column part' (exact counterexamples)",
+      "arguments of bounded order",
+      "the determinant's analogue is quadratic, so the proof must use something the permanent has and the determinant lacks"
+    ],
+    "title": "Open, a hard one: do linear spaces on which the permanent near the all-ones matrix stays constant have dimension at most a constant times n? It may be false",
+    "unlocks": "With the checked reduction L-gct-077 it gives border size m^2 - O(m) for the permanent"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_gct_086.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-gct-086",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_gct_086",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [
+      {
+        "ended_at": "2026-11-23T09:25:01.915Z",
+        "outcome": "died",
+        "when": "2026-11-22T19:56:13.263Z",
+        "why_died": "line rests (on no chain); outside provers hold leases; released so an accepted outside proof can be recorded; notes kept in barriers/l037/STATE.md"
+      }
+    ],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "There is a constant C such that every linear space L of n x n complex matrices on which perm(J_n + t) = n! for all t in L has dim L <= C n. With the checked L-gct-077 it gives border dc(perm_m) >= m^2 - (C + 2) m + O(1), past the checked 2/3. Floor checked: L-gct-080 (2n - 3). The determinant analogue at I is quadratic (nilpotent spaces), so a proof must use what perm lacks.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-gct-086.ab79638c0716.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T09:25:01.915Z",
+    "title": "TARGET: level spaces of the permanent at J are linear: dim L <= C n whenever perm(J_n + t) = n! on L"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ C : ℕ, ∀ (n : ℕ) (L : Submodule ℂ (Fin n × Fin n → ℂ)), (∀ t ∈ L, MvPolynomial.eval (fun p => 1 + t p) (PEqualNP.Gct.permPoly ℂ n) = (Nat.factorial n : ℂ)) → Module.finrank ℂ L ≤ C * n",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

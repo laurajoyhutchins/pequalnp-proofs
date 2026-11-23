@@ -1,0 +1,39 @@
+{
+  "artifact": {
+    "checker_run_id": "run-010213",
+    "checker_version": "check-lean 3, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:8cc14922a73ddf3bf6ded62e47b6efe856d2d7ff1ba44fb510109375c8191437",
+    "lean_file": "lean/PEqualNP/Gct/L163.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-23T00:40:25.266Z",
+      "outcome": "died",
+      "when": "2026-11-23T00:33:38.160Z",
+      "why_died": "Stopped by the strategy seat's route review before any piece was built: this seat was moved to the evasion chain. Statement read faithful; a partial plan is in notes/gct-086-core/t3/pcx1/."
+    },
+    {
+      "ended_at": "2026-11-23T01:01:53.807Z",
+      "outcome": "checked",
+      "when": "2026-11-23T01:01:53.807Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-gct-065"
+  ],
+  "formal_statement": "∀ (m : ℕ) (A B C : Submodule ℂ (Fin m → ℂ)), (∀ x ∈ A ⊔ B, ∀ y ∈ A ⊔ B, ∑ i, x i * y i = 0) → (∀ c ∈ C, (∀ a ∈ A, ∑ i, c i * a i = 0) ∧ (∀ b ∈ B, ∑ i, c i * b i = 0) ∧ ∀ a ∈ A, ∀ b ∈ B, ∑ i, c i * (a i * b i) = 0) → (∀ a ∈ A, ∑ i, a i ^ 4 = 0) → Module.finrank ℂ A + Module.finrank ℂ B + Module.finrank ℂ C ≤ m",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-163",
+  "kind": "helper",
+  "layer": 1,
+  "plain_statement": "A, B, C are linear subspaces of C^m. Assume the dot product vanishes on A + B; every vector of C is orthogonal to A, to B, and to every entrywise product a * b with a in A and b in B; and the sum of fourth powers vanishes on A. Then dim A + dim B + dim C <= m. Met with equality by A = 0 and B = C a maximal isotropic space for even m. Proof on paper by seat-gct-1 (notes/gct-086-core/t3/), through the checked product bound L-gct-065. It bounds a family of 4 by s level spaces on the L-gct-086 line.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-163.c8d7f38e9740.json",
+  "statement_hash": "sha256:ed25eedfaef621f5d08ce49139fb420a39ed1a2d14781ac117524fc9e2af8abd",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-23T01:01:53.807Z",
+  "title": "Three subspaces: A + B isotropic, C orthogonal to A, B and A*B, and the fourth power sum zero on A, give dim A + dim B + dim C <= m",
+  "used_by": []
+}

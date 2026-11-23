@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ p q : ℕ, 1 ≤ p ∧ p < q ∧ PEqualNP.Library.FP3 p q",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-123",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "OPEN, not proved, and it may be false. There are integers 1 <= p < q such that every language decided in time O(2^(qm)) on the library's machines is decided with three alternating blocks of guesses of length O(2^(pm)) and a linear-time check (FP3 p q). The pair is left existential: any saving in the exponent, however small, is enough. With the checked L-lib-122 it gives exponents u/v > 1 for which nondeterministic linear time is not inside deterministic time O(n^(u/v)). It fails relative to some oracles on the route's paper record, so a proof must use the machine.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-123.8553cec811cf.json",
+  "statement_hash": "sha256:9f468dd9f3feb0ca0deaded614965552e80bb90e8ed94f203553e43de5acc8a3",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T02:07:27.911Z",
+  "title": "OPEN: for some p < q, deterministic time 2^(qm) is inside three-alternation time O(2^(pm)) (the fixed-pair link)",
+  "used_by": []
+}

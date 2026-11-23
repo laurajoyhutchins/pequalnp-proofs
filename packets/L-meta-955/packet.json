@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-955",
-  "file": "lean/PEqualNP/Outside/L_meta_955.lean",
-  "module": "PEqualNP.Outside.L_meta_955",
-  "statement": "∃ (n m : ℕ) (S : Fin m → Finset (Fin n)), (∀ i : Fin m, 2 ≤ (S i).card) ∧ (∀ i j : Fin m, i ≠ j → (S i ∩ S j).card ≤ 1) ∧ ∃ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin m → ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) ∧ (∃ ι : Fin 1 → Fin gates.length, ∀ i : Fin gates.length, (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → ∃ j : Fin 1, ι j = i) ∧ gates.length + m + 1 ≤ ∑ i : Fin m, (S i).card ∧ ∀ (w : Fin m) (x : Fin n → Bool), PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out w⟩ (List.ofFn x) = decide (∃ v ∈ S w, x v = true)",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Search: sets of size at least 2 meeting pairwise in at most one point whose ORs a list with at most one NOT gate computes in under the sum of size minus 1",
-    "context": "SKETCH: A search, smallest systems first: sets of at least two points meeting pairwise in at most one point, and a list of AND, OR and NOT gates of fan-in two with one NOT gate computing all their ORs with fewer gates than the plain circuit. Encode as for the plane of order 3; a witness is evaluated on all inputs. In-house: none found in any decided case (computed, not checked). Data lane. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A counterexample search: one NOT gate saving on sums of sets meeting pairwise in at most one point"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: A search, smallest systems first: sets of at least two points meeting pairwise in at most one point, and a list of AND, OR and NOT gates of fan-in two with one NOT gate computing all their ORs with fewer gates than the plain circuit. Encode as for the plane of order 3; a witness is evaluated on all inputs. In-house: none found in any decided case (computed, not checked). Data lane. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Search: sets of size at least 2 meeting pairwise in at most one point whose ORs a list with at most one NOT gate computes in under the sum of size minus 1",
+    "unlocks": "A counterexample search: one NOT gate saving on sums of sets meeting pairwise in at most one point"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_955.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-955",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_955",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "There are sets S_1..S_m of inputs, each with at least 2 elements and any two sharing at most one, and a single list of AND, OR and NOT gates, each reading at most two wires, with at most one NOT gate, having for each i an output wire equal on every input to the OR of the inputs in S_i, whose number of gates is less than the sum over i of (|S_i| - 1).",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-955.812888c5a4ff.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T17:15:45.740Z",
+    "title": "Search: sets of size at least 2 meeting pairwise in at most one point whose ORs a list with at most one NOT gate computes in under the sum of size minus 1"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ (n m : ℕ) (S : Fin m → Finset (Fin n)), (∀ i : Fin m, 2 ≤ (S i).card) ∧ (∀ i j : Fin m, i ≠ j → (S i ∩ S j).card ≤ 1) ∧ ∃ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin m → ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) ∧ (∃ ι : Fin 1 → Fin gates.length, ∀ i : Fin gates.length, (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → ∃ j : Fin 1, ι j = i) ∧ gates.length + m + 1 ≤ ∑ i : Fin m, (S i).card ∧ ∀ (w : Fin m) (x : Fin n → Bool), PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out w⟩ (List.ofFn x) = decide (∃ v ∈ S w, x v = true)",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-518",
-  "file": "lean/PEqualNP/Outside/L_meta_518.lean",
-  "module": "PEqualNP.Outside.L_meta_518",
-  "statement": "∀ s : ℕ, PEqualNP.MetaComplexity.HasCircuitSize 10 (fun x : Fin 10 → Bool => (x 0 && x 1) || (x 0 && x 2) || (x 2 && x 3) || (x 3 && x 4) || (x 4 && x 5) || (x 5 && x 6) || (x 6 && x 7) || (x 7 && x 1) || (x 0 && x 8) || (x 1 && x 9)) s → 14 ≤ s",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "The 8-cycle with a leaf at each of two adjacent cycle vertices: every circuit of AND, OR, NOT gates for 'both ends of some edge are true' has at least 14 gates",
-    "context": "A refutation is one circuit with fewer gates, checked by evaluation on all inputs; a proof is a finite case analysis. Known: on forests and on graphs with long cycles and far-apart branch vertices the value edges plus cover number minus one is checked. This graph is among the smallest the checked proof does not reach. The statement needs only the pinned library and the long-standing circuit-size definition. Conjecture: it may be false. A proof must prove exactly the recorded statement, with no sorry and no new axiom.",
-    "dead": [],
-    "unlocks": "Why the attack needs it: the graph on which one link of the structure argument is open; needed by seat-rvnp-1"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "A refutation is one circuit with fewer gates, checked by evaluation on all inputs; a proof is a finite case analysis. Known: on forests and on graphs with long cycles and far-apart branch vertices the value edges plus cover number minus one is checked. This graph is among the smallest the checked proof does not reach. The statement needs only the pinned library and the long-standing circuit-size definition. Conjecture: it may be false. A proof must prove exactly the recorded statement, with no sorry and no new axiom.",
+    "dead": [],
+    "title": "The 8-cycle with a leaf at each of two adjacent cycle vertices: every circuit of AND, OR, NOT gates for 'both ends of some edge are true' has at least 14 gates",
+    "unlocks": "Why the attack needs it: the graph on which one link of the structure argument is open; needed by seat-rvnp-1"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_518.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-518",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_518",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Take the graph on 10 vertices with edges 01, 02, 23, 34, 45, 56, 67, 71, 08, 19 (the cycle 0, 2, 3, 4, 5, 6, 7, 1 with leaves 8 at 0 and 9 at 1). Every circuit of AND, OR and NOT gates of fan-in at most two, every gate counted, inputs free, that computes the function true exactly when both ends of some edge are true has at least 14 gates. The number 14 is edges plus vertex cover number minus one (10 + 5 - 1). It is a conjecture and may be false: a circuit with fewer gates, checked by evaluation on all inputs, refutes it.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-518.796c396fecbe.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T08:32:32.863Z",
+    "title": "Edge function of the 8-cycle with a leaf at each of two adjacent cycle vertices: every circuit has at least 14 gates"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ s : ℕ, PEqualNP.MetaComplexity.HasCircuitSize 10 (fun x : Fin 10 → Bool => (x 0 && x 1) || (x 0 && x 2) || (x 2 && x 3) || (x 3 && x 4) || (x 4 && x 5) || (x 5 && x 6) || (x 6 && x 7) || (x 7 && x 1) || (x 0 && x 8) || (x 1 && x 9)) s → 14 ≤ s",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

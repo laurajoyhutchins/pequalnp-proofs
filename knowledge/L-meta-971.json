@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C → (∀ x : Fin 14 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 14, (u.val, v.val) ∈ ([(0, 7), (0, 8), (0, 10), (1, 7), (1, 9), (1, 13), (2, 8), (2, 12), (2, 13), (3, 7), (3, 11), (3, 12), (4, 10), (4, 11), (4, 13), (5, 9), (5, 10), (5, 12), (6, 8), (6, 9), (6, 11)] : List (ℕ × ℕ)) ∧ x u = true ∧ x v = true)) → 27 ≤ C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-971",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The graph is the Heawood graph: points 0..6, lines 7..13, point p joined to line 7 + l when p + l is 0, 1 or 3 modulo 7; 21 edges, no cycle of length 4, least vertex cover size 7 (by script). Every circuit of AND and OR gates only, each reading at most two wires, every gate counted, true on 14 inputs exactly when both ends of some edge are true, has at least 27 gates, the size of the circuit built from a least cover. Conjecture; the opposite statement, a circuit with at most 26 gates, is its own row. A finite statement.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-971.9d6a94109705.json",
+  "statement_hash": "sha256:7cce87a83945766ac70776f395baa58e1d953efa9b4405ee7d614f5fd19ad268",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T18:06:28.493Z",
+  "title": "Every circuit of AND and OR gates for the edge function of the Heawood graph has at least 27 gates",
+  "used_by": []
+}

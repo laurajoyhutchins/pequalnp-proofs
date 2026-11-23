@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003221",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:f59a845237c2bc80c82dee2797c3687093f418fa4f71e36e72a4c042ef6d0c69",
+    "lean_file": "lean/PEqualNP/Library/L102.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T15:47:02.679Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:10:16.655Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ m : ℕ, 8 ≤ m → ∀ π : List (PEqualNP.Search.QLine (Fin (2 ^ (8 * m) + 1) × Fin (8 * m))), PEqualNP.Search.IsResLinQRefutation (PEqualNP.ProofComplexity.BPHP (2 ^ (8 * m) + 1) (8 * m)) π → ∃ L ∈ π, 2 ^ m < L.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-102",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "For m >= 8, every Res(lin) refutation over the integers (any coefficients) of the bit pigeonhole principle with 2^(8m)+1 pigeons and 2^(8m) holes has a line with more than 2^m equations, so width n^(1/8). Proof: a Delayer walk with the Erdos-Littlewood-Offord inequality. Witnesses that L-lib-091 is vacuous; possibly new.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-102.79a3b4719e6c.json",
+  "statement_hash": "sha256:61ea7f266a078d4b98018003812fe324f6e9c4d81c2f024358c1531114677cc3",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T15:47:02.679Z",
+  "title": "Res(lin) over the integers needs lines of n^Omega(1) equations on bit PHP",
+  "used_by": []
+}

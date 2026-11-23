@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ p : Polynomial ℕ, ∃ l : ℕ, ∀ π : List (PEqualNP.Search.QLine (Fin (2 ^ l + 1) × Fin l)), PEqualNP.Search.IsResLinQSynRefutation (PEqualNP.ProofComplexity.BPHP (2 ^ l + 1) l) π → p.eval (2 ^ l) < PEqualNP.Search.resLinQSize π",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-alg-005",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For every polynomial p there is l such that every refutation of bit PHP (2^l+1 pigeons, 2^l holes) in R(lin) over the integers with syntactic rules (Defs/SearchQSyn.lean: axioms, Boolean axioms, resolution on first equations, weakening by adding equations, simplification of 0 = c) has size above p(2^l). Restates L-alg-004, refuted because its semantic weakening makes the pigeonhole principle a one-step line. Open (Question 1 of Garg, Goos, Kamath and Sokolov, STOC 2018). Parked: no route.",
+  "source": "https://data.pequalnp.com/data/lemma/L-alg-005.451329e313d7.json",
+  "statement_hash": "sha256:5f67a1db6e37fe2760d4a82d80359e282256b821cec60cc9fbb9e8ea20fa3718",
+  "statement_hash_verified": true,
+  "status": "retired",
+  "status_at": "2026-11-22T20:10:16.613Z",
+  "title": "HARD LINK (restated): bit PHP needs superpolynomial dag-like R(lin) refutations over the integers with SYNTACTIC rules",
+  "used_by": []
+}

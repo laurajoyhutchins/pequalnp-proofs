@@ -1,0 +1,35 @@
+{
+  "artifact": {
+    "checker_run_id": "run-000461",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:66d46e2e1ce6ac10f77468d1ef52770ea03e7f5dd2ee20deaaef843ddd330388",
+    "lean_file": "lean/PEqualNP/Library/L020.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T13:12:58.500Z",
+      "outcome": "checked",
+      "when": "2026-11-22T13:12:40.191Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-lib-009"
+  ],
+  "formal_statement": "∀ L₁ L₂ : Language Bool, PEqualNP.Library.NPComplete L₁ → L₂ ∈ PEqualNP.Library.NP → PEqualNP.Library.PolyTimeReducible L₁ L₂ → PEqualNP.Library.NPComplete L₂",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-020",
+  "kind": "known",
+  "layer": 2,
+  "plain_statement": "If L1 is NP-complete, L2 is in NP, and L1 reduces to L2 in polynomial time, then L2 is NP-complete. The method behind every reduction in Karp (Complexity of Computer Computations, 1972).",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-020.9aeb9cf31788.json",
+  "statement_hash": "sha256:eae8569d11a668a9c7ced3ac9662a3d4a941caf755f626892ae8bd4f5802d94e",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T13:12:58.500Z",
+  "title": "NP-completeness transfers along reductions inside NP",
+  "used_by": [
+    "L-lib-032"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003920",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:bfc065ff323392dc60d425fc9f50e65e8a1aac311d9657caa05883e506c92b0c",
+    "lean_file": "lean/PEqualNP/Gct/L035.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:42:36.181Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:50:44.116Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m n k : ℕ) (y : Fin m × Fin m → ℂ), MvPolynomial.eval y (PEqualNP.Gct.permPoly ℂ m) = 0 → (∀ L : Submodule ℂ (Fin m × Fin m → ℂ), (∀ t ∈ L, MvPolynomial.eval (y + t) (PEqualNP.Gct.permPoly ℂ m) = 0) → Module.finrank ℂ L ≤ k) → PEqualNP.Gct.HasDetExpression (PEqualNP.Gct.permPoly ℂ m) n → m ^ 2 ≤ k + n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-035",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If y is a zero of perm_m and every linear space L with y+L inside {perm_m = 0} has dim at most k, then every determinantal expression of perm_m has size n >= m^2 - k. Proof: A(y)u = 0 gives L = {t : (sum t_ij A_ij)u = 0}, codim <= n. Folklore form of the linear-space method (cf. von zur Gathen 1987, Alper-Bogart-Velasco 2017).",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-035.c070190560e5.json",
+  "statement_hash": "sha256:40652d06e9cbebe28415d06573f6308ad3b905c4e87e854347163a5ce9d2b9d6",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:42:36.181Z",
+  "title": "Subspace reduction: dc(perm_m) >= m^2 - k when some zero y of perm_m has no linear space of dim > k through it inside the hypersurface",
+  "used_by": [
+    "L-gct-064"
+  ]
+}

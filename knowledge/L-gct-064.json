@@ -1,0 +1,35 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004595",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:5361094717b144e183e0ee91c3782db1c6af85563beedea217608511ffa3117b",
+    "lean_file": "lean/PEqualNP/Gct/L064.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:48:36.127Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:48:36.127Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-gct-035",
+    "L-gct-061",
+    "L-gct-062"
+  ],
+  "formal_statement": "∀ m n : ℕ, 3 ≤ m → PEqualNP.Gct.HasDetExpression (PEqualNP.Gct.permPoly ℂ m) n → 2 * m ^ 2 + 11 ≤ 3 * n + 10 * m",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-064",
+  "kind": "helper",
+  "layer": 1,
+  "plain_statement": "Every determinantal expression of perm_m over C, m >= 3, has size n with 3n >= 2m^2 - 10m + 11. Assembly of L-gct-035 (checked), L-gct-062 (reduction at J - mE_11) and L-gct-061 (Fermat lemma, proved on paper from Kneser for codes, Mirandola-Zemor 2015 Thm 3.3). The real case (m-1)^2+1 was claimed in 2015 (arXiv 1504.00151).",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-064.ace56f3193e4.json",
+  "statement_hash": "sha256:6003994ed311c11bbe8ee8e5ed8a5baf11e7d9463ad57ebaf1915b45484ed30c",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:48:36.127Z",
+  "title": "TARGET: dc(perm_m) >= (2m^2 - 10m + 11)/3 over C, past Mignon-Ressayre m^2/2 for m >= 20",
+  "used_by": []
+}

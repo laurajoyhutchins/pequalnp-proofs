@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ E : List (Fin 6 × Fin 6), E = [(0, 1), (0, 2), (1, 2), (0, 3), (1, 4), (2, 5)] → ∀ τ : Fin 6 × Fin 6 → Finset (Fin 6) → Fin 6, (∀ e ∈ E, ∀ I : Finset (Fin 6), (∀ f ∈ E, ¬ (f.1 ∈ I ∧ f.2 ∈ I)) → (τ e I = e.1 ∨ τ e I = e.2) ∧ τ e I ∉ I) → ∀ c : Fin 6 × Fin 6 → ℚ, (∀ I : Finset (Fin 6), (∀ f ∈ E, ¬ (f.1 ∈ I ∧ f.2 ∈ I)) → ∀ v : Fin 6, ((E.filter (fun e => τ e I = v)).map c).sum = 0) → ∀ e ∈ E, c e = 0",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-461",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "On the net with edges 01, 02, 12, 03, 14, 25 (a triangle with a pendant edge at each vertex): let a typing assign to each edge e and each independent set I (the empty set included) an end of e outside I, and orient e towards it. Every rational weighting of the edges for which, for every independent set I, every vertex has weighted in-degree 0 in the orientation of I, is zero on every edge.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-461.3c22adaba2d1.json",
+  "statement_hash": "sha256:a1e3f2bdbde5d263c96aa93d6a724f3067316ecc0a73953ad39500dca6461fcb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T07:45:58.279Z",
+  "title": "On the net, for every typing, an edge weighting with zero weighted in-degree in every admissible orientation is zero",
+  "used_by": []
+}

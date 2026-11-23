@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-1045",
-  "file": "lean/PEqualNP/Outside/L_meta_1045.lean",
-  "module": "PEqualNP.Outside.L_meta_1045",
-  "statement": "∀ (n k : ℕ) (G : SimpleGraph (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit) (A B D Fz : Finset ℕ) (des : ℕ → ℕ), (∀ a b c e : Fin n, G.Adj a b → G.Adj b c → G.Adj c e → G.Adj e a → a = c ∨ b = e) → (∀ T : Finset (Fin n), (∀ i j : Fin n, G.Adj i j → i ∈ T ∨ j ∈ T) → k ≤ T.card) → PEqualNP.MetaComplexity.Monotone2 C → (∀ x : Fin n → Bool, C.eval (List.ofFn x) = true ↔ ∃ u v : Fin n, G.Adj u v ∧ x u = true ∧ x v = true) → (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.and → j ∈ A) → (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.or → (∃ u v : Fin n, u ≠ v ∧ (C.wires (List.ofFn (fun i : Fin n => decide (i = u)))).getD (n + j) false = true ∧ (C.wires (List.ofFn (fun i : Fin n => decide (i = v)))).getD (n + j) false = true) → j ∈ B) → (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.or → ¬ (∃ u v : Fin n, u ≠ v ∧ (C.wires (List.ofFn (fun i : Fin n => decide (i = u)))).getD (n + j) false = true ∧ (C.wires (List.ofFn (fun i : Fin n => decide (i = v)))).getD (n + j) false = true) → j ∈ D) → (∀ (j1 : ℕ) (g1 : PEqualNP.CircuitLowerBounds.Gate), C.gates[j1]? = some g1 → g1.op = PEqualNP.CircuitLowerBounds.GateOp.and → ¬ (∀ w1 ∈ g1.inputs, (∃ a1 b1 : Fin n, a1 ≠ b1 ∧ (C.wires (List.ofFn (fun i1 : Fin n => decide (i1 = a1)))).getD w1 false = true ∧ (C.wires (List.ofFn (fun k1 : Fin n => decide (k1 = b1)))).getD w1 false = true)) → des j1 ∈ g1.inputs ∧ ¬ (∃ a2 b2 : Fin n, a2 ≠ b2 ∧ (C.wires (List.ofFn (fun i2 : Fin n => decide (i2 = a2)))).getD (des j1) false = true ∧ (C.wires (List.ofFn (fun k2 : Fin n => decide (k2 = b2)))).getD (des j1) false = true)) → (∀ (j6 : ℕ) (g6 : PEqualNP.CircuitLowerBounds.Gate), C.gates[j6]? = some g6 → g6.op = PEqualNP.CircuitLowerBounds.GateOp.and → (∀ w7 ∈ g6.inputs, (∃ a7 b7 : Fin n, a7 ≠ b7 ∧ (C.wires (List.ofFn (fun i7 : Fin n => decide (i7 = a7)))).getD w7 false = true ∧ (C.wires (List.ofFn (fun k7 : Fin n => decide (k7 = b7)))).getD w7 false = true)) → Relation.ReflTransGen (fun r3 t3 : ℕ => ∃ (j3 : ℕ) (g3 : PEqualNP.CircuitLowerBounds.Gate), r3 = n + j3 ∧ C.gates[j3]? = some g3 ∧ ((g3.op = PEqualNP.CircuitLowerBounds.GateOp.or ∧ ¬ (∃ a4 b4 : Fin n, a4 ≠ b4 ∧ (C.wires (List.ofFn (fun i4 : Fin n => decide (i4 = a4)))).getD r3 false = true ∧ (C.wires (List.ofFn (fun k4 : Fin n => decide (k4 = b4)))).getD r3 false = true) ∧ t3 ∈ g3.inputs) ∨ (g3.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ ¬ (∀ w5 ∈ g3.inputs, (∃ a5 b5 : Fin n, a5 ≠ b5 ∧ (C.wires (List.ofFn (fun i5 : Fin n => decide (i5 = a5)))).getD w5 false = true ∧ (C.wires (List.ofFn (fun k5 : Fin n => decide (k5 = b5)))).getD w5 false = true)) ∧ t3 = des j3))) C.output (n + j6) → (∀ c8 : Fin n, ∃ u8 v8 : Fin n, G.Adj u8 v8 ∧ (C.wires (List.ofFn (fun i8 : Fin n => decide (i8 = u8 ∨ i8 = v8)))).getD (n + j6) false = true ∧ c8 ≠ u8 ∧ c8 ≠ v8) → j6 ∈ Fz) → G.edgeSet.ncard + 2 * k ≤ A.card + B.card + 2 * D.card + Fz.card + 2",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "No 4-cycle: fan-in-two AND/OR circuits for the edge function have AND + wide OR + 2 narrow OR + reached fat ANDs at least |E| + 2 tau - 2",
-    "context": "SKETCH: follow from the output through thin OR gates and the chosen thin wires of other AND gates; charge each edge to the first gate that separates it; fat AND gates reached on that walk pay for the edges no single vertex covers. Cold read with no break; computed on small graphs, not checked. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A weighted gate count for graphs with no 4-cycle that would give the formula value as a lower bound on the last-gate line; it repairs a refuted count by charging the fat AND gates the output reaches."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: follow from the output through thin OR gates and the chosen thin wires of other AND gates; charge each edge to the first gate that separates it; fat AND gates reached on that walk pay for the edges no single vertex covers. Cold read with no break; computed on small graphs, not checked. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "No 4-cycle: fan-in-two AND/OR circuits for the edge function have AND + wide OR + 2 narrow OR + reached fat ANDs at least |E| + 2 tau - 2",
+    "unlocks": "A weighted gate count for graphs with no 4-cycle that would give the formula value as a lower bound on the last-gate line; it repairs a refuted count by charging the fat AND gates the output reaches."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_1045.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-1045",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_1045",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "G with no 4-cycle, E its edges, k at most every vertex cover; C of AND/OR gates on at most two wires, true exactly when some edge has both ends true. A wire is wide if true at two or more one-variable inputs, else thin; an AND is fat if every wire it reads is wide. Pick for each other AND a thin wire it reads; from the output follow thin ORs to their wires and other ANDs to the picked wire. Then AND + wide OR + 2 thin OR + (fat ANDs so reached whose accepted edges no single vertex covers) is at least |E| + 2k - 2. Conjecture.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-1045.fbddc38b806a.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T19:44:17.820Z",
+    "title": "No 4-cycle: fan-in-two AND/OR circuits for the edge function have AND + wide OR + 2 narrow OR + reached fat ANDs at least |E| + 2 tau - 2"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ (n k : ℕ) (G : SimpleGraph (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit) (A B D Fz : Finset ℕ) (des : ℕ → ℕ), (∀ a b c e : Fin n, G.Adj a b → G.Adj b c → G.Adj c e → G.Adj e a → a = c ∨ b = e) → (∀ T : Finset (Fin n), (∀ i j : Fin n, G.Adj i j → i ∈ T ∨ j ∈ T) → k ≤ T.card) → PEqualNP.MetaComplexity.Monotone2 C → (∀ x : Fin n → Bool, C.eval (List.ofFn x) = true ↔ ∃ u v : Fin n, G.Adj u v ∧ x u = true ∧ x v = true) → (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.and → j ∈ A) → (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.or → (∃ u v : Fin n, u ≠ v ∧ (C.wires (List.ofFn (fun i : Fin n => decide (i = u)))).getD (n + j) false = true ∧ (C.wires (List.ofFn (fun i : Fin n => decide (i = v)))).getD (n + j) false = true) → j ∈ B) → (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.or → ¬ (∃ u v : Fin n, u ≠ v ∧ (C.wires (List.ofFn (fun i : Fin n => decide (i = u)))).getD (n + j) false = true ∧ (C.wires (List.ofFn (fun i : Fin n => decide (i = v)))).getD (n + j) false = true) → j ∈ D) → (∀ (j1 : ℕ) (g1 : PEqualNP.CircuitLowerBounds.Gate), C.gates[j1]? = some g1 → g1.op = PEqualNP.CircuitLowerBounds.GateOp.and → ¬ (∀ w1 ∈ g1.inputs, (∃ a1 b1 : Fin n, a1 ≠ b1 ∧ (C.wires (List.ofFn (fun i1 : Fin n => decide (i1 = a1)))).getD w1 false = true ∧ (C.wires (List.ofFn (fun k1 : Fin n => decide (k1 = b1)))).getD w1 false = true)) → des j1 ∈ g1.inputs ∧ ¬ (∃ a2 b2 : Fin n, a2 ≠ b2 ∧ (C.wires (List.ofFn (fun i2 : Fin n => decide (i2 = a2)))).getD (des j1) false = true ∧ (C.wires (List.ofFn (fun k2 : Fin n => decide (k2 = b2)))).getD (des j1) false = true)) → (∀ (j6 : ℕ) (g6 : PEqualNP.CircuitLowerBounds.Gate), C.gates[j6]? = some g6 → g6.op = PEqualNP.CircuitLowerBounds.GateOp.and → (∀ w7 ∈ g6.inputs, (∃ a7 b7 : Fin n, a7 ≠ b7 ∧ (C.wires (List.ofFn (fun i7 : Fin n => decide (i7 = a7)))).getD w7 false = true ∧ (C.wires (List.ofFn (fun k7 : Fin n => decide (k7 = b7)))).getD w7 false = true)) → Relation.ReflTransGen (fun r3 t3 : ℕ => ∃ (j3 : ℕ) (g3 : PEqualNP.CircuitLowerBounds.Gate), r3 = n + j3 ∧ C.gates[j3]? = some g3 ∧ ((g3.op = PEqualNP.CircuitLowerBounds.GateOp.or ∧ ¬ (∃ a4 b4 : Fin n, a4 ≠ b4 ∧ (C.wires (List.ofFn (fun i4 : Fin n => decide (i4 = a4)))).getD r3 false = true ∧ (C.wires (List.ofFn (fun k4 : Fin n => decide (k4 = b4)))).getD r3 false = true) ∧ t3 ∈ g3.inputs) ∨ (g3.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ ¬ (∀ w5 ∈ g3.inputs, (∃ a5 b5 : Fin n, a5 ≠ b5 ∧ (C.wires (List.ofFn (fun i5 : Fin n => decide (i5 = a5)))).getD w5 false = true ∧ (C.wires (List.ofFn (fun k5 : Fin n => decide (k5 = b5)))).getD w5 false = true)) ∧ t3 = des j3))) C.output (n + j6) → (∀ c8 : Fin n, ∃ u8 v8 : Fin n, G.Adj u8 v8 ∧ (C.wires (List.ofFn (fun i8 : Fin n => decide (i8 = u8 ∨ i8 = v8)))).getD (n + j6) false = true ∧ c8 ≠ u8 ∧ c8 ≠ v8) → j6 ∈ Fz) → G.edgeSet.ncard + 2 * k ≤ A.card + B.card + 2 * D.card + Fz.card + 2",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (inc : Fin 81 → Fin 81 → Prop) (onPiv : ZMod 3 → ZMod 3 → ZMod 3 → Fin 81 → Prop), (∀ Pi Li : Fin 81, inc Pi Li ↔ (((Pi.val / 9 % 3 : ℕ) : ZMod 3) + ((Li.val / 3 % 3 : ℕ) : ZMod 3) * ((Pi.val / 3 % 3 : ℕ) : ZMod 3) = ((Li.val % 3 : ℕ) : ZMod 3) * ((Pi.val % 3 : ℕ) : ZMod 3) + ((Li.val / 9 % 3 : ℕ) : ZMod 3) ∧ ((Pi.val / 27 : ℕ) : ZMod 3) = ((Li.val % 3 : ℕ) : ZMod 3) * ((Pi.val / 3 % 3 : ℕ) : ZMod 3) + ((Li.val / 3 % 3 : ℕ) : ZMod 3) * ((Pi.val % 3 : ℕ) : ZMod 3) + ((Li.val / 27 : ℕ) : ZMod 3))) → (∀ (ai mi gi : ZMod 3) (Pv : Fin 81), onPiv ai mi gi Pv ↔ (((Pv.val / 9 % 3 : ℕ) : ZMod 3) + mi * ((Pv.val / 3 % 3 : ℕ) : ZMod 3) = mi * ai ∧ ((Pv.val / 27 : ℕ) : ZMod 3) = mi * ((Pv.val % 3 : ℕ) : ZMod 3) + gi)) → ∃ (Ckt : PEqualNP.CircuitLowerBounds.Circuit) (fg : ZMod 3 → ZMod 3 → ZMod 3 → ℕ), PEqualNP.MetaComplexity.Monotone2 Ckt ∧ Ckt.size ≤ 160 ∧ (∀ ad md gd : ZMod 3, (Ckt.lineDegrees (81 + 81) (Finset.Ico 81 (81 + 81))).getD (fg ad md gd) 0 ≤ 2) ∧ (∀ Pa La : Fin 81, inc Pa La → ¬ onPiv ((Pa.val / 3 % 3 : ℕ) : ZMod 3) ((La.val / 3 % 3 : ℕ) : ZMod 3) (((La.val / 27 : ℕ) : ZMod 3) + ((Pa.val / 3 % 3 : ℕ) : ZMod 3) * ((La.val % 3 : ℕ) : ZMod 3)) Pa → (Ckt.wires (List.ofFn (fun vq : Fin (81 + 81) => if vq = Fin.castAdd 81 Pa then true else if vq = Fin.natAdd 81 La then true else false))).getD (fg ((Pa.val / 3 % 3 : ℕ) : ZMod 3) ((La.val / 3 % 3 : ℕ) : ZMod 3) (((La.val / 27 : ℕ) : ZMod 3) + ((Pa.val / 3 % 3 : ℕ) : ZMod 3) * ((La.val % 3 : ℕ) : ZMod 3))) false = true) ∧ (∀ (aw mw gw : ZMod 3) (zz : Fin (81 + 81) → Bool), (∀ Ps : Fin 81, onPiv aw mw gw Ps → zz (Fin.castAdd 81 Ps) = false) → (Ckt.wires (List.ofFn zz)).getD (fg aw mw gw) false = true → ∃ (Pe Le : Fin 81), inc Pe Le ∧ zz (Fin.castAdd 81 Pe) = true ∧ zz (Fin.natAdd 81 Le) = true)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1327",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "GF(9) = GF(3)[i], i^2 = -1; points (x, y), lines y = m x + c over GF(9), 81 each. Tile (a, b, g) over GF(3): the incident pairs with Im x = a, Im m = b, Im c + a Re m = g; its pivot: m = b i, c = a b + g i. There is an AND/OR circuit of fan-in at most two, at most 160 gates, with 27 wires G_t of line-degree at most 2 (line 1, point 0, AND sum, OR max): G_t true with exactly p and w on for each pair (p, w) of tile t, p off t's pivot, and true at an input whose points avoid t's pivot only if an incident point and line are both on. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1327.7be0e228428e.json",
+  "statement_hash": "sha256:b0681712804f523a74a3020ea0f37911ee15a2fb5702dc16a19f87bbe05d0da9",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T20:25:40.938Z",
+  "title": "Tile instance k = 3, affine plane of order 9: some AND/OR list of fan-in at most two, at most 160 gates, accepts all 486 off-pivot pairs soundly",
+  "used_by": []
+}

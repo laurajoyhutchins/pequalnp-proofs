@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002274",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:ec95ccf4c82c2ebd82377fbcd2107825187d2c3ffe51e60c076144cb9bd3e891",
+    "lean_file": "lean/PEqualNP/Library/L089.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:33:44.934Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:32:58.656Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ {V : Type} [Fintype V] [DecidableEq V] (side : V → Bool) (F : Set (PEqualNP.ProofComplexity.Clause V)) (π : List (PEqualNP.Search.QLine V)) (M w : ℕ), PEqualNP.Search.IsResLinQRefutation F π → (∀ L ∈ π, L.length ≤ w ∧ ∀ e ∈ L, ∀ v, (e.1 v).natAbs ≤ M) → ∃ ρ : List (Set (V → Bool)), PEqualNP.Search.IsRectDagFor side F ρ ∧ ρ.length ≤ π.length * (8 * (2 * Fintype.card V * M + 1) ^ w) ^ 3",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-089",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "A Res(lin) refutation over the integers with s lines, at most w equations per line and coefficients of absolute value at most M gives, for any split of the variables, a dag-like Boolean protocol (rectangle dag) for the search problem with at most s (8 (2NM+1)^w)^3 nodes, N the number of variables. Standard conversion (Sokolov, STOC 2017). Chain link 2 to L-alg-004.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-089.3745e0522357.json",
+  "statement_hash": "sha256:12c141031fafabcb5705fa1a52c2e885257ff7b4966d64b31e83de28222d647c",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:33:44.934Z",
+  "title": "Narrow, small-coefficient Res(lin) refutations become small rectangle dags",
+  "used_by": [
+    "L-lib-091"
+  ]
+}

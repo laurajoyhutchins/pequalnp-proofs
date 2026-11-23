@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ PEqualNP.MetaComplexity.HasCircuitSize 10 (fun x : Fin 10 → Bool => (x 0 && x 1) || (x 1 && x 2) || (x 2 && x 3) || (x 3 && x 4) || (x 4 && x 0) || (x 0 && x 5) || (x 1 && x 6) || (x 2 && x 7) || (x 3 && x 8) || (x 4 && x 9) || (x 5 && x 7) || (x 7 && x 9) || (x 9 && x 6) || (x 6 && x 8) || (x 8 && x 5)) 19",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-651",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Number the Petersen graph on ten inputs: outer cycle 0-1-2-3-4-0, spokes 0-5, 1-6, 2-7, 3-8, 4-9, inner edges 5-7, 7-9, 9-6, 6-8, 8-5. The function true exactly when both ends of some edge are true has no circuit of AND, OR (fan-in two) and NOT gates with at most 19 gates. A circuit with 20 gates exists, so the value would be 20, the number of edges plus the least vertex cover minus one.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-651.7745f79d6eb9.json",
+  "statement_hash": "sha256:73d3bdacbe1b758428f13d34f9d08b4c43ea59522881edca9ac3a2efbc7c4517",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T13:29:22.279Z",
+  "title": "Petersen graph: no circuit of AND, OR (fan-in two) and NOT gates with at most 19 gates computes its edge function",
+  "used_by": []
+}

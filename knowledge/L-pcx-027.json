@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-001859",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:9cef5e23e0bf6e0eb26a1f5abbef1f906df70b473fe729097d27e909b80867a1",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L027.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:17:55.978Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:06:28.610Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m N B : ℕ), 1 ≤ N → 2 * B ≤ N + 1 → ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.funPHPSystem m N) B",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-027",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For N at least 1 holes, any number of pigeons and 2B at most N + 1, the functional pigeonhole system over F2 has no polynomial calculus refutation of degree B. Razborov, Comput. Complexity 7, 1998, for the degree range; this form is Cor. 4.3 of the unrefereed arXiv:2609.23015. Brute force agrees on 49 small cases and shows the range is tight for N up to 5.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-027.9ec6150133ef.json",
+  "statement_hash": "sha256:90884b48682c6a19d33717b77f2f5388d02a0868cda204e172205cac5138b6d1",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:17:55.978Z",
+  "title": "HARD LINK: functional pigeonhole has no polynomial calculus refutation over F2 of degree B when the holes number at least 2B - 1",
+  "used_by": []
+}

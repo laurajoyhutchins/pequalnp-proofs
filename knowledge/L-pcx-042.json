@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003458",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:3685efe0022210972026783569df39360b5bd1e675bfd2e0e601a56f12006744",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L042.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:00:06.680Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:05:47.916Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (V : Type) [Fintype V] [DecidableEq V] (F : Set (PEqualNP.ProofComplexity.Clause V)) (π : List (PEqualNP.ProofComplexity.LinClause V)) (w D : ℕ), (∀ C ∈ F, C.card ≤ w) → 32 * w ≤ D → 32 ≤ D → PEqualNP.ProofComplexity.IsLinRefutation F π → ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem F) D → Real.exp (((D : ℝ) ^ 2) / (1024 * (Fintype.card V : ℝ))) ≤ (π.length : ℝ)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-042",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "A CNF of width w on v variables with no polynomial calculus refutation over F2 of degree D, D at least 32w, has only dag-like Res(+) refutations of at least exp(D^2 / (1024 v)) lines. Cor 1.3 of the unrefereed arXiv:2610.00837, stated there for syntactic weakening; the constant under our semantic weakening is unverified, so this statement may be replaced.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-042.a3218f46c9ca.json",
+  "statement_hash": "sha256:2261a9fc876d6385981c56fd9862cb6921c4745061f8740dea90c53bcb658a73",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:00:06.680Z",
+  "title": "Degree to size: a CNF with no F2 polynomial calculus refutation of degree D needs Res(+) refutations of exp(D^2 / (1024 v)) lines",
+  "used_by": []
+}

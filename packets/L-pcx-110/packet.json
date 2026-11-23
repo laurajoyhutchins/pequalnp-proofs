@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-pcx-110",
-  "file": "lean/PEqualNP/Outside/L_pcx_110.lean",
-  "module": "PEqualNP.Outside.L_pcx_110",
-  "statement": "¬ (∀ Tr : (n0 : ℕ) → (Fin n0 → Fin n0 → Prop) → ℕ → ℕ → Prop, (∀ (n1 : ℕ) (A1 : Fin n1 → Fin n1 → Prop) (t1 k1 : ℕ), Tr n1 A1 t1 k1 ↔ ∃ N1 : (Fin n1 → Option Bool) → ℕ, N1 (fun w1 : Fin n1 => none) ≤ k1 ∧ ∀ ρ1 : Fin n1 → Option Bool, ((((∃ u1 v1 : Fin n1, A1 u1 v1 ∧ ρ1 u1 = some false ∧ ρ1 v1 = some false) ∨ ∃ S1 : Finset (Fin n1), S1.card = t1 ∧ ∀ x1 ∈ S1, ρ1 x1 = some true) ∧ 1 ≤ N1 ρ1) ∨ ∃ y1 : Fin n1, ρ1 y1 = none ∧ N1 (Function.update ρ1 y1 (some false)) + N1 (Function.update ρ1 y1 (some true)) ≤ N1 ρ1)) → ∀ (n2 : ℕ) (G2 : SimpleGraph (Fin n2)) (t2 : ℕ), (∃ u2 v2 : Fin n2, G2.Adj u2 v2) → (∃ T2 : Finset (Fin n2), T2.card = t2 ∧ ∀ p2 q2 : Fin n2, G2.Adj p2 q2 → p2 ∈ T2 ∨ q2 ∈ T2) → (∀ R2 : Finset (Fin n2), (∀ p3 q3 : Fin n2, G2.Adj p3 q3 → p3 ∈ R2 ∨ q3 ∈ R2) → t2 ≤ R2.card) → ∃ L2 : ℕ, Tr n2 G2.Adj t2 L2 ∧ (∀ m2 : ℕ, Tr n2 G2.Adj t2 m2 → L2 ≤ m2) ∧ (t2 + 1) * (t2 + 2) ≤ 2 * L2 ∧ (2 * L2 = (t2 + 1) * (t2 + 2) ↔ ∃ w2 : Fin t2 → Fin n2, Function.Injective w2 ∧ ∀ j2 : Fin t2, ∃ A2 : Finset (Fin n2), t2 ≤ j2.val + A2.card ∧ ∀ y2 ∈ A2, G2.Adj (w2 j2) y2 ∧ ∀ i2 : Fin t2, i2 < j2 → y2 ≠ w2 i2) ∧ L2 + 1 ≤ 2 ^ (t2 + 1) ∧ (L2 + 1 = 2 ^ (t2 + 1) ↔ (∃ c2 : Fin n2, ∀ a2 b2 : Fin n2, G2.Adj a2 b2 → a2 = c2 ∨ b2 = c2) ∨ ∀ a3 b3 d3 : Fin n2, G2.Adj a3 b3 → G2.Adj a3 d3 → b3 = d3))",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Probe: Probe: NOT (decision-tree leaf count of 'cover of size tau - 1' lies between C(tau + 2, 2) and 2^(tau + 1) - 1, with both equality cases named)",
-    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A breadth probe: either answer moves the scouts' map."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Probe: Probe: NOT (decision-tree leaf count of 'cover of size tau - 1' lies between C(tau + 2, 2) and 2^(tau + 1) - 1, with both equality cases named)",
+    "unlocks": "A breadth probe: either answer moves the scouts' map."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_pcx_110.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-pcx-110",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_pcx_110",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "L(G) is the least number of leaves of a decision tree on the variables x(v) of VC(G) (clauses x(u) or x(v) per edge; for each set of tau(G) vertices, the OR of their negations; tau the cover number) whose every leaf falsifies a clause. Not (for every graph with an edge: (tau + 1)(tau + 2)/2 <= L; equality iff some distinct v(0..tau-1) have each v(j) adjacent to at least tau - j vertices outside v(0..j-1); L <= 2^(tau + 1) - 1, equality iff every edge meets one vertex or no two edges share a vertex). Conjecture.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-pcx-110.e3da031a8abd.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T23:00:46.431Z",
+    "title": "Probe: NOT (decision-tree leaf count of 'cover of size tau - 1' lies between C(tau + 2, 2) and 2^(tau + 1) - 1, with both equality cases named)"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "¬ (∀ Tr : (n0 : ℕ) → (Fin n0 → Fin n0 → Prop) → ℕ → ℕ → Prop, (∀ (n1 : ℕ) (A1 : Fin n1 → Fin n1 → Prop) (t1 k1 : ℕ), Tr n1 A1 t1 k1 ↔ ∃ N1 : (Fin n1 → Option Bool) → ℕ, N1 (fun w1 : Fin n1 => none) ≤ k1 ∧ ∀ ρ1 : Fin n1 → Option Bool, ((((∃ u1 v1 : Fin n1, A1 u1 v1 ∧ ρ1 u1 = some false ∧ ρ1 v1 = some false) ∨ ∃ S1 : Finset (Fin n1), S1.card = t1 ∧ ∀ x1 ∈ S1, ρ1 x1 = some true) ∧ 1 ≤ N1 ρ1) ∨ ∃ y1 : Fin n1, ρ1 y1 = none ∧ N1 (Function.update ρ1 y1 (some false)) + N1 (Function.update ρ1 y1 (some true)) ≤ N1 ρ1)) → ∀ (n2 : ℕ) (G2 : SimpleGraph (Fin n2)) (t2 : ℕ), (∃ u2 v2 : Fin n2, G2.Adj u2 v2) → (∃ T2 : Finset (Fin n2), T2.card = t2 ∧ ∀ p2 q2 : Fin n2, G2.Adj p2 q2 → p2 ∈ T2 ∨ q2 ∈ T2) → (∀ R2 : Finset (Fin n2), (∀ p3 q3 : Fin n2, G2.Adj p3 q3 → p3 ∈ R2 ∨ q3 ∈ R2) → t2 ≤ R2.card) → ∃ L2 : ℕ, Tr n2 G2.Adj t2 L2 ∧ (∀ m2 : ℕ, Tr n2 G2.Adj t2 m2 → L2 ≤ m2) ∧ (t2 + 1) * (t2 + 2) ≤ 2 * L2 ∧ (2 * L2 = (t2 + 1) * (t2 + 2) ↔ ∃ w2 : Fin t2 → Fin n2, Function.Injective w2 ∧ ∀ j2 : Fin t2, ∃ A2 : Finset (Fin n2), t2 ≤ j2.val + A2.card ∧ ∀ y2 ∈ A2, G2.Adj (w2 j2) y2 ∧ ∀ i2 : Fin t2, i2 < j2 → y2 ≠ w2 i2) ∧ L2 + 1 ≤ 2 ^ (t2 + 1) ∧ (L2 + 1 = 2 ^ (t2 + 1) ↔ (∃ c2 : Fin n2, ∀ a2 b2 : Fin n2, G2.Adj a2 b2 → a2 = c2 ∨ b2 = c2) ∨ ∀ a3 b3 d3 : Fin n2, G2.Adj a3 b3 → G2.Adj a3 d3 → b3 = d3))",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

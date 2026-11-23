@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002069",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:08e0cf5aa674c3dc27220ec64d47c20edd4e3259f9e4c7b9e5a6ae24f2c6dfff",
+    "lean_file": "lean/PEqualNP/Gct/L015.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:24:22.361Z",
+      "outcome": "checked",
+      "when": "2026-11-22T13:55:34.499Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-gct-009"
+  ],
+  "formal_statement": "∀ m n : ℕ, 3 ≤ m → PEqualNP.Gct.HasDetExpression (PEqualNP.Gct.permPoly ℂ m) n → m ^ 2 + 2 ≤ 2 * n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-015",
+  "kind": "helper",
+  "layer": 1,
+  "plain_statement": "OPEN TARGET, first non-textbook goal of the program: over C, every determinantal expression of perm_m with m >= 3 has size at least m^2/2 + 1, one more than Mignon and Ressayre (IMRN 2004, here L-gct-009). True for m = 3 by Alper, Bogart and Velasco (dc(perm_3) = 7); open in general as far as this seat knows.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-015.599ea5e0b9f9.json",
+  "statement_hash": "sha256:295e9746ab14201abf42f13d276dc06580457e75bae7369793e81533157bf34a",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:24:22.361Z",
+  "title": "Beyond Mignon-Ressayre by one: dc(perm_m) >= m^2/2 + 1 for m >= 3",
+  "used_by": []
+}

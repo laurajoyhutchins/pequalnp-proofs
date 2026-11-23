@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ C.size ≤ 10 ∧ ∀ x : Fin 8 → Bool, C.eval (List.ofFn x) = (fun x : Fin 8 → Bool => (x 0 && x 1) || (x 0 && x 2) || (x 1 && x 3) || (x 2 && x 4) || (x 3 && x 5) || (x 4 && x 6) || (x 5 && x 7)) x",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1208",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The function on 8 inputs that is true exactly when both ends of some edge of the graph with edges 01 02 13 24 35 46 57 are true has a circuit of AND and OR gates of fan-in at most two with at most 10 gates (edges plus vertex cover number minus one). Every gate counted, inputs not.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1208.21bcd8ba942b.json",
+  "statement_hash": "sha256:831138025778ccd40899e18cf3d9b35c9a6fa47c0603df730aef415902162420",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T20:20:21.044Z",
+  "title": "Edge function of the 8-vertex graph with edges 01 02 13 24 35 46 57: a circuit of AND and OR gates of fan-in two with 10 gates",
+  "used_by": []
+}

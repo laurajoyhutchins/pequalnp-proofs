@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003935",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:2649b9adf99f0952281ef47d14bee234aef60fa4b4c813a8f41481fcb3e76eb3",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L028.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:44:18.916Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:28:13.712Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m k N : ℕ) (E : Fin N → Finset (Fin m → Bool)), 0 < k → 0 < m → (∀ (a : Fin N) (x : Fin m → Bool), x ∉ E a → ∃ V : Finset (Fin m), V.card ≤ k ∧ ∀ y : Fin m → Bool, (∀ i ∈ V, y i = x i) → y ∉ E a) → (∀ x : Fin m → Bool, (∃ a : Fin N, x ∈ E a) ↔ (Finset.univ.filter fun i : Fin m => x i = true).card % 2 = 1) → 2 ^ m ≤ N * (4 * k * 2 ^ (m - m / (2 * k)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-028",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "KNOWN (depth-3 lower bound for parity with bottom fan-in k, from the Paturi, Pudlak, Zane coding lemma): if the odd-weight points of the m-cube, m at least 1, are the union of N sets each of whose non-members is excluded by at most k coordinates, then 2^m is at most N * 4k * 2^(m - m/(2k)).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-028.836c47aeb7ae.json",
+  "statement_hash": "sha256:15682c82b92b2c23df6aa6b7343e0e1c4698d46db0aa25e95ce2402d4656f1f3",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:44:18.916Z",
+  "title": "Parity of m bits is not an OR of fewer than 2^(m/(2k)) / (4k) CNFs of width k",
+  "used_by": []
+}

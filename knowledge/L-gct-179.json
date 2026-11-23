@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Submodule ℂ (Fin 4 × Fin 5 → ℂ), (∀ t ∈ L, (∑ f : Fin 4 ↪ Fin 5, ∏ i, (1 + t (i, f i))) = 120) ∧ Module.finrank ℂ L = 7",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-179",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "SEARCH GAP, possibly false: exhibit a linear space L of 4 x 5 complex matrices of dimension exactly 7 on which the sum, over all injections f of the 4 rows into the 5 columns, of the product of (1 + t(i, f(i))) stays equal to 120 (its value at t = 0). That condition is the same as all sums of k x k subpermanents of t vanishing on L. Dimension 6 is attained by a row plus a column; no space of dimension 7 is known and none is excluded; the conjectured bound p + q - 2 = 7 allows it. A witness would be an explicit basis; a refutation would be the bound 6.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-179.d9e83dd66929.json",
+  "statement_hash": "sha256:19a1f1d8272ad43e7c3d9128bc60cea056a43de09e38e57f681ae3fe87a3fed0",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T05:42:13.524Z",
+  "title": "Search: a level space of 4 x 5 complex matrices of dimension 7 (one above the hook)",
+  "used_by": []
+}

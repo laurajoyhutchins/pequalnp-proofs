@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003924",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:b827ea1620abfe9e50f090508d53a7c32656db0e439475f002b50f3702ee8dac",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L029.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:42:41.320Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:03:24.750Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n q M : ℕ) (w : (Fin n → Bool) → List Bool), PEqualNP.MetaComplexity.QueryLocal n q w → (∀ x : Fin n → Bool, (w x).length ≤ M) → (∀ x : Fin n → Bool, (Finset.univ.filter fun i : Fin n => x i = true).card % 2 = 1 → w x ∈ PEqualNP.MetaComplexity.PartialMCSP) → 2 * q * (Nat.log 2 M + 2) < n → ∃ (n' s : ℕ) (T : List (Option Bool)), w (fun _ : Fin n => false) = List.replicate s true ++ false :: PEqualNP.MetaComplexity.encodePartial T ∧ T.length = 2 ^ n'",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-029",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "CONJECTURE, ours, not found in print: let w map n-bit inputs to strings of length at most M, every output position fixed by at most q input positions (QueryLocal), and every input of odd weight to a member of partial MCSP. If 2q(log2 M + 2) < n then the image of the all-false input has the form 1^s 0 code(T) with T a partial table of length a power of two. Step of the transfer of the 2017 local reduction theorem (Murray and Williams, Theory of Computing 13) to partial MCSP.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-029.34ffc1f1423c.json",
+  "statement_hash": "sha256:28044870d0a1f9584cfd5146de424944186b90fccba12cab66f77586b8ba60c8",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:42:41.320Z",
+  "title": "A q-local map sending odd inputs into partial MCSP sends the zero input to a well-formed instance",
+  "used_by": []
+}

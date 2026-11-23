@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-462",
-  "file": "lean/PEqualNP/Outside/L_meta_462.lean",
-  "module": "PEqualNP.Outside.L_meta_462",
-  "statement": "∀ (k : ℕ) (A : Fin k → Finset (Sym2 (Fin 6))) (B : Fin k → Finset (Finset (Fin 6)))\n    (t : Fin k → Fin 6),\n    (∀ i, ∀ e ∈ A i, e ∈ (SimpleGraph.fromRel (fun a b : Fin 6 =>\n        (a = 0 ∧ b = 1) ∨ (a = 0 ∧ b = 2) ∨ (a = 1 ∧ b = 2) ∨\n        (a = 0 ∧ b = 3) ∨ (a = 1 ∧ b = 4) ∨ (a = 2 ∧ b = 5))).edgeFinset ∧ t i ∈ e) →\n    (∀ i, ∀ I ∈ B i, t i ∉ I) →\n    (∀ e ∈ (SimpleGraph.fromRel (fun a b : Fin 6 =>\n        (a = 0 ∧ b = 1) ∨ (a = 0 ∧ b = 2) ∨ (a = 1 ∧ b = 2) ∨\n        (a = 0 ∧ b = 3) ∨ (a = 1 ∧ b = 4) ∨ (a = 2 ∧ b = 5))).edgeFinset,\n      ∀ I : Finset (Fin 6), (∀ u ∈ I, ∀ w ∈ I, ¬ (SimpleGraph.fromRel (fun a b : Fin 6 =>\n        (a = 0 ∧ b = 1) ∨ (a = 0 ∧ b = 2) ∨ (a = 1 ∧ b = 2) ∨\n        (a = 0 ∧ b = 3) ∨ (a = 1 ∧ b = 4) ∨ (a = 2 ∧ b = 5))).Adj u w) →\n        ∃! i : Fin k, e ∈ A i ∧ I ∈ B i) →\n    9 ≤ k",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "The net needs at least 9 rectangles: edges plus cover number on a triangle with three pendant edges (standalone text)",
-    "context": "TRACTABLE. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
-    "dead": [],
-    "unlocks": "Needed by seat-rderand-1 for: the rank bound of the cover-bound family on graphs with triangles"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "TRACTABLE. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
+    "dead": [],
+    "title": "The net needs at least 9 rectangles: edges plus cover number on a triangle with three pendant edges (standalone text)",
+    "unlocks": "Needed by seat-rderand-1 for: the rank bound of the cover-bound family on graphs with triangles"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_462.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-462",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_462",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "For the net graph on 6 vertices (a triangle 0,1,2 with one pendant vertex at each corner), suppose all pairs (edge, independent set) are split into k rectangles, each a set of edges times a set of vertex sets with a label vertex lying in all its edges and in none of its sets, every pair in exactly one rectangle. Then k is at least 9, which is the number of edges plus the least size of a vertex cover (6 plus 3).",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-462.a72c98429a13.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T07:46:00.448Z",
+    "title": "The net needs at least 9 rectangles: edges plus cover number on a triangle with three pendant edges (standalone text)"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ (k : ℕ) (A : Fin k → Finset (Sym2 (Fin 6))) (B : Fin k → Finset (Finset (Fin 6)))\n    (t : Fin k → Fin 6),\n    (∀ i, ∀ e ∈ A i, e ∈ (SimpleGraph.fromRel (fun a b : Fin 6 =>\n        (a = 0 ∧ b = 1) ∨ (a = 0 ∧ b = 2) ∨ (a = 1 ∧ b = 2) ∨\n        (a = 0 ∧ b = 3) ∨ (a = 1 ∧ b = 4) ∨ (a = 2 ∧ b = 5))).edgeFinset ∧ t i ∈ e) →\n    (∀ i, ∀ I ∈ B i, t i ∉ I) →\n    (∀ e ∈ (SimpleGraph.fromRel (fun a b : Fin 6 =>\n        (a = 0 ∧ b = 1) ∨ (a = 0 ∧ b = 2) ∨ (a = 1 ∧ b = 2) ∨\n        (a = 0 ∧ b = 3) ∨ (a = 1 ∧ b = 4) ∨ (a = 2 ∧ b = 5))).edgeFinset,\n      ∀ I : Finset (Fin 6), (∀ u ∈ I, ∀ w ∈ I, ¬ (SimpleGraph.fromRel (fun a b : Fin 6 =>\n        (a = 0 ∧ b = 1) ∨ (a = 0 ∧ b = 2) ∨ (a = 1 ∧ b = 2) ∨\n        (a = 0 ∧ b = 3) ∨ (a = 1 ∧ b = 4) ∨ (a = 2 ∧ b = 5))).Adj u w) →\n        ∃! i : Fin k, e ∈ A i ∧ I ∈ B i) →\n    9 ≤ k",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

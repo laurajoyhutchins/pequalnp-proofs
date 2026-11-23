@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004475",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:2cccbaa1758b3bac1cc37ac43defb202aad8875bc08fe244871ecee0872c03a0",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L052.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:38:45.926Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:29:31.719Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (V : Type) [DecidableEq V] (F : Set (PEqualNP.ProofComplexity.Clause V)) (n : ℕ), (∃ π : List (PEqualNP.ProofComplexity.LinClause V), PEqualNP.ProofComplexity.IsLinRefutation F π ∧ π.length = n) ↔ (∃ π : List (PEqualNP.ProofComplexity.LinKLine V), PEqualNP.ProofComplexity.IsLinKRefutation 1 F π ∧ π.length = n)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-052",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For every CNF F and every n: F has a Res(+) refutation of exactly n lines (the system of L-pcx-012 to 048, semantic weakening) if and only if it has a Res(k,+) refutation with k = 1 (termwise weakening) of exactly n lines. So the termwise system at k = 1 is the system already studied, not a weaker one.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-052.18574b79948e.json",
+  "statement_hash": "sha256:93febf4c0809c16abd2979a597d6378fcfaefa6cc4253fa1521fc0fcd44b8050",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:38:45.926Z",
+  "title": "Res(1,+) is Res(+): refutations of the same length exist in both systems",
+  "used_by": []
+}

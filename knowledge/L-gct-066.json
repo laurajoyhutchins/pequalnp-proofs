@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004472",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:55598f5557b6c813881d8153dc39979fb71c27e81fa424c93c905bb92334ca92",
+    "lean_file": "lean/PEqualNP/Gct/L066.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:37:52.148Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:37:52.148Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "(∀ (n : ℕ) (S T St : Submodule ℂ (Fin n → ℂ)), S ≠ ⊥ → T ≠ ⊥ → (∀ x, x ∈ St ↔ ∀ v ∈ S * T, x * v ∈ S * T) → Module.finrank ℂ S + Module.finrank ℂ T ≤ Module.finrank ℂ (S * T) + Module.finrank ℂ St) → (∀ (M : ℕ) (W : Submodule ℂ (Fin M → ℂ)), (∀ x ∈ W, ∑ i, x i ^ 2 = 0) → (∀ x ∈ W, ∑ i, x i ^ 3 = 0) → 3 * Module.finrank ℂ W ≤ M)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-066",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If Kneser's theorem for codes holds over C (statement of L-gct-065), then every linear space in C^M killing both power sums p2 and p3 has dim <= M/3 (statement of L-gct-061). Polarization, Kneser with S = W + C1 and T = W, and induction over the 0/1 blocks of the stabilizer.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-066.3240a5e6f56a.json",
+  "statement_hash": "sha256:9a616d7230271f38c2fcb6633d4cb48942b7615228ef2dcce49f9605644c2413",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:37:52.148Z",
+  "title": "Kneser for codes over C implies the sharp Fermat lemma (L-gct-065 implies L-gct-061)",
+  "used_by": []
+}

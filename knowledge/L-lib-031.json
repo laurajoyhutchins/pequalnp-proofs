@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003730",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:504151a610c292d35f58f80703e051d0701937661d7aa1890bbb19ed8aea5c3d",
+    "lean_file": "lean/PEqualNP/Library/L031.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:26:11.777Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:01:15.525Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.Library.NPComplete PEqualNP.Search.SAT",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-031",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "SAT is in NP and every NP language reduces to it in polynomial time. Cook (STOC 1971) and Levin (Probl. Inf. Transm. 9(3), 1973).",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-031.2bbaf5543b5e.json",
+  "statement_hash": "sha256:8c105d7e8babcb2f3bbb8ec78a4025ead49fd5e549c79e033769b9e577f96ae9",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:26:11.777Z",
+  "title": "SAT is NP-complete (Cook-Levin)",
+  "used_by": [
+    "L-lib-032"
+  ]
+}

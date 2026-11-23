@@ -1,0 +1,2833 @@
+{
+  "nodes": [
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-001.d1ce60998a08.json",
+      "direct_users": [],
+      "id": "L-gct-001",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-001.d1ce60998a08.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-002.a73559784485.json",
+      "direct_users": [],
+      "id": "L-gct-002",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-002.a73559784485.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-003.d85a73104c76.json",
+      "direct_users": [],
+      "id": "L-gct-003",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-003.d85a73104c76.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-004.946d59f225f5.json",
+      "direct_users": [],
+      "id": "L-gct-004",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-004.946d59f225f5.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-005.adb47f0cab82.json",
+      "direct_users": [
+        "L-gct-022"
+      ],
+      "id": "L-gct-005",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-005.adb47f0cab82.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-006.22a142827cd4.json",
+      "direct_users": [],
+      "id": "L-gct-006",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-006.22a142827cd4.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-007.36c0e5ee0860.json",
+      "direct_users": [],
+      "id": "L-gct-007",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-007.36c0e5ee0860.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-008.90c759af5774.json",
+      "direct_users": [],
+      "id": "L-gct-008",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-008.90c759af5774.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-001140",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:979da7e3424fb8b9bdb8fb214fb2c341ffdcd3c345994dbd0980ddc0945c6d1c",
+        "lean_file": "lean/PEqualNP/Gct/L009.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-009.d621a1e8299b.json",
+      "direct_users": [
+        "L-gct-015"
+      ],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-009",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-009.d621a1e8299b.json",
+      "statement_hash": "sha256:cce0c8d58d4e36d3cebd22d65454dab6412ee7f7f304acf30938401436ab5a73",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Mignon and Ressayre: dc(perm_m) >= m^2/2",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-002852",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:8b422fda85a4b0d7199a8e5bf017dc13865c2cf6d3e05efa6d0e03c6b98b20d2",
+        "lean_file": "lean/PEqualNP/Gct/L010.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-010.cdf89605da55.json",
+      "direct_users": [
+        "L-gct-028"
+      ],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-010",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-010.cdf89605da55.json",
+      "statement_hash": "sha256:1dc9f6706e9f41f9dac92a96f867534fb4f1d6b899b2912a4e64c75e6cc5a603",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Landsberg, Manivel and Ressayre: border dc(perm_m) >= m^2/2",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-011.e0ee1c5dec3d.json",
+      "direct_users": [],
+      "id": "L-gct-011",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-011.e0ee1c5dec3d.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-012.a94db28fca30.json",
+      "direct_users": [
+        "L-gct-014"
+      ],
+      "id": "L-gct-012",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-012.a94db28fca30.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-013.e80826b6f846.json",
+      "direct_users": [],
+      "id": "L-gct-013",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-013.e80826b6f846.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-gct-012"
+      ],
+      "detail_path": "data/lemma/L-gct-014.f517f620882e.json",
+      "direct_users": [],
+      "id": "L-gct-014",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-014.f517f620882e.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-002069",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:08e0cf5aa674c3dc27220ec64d47c20edd4e3259f9e4c7b9e5a6ae24f2c6dfff",
+        "lean_file": "lean/PEqualNP/Gct/L015.lean"
+      },
+      "depends_on": [
+        "L-gct-009"
+      ],
+      "detail_path": "data/lemma/L-gct-015.599ea5e0b9f9.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-015",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-015.599ea5e0b9f9.json",
+      "statement_hash": "sha256:295e9746ab14201abf42f13d276dc06580457e75bae7369793e81533157bf34a",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Beyond Mignon-Ressayre by one: dc(perm_m) >= m^2/2 + 1 for m >= 3",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-016.a01048f1a34d.json",
+      "direct_users": [
+        "L-gct-017"
+      ],
+      "id": "L-gct-016",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-016.a01048f1a34d.json",
+      "status_code": "r",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-gct-016"
+      ],
+      "detail_path": "data/lemma/L-gct-017.8d4c21d01dd6.json",
+      "direct_users": [],
+      "id": "L-gct-017",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-017.8d4c21d01dd6.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-018.a92c48f44c28.json",
+      "direct_users": [],
+      "id": "L-gct-018",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-018.a92c48f44c28.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-019.f2caacd073b2.json",
+      "direct_users": [],
+      "id": "L-gct-019",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-019.f2caacd073b2.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-020.8d9214b689d5.json",
+      "direct_users": [
+        "L-gct-021"
+      ],
+      "id": "L-gct-020",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-020.8d9214b689d5.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-gct-020"
+      ],
+      "detail_path": "data/lemma/L-gct-021.90b0cbc74bb3.json",
+      "direct_users": [],
+      "id": "L-gct-021",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-021.90b0cbc74bb3.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-gct-005"
+      ],
+      "detail_path": "data/lemma/L-gct-022.3d07ffa4206d.json",
+      "direct_users": [],
+      "id": "L-gct-022",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-022.3d07ffa4206d.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-002425",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:97eea3ccbe77034aa11a7e53eeb4ee1a36f9c94fe1ba0ee19ea8f140c2111c29",
+        "lean_file": "lean/PEqualNP/Gct/L023.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-023.ea43550d8a58.json",
+      "direct_users": [
+        "L-gct-026"
+      ],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-023",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-023.ea43550d8a58.json",
+      "statement_hash": "sha256:9427f5a5bacd47744eb22d76aa58ef3850e985a7bdb20f134bef205d93cc5c8b",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Border determinantal expressions survive an affine substitution of the variables",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004126",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:5142b3f8bf0e4ed60d73bfc295f8bf140c85cb5cdf35972fb1a2ad7b4f9bb351",
+        "lean_file": "lean/PEqualNP/Gct/L024.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-024.bd385cb3afed.json",
+      "direct_users": [
+        "L-gct-026"
+      ],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-024",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-024.bd385cb3afed.json",
+      "statement_hash": "sha256:d0a02f41f26e9171796cf54065ce1c4153a2cb79504c0df023f72e7d93e47f8a",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "A smooth form of degree r in d variables has border determinantal complexity at least (r-1)(d-1)/11",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-025.1c9d55f173a7.json",
+      "direct_users": [
+        "L-gct-026"
+      ],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-025",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-025.1c9d55f173a7.json",
+      "statement_hash": "sha256:ea716167bffb051dc891479fee32ec76ed4ff0bed34ca1e819ddf87e7724fed1",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "The permanent of size 11k restricts to a smooth form of degree at least k/3 in about k^2/100 variables",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [
+        "L-gct-023",
+        "L-gct-024",
+        "L-gct-025"
+      ],
+      "detail_path": "data/lemma/L-gct-026.d43713ec6215.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-026",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-026.d43713ec6215.json",
+      "statement_hash": "sha256:236b7ed8740746de10e7d465b9f00ad51058326641f445e2046e5d76bb2d17af",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Cubic lower bound for border determinantal complexity of the permanent (unrefereed 2026 claim)",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-027.0dafc4776efc.json",
+      "direct_users": [],
+      "id": "L-gct-027",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-027.0dafc4776efc.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [
+        "L-gct-010"
+      ],
+      "detail_path": "data/lemma/L-gct-028.5766d98468b1.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-028",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-028.5766d98468b1.json",
+      "statement_hash": "sha256:c83b94453d5d1fd5628e2bba95bcdd88784671fd809297bde3f8b71af8072c38",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Border Mignon-Ressayre plus one: border dc(perm_m) >= m^2/2 + 1 for m >= 3 (open here)",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-029.11ecb60a3fe5.json",
+      "direct_users": [],
+      "id": "L-gct-029",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-029.11ecb60a3fe5.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-030.5d62a75a5181.json",
+      "direct_users": [],
+      "id": "L-gct-030",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-030.5d62a75a5181.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-031.72fa645e6e12.json",
+      "direct_users": [],
+      "id": "L-gct-031",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-031.72fa645e6e12.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-032.00d67ace43a1.json",
+      "direct_users": [],
+      "id": "L-gct-032",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-032.00d67ace43a1.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-033.3b818f7ebe61.json",
+      "direct_users": [],
+      "id": "L-gct-033",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-033.3b818f7ebe61.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-034.2d9c3458b6ae.json",
+      "direct_users": [],
+      "id": "L-gct-034",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-034.2d9c3458b6ae.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-003920",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:bfc065ff323392dc60d425fc9f50e65e8a1aac311d9657caa05883e506c92b0c",
+        "lean_file": "lean/PEqualNP/Gct/L035.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-035.c070190560e5.json",
+      "direct_users": [
+        "L-gct-064"
+      ],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-035",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-035.c070190560e5.json",
+      "statement_hash": "sha256:40652d06e9cbebe28415d06573f6308ad3b905c4e87e854347163a5ce9d2b9d6",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Subspace reduction: dc(perm_m) >= m^2 - k when some zero y of perm_m has no linear space of dim > k through it inside the hypersurface",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-036.fd08653c0dc2.json",
+      "direct_users": [],
+      "id": "L-gct-036",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-036.fd08653c0dc2.json",
+      "status_code": "w",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-037.a24f7053e91c.json",
+      "direct_users": [],
+      "id": "L-gct-037",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-037.a24f7053e91c.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-038.8648f157deba.json",
+      "direct_users": [],
+      "id": "L-gct-038",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-038.8648f157deba.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-039.778277deb9f9.json",
+      "direct_users": [],
+      "id": "L-gct-039",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-039.778277deb9f9.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-040.38e09b7aa36e.json",
+      "direct_users": [],
+      "id": "L-gct-040",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-040.38e09b7aa36e.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-041.1f257031423e.json",
+      "direct_users": [],
+      "id": "L-gct-041",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-041.1f257031423e.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-042.21b2fe5e16bd.json",
+      "direct_users": [],
+      "id": "L-gct-042",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-042.21b2fe5e16bd.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-043.ba8d18d49660.json",
+      "direct_users": [],
+      "id": "L-gct-043",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-043.ba8d18d49660.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-044.c3e32618d9a0.json",
+      "direct_users": [],
+      "id": "L-gct-044",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-044.c3e32618d9a0.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-003881",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:af981536e0b94ce849f0e8322c956a798661d8cdeb3098c67ce448a706168a99",
+        "lean_file": "lean/PEqualNP/Gct/L045.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-045.b537f500d3f1.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-045",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-045.b537f500d3f1.json",
+      "statement_hash": "sha256:e1f8f08b3b27a4fd9ce5dba1dc703a5a8cc908b334ead7d7dc354ecf96629a39",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "TARGET: border determinantal complexity of the power sum x_1^r + ... + x_d^r is at least (r-1)(d-1)/11",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-046.738aed37c053.json",
+      "direct_users": [],
+      "id": "L-gct-046",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-046.738aed37c053.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-047.460ca3429bf5.json",
+      "direct_users": [],
+      "id": "L-gct-047",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-047.460ca3429bf5.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-048.7bd5b7500138.json",
+      "direct_users": [],
+      "id": "L-gct-048",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-048.7bd5b7500138.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-049.5c392395f699.json",
+      "direct_users": [],
+      "id": "L-gct-049",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-049.5c392395f699.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004052",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:1871a590040007cccc375e0c59c1113f7887da0f6467b017dbc0c443b79f24e9",
+        "lean_file": "lean/PEqualNP/Gct/L050.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-050.8c28d86fc7ca.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-050",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-050.8c28d86fc7ca.json",
+      "statement_hash": "sha256:87688bc1344a16c6fff68e29467a86d0b3383fca428bd8f1366eaa0f4822887e",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Cone reduction: a linear space through a zero y inside the permanent hypersurface extends by the line of y",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004069",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:1ad80bf949d0e2498eb50617f5031b53bd008984a4525172199d36302e1a207d",
+        "lean_file": "lean/PEqualNP/Gct/L051.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-051.7796cebeb0ef.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-051",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-051.7796cebeb0ef.json",
+      "statement_hash": "sha256:bff8890b460fc0a2a40554fd6ea1eb758464e8dbdbd005201ce32b9bd1407693",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "First and second order conditions on a linear space through a zero y inside the permanent hypersurface",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004098",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:75d07dc38c8a2b9a0b5e8b4cd8266e1a61b42622dd202c9feb35666ea3eca3f7",
+        "lean_file": "lean/PEqualNP/Gct/L052.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-052.64cae515bffc.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-052",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-052.64cae515bffc.json",
+      "statement_hash": "sha256:7091e65d332c0327764937be2a9330660f74797ee46717033f82b9bacce3beed",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Every polarized Taylor coefficient of perm at y vanishes on a linear space through y inside the hypersurface",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-053.14123b9deb61.json",
+      "direct_users": [],
+      "id": "L-gct-053",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-053.14123b9deb61.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-054.efd2fefe29d7.json",
+      "direct_users": [],
+      "id": "L-gct-054",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-054.efd2fefe29d7.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-055.b889dc0fc70a.json",
+      "direct_users": [],
+      "id": "L-gct-055",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-055.b889dc0fc70a.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004671",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:2cf68c1bbc1dd68d2e625bd2c7ed0d8c92ce05b6070d274777c99ca125e7d9ed",
+        "lean_file": "lean/PEqualNP/Gct/L056.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-056.810545be2495.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-056",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-056.810545be2495.json",
+      "statement_hash": "sha256:e8d7b51263e6b330d6538bf31089ddf5670e2d91b275db264ffeb6a1095ab7c8",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Superquadratic: border determinantal complexity of perm_m is not O(m^2)",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004645",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:57f5334d5a3a5b595782dac73d439dbe722f2a2cb8f713fdefda9fc06adecdcb",
+        "lean_file": "lean/PEqualNP/Gct/L057.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-057.d0a831a50136.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-057",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-057.d0a831a50136.json",
+      "statement_hash": "sha256:c7ae86e0f53012b3ad95798b517c61594e2bfeece0a43f346be9cd5b101a0998",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "The permanent restricts to smooth forms with (r-1)(d-1) / m^2 unbounded",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-058.df2ded469da6.json",
+      "direct_users": [],
+      "id": "L-gct-058",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-058.df2ded469da6.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-059.175ee42dd00f.json",
+      "direct_users": [],
+      "id": "L-gct-059",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-059.175ee42dd00f.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-060.648bf4fc38b7.json",
+      "direct_users": [],
+      "id": "L-gct-060",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-060.648bf4fc38b7.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004553",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:1d77c245ff6c8b543747a4bf7e481983afac9157dd4e2218f15dfcdadd169d3c",
+        "lean_file": "lean/PEqualNP/Gct/L061.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-061.6fbfdf57518a.json",
+      "direct_users": [
+        "L-gct-064"
+      ],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-061",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-061.6fbfdf57518a.json",
+      "statement_hash": "sha256:ee4cccbdf2a91ebd8d11ff1a4ce924a9ac9ad2bb5d1f69050a96276e97454d40",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Fermat lemma: a complex linear space on which both power sums x1^2+...+xM^2 and x1^3+...+xM^3 vanish has dimension at most M/3",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004508",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:c423ead61642259d8a9b72a801e28136619453189e4b8b45e6ee6feb59121bac",
+        "lean_file": "lean/PEqualNP/Gct/L062.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-062.54ed27c0362c.json",
+      "direct_users": [
+        "L-gct-064"
+      ],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-062",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-062.54ed27c0362c.json",
+      "statement_hash": "sha256:e58d786b6e6bb08b73c8000cca86fe10b706cbf937a4be18ec7dbf81fe3d64a1",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Reduction at Sigma_m: l(Sigma_m) <= 4(m-1) + F, F the largest dim of a space of (m-1)x(m-1) matrices killing both power sums of the entries",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-063.c3ee96810c39.json",
+      "direct_users": [],
+      "id": "L-gct-063",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-063.c3ee96810c39.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004595",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:5361094717b144e183e0ee91c3782db1c6af85563beedea217608511ffa3117b",
+        "lean_file": "lean/PEqualNP/Gct/L064.lean"
+      },
+      "depends_on": [
+        "L-gct-035",
+        "L-gct-061",
+        "L-gct-062"
+      ],
+      "detail_path": "data/lemma/L-gct-064.ace56f3193e4.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-064",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-064.ace56f3193e4.json",
+      "statement_hash": "sha256:6003994ed311c11bbe8ee8e5ed8a5baf11e7d9463ad57ebaf1915b45484ed30c",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "TARGET: dc(perm_m) >= (2m^2 - 10m + 11)/3 over C, past Mignon-Ressayre m^2/2 for m >= 20",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004512",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:8f1f999a405faf066472e6d0ade55b95859206385f41b352fdd66c496aa08556",
+        "lean_file": "lean/PEqualNP/Gct/L065.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-065.5a55041c1aba.json",
+      "direct_users": [
+        "L-gct-067",
+        "L-gct-079",
+        "L-gct-163"
+      ],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-065",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-065.5a55041c1aba.json",
+      "statement_hash": "sha256:307830416be4da946ad7d944e89e14a101625b73649c8b5e58af9c065473bfe3",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Kneser for codes over C (Mirandola-Zemor 2015, Thm 3.3): dim S*T >= dim S + dim T - dim St(S*T)",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004472",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:55598f5557b6c813881d8153dc39979fb71c27e81fa424c93c905bb92334ca92",
+        "lean_file": "lean/PEqualNP/Gct/L066.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-066.3240a5e6f56a.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-066",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-066.3240a5e6f56a.json",
+      "statement_hash": "sha256:9a616d7230271f38c2fcb6633d4cb48942b7615228ef2dcce49f9605644c2413",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Kneser for codes over C implies the sharp Fermat lemma (L-gct-065 implies L-gct-061)",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004674",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:3d5aa82a34655f6afa3b0f9f76a1a9c5ac8b5d8392965643b3c22e93e15987e7",
+        "lean_file": "lean/PEqualNP/Gct/L067.lean"
+      },
+      "depends_on": [
+        "L-gct-065"
+      ],
+      "detail_path": "data/lemma/L-gct-067.f7e1f929f3ca.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-067",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-067.f7e1f929f3ca.json",
+      "statement_hash": "sha256:0190b06b1b37dd2484359a62b193f9bb57aaba2c3f4b63420cc2a718c7a8e7de",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Iterated Fermat lemma: a complex linear space on which the power sums p2, .., pk all vanish has dimension at most M/k",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004643",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:32caa62c259d8027fd6d02dbde9bd560ca0ff851dc1bc4c0fd40fed661cf634f",
+        "lean_file": "lean/PEqualNP/Gct/L068.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-068.927c821314db.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-068",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-068.927c821314db.json",
+      "statement_hash": "sha256:7d3e5a001fa61c5f90d185e8df37a6069f94a5e27c46eea9656b1cf9f9f04160",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Red team restatement of the permanent bound (explicit sum over permutations, matrices of affine polynomials, real inequality) is equivalent to L-gct-064",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004877",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:c89f14c9618a554d57a4a2fcdc3f7cd5f97e9f0be9942e4dd9f48190732532ee",
+        "lean_file": "lean/PEqualNP/Gct/L069.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-069.ccd1a33ac61d.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-069",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-069.ccd1a33ac61d.json",
+      "statement_hash": "sha256:3a7fda0b0c2baabddaa6061389a72e79342d28c79b35a60e988b2b96ad91b2aa",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Border subspace reduction: L-gct-035 holds for border determinantal expressions",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-004887",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:85cd2b8966d4e18aa75441d1eb4cd978bb433620e822556675f0d560012f2092",
+        "lean_file": "lean/PEqualNP/Gct/L070.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-070.38d323271cd6.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-070",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-070.38d323271cd6.json",
+      "statement_hash": "sha256:0abe93292f3b411bd4b327505f55fe8de1e809e846c6a39a94a29c08961aeae3",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "TARGET: border dc(perm_m) >= (2m^2 - 10m + 11)/3, the border form of L-gct-064",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-071.21111fa4a9bb.json",
+      "direct_users": [],
+      "id": "L-gct-071",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-071.21111fa4a9bb.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-072.72fe60f140c9.json",
+      "direct_users": [],
+      "id": "L-gct-072",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-072.72fe60f140c9.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-073.4a0aa47a999d.json",
+      "direct_users": [],
+      "id": "L-gct-073",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-073.4a0aa47a999d.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-074.c163e0d37c28.json",
+      "direct_users": [],
+      "id": "L-gct-074",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-074.c163e0d37c28.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-075.b7a0d5ec39d6.json",
+      "direct_users": [],
+      "id": "L-gct-075",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-075.b7a0d5ec39d6.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-076.5edc128f5d8c.json",
+      "direct_users": [],
+      "id": "L-gct-076",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-076.5edc128f5d8c.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-005932",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:4b40d51ce1d18acc12360f950ac8b67ede2cb8cb29f549a934bf4947881a78e9",
+        "lean_file": "lean/PEqualNP/Gct/L077.lean"
+      },
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-077.7d7a761736dd.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-077",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-077.7d7a761736dd.json",
+      "statement_hash": "sha256:cc4eae9205e84cef450713c8d51807dd81a11f616fa9cc6b7704cd49a88c5f9b",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Reduction of L-gct-037 to the level-space problem: a bound G on spaces where perm(J_n + t) = n! gives border dc(perm_(n+1)) >= (n+1)^2 - 2(n+1) + 1 - G",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-078.fa6e15ce1878.json",
+      "direct_users": [],
+      "id": "L-gct-078",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-078.fa6e15ce1878.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-006215",
+        "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:6c57f6131f85ad100140819951cf2b7609af51e7e6958628b30aef0e9992e371",
+        "lean_file": "lean/PEqualNP/Gct/L079.lean"
+      },
+      "depends_on": [
+        "L-gct-065"
+      ],
+      "detail_path": "data/lemma/L-gct-079.2c49e1e5e6ae.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-079",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-079.2c49e1e5e6ae.json",
+      "statement_hash": "sha256:207849050077b019bf9bac154bd152dc8a6f776f52f831a81f84d44443245454",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Product-type linear spaces through Sigma_m inside the permanent hypersurface have dimension at most 2m - 2",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-080.be3516651bbb.json",
+      "direct_users": [],
+      "id": "L-gct-080",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-080.be3516651bbb.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-081.aa8c77d04a51.json",
+      "direct_users": [],
+      "id": "L-gct-081",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-081.aa8c77d04a51.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-082.77b8a96d0995.json",
+      "direct_users": [],
+      "id": "L-gct-082",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-082.77b8a96d0995.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-083.040d272eaf58.json",
+      "direct_users": [],
+      "id": "L-gct-083",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-083.040d272eaf58.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-084.d2d6cf5c8aee.json",
+      "direct_users": [],
+      "id": "L-gct-084",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-084.d2d6cf5c8aee.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-085.c9ab413f15a5.json",
+      "direct_users": [],
+      "id": "L-gct-085",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-085.c9ab413f15a5.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-086.ab79638c0716.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-086",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-086.ab79638c0716.json",
+      "statement_hash": "sha256:9429f70f64a45d32002742eed77af5c0fa83dbafecc4b5bb4192dbb68bf578d8",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "TARGET: level spaces of the permanent at J are linear: dim L <= C n whenever perm(J_n + t) = n! on L",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-087.51350d78888f.json",
+      "direct_users": [],
+      "id": "L-gct-087",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-087.51350d78888f.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-088.2e86ff961763.json",
+      "direct_users": [],
+      "id": "L-gct-088",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-088.2e86ff961763.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-089.433626528b8c.json",
+      "direct_users": [],
+      "id": "L-gct-089",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-089.433626528b8c.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-090.6b6977a4f03b.json",
+      "direct_users": [],
+      "id": "L-gct-090",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-090.6b6977a4f03b.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-091.675421f3678e.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-091",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-091.675421f3678e.json",
+      "statement_hash": "sha256:5c7c687b7217d00979c97988b1f6503d3b14263cd0c60b9e13b1babf5c03fe8c",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "LS(4) = 5: every linear space of 4 x 4 complex matrices on which perm(J + t) = 24 has dimension at most 5",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-092.5f92e9c4a138.json",
+      "direct_users": [],
+      "id": "L-gct-092",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-092.5f92e9c4a138.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-093.326daa4591c5.json",
+      "direct_users": [],
+      "id": "L-gct-093",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-093.326daa4591c5.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-094.451b8cde7c8e.json",
+      "direct_users": [],
+      "id": "L-gct-094",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-094.451b8cde7c8e.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-095.12dfa696ed8f.json",
+      "direct_users": [],
+      "id": "L-gct-095",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-095.12dfa696ed8f.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-096.bed35702678f.json",
+      "direct_users": [],
+      "id": "L-gct-096",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-096.bed35702678f.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-097.b42353b0ffa0.json",
+      "direct_users": [
+        "L-gct-218"
+      ],
+      "id": "L-gct-097",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-097.b42353b0ffa0.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-098.269103d7ad8e.json",
+      "direct_users": [],
+      "id": "L-gct-098",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-098.269103d7ad8e.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-099.6332d7c869a3.json",
+      "direct_users": [],
+      "id": "L-gct-099",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-099.6332d7c869a3.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-100.647bcdc94aaa.json",
+      "direct_users": [],
+      "id": "L-gct-100",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-100.647bcdc94aaa.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-101.983165a65270.json",
+      "direct_users": [],
+      "id": "L-gct-101",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-101.983165a65270.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-102.3653d3a452b4.json",
+      "direct_users": [],
+      "id": "L-gct-102",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-102.3653d3a452b4.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-103.ba31805244c0.json",
+      "direct_users": [],
+      "id": "L-gct-103",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-103.ba31805244c0.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-104.118649f18a34.json",
+      "direct_users": [],
+      "id": "L-gct-104",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-104.118649f18a34.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-105.4e8f5a5c7a30.json",
+      "direct_users": [],
+      "id": "L-gct-105",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-105.4e8f5a5c7a30.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-106.e306b0188fcd.json",
+      "direct_users": [],
+      "id": "L-gct-106",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-106.e306b0188fcd.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-107.0483cd37502f.json",
+      "direct_users": [],
+      "id": "L-gct-107",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-107.0483cd37502f.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-108.7f7f11950ba1.json",
+      "direct_users": [],
+      "id": "L-gct-108",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-108.7f7f11950ba1.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-109.095cd867edc8.json",
+      "direct_users": [],
+      "id": "L-gct-109",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-109.095cd867edc8.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-110.0d10ff78fed3.json",
+      "direct_users": [],
+      "id": "L-gct-110",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-110.0d10ff78fed3.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-111.62ee1002588b.json",
+      "direct_users": [],
+      "id": "L-gct-111",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-111.62ee1002588b.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-112.7496aee5640c.json",
+      "direct_users": [],
+      "id": "L-gct-112",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-112.7496aee5640c.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-113.841167cfbb7a.json",
+      "direct_users": [],
+      "id": "L-gct-113",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-113.841167cfbb7a.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-114.402bbdce6146.json",
+      "direct_users": [],
+      "id": "L-gct-114",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-114.402bbdce6146.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-115.fab52fcae2a5.json",
+      "direct_users": [],
+      "id": "L-gct-115",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-115.fab52fcae2a5.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-116.dcb59ad146b2.json",
+      "direct_users": [],
+      "id": "L-gct-116",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-116.dcb59ad146b2.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-117.5c34a0a7061a.json",
+      "direct_users": [],
+      "id": "L-gct-117",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-117.5c34a0a7061a.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-118.b99e64d10080.json",
+      "direct_users": [],
+      "id": "L-gct-118",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-118.b99e64d10080.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-119.f5decb277025.json",
+      "direct_users": [],
+      "id": "L-gct-119",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-119.f5decb277025.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-120.96817bf2de8f.json",
+      "direct_users": [],
+      "id": "L-gct-120",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-120.96817bf2de8f.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-121.b7c9e3b796b1.json",
+      "direct_users": [],
+      "id": "L-gct-121",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-121.b7c9e3b796b1.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-122.5fc59c665e86.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-122",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-122.5fc59c665e86.json",
+      "statement_hash": "sha256:688ff0c18a43e164e498d53b33677ebd9aa4bd5076898c7f503ef58091d07635",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Lemma K: a complex linear space on which the power sums p2 and p4 both vanish has dimension at most M/3 (p4, not p3: distinct from L-gct-061)",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-123.bb7c664320b2.json",
+      "direct_users": [],
+      "id": "L-gct-123",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-123.bb7c664320b2.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-124.110d70756232.json",
+      "direct_users": [],
+      "id": "L-gct-124",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-124.110d70756232.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-125.dd5f44d71bf6.json",
+      "direct_users": [],
+      "id": "L-gct-125",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-125.dd5f44d71bf6.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-126.a261b0eb7f17.json",
+      "direct_users": [],
+      "id": "L-gct-126",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-126.a261b0eb7f17.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-127.b7b32d996a48.json",
+      "direct_users": [],
+      "id": "L-gct-127",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-127.b7b32d996a48.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-128.0f4bb192aadf.json",
+      "direct_users": [],
+      "id": "L-gct-128",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-128.0f4bb192aadf.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-129.9a4be82c08f2.json",
+      "direct_users": [],
+      "id": "L-gct-129",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-129.9a4be82c08f2.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-130.1aff1b8a701b.json",
+      "direct_users": [],
+      "id": "L-gct-130",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-130.1aff1b8a701b.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-131.4e1be1e428a9.json",
+      "direct_users": [],
+      "id": "L-gct-131",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-131.4e1be1e428a9.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-132.fb96ea1813fd.json",
+      "direct_users": [],
+      "id": "L-gct-132",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-132.fb96ea1813fd.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-133.1cf78e6da2cc.json",
+      "direct_users": [],
+      "id": "L-gct-133",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-133.1cf78e6da2cc.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-134.95714fdc1a38.json",
+      "direct_users": [],
+      "id": "L-gct-134",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-134.95714fdc1a38.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-135.ca56c0321e9a.json",
+      "direct_users": [],
+      "id": "L-gct-135",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-135.ca56c0321e9a.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-136.4f4084a0874c.json",
+      "direct_users": [],
+      "id": "L-gct-136",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-136.4f4084a0874c.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-137.668c1d7e9fb8.json",
+      "direct_users": [],
+      "id": "L-gct-137",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-137.668c1d7e9fb8.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-138.b5a44f685e8c.json",
+      "direct_users": [],
+      "id": "L-gct-138",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-138.b5a44f685e8c.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-139.26bb43e17414.json",
+      "direct_users": [],
+      "id": "L-gct-139",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-139.26bb43e17414.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-140.737ed484a23d.json",
+      "direct_users": [],
+      "id": "L-gct-140",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-140.737ed484a23d.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-141.95572645af66.json",
+      "direct_users": [],
+      "id": "L-gct-141",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-141.95572645af66.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-142.7546c4c2523a.json",
+      "direct_users": [],
+      "id": "L-gct-142",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-142.7546c4c2523a.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-143.2df0bfddfe80.json",
+      "direct_users": [],
+      "id": "L-gct-143",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-143.2df0bfddfe80.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-144.d272c5f224b2.json",
+      "direct_users": [],
+      "id": "L-gct-144",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-144.d272c5f224b2.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-145.c43547acafdd.json",
+      "direct_users": [],
+      "id": "L-gct-145",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-145.c43547acafdd.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-146.beef7ee6d765.json",
+      "direct_users": [],
+      "id": "L-gct-146",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-146.beef7ee6d765.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-147.29c553d4a920.json",
+      "direct_users": [],
+      "id": "L-gct-147",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-147.29c553d4a920.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-148.8bcf5d56d140.json",
+      "direct_users": [],
+      "id": "L-gct-148",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-148.8bcf5d56d140.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-149.879797ac776f.json",
+      "direct_users": [],
+      "id": "L-gct-149",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-149.879797ac776f.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-150.5a424fa4fd6a.json",
+      "direct_users": [],
+      "id": "L-gct-150",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-150.5a424fa4fd6a.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-151.0fb8a4886d26.json",
+      "direct_users": [],
+      "id": "L-gct-151",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-151.0fb8a4886d26.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-152.233ebd08c200.json",
+      "direct_users": [],
+      "id": "L-gct-152",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-152.233ebd08c200.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-153.e2b05e58d657.json",
+      "direct_users": [],
+      "id": "L-gct-153",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-153.e2b05e58d657.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-154.8b5a8cb8dfaf.json",
+      "direct_users": [],
+      "id": "L-gct-154",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-154.8b5a8cb8dfaf.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-155.2cb6e61ca8e8.json",
+      "direct_users": [],
+      "id": "L-gct-155",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-155.2cb6e61ca8e8.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-156.6d29049054ad.json",
+      "direct_users": [],
+      "id": "L-gct-156",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-156.6d29049054ad.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-157.8e02a0bd6f80.json",
+      "direct_users": [
+        "L-gct-178"
+      ],
+      "id": "L-gct-157",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-157.8e02a0bd6f80.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-158.86df42687af3.json",
+      "direct_users": [],
+      "id": "L-gct-158",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-158.86df42687af3.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-159.1d95e4654063.json",
+      "direct_users": [
+        "L-gct-160"
+      ],
+      "id": "L-gct-159",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-159.1d95e4654063.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-gct-159"
+      ],
+      "detail_path": "data/lemma/L-gct-160.62c489e5a40c.json",
+      "direct_users": [],
+      "id": "L-gct-160",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-160.62c489e5a40c.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-161.505765683990.json",
+      "direct_users": [],
+      "id": "L-gct-161",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-161.505765683990.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-162.e1c469c765a3.json",
+      "direct_users": [],
+      "id": "L-gct-162",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-162.e1c469c765a3.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": {
+        "checker_run_id": "run-010213",
+        "checker_version": "check-lean 3, Lean 4.36.0, Mathlib fc4f59e577",
+        "content_hash": "sha256:8cc14922a73ddf3bf6ded62e47b6efe856d2d7ff1ba44fb510109375c8191437",
+        "lean_file": "lean/PEqualNP/Gct/L163.lean"
+      },
+      "depends_on": [
+        "L-gct-065"
+      ],
+      "detail_path": "data/lemma/L-gct-163.c8d7f38e9740.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-163",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-163.c8d7f38e9740.json",
+      "statement_hash": "sha256:ed25eedfaef621f5d08ce49139fb420a39ed1a2d14781ac117524fc9e2af8abd",
+      "statement_hash_verified": true,
+      "status": "checked",
+      "status_code": "c",
+      "title": "Three subspaces: A + B isotropic, C orthogonal to A, B and A*B, and the fourth power sum zero on A, give dim A + dim B + dim C <= m",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-164.e04e946f2c9a.json",
+      "direct_users": [],
+      "id": "L-gct-164",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-164.e04e946f2c9a.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-165.df372d93c9cb.json",
+      "direct_users": [],
+      "id": "L-gct-165",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-165.df372d93c9cb.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-166.32e64009de94.json",
+      "direct_users": [],
+      "id": "L-gct-166",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-166.32e64009de94.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-167.876bf9fde8a3.json",
+      "direct_users": [],
+      "id": "L-gct-167",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-167.876bf9fde8a3.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-168.97f122b3feec.json",
+      "direct_users": [],
+      "id": "L-gct-168",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-168.97f122b3feec.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-169.3e683bb146b5.json",
+      "direct_users": [],
+      "id": "L-gct-169",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-169.3e683bb146b5.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-170.7998e67547c5.json",
+      "direct_users": [],
+      "id": "L-gct-170",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-170.7998e67547c5.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-171.579ca67412c8.json",
+      "direct_users": [],
+      "id": "L-gct-171",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-171.579ca67412c8.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-172.bd9f2d340d6c.json",
+      "direct_users": [],
+      "id": "L-gct-172",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-172.bd9f2d340d6c.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-173.3f7a80f591f1.json",
+      "direct_users": [],
+      "id": "L-gct-173",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-173.3f7a80f591f1.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-174.711afc321ef4.json",
+      "direct_users": [],
+      "id": "L-gct-174",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-174.711afc321ef4.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-175.0cdc07cc2ac3.json",
+      "direct_users": [
+        "L-gct-177"
+      ],
+      "id": "L-gct-175",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-175.0cdc07cc2ac3.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-176.1d24a0323291.json",
+      "direct_users": [
+        "L-gct-177"
+      ],
+      "id": "L-gct-176",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-176.1d24a0323291.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-gct-175",
+        "L-gct-176"
+      ],
+      "detail_path": "data/lemma/L-gct-177.080c7910ffe3.json",
+      "direct_users": [],
+      "id": "L-gct-177",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-177.080c7910ffe3.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-gct-157"
+      ],
+      "detail_path": "data/lemma/L-gct-178.813899277b8f.json",
+      "direct_users": [],
+      "id": "L-gct-178",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-178.813899277b8f.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-179.d9e83dd66929.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-179",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-179.d9e83dd66929.json",
+      "statement_hash": "sha256:19a1f1d8272ad43e7c3d9128bc60cea056a43de09e38e57f681ae3fe87a3fed0",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Search: a level space of 4 x 5 complex matrices of dimension 7 (one above the hook)",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-180.d3a303e68b0b.json",
+      "direct_users": [],
+      "id": "L-gct-180",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-180.d3a303e68b0b.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-181.155ff2b52b44.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-181",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-181.155ff2b52b44.json",
+      "statement_hash": "sha256:328ac0a5436afcf86fa8dfda4fcccfa63922a3c7eca7f7f28a5fb5083f372e72",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "SEARCH: a level space of 4 x 5 matrices of dimension at least 8 (would refute the bound p + q - 2 at four rows)",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-182.5605f3674b37.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-182",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-182.5605f3674b37.json",
+      "statement_hash": "sha256:695ea30b3ad272e497b2ab13984ef76da8227abc43964316253e4610e9e15bc3",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "SEARCH: a doubly centred level space of 4 x 4 matrices of dimension 4 (open over C; finite-field evidence says 3 is the maximum)",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-183.b4468ede946d.json",
+      "direct_users": [],
+      "id": "L-gct-183",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-183.b4468ede946d.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-184.aae5bda67d64.json",
+      "direct_users": [],
+      "id": "L-gct-184",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-184.aae5bda67d64.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-185.8926cb8a3f90.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-185",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-185.8926cb8a3f90.json",
+      "statement_hash": "sha256:912cb41460c15fbbb9c5555fe3341454e4c3030e556c567c43b6406c5ca51be6",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Search: a level space of 4 x 4 complex matrices of dimension 6 (one above the best on our record)",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-186.03d6117bb4f3.json",
+      "direct_users": [],
+      "id": "L-gct-186",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-186.03d6117bb4f3.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-187.525690ae2fa1.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-187",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-187.525690ae2fa1.json",
+      "statement_hash": "sha256:9faaac48c5b53da71df7038e176e42171f9fc2921679b7400e406bbfe93fadc5",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Search: a level space of 4 x 6 complex matrices of dimension 8 (one above the best on our record)",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-188.59c4c0dec6e9.json",
+      "direct_users": [],
+      "id": "L-gct-188",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-188.59c4c0dec6e9.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-189.a4419a7f1230.json",
+      "direct_users": [],
+      "id": "L-gct-189",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-189.a4419a7f1230.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-190.1b980c6806d5.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-190",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-190.1b980c6806d5.json",
+      "statement_hash": "sha256:96c6fb425df96e9962424810bbc334034e4fa8c2f51bc5e25a8e72b7e5761b55",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Search: a level space of 5 x 5 complex matrices of dimension 8 (one above the best on our record)",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-191.469780230cb7.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-191",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-191.469780230cb7.json",
+      "statement_hash": "sha256:948a214d65f3e6914a9955c6bbb35c9bd153fa5135aaa4c6037a2f2d6833c253",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Search: a level space of 4 x 6 complex matrices with zero row sums of dimension 8",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-192.646c72dde6a6.json",
+      "direct_users": [],
+      "id": "L-gct-192",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-192.646c72dde6a6.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-193.ee0d4d1defc9.json",
+      "direct_users": [],
+      "id": "L-gct-193",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-193.ee0d4d1defc9.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-194.8a807b0c69b5.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-194",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-194.8a807b0c69b5.json",
+      "statement_hash": "sha256:c7532e42563518f5e28a51e0f48c9f8e8b1a2a07e8f42e6deb5adfdd03d30c17",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Witness to formalize: the 4 x 4 level circulant with the appended row (1, -1, 0, 0) is a level plane at 5 x 4",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-195.5749c5334e30.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-195",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-195.5749c5334e30.json",
+      "statement_hash": "sha256:05fc2543ebd58904aa333aabf444d53a3c449ce3e031d222d74f8d0ada23de58",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Small case at four rows: a level space of 4 x 6 matrices has dimension at most 8 = p + q - 2",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-196.9bce4c02999c.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-196",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-196.9bce4c02999c.json",
+      "statement_hash": "sha256:7af282dae6e4e95dedb70095ccdecea58de49acc23de0218a37c6b84bc1e242a",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Small case at four rows: a level space of 4 x 7 matrices has dimension at most 9 = p + q - 2",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-197.a043431819e5.json",
+      "direct_users": [],
+      "id": "L-gct-197",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-197.a043431819e5.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-198.e38d8a79cfe1.json",
+      "direct_users": [],
+      "id": "L-gct-198",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-198.e38d8a79cfe1.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-199.228457a88649.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-199",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-199.228457a88649.json",
+      "statement_hash": "sha256:6db1b5d6d23e31eb53742fd066c80a6502a84c97d6c8d913513102334e094bdc",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "SEARCH: a doubly centred level space of 4 x 5 matrices of dimension 5 (open; none known)",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-200.33c375b8cf63.json",
+      "direct_users": [],
+      "id": "L-gct-200",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-200.33c375b8cf63.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-201.45a6a58e4abd.json",
+      "direct_users": [],
+      "id": "L-gct-201",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-201.45a6a58e4abd.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-202.2e067d9f1e25.json",
+      "direct_users": [],
+      "id": "L-gct-202",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-202.2e067d9f1e25.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-203.dca7910bf3f7.json",
+      "direct_users": [],
+      "id": "L-gct-203",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-203.dca7910bf3f7.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-204.06e56f0f880c.json",
+      "direct_users": [],
+      "id": "L-gct-204",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-204.06e56f0f880c.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-205.1f0915e10186.json",
+      "direct_users": [],
+      "id": "L-gct-205",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-205.1f0915e10186.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-206.fe08ac602f85.json",
+      "direct_users": [],
+      "id": "L-gct-206",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-206.fe08ac602f85.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-207.261a828a7279.json",
+      "direct_users": [],
+      "id": "L-gct-207",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-207.261a828a7279.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-208.d850fc7a4a08.json",
+      "direct_users": [],
+      "id": "L-gct-208",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-208.d850fc7a4a08.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-209.0dc43fcb2fdf.json",
+      "direct_users": [],
+      "id": "L-gct-209",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-209.0dc43fcb2fdf.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-210.bf7fadd4200c.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-210",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-210.bf7fadd4200c.json",
+      "statement_hash": "sha256:ba2a3b52329ab6065a654d8724d64573931cefe37f0e74efbacbe22d159d52fa",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Small case at five rows: a level space of 5 x 5 complex matrices has dimension at most 8",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-211.538772367320.json",
+      "direct_users": [],
+      "id": "L-gct-211",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-211.538772367320.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-212.08f881cea8bc.json",
+      "direct_users": [],
+      "id": "L-gct-212",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-212.08f881cea8bc.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-213.c9097905aef9.json",
+      "direct_users": [],
+      "id": "L-gct-213",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-213.c9097905aef9.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-214.4abf028c80a2.json",
+      "direct_users": [],
+      "id": "L-gct-214",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-214.4abf028c80a2.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-215.d64568b615b4.json",
+      "direct_users": [],
+      "id": "L-gct-215",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-215.d64568b615b4.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-216.00637eff9a1c.json",
+      "direct_users": [],
+      "id": "L-gct-216",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-216.00637eff9a1c.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-217.7f30a019f89d.json",
+      "direct_users": [],
+      "id": "L-gct-217",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-217.7f30a019f89d.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-gct-097"
+      ],
+      "detail_path": "data/lemma/L-gct-218.041156fd2322.json",
+      "direct_users": [],
+      "id": "L-gct-218",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-218.041156fd2322.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-219.990bbef6f867.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-219",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-219.990bbef6f867.json",
+      "statement_hash": "sha256:6531b5ee804337f73525ac37bc65d7ebe7a0c354c99c97ff5dfd61d01fe95d02",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "No linear space of 4 x 5 complex matrices of dimension 7 keeps the sum over row-to-column injections of the product of (1 + entry) equal to 120",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-220.938b34ec0768.json",
+      "direct_users": [],
+      "id": "L-gct-220",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-220.938b34ec0768.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-221.3217982a7622.json",
+      "direct_users": [],
+      "id": "L-gct-221",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-221.3217982a7622.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-222.0c3c2b760323.json",
+      "direct_users": [],
+      "id": "L-gct-222",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-222.0c3c2b760323.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-223.c66211704da8.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-223",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-223.c66211704da8.json",
+      "statement_hash": "sha256:df576d8b89fd9b9eec5dc6112a7188077d9429e81bf9002cf2384b1778ea5e4d",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Probe: a two-dimensional space of 6 x 6 circulant complex matrices keeps the permanent of the all-ones matrix plus it at 720",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-224.7e4208a60f63.json",
+      "direct_users": [],
+      "id": "L-gct-224",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-224.7e4208a60f63.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-225.2d43aa63216d.json",
+      "direct_users": [],
+      "id": "L-gct-225",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-225.2d43aa63216d.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-226.c00f3aae49de.json",
+      "direct_users": [],
+      "id": "L-gct-226",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-226.c00f3aae49de.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-227.2b8c696a1d40.json",
+      "direct_users": [],
+      "id": "L-gct-227",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-227.2b8c696a1d40.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-228.e335a2903dfa.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-gct-228",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-228.e335a2903dfa.json",
+      "statement_hash": "sha256:8c8222d228f4a15610f94c774d535e8396a4353b51d97f692f75156fd7f6d201",
+      "statement_hash_verified": true,
+      "status": "conjecture",
+      "status_code": "j",
+      "title": "Probe: over the field with 5 elements, a four-dimensional space of 3 x 3 matrices keeps the permanent of the all-ones matrix plus it at 6",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-229.a7d44fe52423.json",
+      "direct_users": [],
+      "id": "L-gct-229",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-229.a7d44fe52423.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-230.28621f526a51.json",
+      "direct_users": [],
+      "id": "L-gct-230",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-230.28621f526a51.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-231.c93684f58e76.json",
+      "direct_users": [],
+      "id": "L-gct-231",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-231.c93684f58e76.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-gct-232.00275f86a7fa.json",
+      "direct_users": [],
+      "id": "L-gct-232",
+      "program": "gct",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-232.00275f86a7fa.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    }
+  ],
+  "program_key": "gct"
+}

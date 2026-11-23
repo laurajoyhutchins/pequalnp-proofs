@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n m : ℕ) (S : Fin m → Finset (Fin n)), (∀ i : Fin m, 2 ≤ (S i).card) → (∀ i j : Fin m, i ≠ j → (S i ∩ S j).card ≤ 1) → ∀ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin m → ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) → (∃ ι : Fin 1 → Fin gates.length, ∀ i : Fin gates.length, (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → ∃ j : Fin 1, ι j = i) → (∀ (w : Fin m) (x : Fin n → Bool), PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out w⟩ (List.ofFn x) = decide (∃ v ∈ S w, x v = true)) → (∑ i : Fin m, ((S i).card - 1)) ≤ gates.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-951",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Conjecture, no argument held. Let S_1..S_m be sets of inputs, each of at least 2 inputs, two sharing at most one input. Every list of AND, OR and NOT gates of at most two wires, with at most one NOT gate, whose outputs give the OR of each set on every input, has at least the sum over i of (|S_i| - 1) gates, the size of the plain circuit without NOT gates. Small cases computed, not checked: no saving in any family decided so far.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-951.ca05b261e34c.json",
+  "statement_hash": "sha256:dad05b71ae3ef326a795b4cd018b38e4b1206341aca896f98980c00a30728f08",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T17:11:28.151Z",
+  "title": "One NOT gate saves nothing on Boolean sums of sets meeting pairwise in at most one point: at least the sum of (set size - 1) gates",
+  "used_by": []
+}

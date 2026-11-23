@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004581",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:5c0fa12ac229398ead6736c96fdfe038c1cc40205f68a000c0120f9d6ba03774",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L053.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:46:30.335Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:39:10.297Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m N : ℕ) (G : PEqualNP.Expanders.BipGraph m N) (s b D : ℕ) (π : List (PEqualNP.ProofComplexity.LinClause (Fin m × Fin N))), PEqualNP.Expanders.IsBdryExpander G s 2 → PEqualNP.Expanders.LeftDegLe G b → 2 * (D + 1) ≤ s → 32 ≤ D → 2 * b ≤ D → PEqualNP.ProofComplexity.IsLinRefutation (PEqualNP.ProofComplexity.PHP m N) π → Real.exp (((D : ℝ) ^ 2) / (256 * ((b : ℝ) * (m : ℝ)))) ≤ 2 * (π.length : ℝ)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-053",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For ANY numbers of pigeons m and holes N: if some bipartite graph on them has left degree at most b and every set of at most s pigeons has twice its size in unique neighbours, with 2(D+1) <= s, D >= 32 and D >= 2b, then every dag-like Res(+) refutation of the pigeonhole formula PHP m N has at least exp(D^2 / (256 b m)) / 2 lines. What the checked chain (L-pcx-042, 046, 047) gives as a function of m: it is empty once m passes about D^2, so near m = n^2. The baseline for the weak pigeonhole target.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-053.d72fd65fa801.json",
+  "statement_hash": "sha256:7a8df425f00346e6677106ffacb7f90fc920afbfff2ed7ce6b8c46ea15ee0ee0",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:46:30.335Z",
+  "title": "Baseline for weak pigeonhole: a Res(+) refutation of PHP m N has at least exp(D^2 / (256 b m)) / 2 lines when some degree-b graph expands sets up to 2(D+1)",
+  "used_by": []
+}

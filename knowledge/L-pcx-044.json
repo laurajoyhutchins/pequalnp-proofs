@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003131",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:413499bb4b70283d28309402828321b2358b9304590e4d404763f6826580bb7b",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L044.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T15:18:45.777Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:17:02.021Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (σ : Type) [Fintype σ] [DecidableEq σ] (Z : Submodule (ZMod 2) (MvPolynomial σ (ZMod 2))) (K k : ℕ), (∀ p ∈ Z, p.totalDegree < K → ∀ i : σ, MvPolynomial.X i * p ∈ Z) → (∀ (d : σ →₀ ℕ) (i : σ), d.degree + 2 ≤ K → MvPolynomial.monomial d (1 : ZMod 2) * (MvPolynomial.X i ^ 2 - MvPolynomial.X i) ∈ Z) → k + 1 ≤ K → Module.finrank (ZMod 2) ((MvPolynomial.restrictTotalDegree σ (ZMod 2) (k + 1)).map Z.mkQ) * (∑ j ∈ Finset.range (k + 1), (Fintype.card σ).choose j) ≤ Module.finrank (ZMod 2) ((MvPolynomial.restrictTotalDegree σ (ZMod 2) k).map Z.mkQ) * (∑ j ∈ Finset.range (k + 2), (Fintype.card σ).choose j)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-044",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For a subspace Z of F2 polynomials closed under multiplication by a variable below degree K and containing the monomial multiples of x^2 - x up to degree K: c(k+1) N(k) is at most c(k) N(k+1) for k + 1 at most K, where c(k) is the dimension of degree-k polynomials modulo Z and N(k) counts multilinear monomials of degree at most k. Lemma 4.1 of the unrefereed arXiv:2610.00837; a link of L-pcx-042.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-044.5df88f6a1d58.json",
+  "statement_hash": "sha256:05f7498fd10ae9d0c43646c83660c45f74d2d8f35a5082ea3c09c55d41d50190",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T15:18:45.777Z",
+  "title": "Monotone normalised rank: modulo a variable-closed subspace containing the Boolean multiples, dim(V_k / Z) / N(k) does not increase with k",
+  "used_by": []
+}

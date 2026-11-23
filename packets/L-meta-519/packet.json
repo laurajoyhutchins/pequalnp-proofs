@@ -1,28 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-519",
-  "file": "lean/PEqualNP/Outside/L_meta_519.lean",
-  "module": "PEqualNP.Outside.L_meta_519",
-  "statement": "∀ (n k s : ℕ) (G : SimpleGraph (Fin n)), (∀ v : Fin n, (G.neighborSet v).ncard ≤ 3) → (∀ (v : Fin n) (c : G.Walk v v), c.IsCycle → 7 ≤ c.length) → (∃ i j : Fin n, G.Adj i j) → (∀ T : Finset (Fin n), (∀ i j : Fin n, G.Adj i j → i ∈ T ∨ j ∈ T) → k ≤ T.card) → PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => @decide (∃ i j : Fin n, G.Adj i j ∧ x i = true ∧ x j = true) (Classical.propDecidable _)) s → G.edgeSet.ncard + k ≤ s + 1",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "On graphs of maximum degree 3 with every cycle of length at least 7: every circuit of AND, OR, NOT gates for 'both ends of some edge are true' has at least edges plus cover number minus one gates",
-    "context": "Hard and open. The checked proof restricts only vertices of degree at most 2 and pays at most three gates per restricted variable; it stops at a vertex with three neighbours. What is missing is one new paying step at such a vertex, chosen from a least circuit. Dead: a finite table of local patterns at degree 3; composition of exact sizes. The statement needs only the pinned library and the circuit-size definition. Conjecture: it may be false. Prove exactly the recorded statement, no sorry, no new axiom. Put every declaration of your file inside its own namespace.",
-    "shard_spec": "0: a new paying step at a vertex with three neighbours, chosen from a least circuit\n1: refute: search graphs of maximum degree 3 with all cycles of length at least 7 for a circuit below the count\n2: the case of two adjacent vertices of degree 3\n3: the case of a thread with exactly two inner vertices between vertices of degree 3",
-    "dead": [],
-    "unlocks": "Why the attack needs it: this is the open statement of the main line; it removes the distance condition from the checked bound; needed by seat-meta-2"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -90,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -425,10 +404,48 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "Hard and open. The checked proof restricts only vertices of degree at most 2 and pays at most three gates per restricted variable; it stops at a vertex with three neighbours. What is missing is one new paying step at such a vertex, chosen from a least circuit. Dead: a finite table of local patterns at degree 3; composition of exact sizes. The statement needs only the pinned library and the circuit-size definition. Conjecture: it may be false. Prove exactly the recorded statement, no sorry, no new axiom. Put every declaration of your file inside its own namespace.",
+    "dead": [],
+    "shard_spec": "0: a new paying step at a vertex with three neighbours, chosen from a least circuit\n1: refute: search graphs of maximum degree 3 with all cycles of length at least 7 for a circuit below the count\n2: the case of two adjacent vertices of degree 3\n3: the case of a thread with exactly two inner vertices between vertices of degree 3",
+    "title": "On graphs of maximum degree 3 with every cycle of length at least 7: every circuit of AND, OR, NOT gates for 'both ends of some edge are true' has at least edges plus cover number minus one gates",
+    "unlocks": "Why the attack needs it: this is the open statement of the main line; it removes the distance condition from the checked bound; needed by seat-meta-2"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_519.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-519",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_519",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Let G be a graph on n vertices with at least one edge in which every vertex has at most 3 neighbours and every cycle has length at least 7, with no condition on distances between vertices of degree 3, and let k be at most the size of every vertex cover of G. If a circuit of AND, OR and NOT gates of fan-in at most two, every gate counted, with at most s gates computes the function true exactly when both ends of some edge are true, then |E| + k <= s + 1. It is a conjecture and may be false.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-519.ed26ac472458.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T08:32:43.033Z",
+    "title": "Edge function on graphs of maximum degree 3 with every cycle of length at least 7: at least edges plus cover number minus one gates"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ (n k s : ℕ) (G : SimpleGraph (Fin n)), (∀ v : Fin n, (G.neighborSet v).ncard ≤ 3) → (∀ (v : Fin n) (c : G.Walk v v), c.IsCycle → 7 ≤ c.length) → (∃ i j : Fin n, G.Adj i j) → (∀ T : Finset (Fin n), (∀ i j : Fin n, G.Adj i j → i ∈ T ∨ j ∈ T) → k ≤ T.card) → PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => @decide (∃ i j : Fin n, G.Adj i j ∧ x i = true ∧ x j = true) (Classical.propDecidable _)) s → G.edgeSet.ncard + k ≤ s + 1",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (N Jn : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (Ckt : PEqualNP.CircuitLowerBounds.Circuit) (fa fb : Fin Jn → ℕ) (Wl : Fin Jn → Fin N), (∀ p p' l l' : Fin N, p ≠ p' → l ≠ l' → ¬ (I p l ∧ I p l' ∧ I p' l ∧ I p' l')) → PEqualNP.MetaComplexity.Monotone2 Ckt → (∀ jd : Fin Jn, (Ckt.lineDegrees (N + N) (Finset.Ico N (N + N))).getD (fa jd) 0 ≤ 2 ∧ (Ckt.lineDegrees (N + N) (Finset.Ico N (N + N))).getD (fb jd) 0 ≤ 2) → (∀ (jb : Fin Jn) (zz : Fin (N + N) → Bool), (Ckt.wires (List.ofFn zz)).getD (fa jb) false = true → (Ckt.wires (List.ofFn zz)).getD (fb jb) false = true → ∃ (pa lb : Fin N), I pa lb ∧ zz (Fin.castAdd N pa) = true ∧ zz (Fin.natAdd N lb) = true) → (∀ (js : Fin Jn) (zs : Fin (N + N) → Bool), (∀ ps : Fin N, I ps (Wl js) → zs (Fin.castAdd N ps) = false) → (Ckt.wires (List.ofFn zs)).getD (fa js) false = true → ∃ (pc lc : Fin N), I pc lc ∧ zs (Fin.castAdd N pc) = true ∧ zs (Fin.natAdd N lc) = true) → (Finset.univ.filter (fun e2 : Fin N × Fin N => I e2.1 e2.2 ∧ ∃ jc : Fin Jn, I e2.1 (Wl jc) ∧ (Ckt.wires (List.ofFn (fun vq : Fin (N + N) => if vq = Fin.castAdd N e2.1 then true else if vq = Fin.natAdd N e2.2 then true else false))).getD (fa jc) false = true ∧ (Ckt.wires (List.ofFn (fun vq : Fin (N + N) => if vq = Fin.castAdd N e2.1 then true else if vq = Fin.natAdd N e2.2 then true else false))).getD (fb jc) false = true ∧ (Ckt.wires (List.ofFn (fun vp : Fin (N + N) => decide (vp = Fin.castAdd N e2.1)))).getD (fa jc) false = false ∧ (Ckt.wires (List.ofFn (fun vp : Fin (N + N) => decide (vp = Fin.castAdd N e2.1)))).getD (fb jc) false = false)).card ≤ 192 * (Ckt.size + Jn) + 8 * N",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1385",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "N points, N lines, no two points on two common lines; inputs points then lines; line-degree: line 1, point 0, AND sum, OR max. In an AND/OR circuit of fan-in at most two with s gates, let (a_j, b_j) be J wire pairs of line-degree at most 2, each a_j AND b_j true only where an incident pair is on, and l_j lines, a_j true at an input with every point of l_j off only if an incident pair is on. The incident pairs (p, w) such that for some j, p is on l_j and a_j, b_j are true with p and w alone on and false with p alone on, are at most 192 (s + J) + 8N. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1385.db13df00064d.json",
+  "statement_hash": "sha256:cefdf8d4bdb18f62d3647fcecfd8bd98aef6e5a0692ec63fdb2d3ce57d3fafe1",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T21:49:21.863Z",
+  "title": "Class P at line-degree 4: products of degree-2 wires, the first sound off a pivot line, cover at most 192 (size + J) + 8N diagonal pairs on it",
+  "used_by": []
+}

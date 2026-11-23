@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-1025",
-  "file": "lean/PEqualNP/Outside/L_meta_1025.lean",
-  "module": "PEqualNP.Outside.L_meta_1025",
-  "statement": "∃ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin 13 → ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length ≤ 2) ∧ (∀ (w : Fin 13) (x : Fin 13 → Bool), ((Finset.univ.filter (fun p : Fin 13 => x p = false)).card = 5 ∨ (Finset.univ.filter (fun p : Fin 13 => x p = false)).card = 6) → PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out w⟩ (List.ofFn x) = decide (∃ v ∈ (({0, 1, 3, 9} : Finset (Fin 13)).image (fun u => u + w)), x v = true)) ∧ gates.length ≤ 38",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Search: an AND/OR list of fan-in two with at most 38 gates right on the 13 line-ORs of the plane of order 3 at every input with exactly 5 or 6 false points",
-    "context": "SKETCH: an exact search over AND/OR lists of fan-in two of the stated size: one Boolean per gate and input row over the inputs in the band, one-hot operand choice among earlier wires, an operation selector; the plane's symmetry fixes the first gate. No in-house search was run. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A witness would show two adjacent weights of the order-3 plane are cheaper than 39 gates."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: an exact search over AND/OR lists of fan-in two of the stated size: one Boolean per gate and input row over the inputs in the band, one-hot operand choice among earlier wires, an operation selector; the plane's symmetry fixes the first gate. No in-house search was run. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Search: an AND/OR list of fan-in two with at most 38 gates right on the 13 line-ORs of the plane of order 3 at every input with exactly 5 or 6 false points",
+    "unlocks": "A witness would show two adjacent weights of the order-3 plane are cheaper than 39 gates."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_1025.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-1025",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_1025",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Take the 13 points 0..12 and the 13 lines {w, w + 1, w + 3, w + 9} (mod 13). Some list of at most 38 gates, each an AND or OR reading at most two wires, has for each line a wire equal to the OR of the line's four points on every input with exactly 5 or exactly 6 false points.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-1025.76170b0b82f9.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T19:15:51.679Z",
+    "title": "Search: an AND/OR list of fan-in two with at most 38 gates right on the 13 line-ORs of the plane of order 3 at every input with exactly 5 or 6 false points"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin 13 → ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length ≤ 2) ∧ (∀ (w : Fin 13) (x : Fin 13 → Bool), ((Finset.univ.filter (fun p : Fin 13 => x p = false)).card = 5 ∨ (Finset.univ.filter (fun p : Fin 13 => x p = false)).card = 6) → PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out w⟩ (List.ofFn x) = decide (∃ v ∈ (({0, 1, 3, 9} : Finset (Fin 13)).image (fun u => u + w)), x v = true)) ∧ gates.length ≤ 38",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003310",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:920c4e52c9652c27abee711e45ed112683690be78c17550fe7cf5dba2988b8f4",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L026.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T15:52:12.922Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:20:03.253Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ n : ℕ, PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => decide ((Finset.univ.filter fun i : Fin n => x i = true).card % 2 = 1)) (4 * (n - 1))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-026",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The parity of n inputs has a fan-in 2 circuit of AND, OR, NOT gates with 4(n - 1) gates: each exclusive or is (a or b) and not (a and b). Folklore. With the 3(n - 1) lower bound this brackets the exact size in a basis that counts NOT gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-026.deed48ad2e1a.json",
+  "statement_hash": "sha256:f0e1ed293dc0f23908d0406990f7341f7e65e37e9d3c2aee7efea92124ead87d",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T15:52:12.922Z",
+  "title": "Parity of n inputs has a circuit with 4(n - 1) gates",
+  "used_by": []
+}

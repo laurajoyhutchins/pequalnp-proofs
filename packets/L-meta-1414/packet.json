@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-1414",
-  "file": "lean/PEqualNP/Outside/L_meta_1414.lean",
-  "module": "PEqualNP.Outside.L_meta_1414",
-  "statement": "¬ (∀ C : PEqualNP.CircuitLowerBounds.Circuit, (∀ g ∈ C.gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) → C.size = 10 → (∀ x : Fin 7 → Bool, C.eval (List.ofFn x) = true ↔ ∃ i : Fin 7, x i = true ∧ x (i + 1) = true) → ∃ (p : Fin 7) (b : Bool) (S : Finset (Fin 10)), (if b = true then 4 else 3) ≤ S.card ∧ ∀ j ∈ S, (∀ y z : Fin 7 → Bool, y p = b → z p = b → (C.wires (List.ofFn y)).getD (7 + ((j : Fin 10) : ℕ)) false = (C.wires (List.ofFn z)).getD (7 + ((j : Fin 10) : ℕ)) false) ∨ ∃ w < 7 + ((j : Fin 10) : ℕ), ∀ u : Fin 7 → Bool, u p = b → (C.wires (List.ofFn u)).getD (7 + ((j : Fin 10) : ℕ)) false = (C.wires (List.ofFn u)).getD w false)",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Probe: Probe: NOT (every 10-gate AND/OR/NOT fan-in-two circuit for the 7-cycle edge function has a tight single input substitution)",
-    "context": "SKETCH: a breadth probe from seat-rmine-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; work from the row's own sentence. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A breadth probe: either answer moves the scouts' map."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: a breadth probe from seat-rmine-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; work from the row's own sentence. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Probe: Probe: NOT (every 10-gate AND/OR/NOT fan-in-two circuit for the 7-cycle edge function has a tight single input substitution)",
+    "unlocks": "A breadth probe: either answer moves the scouts' map."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_1414.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-1414",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_1414",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Not (every circuit of exactly 10 AND, OR, NOT gates, each listing at most two wires, that computes the edge function of the 7-cycle (1 iff some x(i) and x(i+1) are both 1) has an input i and a bit b such that, on the inputs with x(i) = b, at least 3 gates (b = 0) or 4 gates (b = 1) are each constant or equal to an earlier wire). Conjecture.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-1414.6120ca69f9e6.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T23:03:51.598Z",
+    "title": "Probe: NOT (every 10-gate AND/OR/NOT fan-in-two circuit for the 7-cycle edge function has a tight single input substitution)"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "¬ (∀ C : PEqualNP.CircuitLowerBounds.Circuit, (∀ g ∈ C.gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) → C.size = 10 → (∀ x : Fin 7 → Bool, C.eval (List.ofFn x) = true ↔ ∃ i : Fin 7, x i = true ∧ x (i + 1) = true) → ∃ (p : Fin 7) (b : Bool) (S : Finset (Fin 10)), (if b = true then 4 else 3) ≤ S.card ∧ ∀ j ∈ S, (∀ y z : Fin 7 → Bool, y p = b → z p = b → (C.wires (List.ofFn y)).getD (7 + ((j : Fin 10) : ℕ)) false = (C.wires (List.ofFn z)).getD (7 + ((j : Fin 10) : ℕ)) false) ∨ ∃ w < 7 + ((j : Fin 10) : ℕ), ∀ u : Fin 7 → Bool, u p = b → (C.wires (List.ofFn u)).getD (7 + ((j : Fin 10) : ℕ)) false = (C.wires (List.ofFn u)).getD w false)",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

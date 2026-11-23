@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002747",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:f624317ee609b4ab6d337abcc5db7ddda4acfdd5a33d76b8c978833e5e27ea7f",
+    "lean_file": "lean/PEqualNP/Library/L097.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:54:46.575Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:49:15.050Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (E : Language Bool) (π : List Bool × List Bool → List Bool) (p : Polynomial ℕ), E ∈ PEqualNP.Library.NP → PEqualNP.Library.ComputableInPolyTime PEqualNP.Library.encodePair (fun x : List Bool => x) π → ({x : List Bool | ∃ c : List Bool, c.length ≤ p.eval x.length ∧ π (x, c) ∈ E} : Language Bool) ∈ PEqualNP.Library.NP",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-097",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "If E is in NP and pi is a polynomial-time pairing, then the set of x such that pi(x, c) is in E for some c of polynomial length is in NP. Standard (for example Arora and Barak, Computational Complexity, 2009, chapter 2). Needed by L-meta-016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-097.e35f0f8c1d83.json",
+  "statement_hash": "sha256:aa82b6f5671ad3ece4d88d000f0823a468dce0eea381e70d48666ca6d73598e8",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:54:46.575Z",
+  "title": "NP is closed under polynomially bounded existential projection",
+  "used_by": []
+}

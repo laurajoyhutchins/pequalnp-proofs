@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ PEqualNP.MetaComplexity.HasCircuitSize 9 (fun x : Fin 9 → Bool => (x 0 && x 1) || (x 1 && x 2) || (x 2 && x 3) || (x 3 && x 4) || (x 4 && x 0) || (x 0 && x 5) || (x 1 && x 6) || (x 2 && x 7) || (x 3 && x 8) || (x 5 && x 7) || (x 6 && x 8) || (x 8 && x 5)) 15",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-670",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "On nine inputs, take the Petersen graph minus one vertex: edges 0-1, 1-2, 2-3, 3-4, 4-0, 0-5, 1-6, 2-7, 3-8, 5-7, 6-8, 8-5 (12 edges). The function true exactly when both ends of some edge are true has no circuit of AND, OR (fan-in two) and NOT gates with at most 15 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-670.fa1d3d88eb88.json",
+  "statement_hash": "sha256:cad25a8179028bb431b529eabd16f4653c36589ecba53c2085ee869fbecce2cb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T14:56:24.159Z",
+  "title": "Petersen graph minus a vertex: no circuit of AND, OR (fan-in two) and NOT gates with at most 15 gates computes its edge function",
+  "used_by": []
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002606",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:06089a4267dfadf25c5f0bdfb0581917ad2d382ac8e28aedc89349cba6e8accb",
+    "lean_file": "lean/PEqualNP/Library/L094.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:48:38.923Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:44:10.637Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ k : ℕ, 1 ≤ k → ∃ c : ℕ, PEqualNP.Library.ComputableInTime (fun x : List Bool => x) (fun x : List Bool => x) (fun x : List Bool => List.replicate (2 ^ (x.length ^ k) + k) true ++ false :: x) (fun n : ℕ => c * 2 ^ (n ^ k) + c)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-094",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "For k >= 1, the map sending x to 2^(|x|^k) + k ones, a zero, then x is computable within c 2^(n^k) + c steps: the exponential clock L-lib-083 paired with the input. The padding of upward translation, for L-lib-092 and L-meta-016. Folklore. Probe: k = 0 is excluded (constant bound, linear erasure).",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-094.32e65e7eed62.json",
+  "statement_hash": "sha256:516b9455d91eb86f401d1f8ce4de17bf18109ee9196db17fb3f1a4b16626147f",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:48:38.923Z",
+  "title": "Exponential padding map: x to 1^(2^(|x|^k)+k) 0 x within O(2^(n^k)) steps, k >= 1",
+  "used_by": []
+}

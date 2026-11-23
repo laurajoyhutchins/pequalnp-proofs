@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (n : ℕ) (G : SimpleGraph (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit), (∀ a b c d : Fin n, a ≠ c → b ≠ d → ¬ (G.Adj a b ∧ G.Adj b c ∧ G.Adj c d ∧ G.Adj d a)) ∧ (∀ S : Finset (Fin n), (∀ u v : Fin n, G.Adj u v → u ∈ S ∨ v ∈ S) → 5 ≤ S.card) ∧ PEqualNP.MetaComplexity.Monotone2 C ∧ (∃ A : Finset ℕ, A.card ≤ 4 ∧ ∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.and → j ∈ A) ∧ ∀ x : Fin n → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin n, G.Adj u v ∧ x u = true ∧ x v = true)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-148",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There are a number n, a graph on n vertices with no 4-cycle (triangles allowed) in which every vertex cover has at least 5 vertices, and a circuit of AND and OR gates of fan-in at most two (no NOT; only AND gates counted) with at most 4 AND gates that is true exactly when both ends of some edge are true. The graph is part of the witness. SEARCH ROW: no witness is known. A witness refutes the conjecture that on graphs without 4-cycles the least AND count equals the cover number (settled by search up to cover number 4, not checked); the negation is equally wanted. Conjecture either way.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-148.3691abc9fa64.json",
+  "statement_hash": "sha256:8f5ca613c8e0d47a9ca46b963f69d0b5b34e6c65592b80bf545707dc9e531e47",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T05:56:52.614Z",
+  "title": "Search: a graph without 4-cycles of cover number at least 5 whose edge function has a monotone circuit with 4 AND gates",
+  "used_by": []
+}

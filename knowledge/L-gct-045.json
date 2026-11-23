@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003881",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:af981536e0b94ce849f0e8322c956a798661d8cdeb3098c67ce448a706168a99",
+    "lean_file": "lean/PEqualNP/Gct/L045.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:39:44.938Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:39:44.938Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (d r n : ℕ), 2 ≤ d → 2 ≤ r → PEqualNP.Gct.HasBorderDetExpression (∑ i : Fin d, (MvPolynomial.X i : MvPolynomial (Fin d) ℂ) ^ r) n → (r - 1) * (d - 1) ≤ 11 * n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-045",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Over C, every border determinantal expression (coefficientwise limit of determinants of affine matrices, as in L-gct-010) of the power sum x_1^r + ... + x_d^r, d >= 2, r >= 2, has size n with (r-1)(d-1) <= 11 n. Route: the power sum is smooth; L-gct-043 exhibits r(r-1)^(d-2) simple polar points; L-gct-030 carries them to the approximants; half (b) of L-gct-024 (seat-clb-2, L-gct-038 to 041) bounds them for a determinant. Upper bound for comparison: pairing x^r + y^r into r linear factors gives size about (r-1) d/2 + 1, so the claim is tight up to a factor near 5.5.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-045.b537f500d3f1.json",
+  "statement_hash": "sha256:e1f8f08b3b27a4fd9ce5dba1dc703a5a8cc908b334ead7d7dc354ecf96629a39",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:39:44.938Z",
+  "title": "TARGET: border determinantal complexity of the power sum x_1^r + ... + x_d^r is at least (r-1)(d-1)/11",
+  "used_by": []
+}

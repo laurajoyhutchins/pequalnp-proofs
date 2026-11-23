@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ C.size ≤ 26 ∧ (∀ x : Fin 14 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 14, (u.val, v.val) ∈ ([(0, 7), (0, 8), (0, 10), (1, 7), (1, 9), (1, 13), (2, 8), (2, 12), (2, 13), (3, 7), (3, 11), (3, 12), (4, 10), (4, 11), (4, 13), (5, 9), (5, 10), (5, 12), (6, 8), (6, 9), (6, 11)] : List (ℕ × ℕ)) ∧ x u = true ∧ x v = true))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-582",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there a circuit of AND and OR gates only, each reading at most two wires, every gate counted, with at most 26 gates, true on 14 inputs exactly when both ends of some edge are true? The graph is the Heawood graph: points 0..6, lines 7..13, point p joined to line 7 + l when p + l is 0, 1 or 3 modulo 7; it has 21 edges, no cycle of length 4, least vertex cover size 7 (by script). The circuit built from a least cover has 27 gates. Wanted either way: a gate list, verified by evaluating it on all 16384 inputs, or that none exists. No witness is known. Conjecture either way.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-582.ce523a075e21.json",
+  "statement_hash": "sha256:78bbc880a05a1c5993440a43c91e0d1196156d5545e66a4841fde53105c950db",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T12:09:14.046Z",
+  "title": "Search: a circuit of AND and OR gates with at most 26 gates for the edge function of the Heawood graph",
+  "used_by": []
+}

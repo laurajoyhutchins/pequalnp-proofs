@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m : ℕ) (X : Submodule ℂ (Fin m → ℂ)), (∀ x ∈ X, ∑ i, x i ^ 2 = 0) → (∀ x ∈ X, ∑ i, x i ^ 4 = 0) → 3 * Module.finrank ℂ X ≤ m",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-122",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If W in C^M has sum x_i^2 = 0 and sum x_i^4 = 0 for every x in W, then 3 dim W <= M. Not L-gct-061 (that one uses p3; dup.mjs flags it at 0.96 on text similarity only). Sharp: blocks (1, w, w^2), w a cube root of unity. Paper proof: W o W is totally isotropic and orthogonal to 1; Kneser for codes (checked L-gct-065) blockwise as in L-gct-061. Used in the self-gluable 4 x s analysis of L-gct-086.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-122.5fc59c665e86.json",
+  "statement_hash": "sha256:688ff0c18a43e164e498d53b33677ebd9aa4bd5076898c7f503ef58091d07635",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-22T23:25:46.542Z",
+  "title": "Lemma K: a complex linear space on which the power sums p2 and p4 both vanish has dimension at most M/3 (p4, not p3: distinct from L-gct-061)",
+  "used_by": []
+}

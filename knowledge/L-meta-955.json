@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (n m : ℕ) (S : Fin m → Finset (Fin n)), (∀ i : Fin m, 2 ≤ (S i).card) ∧ (∀ i j : Fin m, i ≠ j → (S i ∩ S j).card ≤ 1) ∧ ∃ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin m → ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) ∧ (∃ ι : Fin 1 → Fin gates.length, ∀ i : Fin gates.length, (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → ∃ j : Fin 1, ι j = i) ∧ gates.length + m + 1 ≤ ∑ i : Fin m, (S i).card ∧ ∀ (w : Fin m) (x : Fin n → Bool), PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out w⟩ (List.ofFn x) = decide (∃ v ∈ S w, x v = true)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-955",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There are sets S_1..S_m of inputs, each with at least 2 elements and any two sharing at most one, and a single list of AND, OR and NOT gates, each reading at most two wires, with at most one NOT gate, having for each i an output wire equal on every input to the OR of the inputs in S_i, whose number of gates is less than the sum over i of (|S_i| - 1).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-955.812888c5a4ff.json",
+  "statement_hash": "sha256:2e08adfacbb7554d993d5a95601163b89a35f06b252fee7f65405f33086d03f3",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T17:15:45.740Z",
+  "title": "Search: sets of size at least 2 meeting pairwise in at most one point whose ORs a list with at most one NOT gate computes in under the sum of size minus 1",
+  "used_by": []
+}

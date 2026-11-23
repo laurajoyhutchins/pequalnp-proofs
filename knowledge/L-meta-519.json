@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n k s : ℕ) (G : SimpleGraph (Fin n)), (∀ v : Fin n, (G.neighborSet v).ncard ≤ 3) → (∀ (v : Fin n) (c : G.Walk v v), c.IsCycle → 7 ≤ c.length) → (∃ i j : Fin n, G.Adj i j) → (∀ T : Finset (Fin n), (∀ i j : Fin n, G.Adj i j → i ∈ T ∨ j ∈ T) → k ≤ T.card) → PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => @decide (∃ i j : Fin n, G.Adj i j ∧ x i = true ∧ x j = true) (Classical.propDecidable _)) s → G.edgeSet.ncard + k ≤ s + 1",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-519",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let G be a graph on n vertices with at least one edge in which every vertex has at most 3 neighbours and every cycle has length at least 7, with no condition on distances between vertices of degree 3, and let k be at most the size of every vertex cover of G. If a circuit of AND, OR and NOT gates of fan-in at most two, every gate counted, with at most s gates computes the function true exactly when both ends of some edge are true, then |E| + k <= s + 1. It is a conjecture and may be false.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-519.ed26ac472458.json",
+  "statement_hash": "sha256:7fd44af96171fff8d94c24fd33f960852aa4c64b57ebb6fd912b9dbfa04a500e",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T08:32:43.033Z",
+  "title": "Edge function on graphs of maximum degree 3 with every cycle of length at least 7: at least edges plus cover number minus one gates",
+  "used_by": []
+}

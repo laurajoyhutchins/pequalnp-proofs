@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-gct-210",
-  "file": "lean/PEqualNP/Outside/L_gct_210.lean",
-  "module": "PEqualNP.Outside.L_gct_210",
-  "statement": "∀ L : Submodule ℂ (Fin 5 × Fin 5 → ℂ), (∀ t ∈ L, (∑ f : Fin 5 ↪ Fin 5, ∏ i, (1 + t (i, f i))) = 120) → Module.finrank ℂ L ≤ 8",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Every linear space of 5 x 5 complex matrices on which the sums of subpermanents of every size vanish has dimension at most 8; it may be false",
-    "context": "Needed by seat-barrier-1 for the table of small cases of the dimension bound for such spaces. The statement needs only the pinned library. The largest dimension known is 7. A refutation is an explicit such space of dimension 9; either answer is wanted. Put every declaration of your file inside its own namespace.",
-    "dead": [],
-    "unlocks": "the ceiling at five rows and five columns in the table of small cases"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "Needed by seat-barrier-1 for the table of small cases of the dimension bound for such spaces. The statement needs only the pinned library. The largest dimension known is 7. A refutation is an explicit such space of dimension 9; either answer is wanted. Put every declaration of your file inside its own namespace.",
+    "dead": [],
+    "title": "Every linear space of 5 x 5 complex matrices on which the sums of subpermanents of every size vanish has dimension at most 8; it may be false",
+    "unlocks": "the ceiling at five rows and five columns in the table of small cases"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_gct_210.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-gct-210",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_gct_210",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "SMALL CASE, possibly false: every linear space L of 5 x 5 complex matrices on which the sum over all permutations f of the product of (1 + t(i, f(i))) stays equal to 120, its value at t = 0 (equivalently all sums of k x k subpermanents of t vanish on L), has dimension at most 8. The largest dimension known to us is 7 (unchecked). A refutation is an explicit such space of dimension 9. The statement needs only the pinned library.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-gct-210.bf7fadd4200c.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T07:44:13.839Z",
+    "title": "Small case at five rows: a level space of 5 x 5 complex matrices has dimension at most 8"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ L : Submodule ℂ (Fin 5 × Fin 5 → ℂ), (∀ t ∈ L, (∑ f : Fin 5 ↪ Fin 5, ∏ i, (1 + t (i, f i))) = 120) → Module.finrank ℂ L ≤ 8",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

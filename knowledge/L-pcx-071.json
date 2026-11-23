@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T21:38:04.701Z",
+      "outcome": "died",
+      "when": "2026-11-22T19:53:39.463Z",
+      "why_died": "Parked: restrictions, switching, local width, mode count, per-step near-disjointness, paths all dead; open core is COVER. Reopener round: no statement survived an adversary. See LiftSize/README.md"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ w d : ℕ, ∀ p : Polynomial ℕ, ∃ (n : ℕ) (F : Finset (PEqualNP.ProofComplexity.Clause (Fin n))), (∀ C ∈ F, C.card ≤ w) ∧ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem (↑F : Set (PEqualNP.ProofComplexity.Clause (Fin n)))) d ∧ ∀ π : List (PEqualNP.ProofComplexity.LinClause (Fin n)), PEqualNP.ProofComplexity.IsLinRefutation (↑F : Set (PEqualNP.ProofComplexity.Clause (Fin n))) π → p.eval n < π.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-071",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There are constants w, d such that for every polynomial p some CNF on n variables of width at most w has an F2 polynomial calculus refutation of degree d while every dag-like Res(+) refutation has more than p(n) lines. Conjecture; open in our reading (open item 2 of doctrine/KNOWN/proof_complexity.md; for lifted Tseitin only a quadratic bound is in print). Intended family: the lifted system of L-pcx-065. Dead routes: ProofComplexity/LiftSize/ and notes/pcx-lifted-tseitin.md.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-071.b172ba97f15f.json",
+  "statement_hash": "sha256:7b7ef8607d03b6215610e0cf0eb93961c33b7353ca22a8899be65c3060faec0e",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-22T21:38:04.701Z",
+  "title": "OPEN TARGET: dag-like Res(+) is not polynomially bounded on CNFs of constant width and constant F2 polynomial calculus degree",
+  "used_by": []
+}

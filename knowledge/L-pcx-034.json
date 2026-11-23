@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002388",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:e4bf6acb9592dd5c4cb7ac92fa0daf9743596aaf42d2c5737609669550c0745c",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L034.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:38:48.316Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:33:28.723Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m l k D M W : ℕ) (g : Fin M → Fin W → MvPolynomial (Fin m × Fin l) (ZMod 2)), 0 < m → 1 ≤ l → 1 ≤ k → 1 ≤ M → k ≤ m → (m : ℝ) * Real.log (4 * (M : ℝ)) ≤ (k : ℝ) ^ 2 → 2 * (3 * l) + 1 ≤ D → (∀ (j : Fin M) (i : Fin W), (g j i).totalDegree ≤ 1) → PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.blockSystem (PEqualNP.ProofComplexity.bitPHPSystem m l) (3 * l) M W g) D → ∃ f : MvPolynomial (Fin m × Fin l) (ZMod 2), f ≠ 0 ∧ PEqualNP.ProofComplexity.IsRowLinear m l k f ∧ PEqualNP.ProofComplexity.PCDerivable (PEqualNP.ProofComplexity.bitPHPSystem m l) (k * (D + 1)) f",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-034",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If m ln(4M) is at most k^2, a degree-D PC refutation of the bit system extended by M blocks of accuracy 3l with affine inputs yields a nonzero row-linear polynomial of degree at most k derivable in degree k(D+1) from the bit system (Lemmas 6.4 and 6.7). Link of the chain to L-pcx-022 following the unrefereed arXiv:2609.23015; conjecture until checked here.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-034.d75bb26ffd7b.json",
+  "statement_hash": "sha256:3253733ad6696d5490fa6d5ee0c853b55adfa3723259df10543f03af3ad08a50",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:38:48.316Z",
+  "title": "Chain D: removing blocks from a PC refutation leaves a nonzero row-linear consequence of bit pigeonhole",
+  "used_by": []
+}

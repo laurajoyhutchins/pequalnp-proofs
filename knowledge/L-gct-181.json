@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Submodule ℂ (Fin 4 × Fin 5 → ℂ), (∀ t ∈ L, (∑ i : Fin 4, ∑ j, t (i, j)) = 0 ∧ (∑ j, ∑ l, if j = l then 0 else ∑ a : Fin 4, ∑ b : Fin 4, if a < b then t (a, j) * t (b, l) else 0) = 0 ∧ (∑ j, ∑ l, ∑ m, if j = l ∨ j = m ∨ l = m then 0 else ∑ a : Fin 4, ∑ b : Fin 4, ∑ c : Fin 4, if a < b ∧ b < c then t (a, j) * t (b, l) * t (c, m) else 0) = 0 ∧ (∑ j, ∑ l, ∑ m, ∑ n, if j = l ∨ j = m ∨ j = n ∨ l = m ∨ l = n ∨ m = n then 0 else t (0, j) * t (1, l) * t (2, m) * t (3, n)) = 0) ∧ 8 ≤ Module.finrank ℂ L",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-181",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There is a linear space L of 4 x 5 complex matrices of dimension at least 8 such that, for every t in L, the entry sum and the sums of all 2 x 2, all 3 x 3 and all 4 x 4 subpermanents of t all vanish; that is, perm-type level at four rows. The conjectured bound is dim L <= p + q - 2 = 7; the best space known has dimension p + q - 3 = 6. A witness would refute the sharp form of the level-space bound at four rows. It may well not exist: this is a search, and a proof that no witness exists is not what this row asks.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-181.155ff2b52b44.json",
+  "statement_hash": "sha256:328ac0a5436afcf86fa8dfda4fcccfa63922a3c7eca7f7f28a5fb5083f372e72",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T05:56:49.578Z",
+  "title": "SEARCH: a level space of 4 x 5 matrices of dimension at least 8 (would refute the bound p + q - 2 at four rows)",
+  "used_by": []
+}

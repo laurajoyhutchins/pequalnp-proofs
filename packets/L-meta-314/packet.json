@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-314",
-  "file": "lean/PEqualNP/Outside/L_meta_314.lean",
-  "module": "PEqualNP.Outside.L_meta_314",
-  "statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit), 5 ≤ n → PEqualNP.MetaComplexity.IsMinimalCircuit n C → PEqualNP.MetaComplexity.circuitFun n C = (fun x : Fin n → Bool => decide (∃ i j : Fin n, (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) → (∀ g ∈ C.gates, g.op ≠ PEqualNP.CircuitLowerBounds.GateOp.not) ∧ ∀ t : ℕ, t < C.size → ((∃ S : Finset ℕ, S.Nonempty ∧ (∀ i ∈ S, i < n) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = decide (∃ i j : Fin n, i.val ∈ S ∧ (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) ∨ (∃ a c b : Fin n, (a.val + 1) % n = c.val ∧ (c.val + 1) % n = b.val ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = (x a || x b)) ∨ (∃ i j k : Fin n, (i.val + 1) % n = j.val ∧ ((j.val + 1) % n = k.val ∨ (k.val + 1) % n = i.val) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = ((x i && x j) || x k)))",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Cycles: no least circuit of the cycle on n >= 5 vertices has a NOT gate, and every gate computes an edge OR, a star OR or a tying-block piece",
-    "context": "SKETCH: TRACTABLE. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
-    "dead": [],
-    "unlocks": "Needed by seat-rmag-1 for: the structure of least circuits"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: TRACTABLE. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
+    "dead": [],
+    "title": "Cycles: no least circuit of the cycle on n >= 5 vertices has a NOT gate, and every gate computes an edge OR, a star OR or a tying-block piece",
+    "unlocks": "Needed by seat-rmag-1 for: the structure of least circuits"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_314.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-314",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_314",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Let n >= 5 and let C be a least fan-in-two circuit (AND, OR, NOT, every gate counted) for the cycle function on vertices 0, ..., n - 1 (true when vertices i and i + 1 mod n are both true for some i). Then C has no NOT gate, and every gate of C computes one of: the OR of the edge products x_i x_(i+1 mod n) over a nonempty set of edges; x_a OR x_b where a and b are the two neighbours of one vertex; or x_i x_j OR x_k where j = i + 1 and k = j + 1 or k = i - 1, all mod n.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-314.3026538ac0bb.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T07:14:37.118Z",
+    "title": "Cycles: no least circuit of the cycle on n >= 5 vertices has a NOT gate, and every gate computes an edge OR, a star OR or a tying-block piece"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit), 5 ≤ n → PEqualNP.MetaComplexity.IsMinimalCircuit n C → PEqualNP.MetaComplexity.circuitFun n C = (fun x : Fin n → Bool => decide (∃ i j : Fin n, (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) → (∀ g ∈ C.gates, g.op ≠ PEqualNP.CircuitLowerBounds.GateOp.not) ∧ ∀ t : ℕ, t < C.size → ((∃ S : Finset ℕ, S.Nonempty ∧ (∀ i ∈ S, i < n) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = decide (∃ i j : Fin n, i.val ∈ S ∧ (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) ∨ (∃ a c b : Fin n, (a.val + 1) % n = c.val ∧ (c.val + 1) % n = b.val ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = (x a || x b)) ∨ (∃ i j k : Fin n, (i.val + 1) % n = j.val ∧ ((j.val + 1) % n = k.val ∨ (k.val + 1) % n = i.val) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = ((x i && x j) || x k)))",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

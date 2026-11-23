@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003686",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:110a08d269bc3b606a5a5ca6c9dcc0cf7e7b60fc541cba3eaf834b9e590ddc9d",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L047.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:20:50.880Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:02:27.725Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m N : ℕ) (G : PEqualNP.Expanders.BipGraph m N) (π : List (PEqualNP.ProofComplexity.LinClause (Fin m × Fin N))), PEqualNP.ProofComplexity.IsLinRefutation (PEqualNP.ProofComplexity.PHP m N) π → ∃ π' : List (PEqualNP.ProofComplexity.LinClause (PEqualNP.Expanders.GEdge G)), PEqualNP.ProofComplexity.IsLinRefutation (PEqualNP.Expanders.graphPHP G) π' ∧ π'.length ≤ 2 * π.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-047",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For any bipartite graph G on m pigeons and N holes, a Res(+) refutation of PHP m N of length S gives a Res(+) refutation of the pigeonhole formula on G, over the edge variables only, of length at most 2S: set the non-edges to false (L-pcx-045) and rename the remaining variables to edges. Closes the chain gap the red team found: after restriction the variable count in L-pcx-042 must be the number of edges. Link of L-pcx-017.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-047.f39df54d3e64.json",
+  "statement_hash": "sha256:8d090e7ad0cb70d3f97e200a045bfc132c4e9ab543d88ef36fe5408d2f1b7cd2",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:20:50.880Z",
+  "title": "Re-typing: a Res(+) refutation of the pigeonhole formula gives one of the pigeonhole formula on any bipartite graph, at most twice as long",
+  "used_by": []
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-005003",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:6eae69e4aa4c0cb4fa33585c53c773a5c26be7eaf3e777a1c9d081c460ebaa4b",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L054.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T18:17:44.251Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:48:00.899Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ k : ℕ, 1 ≤ k → ∀ p : Polynomial ℕ, ∃ (m N : ℕ) (G : PEqualNP.Expanders.BipGraph m N), N < m ∧ ∀ π : List (PEqualNP.ProofComplexity.LinKLine (PEqualNP.Expanders.GEdge G)), PEqualNP.ProofComplexity.IsLinKRefutation k (PEqualNP.Expanders.funGraphPHP G) π → p.eval (Fintype.card (PEqualNP.Expanders.GEdge G)) < π.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-054",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For every k >= 1 and polynomial p there is a bipartite graph G with more pigeons than holes such that every refutation of the functional pigeonhole formula on G in our system Res(k,+) (lines: disjunctions of conjunctions of at most k linear equations mod 2; cut on a term, and-introduction, termwise weakening) has more than p(v) lines, v the number of variables. Conjecture. Route: the proof of L-pcx-042 with inputs of degree k, on L-pcx-049. Our own system, attributed to no source; by the literature desk neither 2026 report reaches k >= 2, an unread manuscript may.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-054.a2b62188fad7.json",
+  "statement_hash": "sha256:42b16500d55a35883d22683f1da7741caf187b75e4485379cb430701eb66cbdb",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T18:17:44.251Z",
+  "title": "TARGET: resolution over conjunctions of at most k parity equations (termwise weakening) is not polynomially bounded on functional pigeonhole, for every k",
+  "used_by": []
+}

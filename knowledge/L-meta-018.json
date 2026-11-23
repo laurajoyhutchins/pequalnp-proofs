@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-000993",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:cbba726c011081ac5337b71b0ca384cbd7751ee318d5c30d9b9e6d7bc579df86",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L018.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T13:32:05.483Z",
+      "outcome": "checked",
+      "when": "2026-11-22T13:29:18.057Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n k : ℕ) (f : (Fin (n + k) → Bool) → Bool) (c : Fin k → Bool) (s : ℕ), PEqualNP.MetaComplexity.HasCircuitSize (n + k) f s → PEqualNP.MetaComplexity.HasCircuitSize n (fun y : Fin n → Bool => f (Fin.append y c)) (s + 1)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-018",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If f on n + k inputs has a circuit with s gates, then f with its last k inputs fixed to constants has a circuit with at most s + 1 gates (the extra gate only when the restriction is the constant true). Standard; the hardwiring step of the Murray and Williams argument (Theory of Computing 13, 2017), needed for L-meta-016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-018.a69f8dac49b5.json",
+  "statement_hash": "sha256:01be27ac2214c1689dad3074b7690995358551ce623f760789e98788447ef303",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T13:32:05.483Z",
+  "title": "Hardwiring: fixing the last k inputs of a circuit costs at most one gate",
+  "used_by": []
+}

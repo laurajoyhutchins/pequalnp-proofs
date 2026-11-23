@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ D : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.FanInTwo D ∧ D.size ≤ 25 ∧ PEqualNP.MetaComplexity.circuitFun 17 D = (fun x : Fin 17 → Bool => decide (∃ i j : Fin 17, ((i.val + 1 = j.val ∧ i.val ≠ 8) ∨ (i.val = 0 ∧ (j.val = 8 ∨ j.val = 9 ∨ j.val = 16))) ∧ x i = true ∧ x j = true))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-141",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Graph on 17 vertices: two cycles of length 9 sharing vertex 0 (0-1-...-8-0 and 0-9-...-16-0), 18 edges, cover number 9. Claim to exhibit: a circuit with AND, OR, NOT gates of fan-in two, every gate counted, at most 25 gates, computing the function true when both ends of some edge are true. The cover circuit has 26. A witness would refute the open row L-meta-113 at its smallest instance not settled by checked rows; the expected answer is that none exists (then refute this row). Checking a witness means all 131072 inputs. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-141.2f242f8e13d2.json",
+  "statement_hash": "sha256:45adae8c6fdf9e3625646f6a58bf98ac8bd8107bded8797e57feca5e65b59b8f",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T05:54:11.052Z",
+  "title": "SEARCH: a circuit with at most 25 gates for the edge function of two 9-cycles sharing a vertex",
+  "used_by": []
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002752",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:98929cf32c1f73fdbd86ea085c504c16fd881b6f43cfa426eefb674e3e12c5c3",
+    "lean_file": "lean/PEqualNP/Library/L098.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:54:58.385Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:50:13.755Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.Library.ComputableInPolyTime PEqualNP.Library.encodePair Computability.encodeBool (fun p : List Bool × List Bool => p.1.getD (List.foldr (fun (b : Bool) (a : ℕ) => 2 * a + (if b = true then 1 else 0)) 0 p.2) false)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-098",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "Given a string and an index written in binary, least significant bit first, the bit of the string at that index (false if out of range) is computed in polynomial time. Folklore. Needed by L-meta-016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-098.11bfb03945c6.json",
+  "statement_hash": "sha256:104f8b386e343a791bd89990de76b7ed1a4ae6dc35aee5ac01d7b6d1c0b0ef55",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:54:58.385Z",
+  "title": "Lookup by a binary index is polynomial time",
+  "used_by": []
+}

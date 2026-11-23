@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002737",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:bb5a6a8c07c9dbcdc6737ceec161db7bf62a8224efbdcc6ca9c6f8f3eb536f1a",
+    "lean_file": "lean/PEqualNP/Library/L099.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:53:45.148Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:49:15.098Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.Library.ComputableInPolyTime (fun x : List Bool => x) (fun x : List Bool => x) (fun x : List Bool => x.reverse)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-099",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "The reversal of a binary string is computed in polynomial time. Folklore. Needed by L-meta-016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-099.4378bf0b0c9c.json",
+  "statement_hash": "sha256:34c798601c272fef83568431c79540a0659d192e33f7f1300cdcd574e6d7a988",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:53:45.148Z",
+  "title": "Reversing a string is polynomial time",
+  "used_by": []
+}

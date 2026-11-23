@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ c d : ℂ, (∑ f : Fin 4 ↪ Fin 5, ∏ j : Fin 4, (1 + (if (f j).val = 4 then d * (if j.val = 0 then (1 : ℂ) else if j.val = 1 then -1 else 0) else c * (if j.val = (f j).val then (1 : ℂ) else if j.val = ((f j).val + 1) % 4 then Complex.I else if j.val = ((f j).val + 2) % 4 then -Complex.I else -1)))) = 120",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-194",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For all complex c and d, the 5 x 4 matrix whose first four rows are c times the circulant with first row (1, i, -i, -1) and whose fifth row is d times (1, -1, 0, 0), added to the all-ones matrix, has rectangular permanent 120 (the sum over injections of the 4 columns into the 5 rows of the products of entries). So a sum-zero row can be appended to the level circulant line: the appendable rows of that line are not confined by any column-deleted sum. Exact on our record; wanted in Lean as a witness. A finite computation.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-194.8a807b0c69b5.json",
+  "statement_hash": "sha256:c7532e42563518f5e28a51e0f48c9f8e8b1a2a07e8f42e6deb5adfdd03d30c17",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T06:48:52.820Z",
+  "title": "Witness to formalize: the 4 x 4 level circulant with the appended row (1, -1, 0, 0) is a level plane at 5 x 4",
+  "used_by": []
+}

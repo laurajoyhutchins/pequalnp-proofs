@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ C : PEqualNP.CircuitLowerBounds.Circuit, (∀ g ∈ C.gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) → C.size = 10 → (∀ x : Fin 7 → Bool, C.eval (List.ofFn x) = true ↔ ∃ i : Fin 7, x i = true ∧ x (i + 1) = true) → ∃ (p : Fin 7) (b : Bool) (S : Finset (Fin 10)), (if b = true then 4 else 3) ≤ S.card ∧ ∀ j ∈ S, (∀ y z : Fin 7 → Bool, y p = b → z p = b → (C.wires (List.ofFn y)).getD (7 + ((j : Fin 10) : ℕ)) false = (C.wires (List.ofFn z)).getD (7 + ((j : Fin 10) : ℕ)) false) ∨ ∃ w < 7 + ((j : Fin 10) : ℕ), ∀ u : Fin 7 → Bool, u p = b → (C.wires (List.ofFn u)).getD (7 + ((j : Fin 10) : ℕ)) false = (C.wires (List.ofFn u)).getD w false",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1413",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Every circuit of exactly 10 AND, OR, NOT gates, each listing at most two wires, that computes the edge function of the 7-cycle (1 iff some x(i) and x(i+1) are both 1) has an input i and a bit b such that, on the inputs with x(i) = b, at least 3 gates (b = 0) or 4 gates (b = 1) are each constant or equal to an earlier wire. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1413.02ebf9e94eb3.json",
+  "statement_hash": "sha256:93b0c543ecfd7e3a7ff6387c8ccb7718d8a73b2ab2875b8b9ea663083c243b54",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T23:03:20.047Z",
+  "title": "Probe: every 10-gate AND/OR/NOT fan-in-two circuit for the 7-cycle edge function has a tight single input substitution",
+  "used_by": []
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002227",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:48d34354c8e02a5a568ac34ebb26335a568e682df8f8c655805a918648b231cb",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L033.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:32:35.408Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:31:44.247Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m l h : ℕ) (π : List (PEqualNP.ProofComplexity.LinClause (Fin m × Fin l))), 1 ≤ h → PEqualNP.ProofComplexity.IsLinRefutation (PEqualNP.ProofComplexity.BPHP m l) π → ∃ (M W : ℕ) (g : Fin M → Fin W → MvPolynomial (Fin m × Fin l) (ZMod 2)), M ≤ 3 * π.length + m.choose 2 ∧ (∀ (j : Fin M) (i : Fin W), (g j i).totalDegree ≤ 1) ∧ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.blockSystem (PEqualNP.ProofComplexity.bitPHPSystem m l) h M W g) (max (2 * h + l) (4 * h + 1))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-033",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "A Res(+) refutation of BPHP m l with S lines gives at most 3S + C(m,2) blocks of accuracy h with affine inputs and a PC refutation of degree max(2h + l, 4h + 1) of the bit system extended by the blocks (Theorem 7.9). Link of the chain to L-pcx-022 following the unrefereed arXiv:2609.23015; conjecture until checked here.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-033.6c3c2dc1587e.json",
+  "statement_hash": "sha256:3ac635343acea984a9a257dfdb01061cb8ebaf1d04c8c2c290d310d957213af7",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:32:35.408Z",
+  "title": "Chain C: a Res(+) refutation of bit pigeonhole gives a low-degree PC refutation with one block of extension variables per line",
+  "used_by": []
+}

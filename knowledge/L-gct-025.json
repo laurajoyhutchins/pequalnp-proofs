@@ -1,0 +1,40 @@
+{
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T15:53:34.253Z",
+      "outcome": "died",
+      "when": "2026-11-22T14:53:29.660Z",
+      "why_died": "Pricing leg lost at restart. Seat's pricing: the manuscript route needs spectral curves, a Severi bound and Bertini, none in the pinned library; out of reach. New gadget next."
+    },
+    {
+      "ended_at": "2026-11-22T18:25:07.174Z",
+      "outcome": "died",
+      "when": "2026-11-22T15:53:52.673Z",
+      "why_died": "Gadget G_r: 8 legs, one wall (data directions); proved on paper only (r-1)d <= m^2/4 explicit, m^2 log m generic. Checked spin-off: L-gct-056, 057, 074. Notes in Gct/Gadget025/"
+    },
+    {
+      "ended_at": "2026-11-22T18:25:10.970Z",
+      "outcome": "died",
+      "when": "2026-11-22T18:25:09.185Z",
+      "why_died": "Char 2 (a, b, r even): G_r is a sum of principal Pfaffians of X^T (J-I) X; Sing has only linear codimension for even r in the range; base points exact at K = 10, 14, 18 (seat-clb-2, unchecked)"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ k : ℕ, 128 ≤ k → ∃ (r d : ℕ) (G : MvPolynomial (Fin d) ℂ) (g : Fin (11 * k) × Fin (11 * k) → MvPolynomial (Fin d) ℂ), k ≤ 3 * r ∧ k ^ 2 ≤ 100 * d + 100 ∧ G.IsHomogeneous r ∧ (∀ x : Fin d → ℂ, (∀ i, MvPolynomial.eval x (MvPolynomial.pderiv i G) = 0) → x = 0) ∧ (∀ i, (g i).totalDegree ≤ 1) ∧ MvPolynomial.bind₁ g (PEqualNP.Gct.permPoly ℂ (11 * k)) = G",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-025",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Chain link 2, NOT routine (its Props 3.1, 6.1, 7.2, 7.3): for k at least 128 an affine substitution turns the permanent of size 11k into a smooth form of degree at least k/3 in at least k^2/100 - 1 variables. Method: matching gadgets, then the singular locus bounded by reduction mod 2, plane spectral curves, adjugate ideals and Severi dimension bounds. Source: the unrefereed manuscript of 24 September 2026 on a cubic lower bound for border dc of the permanent (cited by arXiv:2610.40484); read once by a leg, not verified here.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-025.1c9d55f173a7.json",
+  "statement_hash": "sha256:ea716167bffb051dc891479fee32ec76ed4ff0bed34ca1e819ddf87e7724fed1",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-22T18:25:10.970Z",
+  "title": "The permanent of size 11k restricts to a smooth form of degree at least k/3 in about k^2/100 variables",
+  "used_by": [
+    "L-gct-026"
+  ]
+}

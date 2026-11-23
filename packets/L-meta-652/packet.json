@@ -1,28 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-652",
-  "file": "lean/PEqualNP/Outside/L_meta_652.lean",
-  "module": "PEqualNP.Outside.L_meta_652",
-  "statement": "(∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.FanInTwo C ∧ C.size ≤ 15 ∧ ∃ o0 o1 o2 : ℕ, ∀ x : Fin 6 → Bool, (C.wires (List.ofFn x)).getD o0 false = ((x 0 && x 3) || (x 1 && x 4) || (x 2 && x 5)) ∧ (C.wires (List.ofFn x)).getD o1 false = ((x 0 && x 4) || (x 1 && x 5) || (x 2 && x 3)) ∧ (C.wires (List.ofFn x)).getD o2 false = ((x 0 && x 5) || (x 1 && x 3) || (x 2 && x 4))) ∧ ¬ (∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.FanInTwo C ∧ C.size ≤ 14 ∧ ∃ o0 o1 o2 : ℕ, ∀ x : Fin 6 → Bool, (C.wires (List.ofFn x)).getD o0 false = ((x 0 && x 3) || (x 1 && x 4) || (x 2 && x 5)) ∧ (C.wires (List.ofFn x)).getD o1 false = ((x 0 && x 4) || (x 1 && x 5) || (x 2 && x 3)) ∧ (C.wires (List.ofFn x)).getD o2 false = ((x 0 && x 5) || (x 1 && x 3) || (x 2 && x 4)))",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Three cyclic matchings of K(3,3): joint circuit size exactly fifteen, the sum of the single sizes",
-    "context": "A SEARCH, not a routine proof: there is no paper argument. The value is only known in-house to lie between 10 and 15, and a related family on four inputs does save gates (computed, not checked). Either exhibit a joint circuit with at most 14 gates, which refutes the statement, or exclude it by an exhaustive search with a certificate. Finite: six inputs, three outputs. The statement uses only the definitions root. No sorry, no new axiom. Put every declaration of your file inside its own namespace.",
-    "shard_spec": "0: search for a joint circuit with at most 14 gates\n1: exclude 14 gates by exhaustive search with a certificate",
-    "dead": [],
-    "unlocks": "A test of whether three outputs on shared inputs can be computed together for less than apart; a joint circuit with 14 gates redirects the several-outputs line"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -90,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -425,10 +404,48 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "A SEARCH, not a routine proof: there is no paper argument. The value is only known in-house to lie between 10 and 15, and a related family on four inputs does save gates (computed, not checked). Either exhibit a joint circuit with at most 14 gates, which refutes the statement, or exclude it by an exhaustive search with a certificate. Finite: six inputs, three outputs. The statement uses only the definitions root. No sorry, no new axiom. Put every declaration of your file inside its own namespace.",
+    "dead": [],
+    "shard_spec": "0: search for a joint circuit with at most 14 gates\n1: exclude 14 gates by exhaustive search with a certificate",
+    "title": "Three cyclic matchings of K(3,3): joint circuit size exactly fifteen, the sum of the single sizes",
+    "unlocks": "A test of whether three outputs on shared inputs can be computed together for less than apart; a joint circuit with 14 gates redirects the several-outputs line"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_652.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-652",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_652",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "On six inputs a0, a1, a2 (inputs 0 to 2) and b0, b1, b2 (inputs 3 to 5), let F_s be the OR over i of a_i AND b_(i + s mod 3), for s = 0, 1, 2. The three functions are wires of one circuit of AND, OR (fan-in two) and NOT gates with 15 gates, and of no such circuit with 14 gates.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-652.73b92305b295.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T13:29:29.457Z",
+    "title": "Three cyclic matchings of K(3,3): joint circuit size exactly fifteen, the sum of the single sizes"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "(∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.FanInTwo C ∧ C.size ≤ 15 ∧ ∃ o0 o1 o2 : ℕ, ∀ x : Fin 6 → Bool, (C.wires (List.ofFn x)).getD o0 false = ((x 0 && x 3) || (x 1 && x 4) || (x 2 && x 5)) ∧ (C.wires (List.ofFn x)).getD o1 false = ((x 0 && x 4) || (x 1 && x 5) || (x 2 && x 3)) ∧ (C.wires (List.ofFn x)).getD o2 false = ((x 0 && x 5) || (x 1 && x 3) || (x 2 && x 4))) ∧ ¬ (∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.FanInTwo C ∧ C.size ≤ 14 ∧ ∃ o0 o1 o2 : ℕ, ∀ x : Fin 6 → Bool, (C.wires (List.ofFn x)).getD o0 false = ((x 0 && x 3) || (x 1 && x 4) || (x 2 && x 5)) ∧ (C.wires (List.ofFn x)).getD o1 false = ((x 0 && x 4) || (x 1 && x 5) || (x 2 && x 3)) ∧ (C.wires (List.ofFn x)).getD o2 false = ((x 0 && x 5) || (x 1 && x 3) || (x 2 && x 4)))",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

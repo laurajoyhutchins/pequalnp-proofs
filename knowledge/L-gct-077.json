@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-005932",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:4b40d51ce1d18acc12360f950ac8b67ede2cb8cb29f549a934bf4947881a78e9",
+    "lean_file": "lean/PEqualNP/Gct/L077.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T19:36:34.959Z",
+      "outcome": "checked",
+      "when": "2026-11-22T19:23:39.196Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n G : ℕ), (∀ L : Submodule ℂ (Fin n × Fin n → ℂ), (∀ t ∈ L, MvPolynomial.eval (fun p => 1 + t p) (PEqualNP.Gct.permPoly ℂ n) = (Nat.factorial n : ℂ)) → Module.finrank ℂ L ≤ G) → ∀ N : ℕ, PEqualNP.Gct.HasBorderDetExpression (PEqualNP.Gct.permPoly ℂ (n + 1)) N → (n + 1) ^ 2 + 1 ≤ G + 2 * (n + 1) + N",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-077",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If every linear space L of n x n complex matrices with perm(J_n + t) = n! for all t in L has dim at most G, then every border determinantal expression of perm_(n+1) has size N with (n+1)^2 + 1 <= G + 2(n+1) + N. Proof: at Sigma_(n+1) = J - (n+1)E_11, perm(Sigma + t) for t with zero first row and column is -sum_j j (n-j)! E_j(t'), so spaces through Sigma meet that subspace (codim 2n+1) in a level space; then L-gct-069.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-077.7d7a761736dd.json",
+  "statement_hash": "sha256:cc4eae9205e84cef450713c8d51807dd81a11f616fa9cc6b7704cd49a88c5f9b",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T19:36:34.959Z",
+  "title": "Reduction of L-gct-037 to the level-space problem: a bound G on spaces where perm(J_n + t) = n! gives border dc(perm_(n+1)) >= (n+1)^2 - 2(n+1) + 1 - G",
+  "used_by": []
+}

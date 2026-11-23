@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-001703",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:20fb7722ccd983e902ddc2803851fdd33588b823058c578670d489f9d95cc3bb",
+    "lean_file": "lean/PEqualNP/Library/L015.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:11:00.067Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:06:57.970Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Language Bool, PEqualNP.Library.NPComplete L",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-015",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "There is a language that is in NP and to which every NP language reduces in polynomial time. Generic form of Cook (STOC 1971) and Levin (Probl. Inf. Transm. 9, 1973); the named form for SAT waits for a SAT definition.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-015.b216c9a6ec88.json",
+  "statement_hash": "sha256:a3f18d3ba537b361a855083440d8aa0d7cab1fa1c65c8c8bf45756951f9a008f",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:11:00.067Z",
+  "title": "Some language is NP-complete",
+  "used_by": []
+}

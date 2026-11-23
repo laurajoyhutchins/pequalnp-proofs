@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (N Jn : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (Ckt : PEqualNP.CircuitLowerBounds.Circuit) (fg : Fin Jn → ℕ) (Wl : Fin Jn → Finset (Fin N)), (∀ p p' l l' : Fin N, p ≠ p' → l ≠ l' → ¬ (I p l ∧ I p l' ∧ I p' l ∧ I p' l')) → PEqualNP.MetaComplexity.Monotone2 Ckt → (∀ jd : Fin Jn, (Ckt.lineDegrees (N + N) (Finset.Ico N (N + N))).getD (fg jd) 0 ≤ 2) → (∀ (jb : Fin Jn) (zz : Fin (N + N) → Bool), (∃ uz ∈ Wl jb, ∀ pz : Fin N, I pz uz → zz (Fin.castAdd N pz) = false) → (Ckt.wires (List.ofFn zz)).getD (fg jb) false = true → ∃ (pa lb : Fin N), I pa lb ∧ zz (Fin.castAdd N pa) = true ∧ zz (Fin.natAdd N lb) = true) → (Finset.univ.filter (fun e2 : Fin N × Fin N => I e2.1 e2.2 ∧ ∃ jc : Fin Jn, (∃ uc ∈ Wl jc, ¬ I e2.1 uc) ∧ (Ckt.wires (List.ofFn (fun vq : Fin (N + N) => if vq = Fin.castAdd N e2.1 then true else if vq = Fin.natAdd N e2.2 then true else false))).getD (fg jc) false = true)).card ≤ 192 * (Ckt.size + Jn) + 8 * N)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1324",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "N points, N lines, no two points on two common lines; inputs: the points, then the lines. Line-degree: line 1, point 0, AND the sum, OR the maximum. Some such incidence and AND/OR circuit of fan-in at most two with s gates has wires G_1..G_J of line-degree at most 2 and sets of lines W_1..W_J, each G_j true at an input whose points avoid some line of W_j only if some incident point and line are both on, with more than 192 (s + J) + 8N incident pairs (p, w) such that for some j, p is off some line of W_j and G_j is true with exactly p and w on. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1324.6bbb2581f8af.json",
+  "statement_hash": "sha256:124df6542ea0ad8c7c81680d76975b33eb706f245292ec47457236203fb5bb4c",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T20:25:35.183Z",
+  "title": "Search: a counterexample to PIVOT-2W, sound line-degree-2 wires with pivot sets, with more than 192 (size + J) + 8N pairs",
+  "used_by": []
+}

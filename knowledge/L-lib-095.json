@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002795",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:12fa9b89c9d9d1b578f9f572cacda615206a839d1ee73800fa08c51a29334bb8",
+    "lean_file": "lean/PEqualNP/Library/L095.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:56:30.501Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:49:11.289Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (k : ℕ) (u v : List Bool → List Bool) (h : List Bool × List Bool → Bool), PEqualNP.Library.ComputableInPolyTime (fun x : List Bool => x) (fun x : List Bool => x) u → PEqualNP.Library.ComputableInPolyTime (fun x : List Bool => x) (fun x : List Bool => x) v → PEqualNP.Library.ComputableInPolyTime PEqualNP.Library.encodePair Computability.encodeBool h → ∃ j : ℕ, PEqualNP.Library.ComputableInTime (fun x : List Bool => x) Computability.encodeBool (fun z : List Bool => h (List.replicate (2 ^ ((u z).length ^ k) + k) true ++ false :: u z, v z)) (fun n : ℕ => 2 ^ (n ^ j) + j)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-095",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "If u, v are polynomial-time and h is a polynomial-time test of pairs, then z -> h(1^(2^(|u z|^k)+k) 0 (u z), v z) is decided in time 2^(n^j)+j for some j. Generalises the library's exponential hierarchy helper; folklore padding. Needed by L-meta-016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-095.a6bd58ca2e95.json",
+  "statement_hash": "sha256:018f8fd28f231ec122906b182860e6f0f501d771dfac73d75e7f900949f3395e",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:56:30.501Z",
+  "title": "A polynomial-time test after exact exponential padding runs in exponential time",
+  "used_by": []
+}

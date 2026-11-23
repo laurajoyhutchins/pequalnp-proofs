@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ s : ℕ, PEqualNP.MetaComplexity.HasCircuitSize 10 (fun x : Fin 10 → Bool => (x 0 && x 1) || (x 0 && x 2) || (x 2 && x 3) || (x 3 && x 4) || (x 4 && x 5) || (x 5 && x 6) || (x 6 && x 7) || (x 7 && x 1) || (x 0 && x 8) || (x 1 && x 9)) s → 14 ≤ s",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-518",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Take the graph on 10 vertices with edges 01, 02, 23, 34, 45, 56, 67, 71, 08, 19 (the cycle 0, 2, 3, 4, 5, 6, 7, 1 with leaves 8 at 0 and 9 at 1). Every circuit of AND, OR and NOT gates of fan-in at most two, every gate counted, inputs free, that computes the function true exactly when both ends of some edge are true has at least 14 gates. The number 14 is edges plus vertex cover number minus one (10 + 5 - 1). It is a conjecture and may be false: a circuit with fewer gates, checked by evaluation on all inputs, refutes it.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-518.796c396fecbe.json",
+  "statement_hash": "sha256:65155558dc73805095b6734a1b09abbdf2e710b83adb198e71038b168a090f46",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T08:32:32.863Z",
+  "title": "Edge function of the 8-cycle with a leaf at each of two adjacent cycle vertices: every circuit has at least 14 gates",
+  "used_by": []
+}

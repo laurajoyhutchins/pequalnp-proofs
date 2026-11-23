@@ -1,0 +1,22 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [
+    "L-meta-1380",
+    "L-meta-1020"
+  ],
+  "formal_statement": "∀ (N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (Ckt : PEqualNP.CircuitLowerBounds.Circuit), (∀ p p' l l' : Fin N, p ≠ p' → l ≠ l' → ¬ (I p l ∧ I p l' ∧ I p' l ∧ I p' l')) → PEqualNP.MetaComplexity.Monotone2 Ckt → PEqualNP.CircuitLowerBounds.HasLineDegree (N + N) (Finset.Ico N (N + N)) Ckt 3 → (∀ z : Fin (N + N) → Bool, PEqualNP.MetaComplexity.circuitFun (N + N) Ckt z = true → ∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true) → (Finset.univ.filter (fun e : Fin N × Fin N => I e.1 e.2 ∧ PEqualNP.MetaComplexity.circuitFun (N + N) Ckt (fun k => decide (k = Fin.castAdd N e.1 ∨ k = Fin.natAdd N e.2)) = true)).card ≤ 888 * Ckt.size + 9 * N + 444",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1391",
+  "kind": "helper",
+  "layer": 1,
+  "plain_statement": "On N points and N lines with no two points on two common lines, every AND/OR circuit of fan-in at most two and output line-degree at most 3 that is true only at inputs where some point and a line through it are on is true at the input with exactly p and l on for at most 888 times its size plus 9N plus 444 incident pairs (p, l). No hypotheses. Conjecture, on paper: the checked conditional form applied to four checked statements.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1391.189b098a0af9.json",
+  "statement_hash": "sha256:871330366ca226ebe096627aa2242235bf28dc5c130e64f66971ca01e582a425",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T21:54:38.932Z",
+  "title": "Line-degree 3, unconditional, below the incidence function: a circuit true only at incident inputs accepts at most 888 size + 9N + 444 incident pairs",
+  "used_by": []
+}

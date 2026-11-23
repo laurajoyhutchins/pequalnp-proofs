@@ -1,0 +1,44 @@
+{
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T13:14:25.431Z",
+      "outcome": "died",
+      "when": "2026-11-22T13:14:25.385Z",
+      "why_died": "Candidate 2 incorrect: width-k Res(lin) is degree-(2k+1) PC over F2, and random 3-CNF needs PC degree Omega(n) over every field (Alekhnovich-Razborov 2001), so it answers SAT there"
+    },
+    {
+      "ended_at": "2026-11-22T13:14:25.522Z",
+      "outcome": "died",
+      "when": "2026-11-22T13:14:25.476Z",
+      "why_died": "Candidate 1 incorrect: Tseitin on expanders and random 3-CNF need resolution width Omega(n) (Ben-Sasson-Wigderson 2001), so width-k saturation answers SAT there"
+    },
+    {
+      "ended_at": "2026-11-22T13:35:19.555Z",
+      "outcome": "died",
+      "when": "2026-11-22T13:35:19.510Z",
+      "why_died": "Candidate 3 is exponential if two 2026 preprints hold: dag-like Res(+) needs exp size on bit PHP (arXiv:2609.23015) and on random 3-CNF (arXiv:2610.00837). Unreviewed; reopen if refuted."
+    },
+    {
+      "ended_at": "2026-11-22T13:53:58.883Z",
+      "outcome": "died",
+      "when": "2026-11-22T13:53:53.765Z",
+      "why_died": "Candidate 4: SP with quasipoly coefficients is simulated by CP (CCC 2021), and CP is exponential on clique-coloring (Pudlak 1997) and random log-width CNF (FPPR 2017)"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.Search.SAT ∈ PEqualNP.Library.P",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-alg-001",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "SAT, under the encoding of lean/PEqualNP/Search/README.md, is decided in polynomial time. With SAT NP-complete (L-lib-031) this is P = NP. Open problem; conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-alg-001.af98b2f10a1d.json",
+  "statement_hash": "sha256:f5885a728d4330f44fb75bf6bbd8aa0e556ba237cda6daf30a52f8a14c4a6f0d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-22T13:53:58.883Z",
+  "title": "SAT is in P (the program's goal)",
+  "used_by": []
+}

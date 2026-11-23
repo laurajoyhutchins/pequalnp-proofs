@@ -1,0 +1,446 @@
+{
+  "nodes": [
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-001.9273afc754ad.json",
+      "direct_users": [],
+      "id": "L-clb-001",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-001.9273afc754ad.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-002.227930369941.json",
+      "direct_users": [],
+      "id": "L-clb-002",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-002.227930369941.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-003.30477b7b268f.json",
+      "direct_users": [],
+      "id": "L-clb-003",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-003.30477b7b268f.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-004.c6ad38432b17.json",
+      "direct_users": [],
+      "id": "L-clb-004",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-004.c6ad38432b17.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-005.e6420be26801.json",
+      "direct_users": [],
+      "id": "L-clb-005",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-005.e6420be26801.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-006.30725289d39c.json",
+      "direct_users": [],
+      "id": "L-clb-006",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-006.30725289d39c.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-007.12604180da09.json",
+      "direct_users": [],
+      "id": "L-clb-007",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-007.12604180da09.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-008.8b11e205421b.json",
+      "direct_users": [],
+      "id": "L-clb-008",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-008.8b11e205421b.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-009.86d1d0d93553.json",
+      "direct_users": [],
+      "id": "L-clb-009",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-009.86d1d0d93553.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-010.1df751cdb1d8.json",
+      "direct_users": [],
+      "id": "L-clb-010",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-010.1df751cdb1d8.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-011.f364b48d5b1a.json",
+      "direct_users": [],
+      "id": "L-clb-011",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-011.f364b48d5b1a.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-012.dd055dba66ab.json",
+      "direct_users": [],
+      "id": "L-clb-012",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-012.dd055dba66ab.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-013.103c56d14659.json",
+      "direct_users": [],
+      "id": "L-clb-013",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-013.103c56d14659.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-014.6f369f10bf0d.json",
+      "direct_users": [
+        "L-clb-015"
+      ],
+      "id": "L-clb-014",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-014.6f369f10bf0d.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-clb-014"
+      ],
+      "detail_path": "data/lemma/L-clb-015.9fdef9cf4fba.json",
+      "direct_users": [],
+      "id": "L-clb-015",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-015.9fdef9cf4fba.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-016.0c1fb12fa03e.json",
+      "direct_users": [
+        "L-clb-019",
+        "L-clb-020",
+        "L-clb-021"
+      ],
+      "id": "L-clb-016",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-016.0c1fb12fa03e.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-017.5e64fe70b9dd.json",
+      "direct_users": [],
+      "id": "L-clb-017",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-017.5e64fe70b9dd.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-018.bf7cc6417ed7.json",
+      "direct_users": [],
+      "id": "L-clb-018",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-018.bf7cc6417ed7.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-clb-016"
+      ],
+      "detail_path": "data/lemma/L-clb-019.053634bb038e.json",
+      "direct_users": [],
+      "id": "L-clb-019",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-019.053634bb038e.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-clb-016"
+      ],
+      "detail_path": "data/lemma/L-clb-020.36b25207f36b.json",
+      "direct_users": [],
+      "id": "L-clb-020",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-020.36b25207f36b.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-clb-016"
+      ],
+      "detail_path": "data/lemma/L-clb-021.838492518407.json",
+      "direct_users": [
+        "L-clb-026"
+      ],
+      "id": "L-clb-021",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-021.838492518407.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-022.ef8250d70423.json",
+      "direct_users": [],
+      "id": "L-clb-022",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-022.ef8250d70423.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-023.1d692d5ad0d6.json",
+      "direct_users": [],
+      "id": "L-clb-023",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-023.1d692d5ad0d6.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-024.8fae61173ae9.json",
+      "direct_users": [],
+      "id": "L-clb-024",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-024.8fae61173ae9.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-025.5be604b588d0.json",
+      "direct_users": [
+        "L-clb-026",
+        "L-clb-027"
+      ],
+      "id": "L-clb-025",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-025.5be604b588d0.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-clb-021",
+        "L-clb-025"
+      ],
+      "detail_path": "data/lemma/L-clb-026.7edcfc23443a.json",
+      "direct_users": [],
+      "id": "L-clb-026",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-026.7edcfc23443a.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [
+        "L-clb-025"
+      ],
+      "detail_path": "data/lemma/L-clb-027.381f284aa72f.json",
+      "direct_users": [],
+      "id": "L-clb-027",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-027.381f284aa72f.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-028.44b917368ef4.json",
+      "direct_users": [],
+      "id": "L-clb-028",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-028.44b917368ef4.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-029.cced17c210c9.json",
+      "direct_users": [],
+      "id": "L-clb-029",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-029.cced17c210c9.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-030.9969454c837e.json",
+      "direct_users": [],
+      "id": "L-clb-030",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-030.9969454c837e.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-031.0b0af5581c5a.json",
+      "direct_users": [],
+      "id": "L-clb-031",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-031.0b0af5581c5a.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-032.42d9e0f692c0.json",
+      "direct_users": [],
+      "id": "L-clb-032",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-032.42d9e0f692c0.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-033.57b0a1ffdf2a.json",
+      "direct_users": [],
+      "id": "L-clb-033",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-033.57b0a1ffdf2a.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-034.b4fe1b42ee21.json",
+      "direct_users": [],
+      "id": "L-clb-034",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-034.b4fe1b42ee21.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-035.8c60544b286a.json",
+      "direct_users": [],
+      "id": "L-clb-035",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-035.8c60544b286a.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "artifact": null,
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-036.30304ccaf120.json",
+      "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
+      "id": "L-clb-036",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-036.30304ccaf120.json",
+      "statement_hash": "sha256:cbc5a91873f7c049cd15d918af4e9a5391603c400408f7312f1401a3c0caeebd",
+      "statement_hash_verified": true,
+      "status": "in_work",
+      "status_code": "w",
+      "title": "OPEN: SAT has no fan-in two circuits of size O(n^1.01)",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-037.5dc3633ad24c.json",
+      "direct_users": [],
+      "id": "L-clb-037",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-037.5dc3633ad24c.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-038.35753e40c043.json",
+      "direct_users": [],
+      "id": "L-clb-038",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-038.35753e40c043.json",
+      "status_code": "x",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-039.17c7a819c6a1.json",
+      "direct_users": [],
+      "id": "L-clb-039",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-039.17c7a819c6a1.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-040.731e6a9391b1.json",
+      "direct_users": [],
+      "id": "L-clb-040",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-040.731e6a9391b1.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-clb-041.6c24f6779265.json",
+      "direct_users": [],
+      "id": "L-clb-041",
+      "program": "circuit_lower_bounds",
+      "source": "https://data.pequalnp.com/data/lemma/L-clb-041.6c24f6779265.json",
+      "status_code": "c",
+      "unmapped_dependencies": []
+    }
+  ],
+  "program_key": "clb"
+}

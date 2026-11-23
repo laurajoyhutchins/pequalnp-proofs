@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-pcx-104",
-  "file": "lean/PEqualNP/Outside/L_pcx_104.lean",
-  "module": "PEqualNP.Outside.L_pcx_104",
-  "statement": "¬ ((∀ Fp : Set (PEqualNP.ProofComplexity.Clause (Fin 10 ⊕ (ℕ × ℕ))), Fp = {Cep | ∃ eep ∈ ([(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (0, 5), (1, 6), (2, 7), (3, 8), (4, 9), (5, 7), (7, 9), (9, 6), (6, 8), (8, 5)] : List (Fin 10 × Fin 10)), Cep = {(((Sum.inl eep.1) : Fin 10 ⊕ (ℕ × ℕ)), true), (((Sum.inl eep.2) : Fin 10 ⊕ (ℕ × ℕ)), true)}} ∪ {Cap | ∃ iap : Fin 10, iap.val + 1 < 10 ∧ Cap = {(((Sum.inl iap) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (iap.val, 0)) : Fin 10 ⊕ (ℕ × ℕ)), true)}} ∪ {Cbp | ∃ (ibp : Fin 10) (hbp jbp : ℕ), ibp.val = hbp + 1 ∧ ibp.val + 1 < 10 ∧ jbp < 5 ∧ Cbp = {(((Sum.inr (hbp, jbp)) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ibp.val, jbp)) : Fin 10 ⊕ (ℕ × ℕ)), true)}} ∪ {Ccp | ∃ (icp : Fin 10) (hcp gcp : ℕ), icp.val = hcp + 1 ∧ icp.val + 1 < 10 ∧ gcp + 1 < 5 ∧ Ccp = {(((Sum.inl icp) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hcp, gcp)) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (icp.val, gcp + 1)) : Fin 10 ⊕ (ℕ × ℕ)), true)}} ∪ {Cdp | ∃ (idp : Fin 10) (hdp : ℕ), idp.val = hdp + 1 ∧ Cdp = {(((Sum.inl idp) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hdp, 4)) : Fin 10 ⊕ (ℕ × ℕ)), false)}} ∪ {Cfp | ∃ jfp : ℕ, 1 ≤ jfp ∧ jfp < 5 ∧ Cfp = {(((Sum.inr (0, jfp)) : Fin 10 ⊕ (ℕ × ℕ)), false)}} → (∃ πap, PEqualNP.ProofComplexity.IsRefutation Fp πap ∧ ∀ Dap ∈ πap, Dap.card ≤ 3) ∧ (¬ ∃ πbp, PEqualNP.ProofComplexity.IsRefutation Fp πbp ∧ ∀ Dbp ∈ πbp, Dbp.card ≤ 2) ∧ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fp) 3 ∧ ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fp) 2) ∧ (∀ Fk : Set (PEqualNP.ProofComplexity.Clause (Fin 8 ⊕ (ℕ × ℕ))), Fk = {Cek | ∃ eek ∈ ([(0, 4), (0, 5), (0, 6), (0, 7), (1, 4), (1, 5), (1, 6), (1, 7), (2, 4), (2, 5), (2, 6), (2, 7), (3, 4), (3, 5), (3, 6), (3, 7)] : List (Fin 8 × Fin 8)), Cek = {(((Sum.inl eek.1) : Fin 8 ⊕ (ℕ × ℕ)), true), (((Sum.inl eek.2) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cak | ∃ iak : Fin 8, iak.val + 1 < 8 ∧ Cak = {(((Sum.inl iak) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (iak.val, 0)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cbk | ∃ (ibk : Fin 8) (hbk jbk : ℕ), ibk.val = hbk + 1 ∧ ibk.val + 1 < 8 ∧ jbk < 3 ∧ Cbk = {(((Sum.inr (hbk, jbk)) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ibk.val, jbk)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cck | ∃ (ick : Fin 8) (hck gck : ℕ), ick.val = hck + 1 ∧ ick.val + 1 < 8 ∧ gck + 1 < 3 ∧ Cck = {(((Sum.inl ick) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hck, gck)) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ick.val, gck + 1)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cdk | ∃ (idk : Fin 8) (hdk : ℕ), idk.val = hdk + 1 ∧ Cdk = {(((Sum.inl idk) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hdk, 2)) : Fin 8 ⊕ (ℕ × ℕ)), false)}} ∪ {Cfk | ∃ jfk : ℕ, 1 ≤ jfk ∧ jfk < 3 ∧ Cfk = {(((Sum.inr (0, jfk)) : Fin 8 ⊕ (ℕ × ℕ)), false)}} → (∃ πak, PEqualNP.ProofComplexity.IsRefutation Fk πak ∧ ∀ Dak ∈ πak, Dak.card ≤ 3) ∧ (¬ ∃ πbk, PEqualNP.ProofComplexity.IsRefutation Fk πbk ∧ ∀ Dbk ∈ πbk, Dbk.card ≤ 2) ∧ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fk) 4 ∧ ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fk) 3))",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Probe: Probe: NOT (the counter-encoded cover formula has least width 3 and F2 degree 3 on Petersen, width 3 and degree 4 on K_(4,4) side by side)",
-    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A breadth probe: either answer moves the scouts' map."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Probe: Probe: NOT (the counter-encoded cover formula has least width 3 and F2 degree 3 on Petersen, width 3 and degree 4 on K_(4,4) side by side)",
+    "unlocks": "A breadth probe: either answer moves the scouts' map."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_pcx_104.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-pcx-104",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_pcx_104",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "The counter formula of G in a vertex order: x(v) per vertex, an edge clause x(u) or x(v) per edge, and the sequential counter s(i,j) (at least j + 1 of x(0..i)) for at most tau(G) - 1 chosen. Width: largest clause of a resolution refutation, axioms counted, no weakening. Degree: least B with a degree-B polynomial calculus refutation over F2 of the clause polynomials and x^2 + x. Not (on the Petersen graph (outer 0..4, spokes i to i + 5, inner 5-7-9-6-8-5) both are 3; on K_(4,4) with sides 0..3 and 4..7 the width is 3 and the degree 4). Conjecture.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-pcx-104.25eec0901c13.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T22:59:31.800Z",
+    "title": "Probe: NOT (the counter-encoded cover formula has least width 3 and F2 degree 3 on Petersen, width 3 and degree 4 on K_(4,4) side by side)"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "¬ ((∀ Fp : Set (PEqualNP.ProofComplexity.Clause (Fin 10 ⊕ (ℕ × ℕ))), Fp = {Cep | ∃ eep ∈ ([(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (0, 5), (1, 6), (2, 7), (3, 8), (4, 9), (5, 7), (7, 9), (9, 6), (6, 8), (8, 5)] : List (Fin 10 × Fin 10)), Cep = {(((Sum.inl eep.1) : Fin 10 ⊕ (ℕ × ℕ)), true), (((Sum.inl eep.2) : Fin 10 ⊕ (ℕ × ℕ)), true)}} ∪ {Cap | ∃ iap : Fin 10, iap.val + 1 < 10 ∧ Cap = {(((Sum.inl iap) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (iap.val, 0)) : Fin 10 ⊕ (ℕ × ℕ)), true)}} ∪ {Cbp | ∃ (ibp : Fin 10) (hbp jbp : ℕ), ibp.val = hbp + 1 ∧ ibp.val + 1 < 10 ∧ jbp < 5 ∧ Cbp = {(((Sum.inr (hbp, jbp)) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ibp.val, jbp)) : Fin 10 ⊕ (ℕ × ℕ)), true)}} ∪ {Ccp | ∃ (icp : Fin 10) (hcp gcp : ℕ), icp.val = hcp + 1 ∧ icp.val + 1 < 10 ∧ gcp + 1 < 5 ∧ Ccp = {(((Sum.inl icp) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hcp, gcp)) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (icp.val, gcp + 1)) : Fin 10 ⊕ (ℕ × ℕ)), true)}} ∪ {Cdp | ∃ (idp : Fin 10) (hdp : ℕ), idp.val = hdp + 1 ∧ Cdp = {(((Sum.inl idp) : Fin 10 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hdp, 4)) : Fin 10 ⊕ (ℕ × ℕ)), false)}} ∪ {Cfp | ∃ jfp : ℕ, 1 ≤ jfp ∧ jfp < 5 ∧ Cfp = {(((Sum.inr (0, jfp)) : Fin 10 ⊕ (ℕ × ℕ)), false)}} → (∃ πap, PEqualNP.ProofComplexity.IsRefutation Fp πap ∧ ∀ Dap ∈ πap, Dap.card ≤ 3) ∧ (¬ ∃ πbp, PEqualNP.ProofComplexity.IsRefutation Fp πbp ∧ ∀ Dbp ∈ πbp, Dbp.card ≤ 2) ∧ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fp) 3 ∧ ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fp) 2) ∧ (∀ Fk : Set (PEqualNP.ProofComplexity.Clause (Fin 8 ⊕ (ℕ × ℕ))), Fk = {Cek | ∃ eek ∈ ([(0, 4), (0, 5), (0, 6), (0, 7), (1, 4), (1, 5), (1, 6), (1, 7), (2, 4), (2, 5), (2, 6), (2, 7), (3, 4), (3, 5), (3, 6), (3, 7)] : List (Fin 8 × Fin 8)), Cek = {(((Sum.inl eek.1) : Fin 8 ⊕ (ℕ × ℕ)), true), (((Sum.inl eek.2) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cak | ∃ iak : Fin 8, iak.val + 1 < 8 ∧ Cak = {(((Sum.inl iak) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (iak.val, 0)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cbk | ∃ (ibk : Fin 8) (hbk jbk : ℕ), ibk.val = hbk + 1 ∧ ibk.val + 1 < 8 ∧ jbk < 3 ∧ Cbk = {(((Sum.inr (hbk, jbk)) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ibk.val, jbk)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cck | ∃ (ick : Fin 8) (hck gck : ℕ), ick.val = hck + 1 ∧ ick.val + 1 < 8 ∧ gck + 1 < 3 ∧ Cck = {(((Sum.inl ick) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hck, gck)) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (ick.val, gck + 1)) : Fin 8 ⊕ (ℕ × ℕ)), true)}} ∪ {Cdk | ∃ (idk : Fin 8) (hdk : ℕ), idk.val = hdk + 1 ∧ Cdk = {(((Sum.inl idk) : Fin 8 ⊕ (ℕ × ℕ)), false), (((Sum.inr (hdk, 2)) : Fin 8 ⊕ (ℕ × ℕ)), false)}} ∪ {Cfk | ∃ jfk : ℕ, 1 ≤ jfk ∧ jfk < 3 ∧ Cfk = {(((Sum.inr (0, jfk)) : Fin 8 ⊕ (ℕ × ℕ)), false)}} → (∃ πak, PEqualNP.ProofComplexity.IsRefutation Fk πak ∧ ∀ Dak ∈ πak, Dak.card ≤ 3) ∧ (¬ ∃ πbk, PEqualNP.ProofComplexity.IsRefutation Fk πbk ∧ ∀ Dbk ∈ πbk, Dbk.card ≤ 2) ∧ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fk) 4 ∧ ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem Fk) 3))",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-009632",
+    "checker_version": "check-lean 3, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:f3674f1972999f090123f087ca7d8febd456aa62fd7fb177ef39db0e6883655f",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L021.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:32:58.024Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:04:58.595Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.MetaComplexity.PartialMCSP ∈ PEqualNP.Library.NP",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-021",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Partial MCSP is in NP: the witness is a circuit, and its consistency with every defined entry of the table is checked in polynomial time by evaluating all wires on all inputs at once. Standard (as for MCSP: Kabanets and Cai, STOC 2000). The deterministic consistency check is the brick L-meta-007 and L-meta-016 both need.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-021.a28a6e73ef24.json",
+  "statement_hash": "sha256:db1a187460a7c311a95eeef52e8db9a5c9729049e7b8b753b750729b95a66964",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:32:58.024Z",
+  "title": "Partial MCSP is in NP",
+  "used_by": []
+}

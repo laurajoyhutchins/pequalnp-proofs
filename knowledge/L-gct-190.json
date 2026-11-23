@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Submodule ℂ (Fin 5 × Fin 5 → ℂ), (∀ t ∈ L, (∑ f : Fin 5 ↪ Fin 5, ∏ i, (1 + t (i, f i))) = 120) ∧ Module.finrank ℂ L = 8",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-190",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "SEARCH GAP, possibly false: exhibit a linear space L of 5 x 5 complex matrices of dimension exactly 8 on which the sum over all permutations f of the product of (1 + t(i, f(i))) stays equal to 120, its value at t = 0 (equivalently all sums of k x k subpermanents vanish on L). Dimension 7 is on our record (unchecked, exact arithmetic); the conjectured bound p + q - 2 = 8 allows 8. A witness is an explicit basis; a refutation is the bound 7.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-190.1b980c6806d5.json",
+  "statement_hash": "sha256:96c6fb425df96e9962424810bbc334034e4fa8c2f51bc5e25a8e72b7e5761b55",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T06:46:34.946Z",
+  "title": "Search: a level space of 5 x 5 complex matrices of dimension 8 (one above the best on our record)",
+  "used_by": []
+}

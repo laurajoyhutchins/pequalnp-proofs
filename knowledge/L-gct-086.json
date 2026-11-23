@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "ended_at": "2026-11-23T09:25:01.915Z",
+      "outcome": "died",
+      "when": "2026-11-22T19:56:13.263Z",
+      "why_died": "line rests (on no chain); outside provers hold leases; released so an accepted outside proof can be recorded; notes kept in barriers/l037/STATE.md"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ C : ℕ, ∀ (n : ℕ) (L : Submodule ℂ (Fin n × Fin n → ℂ)), (∀ t ∈ L, MvPolynomial.eval (fun p => 1 + t p) (PEqualNP.Gct.permPoly ℂ n) = (Nat.factorial n : ℂ)) → Module.finrank ℂ L ≤ C * n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-086",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There is a constant C such that every linear space L of n x n complex matrices on which perm(J_n + t) = n! for all t in L has dim L <= C n. With the checked L-gct-077 it gives border dc(perm_m) >= m^2 - (C + 2) m + O(1), past the checked 2/3. Floor checked: L-gct-080 (2n - 3). The determinant analogue at I is quadratic (nilpotent spaces), so a proof must use what perm lacks.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-086.ab79638c0716.json",
+  "statement_hash": "sha256:9429f70f64a45d32002742eed77af5c0fa83dbafecc4b5bb4192dbb68bf578d8",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T09:25:01.915Z",
+  "title": "TARGET: level spaces of the permanent at J are linear: dim L <= C n whenever perm(J_n + t) = n! on L",
+  "used_by": []
+}

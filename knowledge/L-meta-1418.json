@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ T ∈ ({0xe8808080, 0xa8888880, 0xa888a080, 0xe8808880, 0xe888a000, 0xa8888888, 0xa888a880, 0xa8a8a800, 0xe880a880, 0xe8888880} : Finset ℕ), ∀ (gates : List PEqualNP.CircuitLowerBounds.Gate) (o : ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) → (∀ i j : Fin gates.length, (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → (gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not → i = j) → (∀ x : Fin 5 → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, o⟩ (List.ofFn x) = Nat.testBit T (∑ i : Fin 5, if x i then 2 ^ (i : ℕ) else 0)) → ∃ (gates' : List PEqualNP.CircuitLowerBounds.Gate) (o' : ℕ), (∀ g ∈ gates', (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length ≤ 2) ∧ gates'.length ≤ gates.length ∧ ∀ x : Fin 5 → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates', o'⟩ (List.ofFn x) = Nat.testBit T (∑ i : Fin 5, if x i then 2 ^ (i : ℕ) else 0))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1418",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there, among the monotone functions of five inputs with truth table among 0xe8808080, 0xa8888880, 0xa888a080, 0xe8808880, 0xe888a000, 0xa8888888, 0xa888a880, 0xa8a8a800, 0xe880a880, 0xe8888880 (bit r is the value at the input whose i-th bit is bit i of r), one with a list of AND, OR and NOT gates reading at most two wires, at most one NOT gate, shorter than every list of AND and OR gates alone computing it? The negation of the shard's statement, wrapped whole. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1418.caaa4d43a579.json",
+  "statement_hash": "sha256:2d224d5e34081a833dae980f3f8c328d6a2f6649dd1ddb70bb38226da6b01b4e",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T23:17:27.162Z",
+  "title": "Search: a monotone function of five inputs (shard 02 of 18) where a fan-in-two list with one NOT gate beats every NOT-free list",
+  "used_by": []
+}

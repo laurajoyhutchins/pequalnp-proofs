@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003933",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:49a4798dc1a39315af4c62c6dab9ab737106bf50b6c36fc541bbcc24f59230de",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L027.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:43:42.384Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:03:22.717Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m k : ℕ) (S : Finset (Fin m → Bool)), 0 < k → (∀ x : Fin m → Bool, x ∉ S → ∃ V : Finset (Fin m), V.card ≤ k ∧ ∀ y : Fin m → Bool, (∀ i ∈ V, y i = x i) → y ∉ S) → (∀ x ∈ S, ∀ i : Fin m, Function.update x i (!x i) ∉ S) → S.card ≤ 2 * k * 2 ^ (m - m / (2 * k))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-027",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "KNOWN (Paturi, Pudlak, Zane, Satisfiability coding lemma, FOCS 1997, in a weaker integer form): a set S of points of the m-cube with no two neighbours, each of whose non-members is excluded by at most k coordinates (so S is the solution set of a CNF of width k), has at most 2k * 2^(m - m/(2k)) points. Stated without CNFs.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-027.e21beabc91d3.json",
+  "statement_hash": "sha256:0554120b1bb1d47837f23313dfe9e0f092daac105632562f00787ae087ea7cb0",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:43:42.384Z",
+  "title": "Isolated solutions of a width-k CNF on m variables number at most 2k * 2^(m - m/(2k))",
+  "used_by": []
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004877",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:c89f14c9618a554d57a4a2fcdc3f7cd5f97e9f0be9942e4dd9f48190732532ee",
+    "lean_file": "lean/PEqualNP/Gct/L069.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T18:05:35.772Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:54:23.599Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m n k : ℕ) (y : Fin m × Fin m → ℂ), MvPolynomial.eval y (PEqualNP.Gct.permPoly ℂ m) = 0 → (∀ L : Submodule ℂ (Fin m × Fin m → ℂ), (∀ t ∈ L, MvPolynomial.eval (y + t) (PEqualNP.Gct.permPoly ℂ m) = 0) → Module.finrank ℂ L ≤ k) → PEqualNP.Gct.HasBorderDetExpression (PEqualNP.Gct.permPoly ℂ m) n → m ^ 2 ≤ k + n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-069",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If y is a zero of perm_m and every linear space L with y+L in {perm_m = 0} has dim at most k, then every BORDER determinantal expression of perm_m has size n >= m^2 - k. Proof: zeros y_k of det A_k converge to y (root persistence on a line, as in L-gct-010); L_k = {t : (sum t_ij A_k,ij) u_k = 0} has dim >= m^2 - n with y_k + L_k in {det A_k = 0}; orthonormal bases converge on a subsequence to a space L of the same dim; perm(y + t) = lim det A_k(y_k + t_k) = 0. The kernel vectors u_k may diverge; they are never used in the limit.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-069.ccd1a33ac61d.json",
+  "statement_hash": "sha256:3a7fda0b0c2baabddaa6061389a72e79342d28c79b35a60e988b2b96ad91b2aa",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T18:05:35.772Z",
+  "title": "Border subspace reduction: L-gct-035 holds for border determinantal expressions",
+  "used_by": []
+}

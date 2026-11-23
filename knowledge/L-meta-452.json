@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (k m : ℕ) (r : Fin k → (Fin m → ℚ)),\n    (∀ i, r i ≠ 0) →\n    (∃ j : Fin k, r j ∈ Submodule.span ℚ (r '' {l | l ≠ j})) →\n    Nat.card {i : Fin k // r i ∉ Submodule.span ℚ (r '' {j | j ≠ i})} + 1 ≤\n      Module.finrank ℚ (Submodule.span ℚ (Set.range r))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-452",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For any finite family of nonzero rational vectors in which some member lies in the span of the others, the dimension of the span of the whole family is at least one more than the number of members that do not lie in the span of the others.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-452.6f4b144a7253.json",
+  "statement_hash": "sha256:4f75e0d485e528b3f25be05ef6b7fbe4bd4c25fc99c9cf03b00743c18cec2bfb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T07:45:17.298Z",
+  "title": "A redundant vector raises the rank above the number of essential vectors (standalone text)",
+  "used_by": []
+}

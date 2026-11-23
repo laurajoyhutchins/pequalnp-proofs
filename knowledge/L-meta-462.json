@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (k : ℕ) (A : Fin k → Finset (Sym2 (Fin 6))) (B : Fin k → Finset (Finset (Fin 6)))\n    (t : Fin k → Fin 6),\n    (∀ i, ∀ e ∈ A i, e ∈ (SimpleGraph.fromRel (fun a b : Fin 6 =>\n        (a = 0 ∧ b = 1) ∨ (a = 0 ∧ b = 2) ∨ (a = 1 ∧ b = 2) ∨\n        (a = 0 ∧ b = 3) ∨ (a = 1 ∧ b = 4) ∨ (a = 2 ∧ b = 5))).edgeFinset ∧ t i ∈ e) →\n    (∀ i, ∀ I ∈ B i, t i ∉ I) →\n    (∀ e ∈ (SimpleGraph.fromRel (fun a b : Fin 6 =>\n        (a = 0 ∧ b = 1) ∨ (a = 0 ∧ b = 2) ∨ (a = 1 ∧ b = 2) ∨\n        (a = 0 ∧ b = 3) ∨ (a = 1 ∧ b = 4) ∨ (a = 2 ∧ b = 5))).edgeFinset,\n      ∀ I : Finset (Fin 6), (∀ u ∈ I, ∀ w ∈ I, ¬ (SimpleGraph.fromRel (fun a b : Fin 6 =>\n        (a = 0 ∧ b = 1) ∨ (a = 0 ∧ b = 2) ∨ (a = 1 ∧ b = 2) ∨\n        (a = 0 ∧ b = 3) ∨ (a = 1 ∧ b = 4) ∨ (a = 2 ∧ b = 5))).Adj u w) →\n        ∃! i : Fin k, e ∈ A i ∧ I ∈ B i) →\n    9 ≤ k",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-462",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For the net graph on 6 vertices (a triangle 0,1,2 with one pendant vertex at each corner), suppose all pairs (edge, independent set) are split into k rectangles, each a set of edges times a set of vertex sets with a label vertex lying in all its edges and in none of its sets, every pair in exactly one rectangle. Then k is at least 9, which is the number of edges plus the least size of a vertex cover (6 plus 3).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-462.a72c98429a13.json",
+  "statement_hash": "sha256:35889da80afe901ef19b04fc9d475897ec4c5020fd7b24269156e89a8b0f3aa3",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T07:46:00.448Z",
+  "title": "The net needs at least 9 rectangles: edges plus cover number on a triangle with three pendant edges (standalone text)",
+  "used_by": []
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004234",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:a37549ddf38b004e4708428817e457f9c03bec1339cbdeca03cfe58b29092e8b",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L048.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:14:21.965Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:29:16.995Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ p : Polynomial ℕ, ∃ (n : ℕ) (F : Finset (PEqualNP.ProofComplexity.Clause (Fin n))), (∀ C ∈ F, C.card ≤ 3) ∧ ¬ PEqualNP.ProofComplexity.Satisfiable (↑F : Set (PEqualNP.ProofComplexity.Clause (Fin n))) ∧ ∀ π : List (PEqualNP.ProofComplexity.LinClause (Fin n)), PEqualNP.ProofComplexity.IsLinRefutation (↑F : Set (PEqualNP.ProofComplexity.Clause (Fin n))) π → p.eval n < π.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-048",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For every polynomial p there is an unsatisfiable CNF on n variables with every clause of at most 3 literals whose dag-like Res(+) refutations (resolution over linear equations mod 2, semantic weakening) all have more than p(n) lines. Family: pigeonhole on the bounded-degree expander of L-pcx-043, turned into a 3-CNF with extension variables; degree bound from L-pcx-046 (open), size from L-pcx-042. Claimed in unrefereed 2026 preprints only (arXiv:2610.00837); with L-pcx-018 it refutes L-alg-003.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-048.b4abe94de87d.json",
+  "statement_hash": "sha256:547f62445bacd1cc3ae864d35d1f6cd7ee4d0614b1c3c4769471458fdb51c1f1",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:14:21.965Z",
+  "title": "TARGET: some unsatisfiable 3-CNFs have no polynomially bounded dag-like Res(+) refutations",
+  "used_by": []
+}

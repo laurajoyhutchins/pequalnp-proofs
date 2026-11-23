@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004674",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:3d5aa82a34655f6afa3b0f9f76a1a9c5ac8b5d8392965643b3c22e93e15987e7",
+    "lean_file": "lean/PEqualNP/Gct/L067.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:52:35.065Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:44:15.870Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-gct-065"
+  ],
+  "formal_statement": "∀ (M k : ℕ) (W : Submodule ℂ (Fin M → ℂ)), 2 ≤ k → (∀ j : ℕ, 2 ≤ j → j ≤ k → ∀ x ∈ W, ∑ i, x i ^ j = 0) → k * Module.finrank ℂ W ≤ M",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-067",
+  "kind": "helper",
+  "layer": 1,
+  "plain_statement": "If W in C^M is a linear subspace with sum x_i^j = 0 for every x in W and every j from 2 to k (k >= 2), then k dim W <= M. k = 2 is the isotropic bound, k = 3 is L-gct-061. Proof plan: polarize; V = W + W^2 + .. + W^(k-1) is orthogonal to W; split along the stabilizer of V; on a block the stabilizers of all intermediate products are trivial, so Kneser for codes (L-gct-065, checked) applied k - 2 times gives dim V >= (k-1) dim W. Conjecture of this project until checked; the generalization of L-gct-061 asked for by strategy.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-067.f7e1f929f3ca.json",
+  "statement_hash": "sha256:0190b06b1b37dd2484359a62b193f9bb57aaba2c3f4b63420cc2a718c7a8e7de",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:52:35.065Z",
+  "title": "Iterated Fermat lemma: a complex linear space on which the power sums p2, .., pk all vanish has dimension at most M/k",
+  "used_by": []
+}

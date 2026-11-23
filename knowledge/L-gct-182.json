@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), (∀ t ∈ L, (∀ i : Fin 4, ∑ j, t (i, j) = 0) ∧ (∀ j : Fin 4, ∑ i, t (i, j) = 0) ∧ (∑ j, ∑ l, if j = l then 0 else ∑ a : Fin 4, ∑ b : Fin 4, if a < b then t (a, j) * t (b, l) else 0) = 0 ∧ (∑ j, ∑ l, ∑ m, if j = l ∨ j = m ∨ l = m then 0 else ∑ a : Fin 4, ∑ b : Fin 4, ∑ c : Fin 4, if a < b ∧ b < c then t (a, j) * t (b, l) * t (c, m) else 0) = 0 ∧ (∑ j, ∑ l, ∑ m, ∑ n, if j = l ∨ j = m ∨ j = n ∨ l = m ∨ l = n ∨ m = n then 0 else t (0, j) * t (1, l) * t (2, m) * t (3, n)) = 0) ∧ Module.finrank ℂ L = 4",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-182",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There is a linear space L of 4 x 4 complex matrices of dimension 4 such that, for every t in L, every row and every column of t sums to zero and the sums of all 2 x 2, all 3 x 3 and all 4 x 4 subpermanents of t vanish. The largest such space known has dimension 3 (K4, a mode core). An enumeration over F_5 and F_7 found nothing larger, but that is not a proof over C, since a 4-dimensional space could be defined only over an extension field. A witness settles the 4 x 4 core maximum.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-182.5605f3674b37.json",
+  "statement_hash": "sha256:695ea30b3ad272e497b2ab13984ef76da8227abc43964316253e4610e9e15bc3",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T05:57:05.826Z",
+  "title": "SEARCH: a doubly centred level space of 4 x 4 matrices of dimension 4 (open over C; finite-field evidence says 3 is the maximum)",
+  "used_by": []
+}

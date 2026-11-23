@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003359",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:eb9ef54ba06928e6f550341fa0517450c75e59868e4dd2f8c1f52888f34d7d95",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L045.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T15:53:16.626Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:21:25.026Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (V : Type) [DecidableEq V] (F : Set (PEqualNP.ProofComplexity.Clause V)) (ρ : V → Option Bool) (π : List (PEqualNP.ProofComplexity.LinClause V)), PEqualNP.ProofComplexity.IsLinRefutation F π → ∃ π' : List (PEqualNP.ProofComplexity.LinClause V), PEqualNP.ProofComplexity.IsLinRefutation (PEqualNP.ProofComplexity.restrictCNF F ρ) π' ∧ π'.length ≤ 2 * π.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-045",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For any partial assignment rho, a Res(+) refutation of a CNF F of length S gives a Res(+) refutation of the restricted formula restrictCNF F rho of length at most 2S: substitute constants into every linear equation, drop lines that are valid under rho, and repair resolution steps whose equations collide by one weakening. Instance: PHP restricted to a bipartite graph is graph PHP (seat-pcx-1's route to L-pcx-017).",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-045.61ad8d5888c3.json",
+  "statement_hash": "sha256:8aa7e35b79d7fdbe7d2d35dc67adbaebaff3ab0cb0bbeda93417d543108b62c4",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T15:53:16.626Z",
+  "title": "Res(+) is closed under restriction: a refutation of length S gives one of the restricted formula of length at most 2S",
+  "used_by": []
+}

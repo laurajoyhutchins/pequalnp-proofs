@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (K : SimpleGraph (Fin n)) [DecidableRel K.Adj] (A : Finset (Fin n)), ∀ (k m : ℕ) (H : SimpleGraph (Fin m)), 3 ≤ k → Nonempty (K.Adj ↪r (PEqualNP.Library.Subdivision.subdiv k H).Adj) → (∀ a ∈ A, ∀ v : Fin n, ¬ K.Adj a v) → (A.Nonempty ∨ ∃ u v : Fin n, K.Adj u v) → (∀ C : PEqualNP.CircuitLowerBounds.Circuit, (PEqualNP.MetaComplexity.IsMinimalCircuit n C ∧ PEqualNP.MetaComplexity.circuitFun n C = PEqualNP.MetaComplexity.NestedCover.graphFun K A) ↔ PEqualNP.MetaComplexity.NestedCover.IsNestedCoverCircuit n K A C)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-541",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let k >= 3 and K, on vertices 0, ..., n - 1, an induced subgraph of a graph H with each edge replaced by a path of 2k + 1 edges. Let A be a set of inputs no edge meets, with A nonempty or K having an edge. Then a circuit is a least fan-in-two circuit (AND, OR, NOT, every gate counted) computing the function true exactly when some input in A is true or both ends of some edge of K are true, if and only if it is a nested cover circuit of (K, A) in the sense of the definitions root.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-541.2541cf5fa02a.json",
+  "statement_hash": "sha256:67660b41b29d191d55ffe9168bac13ed514403ad381bc77bbd7ee8a23dc1310d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T09:46:01.867Z",
+  "title": "Long threads: the least circuits of the edge function with extra OR-inputs on 2k-fold subdivisions, k >= 3, are exactly the nested cover circuits",
+  "used_by": []
+}

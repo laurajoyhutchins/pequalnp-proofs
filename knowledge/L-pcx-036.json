@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002419",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:2624d220ba554ad4abfc7efd1a93d0d571ca56ce10e4bcb6720458c437b78378",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L036.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:39:26.931Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:38:55.568Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (l : ℕ) (π : List (PEqualNP.ProofComplexity.LinClause (Fin (2 ^ l + 1) × Fin l))), 32 ≤ l → PEqualNP.ProofComplexity.IsLinRefutation (PEqualNP.ProofComplexity.BPHP (2 ^ l + 1) l) π → Real.exp ((2 : ℝ) ^ l / (32768 * (l : ℝ) ^ 2)) < (π.length : ℝ)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-036",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For l at least 32 and n = 2^l holes, every dag-like Res(+) refutation of bit pigeonhole with n + 1 pigeons has more than exp(n / (32768 l^2)) lines (Theorem 1.1). Link of the chain to L-pcx-022 following the unrefereed arXiv:2609.23015; conjecture until checked here.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-036.fe4d303052a9.json",
+  "statement_hash": "sha256:0a34e8cb6f07115160ee00cbf9eed4952ac2af64439d18951375c1c256e05749",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:39:26.931Z",
+  "title": "Dag-like Res(+) refutations of bit pigeonhole have more than exp(n / (32768 log^2 n)) lines",
+  "used_by": []
+}

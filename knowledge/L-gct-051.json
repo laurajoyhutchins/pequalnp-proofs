@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004069",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:1ad80bf949d0e2498eb50617f5031b53bd008984a4525172199d36302e1a207d",
+    "lean_file": "lean/PEqualNP/Gct/L051.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:57:56.801Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:51:14.098Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m : ℕ) (y : Fin m × Fin m → ℂ) (L : Submodule ℂ (Fin m × Fin m → ℂ)), (∀ t ∈ L, MvPolynomial.eval (y + t) (PEqualNP.Gct.permPoly ℂ m) = 0) → ∀ t ∈ L, (∑ a, MvPolynomial.eval y (MvPolynomial.pderiv a (PEqualNP.Gct.permPoly ℂ m)) * t a = 0) ∧ (∑ a, ∑ b, MvPolynomial.eval y (MvPolynomial.pderiv a (MvPolynomial.pderiv b (PEqualNP.Gct.permPoly ℂ m))) * t a * t b = 0)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-051",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If perm_m(y + t) = 0 for every t in a linear space L, then for every t in L the gradient of perm_m at y kills t and the Hessian quadratic form of perm_m at y vanishes at t: the coefficients of s and s^2 in the zero polynomial s -> perm(y + s t). Second formal reduction under L-gct-036, requested by seat-gct-1.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-051.7796cebeb0ef.json",
+  "statement_hash": "sha256:bff8890b460fc0a2a40554fd6ea1eb758464e8dbdbd005201ce32b9bd1407693",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:57:56.801Z",
+  "title": "First and second order conditions on a linear space through a zero y inside the permanent hypersurface",
+  "used_by": []
+}

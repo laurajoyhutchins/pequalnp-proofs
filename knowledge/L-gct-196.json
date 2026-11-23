@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ L : Submodule ℂ (Fin 4 × Fin 7 → ℂ), (∀ t ∈ L, (∑ i : Fin 4, ∑ j, t (i, j)) = 0 ∧ (∑ j, ∑ l, if j = l then 0 else ∑ a : Fin 4, ∑ b : Fin 4, if a < b then t (a, j) * t (b, l) else 0) = 0 ∧ (∑ j, ∑ l, ∑ m, if j = l ∨ j = m ∨ l = m then 0 else ∑ a : Fin 4, ∑ b : Fin 4, ∑ c : Fin 4, if a < b ∧ b < c then t (a, j) * t (b, l) * t (c, m) else 0) = 0 ∧ (∑ j, ∑ l, ∑ m, ∑ n, if j = l ∨ j = m ∨ j = n ∨ l = m ∨ l = n ∨ m = n then 0 else t (0, j) * t (1, l) * t (2, m) * t (3, n)) = 0) → Module.finrank ℂ L ≤ 9",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-196",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let L be a linear space of 4 x 7 complex matrices such that, for every t in L, the entry sum and the sums of all 2 x 2, all 3 x 3 and all 4 x 4 subpermanents of t vanish. Then dim L <= 9. An open case of the level-space bound dim L <= p + q - 2 at four rows; the best spaces known have dimension 8 = p + q - 3.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-196.9bce4c02999c.json",
+  "statement_hash": "sha256:7af282dae6e4e95dedb70095ccdecea58de49acc23de0218a37c6b84bc1e242a",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T06:53:24.256Z",
+  "title": "Small case at four rows: a level space of 4 x 7 matrices has dimension at most 9 = p + q - 2",
+  "used_by": []
+}

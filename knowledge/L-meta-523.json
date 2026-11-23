@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ F : (Fin 8 → Bool) → Bool, F = (fun x : Fin 8 → Bool => (x 0 && x 1) || (x 1 && x 2) || (x 2 && x 3) || (x 3 && x 4) || (x 4 && x 5) || (x 0 && x 5) || (x 0 && x 6) || (x 1 && x 7)) → ∃ C : PEqualNP.CircuitLowerBounds.Circuit, C.gates.length = 11 ∧ C.output = 18 ∧ (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length = 2 ∧ ∀ i ∈ g.inputs, i < 8 + j) ∧ (∀ x : Fin 8 → Bool, C.eval (List.ofFn x) = F x) ∧ (∃ a b : ℕ, a ≠ b ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[a]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[b]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ Relation.TransGen (fun u v : ℕ => ∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[u]? = some g ∧ 8 + v ∈ g.inputs) a b) ∧ ∀ (j p h : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate) (D : PEqualNP.CircuitLowerBounds.Circuit), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.or → (g.inputs = [p, h] ∨ g.inputs = [h, p]) → j ≠ 10 → (∀ x : Fin 8 → Bool, (C.wires (List.ofFn x)).getD h false = true → F x = true) → D = ⟨C.gates.set j ⟨PEqualNP.CircuitLowerBounds.GateOp.or, [p, p]⟩ ++ [⟨PEqualNP.CircuitLowerBounds.GateOp.or, [18, h]⟩], 19⟩ → (∃ x : Fin 8 → Bool, D.eval (List.ofFn x) ≠ F x) ∨ Set.ncard {q : ℕ × ℕ | q.1 ≠ q.2 ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[q.1]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[q.2]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ Relation.TransGen (fun u v : ℕ => ∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[u]? = some g ∧ 8 + v ∈ g.inputs) q.1 q.2} ≤ Set.ncard {q : ℕ × ℕ | q.1 ≠ q.2 ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, D.gates[q.1]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, D.gates[q.2]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ Relation.TransGen (fun u v : ℕ => ∃ g : PEqualNP.CircuitLowerBounds.Gate, D.gates[u]? = some g ∧ 8 + v ∈ g.inputs) q.1 q.2}",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-523",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "G: the 6-cycle 0-1-2-3-4-5-0 plus edges 06, 17; F = OR of x_u x_v over its 8 edges. A list of 11 gates, each AND or OR of two earlier wires (inputs 0-7, gate j is wire 8+j), output the last, computes F, has an AND gate depending on another, and for every non-output gate m = OR(p, h) (either order) with h at most F, replacing m by a copy of p and adding OR(output, h) as output gives a circuit not computing F or with no fewer pairs of AND gates one depending on the other. If 11 is least (by paper and script only) this refutes a conjecture of this line; none may exist.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-523.951c3d052363.json",
+  "statement_hash": "sha256:58871bbcf25d724523580e3902d8b0d87abb41b71f58d43eeef0596a1a6d8d68",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T09:10:07.692Z",
+  "title": "An 11-gate AND/OR circuit for the edge function of the 6-cycle with leaves at two adjacent vertices, nested, that no lift flattens",
+  "used_by": []
+}

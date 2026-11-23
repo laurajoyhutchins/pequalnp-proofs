@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C → (∀ x : Fin 11 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 11, (u.val, v.val) ∈ ([(0, 9), (0, 10), (1, 4), (1, 8), (2, 5), (2, 10), (3, 6), (3, 7), (4, 8), (4, 10), (5, 8), (5, 9), (6, 7), (6, 10), (7, 9), (8, 9)] : List (ℕ × ℕ)) ∧ x u = true ∧ x v = true)) → 22 ≤ C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1343",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Take the graph on vertices 0 to 10 with the 16 edges 0-9, 0-10, 1-4, 1-8, 2-5, 2-10, 3-6, 3-7, 4-8, 4-10, 5-8, 5-9, 6-7, 6-10, 7-9, 8-9 (no 4-cycle, three triangles, least vertex cover size 7). Every circuit of AND and OR gates only, each reading at most two wires, every gate counted, true exactly when both ends of some edge are true, has at least 22 gates, edges plus cover number minus one. The circuit from a least cover meets it. A finite statement; conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1343.55a88e880f8f.json",
+  "statement_hash": "sha256:7cc5fc818a18965c7ef1fc4c25dd0d86d58bba1b23c8119f34ab2e59267c2cdb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T20:42:04.231Z",
+  "title": "An 11-vertex graph with no 4-cycle, 16 edges and cover number 7: every fan-in-two AND/OR circuit for its edge function has at least 22 gates",
+  "used_by": []
+}

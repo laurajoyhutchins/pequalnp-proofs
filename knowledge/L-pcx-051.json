@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004473",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:75cdbcd31ec1d49d69fac5487c265315cd907fbb9332b508f2e6558ab9c907da",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L051.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:38:03.688Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:29:28.004Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (V : Type) [DecidableEq V] (F : Finset (PEqualNP.ProofComplexity.Clause V)) (k : ℕ), (∀ C ∈ F, C.card ≤ k) → ¬ PEqualNP.ProofComplexity.Satisfiable (↑F : Set (PEqualNP.ProofComplexity.Clause V)) → ∃ π : List (PEqualNP.ProofComplexity.LinKLine V), PEqualNP.ProofComplexity.IsLinKDerivation k PEqualNP.ProofComplexity.LinKSemWeak ((fun C => PEqualNP.ProofComplexity.linKOfClause C) '' (↑F : Set (PEqualNP.ProofComplexity.Clause V))) π ∧ (∅ : PEqualNP.ProofComplexity.LinKLine V) ∈ π ∧ π.length ≤ 2 * F.card + 1",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-051",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "In the system whose lines are disjunctions of conjunctions of at most k linear equations mod 2, with cut, and-introduction and FULL semantic weakening, every unsatisfiable CNF of width at most k with m clauses has a refutation of at most 2m + 1 lines: the line of the terms 'clause i is false' is a tautology, hence a weakening of an axiom, and one cut against each clause empties it. This is why Res(k,+) is defined with termwise weakening. Found by a pricing leg of seat-pcx-1; not known to us from a source.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-051.34fea4c1a50a.json",
+  "statement_hash": "sha256:0b899b057c2eba12d47d283065fe63edb55c783b48bbf3d54266e7eeab5c50fc",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:38:03.688Z",
+  "title": "Res(k,+) with full semantic weakening is trivial: every unsatisfiable CNF of width at most k with m clauses is refuted in 2m + 1 lines",
+  "used_by": []
+}

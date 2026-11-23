@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004169",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:e7fa73ee06c655065c52ef6b440ec88e5b9968530500708e23591d385d476fb3",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L046.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:06:15.124Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:58:07.157Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m N : ℕ) (G : PEqualNP.Expanders.BipGraph m N) (s D : ℕ), PEqualNP.Expanders.IsBdryExpander G s 2 → 2 * (D + 1) ≤ s → ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem (PEqualNP.Expanders.graphPHP G)) D",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-046",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If every set of at most s pigeons of the bipartite graph G has twice its size in unique neighbouring holes and 2(D+1) <= s, the pigeonhole formula on G (as clause polynomials over F2 with Boolean axioms) has no polynomial calculus refutation of degree D. Alekhnovich and Razborov (2003) and the 2015 generalized degree method for graph pigeonhole (Theorem 3.8 and 4.5 there); constant chosen conservatively. Link (b) of the L-pcx-017 chain: with L-pcx-043 and L-pcx-042 it gives exp(Omega(n)) Res(+) size.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-046.3b54bee04755.json",
+  "statement_hash": "sha256:10da09defaadb403a90f92675535e1e0d438210404343cb9277538d57d869307",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:06:15.124Z",
+  "title": "Pigeonhole on a boundary expander has no F2 polynomial calculus refutation of degree D when 2(D+1) is at most the expansion size",
+  "used_by": []
+}

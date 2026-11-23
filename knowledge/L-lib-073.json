@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-001796",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:82bce1483164b5d3619b8515d5034ef8d6af16a8b6fbd54fec948571145871c2",
+    "lean_file": "lean/PEqualNP/Library/L073.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:15:42.447Z",
+      "outcome": "checked",
+      "when": "2026-11-22T13:51:53.474Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (t : ℕ → ℕ) (L : Language Bool), L ∈ PEqualNP.Library.DTIME t → ∃ c : ℕ, L ∈ PEqualNP.CircuitLowerBounds.SIZE (fun n : ℕ => c * (t n + n + 1) ^ 3)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-073",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "Every language decided within t(n) steps has, at every length n, a circuit of AND, OR, NOT gates of fan-in two with at most c (t(n) + n + 1)^3 gates, by unrolling the run step by step (a tableau). Standard (Savage 1972; Pippenger and Fischer 1979 for the t log t bound); the slack in the exponent covers the stack machine model. The quantitative step behind P inside P/poly and behind the natural proofs barrier.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-073.26d1a82c4dc9.json",
+  "statement_hash": "sha256:163e78310ea2aabb69f141cb42c4465a76ed68d6b4f0b3a3d3914ee5199a0aa8",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:15:42.447Z",
+  "title": "Machines to circuits: DTIME(t) has circuits of size O((t + n)^3)",
+  "used_by": []
+}

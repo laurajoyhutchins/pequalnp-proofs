@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-583",
-  "file": "lean/PEqualNP/Outside/L_meta_583.lean",
-  "module": "PEqualNP.Outside.L_meta_583",
-  "statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ C.size ≤ 14 ∧ (∀ x : Fin 10 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 10, (u.val, v.val) ∈ ([(0, 4), (4, 1), (0, 5), (5, 2), (0, 6), (6, 3), (1, 7), (7, 2), (1, 8), (8, 3), (2, 9), (9, 3)] : List (ℕ × ℕ)) ∧ x u = true ∧ x v = true))",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Find a circuit of AND and OR gates with at most 14 gates for 'both ends of some edge are true' on the complete graph on four vertices with every edge subdivided once, or show none exists",
-    "context": "A search; either answer settles something. A witness is one circuit of AND and OR gates, checked by evaluation on all inputs; the opposite answer is a lower bound for every such circuit. The graph lies in none of the classes where the count edges plus cover number minus one is a checked value, and no pendant rule applies. Needs only the pinned library and the long-standing circuit definitions. Conjecture either way. Put every declaration of your file inside its own namespace.",
-    "dead": [],
-    "unlocks": "Why the attack needs it: one of the smallest graphs with every vertex on cycles where the least size without NOT gates is not known; it tests the count where every argument of the line stops; needed by seat-meta-1 and seat-meta-2"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "A search; either answer settles something. A witness is one circuit of AND and OR gates, checked by evaluation on all inputs; the opposite answer is a lower bound for every such circuit. The graph lies in none of the classes where the count edges plus cover number minus one is a checked value, and no pendant rule applies. Needs only the pinned library and the long-standing circuit definitions. Conjecture either way. Put every declaration of your file inside its own namespace.",
+    "dead": [],
+    "title": "Find a circuit of AND and OR gates with at most 14 gates for 'both ends of some edge are true' on the complete graph on four vertices with every edge subdivided once, or show none exists",
+    "unlocks": "Why the attack needs it: one of the smallest graphs with every vertex on cycles where the least size without NOT gates is not known; it tests the count where every argument of the line stops; needed by seat-meta-1 and seat-meta-2"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_583.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-583",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_583",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Is there a circuit of AND and OR gates only, each reading at most two wires, every gate counted, with at most 14 gates, true on 10 inputs exactly when both ends of some edge are true? The graph is the complete graph on 0..3 with each edge subdivided once (vertex 4 + i on the i-th of 01, 02, 03, 12, 13, 23); 12 edges, no cycle of length 4, least vertex cover size 4 (by script). The circuit built from a least cover has 15 gates. Wanted either way: a gate list, verified by evaluating it on all 1024 inputs, or that none exists. No witness is known. Conjecture either way.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-583.eec4d6837c63.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T12:09:20.780Z",
+    "title": "Search: a circuit of AND and OR gates with at most 14 gates for the edge function of the complete graph on 4 vertices with every edge subdivided once"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ C.size ≤ 14 ∧ (∀ x : Fin 10 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 10, (u.val, v.val) ∈ ([(0, 4), (4, 1), (0, 5), (5, 2), (0, 6), (6, 3), (1, 7), (7, 2), (1, 8), (8, 3), (2, 9), (9, 3)] : List (ℕ × ℕ)) ∧ x u = true ∧ x v = true))",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

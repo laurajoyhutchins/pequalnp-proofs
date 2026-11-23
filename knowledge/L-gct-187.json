@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Submodule ℂ (Fin 4 × Fin 6 → ℂ), (∀ t ∈ L, (∑ f : Fin 4 ↪ Fin 6, ∏ i, (1 + t (i, f i))) = 360) ∧ Module.finrank ℂ L = 8",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-187",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "SEARCH GAP, possibly false: exhibit a linear space L of 4 x 6 complex matrices of dimension exactly 8 on which the sum, over all injections f of the 4 rows into the 6 columns, of the product of (1 + t(i, f(i))) stays equal to 360, its value at t = 0 (equivalently all sums of k x k subpermanents vanish on L). Dimension 7 is on our record (unchecked, exact arithmetic); the conjectured bound p + q - 2 = 8 allows 8. A witness is an explicit basis; a refutation is the bound 7.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-187.525690ae2fa1.json",
+  "statement_hash": "sha256:9faaac48c5b53da71df7038e176e42171f9fc2921679b7400e406bbfe93fadc5",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T06:06:22.805Z",
+  "title": "Search: a level space of 4 x 6 complex matrices of dimension 8 (one above the best on our record)",
+  "used_by": []
+}

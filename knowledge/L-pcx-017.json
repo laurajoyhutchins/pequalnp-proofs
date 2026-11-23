@@ -1,0 +1,43 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004214",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:9db279bbd521cd3d6ed5fa8149e5ad52ed7db77e4d8cdca800ddd3a578df44bb",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L017.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T13:22:30.133Z",
+      "outcome": "died",
+      "when": "2026-11-22T13:22:22.700Z",
+      "why_died": "Not a real attempt: started on the wrong id by my mistake (ids shifted by one when L-pcx-016 was added by another seat). The approach text belongs to the bridge L-pcx-018."
+    },
+    {
+      "ended_at": "2026-11-22T14:56:43.995Z",
+      "outcome": "died",
+      "when": "2026-11-22T14:41:23.405Z",
+      "why_died": "Complete unary system: the count needs degree B = k(2h+2) about n^1.5, non-refutation allows B <= n/2 (leg scan n = 3..200); density loss k^2/2n beats flat gain hk^2/n^2."
+    },
+    {
+      "ended_at": "2026-11-22T17:11:48.272Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:10:01.861Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ p : Polynomial ℕ, ∃ n : ℕ, ∀ π : List (PEqualNP.ProofComplexity.LinClause (Fin (n + 1) × Fin n)), PEqualNP.ProofComplexity.IsLinRefutation (PEqualNP.ProofComplexity.PHP (n + 1) n) π → p.eval n < π.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-017",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "OPEN, truth unknown, no known method. No polynomial bounds the length of dag-like Res(+) refutations of PHP (n+1) n. Replaces L-pcx-015, which the red team showed trivially true at n = 1. Tree-like bounds: Itsykson and Sokolov, MFCS 2014.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-017.e94d5d798eb1.json",
+  "statement_hash": "sha256:3f1b918dc44c21cff38ab306cd719d59d871daf2cc717a82028feb6d7b086526",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:11:48.272Z",
+  "title": "TARGET (open problem): Res(+) refutations of the pigeonhole formula are not polynomially bounded",
+  "used_by": []
+}

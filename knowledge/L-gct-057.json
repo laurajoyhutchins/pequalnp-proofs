@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004645",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:57f5334d5a3a5b595782dac73d439dbe722f2a2cb8f713fdefda9fc06adecdcb",
+    "lean_file": "lean/PEqualNP/Gct/L057.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:51:23.050Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:05:12.249Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ R m0 : ℕ, ∃ (m r d : ℕ) (G : MvPolynomial (Fin d) ℂ) (g : Fin m × Fin m → MvPolynomial (Fin d) ℂ), m0 ≤ m ∧ 1 ≤ m ∧ 2 ≤ r ∧ 2 ≤ d ∧ R * m ^ 2 ≤ (r - 1) * (d - 1) ∧ G.IsHomogeneous r ∧ (∀ x : Fin d → ℂ, (∀ i, MvPolynomial.eval x (MvPolynomial.pderiv i G) = 0) → x = 0) ∧ (∀ i, (g i).totalDegree ≤ 1) ∧ MvPolynomial.bind₁ g (PEqualNP.Gct.permPoly ℂ m) = G",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-057",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For every R there are arbitrarily large m such that an affine substitution turns perm_m into a complex form of degree r in d variables whose partials vanish together only at the origin, with (r-1)(d-1) at least R m^2. Our construction (conjecture): the block sum of N copies of the sum of all r x r subpermanents of an a x 2r matrix, sharing the top rows, of permanent size a + 3rN - r; rows forced into a subspace where the elementary symmetric polynomial e_r has no singular point; then L-gct-053. Feeds L-gct-024 to give the superquadratic bound.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-057.d0a831a50136.json",
+  "statement_hash": "sha256:c7ae86e0f53012b3ad95798b517c61594e2bfeece0a43f346be9cd5b101a0998",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:51:23.050Z",
+  "title": "The permanent restricts to smooth forms with (r-1)(d-1) / m^2 unbounded",
+  "used_by": []
+}

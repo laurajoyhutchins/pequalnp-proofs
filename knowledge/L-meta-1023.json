@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin 7 → ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length ≤ 2) ∧ (∀ (w : Fin 7) (x : Fin 7 → Bool), ((Finset.univ.filter (fun p : Fin 7 => x p = false)).card = 4 ∨ (Finset.univ.filter (fun p : Fin 7 => x p = false)).card = 5) → PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out w⟩ (List.ofFn x) = decide (∃ v ∈ (({0, 1, 3} : Finset (Fin 7)).image (fun u => u + w)), x v = true)) ∧ gates.length ≤ 13",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1023",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Take the 7 points 0..6 and the 7 lines {w, w + 1, w + 3} (mod 7). Some list of at most 13 gates, each an AND or OR reading at most two wires, has for each line a wire equal to the OR of the line's three points on every input with exactly 4 or exactly 5 false points.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1023.4eea994590b9.json",
+  "statement_hash": "sha256:5a6a1e56128f759b5a9ae6bc1133f0f6b52eefc9eaf5c409e25d00e3b120bacf",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T19:15:46.244Z",
+  "title": "Search: an AND/OR list of fan-in two with at most 13 gates right on the 7 line-ORs of the plane of order 2 at every input with exactly 4 or 5 false points",
+  "used_by": []
+}

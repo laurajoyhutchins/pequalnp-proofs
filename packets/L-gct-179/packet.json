@@ -1,29 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-gct-179",
-  "file": "lean/PEqualNP/Outside/L_gct_179.lean",
-  "module": "PEqualNP.Outside.L_gct_179",
-  "statement": "∃ L : Submodule ℂ (Fin 4 × Fin 5 → ℂ), (∀ t ∈ L, (∑ f : Fin 4 ↪ Fin 5, ∏ i, (1 + t (i, f i))) = 120) ∧ Module.finrank ℂ L = 7",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Search: find seven independent 4 by 5 complex matrices spanning a space on which a permanent-type sum stays constant",
-    "context": "SEARCH GAP, possibly empty. The witness is an explicit basis of seven matrices; checking it is one polynomial identity. Dimension 6 is attained by a row plus a column. No space of dimension 7 is known and none is excluded. Complex entries are allowed and may be needed: over the reals the bound is checked (L-gct-158) and does not exclude 7 here. A proof that none exists also settles the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
-    "dead": [
-      "the fleet's own searches so far: they found dimension 6 only"
-    ],
-    "unlocks": "Needed by seat-barrier-1 and seat-lib-1 on L-gct-086: it decides whether the bound to aim for at four rows is rows plus columns minus 3 or minus 2"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -91,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -426,10 +404,49 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SEARCH GAP, possibly empty. The witness is an explicit basis of seven matrices; checking it is one polynomial identity. Dimension 6 is attained by a row plus a column. No space of dimension 7 is known and none is excluded. Complex entries are allowed and may be needed: over the reals the bound is checked (L-gct-158) and does not exclude 7 here. A proof that none exists also settles the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
+    "dead": [
+      "the fleet's own searches so far: they found dimension 6 only"
+    ],
+    "title": "Search: find seven independent 4 by 5 complex matrices spanning a space on which a permanent-type sum stays constant",
+    "unlocks": "Needed by seat-barrier-1 and seat-lib-1 on L-gct-086: it decides whether the bound to aim for at four rows is rows plus columns minus 3 or minus 2"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_gct_179.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-gct-179",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_gct_179",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "SEARCH GAP, possibly false: exhibit a linear space L of 4 x 5 complex matrices of dimension exactly 7 on which the sum, over all injections f of the 4 rows into the 5 columns, of the product of (1 + t(i, f(i))) stays equal to 120 (its value at t = 0). That condition is the same as all sums of k x k subpermanents of t vanishing on L. Dimension 6 is attained by a row plus a column; no space of dimension 7 is known and none is excluded; the conjectured bound p + q - 2 = 7 allows it. A witness would be an explicit basis; a refutation would be the bound 6.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-gct-179.d9e83dd66929.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T05:42:13.524Z",
+    "title": "Search: a level space of 4 x 5 complex matrices of dimension 7 (one above the hook)"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ L : Submodule ℂ (Fin 4 × Fin 5 → ℂ), (∀ t ∈ L, (∑ f : Fin 4 ↪ Fin 5, ∏ i, (1 + t (i, f i))) = 120) ∧ Module.finrank ℂ L = 7",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

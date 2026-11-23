@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin 13 → ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length ≤ 2) ∧ gates.length ≤ 38 ∧ (∀ (w : Fin 13) (x : Fin 13 → Bool), 8 ≤ (Finset.univ.filter (fun i : Fin 13 => x i = true)).card → PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out w⟩ (List.ofFn x) = decide (∃ v ∈ (({0, 1, 3, 9} : Finset (Fin 13)).image (fun u => u + w)), x v = true))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-915",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Take 13 inputs numbered mod 13 and the 13 lines {0, 1, 3, 9} + w mod 13. Some single list of at most 38 AND and OR gates, each reading at most two wires, has for each line w an output wire equal to the OR of the inputs on that line on every input with at least 8 true coordinates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-915.114de2dd6d55.json",
+  "statement_hash": "sha256:d067d8932dc33d25c0d3a7354c41e6740ad0f396f3759b9f045b6f43f97c0ccb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T16:53:07.396Z",
+  "title": "Plane of order 3, heavy inputs: some list of at most 38 AND and OR gates of fan-in at most two is right on all 13 line-ORs at inputs with at least 8 true points",
+  "used_by": []
+}

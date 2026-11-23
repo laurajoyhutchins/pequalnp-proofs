@@ -1,29 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-gct-091",
-  "file": "lean/PEqualNP/Outside/L_gct_091.lean",
-  "module": "PEqualNP.Outside.L_gct_091",
-  "statement": "∀ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), (∀ t ∈ L, MvPolynomial.eval (fun p => 1 + t p) (PEqualNP.Gct.permPoly ℂ 4) = (Nat.factorial 4 : ℂ)) → Module.finrank ℂ L ≤ 5",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Open, a hard one: 4 by 4 matrix spaces on which the permanent near the all-ones matrix stays 24 have dimension at most 5",
-    "context": "OPEN: A HARD ONE. Exact elimination over the algebraic numbers, or a case reduction by row ranks; never over the reals. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
-    "dead": [
-      "Real-number searches (they miss complex spaces)"
-    ],
-    "unlocks": "The first case of L-gct-086 beyond the checked 3 by 3 one"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -91,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -426,10 +404,56 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "OPEN: A HARD ONE. Exact elimination over the algebraic numbers, or a case reduction by row ranks; never over the reals. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
+    "dead": [
+      "Real-number searches (they miss complex spaces)"
+    ],
+    "title": "Open, a hard one: 4 by 4 matrix spaces on which the permanent near the all-ones matrix stays 24 have dimension at most 5",
+    "unlocks": "The first case of L-gct-086 beyond the checked 3 by 3 one"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_gct_091.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-gct-091",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_gct_091",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [
+      {
+        "ended_at": "2026-11-23T09:19:35.418Z",
+        "outcome": "died",
+        "when": "2026-11-22T20:23:56.852Z",
+        "why_died": "seat-alg-1 moved off the level-space line at 00:40 UTC (strategy ruling); handover state in notes/gct-ls4-state.md, certificates and Lean helpers on main; leave it open for the level-space seats and the desk"
+      }
+    ],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "If perm(J_4 + t) = 24 for every t in a complex linear space L of 4 x 4 matrices, then dim L <= 5. With the checked floor L-gct-080 (2n - 3 = 5) it gives LS(4) = 5, the conjecture 2n - 3 at n = 4. Route (seat-barrier-1's n = 3 method): Fourier coordinates over Q(i), M_2 nondegenerate of Witt index 7 on {M_1 = 0}, charts over coordinate isotropic subspaces, Groebner bases on M_3 = M_4 = 0; a Lean proof needs Nullstellensatz cofactors.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-gct-091.675421f3678e.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T09:19:35.418Z",
+    "title": "LS(4) = 5: every linear space of 4 x 4 complex matrices on which perm(J + t) = 24 has dimension at most 5"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), (∀ t ∈ L, MvPolynomial.eval (fun p => 1 + t p) (PEqualNP.Gct.permPoly ℂ 4) = (Nat.factorial 4 : ℂ)) → Module.finrank ℂ L ≤ 5",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

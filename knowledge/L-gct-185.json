@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), (∀ t ∈ L, (∑ f : Fin 4 ↪ Fin 4, ∏ i, (1 + t (i, f i))) = 24) ∧ Module.finrank ℂ L = 6",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-185",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "SEARCH GAP, possibly false: exhibit a linear space L of 4 x 4 complex matrices of dimension exactly 6 on which the sum over all permutations f of the product of (1 + t(i, f(i))) stays equal to 24, its value at t = 0. That is the same as all sums of k x k subpermanents of t vanishing on L. Dimension 5 is on our record (unchecked, exact arithmetic); the conjectured bound p + q - 2 = 6 allows 6. A witness is an explicit basis; a refutation is the bound 5.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-185.8926cb8a3f90.json",
+  "statement_hash": "sha256:912cb41460c15fbbb9c5555fe3341454e4c3030e556c567c43b6406c5ca51be6",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T06:06:06.349Z",
+  "title": "Search: a level space of 4 x 4 complex matrices of dimension 6 (one above the best on our record)",
+  "used_by": []
+}

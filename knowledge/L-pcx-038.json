@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002162",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:a08c69e0f8bfa0a671284abdc0a8ada58daf2e2fce5a9e2aba81a4c18e3ba557",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L038.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:29:57.947Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:22:31.418Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (σ β : Type) (s h k D : ℕ) (F : Set (MvPolynomial σ (ZMod 2))) (g : β → Fin s → MvPolynomial σ (ZMod 2)) (f : MvPolynomial σ (ZMod 2)), (∀ v : σ, MvPolynomial.X v * MvPolynomial.X v + MvPolynomial.X v ∈ F) → (∀ b i, (g b i).totalDegree ≤ 1) → 1 ≤ h → 1 ≤ k → 2 * h + 1 ≤ D → f.totalDegree ≤ k → (∀ b : β, h * (k + 1) < Module.finrank (ZMod 2) (Submodule.span (ZMod 2) (Set.range (g b))) → (1 : MvPolynomial σ (ZMod 2)) ∈ Submodule.span (ZMod 2) (Set.range (g b)) ∨ ∃ a : Fin s → MvPolynomial σ (ZMod 2), (∀ i, (a i).totalDegree ≤ k - 1) ∧ f = ∑ i, a i * g b i) → PEqualNP.ProofComplexity.PCRefutable ((MvPolynomial.rename (Sum.inl : σ → σ ⊕ (β × Fin h × Fin s))) '' F ∪ {p | ∃ (b : β) (i : Fin s), p = MvPolynomial.rename Sum.inl (g b i) * ∏ u : Fin h, (1 + ∑ i' : Fin s, MvPolynomial.X (Sum.inr (b, u, i')) * MvPolynomial.rename Sum.inl (g b i'))} ∪ {p | ∃ t : β × Fin h × Fin s, p = MvPolynomial.X (Sum.inr t) * MvPolynomial.X (Sum.inr t) + MvPolynomial.X (Sum.inr t)}) D → PEqualNP.ProofComplexity.PCDerivable F (k * (D + 1)) f",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-038",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Rank 1 link 3. If the old F2 system F (with all Boolean axioms) plus blocks of extension variables (block b: affine inputs g_b, coefficient variables r_(b,u,i), axioms g_(b,i) times prod_u (1 + sum_i r_(b,u,i) g_(b,i)) and Boolean axioms for the r) has a degree-D PC refutation, h, k >= 1, D >= 2h+1, deg f <= k, and every block of rank above h(k+1) has 1 in its input span or f = sum a_i g_(b,i) with deg a_i <= k-1, then f is derivable from F in degree k(D+1). Lemma 7.7 of the unrefereed arXiv:2609.23015 (v2).",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-038.67f1605ad2a2.json",
+  "statement_hash": "sha256:a6b5d03afc7f1ee99f28c659a5a0814368d40cd45239b4e67410ea3474c9b02e",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:29:57.947Z",
+  "title": "Block removal: a degree-D refutation with extension blocks gives the weight f in the degree-k(D+1) PC closure of the old system",
+  "used_by": []
+}

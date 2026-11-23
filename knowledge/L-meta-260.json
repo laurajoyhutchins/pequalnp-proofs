@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (h p q : ℕ) (gp gq : PEqualNP.CircuitLowerBounds.Gate), PEqualNP.MetaComplexity.IsMinimalCircuit n C ∧ n ≤ h ∧ h < n + C.size ∧ h ≠ C.output ∧ (∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD h false = false → PEqualNP.MetaComplexity.circuitFun n C x = true) ∧ p ≠ q ∧ h < n + p ∧ h < n + q ∧ C.gates[p]? = some gp ∧ C.gates[q]? = some gq ∧ gp.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ gq.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ h ∈ gp.inputs ∧ h ∈ gq.inputs ∧ (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → h < n + j → h ∈ (PEqualNP.CircuitLowerBounds.GateOp.casesOn (motive := fun _ => List ℕ) g.op g.inputs g.inputs (g.inputs.take 1) (fun _ => g.inputs) g.inputs) → j = p ∨ j = q)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-260",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there a minimal circuit C on n inputs (AND, OR, NOT gates of fan-in at most two, no circuit of that kind with fewer gates computes its function) and a gate wire h, not the output, such that C outputs true on every input where h is false, two distinct later gates are AND gates listing h, and every later gate reading h (a NOT gate reads only its first wire) is one of those two? No witness is known; a witness or the negation is wanted. Conjecture either way.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-260.f50336436ded.json",
+  "statement_hash": "sha256:dc93d4c7c2d1d6565c5224e4740bae3aa1ee3ed20c3cf28991c9f940fcf5e534",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T07:05:34.777Z",
+  "title": "Search: a minimal circuit with a non-output gate h read by exactly two later gates, both ANDs, and the function true wherever h is false",
+  "used_by": []
+}

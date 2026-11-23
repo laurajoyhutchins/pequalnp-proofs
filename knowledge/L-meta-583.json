@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ C.size ≤ 14 ∧ (∀ x : Fin 10 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 10, (u.val, v.val) ∈ ([(0, 4), (4, 1), (0, 5), (5, 2), (0, 6), (6, 3), (1, 7), (7, 2), (1, 8), (8, 3), (2, 9), (9, 3)] : List (ℕ × ℕ)) ∧ x u = true ∧ x v = true))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-583",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there a circuit of AND and OR gates only, each reading at most two wires, every gate counted, with at most 14 gates, true on 10 inputs exactly when both ends of some edge are true? The graph is the complete graph on 0..3 with each edge subdivided once (vertex 4 + i on the i-th of 01, 02, 03, 12, 13, 23); 12 edges, no cycle of length 4, least vertex cover size 4 (by script). The circuit built from a least cover has 15 gates. Wanted either way: a gate list, verified by evaluating it on all 1024 inputs, or that none exists. No witness is known. Conjecture either way.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-583.eec4d6837c63.json",
+  "statement_hash": "sha256:2de7b0a702a2d72d7a113d47c44298d9642562e9608e391483b0bc2d11a62aa8",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T12:09:20.780Z",
+  "title": "Search: a circuit of AND and OR gates with at most 14 gates for the edge function of the complete graph on 4 vertices with every edge subdivided once",
+  "used_by": []
+}

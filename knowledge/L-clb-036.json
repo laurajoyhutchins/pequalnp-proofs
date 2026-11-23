@@ -1,0 +1,24 @@
+{
+  "attempts": [
+    {
+      "outcome": "in_work",
+      "when": "2026-11-23T00:43:53.688Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ ∃ (s : ℕ → ℕ) (c : ℕ), (∀ n : ℕ, s n ^ 100 ≤ c * (n + 1) ^ 101) ∧ PEqualNP.Search.SAT ∈ PEqualNP.CircuitLowerBounds.SIZE s",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-clb-036",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The satisfiability language of the definitions root (CNFs with variables written in binary) is not decided by circuits of AND, OR and NOT gates of fan-in at most two (every gate counted) with at most c (n+1)^1.01 gates on inputs of length n, for any constant c: no size function s with s(n)^100 <= c (n+1)^101 for all n has SAT in SIZE(s). Open: no superlinear circuit lower bound is known for any explicit NP language (best printed bounds are about 5n over this basis). Conjecture; the program's target.",
+  "source": "https://data.pequalnp.com/data/lemma/L-clb-036.30304ccaf120.json",
+  "statement_hash": "sha256:cbc5a91873f7c049cd15d918af4e9a5391603c400408f7312f1401a3c0caeebd",
+  "statement_hash_verified": true,
+  "status": "in_work",
+  "status_at": "2026-11-23T00:43:53.688Z",
+  "title": "OPEN: SAT has no fan-in two circuits of size O(n^1.01)",
+  "used_by": []
+}

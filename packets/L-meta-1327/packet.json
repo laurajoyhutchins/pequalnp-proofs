@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-1327",
-  "file": "lean/PEqualNP/Outside/L_meta_1327.lean",
-  "module": "PEqualNP.Outside.L_meta_1327",
-  "statement": "∀ (inc : Fin 81 → Fin 81 → Prop) (onPiv : ZMod 3 → ZMod 3 → ZMod 3 → Fin 81 → Prop), (∀ Pi Li : Fin 81, inc Pi Li ↔ (((Pi.val / 9 % 3 : ℕ) : ZMod 3) + ((Li.val / 3 % 3 : ℕ) : ZMod 3) * ((Pi.val / 3 % 3 : ℕ) : ZMod 3) = ((Li.val % 3 : ℕ) : ZMod 3) * ((Pi.val % 3 : ℕ) : ZMod 3) + ((Li.val / 9 % 3 : ℕ) : ZMod 3) ∧ ((Pi.val / 27 : ℕ) : ZMod 3) = ((Li.val % 3 : ℕ) : ZMod 3) * ((Pi.val / 3 % 3 : ℕ) : ZMod 3) + ((Li.val / 3 % 3 : ℕ) : ZMod 3) * ((Pi.val % 3 : ℕ) : ZMod 3) + ((Li.val / 27 : ℕ) : ZMod 3))) → (∀ (ai mi gi : ZMod 3) (Pv : Fin 81), onPiv ai mi gi Pv ↔ (((Pv.val / 9 % 3 : ℕ) : ZMod 3) + mi * ((Pv.val / 3 % 3 : ℕ) : ZMod 3) = mi * ai ∧ ((Pv.val / 27 : ℕ) : ZMod 3) = mi * ((Pv.val % 3 : ℕ) : ZMod 3) + gi)) → ∃ (Ckt : PEqualNP.CircuitLowerBounds.Circuit) (fg : ZMod 3 → ZMod 3 → ZMod 3 → ℕ), PEqualNP.MetaComplexity.Monotone2 Ckt ∧ Ckt.size ≤ 160 ∧ (∀ ad md gd : ZMod 3, (Ckt.lineDegrees (81 + 81) (Finset.Ico 81 (81 + 81))).getD (fg ad md gd) 0 ≤ 2) ∧ (∀ Pa La : Fin 81, inc Pa La → ¬ onPiv ((Pa.val / 3 % 3 : ℕ) : ZMod 3) ((La.val / 3 % 3 : ℕ) : ZMod 3) (((La.val / 27 : ℕ) : ZMod 3) + ((Pa.val / 3 % 3 : ℕ) : ZMod 3) * ((La.val % 3 : ℕ) : ZMod 3)) Pa → (Ckt.wires (List.ofFn (fun vq : Fin (81 + 81) => if vq = Fin.castAdd 81 Pa then true else if vq = Fin.natAdd 81 La then true else false))).getD (fg ((Pa.val / 3 % 3 : ℕ) : ZMod 3) ((La.val / 3 % 3 : ℕ) : ZMod 3) (((La.val / 27 : ℕ) : ZMod 3) + ((Pa.val / 3 % 3 : ℕ) : ZMod 3) * ((La.val % 3 : ℕ) : ZMod 3))) false = true) ∧ (∀ (aw mw gw : ZMod 3) (zz : Fin (81 + 81) → Bool), (∀ Ps : Fin 81, onPiv aw mw gw Ps → zz (Fin.castAdd 81 Ps) = false) → (Ckt.wires (List.ofFn zz)).getD (fg aw mw gw) false = true → ∃ (Pe Le : Fin 81), inc Pe Le ∧ zz (Fin.castAdd 81 Pe) = true ∧ zz (Fin.natAdd 81 Le) = true)",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Tile instance k = 3, affine plane of order 9: some AND/OR list of fan-in at most two, at most 160 gates, accepts all 486 off-pivot pairs soundly",
-    "context": "SKETCH: an explicit AND/OR list of fan-in two with at most 160 gates accepting all 486 off-pivot pairs and nothing off the incidence; check by evaluation. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "C4 of the diagonal lemma: the size-3 tile instance on the affine plane of order 9, circuit side; size: a search shard."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: an explicit AND/OR list of fan-in two with at most 160 gates accepting all 486 off-pivot pairs and nothing off the incidence; check by evaluation. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Tile instance k = 3, affine plane of order 9: some AND/OR list of fan-in at most two, at most 160 gates, accepts all 486 off-pivot pairs soundly",
+    "unlocks": "C4 of the diagonal lemma: the size-3 tile instance on the affine plane of order 9, circuit side; size: a search shard."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_1327.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-1327",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_1327",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "GF(9) = GF(3)[i], i^2 = -1; points (x, y), lines y = m x + c over GF(9), 81 each. Tile (a, b, g) over GF(3): the incident pairs with Im x = a, Im m = b, Im c + a Re m = g; its pivot: m = b i, c = a b + g i. There is an AND/OR circuit of fan-in at most two, at most 160 gates, with 27 wires G_t of line-degree at most 2 (line 1, point 0, AND sum, OR max): G_t true with exactly p and w on for each pair (p, w) of tile t, p off t's pivot, and true at an input whose points avoid t's pivot only if an incident point and line are both on. Conjecture.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-1327.7be0e228428e.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T20:25:40.938Z",
+    "title": "Tile instance k = 3, affine plane of order 9: some AND/OR list of fan-in at most two, at most 160 gates, accepts all 486 off-pivot pairs soundly"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ (inc : Fin 81 → Fin 81 → Prop) (onPiv : ZMod 3 → ZMod 3 → ZMod 3 → Fin 81 → Prop), (∀ Pi Li : Fin 81, inc Pi Li ↔ (((Pi.val / 9 % 3 : ℕ) : ZMod 3) + ((Li.val / 3 % 3 : ℕ) : ZMod 3) * ((Pi.val / 3 % 3 : ℕ) : ZMod 3) = ((Li.val % 3 : ℕ) : ZMod 3) * ((Pi.val % 3 : ℕ) : ZMod 3) + ((Li.val / 9 % 3 : ℕ) : ZMod 3) ∧ ((Pi.val / 27 : ℕ) : ZMod 3) = ((Li.val % 3 : ℕ) : ZMod 3) * ((Pi.val / 3 % 3 : ℕ) : ZMod 3) + ((Li.val / 3 % 3 : ℕ) : ZMod 3) * ((Pi.val % 3 : ℕ) : ZMod 3) + ((Li.val / 27 : ℕ) : ZMod 3))) → (∀ (ai mi gi : ZMod 3) (Pv : Fin 81), onPiv ai mi gi Pv ↔ (((Pv.val / 9 % 3 : ℕ) : ZMod 3) + mi * ((Pv.val / 3 % 3 : ℕ) : ZMod 3) = mi * ai ∧ ((Pv.val / 27 : ℕ) : ZMod 3) = mi * ((Pv.val % 3 : ℕ) : ZMod 3) + gi)) → ∃ (Ckt : PEqualNP.CircuitLowerBounds.Circuit) (fg : ZMod 3 → ZMod 3 → ZMod 3 → ℕ), PEqualNP.MetaComplexity.Monotone2 Ckt ∧ Ckt.size ≤ 160 ∧ (∀ ad md gd : ZMod 3, (Ckt.lineDegrees (81 + 81) (Finset.Ico 81 (81 + 81))).getD (fg ad md gd) 0 ≤ 2) ∧ (∀ Pa La : Fin 81, inc Pa La → ¬ onPiv ((Pa.val / 3 % 3 : ℕ) : ZMod 3) ((La.val / 3 % 3 : ℕ) : ZMod 3) (((La.val / 27 : ℕ) : ZMod 3) + ((Pa.val / 3 % 3 : ℕ) : ZMod 3) * ((La.val % 3 : ℕ) : ZMod 3)) Pa → (Ckt.wires (List.ofFn (fun vq : Fin (81 + 81) => if vq = Fin.castAdd 81 Pa then true else if vq = Fin.natAdd 81 La then true else false))).getD (fg ((Pa.val / 3 % 3 : ℕ) : ZMod 3) ((La.val / 3 % 3 : ℕ) : ZMod 3) (((La.val / 27 : ℕ) : ZMod 3) + ((Pa.val / 3 % 3 : ℕ) : ZMod 3) * ((La.val % 3 : ℕ) : ZMod 3))) false = true) ∧ (∀ (aw mw gw : ZMod 3) (zz : Fin (81 + 81) → Bool), (∀ Ps : Fin 81, onPiv aw mw gw Ps → zz (Fin.castAdd 81 Ps) = false) → (Ckt.wires (List.ofFn zz)).getD (fg aw mw gw) false = true → ∃ (Pe Le : Fin 81), inc Pe Le ∧ zz (Fin.castAdd 81 Pe) = true ∧ zz (Fin.natAdd 81 Le) = true)",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

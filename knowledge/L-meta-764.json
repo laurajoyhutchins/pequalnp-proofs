@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ s : ℕ, PEqualNP.MetaComplexity.HasCircuitSize 5 (fun x : Fin 5 → Bool => (x 0 && x 1) || (x 2 && x 3) || (x 3 && x 4) || (x 2 && x 4)) s ↔ 6 ≤ s",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-764",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The graph on vertices 0 to 4 with edges 0-1, 2-3, 3-4, 2-4 (a triangle and a disjoint edge; 4 edges, least vertex cover 3). Its edge function on 5 inputs, x0 x1 OR x2 x3 OR x3 x4 OR x2 x4, true when both ends of some edge are true, has a circuit of AND, OR and NOT gates of fan-in at most two (every gate counted) with at most s gates exactly when s >= 6.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-764.5468f798c41f.json",
+  "statement_hash": "sha256:c13ced0add4a8fb08562e40afac835795f5408a17745fa55cb597c78440b82ff",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T16:19:29.138Z",
+  "title": "Exact circuit size: the edge function of a triangle and a disjoint edge has circuits with s gates exactly when s >= 6",
+  "used_by": []
+}

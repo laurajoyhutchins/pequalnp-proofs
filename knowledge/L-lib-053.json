@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002179",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:56395e7b08cd1cbc11be0cd78dba0dacef58399089fe9853cf8bcaa4d734fc9e",
+    "lean_file": "lean/PEqualNP/Library/L053.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:30:37.492Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:15:16.147Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-lib-048"
+  ],
+  "formal_statement": "PEqualNP.Library.NP ⊂ PEqualNP.Library.NEXP",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-053",
+  "kind": "known",
+  "layer": 2,
+  "plain_statement": "Every NP language is in NEXP, and some NEXP language is not in NP. Nondeterministic time hierarchy, Cook (J. Comput. System Sci. 7(4), 1973); sharpened by Seiferas, Fischer and Meyer (J. ACM 25(1), 1978) and Zak (Theoret. Comput. Sci. 26, 1983).",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-053.baa397f891d0.json",
+  "statement_hash": "sha256:f31a5f9d6c529407c96869c875fc3e5c28a1ae9a5c5ebc20a32cfb0d45870ce7",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:30:37.492Z",
+  "title": "NP is strictly inside NEXP (nondeterministic time hierarchy)",
+  "used_by": []
+}

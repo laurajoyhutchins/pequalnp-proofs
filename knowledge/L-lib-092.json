@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002568",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:873d8bbab1b432405e1f345a9f3db89fb873927c2085db0b172138a498831f67",
+    "lean_file": "lean/PEqualNP/Library/L092.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:47:16.174Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:41:33.073Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-lib-007"
+  ],
+  "formal_statement": "∀ (L : Language Bool) (k : ℕ), L ∈ PEqualNP.Library.DTIME (fun n : ℕ => 2 ^ (n ^ k) + k) → ({s : List Bool | ∃ x : List Bool, x ∈ L ∧ s = List.replicate (2 ^ (x.length ^ k) + k) true ++ false :: x} : Language Bool) ∈ PEqualNP.Library.P",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-092",
+  "kind": "known",
+  "layer": 1,
+  "plain_statement": "If L is decided within 2^(n^k) + k steps then the language of the strings 1^(2^(|x|^k) + k) 0 x with x in L is in P. Standard padding argument (for example Arora and Barak, Computational Complexity, 2009, chapter 2 exercises); the padding is written in front so that the input is found after the first 0.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-092.35f5fba6be24.json",
+  "statement_hash": "sha256:f1d8cdc97352f11c3f5a60792f0850ce136fc2fcb9691779f2ff15d814ca4a5d",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:47:16.174Z",
+  "title": "Upward padding: an exponential-time language, padded, is in P",
+  "used_by": []
+}

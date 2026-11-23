@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004478",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:be3534f9057fec1c6075b60fe400ff5d23f6b22af734e5e713811331a11fc36c",
+    "lean_file": "lean/PEqualNP/Library/L103.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:39:14.659Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:32:48.628Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ p : Polynomial ℕ, ∃ l : ℕ, ∀ T : PEqualNP.Search.ResLinQTree (PEqualNP.ProofComplexity.BPHP (2 ^ l + 1) l) [], p.eval (2 ^ l) < T.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-103",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "For every polynomial p there is l such that every tree-like Res(lin) refutation over the integers (semantic weakening allowed) of the bit pigeonhole principle with 2^l+1 pigeons and 2^l holes has more than p(2^l) lines. Open as far as the fleet read: Part and Tzameret (Comput. Complexity 2021) prove tree-like bounds over Q for unary PHP, not for bit PHP; their Thm 44 is vacuous over Q. Target of a Delayer argument.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-103.2bb3da9008f4.json",
+  "statement_hash": "sha256:68b46ee5f87640ee708dcdf7dc648b5b33f01b0ee9a524097fcd10165a296f88",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:39:14.659Z",
+  "title": "Tree-like Res(lin) over the integers needs superpolynomially many lines on bit PHP",
+  "used_by": []
+}

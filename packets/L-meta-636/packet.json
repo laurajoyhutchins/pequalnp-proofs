@@ -1,31 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-636",
-  "file": "lean/PEqualNP/Outside/L_meta_636.lean",
-  "module": "PEqualNP.Outside.L_meta_636",
-  "statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (H : (Fin n → Bool) → Bool) (e : Fin (n + 1)) (pn pm pS : Fin C.gates.length), PEqualNP.MetaComplexity.FanInTwo C → e ≠ Fin.last n → (∃ y y' : Fin n → Bool, H y ≠ H y') → (∀ x : Fin (n + 1) → Bool, PEqualNP.MetaComplexity.circuitFun (n + 1) C (Function.update x e true) = (x (Fin.last n) || H (fun i : Fin n => x i.castSucc))) → PEqualNP.MetaComplexity.circuitFun (n + 1) C (fun i : Fin (n + 1) => decide (i = Fin.last n)) = false → (C.gates.get pn).op = PEqualNP.CircuitLowerBounds.GateOp.not → (C.gates.get pn).inputs.head? = some e.val → (C.gates.get pm).op = PEqualNP.CircuitLowerBounds.GateOp.and → n + 1 + pn.val ∈ (C.gates.get pm).inputs → (C.gates.get pS).op = PEqualNP.CircuitLowerBounds.GateOp.or → n + 1 + pm.val ∈ (C.gates.get pS).inputs → (∀ j : Fin C.gates.length, ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some (e.val) ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ (e.val) ∈ (C.gates.get j).inputs) → j = pn) → (∀ j : Fin C.gates.length, ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some (n + 1 + pn.val) ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ (n + 1 + pn.val) ∈ (C.gates.get j).inputs) → j = pm) → (∀ j : Fin C.gates.length, ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some (n + 1 + pm.val) ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ (n + 1 + pm.val) ∈ (C.gates.get j).inputs) → j = pS) → PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x : Fin (n + 1) → Bool => PEqualNP.MetaComplexity.circuitFun (n + 1) C (Function.update x e true)) (C.gates.length - 4) ∧ (∀ ph : Fin C.gates.length, ph ≠ pn → n + 1 + ph.val ∈ (C.gates.get pm).inputs → (∀ j : Fin C.gates.length, ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some (n + 1 + ph.val) ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ (n + 1 + ph.val) ∈ (C.gates.get j).inputs) → j = pm) → PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x : Fin (n + 1) → Bool => PEqualNP.MetaComplexity.circuitFun (n + 1) C (Function.update x e true)) (C.gates.length - 5))",
-  "permitted_project_imports": [
-    "PEqualNP.Defs",
-    "PEqualNP.Outside.L_meta_568",
-    "PEqualNP.MetaComplexity.L588"
-  ],
-  "context": {
-    "title": "Reserved for the fleet's closing file: the saving at an input read only through a NOT, then an AND, then an OR, with its one hypothesis discharged by an outside-proved statement",
-    "context": "Reserved: the fleet supplies the closing file, which applies one in-house checked row to one outside-proved statement. Not for lease. Put every declaration of your file inside its own namespace.",
-    "dead": [],
-    "unlocks": "The unconditional form used by the bound for runs of four"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [
-      "PEqualNP.Outside.L_meta_568"
-    ],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -101,6 +76,9 @@
       "PEqualNP.MetaComplexity.Helpers.RunNL6",
       "PEqualNP.MetaComplexity.Helpers.RunNL7",
       "PEqualNP.MetaComplexity.L588"
+    ],
+    "outside": [
+      "PEqualNP.Outside.L_meta_568"
     ]
   },
   "closure_blocker": null,
@@ -481,10 +459,80 @@
       "sha256": "a8a06dfa994d6fee9047a4e6e5aa84cf986be9310aca4626d8c2e67671729827"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "Reserved: the fleet supplies the closing file, which applies one in-house checked row to one outside-proved statement. Not for lease. Put every declaration of your file inside its own namespace.",
+    "dead": [],
+    "title": "Reserved for the fleet's closing file: the saving at an input read only through a NOT, then an AND, then an OR, with its one hypothesis discharged by an outside-proved statement",
+    "unlocks": "The unconditional form used by the bound for runs of four"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_636.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-636",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_636",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs",
+    "PEqualNP.Outside.L_meta_568",
+    "PEqualNP.MetaComplexity.L588"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [
+      "L-meta-568",
+      "L-meta-588"
+    ],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Let C be a fan-in-two circuit (AND, OR, NOT, every gate counted) on n + 1 inputs whose input e (not the last input q) is read only by a NOT gate, that gate only by an AND gate, that AND gate only by an OR gate; suppose C with x_e set to 1 computes x_q OR H, H non-constant, and C is false where only x_q is 1. Then C with x_e set to 1 has a circuit of |C| - 4 gates, and of |C| - 5 if the AND gate also lists a gate other than the NOT gate that only it reads. The closing form: the same statement without the free-input chain law as a hypothesis.",
+    "prerequisites": [
+      {
+        "artifact": {
+          "checker_run_id": "run-018335",
+          "checker_version": "outside-runner",
+          "content_hash": "sha256:a8a06dfa994d6fee9047a4e6e5aa84cf986be9310aca4626d8c2e67671729827",
+          "lean_file": "lean/PEqualNP/Outside/L_meta_568.lean",
+          "runner_url": "https://github.com/brilliant-hq/pequalnp-proofs/actions/runs/45165694414"
+        },
+        "id": "L-meta-568",
+        "source": "https://data.pequalnp.com/data/lemma/L-meta-568.41c6660571ae.json",
+        "statement_hash": "sha256:24eec6f81a0f72aa4f8f5ce3364847dba1ab8b9c5a7bad494f71acd81281ded6",
+        "status": "checked",
+        "title": "Free input chain: in a least circuit of x OR H, H non-constant and free of the last input x, the gates above x are one OR chain to the output"
+      },
+      {
+        "artifact": {
+          "checker_run_id": "run-019361",
+          "checker_version": "check-lean 3, Lean 4.36.0, Mathlib fc4f59e577",
+          "content_hash": "sha256:668a2dd783a8bea30be910203c94c838ffe2b166c620412e259d6218fea672d7",
+          "lean_file": "lean/PEqualNP/MetaComplexity/L588.lean"
+        },
+        "id": "L-meta-588",
+        "source": "https://data.pequalnp.com/data/lemma/L-meta-588.9df09632b2fd.json",
+        "statement_hash": "sha256:b1a135b98564442841d2f5386b6002c5c168da95f74db9bd1d0cfa96185d692f",
+        "status": "checked",
+        "title": "NOT state at an input read only through a NOT, then an AND, then an OR: fixing it to 1 saves four gates, five when the AND has a private gate operand"
+      }
+    ],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-636.6459ac7a9024.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T13:14:50.121Z",
+    "title": "NOT state at an input read only through a NOT, then an AND, then an OR: fixing it to 1 saves four gates, five when the AND has a private gate operand"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (H : (Fin n → Bool) → Bool) (e : Fin (n + 1)) (pn pm pS : Fin C.gates.length), PEqualNP.MetaComplexity.FanInTwo C → e ≠ Fin.last n → (∃ y y' : Fin n → Bool, H y ≠ H y') → (∀ x : Fin (n + 1) → Bool, PEqualNP.MetaComplexity.circuitFun (n + 1) C (Function.update x e true) = (x (Fin.last n) || H (fun i : Fin n => x i.castSucc))) → PEqualNP.MetaComplexity.circuitFun (n + 1) C (fun i : Fin (n + 1) => decide (i = Fin.last n)) = false → (C.gates.get pn).op = PEqualNP.CircuitLowerBounds.GateOp.not → (C.gates.get pn).inputs.head? = some e.val → (C.gates.get pm).op = PEqualNP.CircuitLowerBounds.GateOp.and → n + 1 + pn.val ∈ (C.gates.get pm).inputs → (C.gates.get pS).op = PEqualNP.CircuitLowerBounds.GateOp.or → n + 1 + pm.val ∈ (C.gates.get pS).inputs → (∀ j : Fin C.gates.length, ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some (e.val) ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ (e.val) ∈ (C.gates.get j).inputs) → j = pn) → (∀ j : Fin C.gates.length, ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some (n + 1 + pn.val) ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ (n + 1 + pn.val) ∈ (C.gates.get j).inputs) → j = pm) → (∀ j : Fin C.gates.length, ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some (n + 1 + pm.val) ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ (n + 1 + pm.val) ∈ (C.gates.get j).inputs) → j = pS) → PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x : Fin (n + 1) → Bool => PEqualNP.MetaComplexity.circuitFun (n + 1) C (Function.update x e true)) (C.gates.length - 4) ∧ (∀ ph : Fin C.gates.length, ph ≠ pn → n + 1 + ph.val ∈ (C.gates.get pm).inputs → (∀ j : Fin C.gates.length, ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some (n + 1 + ph.val) ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ (n + 1 + ph.val) ∈ (C.gates.get j).inputs) → j = pm) → PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x : Fin (n + 1) → Bool => PEqualNP.MetaComplexity.circuitFun (n + 1) C (Function.update x e true)) (C.gates.length - 5))",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

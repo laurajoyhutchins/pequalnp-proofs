@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002828",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:c7b324d539b8d10c10e567816663d9aceec5842662d130bb6d17e5e206577b4f",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L024.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:58:08.907Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:47:46.902Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (B : Language Bool) (p : Polynomial ℕ) (n : ℕ) (T : List (Option Bool)) (c : List Bool), B ∈ PEqualNP.CircuitLowerBounds.SIZE (fun m : ℕ => p.eval m) → (∀ i : List Bool, i.length = n → (i ++ c ∈ B ↔ T.getD (List.foldr (fun (b : Bool) (a : ℕ) => 2 * a + (if b = true then 1 else 0)) 0 i) none = some true)) → PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => decide (T.getD (PEqualNP.MetaComplexity.tableIndex x) none = some true)) (p.eval (n + c.length) + 1)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-024",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If a language B has circuits of size p and, with the string c appended, B answers on index i whether entry i of the partial table T is the defined value 1, then the zero completion of T has a circuit of size p(n + |c|) + 1. From L-meta-018 and L-meta-019. Needed by L-meta-016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-024.9f483d01a6c4.json",
+  "statement_hash": "sha256:2dbf833f532a61b151144403417b7bc85cb11f1c2a03808964368b7c418c9866",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:58:08.907Z",
+  "title": "Zero completion from a circuit family for the bit language",
+  "used_by": []
+}

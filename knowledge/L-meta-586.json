@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ (∃ A : Finset ℕ, A.card ≤ 7 ∧ ∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.or → j ∈ A) ∧ (∀ x : Fin 8 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 8, (u.val, v.val) ∈ ([(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (1, 5), (5, 6), (6, 7), (7, 0)] : List (ℕ × ℕ)) ∧ x u = true ∧ x v = true))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-586",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there a circuit of AND and OR gates only, each reading at most two wires, with at most 7 OR gates and any number of AND gates, true on 8 inputs exactly when both ends of some edge are true? The graph is the 5-cycles 0 1 2 3 4 and 0 1 5 6 7 sharing the edge 0 1; it has 9 edges, so 7 is the number of edges minus two. Wanted either way: a gate list, verified by evaluating it on all 256 inputs, or that none exists. No witness is known. Conjecture either way.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-586.6d36060c5f24.json",
+  "statement_hash": "sha256:dd64917e96987f7ce5f974473bb48cef30baa95cc2fac971868f78d0dc267303",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T12:13:13.197Z",
+  "title": "Search: a circuit of AND and OR gates with at most 7 OR gates for the edge function of two 5-cycles sharing an edge",
+  "used_by": []
+}

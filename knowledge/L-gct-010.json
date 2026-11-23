@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002852",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:8b422fda85a4b0d7199a8e5bf017dc13865c2cf6d3e05efa6d0e03c6b98b20d2",
+    "lean_file": "lean/PEqualNP/Gct/L010.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:59:31.265Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:45:56.441Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ m n : ℕ, PEqualNP.Gct.HasBorderDetExpression (PEqualNP.Gct.permPoly ℂ m) n → m ^ 2 ≤ 2 * n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-010",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Over C, any border determinantal expression of perm_m has size at least m^2/2 (Landsberg, Manivel and Ressayre, Comment. Math. Helv. 88, 2013).",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-010.cdf89605da55.json",
+  "statement_hash": "sha256:1dc9f6706e9f41f9dac92a96f867534fb4f1d6b899b2912a4e64c75e6cc5a603",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:59:31.265Z",
+  "title": "Landsberg, Manivel and Ressayre: border dc(perm_m) >= m^2/2",
+  "used_by": [
+    "L-gct-028"
+  ]
+}

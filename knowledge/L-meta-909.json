@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ G : SimpleGraph (Fin 10), G = SimpleGraph.fromRel (fun a b : Fin 10 => ((a : ℕ), (b : ℕ)) ∈ ([(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (0, 5), (1, 6), (2, 7), (3, 8), (4, 9), (5, 7), (7, 9), (9, 6), (6, 8), (8, 5)] : List (ℕ × ℕ))) →\n  ∃ C : PEqualNP.AndCount.AndCountCircuit 10, C.WellFormed ∧ C.size ≤ 6 ∧\n    (∀ v : Fin 10, (Finset.univ.filter (fun i : Fin C.size => v ∈ C.leftVars i ∨ v ∈ C.rightVars i)).card ≤ 2) ∧\n    (∀ I : Finset (Fin 10), (∀ a ∈ I, ∀ c ∈ I, ¬ G.Adj a c) → (∀ w : Fin 10, w ∉ I → ∃ a ∈ I, G.Adj a w) →\n      C.eval I = false ∧ ∀ w : Fin 10, w ∉ I → C.eval (insert w I) = true)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-909",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Petersen graph on vertices 0..9 with edges 0-1 1-2 2-3 3-4 4-0 0-5 1-6 2-7 3-8 4-9 5-7 7-9 9-6 6-8 8-5. Circuits: AND gates of two sides, each side an OR of variables and earlier gates, output an OR, only ANDs counted. A circuit is correct on the partial function of G when it outputs 0 at every maximal independent set I of G (as the set of true variables) and 1 at I plus any one vertex outside I. Some circuit with at most 6 ANDs is correct and every variable is bare in at most two gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-909.c2a5f41fde6e.json",
+  "statement_hash": "sha256:1e231b4c177177857113e67ae068aba9d0eefc6f752cb4feb154017da978f5b4",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T16:51:13.809Z",
+  "title": "Petersen graph: some circuit with at most 6 AND gates, ORs free, is correct on its partial function with each variable bare in at most two gates",
+  "used_by": []
+}

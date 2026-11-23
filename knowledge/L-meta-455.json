@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],\n    (∀ a b c : Fin n, ¬ (G.Adj a b ∧ G.Adj b c ∧ G.Adj c a)) →\n    (∀ a b c d : Fin n, a ≠ c → b ≠ d → ¬ (G.Adj a b ∧ G.Adj b c ∧ G.Adj c d ∧ G.Adj d a)) →\n    ∀ u v : Fin n, G.Adj u v →\n      (∀ a ∈ Finset.univ.filter (fun w => G.Adj v w),\n        ∀ b ∈ Finset.univ.filter (fun w => G.Adj v w), ¬ G.Adj a b) ∧\n      (∀ a ∈ Finset.univ.filter (fun w => G.Adj u w),\n        ∀ b ∈ Finset.univ.filter (fun w => G.Adj u w), ¬ G.Adj a b) ∧\n      (∀ a ∈ Finset.univ.filter (fun w => G.Adj v w ∧ w ≠ u) ∪\n              Finset.univ.filter (fun w => G.Adj u w ∧ w ≠ v),\n        ∀ b ∈ Finset.univ.filter (fun w => G.Adj v w ∧ w ≠ u) ∪\n              Finset.univ.filter (fun w => G.Adj u w ∧ w ≠ v), ¬ G.Adj a b)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-455",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "In a finite simple graph with no triangle and no 4-cycle, for every edge uv: the neighbours of v are pairwise non-adjacent, the neighbours of u are pairwise non-adjacent, and the neighbours of v other than u together with the neighbours of u other than v are pairwise non-adjacent.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-455.a467294b6baa.json",
+  "statement_hash": "sha256:cde832162697ee305c5dfd22e15fbb4b35b726d0bc7d2c2705d7c7c7f910f862",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T07:45:38.419Z",
+  "title": "Around an edge of a graph with no triangle and no 4-cycle, the neighbourhoods are independent (standalone text)",
+  "used_by": []
+}

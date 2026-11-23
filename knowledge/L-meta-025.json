@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003580",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:9ecaa46768258ce29aadbb8b139bbb02a8000b61e4d16e10e2f462f9b6d42b08",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L025.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:07:08.138Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:20:03.203Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n s : ℕ), PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => decide ((Finset.univ.filter fun i : Fin n => x i = true).card % 2 = 1)) s → 3 * (n - 1) ≤ s",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-025",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Every fan-in 2 circuit of AND, OR, NOT gates for the parity of n inputs has at least 3(n - 1) gates. Schnorr, Zwei lineare untere Schranken fuer die Komplexitaet Boolescher Funktionen, Computing 13, 1974 (there with free negations; here NOT gates are counted, so the bound holds a fortiori).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-025.37c1d637acef.json",
+  "statement_hash": "sha256:7e08af16547760991520d3b6edecc274fb941a12959ebe08aea88437fa1d3f86",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:07:08.138Z",
+  "title": "Parity of n inputs needs at least 3(n - 1) gates",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ (∃ A : Finset ℕ, A.card ≤ 5 ∧ ∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.and → j ∈ A) ∧ ∀ x : Fin 10 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 10, ((u.val < 5 ∧ v.val < 5 ∧ (u.val + 1) % 5 = v.val) ∨ (u.val < 5 ∧ v.val = u.val + 5) ∨ (5 ≤ u.val ∧ 5 ≤ v.val ∧ (u.val + 2) % 5 = v.val % 5)) ∧ x u = true ∧ x v = true)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-144",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There is a circuit of AND and OR gates of fan-in at most two (no NOT; OR gates free, only AND gates counted) with at most 5 AND gates that computes the edge function of the Petersen graph (vertices 0 to 4 the outer 5-cycle, 5 to 9 the inner pentagram, spokes i to i + 5): true exactly when both ends of some edge are true. SEARCH ROW: no witness is known. A witness refutes the conjecture that the least AND count equals the vertex cover number (6 here); a proof of the negation is equally wanted. Conjecture either way.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-144.fa9a9df633c8.json",
+  "statement_hash": "sha256:00978ba67d26149d73edfcdaecbac888d88ed382a19522e7ba99dee76d60e237",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T05:55:25.576Z",
+  "title": "Search: a monotone circuit with at most 5 AND gates for the edge function of the Petersen graph",
+  "used_by": []
+}

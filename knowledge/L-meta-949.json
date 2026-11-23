@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (G : SimpleGraph (Fin 6)) (C : PEqualNP.AndCount.AndCountCircuit 6), C.WellFormed ∧ (∀ I : Finset (Fin 6), (∀ v ∈ I, ∀ w ∈ I, ¬ G.Adj v w) → (∀ u, u ∉ I → ∃ v ∈ I, G.Adj u v) → C.eval I = false ∧ ∀ u, u ∉ I → C.eval (insert u I) = true) ∧ ¬ (∃ (k : ℕ) (X Y : Fin k → Finset (Fin 6)), k ≤ C.size ∧ (∀ i : Fin k, ∀ a ∈ X i, ∀ b ∈ Y i, G.Adj a b) ∧ (∀ a b : Fin 6, G.Adj a b → ∃ i : Fin k, (a ∈ X i ∧ b ∈ Y i) ∨ (b ∈ X i ∧ a ∈ Y i)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-949",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There are a graph G on 6 vertices and a well-formed AND-count circuit C, false at every maximal independent set of G and true at each such set with one outside vertex added, such that no family of at most as many complete bipartite subgraphs (pairs X, Y of vertex sets with every vertex of X adjacent to every vertex of Y) as C has gates covers the edges of G.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-949.7781d0acc47a.json",
+  "statement_hash": "sha256:300121842648d07499c63eff178ac7428030457e4e6380e1bbb3fa55358ea053",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T17:09:42.183Z",
+  "title": "Some graph on 6 vertices has a partial-function AND-count circuit with fewer gates than every biclique cover of its edges has bicliques",
+  "used_by": []
+}

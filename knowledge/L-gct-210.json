@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ L : Submodule ℂ (Fin 5 × Fin 5 → ℂ), (∀ t ∈ L, (∑ f : Fin 5 ↪ Fin 5, ∏ i, (1 + t (i, f i))) = 120) → Module.finrank ℂ L ≤ 8",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-210",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "SMALL CASE, possibly false: every linear space L of 5 x 5 complex matrices on which the sum over all permutations f of the product of (1 + t(i, f(i))) stays equal to 120, its value at t = 0 (equivalently all sums of k x k subpermanents of t vanish on L), has dimension at most 8. The largest dimension known to us is 7 (unchecked). A refutation is an explicit such space of dimension 9. The statement needs only the pinned library.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-210.bf7fadd4200c.json",
+  "statement_hash": "sha256:ba2a3b52329ab6065a654d8724d64573931cefe37f0e74efbacbe22d159d52fa",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T07:44:13.839Z",
+  "title": "Small case at five rows: a level space of 5 x 5 complex matrices has dimension at most 8",
+  "used_by": []
+}

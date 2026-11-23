@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m k : ℕ) (H : SimpleGraph (Fin m)) (Q : Fin m → Fin m → ℕ → Fin (m + 2 * k * (m * m)) → Prop) (S : SimpleGraph (Fin (m + 2 * k * (m * m)))), 1 ≤ k → (∀ (u v : Fin m) (p : ℕ) (x : Fin (m + 2 * k * (m * m))), Q u v p x ↔ (p = 0 ∧ x.val = u.val) ∨ (p = 2 * k + 1 ∧ x.val = v.val) ∨ (1 ≤ p ∧ p ≤ 2 * k ∧ x.val + 1 = m + 2 * k * (u.val * m + v.val) + p)) → (∀ x y : Fin (m + 2 * k * (m * m)), S.Adj x y ↔ ∃ u v : Fin m, u < v ∧ H.Adj u v ∧ ∃ p : ℕ, p ≤ 2 * k ∧ ((Q u v p x ∧ Q u v (p + 1) y) ∨ (Q u v p y ∧ Q u v (p + 1) x))) → ∀ (x : Fin (m + 2 * k * (m * m))) (c : S.Walk x x), c.IsCycle → 6 * k + 3 ≤ c.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-464",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let H be a graph on Fin m, k >= 1, and S the graph on Fin (m + 2k m^2) obtained by replacing each edge u < v of H by the path u, w_1, ..., w_2k, v, where w_p is the vertex of index m + 2k(u m + v) + p - 1; S has no other edges. Then every cycle of S (a walk from a vertex to itself with SimpleGraph.Walk.IsCycle) has length at least 6k + 3.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-464.cd57a3c84ca3.json",
+  "statement_hash": "sha256:5b37bd3258e9683d6de38e2a667e113749e5c75292824844cb14ce15ee72197f",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T07:46:07.821Z",
+  "title": "Every cycle of the 2k-subdivision of a simple graph H on Fin (m + 2k m^2) has length at least 6k + 3",
+  "used_by": []
+}

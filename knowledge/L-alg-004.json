@@ -1,0 +1,79 @@
+{
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:26:53.914Z",
+      "outcome": "died",
+      "when": "2026-11-22T14:21:00.348Z",
+      "why_died": "Full R(lin): CP bit-PHP proofs need one-inequality lines (triangles); a 2-equation line covers a band needing exp many triangles, and Res(2) in R(lin) has no monotone interpolation"
+    },
+    {
+      "ended_at": "2026-11-22T15:08:33.783Z",
+      "outcome": "died",
+      "when": "2026-11-22T14:26:59.756Z",
+      "why_died": "Narrow-line route: every R(lin) refutation of bit PHP has a line of n^Omega(1) equations (Delayer + Littlewood-Offord), so the rectangle conversion costs 2^(n^Omega(1)) and gives nothing"
+    },
+    {
+      "ended_at": "2026-11-22T15:52:41.033Z",
+      "outcome": "died",
+      "when": "2026-11-22T15:52:25.202Z",
+      "why_died": "Braun F2 route dies over Z at step 1: false sets of integer lines are not flats (sum x_j = v/2 has a degree-v indicator)"
+    },
+    {
+      "ended_at": "2026-11-22T15:52:44.806Z",
+      "outcome": "died",
+      "when": "2026-11-22T15:52:42.938Z",
+      "why_died": "No short refutation found: val_i distinctness is cheap, but counting needs degree-l occupancy or enumerating used-value sets"
+    },
+    {
+      "ended_at": "2026-11-22T15:54:31.626Z",
+      "outcome": "died",
+      "when": "2026-11-22T15:54:29.762Z",
+      "why_died": "Fat lines OR_t(sum_i x_i0 = t) survive every restriction; walk ignores N, so the route also bounds weak bit PHP"
+    },
+    {
+      "ended_at": "2026-11-22T15:56:56.527Z",
+      "outcome": "died",
+      "when": "2026-11-22T15:56:54.336Z",
+      "why_died": "Width-bounded Delayer is vacuous (L-lib-102); unbounded Alon-Furedi Delayer gives only 2^Omega(l) = poly(n)"
+    },
+    {
+      "ended_at": "2026-11-22T16:02:21.060Z",
+      "outcome": "died",
+      "when": "2026-11-22T16:02:19.094Z",
+      "why_died": "False: one injective form sum 2^k x_k refutes any unsat CNF with 2 classes per line (union of falsified sets by res with 1,-1)"
+    },
+    {
+      "ended_at": "2026-11-22T16:34:58.719Z",
+      "outcome": "died",
+      "when": "2026-11-22T16:34:56.970Z",
+      "why_died": "False at M=1: sum over a set A at its max pins a bit of all of A, so prefix halving refutes BPHP with O(log n) classes"
+    },
+    {
+      "ended_at": "2026-11-22T17:51:26.401Z",
+      "outcome": "died",
+      "when": "2026-11-22T17:51:24.420Z",
+      "why_died": "EGI needs Pr[sigma falsifies L] = 2^-rank (F2 only: rank-q nested sums are all false w.p. 1/2 over Z); line-determined closure gives only width (L-lib-102)"
+    },
+    {
+      "ended_at": "2026-11-22T19:59:58.093Z",
+      "outcome": "refuted",
+      "when": "2026-11-22T19:59:58.093Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ p : Polynomial ℕ, ∃ l : ℕ, ∀ π : List (PEqualNP.Search.QLine (Fin (2 ^ l + 1) × Fin l)), PEqualNP.Search.IsResLinQRefutation (PEqualNP.ProofComplexity.BPHP (2 ^ l + 1) l) π → p.eval (2 ^ l) < PEqualNP.Search.resLinQSize π",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-alg-004",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For every polynomial p there is l such that every Res(lin) refutation over the integers (lines are disjunctions of integer linear equations; combination and semantic weakening; size counts coefficient bits) of the bit pigeonhole principle with 2^l+1 pigeons and 2^l holes has size above p(2^l). Open. Kills integer linear arithmetic solvers. Known for cutting planes (Beame-Whitmeyer, ICALP 2025) and for Res(lin) over F2 per an unrefereed preprint.",
+  "source": "https://data.pequalnp.com/data/lemma/L-alg-004.50019e579dfa.json",
+  "statement_hash": "sha256:7d2dd9008758cd34e572d58b7c66a9584605cae9439c0d736f1846a4b1e688da",
+  "statement_hash_verified": true,
+  "status": "refuted",
+  "status_at": "2026-11-22T19:59:58.093Z",
+  "title": "HARD LINK: bit PHP needs superpolynomial dag-like Res(lin) refutations over the integers",
+  "used_by": []
+}

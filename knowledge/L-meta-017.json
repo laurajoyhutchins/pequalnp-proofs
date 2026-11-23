@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-000920",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:0ef8593f90f59e5f2ee98cbf3f84c9bf454cdb7fddbe3c6a3caae52eb775f4bf",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L017.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T13:28:55.913Z",
+      "outcome": "checked",
+      "when": "2026-11-22T13:28:37.326Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n s : ℕ) (T : List (Option Bool)), T.length = 2 ^ n → PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => decide (T.getD (PEqualNP.MetaComplexity.tableIndex x) none = some true)) s → (List.replicate s true ++ false :: PEqualNP.MetaComplexity.encodePartial T) ∈ PEqualNP.MetaComplexity.PartialMCSP",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-017",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If the total function that is 1 exactly where the partial table T is defined as 1 has a circuit with s gates, then T with bound s is in partial MCSP. The one new step in carrying the Murray and Williams argument over to partial tables: large bounds are yes-instances.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-017.46193bc7b24a.json",
+  "statement_hash": "sha256:c442d80eac882c8fafb2b8afbcf385144bd2e1a3c68b64b04e98aad38b819e6a",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T13:28:55.913Z",
+  "title": "Zero completion: a small circuit for the 1-entries makes a partial MCSP instance a member",
+  "used_by": []
+}

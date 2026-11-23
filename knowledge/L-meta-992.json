@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (F : Type) (_ : Field F) (n k b : ℕ) (pt : Fin n → Fin 3 → F) (l : Fin k → Fin 3 → F) (y : Fin k → Finset (Fin n)) (g : (Fin n → Bool) → Bool), (∀ p : Fin n, pt p ≠ 0) ∧ (∀ p p' : Fin n, p ≠ p' → ∀ c : F, pt p' ≠ c • pt p) ∧ (∀ i : Fin k, l i ≠ 0) ∧ (∀ i j : Fin k, i ≠ j → ∀ c : F, l j ≠ c • l i) ∧ (∀ i : Fin k, (y i).card ≤ b) ∧ (∀ i : Fin k, ∀ p ∈ y i, ∑ t : Fin 3, pt p t * l i t ≠ 0) ∧ (∀ (i : Fin k) (x : Fin n → Bool), g x = true → ∃ p : Fin n, x p = true ∧ ∑ t : Fin 3, pt p t * l i t = 0) ∧ (∀ i : Fin k, ∃ p p' : Fin n, p ≠ p' ∧ ∑ t : Fin 3, pt p t * l i t = 0 ∧ ∑ t : Fin 3, pt p' t * l i t = 0 ∧ g (fun v : Fin n => decide (v ∈ y i ∨ v = p)) = true ∧ g (fun v : Fin n => decide (v ∈ y i ∨ v = p')) = true) ∧ (b + 1) * (b + 2) < 2 * k",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-992",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There are a field F, points and lines of its plane as vectors of F^3 (no two points or two lines proportional), k lines each with a base of at most b points off it, and a Boolean function g on the points, true only on point sets meeting each of the lines and true on each base plus each of two distinct points of its line, such that 2k is more than (b + 1)(b + 2).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-992.b3998db3077b.json",
+  "statement_hash": "sha256:5de0d4be1f45727d9f89cf7af0e811cc28221a0c3c2c8f59ccc0d2a1a4df2738",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T18:25:30.140Z",
+  "title": "Search: a field, k lines of its plane with bases of at most b points and one function safe and two-point for all of them, with 2k above (b + 1)(b + 2)",
+  "used_by": []
+}

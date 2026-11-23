@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004643",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:32caa62c259d8027fd6d02dbde9bd560ca0ff851dc1bc4c0fd40fed661cf634f",
+    "lean_file": "lean/PEqualNP/Gct/L068.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:51:16.559Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:50:01.395Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "(∀ (m n : ℕ) (A : Matrix (Fin n) (Fin n) (MvPolynomial (Fin m × Fin m) ℂ)), 3 ≤ m → (∀ i j : Fin n, (A i j).totalDegree ≤ 1) → A.det = ∑ σ : Equiv.Perm (Fin m), ∏ i : Fin m, (MvPolynomial.X (σ i, i) : MvPolynomial (Fin m × Fin m) ℂ) → (2 * (m : ℝ) ^ 2 - 10 * (m : ℝ) + 11) / 3 ≤ (n : ℝ)) ↔ (∀ m n : ℕ, 3 ≤ m → PEqualNP.Gct.HasDetExpression (PEqualNP.Gct.permPoly ℂ m) n → 2 * m ^ 2 + 11 ≤ 3 * n + 10 * m)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-068",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Restatement of L-gct-064 by the red team from its plain sentence alone, proved equivalent to the recorded one. Left side: if an n x n matrix of complex polynomials of degree at most 1 in the m^2 variables x_ij has determinant equal to the sum over permutations s of the products x_(s(1),1) ... x_(s(m),m), and m is at least 3, then n is at least (2m^2 - 10m + 11)/3 as real numbers. Right side: the statement of L-gct-064. Guards the definitions of the permanent polynomial and of a determinantal expression, and the natural-number form of the inequality.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-068.927c821314db.json",
+  "statement_hash": "sha256:7d3e5a001fa61c5f90d185e8df37a6069f94a5e27c46eea9656b1cf9f9f04160",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:51:16.559Z",
+  "title": "Red team restatement of the permanent bound (explicit sum over permutations, matrices of affine polynomials, real inequality) is equivalent to L-gct-064",
+  "used_by": []
+}

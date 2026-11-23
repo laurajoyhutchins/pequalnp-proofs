@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ (∃ A : Finset ℕ, A.card ≤ 4 ∧ ∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.and → j ∈ A) ∧ ∀ x : Fin 9 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 9, ((u.val < 5 ∧ v.val < 5 ∧ (u.val + 1) % 5 = v.val) ∨ (u.val < 5 ∧ v.val = u.val + 5) ∨ (5 ≤ u.val ∧ 5 ≤ v.val ∧ (u.val + 2) % 5 = v.val % 5)) ∧ x u = true ∧ x v = true)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-167",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Graph on vertices 0..8: the Petersen graph with one vertex removed (0 to 4 a 5-cycle; spokes i to i + 5 for i below 4; inner edges 5-7, 6-8, 8-5): 12 edges, cover number 5. Claim: a circuit of AND and OR gates of fan-in at most two (no NOT; OR gates free, only AND gates counted) with at most 4 AND gates is true exactly when both ends of some edge are true. SEARCH ROW: no witness is known. A witness refutes the conjecture that the least AND count equals the cover number; a proof of the negation is equally wanted. Conjecture either way.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-167.9ca44172208c.json",
+  "statement_hash": "sha256:8d532d0e1d3693d75093e1855982b9bd7be5efef55df8732aea213961c92956d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T06:12:59.759Z",
+  "title": "Search: a monotone circuit with at most 4 AND gates for the Petersen graph minus a vertex (9 inputs)",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.MetaComplexity.HasCircuitSize 8 (fun x : Fin 8 → Bool => (x 0 && x 1) || (x 1 && x 2) || (x 2 && x 3) || (x 0 && x 4) || (x 1 && x 5) || (x 2 && x 6) || (x 3 && x 7) || (x 4 && x 6) || (x 5 && x 7) || (x 7 && x 4)) 12",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1008",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "On eight inputs, take the Petersen graph minus two adjacent vertices: edges 0-1, 1-2, 2-3, 0-4, 1-5, 2-6, 3-7, 4-6, 5-7, 7-4. Some circuit of AND, OR (fan-in two) and NOT gates with at most 12 gates computes the function true exactly when both ends of some edge are true.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1008.3e24155674f1.json",
+  "statement_hash": "sha256:ca88e806554ecd224488cbcd3837350dbf0d2d5a02c5bfe9578e12ede4a76868",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T18:48:01.474Z",
+  "title": "Petersen graph minus two adjacent vertices: some circuit of AND, OR (fan-in two) and NOT gates with at most 12 gates computes its edge function",
+  "used_by": []
+}

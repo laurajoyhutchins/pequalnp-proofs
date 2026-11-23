@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-gct-223",
-  "file": "lean/PEqualNP/Outside/L_gct_223.lean",
-  "module": "PEqualNP.Outside.L_gct_223",
-  "statement": "∃ f g : Fin 6 → ℂ, f ≠ 0 ∧ (∀ c : ℂ, g ≠ c • f) ∧ ∀ s r : ℂ, Matrix.permanent (Matrix.of fun (i j : Fin 6) => (1 : ℂ) + s * f (j - i) + r * g (j - i)) = 720",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Probe: Probe: a two-dimensional space of 6 x 6 circulant complex matrices keeps the permanent of the all-ones matrix plus it at 720",
-    "context": "SKETCH: a breadth probe from seat-barrier-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the statement files are routes/lgp/after/statements/probe-*.txt; work from the row's own sentence. No sorry, no new axiom. Own namespace for every declaration. Namespace: PEqualNP.Gct.",
-    "dead": [],
-    "unlocks": "A breadth probe: either answer moves the map."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: a breadth probe from seat-barrier-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the statement files are routes/lgp/after/statements/probe-*.txt; work from the row's own sentence. No sorry, no new axiom. Own namespace for every declaration. Namespace: PEqualNP.Gct.",
+    "dead": [],
+    "title": "Probe: Probe: a two-dimensional space of 6 x 6 circulant complex matrices keeps the permanent of the all-ones matrix plus it at 720",
+    "unlocks": "A breadth probe: either answer moves the map."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_gct_223.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-gct-223",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_gct_223",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "There are two complex vectors f, g indexed by 0..5, f nonzero and g not a multiple of f, such that for all complex s and r the permanent of the 6 x 6 matrix with entry 1 + s f(j - i) + r g(j - i) (indices mod 6) equals 720, the permanent of the all-ones matrix: a level plane in the circulant algebra of order 6. Conjecture; level lines are known there by computation, no level plane (computed, not checked).",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-gct-223.c66211704da8.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T22:08:46.809Z",
+    "title": "Probe: a two-dimensional space of 6 x 6 circulant complex matrices keeps the permanent of the all-ones matrix plus it at 720"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ f g : Fin 6 → ℂ, f ≠ 0 ∧ (∀ c : ℂ, g ≠ c • f) ∧ ∀ s r : ℂ, Matrix.permanent (Matrix.of fun (i j : Fin 6) => (1 : ℂ) + s * f (j - i) + r * g (j - i)) = 720",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

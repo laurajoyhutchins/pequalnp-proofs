@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit), 5 ≤ n → PEqualNP.MetaComplexity.IsMinimalCircuit n C → PEqualNP.MetaComplexity.circuitFun n C = (fun x : Fin n → Bool => decide (∃ i j : Fin n, (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) → (∀ g ∈ C.gates, g.op ≠ PEqualNP.CircuitLowerBounds.GateOp.not) ∧ ∀ t : ℕ, t < C.size → ((∃ S : Finset ℕ, S.Nonempty ∧ (∀ i ∈ S, i < n) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = decide (∃ i j : Fin n, i.val ∈ S ∧ (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) ∨ (∃ a c b : Fin n, (a.val + 1) % n = c.val ∧ (c.val + 1) % n = b.val ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = (x a || x b)) ∨ (∃ i j k : Fin n, (i.val + 1) % n = j.val ∧ ((j.val + 1) % n = k.val ∨ (k.val + 1) % n = i.val) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = ((x i && x j) || x k)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-314",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let n >= 5 and let C be a least fan-in-two circuit (AND, OR, NOT, every gate counted) for the cycle function on vertices 0, ..., n - 1 (true when vertices i and i + 1 mod n are both true for some i). Then C has no NOT gate, and every gate of C computes one of: the OR of the edge products x_i x_(i+1 mod n) over a nonempty set of edges; x_a OR x_b where a and b are the two neighbours of one vertex; or x_i x_j OR x_k where j = i + 1 and k = j + 1 or k = i - 1, all mod n.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-314.3026538ac0bb.json",
+  "statement_hash": "sha256:ec4356322264a4489fa84c6ff0e059328ed3a5015f53fd651cc478574bfed6fb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T07:14:37.118Z",
+  "title": "Cycles: no least circuit of the cycle on n >= 5 vertices has a NOT gate, and every gate computes an edge OR, a star OR or a tying-block piece",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ f g : Fin 6 → ℂ, f ≠ 0 ∧ (∀ c : ℂ, g ≠ c • f) ∧ ∀ s r : ℂ, Matrix.permanent (Matrix.of fun (i j : Fin 6) => (1 : ℂ) + s * f (j - i) + r * g (j - i)) = 720",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-223",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There are two complex vectors f, g indexed by 0..5, f nonzero and g not a multiple of f, such that for all complex s and r the permanent of the 6 x 6 matrix with entry 1 + s f(j - i) + r g(j - i) (indices mod 6) equals 720, the permanent of the all-ones matrix: a level plane in the circulant algebra of order 6. Conjecture; level lines are known there by computation, no level plane (computed, not checked).",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-223.c66211704da8.json",
+  "statement_hash": "sha256:df576d8b89fd9b9eec5dc6112a7188077d9429e81bf9002cf2384b1778ea5e4d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T22:08:46.809Z",
+  "title": "Probe: a two-dimensional space of 6 x 6 circulant complex matrices keeps the permanent of the all-ones matrix plus it at 720",
+  "used_by": []
+}

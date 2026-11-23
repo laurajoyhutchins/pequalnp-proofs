@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.FanInTwo C ∧ C.size ≤ 10 ∧ (∀ x : Fin 7 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 7, (u.val, v.val) ∈ ([(0, 1), (0, 2), (2, 1), (0, 3), (3, 4), (4, 5), (5, 6), (6, 1)] : List (ℕ × ℕ)) ∧ x u = true ∧ x v = true))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-595",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there a circuit of AND, OR and NOT gates, each reading at most two wires, every gate counted, with at most 10 gates, true on 7 inputs exactly when both ends of some edge are true? The graph joins vertices 0 and 1 by an edge, by the path 0 2 1 and by the path 0 3 4 5 6 1: 8 edges, a triangle 0 1 2, least vertex cover size 4 (by script). The circuit built from a least cover has 11 gates. Wanted either way: a gate list, verified by evaluating it on all 128 inputs, or that none exists. No witness is known. Conjecture either way.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-595.16422411e913.json",
+  "statement_hash": "sha256:0e02d67fe0671296a0502bd37a4a8d255cae6a18519cd2796f7d808a67745e8d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T12:28:20.504Z",
+  "title": "Search: a circuit of AND, OR and NOT gates with at most 10 gates for the edge function of the theta graph with paths of 1, 2 and 5 edges",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Submodule ℂ (Fin 4 × Fin 6 → ℂ), (∀ t ∈ L, (∀ i : Fin 4, ∑ j, t (i, j) = 0) ∧ (∑ f : Fin 4 ↪ Fin 6, ∏ i, (1 + t (i, f i))) = 360) ∧ Module.finrank ℂ L = 8",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-191",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "SEARCH GAP, possibly false: exhibit a linear space L of 4 x 6 complex matrices of dimension exactly 8 in which every row of every element sums to zero, and on which the sum, over all injections f of the 4 rows into the 6 columns, of the product of (1 + t(i, f(i))) stays equal to 360, its value at t = 0 (equivalently all sums of k x k subpermanents vanish on L). With zero row sums, dimension 7 is on our record (unchecked, exact arithmetic) and nothing larger is known. A witness is an explicit basis; a refutation is the bound 7.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-191.469780230cb7.json",
+  "statement_hash": "sha256:948a214d65f3e6914a9955c6bbb35c9bd153fa5135aaa4c6037a2f2d6833c253",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T06:46:49.278Z",
+  "title": "Search: a level space of 4 x 6 complex matrices with zero row sums of dimension 8",
+  "used_by": []
+}

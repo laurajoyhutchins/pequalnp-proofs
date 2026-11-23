@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin 13 → ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) ∧ (∃ ι : Fin 1 → Fin gates.length, ∀ i : Fin gates.length, (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → ∃ j : Fin 1, ι j = i) ∧ gates.length ≤ 38 ∧ (∀ (w : Fin 13) (x : Fin 13 → Bool), PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out w⟩ (List.ofFn x) = decide (∃ v ∈ (({0, 1, 3, 9} : Finset (Fin 13)).image (fun u => u + w)), x v = true))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-957",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Take 13 inputs numbered mod 13 and the 13 lines {0, 1, 3, 9} + w mod 13. There is a single list of at most 38 gates, each an AND, OR or NOT reading at most two wires, with at most one NOT gate, having for each line w an output wire equal on every input to the OR of the inputs on that line.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-957.c00e4af535c5.json",
+  "statement_hash": "sha256:c2def6285d103a23b95c3c6d063715e2ca75b4e26e866eea4c4266c48a22cec8",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T17:16:08.157Z",
+  "title": "Search: a list of AND, OR and NOT gates of fan-in at most two with at most one NOT gate and at most 38 gates computing the 13 line-ORs of the plane of order 3",
+  "used_by": []
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004523",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:603bd2776463e66494fe09154be4493f032cdabb1c729c7fa4282fc5c59bb763",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L049.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:43:03.341Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:16:07.027Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m N : ℕ) (G : PEqualNP.Expanders.BipGraph m N) (s d D : ℕ), PEqualNP.Expanders.IsBdryExpander G s 2 → PEqualNP.Expanders.LeftDegLe G d → 1 ≤ s → d * D ≤ s → ¬ PEqualNP.ProofComplexity.PCRefutable (PEqualNP.ProofComplexity.cnfSystem (PEqualNP.Expanders.funGraphPHP G)) D",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-049",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If every set of at most s pigeons of G has twice its size in unique neighbouring holes, every pigeon has at most d holes, s is at least 1 and d D <= s, then the functional pigeonhole formula on G (pigeon, hole and functionality clauses, as polynomials over F2 with Boolean axioms) has no polynomial calculus refutation of degree D. The 2015 generalized degree method for functional pigeonhole on expanders (bound delta s / (2d) there). Route in notes/pcx-fun-graph-php-route.md: the plain route of L-pcx-046 with pigeon footprints; the plain peel lemma is false for the functional ideal.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-049.f9d971ef4988.json",
+  "statement_hash": "sha256:0150181e8608b514cc96bf54a5105bbefbd01274bb304420b63f8e6b6913ef35",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:43:03.341Z",
+  "title": "Functional pigeonhole on a boundary expander of left degree d has no F2 polynomial calculus refutation of degree D when d D is at most the expansion size",
+  "used_by": []
+}

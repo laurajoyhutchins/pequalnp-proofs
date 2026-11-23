@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-005638",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:66f5d9f4ce4067ce2a3b0bb6f32e4d50080e63ada5c44aff1ebbb0ca004fe7c9",
+    "lean_file": "lean/PEqualNP/Library/L019.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T19:16:08.111Z",
+      "outcome": "checked",
+      "when": "2026-11-22T18:34:44.363Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.Library.P ≠ PEqualNP.Library.NP → ∃ L ∈ PEqualNP.Library.NP, L ∉ PEqualNP.Library.P ∧ ¬ PEqualNP.Library.NPHard L",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-019",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "If P is not NP, some language in NP is outside P and is not NP-hard (so not NP-complete). Ladner (J. ACM 22, 1975).",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-019.0b2db4b0884b.json",
+  "statement_hash": "sha256:585e63ee0067785b6a42a42118ef9fbe41b634ab329b9b361f07512a1e6ddc38",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T19:16:08.111Z",
+  "title": "Ladner: if P differs from NP, an NP language is neither in P nor NP-hard",
+  "used_by": []
+}

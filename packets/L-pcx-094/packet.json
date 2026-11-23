@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-pcx-094",
-  "file": "lean/PEqualNP/Outside/L_pcx_094.lean",
-  "module": "PEqualNP.Outside.L_pcx_094",
-  "statement": "¬ ((∀ F1 : Set (PEqualNP.ProofComplexity.Clause ((Fin 5 × Fin 3) ⊕ Fin 5)), F1 = {C6 | ∃ v7 : Fin 5, C6 = Finset.univ.image (fun t8 : Fin 3 => ((Sum.inl (v7, t8) : (Fin 5 × Fin 3) ⊕ Fin 5), true))} ∪ {C9 | ∃ (u10 v11 : Fin 5) (f12 : Fin 3 → Bool), u10 ≠ v11 ∧ ¬ (v11 = u10 + 1 ∨ u10 = v11 + 1) ∧ C9 = Finset.univ.image (fun t13 : Fin 3 => ((Sum.inl (if f12 t13 = true then v11 else u10, t13) : (Fin 5 × Fin 3) ⊕ Fin 5), true))} ∪ {C14 | ∃ (e15 : Fin 5) (t16 : Fin 3), C14 = {((Sum.inr e15 : (Fin 5 × Fin 3) ⊕ Fin 5), false), ((Sum.inl (e15, t16) : (Fin 5 × Fin 3) ⊕ Fin 5), false), ((Sum.inl (e15 + 1, t16) : (Fin 5 × Fin 3) ⊕ Fin 5), false)}} ∪ {C17 | ∃ S18 : Finset (Fin 5), S18.card = 2 ∧ C17 = (Finset.univ.filter (fun e19 : Fin 5 => e19 ∉ S18 ∧ e19 + 1 ∉ S18)).image (fun e20 : Fin 5 => ((Sum.inr e20 : (Fin 5 × Fin 3) ⊕ Fin 5), true))} → (∃ π2, PEqualNP.ProofComplexity.IsRefutation F1 π2 ∧ ∀ D3 ∈ π2, D3.card ≤ 3) ∧ ¬ ∃ π4, PEqualNP.ProofComplexity.IsRefutation F1 π4 ∧ ∀ D5 ∈ π4, D5.card ≤ 2) ∧ (∀ F21 : Set (PEqualNP.ProofComplexity.Clause ((Fin 6 × Fin 4) ⊕ Fin 6)), F21 = {C26 | ∃ v27 : Fin 6, C26 = Finset.univ.image (fun t28 : Fin 4 => ((Sum.inl (v27, t28) : (Fin 6 × Fin 4) ⊕ Fin 6), true))} ∪ {C29 | ∃ (u30 v31 : Fin 6) (f32 : Fin 4 → Bool), u30 ≠ v31 ∧ ¬ (u30 ≠ v31 ∧ u30.val / 3 = v31.val / 3) ∧ C29 = Finset.univ.image (fun t33 : Fin 4 => ((Sum.inl (if f32 t33 = true then v31 else u30, t33) : (Fin 6 × Fin 4) ⊕ Fin 6), true))} ∪ {C34 | ∃ (e35 : Fin 6) (t36 : Fin 4), C34 = {((Sum.inr e35 : (Fin 6 × Fin 4) ⊕ Fin 6), false), ((Sum.inl (((![(0, 1), (1, 2), (0, 2), (3, 4), (4, 5), (3, 5)] : Fin 6 → Fin 6 × Fin 6) e35).1, t36) : (Fin 6 × Fin 4) ⊕ Fin 6), false), ((Sum.inl (((![(0, 1), (1, 2), (0, 2), (3, 4), (4, 5), (3, 5)] : Fin 6 → Fin 6 × Fin 6) e35).2, t36) : (Fin 6 × Fin 4) ⊕ Fin 6), false)}} ∪ {C37 | ∃ S38 : Finset (Fin 6), S38.card = 3 ∧ C37 = (Finset.univ.filter (fun e39 : Fin 6 => ((![(0, 1), (1, 2), (0, 2), (3, 4), (4, 5), (3, 5)] : Fin 6 → Fin 6 × Fin 6) e39).1 ∉ S38 ∧ ((![(0, 1), (1, 2), (0, 2), (3, 4), (4, 5), (3, 5)] : Fin 6 → Fin 6 × Fin 6) e39).2 ∉ S38)).image (fun e40 : Fin 6 => ((Sum.inr e40 : (Fin 6 × Fin 4) ⊕ Fin 6), true))} → (∃ π22, PEqualNP.ProofComplexity.IsRefutation F21 π22 ∧ ∀ D23 ∈ π22, D23.card ≤ 4) ∧ ¬ ∃ π24, PEqualNP.ProofComplexity.IsRefutation F21 π24 ∧ ∀ D25 ∈ π24, D25.card ≤ 3))",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Probe: Probe: NOT (the covering formula CS has least resolution width 3 on the 5-cycle with 3 labels and 4 on two disjoint triangles with 4 labels)",
-    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A breadth probe: either answer moves the scouts' map."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Probe: Probe: NOT (the covering formula CS has least resolution width 3 on the 5-cycle with 3 labels and 4 on two disjoint triangles with 4 labels)",
+    "unlocks": "A breadth probe: either answer moves the scouts' map."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_pcx_094.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-pcx-094",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_pcx_094",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Covering formula CS of a graph with k labels: variables x(v,t) (v has label t) and d(e) (the ends of e share no label); clauses: each vertex has a label; for non-adjacent u, v and each map f from labels to {u, v}, OR of x(f(t),t); for each edge uv and label t, not d(e) or not x(u,t) or not x(v,t); for each set S of k - 1 vertices, OR of d(e) over edges with no end in S. Width: largest clause of a resolution refutation, axioms counted, no weakening. Not (the least width of CS is 3 on the 5-cycle with k = 3 and 4 on two disjoint triangles with k = 4). Conjecture.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-pcx-094.362263e990f9.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T22:56:08.030Z",
+    "title": "Probe: NOT (the covering formula CS has least resolution width 3 on the 5-cycle with 3 labels and 4 on two disjoint triangles with 4 labels)"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "¬ ((∀ F1 : Set (PEqualNP.ProofComplexity.Clause ((Fin 5 × Fin 3) ⊕ Fin 5)), F1 = {C6 | ∃ v7 : Fin 5, C6 = Finset.univ.image (fun t8 : Fin 3 => ((Sum.inl (v7, t8) : (Fin 5 × Fin 3) ⊕ Fin 5), true))} ∪ {C9 | ∃ (u10 v11 : Fin 5) (f12 : Fin 3 → Bool), u10 ≠ v11 ∧ ¬ (v11 = u10 + 1 ∨ u10 = v11 + 1) ∧ C9 = Finset.univ.image (fun t13 : Fin 3 => ((Sum.inl (if f12 t13 = true then v11 else u10, t13) : (Fin 5 × Fin 3) ⊕ Fin 5), true))} ∪ {C14 | ∃ (e15 : Fin 5) (t16 : Fin 3), C14 = {((Sum.inr e15 : (Fin 5 × Fin 3) ⊕ Fin 5), false), ((Sum.inl (e15, t16) : (Fin 5 × Fin 3) ⊕ Fin 5), false), ((Sum.inl (e15 + 1, t16) : (Fin 5 × Fin 3) ⊕ Fin 5), false)}} ∪ {C17 | ∃ S18 : Finset (Fin 5), S18.card = 2 ∧ C17 = (Finset.univ.filter (fun e19 : Fin 5 => e19 ∉ S18 ∧ e19 + 1 ∉ S18)).image (fun e20 : Fin 5 => ((Sum.inr e20 : (Fin 5 × Fin 3) ⊕ Fin 5), true))} → (∃ π2, PEqualNP.ProofComplexity.IsRefutation F1 π2 ∧ ∀ D3 ∈ π2, D3.card ≤ 3) ∧ ¬ ∃ π4, PEqualNP.ProofComplexity.IsRefutation F1 π4 ∧ ∀ D5 ∈ π4, D5.card ≤ 2) ∧ (∀ F21 : Set (PEqualNP.ProofComplexity.Clause ((Fin 6 × Fin 4) ⊕ Fin 6)), F21 = {C26 | ∃ v27 : Fin 6, C26 = Finset.univ.image (fun t28 : Fin 4 => ((Sum.inl (v27, t28) : (Fin 6 × Fin 4) ⊕ Fin 6), true))} ∪ {C29 | ∃ (u30 v31 : Fin 6) (f32 : Fin 4 → Bool), u30 ≠ v31 ∧ ¬ (u30 ≠ v31 ∧ u30.val / 3 = v31.val / 3) ∧ C29 = Finset.univ.image (fun t33 : Fin 4 => ((Sum.inl (if f32 t33 = true then v31 else u30, t33) : (Fin 6 × Fin 4) ⊕ Fin 6), true))} ∪ {C34 | ∃ (e35 : Fin 6) (t36 : Fin 4), C34 = {((Sum.inr e35 : (Fin 6 × Fin 4) ⊕ Fin 6), false), ((Sum.inl (((![(0, 1), (1, 2), (0, 2), (3, 4), (4, 5), (3, 5)] : Fin 6 → Fin 6 × Fin 6) e35).1, t36) : (Fin 6 × Fin 4) ⊕ Fin 6), false), ((Sum.inl (((![(0, 1), (1, 2), (0, 2), (3, 4), (4, 5), (3, 5)] : Fin 6 → Fin 6 × Fin 6) e35).2, t36) : (Fin 6 × Fin 4) ⊕ Fin 6), false)}} ∪ {C37 | ∃ S38 : Finset (Fin 6), S38.card = 3 ∧ C37 = (Finset.univ.filter (fun e39 : Fin 6 => ((![(0, 1), (1, 2), (0, 2), (3, 4), (4, 5), (3, 5)] : Fin 6 → Fin 6 × Fin 6) e39).1 ∉ S38 ∧ ((![(0, 1), (1, 2), (0, 2), (3, 4), (4, 5), (3, 5)] : Fin 6 → Fin 6 × Fin 6) e39).2 ∉ S38)).image (fun e40 : Fin 6 => ((Sum.inr e40 : (Fin 6 × Fin 4) ⊕ Fin 6), true))} → (∃ π22, PEqualNP.ProofComplexity.IsRefutation F21 π22 ∧ ∀ D23 ∈ π22, D23.card ≤ 4) ∧ ¬ ∃ π24, PEqualNP.ProofComplexity.IsRefutation F21 π24 ∧ ∀ D25 ∈ π24, D25.card ≤ 3))",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

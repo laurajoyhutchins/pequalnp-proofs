@@ -1,0 +1,34 @@
+{
+  "artifact": {
+    "checker_run_id": "run-018335",
+    "checker_version": "outside-runner",
+    "content_hash": "sha256:a8a06dfa994d6fee9047a4e6e5aa84cf986be9310aca4626d8c2e67671729827",
+    "lean_file": "lean/PEqualNP/Outside/L_meta_568.lean",
+    "runner_url": "https://github.com/brilliant-hq/pequalnp-proofs/actions/runs/45165694414"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-23T11:40:49.591Z",
+      "outcome": "checked",
+      "when": "2026-11-23T11:40:49.591Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (H : (Fin n → Bool) → Bool), PEqualNP.MetaComplexity.IsMinimalCircuit (n + 1) C → (∃ y y' : Fin n → Bool, H y ≠ H y') → (∀ x : Fin (n + 1) → Bool, PEqualNP.MetaComplexity.circuitFun (n + 1) C x = (x (Fin.last n) || H (fun i : Fin n => x i.castSucc))) → ∃ (k : ℕ) (c : Fin (k + 1) → Fin C.gates.length), StrictMono c ∧ (c (Fin.last k)).val + 1 = C.gates.length ∧ C.output = n + 1 + (c (Fin.last k)).val ∧ (∀ i : Fin (k + 1), (C.gates.get (c i)).op = PEqualNP.CircuitLowerBounds.GateOp.or ∧ (C.gates.get (c i)).inputs.length = 2) ∧ n ∈ (C.gates.get (c 0)).inputs ∧ (∀ i : Fin k, n + 1 + (c i.castSucc).val ∈ (C.gates.get (c i.succ)).inputs) ∧ (∀ j : Fin C.gates.length, ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some n ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ n ∈ (C.gates.get j).inputs) → j = c 0) ∧ (∀ (i : Fin k) (j : Fin C.gates.length), ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some (n + 1 + (c i.castSucc).val) ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ (n + 1 + (c i.castSucc).val) ∈ (C.gates.get j).inputs) → j = c i.succ) ∧ (∀ j : Fin C.gates.length, Relation.TransGen (fun a b : ℕ => ∃ j : Fin C.gates.length, b = n + 1 + j.val ∧ ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some a ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ a ∈ (C.gates.get j).inputs)) n (n + 1 + j.val) ↔ ∃ i : Fin (k + 1), c i = j) ∧ (∃ w ∈ (C.gates.get (c 0)).inputs, w ≠ n ∧ w < n + 1 + (c 0).val ∧ ¬ Relation.TransGen (fun a b : ℕ => ∃ j : Fin C.gates.length, b = n + 1 + j.val ∧ ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some a ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ a ∈ (C.gates.get j).inputs)) n w) ∧ (∀ i : Fin k, ∃ w ∈ (C.gates.get (c i.succ)).inputs, w ≠ n + 1 + (c i.castSucc).val ∧ w ≠ n ∧ w < n + 1 + (c i.succ).val ∧ ¬ Relation.TransGen (fun a b : ℕ => ∃ j : Fin C.gates.length, b = n + 1 + j.val ∧ ((C.gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ (C.gates.get j).inputs.head? = some a ∨ (C.gates.get j).op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ a ∈ (C.gates.get j).inputs)) n w)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-568",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let C be a least fan-in-two circuit (AND, OR, NOT, every gate counted) on n + 1 inputs computing x OR H, x the last input, H a non-constant function of the first n inputs. A gate reads a wire if it is a NOT listing that wire first, or an AND or OR listing it; a gate is above x if reads lead from x to it. Then the gates above x are g_0 < ... < g_k, g_k the last gate and the output; each is an OR listing exactly two wires, the one before it (x for g_0) and an earlier wire neither x nor above x; x and each g_i below g_k have exactly one reader, the next g.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-568.41c6660571ae.json",
+  "statement_hash": "sha256:24eec6f81a0f72aa4f8f5ce3364847dba1ab8b9c5a7bad494f71acd81281ded6",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-23T11:40:49.591Z",
+  "title": "Free input chain: in a least circuit of x OR H, H non-constant and free of the last input x, the gates above x are one OR chain to the output",
+  "used_by": [
+    "L-meta-636"
+  ]
+}

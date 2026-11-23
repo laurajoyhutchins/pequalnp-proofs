@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ s : ℕ, PEqualNP.MetaComplexity.HasCircuitSize 6 (fun x : Fin 6 → Bool => (x 0 && x 1) || (x 2 && x 3) || (x 3 && x 4) || (x 4 && x 5) || (x 5 && x 2)) s ↔ 5 ≤ s",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-765",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The graph on vertices 0 to 5 with edges 0-1, 2-3, 3-4, 4-5, 5-2 (the 4-cycle and a disjoint edge; 5 edges, least vertex cover 3). Its edge function on 6 inputs, x0 x1 OR x2 x3 OR x3 x4 OR x4 x5 OR x5 x2, true when both ends of some edge are true, has a circuit of AND, OR and NOT gates of fan-in at most two (every gate counted) with at most s gates exactly when s >= 5.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-765.7ebbd0f59de6.json",
+  "statement_hash": "sha256:480f656eb836d9e09e38100dbbb8a6cbd85f371c2e378a3295a5bbbd8135dcc3",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T16:19:38.083Z",
+  "title": "Exact circuit size: the edge function of the 4-cycle and a disjoint edge has circuits with s gates exactly when s >= 5",
+  "used_by": []
+}

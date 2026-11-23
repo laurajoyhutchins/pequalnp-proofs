@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∃ L : Submodule ℂ (Fin 4 × Fin 5 → ℂ), (∀ t ∈ L, (∑ f : Fin 4 ↪ Fin 5, ∏ i, (1 + t (i, f i))) = 120) ∧ Module.finrank ℂ L = 7)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-219",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There is no linear space L of 4 x 5 complex matrices of dimension exactly 7 such that, for every t in L, the sum over all injections f of the 4 rows into the 5 columns of the product over rows i of (1 + t(i, f(i))) equals 120, its value at t = 0. Equivalently, no 7-dimensional space on which all sums of k x k subpermanents of t, k = 1 to 4, vanish. This is the negation of the search for such a space. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-219.990bbef6f867.json",
+  "statement_hash": "sha256:6531b5ee804337f73525ac37bc65d7ebe7a0c354c99c97ff5dfd61d01fe95d02",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T20:00:23.812Z",
+  "title": "No linear space of 4 x 5 complex matrices of dimension 7 keeps the sum over row-to-column injections of the product of (1 + entry) equal to 120",
+  "used_by": []
+}

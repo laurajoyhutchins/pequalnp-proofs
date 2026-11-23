@@ -1,0 +1,34 @@
+{
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:50:45.096Z",
+      "outcome": "died",
+      "when": "2026-11-22T14:45:56.489Z",
+      "why_died": "L-gct-015 route needs a fixed A0 across nearby zeros; under border limits normalized expressions diverge: breaks at S2 for odd m, at S3/S5 for even m (2-jet passes, 3-jet does not)"
+    },
+    {
+      "ended_at": "2026-11-22T19:28:35.044Z",
+      "outcome": "died",
+      "when": "2026-11-22T19:15:30.666Z",
+      "why_died": "dropped by strategy (no attack line needs it this week). Leg A: the MR+1 adjugate step does not survive border limits; the limit loses exactly the two equations behind +1."
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-gct-010"
+  ],
+  "formal_statement": "∀ m n : ℕ, 3 ≤ m → PEqualNP.Gct.HasBorderDetExpression (PEqualNP.Gct.permPoly ℂ m) n → m ^ 2 + 2 ≤ 2 * n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-028",
+  "kind": "helper",
+  "layer": 1,
+  "plain_statement": "OPEN TARGET: over C, every border determinantal expression of perm_m with m >= 3 has size at least m^2/2 + 1, the border form of L-gct-015. The quadratic border bound m^2/2 is a 2013 theorem (L-gct-010, open here); the +1 for border expressions is in no source found by the second literature pass. It may be false: border expressions can be smaller than exact ones.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-028.5766d98468b1.json",
+  "statement_hash": "sha256:c83b94453d5d1fd5628e2bba95bcdd88784671fd809297bde3f8b71af8072c38",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-22T19:28:35.044Z",
+  "title": "Border Mignon-Ressayre plus one: border dc(perm_m) >= m^2/2 + 1 for m >= 3 (open here)",
+  "used_by": []
+}

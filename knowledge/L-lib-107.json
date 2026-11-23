@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-005348",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:943b6f66ae72441909e42068d5e50803508ca9921c355d67152fb1b0ef13b678",
+    "lean_file": "lean/PEqualNP/Library/L107.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T18:42:23.660Z",
+      "outcome": "checked",
+      "when": "2026-11-22T18:42:23.660Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ p : Polynomial ℕ, ∃ l : ℕ, ∀ π : List (PEqualNP.Search.CPLine (Fin (2 ^ l + 1) × Fin l)), PEqualNP.Search.IsCPRefutation (PEqualNP.ProofComplexity.BPHP (2 ^ l + 1) l) π → p.eval (2 ^ l) < π.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-107",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "For every polynomial p there is l such that every cutting planes refutation over the integers of bit PHP with 2^l+1 pigeons and 2^l holes has more than p(2^l) lines. Known result formalized: Beame and Whitmeyer, ICALP 2025, Theorem 1.5. From the two lemmas before it. Turns the kill of candidate 4 (stabbing planes, via simulation by CP) from a citation into a checked lemma for its CP part.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-107.2ac9f105a1a4.json",
+  "statement_hash": "sha256:9a1353c83e6787ca9ff2e5a505d18a785865d0113b427ba59166199108ffe309",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T18:42:23.660Z",
+  "title": "Cutting planes refutations of bit pigeonhole are superpolynomial in lines",
+  "used_by": []
+}

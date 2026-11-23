@@ -1,0 +1,25 @@
+{
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:24:51.473Z",
+      "outcome": "refuted",
+      "when": "2026-11-22T16:30:18.544Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ p : Polynomial ℕ, ∀ (n : ℕ) (F : Finset (PEqualNP.ProofComplexity.Clause (Fin n))), (∀ C ∈ F, C.card ≤ 3) → ¬ PEqualNP.ProofComplexity.Satisfiable (↑F : Set (PEqualNP.ProofComplexity.Clause (Fin n))) → ∃ π : List (PEqualNP.Search.LinClause n), PEqualNP.Search.IsResLinRefutation (↑F : Set (PEqualNP.ProofComplexity.Clause (Fin n))) π ∧ π.length ≤ p.eval n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-alg-003",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Some polynomial p bounds, for every unsatisfiable 3-CNF on n variables, the number of lines of a Res(lin) refutation over F2. Necessary for CDCL over parities (candidate 3) to run in polynomial time on unsat input. Open; a refutation would be a new result: no superpolynomial lower bound for DAG Res(lin) on any 3-CNF is known (only tree-like, regular and bounded-depth fragments).",
+  "source": "https://data.pequalnp.com/data/lemma/L-alg-003.bc31b2c2118c.json",
+  "statement_hash": "sha256:003d90e8da639b3a721217ece9bbcdabed1e2390cf5d42a0db19993a1d14cfda",
+  "statement_hash_verified": true,
+  "status": "refuted",
+  "status_at": "2026-11-22T17:24:51.473Z",
+  "title": "Candidate 3 premise: unsatisfiable 3-CNFs have polynomial-size Res(lin) refutations",
+  "used_by": []
+}

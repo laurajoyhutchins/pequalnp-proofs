@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T20:49:43.053Z",
+      "outcome": "died",
+      "when": "2026-11-22T20:49:38.635Z",
+      "why_died": "parked by the strategy seat; reason on the dead attempt; notes in plan/lines/meta_complexity-projections.md"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ k : ℕ, ∃ n₀ : ℕ, ∀ n : ℕ, n₀ ≤ n → ¬ ∃ (n' s : ℕ) (w : (Fin n → Bool) → List Bool) (T : (Fin n → Bool) → List Bool), 2 ^ n' ≤ n ^ k ∧ PEqualNP.MetaComplexity.QueryLocal n 1 w ∧ (∀ x : Fin n → Bool, w x = List.replicate s true ++ false :: T x ∧ (T x).length = 2 ^ n') ∧ ∀ x : Fin n → Bool, (Finset.univ.filter fun i : Fin n => x i = true).card % 2 = 1 ↔ w x ∈ PEqualNP.MetaComplexity.MCSP",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-056",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "CONJECTURE, OPEN, could be false: for every k and all large n, no 1-local map (every output bit fixed by one input bit, non-uniform) whose outputs are MCSP instances of one size bound s and tables of one length N <= n^k reduces parity on n bits to MCSP. A special case of a question open in print (is MCSP hard for parity under non-uniform projections; the 2021 gap paper, Section 7; printed opinion leans to hardness, which would refute this). Checked so far: near-linear N for partial tables (L-meta-049 with 044).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-056.0be6a0f205bb.json",
+  "statement_hash": "sha256:2e000e0dbf73286c7d151d55df1d8d3a864cefa25664d4cb00711db25077af10",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-22T20:49:43.053Z",
+  "title": "HARD LINK (open): no 1-local fixed-format reduction of parity to MCSP with truth tables of length polynomial in n",
+  "used_by": []
+}

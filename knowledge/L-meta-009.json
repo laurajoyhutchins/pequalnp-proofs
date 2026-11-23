@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003733",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:fc17ce08a68674fcc7583346dab2432aabebf59e5837bf0b0b2dbb862b7bbf1d",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L009.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:26:28.286Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:14:47.236Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.Library.NPHard PEqualNP.MetaComplexity.MCSP → ∃ L : Language Bool, (∃ k : ℕ, L ∈ PEqualNP.Library.DTIME (fun n : ℕ => 2 ^ (n ^ k) + k)) ∧ ¬ (L ∈ PEqualNP.Library.NP ∧ L ∈ PEqualNP.CircuitLowerBounds.PPoly)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-009",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If MCSP is NP-hard under polynomial-time many-one reductions then some language decided in time 2^(n^k) + k is not in NP intersect P/poly (so EXP differs from ZPP). Murray and Williams, On the (non) NP-hardness of computing circuit complexity, Theory of Computing 13, 2017.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-009.dac977e3121c.json",
+  "statement_hash": "sha256:876afb9be40233bd53e6882db181e267ea1550287b0e2f771cdaf0349146941f",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:26:28.286Z",
+  "title": "Murray and Williams: NP-hardness of MCSP separates EXP from NP intersect P/poly",
+  "used_by": []
+}

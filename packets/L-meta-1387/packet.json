@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-1387",
-  "file": "lean/PEqualNP/Outside/L_meta_1387.lean",
-  "module": "PEqualNP.Outside.L_meta_1387",
-  "statement": "∃ (Ckt : PEqualNP.CircuitLowerBounds.Circuit) (Jn : ℕ) (fa fb : Fin Jn → ℕ) (fr : ℕ), PEqualNP.MetaComplexity.Monotone2 Ckt ∧ Ckt.size ≤ 16 ∧ Jn ≤ 6 ∧ (∀ jd : Fin Jn, (Ckt.lineDegrees (7 + 7) (Finset.Ico 7 (7 + 7))).getD (fa jd) 0 ≤ 2 ∧ (Ckt.lineDegrees (7 + 7) (Finset.Ico 7 (7 + 7))).getD (fb jd) 0 ≤ 2) ∧ (∀ (jb : Fin Jn) (zz : Fin (7 + 7) → Bool), (Ckt.wires (List.ofFn zz)).getD (fa jb) false = true → (Ckt.wires (List.ofFn zz)).getD (fb jb) false = true → ∃ (pa lb : Fin 7), (lb.val = pa.val ∨ (lb.val + 1) % 7 = pa.val ∨ (lb.val + 3) % 7 = pa.val) ∧ zz (Fin.castAdd 7 pa) = true ∧ zz (Fin.natAdd 7 lb) = true) ∧ Ckt.size + Jn + 7 ≤ (Finset.univ.filter (fun e2 : Fin 7 × Fin 7 => (e2.2.val = e2.1.val ∨ (e2.2.val + 1) % 7 = e2.1.val ∨ (e2.2.val + 3) % 7 = e2.1.val) ∧ (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD fr false = false ∧ (∃ jc : Fin Jn, (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD (fa jc) false = true ∧ (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD (fb jc) false = true) ∧ ∀ jk : Fin Jn, (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD (fa jk) false = true → (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD (fb jk) false = true → (Ckt.wires (List.ofFn (fun vp : Fin (7 + 7) => decide (vp = Fin.castAdd 7 e2.1)))).getD (fa jk) false = false ∧ (Ckt.wires (List.ofFn (fun vp : Fin (7 + 7) => decide (vp = Fin.castAdd 7 e2.1)))).getD (fb jk) false = false)).card",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Search: on the Fano plane, an AND/OR list of fan-in two with at most 16 gates and 6 products of degree-2 wires with at least s + J + 7 diagonal pairs",
-    "context": "SKETCH: SAT: per gate an AND/OR selector and two operand selectors over earlier wires; line-degree in unary capped at 2 for the designated wires; below-the-function clause on all 2^14 inputs (monotone: maximal non-incidence inputs suffice); diagonal clauses at the 21 two-hot and 7 one-hot inputs; a cardinality constraint. A model is checked by evaluation. The none side is its own row. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A cut of the bound at line-degree four (seat-gct-2's sheet, notes/reduction-machine/legs/ld4-sheet.txt); size about a search shard (D8, exists side)."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: SAT: per gate an AND/OR selector and two operand selectors over earlier wires; line-degree in unary capped at 2 for the designated wires; below-the-function clause on all 2^14 inputs (monotone: maximal non-incidence inputs suffice); diagonal clauses at the 21 two-hot and 7 one-hot inputs; a cardinality constraint. A model is checked by evaluation. The none side is its own row. Namespace: PEqualNP.MetaComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Search: on the Fano plane, an AND/OR list of fan-in two with at most 16 gates and 6 products of degree-2 wires with at least s + J + 7 diagonal pairs",
+    "unlocks": "A cut of the bound at line-degree four (seat-gct-2's sheet, notes/reduction-machine/legs/ld4-sheet.txt); size about a search shard (D8, exists side)."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_1387.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-1387",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_1387",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "Fano plane: line l holds the points l, l+1, l+3 mod 7; inputs the 7 points then the 7 lines; line-degree: line 1, point 0, AND the sum, OR the maximum. There is an AND/OR circuit of fan-in at most two with s at most 16 gates, a wire r and J at most 6 pairs (a_j, b_j) of wires of line-degree at most 2, each a_j AND b_j true only where an incident point and line are on, with at least s + J + 7 diagonal pairs: incident (p, w) where, with p and w alone on, r is false, some a_j, b_j are true, and each such j has a_j and b_j false with p alone on. Conjecture.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-1387.801370a9bde0.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T21:49:33.472Z",
+    "title": "Search: on the Fano plane, an AND/OR list of fan-in two with at most 16 gates and 6 products of degree-2 wires with at least s + J + 7 diagonal pairs"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ (Ckt : PEqualNP.CircuitLowerBounds.Circuit) (Jn : ℕ) (fa fb : Fin Jn → ℕ) (fr : ℕ), PEqualNP.MetaComplexity.Monotone2 Ckt ∧ Ckt.size ≤ 16 ∧ Jn ≤ 6 ∧ (∀ jd : Fin Jn, (Ckt.lineDegrees (7 + 7) (Finset.Ico 7 (7 + 7))).getD (fa jd) 0 ≤ 2 ∧ (Ckt.lineDegrees (7 + 7) (Finset.Ico 7 (7 + 7))).getD (fb jd) 0 ≤ 2) ∧ (∀ (jb : Fin Jn) (zz : Fin (7 + 7) → Bool), (Ckt.wires (List.ofFn zz)).getD (fa jb) false = true → (Ckt.wires (List.ofFn zz)).getD (fb jb) false = true → ∃ (pa lb : Fin 7), (lb.val = pa.val ∨ (lb.val + 1) % 7 = pa.val ∨ (lb.val + 3) % 7 = pa.val) ∧ zz (Fin.castAdd 7 pa) = true ∧ zz (Fin.natAdd 7 lb) = true) ∧ Ckt.size + Jn + 7 ≤ (Finset.univ.filter (fun e2 : Fin 7 × Fin 7 => (e2.2.val = e2.1.val ∨ (e2.2.val + 1) % 7 = e2.1.val ∨ (e2.2.val + 3) % 7 = e2.1.val) ∧ (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD fr false = false ∧ (∃ jc : Fin Jn, (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD (fa jc) false = true ∧ (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD (fb jc) false = true) ∧ ∀ jk : Fin Jn, (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD (fa jk) false = true → (Ckt.wires (List.ofFn (fun vq : Fin (7 + 7) => if vq = Fin.castAdd 7 e2.1 then true else if vq = Fin.natAdd 7 e2.2 then true else false))).getD (fb jk) false = true → (Ckt.wires (List.ofFn (fun vp : Fin (7 + 7) => decide (vp = Fin.castAdd 7 e2.1)))).getD (fa jk) false = false ∧ (Ckt.wires (List.ofFn (fun vp : Fin (7 + 7) => decide (vp = Fin.castAdd 7 e2.1)))).getD (fb jk) false = false)).card",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

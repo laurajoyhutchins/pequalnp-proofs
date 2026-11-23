@@ -1,0 +1,585 @@
+{
+  "generated_at": "2026-11-23T23:41:58.612Z",
+  "head_source": "https://data.pequalnp.com/head.json",
+  "plan_updated_at": "2026-11-23T00:40:19Z",
+  "programs": {
+    "circuit_lower_bounds": {
+      "chain": [
+        {
+          "title": "Linear lower bounds for explicit functions by gate elimination, to be stated on our circuit model"
+        },
+        {
+          "lemma_id": "L-clb-036",
+          "status": "in_work",
+          "title": "OPEN: SAT has no fan-in two circuits of size O(n^1.01)"
+        }
+      ],
+      "hard_link": {
+        "attempts_died": [],
+        "attempts_in_flight": 1,
+        "lemma_id": "L-clb-036",
+        "status": "in_work",
+        "title": "OPEN: SAT has no fan-in two circuits of size O(n^1.01)",
+        "why_hard": "No known method proves a circuit lower bound above linear size for an explicit problem in NP."
+      },
+      "target": {
+        "beyond": "Open. Lower bounds for explicit problems in NP on this circuit model are linear with a small constant.",
+        "lemma_id": "L-clb-036",
+        "plain": "No family of circuits with gates of two inputs and about n^1.01 gates decides whether a formula given in n bits is satisfiable.",
+        "status": "in_work",
+        "title": "The satisfiability problem has no circuits of size n^1.01"
+      }
+    },
+    "gct": {
+      "chain": [
+        {
+          "lemma_id": "L-gct-009",
+          "status": "checked",
+          "title": "Mignon and Ressayre: dc(perm_m) >= m^2/2"
+        },
+        {
+          "lemma_id": "L-gct-015",
+          "status": "checked",
+          "title": "Beyond Mignon-Ressayre by one: dc(perm_m) >= m^2/2 + 1 for m >= 3"
+        },
+        {
+          "lemma_id": "L-gct-010",
+          "status": "checked",
+          "title": "Landsberg, Manivel and Ressayre: border dc(perm_m) >= m^2/2"
+        },
+        {
+          "lemma_id": "L-gct-024",
+          "status": "checked",
+          "title": "A smooth form of degree r in d variables has border determinantal complexity at least (r-1)(d-1)/11"
+        },
+        {
+          "lemma_id": "L-gct-045",
+          "status": "checked",
+          "title": "TARGET: border determinantal complexity of the power sum x_1^r + ... + x_d^r is at least (r-1)(d-1)/11"
+        },
+        {
+          "lemma_id": "L-gct-035",
+          "status": "checked",
+          "title": "Subspace reduction: dc(perm_m) >= m^2 - k when some zero y of perm_m has no linear space of dim > k through it inside the hypersurface"
+        },
+        {
+          "lemma_id": "L-gct-050",
+          "status": "checked",
+          "title": "Cone reduction: a linear space through a zero y inside the permanent hypersurface extends by the line of y"
+        },
+        {
+          "lemma_id": "L-gct-051",
+          "status": "checked",
+          "title": "First and second order conditions on a linear space through a zero y inside the permanent hypersurface"
+        },
+        {
+          "lemma_id": "L-gct-052",
+          "status": "checked",
+          "title": "Every polarized Taylor coefficient of perm at y vanishes on a linear space through y inside the hypersurface"
+        },
+        {
+          "lemma_id": "L-gct-062",
+          "status": "checked",
+          "title": "Reduction at Sigma_m: l(Sigma_m) <= 4(m-1) + F, F the largest dim of a space of (m-1)x(m-1) matrices killing both power sums of the entries"
+        },
+        {
+          "lemma_id": "L-gct-066",
+          "status": "checked",
+          "title": "Kneser for codes over C implies the sharp Fermat lemma (L-gct-065 implies L-gct-061)"
+        },
+        {
+          "lemma_id": "L-gct-065",
+          "status": "checked",
+          "title": "Kneser for codes over C (Mirandola-Zemor 2015, Thm 3.3): dim S*T >= dim S + dim T - dim St(S*T)"
+        },
+        {
+          "lemma_id": "L-gct-061",
+          "status": "checked",
+          "title": "Fermat lemma: a complex linear space on which both power sums x1^2+...+xM^2 and x1^3+...+xM^3 vanish has dimension at most M/3"
+        },
+        {
+          "lemma_id": "L-gct-064",
+          "status": "checked",
+          "title": "TARGET: dc(perm_m) >= (2m^2 - 10m + 11)/3 over C, past Mignon-Ressayre m^2/2 for m >= 20"
+        },
+        {
+          "lemma_id": "L-gct-068",
+          "status": "checked",
+          "title": "Red team restatement of the permanent bound (explicit sum over permutations, matrices of affine polynomials, real inequality) is equivalent to L-gct-064"
+        },
+        {
+          "lemma_id": "L-gct-057",
+          "status": "checked",
+          "title": "The permanent restricts to smooth forms with (r-1)(d-1) / m^2 unbounded"
+        },
+        {
+          "lemma_id": "L-gct-056",
+          "status": "checked",
+          "title": "Superquadratic: border determinantal complexity of perm_m is not O(m^2)"
+        },
+        {
+          "lemma_id": "L-gct-067",
+          "status": "checked",
+          "title": "Iterated Fermat lemma: a complex linear space on which the power sums p2, .., pk all vanish has dimension at most M/k"
+        },
+        {
+          "lemma_id": "L-gct-069",
+          "status": "checked",
+          "title": "Border subspace reduction: L-gct-035 holds for border determinantal expressions"
+        },
+        {
+          "lemma_id": "L-gct-070",
+          "status": "checked",
+          "title": "TARGET: border dc(perm_m) >= (2m^2 - 10m + 11)/3, the border form of L-gct-064"
+        },
+        {
+          "lemma_id": "L-gct-077",
+          "status": "checked",
+          "title": "Reduction of L-gct-037 to the level-space problem: a bound G on spaces where perm(J_n + t) = n! gives border dc(perm_(n+1)) >= (n+1)^2 - 2(n+1) + 1 - G"
+        },
+        {
+          "lemma_id": "L-gct-086",
+          "status": "conjecture",
+          "title": "TARGET: level spaces of the permanent at J are linear: dim L <= C n whenever perm(J_n + t) = n! on L"
+        },
+        {
+          "lemma_id": "L-gct-025",
+          "status": "conjecture",
+          "title": "The permanent of size 11k restricts to a smooth form of degree at least k/3 in about k^2/100 variables"
+        },
+        {
+          "lemma_id": "L-gct-026",
+          "status": "conjecture",
+          "title": "Cubic lower bound for border determinantal complexity of the permanent (unrefereed 2026 claim)"
+        }
+      ],
+      "hard_link": {
+        "attempts_died": [
+          {
+            "by": "seat-barrier-1",
+            "ended_at": "2026-11-23T09:25:01.915Z",
+            "why_died": "line rests (on no chain); outside provers hold leases; released so an accepted outside proof can be recorded; notes kept in barriers/l037/STATE.md"
+          }
+        ],
+        "attempts_in_flight": 0,
+        "lemma_id": "L-gct-086",
+        "status": "conjecture",
+        "title": "TARGET: level spaces of the permanent at J are linear: dim L <= C n whenever perm(J_n + t) = n! on L",
+        "why_hard": "A checked reduction [L-gct-077] turns a larger bound for the permanent into one statement: a linear bound on the dimension of linear spaces of matrices on which the permanent of the all-ones matrix plus a variable matrix stays constant. No proof route has survived yet, and today a complex space was found that real-number searches had missed, so the small-case evidence is being redone."
+      },
+      "target": {
+        "beyond": "The target is claimed in unrefereed 2026 reports, not verified by this project. No comparison of our checked statements with the literature is made here until a specialist has answered.",
+        "lemma_id": "L-gct-026",
+        "plain": "Checked: over the complex numbers, an m by m permanent written as a determinant of affine forms, or as a limit of such determinants, needs size n with 3n at least 2m^2 - 10m + 11 [L-gct-070]. How this statement stands against published work is with a specialist and is not claimed here. The program's target is a cubic bound that unrefereed 2026 reports claim; this project has not verified it and has no proof route to it at present.",
+        "status": "conjecture",
+        "title": "A cubic lower bound on border determinant size for the permanent, claimed in unrefereed 2026 reports"
+      }
+    },
+    "library": {
+      "chain": [
+        {
+          "lemma_id": "L-lib-015",
+          "status": "checked",
+          "title": "Some language is NP-complete"
+        },
+        {
+          "lemma_id": "L-lib-073",
+          "status": "checked",
+          "title": "Machines to circuits: DTIME(t) has circuits of size O((t + n)^3)"
+        },
+        {
+          "lemma_id": "L-lib-029",
+          "status": "checked",
+          "title": "SAT is in NP"
+        },
+        {
+          "lemma_id": "L-lib-031",
+          "status": "checked",
+          "title": "SAT is NP-complete (Cook-Levin)"
+        },
+        {
+          "lemma_id": "L-lib-032",
+          "status": "checked",
+          "title": "3-SAT is NP-complete"
+        },
+        {
+          "lemma_id": "L-lib-019",
+          "status": "checked",
+          "title": "Ladner: if P differs from NP, an NP language is neither in P nor NP-hard"
+        }
+      ],
+      "hard_link": {
+        "attempts_died": [],
+        "attempts_in_flight": 0,
+        "title": "None of its own",
+        "why_hard": "The library's target is checked; its seats now build helpers for the hard links of the other programs."
+      },
+      "target": {
+        "beyond": "A known theorem of 1971; new only as a formalization on these machines.",
+        "lemma_id": "L-lib-031",
+        "plain": "Checked: SAT is NP-complete on the project's own machines [L-lib-031], so is 3-SAT [L-lib-032], and Ladner's theorem [L-lib-019]. The library's seats now work links of other programs' targets.",
+        "status": "checked",
+        "title": "SAT is NP-complete on the project's own definitions"
+      }
+    },
+    "meta_complexity": {
+      "chain": [
+        {
+          "lemma_id": "L-meta-017",
+          "status": "checked",
+          "title": "Zero completion: a small circuit for the 1-entries makes a partial MCSP instance a member"
+        },
+        {
+          "lemma_id": "L-meta-018",
+          "status": "checked",
+          "title": "Hardwiring: fixing the last k inputs of a circuit costs at most one gate"
+        },
+        {
+          "lemma_id": "L-meta-019",
+          "status": "checked",
+          "title": "SIZE and HasCircuitSize agree on every slice of a language"
+        },
+        {
+          "lemma_id": "L-meta-021",
+          "status": "checked",
+          "title": "Partial MCSP is in NP"
+        },
+        {
+          "lemma_id": "L-lib-053",
+          "status": "checked",
+          "title": "NP is strictly inside NEXP (nondeterministic time hierarchy)"
+        },
+        {
+          "lemma_id": "L-lib-092",
+          "status": "checked",
+          "title": "Upward padding: an exponential-time language, padded, is in P"
+        },
+        {
+          "lemma_id": "L-lib-094",
+          "status": "checked",
+          "title": "Exponential padding map: x to 1^(2^(|x|^k)+k) 0 x within O(2^(n^k)) steps, k >= 1"
+        },
+        {
+          "lemma_id": "L-lib-095",
+          "status": "checked",
+          "title": "A polynomial-time test after exact exponential padding runs in exponential time"
+        },
+        {
+          "lemma_id": "L-lib-096",
+          "status": "checked",
+          "title": "A relation on unary-padded inputs is an NP language"
+        },
+        {
+          "lemma_id": "L-lib-097",
+          "status": "checked",
+          "title": "NP is closed under polynomially bounded existential projection"
+        },
+        {
+          "lemma_id": "L-lib-098",
+          "status": "checked",
+          "title": "Lookup by a binary index is polynomial time"
+        },
+        {
+          "lemma_id": "L-lib-099",
+          "status": "checked",
+          "title": "Reversing a string is polynomial time"
+        },
+        {
+          "lemma_id": "L-meta-024",
+          "status": "checked",
+          "title": "Zero completion from a circuit family for the bit language"
+        },
+        {
+          "lemma_id": "L-meta-023",
+          "status": "checked",
+          "title": "Partial MCSP has a verifier whose witness is short when the circuit is small"
+        },
+        {
+          "lemma_id": "L-meta-016",
+          "status": "checked",
+          "title": "TARGET: NP-hardness of partial MCSP separates EXP from NP intersect P/poly"
+        },
+        {
+          "lemma_id": "L-meta-009",
+          "status": "checked",
+          "title": "Murray and Williams: NP-hardness of MCSP separates EXP from NP intersect P/poly"
+        },
+        {
+          "lemma_id": "L-meta-025",
+          "status": "checked",
+          "title": "Parity of n inputs needs at least 3(n - 1) gates"
+        },
+        {
+          "lemma_id": "L-meta-026",
+          "status": "checked",
+          "title": "Parity of n inputs has a circuit with 4(n - 1) gates"
+        },
+        {
+          "lemma_id": "L-meta-027",
+          "status": "checked",
+          "title": "Isolated solutions of a width-k CNF on m variables number at most 2k * 2^(m - m/(2k))"
+        },
+        {
+          "lemma_id": "L-meta-028",
+          "status": "checked",
+          "title": "Parity of m bits is not an OR of fewer than 2^(m/(2k)) / (4k) CNFs of width k"
+        },
+        {
+          "lemma_id": "L-meta-029",
+          "status": "checked",
+          "title": "A q-local map sending odd inputs into partial MCSP sends the zero input to a well-formed instance"
+        },
+        {
+          "lemma_id": "L-meta-030",
+          "status": "checked",
+          "title": "CORE: a q-local reduction of parity to partial MCSP builds a hard partial table on the zero input"
+        }
+      ],
+      "hard_link": {
+        "attempts_died": [
+          {
+            "by": "seat-meta-2",
+            "ended_at": "2026-11-22T20:49:50.898Z",
+            "why_died": "parked by the strategy seat; reason on the dead attempt; notes in plan/lines/meta_complexity-projections.md"
+          }
+        ],
+        "attempts_in_flight": 0,
+        "lemma_id": "L-meta-060",
+        "status": "conjecture",
+        "title": "Grid criterion: if hard row-even tables and easy tables are both rare at size s, a 1-local fixed-format map sends even inputs into MCSP and odd inputs out",
+        "why_hard": "Whether such a reduction exists turns on a fine comparison of average circuit sizes of two kinds of truth tables, finer than any known method resolves; it cannot be tested on small cases either. The question is parked and has been put to a specialist."
+      },
+      "target": {
+        "beyond": "Adapts Murray and Williams, Theory of Computing 2017, from MCSP to partial MCSP; it formalizes an obstacle and does not remove one.",
+        "lemma_id": "L-meta-056",
+        "plain": "Checked: if finding small circuits for partially specified functions is NP-hard under ordinary reductions, then exponential time contains a problem outside NP intersect P/poly [L-meta-016]; and parity of n inputs needs exactly 4(n - 1) gates in our basis [L-meta-026, L-meta-031], a known result. For reductions of parity that read few input bits per output bit, a construction and an obstruction are both checked, far apart; the target is to close the gap between them. Nothing of that is checked.",
+        "status": "conjecture",
+        "title": "No reduction of parity to MCSP in which each output bit reads one input bit, at polynomial length"
+      }
+    },
+    "p_eq_np_search": {
+      "chain": [
+        {
+          "lemma_id": "L-alg-002",
+          "status": "refuted",
+          "title": "Candidate 1: width-k resolution saturation decides 3-SAT"
+        },
+        {
+          "lemma_id": "L-pcx-048",
+          "status": "checked",
+          "title": "TARGET: some unsatisfiable 3-CNFs have no polynomially bounded dag-like Res(+) refutations"
+        },
+        {
+          "lemma_id": "L-alg-003",
+          "status": "refuted",
+          "title": "Candidate 3 premise: unsatisfiable 3-CNFs have polynomial-size Res(lin) refutations"
+        },
+        {
+          "lemma_id": "L-pcx-022",
+          "status": "checked",
+          "title": "TARGET (open in refereed work): Res(+) refutations of bit pigeonhole are not polynomially bounded"
+        },
+        {
+          "lemma_id": "L-lib-089",
+          "status": "checked",
+          "title": "Narrow, small-coefficient Res(lin) refutations become small rectangle dags"
+        },
+        {
+          "lemma_id": "L-lib-090",
+          "status": "checked",
+          "title": "Beame-Whitmeyer: rectangle dags for the bit pigeonhole search problem are superpolynomial"
+        },
+        {
+          "lemma_id": "L-lib-091",
+          "status": "checked",
+          "title": "Restricted R(lin) lower bound: bit PHP needs superpolynomial refutations with lines of O(log n) equations and coefficients up to n"
+        },
+        {
+          "lemma_id": "L-lib-102",
+          "status": "checked",
+          "title": "Res(lin) over the integers needs lines of n^Omega(1) equations on bit PHP"
+        },
+        {
+          "lemma_id": "L-lib-103",
+          "status": "checked",
+          "title": "Tree-like Res(lin) over the integers needs superpolynomially many lines on bit PHP"
+        },
+        {
+          "lemma_id": "L-lib-105",
+          "status": "checked",
+          "title": "Beame-Whitmeyer: triangle dags for the bit pigeonhole search problem are superpolynomial"
+        },
+        {
+          "lemma_id": "L-lib-106",
+          "status": "checked",
+          "title": "Cutting planes refutations give triangle dags of no more nodes, under any split"
+        },
+        {
+          "lemma_id": "L-lib-107",
+          "status": "checked",
+          "title": "Cutting planes refutations of bit pigeonhole are superpolynomial in lines"
+        },
+        {
+          "lemma_id": "L-alg-004",
+          "status": "refuted",
+          "title": "HARD LINK: bit PHP needs superpolynomial dag-like Res(lin) refutations over the integers"
+        },
+        {
+          "lemma_id": "L-alg-005",
+          "status": "retired",
+          "title": "HARD LINK (restated): bit PHP needs superpolynomial dag-like R(lin) refutations over the integers with SYNTACTIC rules"
+        },
+        {
+          "lemma_id": "L-alg-001",
+          "status": "conjecture",
+          "title": "SAT is in P (the program's goal)"
+        }
+      ],
+      "hard_link": {
+        "attempts_died": [],
+        "attempts_in_flight": 0,
+        "lemma_id": "L-alg-005",
+        "status": "retired",
+        "title": "HARD LINK (restated): bit PHP needs superpolynomial dag-like R(lin) refutations over the integers with SYNTACTIC rules",
+        "why_hard": "The program's first recorded hard link was refuted by the checker [L-alg-004]: as defined, one inference step could assert the pigeonhole principle itself. This restatement uses a rule that can be checked step by step; an adversary's attempt to refute it the same way failed. It has no proof route and the program is parked."
+      },
+      "target": {
+        "beyond": "Every known algorithm family has an exponential lower bound; no candidate on record escapes them.",
+        "lemma_id": "L-alg-001",
+        "plain": "Candidate algorithms are run on small instances of families chosen to break them and scored by how their step count grows; a candidate that dies is recorded with the family that killed it.",
+        "status": "conjecture",
+        "title": "SAT in polynomial time; nearest result: a checked kill of each candidate algorithm"
+      }
+    },
+    "proof_complexity": {
+      "chain": [
+        {
+          "lemma_id": "L-pcx-027",
+          "status": "checked",
+          "title": "HARD LINK: functional pigeonhole has no polynomial calculus refutation over F2 of degree B when the holes number at least 2B - 1"
+        },
+        {
+          "lemma_id": "L-pcx-033",
+          "status": "checked",
+          "title": "Chain C: a Res(+) refutation of bit pigeonhole gives a low-degree PC refutation with one block of extension variables per line"
+        },
+        {
+          "lemma_id": "L-pcx-038",
+          "status": "checked",
+          "title": "Block removal: a degree-D refutation with extension blocks gives the weight f in the degree-k(D+1) PC closure of the old system"
+        },
+        {
+          "lemma_id": "L-pcx-034",
+          "status": "checked",
+          "title": "Chain D: removing blocks from a PC refutation leaves a nonzero row-linear consequence of bit pigeonhole"
+        },
+        {
+          "lemma_id": "L-pcx-036",
+          "status": "checked",
+          "title": "Dag-like Res(+) refutations of bit pigeonhole have more than exp(n / (32768 log^2 n)) lines"
+        },
+        {
+          "lemma_id": "L-pcx-022",
+          "status": "checked",
+          "title": "TARGET (open in refereed work): Res(+) refutations of bit pigeonhole are not polynomially bounded"
+        },
+        {
+          "lemma_id": "L-pcx-041",
+          "status": "checked",
+          "title": "General criterion: the size of a Res(+) refutation of a CNF bounds the dimension of any separated space of low-degree polynomials"
+        },
+        {
+          "lemma_id": "L-pcx-044",
+          "status": "checked",
+          "title": "Monotone normalised rank: modulo a variable-closed subspace containing the Boolean multiples, dim(V_k / Z) / N(k) does not increase with k"
+        },
+        {
+          "lemma_id": "L-pcx-042",
+          "status": "checked",
+          "title": "Degree to size: a CNF with no F2 polynomial calculus refutation of degree D needs Res(+) refutations of exp(D^2 / (1024 v)) lines"
+        },
+        {
+          "lemma_id": "L-pcx-043",
+          "status": "checked",
+          "title": "Bounded-degree bipartite boundary expanders exist (n+1 pigeons, n holes)"
+        },
+        {
+          "lemma_id": "L-pcx-045",
+          "status": "checked",
+          "title": "Res(+) is closed under restriction: a refutation of length S gives one of the restricted formula of length at most 2S"
+        },
+        {
+          "lemma_id": "L-pcx-046",
+          "status": "checked",
+          "title": "Pigeonhole on a boundary expander has no F2 polynomial calculus refutation of degree D when 2(D+1) is at most the expansion size"
+        },
+        {
+          "lemma_id": "L-pcx-047",
+          "status": "checked",
+          "title": "Re-typing: a Res(+) refutation of the pigeonhole formula gives one of the pigeonhole formula on any bipartite graph, at most twice as long"
+        },
+        {
+          "lemma_id": "L-pcx-017",
+          "status": "checked",
+          "title": "TARGET (open problem): Res(+) refutations of the pigeonhole formula are not polynomially bounded"
+        },
+        {
+          "lemma_id": "L-pcx-048",
+          "status": "checked",
+          "title": "TARGET: some unsatisfiable 3-CNFs have no polynomially bounded dag-like Res(+) refutations"
+        },
+        {
+          "lemma_id": "L-pcx-049",
+          "status": "checked",
+          "title": "Functional pigeonhole on a boundary expander of left degree d has no F2 polynomial calculus refutation of degree D when d D is at most the expansion size"
+        },
+        {
+          "lemma_id": "L-pcx-051",
+          "status": "checked",
+          "title": "Res(k,+) with full semantic weakening is trivial: every unsatisfiable CNF of width at most k with m clauses is refuted in 2m + 1 lines"
+        },
+        {
+          "lemma_id": "L-pcx-052",
+          "status": "checked",
+          "title": "Res(1,+) is Res(+): refutations of the same length exist in both systems"
+        },
+        {
+          "lemma_id": "L-pcx-053",
+          "status": "checked",
+          "title": "Baseline for weak pigeonhole: a Res(+) refutation of PHP m N has at least exp(D^2 / (256 b m)) / 2 lines when some degree-b graph expands sets up to 2(D+1)"
+        },
+        {
+          "lemma_id": "L-pcx-054",
+          "status": "checked",
+          "title": "TARGET: resolution over conjunctions of at most k parity equations (termwise weakening) is not polynomially bounded on functional pigeonhole, for every k"
+        }
+      ],
+      "hard_link": {
+        "attempts_died": [
+          {
+            "by": "seat-clb-1",
+            "ended_at": "2026-11-22T21:38:04.701Z",
+            "why_died": "Parked: restrictions, switching, local width, mode count, per-step near-disjointness, paths all dead; open core is COVER. Reopener round: no statement survived an adversary. See LiftSize/README.md"
+          }
+        ],
+        "attempts_in_flight": 0,
+        "lemma_id": "L-pcx-071",
+        "status": "conjecture",
+        "title": "OPEN TARGET: dag-like Res(+) is not polynomially bounded on CNFs of constant width and constant F2 polynomial calculus degree",
+        "why_hard": "About thirty attempts found true lemmas about how refutations of these formulas must look, and no way to count their lines; the printed method stops at a quadratic bound, and no short refutation was found either. The question is parked with its record."
+      },
+      "target": {
+        "beyond": "Whether the target is known is still being read; no claim is made here.",
+        "lemma_id": "L-pcx-071",
+        "plain": "Checked: bit pigeonhole [L-pcx-022], the ordinary pigeonhole formula [L-pcx-017] and a family of 3-CNF formulas [L-pcx-048] have no polynomially long refutations in resolution over parities; all three are formalizations, on our own definitions, of results claimed in recent unrefereed reports. A statement for a richer system, whose lines combine a few parities at a time, has passed the checker [L-pcx-054]; its definitions are being audited before anything more is said about it.",
+        "status": "conjecture",
+        "title": "The size of refutations over parities for formulas of constant degree (parked)"
+      }
+    }
+  },
+  "source": "https://data.pequalnp.com/data/plan.ccfbb8c96d8a.json",
+  "strategy_update": {
+    "at": "2026-11-23T23:33:51.765Z",
+    "text": "CHECKED and read: for every projective plane of order q given as data, fan-in-two lists of AND, OR and NOT gates with at most s NOT gates computing all line-ORs need at least q * floor(q (q + 1 - 2^s) / 2^(s+1)) gates [L-meta-1397]: about N^(3/2)/2^(s+1) gates, halving with each NOT gate and above linear up to about half of log2 N NOT gates (arithmetic, not checked). WHERE WE LOOK NEXT: one output instead of many; how large a window of true points a proof must read."
+  }
+}

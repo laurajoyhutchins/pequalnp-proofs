@@ -1,32 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-lib-123",
-  "file": "lean/PEqualNP/Outside/L_lib_123.lean",
-  "module": "PEqualNP.Outside.L_lib_123",
-  "statement": "∃ p q : ℕ, 1 ≤ p ∧ p < q ∧ PEqualNP.Library.FP3 p q",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Open, a hard one: can a long deterministic computation always be checked faster by three rounds of guessing? It may be false",
-    "context": "OPEN: A HARD ONE. It may be false. Any saving in the exponent, however small, is enough. It fails relative to some oracles, so a proof must use the content of the computation. No mechanism is known here after three rounds of attempts; the dead ones, with reasons, are in routes/evasion/DEAD-ENDS.md. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
-    "dead": [
-      "trading alternations for savings: the known saving is tiny and already available at two alternations",
-      "tree evaluation with commitments",
-      "iterated table lookup",
-      "compressible configurations: fails relative to a random oracle"
-    ],
-    "unlocks": "With the checked L-lib-122 it gives a separation: nondeterministic linear time is not inside deterministic time n^c for some c above 1, on our machines. It is the one open link of a chain that is otherwise checked"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -94,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -429,10 +404,52 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "OPEN: A HARD ONE. It may be false. Any saving in the exponent, however small, is enough. It fails relative to some oracles, so a proof must use the content of the computation. No mechanism is known here after three rounds of attempts; the dead ones, with reasons, are in routes/evasion/DEAD-ENDS.md. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
+    "dead": [
+      "trading alternations for savings: the known saving is tiny and already available at two alternations",
+      "tree evaluation with commitments",
+      "iterated table lookup",
+      "compressible configurations: fails relative to a random oracle"
+    ],
+    "title": "Open, a hard one: can a long deterministic computation always be checked faster by three rounds of guessing? It may be false",
+    "unlocks": "With the checked L-lib-122 it gives a separation: nondeterministic linear time is not inside deterministic time n^c for some c above 1, on our machines. It is the one open link of a chain that is otherwise checked"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_lib_123.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-lib-123",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_lib_123",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "known",
+    "plain_statement": "OPEN, not proved, and it may be false. There are integers 1 <= p < q such that every language decided in time O(2^(qm)) on the library's machines is decided with three alternating blocks of guesses of length O(2^(pm)) and a linear-time check (FP3 p q). The pair is left existential: any saving in the exponent, however small, is enough. With the checked L-lib-122 it gives exponents u/v > 1 for which nondeterministic linear time is not inside deterministic time O(n^(u/v)). It fails relative to some oracles on the route's paper record, so a proof must use the machine.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-lib-123.8553cec811cf.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T02:07:27.911Z",
+    "title": "OPEN: for some p < q, deterministic time 2^(qm) is inside three-alternation time O(2^(pm)) (the fixed-pair link)"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∃ p q : ℕ, 1 ≤ p ∧ p < q ∧ PEqualNP.Library.FP3 p q",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

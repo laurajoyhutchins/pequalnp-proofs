@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ C.size ≤ 8 ∧ (∀ x : Fin 6 → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin 6, (u.val, v.val) ∈ ([(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (0, 5), (1, 5), (2, 5), (3, 5), (4, 5)] : List (ℕ × ℕ)) ∧ x u = true ∧ x v = true))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-619",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there a circuit of AND and OR gates only, each reading at most two wires, with at most 8 gates, true on 6 inputs exactly when both ends of some edge are true? The graph is the wheel: the 5-cycle 0 1 2 3 4 and the hub 5 joined to each of them; 10 edges, vertex cover number 4 (by script), 4-cycles but no two non-adjacent vertices with the same neighbours. The count n - 1 + tau for such graphs is 9. Wanted either way: a gate list, verified by evaluating it on all 64 inputs, or that none exists. No witness is known. Conjecture either way.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-619.59b7210bdced.json",
+  "statement_hash": "sha256:4d515662b3b29b710b225a9c4ecbdfbd31558bcdc98d8a4aa9c6d6987558e8a9",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T12:43:52.990Z",
+  "title": "Search: a circuit of AND and OR gates with at most 8 gates for the edge function of the wheel with five spokes",
+  "used_by": []
+}

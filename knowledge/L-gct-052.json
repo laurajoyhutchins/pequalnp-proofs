@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004098",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:75d07dc38c8a2b9a0b5e8b4cd8266e1a61b42622dd202c9feb35666ea3eca3f7",
+    "lean_file": "lean/PEqualNP/Gct/L052.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:59:42.656Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:53:55.074Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m k : ℕ) (y : Fin m × Fin m → ℂ) (L : Submodule ℂ (Fin m × Fin m → ℂ)), (∀ t ∈ L, MvPolynomial.eval (y + t) (PEqualNP.Gct.permPoly ℂ m) = 0) → ∀ t : Fin k → (Fin m × Fin m → ℂ), (∀ j, t j ∈ L) → ∑ a : Fin k → Fin m × Fin m, MvPolynomial.eval y ((List.ofFn a).foldr (fun i q => MvPolynomial.pderiv i q) (PEqualNP.Gct.permPoly ℂ m)) * ∏ j, t j (a j) = 0",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-052",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If perm_m(y + t) = 0 for every t in a linear space L, then for every k and t_1..t_k in L the k-th differential of perm_m at y applied to (t_1, .., t_k) is 0. The directional derivative along a vector of L of a polynomial vanishing on y + L vanishes on y + L; iterate k times. General form of L-gct-051, requested by seat-gct-1 for the cubic and quartic steps of L-gct-036.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-052.64cae515bffc.json",
+  "statement_hash": "sha256:7091e65d332c0327764937be2a9330660f74797ee46717033f82b9bacce3beed",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:59:42.656Z",
+  "title": "Every polarized Taylor coefficient of perm at y vanishes on a linear space through y inside the hypersurface",
+  "used_by": []
+}

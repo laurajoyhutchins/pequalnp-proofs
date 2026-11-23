@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002745",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:99fd7fba2d38bb37b07449c8e28d58b310f34a17946cd0c3245b02b77fa9dabb",
+    "lean_file": "lean/PEqualNP/Library/L096.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:54:28.394Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:49:15.001Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ R : Set (List Bool × List Bool), PEqualNP.Library.DecidableInPolyTime PEqualNP.Library.encodePair R → ({y : List Bool | ∃ (t : ℕ) (x w : List Bool), y = List.replicate t true ++ false :: x ∧ w.length ≤ t ∧ (x, w) ∈ R} : Language Bool) ∈ PEqualNP.Library.NP",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-096",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "For a polynomial-time relation R, the strings 1^t 0 x such that some witness of length at most t is R-related to x form an NP language. Folklore padding (as in the proof that NEXP = NP after padding). Needed by L-meta-016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-096.bad40ed273d7.json",
+  "statement_hash": "sha256:6b6ad723fa4353161a73fcbc98a47269dc6de5508c2e236538628be68d3c6e1c",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:54:28.394Z",
+  "title": "A relation on unary-padded inputs is an NP language",
+  "used_by": []
+}

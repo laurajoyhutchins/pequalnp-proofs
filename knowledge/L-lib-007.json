@@ -1,0 +1,45 @@
+{
+  "artifact": {
+    "checker_run_id": "run-000192",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:b952af8bfa64931fd29987f6028c2ab0e3192a2f7901b88970d45253e41c1bce",
+    "lean_file": "lean/PEqualNP/Library/L007.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T13:04:35.476Z",
+      "outcome": "checked",
+      "when": "2026-11-22T13:00:08.140Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (α β γ αΓ βΓ γΓ : Type) (ea : α → List αΓ) (eb : β → List βΓ) (ec : γ → List γΓ) (f : α → β) (g : β → γ), PEqualNP.Library.ComputableInPolyTime ea eb f → PEqualNP.Library.ComputableInPolyTime eb ec g → PEqualNP.Library.ComputableInPolyTime ea ec (fun a : α => g (f a))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-007",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "If f is computable in polynomial time and g is computable in polynomial time, with the output encoding of f being the input encoding of g, then g after f is computable in polynomial time.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-007.0078ebe77b25.json",
+  "statement_hash": "sha256:ae97f8e11637732da46a4e740ca3727aaec7379b6addd077d31102c3952f564c",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T13:04:35.476Z",
+  "title": "Polynomial-time computable functions compose",
+  "used_by": [
+    "L-lib-008",
+    "L-lib-009",
+    "L-lib-010",
+    "L-lib-016",
+    "L-lib-017",
+    "L-lib-033",
+    "L-lib-036",
+    "L-lib-045",
+    "L-lib-046",
+    "L-lib-047",
+    "L-lib-048",
+    "L-lib-055",
+    "L-lib-092"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004671",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:2cf68c1bbc1dd68d2e625bd2c7ed0d8c92ce05b6070d274777c99ca125e7d9ed",
+    "lean_file": "lean/PEqualNP/Gct/L056.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T17:52:28.520Z",
+      "outcome": "checked",
+      "when": "2026-11-22T17:52:28.520Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ R m0 : ℕ, ∃ m : ℕ, m0 ≤ m ∧ 1 ≤ m ∧ ∀ n : ℕ, PEqualNP.Gct.HasBorderDetExpression (PEqualNP.Gct.permPoly ℂ m) n → R * m ^ 2 ≤ n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-056",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For every R there are arbitrarily large m such that every border determinantal expression of perm_m over C has size at least R m^2 (border as in L-gct-010). Past the m^2/2 of Landsberg, Manivel and Ressayre (2013) for large m, with no explicit growth rate; implied by the unrefereed 2026 cubic claim (L-gct-026). Route (ours, conjecture): a block sum of sums of r x r subpermanents is an affine restriction of the permanent; its gradient has no nonzero zero on a large subspace because rows of a singular point take boundedly many values; then L-gct-053, L-gct-024, L-gct-023.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-056.810545be2495.json",
+  "statement_hash": "sha256:e8d7b51263e6b330d6538bf31089ddf5670e2d91b275db264ffeb6a1095ab7c8",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T17:52:28.520Z",
+  "title": "Superquadratic: border determinantal complexity of perm_m is not O(m^2)",
+  "used_by": []
+}

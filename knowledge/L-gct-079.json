@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-006215",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:6c57f6131f85ad100140819951cf2b7609af51e7e6958628b30aef0e9992e371",
+    "lean_file": "lean/PEqualNP/Gct/L079.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T19:49:35.553Z",
+      "outcome": "checked",
+      "when": "2026-11-22T19:26:37.089Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-gct-065"
+  ],
+  "formal_statement": "∀ (m : ℕ) (U : Fin m → Submodule ℂ (Fin m → ℂ)), 2 ≤ m → (∀ i : Fin m, (fun j : Fin m => if (i : ℕ) = 0 ∧ (j : ℕ) = 0 then (1 : ℂ) - (m : ℂ) else 1) ∈ U i) → (∀ x : Fin m × Fin m → ℂ, (∀ i : Fin m, (fun j : Fin m => x (i, j)) ∈ U i) → MvPolynomial.eval x (PEqualNP.Gct.permPoly ℂ m) = 0) → ∑ i : Fin m, Module.finrank ℂ (U i) ≤ 2 * m - 2",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-079",
+  "kind": "helper",
+  "layer": 1,
+  "plain_statement": "Let m >= 2 and U_1..U_m be subspaces of C^m. If row i of Sigma_m (all ones, corner entry 1 - m) lies in U_i for every i, and perm_m vanishes on every matrix whose row i lies in U_i, then dim U_1 + ... + dim U_m <= 2m - 2. A restricted case of L-gct-037 at Sigma_m (spaces that are products of row spaces), tight. Paper proof of this seat's leg: the condition says the spaces V_i = U_i meet {first coordinate 0} are independent for the trace on C^(m-1), then a chain of Kneser steps (L-gct-065). Notes: lean/PEqualNP/Gct/Zeros037/theory/REPORT.md, Theorem 5.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-079.2c49e1e5e6ae.json",
+  "statement_hash": "sha256:207849050077b019bf9bac154bd152dc8a6f776f52f831a81f84d44443245454",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T19:49:35.553Z",
+  "title": "Product-type linear spaces through Sigma_m inside the permanent hypersurface have dimension at most 2m - 2",
+  "used_by": []
+}

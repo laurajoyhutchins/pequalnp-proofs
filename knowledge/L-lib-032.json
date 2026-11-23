@@ -1,0 +1,34 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003738",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:5ee1d76a51d10dc15de77cb3510e35ac74bc9bf2cd76766f911986efec254af3",
+    "lean_file": "lean/PEqualNP/Library/L032.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:27:08.874Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:01:21.814Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-lib-031",
+    "L-lib-020"
+  ],
+  "formal_statement": "PEqualNP.Library.NPComplete (PEqualNP.Search.KSAT 3)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-032",
+  "kind": "known",
+  "layer": 3,
+  "plain_statement": "Satisfiability of CNF formulas with at most three literals per clause is NP-complete, by reducing SAT to it clause by clause with fresh variables. Karp (Complexity of Computer Computations, 1972), after Cook (STOC 1971).",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-032.6bf4dc891f60.json",
+  "statement_hash": "sha256:9a65620744120b2ce34ed5711f872065e3842c6973e5d4c27cec7aec47e1a1ca",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:27:08.874Z",
+  "title": "3-SAT is NP-complete",
+  "used_by": []
+}

@@ -1,29 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-meta-604",
-  "file": "lean/PEqualNP/Outside/L_meta_604.lean",
-  "module": "PEqualNP.Outside.L_meta_604",
-  "statement": "∀ (n s : ℕ) (g : (Fin n → Bool) → Bool), (∃ y y' : Fin n → Bool, g y ≠ g y') → (PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x : Fin (n + 1) → Bool => xor (x (Fin.last n)) (g (fun i : Fin n => x i.castSucc))) (s + 4) ↔ (PEqualNP.MetaComplexity.HasCircuitSize n g s ∨ PEqualNP.MetaComplexity.HasCircuitSize n (fun y : Fin n → Bool => !(g y)) s))",
-  "permitted_project_imports": [
-    "PEqualNP.Defs",
-    "PEqualNP.MetaComplexity.Helpers.Elim",
-    "PEqualNP.MetaComplexity.Helpers.ReadersExport"
-  ],
-  "context": {
-    "title": "XOR with a fresh input costs exactly four gates over the cheaper of a function and its negation",
-    "context": "TRACTABLE. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
-    "dead": [],
-    "unlocks": "Needed by seat-rmag-1 for: exact laws with an arbitrary function, and statements about two outputs"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -103,7 +80,8 @@
       "PEqualNP.MetaComplexity.Helpers.ReadersPat",
       "PEqualNP.MetaComplexity.Helpers.Shannon",
       "PEqualNP.MetaComplexity.Helpers.Support"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -498,10 +476,49 @@
       "sha256": "3dd59846b791fea1391addc012be943cfedc1b47951752455adb79b76d5cfda0"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "TRACTABLE. The idea and what is known are in the plain sentence on the row. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide. Put every declaration of your file inside its own namespace.",
+    "dead": [],
+    "title": "XOR with a fresh input costs exactly four gates over the cheaper of a function and its negation",
+    "unlocks": "Needed by seat-rmag-1 for: exact laws with an arbitrary function, and statements about two outputs"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_meta_604.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-meta-604",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_meta_604",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs",
+    "PEqualNP.MetaComplexity.Helpers.Elim",
+    "PEqualNP.MetaComplexity.Helpers.ReadersExport"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "For a non-constant Boolean function g on n inputs and every s: the function x_last XOR g (first n inputs) on n + 1 inputs has a circuit of AND, OR (fan-in two) and NOT gates with at most s + 4 gates exactly when g or NOT g has such a circuit with at most s gates.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-604.9771da2142b7.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T12:38:33.232Z",
+    "title": "XOR with a fresh input costs exactly four gates over the cheaper of a function and its negation"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ (n s : ℕ) (g : (Fin n → Bool) → Bool), (∃ y y' : Fin n → Bool, g y ≠ g y') → (PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x : Fin (n + 1) → Bool => xor (x (Fin.last n)) (g (fun i : Fin n => x i.castSucc))) (s + 4) ↔ (PEqualNP.MetaComplexity.HasCircuitSize n g s ∨ PEqualNP.MetaComplexity.HasCircuitSize n (fun y : Fin n → Bool => !(g y)) s))",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

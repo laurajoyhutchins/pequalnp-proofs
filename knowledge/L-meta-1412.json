@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ C : PEqualNP.CircuitLowerBounds.Circuit, (∀ g ∈ C.gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) → C.size = 8 → (∀ x : Fin 6 → Bool, C.eval (List.ofFn x) = true ↔ ∃ i : Fin 6, x i = true ∧ x (i + 1) = true) → ∃ (p : Fin 6) (b : Bool) (S : Finset (Fin 8)), (if b = true then 4 else 3) ≤ S.card ∧ ∀ j ∈ S, (∀ y z : Fin 6 → Bool, y p = b → z p = b → (C.wires (List.ofFn y)).getD (6 + ((j : Fin 8) : ℕ)) false = (C.wires (List.ofFn z)).getD (6 + ((j : Fin 8) : ℕ)) false) ∨ ∃ w < 6 + ((j : Fin 8) : ℕ), ∀ u : Fin 6 → Bool, u p = b → (C.wires (List.ofFn u)).getD (6 + ((j : Fin 8) : ℕ)) false = (C.wires (List.ofFn u)).getD w false)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1412",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Not (every circuit of exactly 8 AND, OR, NOT gates, each listing at most two wires, that computes the edge function of the 6-cycle (1 iff some x(i) and x(i+1) are both 1) has an input i and a bit b such that, on the inputs with x(i) = b, at least 3 gates (b = 0) or 4 gates (b = 1) are each constant or equal to an earlier wire). Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1412.c5abbe0872a0.json",
+  "statement_hash": "sha256:bae3cba965c3fe937d172c6c4e1b29fa67203b618ea2f6f86d8d76b698d11e16",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T23:02:49.702Z",
+  "title": "Probe: NOT (every 8-gate AND/OR/NOT fan-in-two circuit for the 6-cycle edge function has a tight single input substitution)",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.MetaComplexity.HasTypedRank 4 (fun x : Fin 4 → Bool => decide ((if x 0 = true then 1 else 0) + (if x 1 = true then 2 else 0) + (if x 2 = true then 4 else 0) + (if x 3 = true then 8 else 0) ∈ ({3, 4, 6, 7, 8, 9, 11, 12} : Finset ℕ))) 8",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-211",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The Boolean function on 4 inputs that is true exactly when the number x0 + 2 x1 + 4 x2 + 8 x3 is one of 3, 4, 6, 7, 8, 9, 11, 12 has typed rank at most 8: some assignment of each pair (true input, false input) to a position where they differ makes the ranks of the 8 literal matrices sum to at most 8. A search row: the witness is the assignment. One exists in which each literal's pairs form a single rectangle.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-211.1f8a0efbccf3.json",
+  "statement_hash": "sha256:948b26bfd156650bc6dbe7f5cc81958056e08d3b98f20c87483f7ef99fb40073",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T06:35:56.330Z",
+  "title": "Witness: a function of 4 inputs with typed rank at most 8",
+  "used_by": []
+}

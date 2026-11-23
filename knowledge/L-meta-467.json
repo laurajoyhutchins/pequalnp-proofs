@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m k : ℕ) (H : SimpleGraph (Fin m)) (Q : Fin m → Fin m → ℕ → Fin (m + 2 * k * (m * m)) → Prop) (S : SimpleGraph (Fin (m + 2 * k * (m * m)))), 1 ≤ k → (∀ (u v : Fin m) (p : ℕ) (x : Fin (m + 2 * k * (m * m))), Q u v p x ↔ (p = 0 ∧ x.val = u.val) ∨ (p = 2 * k + 1 ∧ x.val = v.val) ∨ (1 ≤ p ∧ p ≤ 2 * k ∧ x.val + 1 = m + 2 * k * (u.val * m + v.val) + p)) → (∀ x y : Fin (m + 2 * k * (m * m)), S.Adj x y ↔ ∃ u v : Fin m, u < v ∧ H.Adj u v ∧ ∃ p : ℕ, p ≤ 2 * k ∧ ((Q u v p x ∧ Q u v (p + 1) y) ∨ (Q u v p y ∧ Q u v (p + 1) x))) → ∀ (T : Finset (Fin m)) (T' : Finset (Fin (m + 2 * k * (m * m)))), (∀ u v : Fin m, H.Adj u v → u ∈ T ∨ v ∈ T) → (∀ x : Fin (m + 2 * k * (m * m)), x ∈ T' ↔ (∃ u ∈ T, x.val = u.val) ∨ ∃ u v : Fin m, ∃ i : ℕ, i < 2 * k ∧ u < v ∧ H.Adj u v ∧ x.val = m + 2 * k * (u.val * m + v.val) + i ∧ (i % 2 = 1 ↔ u ∈ T)) → ∀ x y : Fin (m + 2 * k * (m * m)), S.Adj x y → x ∈ T' ∨ y ∈ T'",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-467",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let H be a graph on Fin m, k >= 1, and S the graph on Fin (m + 2k m^2) obtained by replacing each edge u < v of H by the path u, w_1, ..., w_2k, v, where w_p is the vertex of index m + 2k(u m + v) + p - 1; S has no other edges. Let T be a vertex cover of H and let T' be T (as indices below m) plus, on the path of each edge u < v of H, each w_p with p even iff u is in T. Then T' is a vertex cover of S.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-467.325f463f02e7.json",
+  "statement_hash": "sha256:2c32726f4f7e87d39baf385d315c5b0eedad8e9bbf1dd7c5a689bc919ff52a66",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T07:46:21.033Z",
+  "title": "A vertex cover of H lifts, by alternating along each edge path, to a vertex cover of its 2k-subdivision on Fin (m + 2k m^2)",
+  "used_by": []
+}

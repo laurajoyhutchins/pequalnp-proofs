@@ -1,29 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-gct-122",
-  "file": "lean/PEqualNP/Outside/L_gct_122.lean",
-  "module": "PEqualNP.Outside.L_gct_122",
-  "statement": "∀ (m : ℕ) (X : Submodule ℂ (Fin m → ℂ)), (∀ x ∈ X, ∑ i, x i ^ 2 = 0) → (∀ x ∈ X, ∑ i, x i ^ 4 = 0) → 3 * Module.finrank ℂ X ≤ m",
-  "permitted_project_imports": [
-    "PEqualNP.Defs",
-    "PEqualNP.Gct.L065",
-    "PEqualNP.Gct.Helpers.FermatFromKneser"
-  ],
-  "context": {
-    "title": "Linear algebra: a space on which the sums of squares and of fourth powers both vanish has dimension at most a third of the ambient one",
-    "context": "TRACTABLE. Built on the checked L-gct-065 and L-gct-061. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
-    "dead": [],
-    "unlocks": "Used in the analysis of 4 by s level spaces on the L-gct-086 line"
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -96,7 +73,8 @@
       "PEqualNP.Gct.Helpers.Kneser.ETransform",
       "PEqualNP.Gct.Helpers.Kneser.SubalgFinite",
       "PEqualNP.Gct.L065"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -456,10 +434,49 @@
       "sha256": "8f1f999a405faf066472e6d0ade55b95859206385f41b352fdd66c496aa08556"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "TRACTABLE. Built on the checked L-gct-065 and L-gct-061. A proof must prove exactly the recorded statement, with no sorry, no new axiom and no native_decide.",
+    "dead": [],
+    "title": "Linear algebra: a space on which the sums of squares and of fourth powers both vanish has dimension at most a third of the ambient one",
+    "unlocks": "Used in the analysis of 4 by s level spaces on the L-gct-086 line"
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_gct_122.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-gct-122",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_gct_122",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs",
+    "PEqualNP.Gct.L065",
+    "PEqualNP.Gct.Helpers.FermatFromKneser"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "If W in C^M has sum x_i^2 = 0 and sum x_i^4 = 0 for every x in W, then 3 dim W <= M. Not L-gct-061 (that one uses p3; dup.mjs flags it at 0.96 on text similarity only). Sharp: blocks (1, w, w^2), w a cube root of unity. Paper proof: W o W is totally isotropic and orthogonal to 1; Kneser for codes (checked L-gct-065) blockwise as in L-gct-061. Used in the self-gluable 4 x s analysis of L-gct-086.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-gct-122.5fc59c665e86.json",
+    "status": "conjecture",
+    "status_at": "2026-11-22T23:25:46.542Z",
+    "title": "Lemma K: a complex linear space on which the power sums p2 and p4 both vanish has dimension at most M/3 (p4, not p3: distinct from L-gct-061)"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "∀ (m : ℕ) (X : Submodule ℂ (Fin m → ℂ)), (∀ x ∈ X, ∑ i, x i ^ 2 = 0) → (∀ x ∈ X, ∑ i, x i ^ 4 = 0) → 3 * Module.finrank ℂ X ≤ m",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

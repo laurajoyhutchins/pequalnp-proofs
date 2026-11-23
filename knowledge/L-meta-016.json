@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003721",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:08a4e9395fc53020d49c1f707bae4e2eaf701c1e52fdcfc04755c525467cf009",
+    "lean_file": "lean/PEqualNP/MetaComplexity/L016.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:25:08.450Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:50:13.601Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "PEqualNP.Library.NPHard PEqualNP.MetaComplexity.PartialMCSP → ∃ L : Language Bool, (∃ k : ℕ, L ∈ PEqualNP.Library.DTIME (fun n : ℕ => 2 ^ (n ^ k) + k)) ∧ ¬ (L ∈ PEqualNP.Library.NP ∧ L ∈ PEqualNP.CircuitLowerBounds.PPoly)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-016",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "CONJECTURE, our adaptation, not found stated in the literature: if partial MCSP (full table given) is NP-hard under deterministic polynomial-time many-one reductions, some language decided in time 2^(n^k) + k is not in NP intersect P/poly. Adapts Murray and Williams, Theory of Computing 13, 2017, Theorem 4.1: the zero completion of the table bounds the partial circuit size.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-016.03fc31e95d79.json",
+  "statement_hash": "sha256:9acf90946a42fb9932fbea3fc67039ad82d950a0e95463d0858c640e93ce01f0",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:25:08.450Z",
+  "title": "TARGET: NP-hardness of partial MCSP separates EXP from NP intersect P/poly",
+  "used_by": []
+}

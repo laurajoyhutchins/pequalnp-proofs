@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002660",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:fd2ce2f07abd52c6f2c658b390031927565463b021947dad5d4d94c14912742e",
+    "lean_file": "lean/PEqualNP/Library/L090.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:49:42.488Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:41:18.683Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ p : Polynomial ℕ, ∃ l : ℕ, ∀ ρ : List (Set (Fin (2 ^ l + 1) × Fin l → Bool)), PEqualNP.Search.IsRectDagFor (fun v : Fin (2 ^ l + 1) × Fin l => decide (2 * v.2.val < l)) (PEqualNP.ProofComplexity.BPHP (2 ^ l + 1) l) ρ → p.eval (2 ^ l) < ρ.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-090",
+  "kind": "known",
+  "layer": 0,
+  "plain_statement": "Under the split giving the first half of the bit columns to one player, every rectangle dag solving the search problem of bit PHP with 2^l+1 pigeons and 2^l holes has superpolynomially many nodes in 2^l. Beame and Whitmeyer, ICALP 2025 (LIPIcs 334:21), Theorem 1.7 of ECCC TR25-057, bound 2^(n^(1/4)/sqrt 2 - 2) for triangle dags. Chain link 3 to L-alg-004.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-090.6679e9ec0c9c.json",
+  "statement_hash": "sha256:bff3c0a980aac77d7fd6f291b152956bb08ccf253c56b3b31f57fbdfe2980c48",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:49:42.488Z",
+  "title": "Beame-Whitmeyer: rectangle dags for the bit pigeonhole search problem are superpolynomial",
+  "used_by": []
+}

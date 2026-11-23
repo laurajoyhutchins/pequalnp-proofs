@@ -1,0 +1,35 @@
+{
+  "artifact": {
+    "checker_run_id": "run-001161",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:6da1b0e9d088a60315b7ea315f3d701af136e1a6ca463f442a7f8aa5a3f0465b",
+    "lean_file": "lean/PEqualNP/Library/L048.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T13:42:01.466Z",
+      "outcome": "checked",
+      "when": "2026-11-22T13:39:40.646Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [
+    "L-lib-007"
+  ],
+  "formal_statement": "PEqualNP.Library.NP ⊆ PEqualNP.Library.NEXP",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-lib-048",
+  "kind": "known",
+  "layer": 1,
+  "plain_statement": "Every NP language has a polynomial-time verifier with witnesses of length at most 2^(n^k) + k for some k.",
+  "source": "https://data.pequalnp.com/data/lemma/L-lib-048.7483b416a283.json",
+  "statement_hash": "sha256:696586ca7fda038f3edabbd5e6852330e6a845664453ebb76f5f4487b361f1dd",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T13:42:01.466Z",
+  "title": "NP is inside NEXP",
+  "used_by": [
+    "L-lib-053"
+  ]
+}

@@ -1,27 +1,6 @@
 {
-  "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
-  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
-  "observed_at": "2026-11-23T23:40:07Z",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
-  "toolchain": "leanprover/lean4:v4.36.0",
-  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
-  "id": "L-pcx-102",
-  "file": "lean/PEqualNP/Outside/L_pcx_102.lean",
-  "module": "PEqualNP.Outside.L_pcx_102",
-  "statement": "¬ ((∀ F1 : Set (PEqualNP.ProofComplexity.Clause (Fin 10)), F1 = {Ca1 | ∃ ea1 ∈ ([(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (0, 5), (1, 6), (2, 7), (3, 8), (4, 9), (5, 7), (7, 9), (9, 6), (6, 8), (8, 5)] : List (Fin 10 × Fin 10)), Ca1 = {(ea1.1, true), (ea1.2, true)}} ∪ {Cb1 | ∃ Sb1 : Finset (Fin 10), Sb1.card = 6 ∧ Cb1 = Sb1.image (fun vb1 : Fin 10 => (vb1, false))} → (∃ πa1, PEqualNP.ProofComplexity.IsRefutation F1 πa1 ∧ ∀ Da1 ∈ πa1, Da1.card ≤ 6) ∧ ¬ ∃ πb1, PEqualNP.ProofComplexity.IsRefutation F1 πb1 ∧ ∀ Db1 ∈ πb1, Db1.card ≤ 5) ∧ (∀ F2 : Set (PEqualNP.ProofComplexity.Clause (Fin 11)), F2 = {Ca2 | ∃ ea2 ∈ ([(0, 9), (0, 10), (1, 4), (1, 8), (2, 5), (2, 10), (3, 6), (3, 7), (4, 8), (4, 10), (5, 8), (5, 9), (6, 7), (6, 10), (7, 9), (8, 9)] : List (Fin 11 × Fin 11)), Ca2 = {(ea2.1, true), (ea2.2, true)}} ∪ {Cb2 | ∃ Sb2 : Finset (Fin 11), Sb2.card = 7 ∧ Cb2 = Sb2.image (fun vb2 : Fin 11 => (vb2, false))} → (∃ πa2, PEqualNP.ProofComplexity.IsRefutation F2 πa2 ∧ ∀ Da2 ∈ πa2, Da2.card ≤ 7) ∧ ¬ ∃ πb2, PEqualNP.ProofComplexity.IsRefutation F2 πb2 ∧ ∀ Db2 ∈ πb2, Db2.card ≤ 6))",
-  "permitted_project_imports": [
-    "PEqualNP.Defs"
-  ],
-  "context": {
-    "title": "Probe: Probe: NOT (the formula 'vertex cover of size tau - 1' has least resolution width tau on the Petersen graph (6) and on an 11-vertex graph W (7))",
-    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
-    "dead": [],
-    "unlocks": "A breadth probe: either answer moves the scouts' map."
-  },
+  "authoritative_verdict": "not_reconciled",
   "closure": {
-    "outside": [],
     "base": [
       "PEqualNP.Defs",
       "PEqualNP.Defs.AffinePlane",
@@ -89,7 +68,8 @@
       "PEqualNP.Defs.SingleLevel",
       "PEqualNP.Defs.Subdivision",
       "PEqualNP.Defs.TimeAlt"
-    ]
+    ],
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -424,10 +404,47 @@
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
     }
   ],
-  "path_exists": false,
-  "explicit_dependencies": null,
-  "missing_dependency_ids": null,
+  "context": {
+    "context": "SKETCH: a breadth probe from seat-rlift-1's scout map (plan/README.md, the scouts' map table); its negated twin is on the desk too, and either answer is wanted; the scout's files and scripts are under routes/lifting/; work from the row's own sentence. Namespace: PEqualNP.ProofComplexity. No sorry, no new axiom. Own namespace for every declaration.",
+    "dead": [],
+    "title": "Probe: Probe: NOT (the formula 'vertex cover of size tau - 1' has least resolution width tau on the Petersen graph (6) and on an 11-vertex graph W (7))",
+    "unlocks": "A breadth probe: either answer moves the scouts' map."
+  },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "explicit_dependencies": null,
+  "file": "lean/PEqualNP/Outside/L_pcx_102.lean",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "id": "L-pcx-102",
   "local_verification": "not_run",
-  "authoritative_verdict": "not_reconciled"
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "missing_dependency_ids": null,
+  "module": "PEqualNP.Outside.L_pcx_102",
+  "observed_at": "2026-11-23T23:42:51Z",
+  "path_exists": false,
+  "permitted_project_imports": [
+    "PEqualNP.Defs"
+  ],
+  "public_research": {
+    "artifact": null,
+    "attempts": [],
+    "barrier": null,
+    "depends_on": [],
+    "direct_user_details": [],
+    "direct_users": [],
+    "join": "exact_statement",
+    "kind": "helper",
+    "plain_statement": "VC(G) has a variable x(v) per vertex, a clause x(u) or x(v) per edge and, for each set of tau(G) vertices, the clause of their negations (tau is the vertex cover number). Width: largest clause of a resolution refutation, axioms counted, no weakening. Not (the least width of VC is 6 on the Petersen graph and 7 on the graph W on 0..10 with edges 0-9 0-10 1-4 1-8 2-5 2-10 3-6 3-7 4-8 4-10 5-8 5-9 6-7 6-10 7-9 8-9). Conjecture.",
+    "prerequisites": [],
+    "recorded_downstream": [],
+    "source": "https://data.pequalnp.com/data/lemma/L-pcx-102.c301137277df.json",
+    "status": "conjecture",
+    "status_at": "2026-11-23T22:58:54.816Z",
+    "title": "Probe: NOT (the formula 'vertex cover of size tau - 1' has least resolution width tau on the Petersen graph (6) and on an 11-vertex graph W (7))"
+  },
+  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "statement": "¬ ((∀ F1 : Set (PEqualNP.ProofComplexity.Clause (Fin 10)), F1 = {Ca1 | ∃ ea1 ∈ ([(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (0, 5), (1, 6), (2, 7), (3, 8), (4, 9), (5, 7), (7, 9), (9, 6), (6, 8), (8, 5)] : List (Fin 10 × Fin 10)), Ca1 = {(ea1.1, true), (ea1.2, true)}} ∪ {Cb1 | ∃ Sb1 : Finset (Fin 10), Sb1.card = 6 ∧ Cb1 = Sb1.image (fun vb1 : Fin 10 => (vb1, false))} → (∃ πa1, PEqualNP.ProofComplexity.IsRefutation F1 πa1 ∧ ∀ Da1 ∈ πa1, Da1.card ≤ 6) ∧ ¬ ∃ πb1, PEqualNP.ProofComplexity.IsRefutation F1 πb1 ∧ ∀ Db1 ∈ πb1, Db1.card ≤ 5) ∧ (∀ F2 : Set (PEqualNP.ProofComplexity.Clause (Fin 11)), F2 = {Ca2 | ∃ ea2 ∈ ([(0, 9), (0, 10), (1, 4), (1, 8), (2, 5), (2, 10), (3, 6), (3, 7), (4, 8), (4, 10), (5, 8), (5, 9), (6, 7), (6, 10), (7, 9), (8, 9)] : List (Fin 11 × Fin 11)), Ca2 = {(ea2.1, true), (ea2.2, true)}} ∪ {Cb2 | ∃ Sb2 : Finset (Fin 11), Sb2.card = 7 ∧ Cb2 = Sb2.image (fun vb2 : Fin 11 => (vb2, false))} → (∃ πa2, PEqualNP.ProofComplexity.IsRefutation F2 πa2 ∧ ∀ Da2 ∈ πa2, Da2.card ≤ 7) ∧ ¬ ∃ πb2, PEqualNP.ProofComplexity.IsRefutation F2 πb2 ∧ ∀ Db2 ∈ πb2, Db2.card ≤ 6))",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
 }

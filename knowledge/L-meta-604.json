@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n s : ℕ) (g : (Fin n → Bool) → Bool), (∃ y y' : Fin n → Bool, g y ≠ g y') → (PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x : Fin (n + 1) → Bool => xor (x (Fin.last n)) (g (fun i : Fin n => x i.castSucc))) (s + 4) ↔ (PEqualNP.MetaComplexity.HasCircuitSize n g s ∨ PEqualNP.MetaComplexity.HasCircuitSize n (fun y : Fin n → Bool => !(g y)) s))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-604",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For a non-constant Boolean function g on n inputs and every s: the function x_last XOR g (first n inputs) on n + 1 inputs has a circuit of AND, OR (fan-in two) and NOT gates with at most s + 4 gates exactly when g or NOT g has such a circuit with at most s gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-604.9771da2142b7.json",
+  "statement_hash": "sha256:6870db48b566ead41ec6d84f5d08f72bb6e27503485ed50f7f48959e1fae7fd1",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T12:38:33.232Z",
+  "title": "XOR with a fresh input costs exactly four gates over the cheaper of a function and its negation",
+  "used_by": []
+}

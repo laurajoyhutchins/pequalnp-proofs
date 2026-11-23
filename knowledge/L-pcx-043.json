@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-003424",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:814d22f7ab03f69bcab8513e87f2347b043fa0ed8f3eae46c0452b5fd66a0a94",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L043.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T15:56:08.292Z",
+      "outcome": "checked",
+      "when": "2026-11-22T15:14:42.226Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (b s₀ n₀ : ℕ), 0 < s₀ ∧ ∀ n : ℕ, n₀ ≤ n → ∃ G : PEqualNP.Expanders.BipGraph (n + 1) n, PEqualNP.Expanders.LeftDegLe G b ∧ PEqualNP.Expanders.RightDegLe G b ∧ PEqualNP.Expanders.IsBdryExpander G (n / s₀) 2",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-043",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For some degree bound b and constant s0, every large n has a bipartite graph with n+1 left and n right vertices, all degrees at most b, in which every left set of at most n/s0 vertices has at least twice its size in unique neighbours. By counting: random left-regular graphs built from b permutations, union bound over small sets (standard, for example the lossless expander estimates in Hoory, Linial and Wigderson, Bull. AMS 43, 2006). Link (a) of the L-pcx-017 chain.",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-043.5baa83d59711.json",
+  "statement_hash": "sha256:b21d4ec65733eea920a8c441394173a3c7aa38b3697e53292719c62173f676ff",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T15:56:08.292Z",
+  "title": "Bounded-degree bipartite boundary expanders exist (n+1 pigeons, n holes)",
+  "used_by": []
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-004052",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:1871a590040007cccc375e0c59c1113f7887da0f6467b017dbc0c443b79f24e9",
+    "lean_file": "lean/PEqualNP/Gct/L050.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T16:56:50.747Z",
+      "outcome": "checked",
+      "when": "2026-11-22T16:51:12.182Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (m : ℕ) (y : Fin m × Fin m → ℂ) (L : Submodule ℂ (Fin m × Fin m → ℂ)), (∀ t ∈ L, MvPolynomial.eval (y + t) (PEqualNP.Gct.permPoly ℂ m) = 0) → ∀ t ∈ L ⊔ Submodule.span ℂ {y}, MvPolynomial.eval (y + t) (PEqualNP.Gct.permPoly ℂ m) = 0",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-050",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If perm_m(y + t) = 0 for every t in a linear space L, the same holds for every t in L + span{y}. By homogeneity for 1 + c nonzero; at c = -1 the top coefficient of s -> perm(y + s l) is perm(l). First formal reduction under L-gct-036, requested by seat-gct-1.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-050.8c28d86fc7ca.json",
+  "statement_hash": "sha256:87688bc1344a16c6fff68e29467a86d0b3383fca428bd8f1366eaa0f4822887e",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T16:56:50.747Z",
+  "title": "Cone reduction: a linear space through a zero y inside the permanent hypersurface extends by the line of y",
+  "used_by": []
+}

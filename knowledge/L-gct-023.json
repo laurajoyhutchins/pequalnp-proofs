@@ -1,0 +1,33 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002425",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:97eea3ccbe77034aa11a7e53eeb4ee1a36f9c94fe1ba0ee19ea8f140c2111c29",
+    "lean_file": "lean/PEqualNP/Gct/L023.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T14:39:35.412Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:33:46.223Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (σ τ : Type) [Finite σ] (p : MvPolynomial σ ℂ) (g : σ → MvPolynomial τ ℂ) (n : ℕ), (∀ i, (g i).totalDegree ≤ 1) → PEqualNP.Gct.HasBorderDetExpression p n → PEqualNP.Gct.HasBorderDetExpression (MvPolynomial.bind₁ g p) n",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-023",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Chain link 1, routine (its Lemma 2.1): if p in finitely many variables is a limit of size-n determinants of affine matrices, so is p after every variable is replaced by a polynomial of degree at most one. Source: the unrefereed manuscript of 24 September 2026, A cubic lower bound for border determinantal complexity of the permanent (no arXiv number, cited by arXiv:2610.40484). Read once by a leg of seat-clb-1, not verified by this project.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-023.ea43550d8a58.json",
+  "statement_hash": "sha256:9427f5a5bacd47744eb22d76aa58ef3850e985a7bdb20f134bef205d93cc5c8b",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T14:39:35.412Z",
+  "title": "Border determinantal expressions survive an affine substitution of the variables",
+  "used_by": [
+    "L-gct-026"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "ended_at": "2026-11-23T09:19:35.418Z",
+      "outcome": "died",
+      "when": "2026-11-22T20:23:56.852Z",
+      "why_died": "seat-alg-1 moved off the level-space line at 00:40 UTC (strategy ruling); handover state in notes/gct-ls4-state.md, certificates and Lean helpers on main; leave it open for the level-space seats and the desk"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), (∀ t ∈ L, MvPolynomial.eval (fun p => 1 + t p) (PEqualNP.Gct.permPoly ℂ 4) = (Nat.factorial 4 : ℂ)) → Module.finrank ℂ L ≤ 5",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-091",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "If perm(J_4 + t) = 24 for every t in a complex linear space L of 4 x 4 matrices, then dim L <= 5. With the checked floor L-gct-080 (2n - 3 = 5) it gives LS(4) = 5, the conjecture 2n - 3 at n = 4. Route (seat-barrier-1's n = 3 method): Fourier coordinates over Q(i), M_2 nondegenerate of Witt index 7 on {M_1 = 0}, charts over coordinate isotropic subspaces, Groebner bases on M_3 = M_4 = 0; a Lean proof needs Nullstellensatz cofactors.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-091.675421f3678e.json",
+  "statement_hash": "sha256:5c7c687b7217d00979c97988b1f6503d3b14263cd0c60b9e13b1babf5c03fe8c",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T09:19:35.418Z",
+  "title": "LS(4) = 5: every linear space of 4 x 4 complex matrices on which perm(J + t) = 24 has dimension at most 5",
+  "used_by": []
+}

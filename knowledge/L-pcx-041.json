@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "checker_run_id": "run-002926",
+    "checker_version": "check-lean 2, Lean 4.36.0, Mathlib fc4f59e577",
+    "content_hash": "sha256:1f64db11b4fcb70e76db7174dbf2b9a4763426b10b85bdab81d5c2271236d12c",
+    "lean_file": "lean/PEqualNP/ProofComplexity/L041.lean"
+  },
+  "attempts": [
+    {
+      "ended_at": "2026-11-22T15:03:45.818Z",
+      "outcome": "checked",
+      "when": "2026-11-22T14:57:17.732Z"
+    }
+  ],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (V : Type) [Fintype V] [DecidableEq V] (F : Set (PEqualNP.ProofComplexity.Clause V)) (π : List (PEqualNP.ProofComplexity.LinClause V)) (w h k : ℕ) (U : Submodule (ZMod 2) (MvPolynomial V (ZMod 2))), 1 ≤ h → 1 ≤ k → (∀ C ∈ F, C.card ≤ w) → PEqualNP.ProofComplexity.IsLinRefutation F π → (∀ f ∈ U, f.totalDegree ≤ k) → (∀ f ∈ U, f ≠ 0 → ¬ PEqualNP.ProofComplexity.PCDerivable (PEqualNP.ProofComplexity.cnfSystem F) (k * (max (2 * h + w) (4 * h + 1) + 1)) f) → Module.finrank (ZMod 2) U ≤ π.length * (Fintype.card V - (h * (k + 1) + 1) + k).choose k",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-pcx-041",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For a CNF of width w on v variables with a dag-like Res(+) refutation of S lines, and h, k at least 1: a space U of polynomials of degree at most k over F2, none of whose nonzero members is derivable in degree k(max(2h+w, 4h+1)+1) from the CNF's polynomial system, has dimension at most S * C(v - h(k+1) - 1 + k, k). The generic form of L-pcx-033, 034, 038 (Thm 9.1 of the unrefereed arXiv:2609.23015).",
+  "source": "https://data.pequalnp.com/data/lemma/L-pcx-041.2bbccd811a9c.json",
+  "statement_hash": "sha256:9ecf17917833d92c2996d14c9a36176a30f6a62cd3ba80833ad1deb28a5ff0e2",
+  "statement_hash_verified": true,
+  "status": "checked",
+  "status_at": "2026-11-22T15:03:45.818Z",
+  "title": "General criterion: the size of a Res(+) refutation of a CNF bounds the dimension of any separated space of low-degree polynomials",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (n m D : ℕ) (S y : Fin m → Finset (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit) (o : Fin m → ℕ), (∀ i j : Fin m, i ≠ j → (S i ∩ S j).card ≤ 1) ∧ (∀ i : Fin m, Disjoint (y i) (S i)) ∧ (∀ g ∈ C.gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length ≤ 2) ∧ (∀ (i : Fin m) (x : Fin n → Bool), (C.wires (List.ofFn x)).getD (o i) false = true → ∃ p ∈ S i, x p = true) ∧ (∀ i : Fin m, ∀ p ∈ S i, (C.wires (List.ofFn (fun v : Fin n => decide (v ∈ y i ∨ v = p)))).getD (o i) false = true) ∧ (∀ J : Finset (Fin m), (∀ i ∈ J, ∀ j ∈ J, i ≠ j → ¬ Disjoint (y i) (S j)) → J.card ≤ D) ∧ D * C.gates.length + m < ∑ i : Fin m, (S i).card",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-991",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There are m sets of n points, any two sharing at most one point, bases y_i disjoint from S_i, a number D at least the size of every subfamily in which each base meets every other set, and a list of AND and OR gates on at most two wires each, with for each i a wire true only on inputs meeting S_i and true on y_i plus any point of S_i, such that D times the number of gates plus m is less than the sum of the set sizes.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-991.715a641aae4b.json",
+  "statement_hash": "sha256:c2768a12023cdef682a9cda05f66764e217668ede59fb5f2d34faa25fc0e83c7",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T18:25:24.121Z",
+  "title": "Search: a monotone list with wires below set-ORs firing on a base plus any set point, with fewer gates than the cross-family count allows",
+  "used_by": []
+}
