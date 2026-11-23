@@ -1,8 +1,8 @@
 {
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "126f7041303c24798b65cd736301e93a439f521a85d659604018b3f96e656ac1",
+  "snapshot_sha256": "c53716e44854e060a0db25c066e9a7eca5243c91ddad54114eb924b510adb2ff",
   "upstream_sha": "e3b1828a4423909b34c8d8184be1e208451c631a",
-  "observed_at": "2026-11-23T23:37:33Z",
+  "observed_at": "2026-11-23T23:38:06Z",
   "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
   "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
   "toolchain": "leanprover/lean4:v4.36.0",
