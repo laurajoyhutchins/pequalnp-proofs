@@ -1,0 +1,16 @@
+let sub := fun (a b : Fin 1024) => ∀ i : Fin 10, a.val.testBit i.val = true → b.val.testBit i.val = true
+  let f := fun (a : Fin 1024) => (a.val.testBit 0 && a.val.testBit 1) || (a.val.testBit 1 && a.val.testBit 2) ||
+    (a.val.testBit 2 && a.val.testBit 3) || (a.val.testBit 3 && a.val.testBit 4) ||
+    (a.val.testBit 4 && a.val.testBit 0) || (a.val.testBit 0 && a.val.testBit 5) ||
+    (a.val.testBit 1 && a.val.testBit 6) || (a.val.testBit 2 && a.val.testBit 7) ||
+    (a.val.testBit 3 && a.val.testBit 8) || (a.val.testBit 4 && a.val.testBit 9) ||
+    (a.val.testBit 5 && a.val.testBit 7) || (a.val.testBit 7 && a.val.testBit 9) ||
+    (a.val.testBit 9 && a.val.testBit 6) || (a.val.testBit 6 && a.val.testBit 8) ||
+    (a.val.testBit 8 && a.val.testBit 5)
+  let p := fun i : Fin 15 => ([3,6,12,24,17,33,66,132,264,528,160,640,576,320,288] : List (Fin 1024)).getD i.val 0
+  let q := fun i : Fin 15 => ([50,69,104,116,138,201,208,276,385,402,521,548,554,770,773] : List (Fin 1024)).getD i.val 0
+  ∀ g : Fin 1024 → Bool,
+    (∀ a b, sub a b → g a = true → g b = true) →
+    (∀ i, g (p i) = true) →
+    (∀ i, g (q i) = false) →
+    ∀ a, g a = f a
