@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - research/workstation
-      - 'research/workstation/**'
+      - 'research/workstation-*'
+      - 'research/diagnostic-*'
     paths:
       - 'lean/**'
       - 'tools/research/**'
@@ -78,7 +79,7 @@ jobs:
           test "$(git -C .lake/packages/mathlib rev-parse HEAD)" = fc4f59e577feb1a4956671bc04ac18aaaf8cd842
           test -f .lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean
       - name: Target-only diagnostic (not a proof verdict)
-        if: ${{ startsWith(github.ref, 'refs/heads/research/workstation/diagnostic/') }}
+        if: ${{ startsWith(github.ref, 'refs/heads/research/diagnostic-') }}
         shell: bash
         run: |
           set -euo pipefail
@@ -94,7 +95,7 @@ jobs:
           test "$n" -gt 0
           exit "$rc"
       - name: Provision checker memory
-        if: ${{ !startsWith(github.ref, 'refs/heads/research/workstation/diagnostic/') }}
+        if: ${{ !startsWith(github.ref, 'refs/heads/research/diagnostic-') }}
         shell: bash
         run: |
           set -euo pipefail
@@ -109,7 +110,7 @@ jobs:
           fi
           free -m
       - name: Run upstream checker on a positive and a negative control
-        if: ${{ !startsWith(github.ref, 'refs/heads/research/workstation/diagnostic/') }}
+        if: ${{ !startsWith(github.ref, 'refs/heads/research/diagnostic-') }}
         shell: bash
         run: |
           set -euo pipefail
@@ -132,7 +133,7 @@ jobs:
           test "$code" -eq 1
           grep -q '^REJECTED ' "$RUNNER_TEMP/evidence/negative.log"
       - name: Check research files against independent statement text
-        if: ${{ !startsWith(github.ref, 'refs/heads/research/workstation/diagnostic/') }}
+        if: ${{ !startsWith(github.ref, 'refs/heads/research/diagnostic-') }}
         shell: bash
         run: |
           set -euo pipefail
