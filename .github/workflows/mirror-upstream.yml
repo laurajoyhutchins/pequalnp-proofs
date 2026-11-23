@@ -1,0 +1,58 @@
+name: Mirror upstream main
+
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [research/workstation]
+    paths: [.github/workflows/mirror-upstream.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: upstream-main-mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    if: github.repository == 'laurajoyhutchins/pequalnp-proofs' && github.ref == 'refs/heads/research/workstation'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fast-forward main only
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          work=$(mktemp -d)
+          cd "$work"
+          git init --quiet
+          git remote add origin https://github.com/laurajoyhutchins/pequalnp-proofs.git
+          git remote add upstream https://github.com/brilliant-hq/pequalnp-proofs.git
+          # Fetch full history without checking out or executing repository code.
+          git fetch --no-tags origin refs/heads/main:refs/remotes/origin/main
+          git fetch --no-tags upstream refs/heads/main:refs/remotes/upstream/main
+          old=$(git rev-parse refs/remotes/origin/main)
+          target=$(git rev-parse refs/remotes/upstream/main)
+          printf 'Fork: %s\nUpstream: %s\n' "$old" "$target"
+          if [ "$old" = "$target" ]; then
+            echo 'Already synchronized.'
+            exit 0
+          fi
+          if ! git merge-base --is-ancestor "$old" "$target"; then
+            echo '::error::Fork main is divergent or ahead; refusing to overwrite.'
+            exit 1
+          fi
+          # The built-in repository credential is used only for the push.
+          gh auth setup-git --hostname github.com
+          # No force option: Git also enforces fast-forward against the live remote.
+          git push --porcelain origin "$target:refs/heads/main"
+          actual=$(git ls-remote --exit-code origin refs/heads/main | cut -f1)
+          if [ "$actual" != "$target" ]; then
+            echo "::error::Fork main changed concurrently; inspect before retrying."
+            exit 1
+          fi
+          echo "Synchronized main to $target"
