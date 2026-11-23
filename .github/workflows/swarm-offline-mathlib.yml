@@ -21,13 +21,16 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          sudo rm -rf /usr/local/lib/android /opt/ghc /usr/local/.ghcup /usr/share/swift /opt/hostedtoolcache/CodeQL
           df -h .
           curl -fL --retry 3 https://github.com/leanprover/lean4/releases/download/v4.36.0/lean-4.36.0-linux.tar.zst -o "$RUNNER_TEMP/lean.tar.zst"
           echo "2b7ab1ed8b92d2e6abfaf41344823b510064dbc9c0260cac73eb496ab2dea6eb  $RUNNER_TEMP/lean.tar.zst" | sha256sum -c
           tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
           rm "$RUNNER_TEMP/lean.tar.zst"
-          echo "$RUNNER_TEMP/lean-4.36.0/bin" >> "$GITHUB_PATH"
+          tool="$RUNNER_TEMP/lean-4.36.0-linux/bin"
+          test -x "$tool/lean" && test -x "$tool/lake"
+          "$tool/lean" --version
+          "$tool/lake" --version
+          echo "$tool" >> "$GITHUB_PATH"
       - name: Fetch Mathlib and verify every manifest pin
         working-directory: swarm/lean
         shell: bash
