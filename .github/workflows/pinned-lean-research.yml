@@ -11,7 +11,7 @@ permissions:
 
 concurrency:
   group: meta-1402-depth-certificate
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   verify:
@@ -94,7 +94,7 @@ jobs:
         run: |
           set -euo pipefail
           shopt -s nullglob
-          for f in lean/PEqualNP/Research/*.statement.txt; do
+          for f in lean/PEqualNP/Outside/L_meta_1402.statement.txt; do
             leanfile="${f%.statement.txt}.lean"
             test -f "$leanfile"
             log="$RUNNER_TEMP/evidence/$(basename "$leanfile").log"

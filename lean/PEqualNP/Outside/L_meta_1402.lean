@@ -40,7 +40,7 @@ theorem certificate :
     ∀ (a b c : Bool) (i j k l : Fin 10),
       depthTwo (gate c (gate a (var i) (var j)) (gate b (var k) (var l))) := by
   intro a b c i
-  cases a <;> cases b <;> cases c <;> fin_cases i <;> decide
+  cases a <;> cases b <;> cases c <;> fin_cases i <;> simp only [depthTwo] <;> decide
 
 theorem and_stats (f g : Fn) :
     pc (fun y => f y && g y) ≤ pc f ∧
