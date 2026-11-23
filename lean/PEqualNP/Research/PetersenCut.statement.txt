@@ -1,0 +1,18 @@
+∀ s : Fin 1024,
+  let selected := (List.range 10).filter (fun i => s.val.testBit i)
+  0 < selected.length → selected.length ≤ 4 →
+  let outside := (List.range 10).filter (fun i => !(s.val.testBit i))
+  let assignments := selected.foldl (fun (acc : List Nat) i =>
+    acc ++ acc.map (fun a => a + 2 ^ i)) [0]
+  let probes := 0 :: outside.map (fun i => 2 ^ i)
+  let f := fun a : Nat =>
+    (a.testBit 0 && a.testBit 1) || (a.testBit 1 && a.testBit 2) ||
+    (a.testBit 2 && a.testBit 3) || (a.testBit 3 && a.testBit 4) ||
+    (a.testBit 4 && a.testBit 0) || (a.testBit 0 && a.testBit 5) ||
+    (a.testBit 1 && a.testBit 6) || (a.testBit 2 && a.testBit 7) ||
+    (a.testBit 3 && a.testBit 8) || (a.testBit 4 && a.testBit 9) ||
+    (a.testBit 5 && a.testBit 7) || (a.testBit 7 && a.testBit 9) ||
+    (a.testBit 9 && a.testBit 6) || (a.testBit 6 && a.testBit 8) ||
+    (a.testBit 8 && a.testBit 5)
+  let rows := assignments.map (fun a => probes.map (fun b => f (a + b)))
+  2 ^ (selected.length - 1) < rows.eraseDups.length
