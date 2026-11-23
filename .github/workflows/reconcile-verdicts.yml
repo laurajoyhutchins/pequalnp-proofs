@@ -1,0 +1,102 @@
+name: Reconcile upstream proof verdicts
+on:
+  schedule:
+    - cron: '11,26,41,56 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [research/workstation]
+    paths: ['tools/control/reconcile_verdicts.py','.github/workflows/reconcile-verdicts.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: upstream-verdict-reconciliation
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    if: github.repository == 'laurajoyhutchins/pequalnp-proofs' && github.ref == 'refs/heads/research/workstation'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Reconcile actual account PRs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/control/reconcile_verdicts.py "$RUNNER_TEMP/verdicts.json"
+      - name: Historical authoritative positive control
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 tools/control/reconcile_verdicts.py "$RUNNER_TEMP/regression.json" --regression-pr 2906
+          python3 - "$RUNNER_TEMP/regression.json" <<'PY'
+          import json,sys
+          r=json.load(open(sys.argv[1]))['prs'][0]
+          assert r['pr_state']=='merged' and r['author']=='c4ss'
+          print('Historical exact-head verdict:',r['authoritative_exact_head_verdict'],'errors:',r['evidence_errors'])
+          # API/log access can be restricted across repositories. Preserve UNKNOWN, never infer acceptance from a merge.
+          if r['authoritative_exact_head_verdict'] is not None:
+              assert r['authoritative_exact_head_verdict']=='ACCEPTED'
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: account-verdict-index
+          path: ${{ runner.temp }}/verdicts.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'push'
+        with:
+          name: historical-verdict-regression
+          path: ${{ runner.temp }}/regression.json
+          if-no-files-found: error
+  publish:
+    needs: reconcile
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: account-verdict-index
+          path: ${{ runner.temp }}/data
+      - name: Publish only validated public data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/data"
+          python3 - <<'PY'
+          import json,pathlib
+          assert {p.name for p in pathlib.Path('.').iterdir()}=={'verdicts.json'}
+          p=pathlib.Path('verdicts.json'); assert p.is_file() and not p.is_symlink()
+          x=json.loads(p.read_bytes())
+          assert x['scope']=='account_pr_reconciliation' and x['source']=='brilliant-hq/pequalnp-proofs' and x['account']=='laurajoyhutchins'
+          assert all(r['author']==x['account'] for r in x['prs'])
+          PY
+          git init -q
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+          gh auth setup-git --hostname github.com
+          old=$(git ls-remote origin refs/heads/research/verdicts | cut -f1)
+          git add -- verdicts.json
+          tree=$(git write-tree)
+          if [ -n "$old" ]; then
+            git fetch -q --depth 1 origin refs/heads/research/verdicts
+            test "$(git rev-parse FETCH_HEAD)" = "$old"
+            git show "$old:verdicts.json" > "$RUNNER_TEMP/old.json"
+            if python3 - "$RUNNER_TEMP/old.json" verdicts.json <<'PY'
+          import json,sys
+          a,b=(json.load(open(p)) for p in sys.argv[1:])
+          a.pop('observed_at',None); b.pop('observed_at',None)
+          sys.exit(0 if a==b else 1)
+          PY
+            then exit 0; fi
+            commit=$(printf '%s\n' 'Refresh upstream proof verdict index' | git commit-tree "$tree" -p "$old")
+          else
+            commit=$(printf '%s\n' 'Initialize upstream proof verdict index' | git commit-tree "$tree")
+          fi
+          git push --porcelain origin "$commit:refs/heads/research/verdicts"
