@@ -1,0 +1,9 @@
+# Research workstation (fork only)
+Read upstream README and CONTRIBUTING.md and the live desk instructions first. This branch is not an upstream submission base. Work on the highest-value actual current frontier, not a preferred topic or claim count. Do not claim if the desk, ownership, or verification is unavailable.
+  
+1. Read upstream strategy and public gap snapshot; record the source revision and exact statement. Use tools/research/frontier.py on an explicitly normalized snapshot (see research/README.md); unknown edges remain unknown. Use the source index for candidate theorem names, then verify against Lean.
+2. Read related research checkpoints and accepted upstream proof files before duplicating work. Share mathematical subgoals, failed arguments and exact witnesses. Work in distinct branches from research/workstation, not in a common mutable working tree.
+3. Use Python for exact experiments and Lean for universal proof. Research files are not automatically eligible as external contributions.
+4. Use tools/research/check-candidate.sh in a clean, dedicated checkout of the exact upstream commit, not this research branch. Run only in a disposable isolated environment without credentials; even Lean compilation can execute code. The script uses the upstream guard and checker. Its local verdict is not the authoritative one.
+5. Submit only one new permitted file from an upstream-derived branch after reconciling live gap/lease state; no infrastructure, research notes or unsolicited PRs. Release only your own lease with the documented reason. No lease IDs, tokens, or private research context in public Git.
+6. Preserve exact evidence and negative results. Coordinate live ownership privately, using an optimistic SHA-checked update, and do not renew idle or another worker's lease. Scheduled runs are not a heartbeat service.

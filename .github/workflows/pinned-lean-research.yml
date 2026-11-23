@@ -3,18 +3,28 @@ name: Pinned Lean research verification
 on:
   push:
     branches:
-      - research/petersen-cut-profiles
+      - research/workstation
+      - 'research/workstation/**'
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: pinned-lean-petersen-cut-profiles
+  group: pinned-lean-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
+  tools:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s tools/research -p 'test_*.py' -v
+      - run: bash -n tools/research/check-candidate.sh
   verify:
+    needs: tools
     runs-on: ubuntu-24.04
     timeout-minutes: 90
     steps:
@@ -37,6 +47,11 @@ jobs:
           git rev-parse HEAD
           sha256sum lean/lean-toolchain lean/lake-manifest.json lean/lakefile.toml tools/check-lean.mjs lean/CheckLemma.lean
           node --version
+      - name: Restore pinned toolchain cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: elan-${{ runner.os }}-${{ hashFiles('lean/lean-toolchain') }}
       - name: Install pinned Lean
         shell: bash
         run: |
