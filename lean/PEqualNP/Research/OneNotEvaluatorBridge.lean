@@ -128,6 +128,82 @@ private lemma not_unique (gs : List Gate)
   have hab : a = b := Subsingleton.elim _ _
   exact ha.symm.trans ((congrArg ι hab).trans hb)
 
+
+-- The unique NOT wire is antitone on complete input assignments, even when
+-- its first effective read is invalid (and hence reads false).
+theorem notAntitone (n : ℕ) (gates : List Gate)
+    (hG : ∀ g ∈ gates, (g.op = GateOp.and ∨ g.op = GateOp.or ∨
+      g.op = GateOp.not) ∧ g.inputs.length ≤ 2)
+    (hnot : ∃ ι : Fin 1 → Fin gates.length, ∀ i : Fin gates.length,
+      (gates.get i).op = GateOp.not → ∃ j : Fin 1, ι j = i)
+    (q : Fin gates.length) (hq : (gates.get q).op = GateOp.not) :
+    ∀ x y : Finset (Fin n), x ⊆ y →
+      Circuit.eval ⟨gates, n + q.val⟩
+        (List.ofFn (fun v : Fin n => decide (v ∈ y))) = true →
+      Circuit.eval ⟨gates, n + q.val⟩
+        (List.ofFn (fun v : Fin n => decide (v ∈ x))) = true := by
+  classical
+  intro x y hxy hy
+  let C : Circuit := ⟨gates, 0⟩
+  let w := n + q.val
+  let X (A : Finset (Fin n)) : Fin n → Bool := fun v => decide (v ∈ A)
+  have hn : n ≤ w := by dsimp [w]; omega
+  have hw : w < n + C.size := by
+    have := q.isLt
+    simp [w, C, Circuit.size]
+  have hj : w-n < gates.length := by
+    change w < n + gates.length at hw
+    omega
+  have hindex : w-n = q.val := by simp [w]
+  let g := C.gates[w-n]'(by simpa [C] using hj)
+  have hg : g.op = GateOp.not := by
+    change (gates[w-n]'hj).op = GateOp.not
+    simpa only [hindex, List.get_eq_getElem] using hq
+  have hpre : ∀ u, n ≤ u → u < w → ∀ hu : u < n + C.size,
+      let g' := C.gates[u-n]'(by unfold Circuit.size at hu; omega)
+      g'.op = GateOp.and ∨ g'.op = GateOp.or := by
+    intro u hun huw hu
+    have hul : u-n < gates.length := by
+      change u < n + gates.length at hu
+      omega
+    let q' : Fin gates.length := ⟨u-n, hul⟩
+    have hm : gates.get q' ∈ gates := List.get_mem _ _
+    rcases (hG _ hm).1 with ha | ho | hn'
+    · exact Or.inl ha
+    · exact Or.inr ho
+    · have he := congrArg Fin.val (not_unique gates hnot q' q hn' hq)
+      change u-n = q.val at he
+      omega
+  have hread (t : ℕ) :
+      (if t < w then value C (X x) t else false) = true →
+      (if t < w then value C (X y) t else false) = true := by
+    by_cases ht : t < w
+    · simp only [if_pos ht]
+      apply pre_mono C w hpre _ _ _ t ht
+      intro v hv
+      simp [X] at hv ⊢
+      exact hxy hv
+    · simp [ht]
+  have hval (A : Finset (Fin n)) :
+      value C (X A) w = g.op.eval
+        (g.inputs.map fun t => if t < w then value C (X A) t else false) :=
+    gate_value C (X A) w hn hw
+  change value C (X y) w = true at hy
+  change value C (X x) w = true
+  rw [hval y, hg] at hy
+  rw [hval x, hg]
+  cases hins : g.inputs with
+  | nil => simp [hins, GateOp.eval]
+  | cons t ts =>
+    simp only [hins, GateOp.eval, List.map_cons, List.headD_cons] at hy ⊢
+    cases hx : (if t < w then value C (X x) t else false) with
+    | false => rfl
+    | true =>
+      have hyt := hread t hx
+      rw [hyt] at hy
+      contradiction
+
+
 end PEqualNP.Research.OneNotEvaluatorBridge
 
 open PEqualNP.Research.OneNotEvaluatorBridge in
