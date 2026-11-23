@@ -1,0 +1,48 @@
+name: Research packet ingestion
+
+on:
+  schedule:
+    - cron: '3,18,33,48 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [research/workstation]
+    paths:
+      - 'tools/control/**'
+      - '.github/workflows/research-packets.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: research-packet-ingestion
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    if: github.repository == 'laurajoyhutchins/pequalnp-proofs' && github.ref == 'refs/heads/research/workstation'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Fetch immutable upstream source and public desk feed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet --depth 1 --single-branch --branch main https://github.com/brilliant-hq/pequalnp-proofs.git "$RUNNER_TEMP/upstream"
+          git -C "$RUNNER_TEMP/upstream" rev-parse HEAD
+          curl -fsS --proto '=https' --max-redirs 0 --max-filesize 5000000 --max-time 60 -o "$RUNNER_TEMP/gaps.json" https://data.pequalnp.com/data/desk/gaps.json
+          date -u +%FT%TZ > "$RUNNER_TEMP/observed"
+      - name: Compile research packets
+        run: |
+          set -euo pipefail
+          node --check tools/control/packets.mjs
+          node tools/control/packets.mjs "$RUNNER_TEMP/upstream" "$RUNNER_TEMP/gaps.json" "$RUNNER_TEMP/packets" "$(cat "$RUNNER_TEMP/observed")"
+          python3 -c 'import json,sys; x=json.load(open(sys.argv[1])); print("Upstream:",x["upstream_sha"],"Posted:",len(x["gaps"]),"Closure blockers:",sum(g["closure_blocker"] is not None for g in x["gaps"]))' "$RUNNER_TEMP/packets/index.json" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research-packets
+          path: ${{ runner.temp }}/packets/
+          if-no-files-found: error
+          retention-days: 7
