@@ -1,0 +1,22 @@
+∀ (n m : ℕ) (S : Fin m → Finset (Fin n))
+  (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : Fin m → ℕ),
+  (∀ i, 2 ≤ (S i).card) →
+  (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨
+    g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨
+    g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) →
+  (∃ ι : Fin 1 → Fin gates.length, ∀ i : Fin gates.length,
+    (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → ∃ j : Fin 1, ι j = i) →
+  (∀ (i : Fin m) (x : Fin n → Bool),
+    PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out i⟩ (List.ofFn x) =
+      decide (∃ v ∈ S i, x v = true)) →
+  let W : ℕ → Finset (Fin n) → Prop := fun w x =>
+    PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, w⟩
+      (List.ofFn (fun v : Fin n => decide (v ∈ x))) = true
+  ∃ (o a b : Fin m → ℕ) (k : Fin m → Bool),
+    (∀ v : Fin n, ∀ x, W v.val x ↔ v ∈ x) ∧
+    (∀ i, n ≤ o i ∧ o i < n + gates.length) ∧
+    (∀ i, a i < o i ∧ b i < o i) ∧
+    (∀ i x, W (o i) x ↔ ∃ v ∈ S i, v ∈ x) ∧
+    (∀ i w, w < o i → ¬ (∀ x, W w x ↔ ∃ v ∈ S i, v ∈ x)) ∧
+    (∀ i, k i = true → ∀ x, W (o i) x ↔ W (a i) x ∧ W (b i) x) ∧
+    (∀ i, k i = false → ∀ x, W (o i) x ↔ W (a i) x ∨ W (b i) x)
