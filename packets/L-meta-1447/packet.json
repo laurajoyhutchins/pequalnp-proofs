@@ -420,11 +420,12 @@
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_1447",
-  "observed_at": "2026-11-23T23:42:51Z",
+  "observed_at": "2026-11-23T23:44:07Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
   ],
+  "posted_restriction_markers": [],
   "public_research": {
     "artifact": null,
     "attempts": [],
@@ -442,7 +443,7 @@
     "status_at": "2026-11-23T23:19:12.487Z",
     "title": "One NOT gate saves nothing on 10 monotone functions of five inputs (shard 17 of 18), fan-in-two AND/OR/NOT lists"
   },
-  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "snapshot_sha256": "25154b482427343dd3b369349e8813f608a6309e1ea84263ad89ea67e52127d7",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∀ T ∈ ({0xfeeafee8, 0xfeeeeee8, 0xfeeefaaa, 0xfeeefae8, 0xfeeefee0, 0xfeeeeeea, 0xfeeefaea, 0xfeeefee8, 0xfefefea8, 0xfeeeeeee} : Finset ℕ), ∀ (gates : List PEqualNP.CircuitLowerBounds.Gate) (o : ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ g.inputs.length ≤ 2) → (∀ i j : Fin gates.length, (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.not → (gates.get j).op = PEqualNP.CircuitLowerBounds.GateOp.not → i = j) → (∀ x : Fin 5 → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, o⟩ (List.ofFn x) = Nat.testBit T (∑ i : Fin 5, if x i then 2 ^ (i : ℕ) else 0)) → ∃ (gates' : List PEqualNP.CircuitLowerBounds.Gate) (o' : ℕ), (∀ g ∈ gates', (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length ≤ 2) ∧ gates'.length ≤ gates.length ∧ ∀ x : Fin 5 → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates', o'⟩ (List.ofFn x) = Nat.testBit T (∑ i : Fin 5, if x i then 2 ^ (i : ℕ) else 0)",
   "toolchain": "leanprover/lean4:v4.36.0",

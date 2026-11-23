@@ -492,13 +492,14 @@
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_604",
-  "observed_at": "2026-11-23T23:42:51Z",
+  "observed_at": "2026-11-23T23:44:07Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs",
     "PEqualNP.MetaComplexity.Helpers.Elim",
     "PEqualNP.MetaComplexity.Helpers.ReadersExport"
   ],
+  "posted_restriction_markers": [],
   "public_research": {
     "artifact": null,
     "attempts": [],
@@ -516,7 +517,7 @@
     "status_at": "2026-11-23T12:38:33.232Z",
     "title": "XOR with a fresh input costs exactly four gates over the cheaper of a function and its negation"
   },
-  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "snapshot_sha256": "25154b482427343dd3b369349e8813f608a6309e1ea84263ad89ea67e52127d7",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∀ (n s : ℕ) (g : (Fin n → Bool) → Bool), (∃ y y' : Fin n → Bool, g y ≠ g y') → (PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x : Fin (n + 1) → Bool => xor (x (Fin.last n)) (g (fun i : Fin n => x i.castSucc))) (s + 4) ↔ (PEqualNP.MetaComplexity.HasCircuitSize n g s ∨ PEqualNP.MetaComplexity.HasCircuitSize n (fun y : Fin n → Bool => !(g y)) s))",
   "toolchain": "leanprover/lean4:v4.36.0",

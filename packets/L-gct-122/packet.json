@@ -450,13 +450,14 @@
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_gct_122",
-  "observed_at": "2026-11-23T23:42:51Z",
+  "observed_at": "2026-11-23T23:44:07Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs",
     "PEqualNP.Gct.L065",
     "PEqualNP.Gct.Helpers.FermatFromKneser"
   ],
+  "posted_restriction_markers": [],
   "public_research": {
     "artifact": null,
     "attempts": [],
@@ -474,7 +475,7 @@
     "status_at": "2026-11-22T23:25:46.542Z",
     "title": "Lemma K: a complex linear space on which the power sums p2 and p4 both vanish has dimension at most M/3 (p4, not p3: distinct from L-gct-061)"
   },
-  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "snapshot_sha256": "25154b482427343dd3b369349e8813f608a6309e1ea84263ad89ea67e52127d7",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∀ (m : ℕ) (X : Submodule ℂ (Fin m → ℂ)), (∀ x ∈ X, ∑ i, x i ^ 2 = 0) → (∀ x ∈ X, ∑ i, x i ^ 4 = 0) → 3 * Module.finrank ℂ X ≤ m",
   "toolchain": "leanprover/lean4:v4.36.0",

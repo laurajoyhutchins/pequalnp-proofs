@@ -420,11 +420,12 @@
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_455",
-  "observed_at": "2026-11-23T23:42:51Z",
+  "observed_at": "2026-11-23T23:44:07Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
   ],
+  "posted_restriction_markers": [],
   "public_research": {
     "artifact": null,
     "attempts": [],
@@ -442,7 +443,7 @@
     "status_at": "2026-11-23T07:45:38.419Z",
     "title": "Around an edge of a graph with no triangle and no 4-cycle, the neighbourhoods are independent (standalone text)"
   },
-  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "snapshot_sha256": "25154b482427343dd3b369349e8813f608a6309e1ea84263ad89ea67e52127d7",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],\n    (∀ a b c : Fin n, ¬ (G.Adj a b ∧ G.Adj b c ∧ G.Adj c a)) →\n    (∀ a b c d : Fin n, a ≠ c → b ≠ d → ¬ (G.Adj a b ∧ G.Adj b c ∧ G.Adj c d ∧ G.Adj d a)) →\n    ∀ u v : Fin n, G.Adj u v →\n      (∀ a ∈ Finset.univ.filter (fun w => G.Adj v w),\n        ∀ b ∈ Finset.univ.filter (fun w => G.Adj v w), ¬ G.Adj a b) ∧\n      (∀ a ∈ Finset.univ.filter (fun w => G.Adj u w),\n        ∀ b ∈ Finset.univ.filter (fun w => G.Adj u w), ¬ G.Adj a b) ∧\n      (∀ a ∈ Finset.univ.filter (fun w => G.Adj v w ∧ w ≠ u) ∪\n              Finset.univ.filter (fun w => G.Adj u w ∧ w ≠ v),\n        ∀ b ∈ Finset.univ.filter (fun w => G.Adj v w ∧ w ≠ u) ∪\n              Finset.univ.filter (fun w => G.Adj u w ∧ w ≠ v), ¬ G.Adj a b)",
   "toolchain": "leanprover/lean4:v4.36.0",

@@ -420,11 +420,12 @@
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_523",
-  "observed_at": "2026-11-23T23:42:51Z",
+  "observed_at": "2026-11-23T23:44:07Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
   ],
+  "posted_restriction_markers": [],
   "public_research": {
     "artifact": null,
     "attempts": [],
@@ -442,7 +443,7 @@
     "status_at": "2026-11-23T09:10:07.692Z",
     "title": "An 11-gate AND/OR circuit for the edge function of the 6-cycle with leaves at two adjacent vertices, nested, that no lift flattens"
   },
-  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "snapshot_sha256": "25154b482427343dd3b369349e8813f608a6309e1ea84263ad89ea67e52127d7",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∀ F : (Fin 8 → Bool) → Bool, F = (fun x : Fin 8 → Bool => (x 0 && x 1) || (x 1 && x 2) || (x 2 && x 3) || (x 3 && x 4) || (x 4 && x 5) || (x 0 && x 5) || (x 0 && x 6) || (x 1 && x 7)) → ∃ C : PEqualNP.CircuitLowerBounds.Circuit, C.gates.length = 11 ∧ C.output = 18 ∧ (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length = 2 ∧ ∀ i ∈ g.inputs, i < 8 + j) ∧ (∀ x : Fin 8 → Bool, C.eval (List.ofFn x) = F x) ∧ (∃ a b : ℕ, a ≠ b ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[a]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[b]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ Relation.TransGen (fun u v : ℕ => ∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[u]? = some g ∧ 8 + v ∈ g.inputs) a b) ∧ ∀ (j p h : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate) (D : PEqualNP.CircuitLowerBounds.Circuit), C.gates[j]? = some g → g.op = PEqualNP.CircuitLowerBounds.GateOp.or → (g.inputs = [p, h] ∨ g.inputs = [h, p]) → j ≠ 10 → (∀ x : Fin 8 → Bool, (C.wires (List.ofFn x)).getD h false = true → F x = true) → D = ⟨C.gates.set j ⟨PEqualNP.CircuitLowerBounds.GateOp.or, [p, p]⟩ ++ [⟨PEqualNP.CircuitLowerBounds.GateOp.or, [18, h]⟩], 19⟩ → (∃ x : Fin 8 → Bool, D.eval (List.ofFn x) ≠ F x) ∨ Set.ncard {q : ℕ × ℕ | q.1 ≠ q.2 ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[q.1]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[q.2]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ Relation.TransGen (fun u v : ℕ => ∃ g : PEqualNP.CircuitLowerBounds.Gate, C.gates[u]? = some g ∧ 8 + v ∈ g.inputs) q.1 q.2} ≤ Set.ncard {q : ℕ × ℕ | q.1 ≠ q.2 ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, D.gates[q.1]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ (∃ g : PEqualNP.CircuitLowerBounds.Gate, D.gates[q.2]? = some g ∧ g.op = PEqualNP.CircuitLowerBounds.GateOp.and) ∧ Relation.TransGen (fun u v : ℕ => ∃ g : PEqualNP.CircuitLowerBounds.Gate, D.gates[u]? = some g ∧ 8 + v ∈ g.inputs) q.1 q.2}",
   "toolchain": "leanprover/lean4:v4.36.0",

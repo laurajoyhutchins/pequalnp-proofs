@@ -420,11 +420,12 @@
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_314",
-  "observed_at": "2026-11-23T23:42:51Z",
+  "observed_at": "2026-11-23T23:44:07Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
   ],
+  "posted_restriction_markers": [],
   "public_research": {
     "artifact": null,
     "attempts": [],
@@ -442,7 +443,7 @@
     "status_at": "2026-11-23T07:14:37.118Z",
     "title": "Cycles: no least circuit of the cycle on n >= 5 vertices has a NOT gate, and every gate computes an edge OR, a star OR or a tying-block piece"
   },
-  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "snapshot_sha256": "25154b482427343dd3b369349e8813f608a6309e1ea84263ad89ea67e52127d7",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit), 5 ≤ n → PEqualNP.MetaComplexity.IsMinimalCircuit n C → PEqualNP.MetaComplexity.circuitFun n C = (fun x : Fin n → Bool => decide (∃ i j : Fin n, (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) → (∀ g ∈ C.gates, g.op ≠ PEqualNP.CircuitLowerBounds.GateOp.not) ∧ ∀ t : ℕ, t < C.size → ((∃ S : Finset ℕ, S.Nonempty ∧ (∀ i ∈ S, i < n) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = decide (∃ i j : Fin n, i.val ∈ S ∧ (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) ∨ (∃ a c b : Fin n, (a.val + 1) % n = c.val ∧ (c.val + 1) % n = b.val ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = (x a || x b)) ∨ (∃ i j k : Fin n, (i.val + 1) % n = j.val ∧ ((j.val + 1) % n = k.val ∨ (k.val + 1) % n = i.val) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = ((x i && x j) || x k)))",
   "toolchain": "leanprover/lean4:v4.36.0",

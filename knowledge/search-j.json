@@ -1,0 +1,154 @@
+{
+  "source": "https://data.pequalnp.com/data/search/j.c7fac42584ca.json",
+  "source_sha256": "c7fac42584caef01aac06e128abd6e22a3eb3ae859f3963f672e2c990c2e3379",
+  "tokens": {
+    "jacobi": [
+      "L-gct-032"
+    ],
+    "jacobian": [
+      "L-gct-030",
+      "L-gct-033",
+      "L-gct-034",
+      "L-gct-038",
+      "L-gct-039",
+      "L-gct-040",
+      "L-gct-042",
+      "L-gct-043",
+      "L-gct-047"
+    ],
+    "jacobians": [
+      "L-gct-047"
+    ],
+    "jair": [
+      "L-lib-111"
+    ],
+    "jcss": [
+      "L-lib-035",
+      "L-lib-074",
+      "L-lib-075",
+      "L-lib-086"
+    ],
+    "join": [
+      "L-lib-104",
+      "L-meta-381",
+      "L-meta-473",
+      "L-pcx-080"
+    ],
+    "joined": [
+      "L-meta-1004",
+      "L-meta-1005",
+      "L-meta-103",
+      "L-meta-113",
+      "L-meta-115",
+      "L-meta-151",
+      "L-meta-186",
+      "L-meta-218",
+      "L-meta-220",
+      "L-meta-256",
+      "L-meta-282",
+      "L-meta-315",
+      "L-meta-316",
+      "L-meta-344",
+      "L-meta-345",
+      "L-meta-347",
+      "L-meta-439",
+      "L-meta-441",
+      "L-meta-456",
+      "L-meta-492",
+      "L-meta-516",
+      "L-meta-517",
+      "L-meta-552",
+      "L-meta-553",
+      "L-meta-582",
+      "L-meta-615",
+      "L-meta-617",
+      "L-meta-619",
+      "L-meta-621",
+      "L-meta-634",
+      "L-meta-650",
+      "L-meta-657",
+      "L-meta-719",
+      "L-meta-740",
+      "L-meta-743",
+      "L-meta-744",
+      "L-meta-967",
+      "L-meta-968",
+      "L-meta-969",
+      "L-meta-970",
+      "L-meta-971",
+      "L-meta-972",
+      "L-pcx-075"
+    ],
+    "joining": [
+      "L-meta-348",
+      "L-meta-376",
+      "L-meta-388",
+      "L-meta-508",
+      "L-meta-571",
+      "L-meta-572",
+      "L-meta-573",
+      "L-meta-574",
+      "L-meta-629",
+      "L-meta-653",
+      "L-meta-654",
+      "L-meta-778",
+      "L-meta-978",
+      "L-meta-979",
+      "L-meta-980",
+      "L-meta-995"
+    ],
+    "joins": [
+      "L-meta-011",
+      "L-meta-248",
+      "L-meta-249",
+      "L-meta-250",
+      "L-meta-474",
+      "L-meta-475",
+      "L-meta-484",
+      "L-meta-488",
+      "L-meta-533",
+      "L-meta-595",
+      "L-meta-722"
+    ],
+    "joint": [
+      "L-meta-589",
+      "L-meta-590",
+      "L-meta-605",
+      "L-meta-607",
+      "L-meta-623",
+      "L-meta-625",
+      "L-meta-626",
+      "L-meta-627",
+      "L-meta-637",
+      "L-meta-638",
+      "L-meta-640",
+      "L-meta-652",
+      "L-meta-659"
+    ],
+    "jointly": [
+      "L-meta-605",
+      "L-meta-659"
+    ],
+    "jq": [
+      "L-meta-1325",
+      "L-meta-1326",
+      "L-meta-1358",
+      "L-meta-1359",
+      "L-meta-1379"
+    ],
+    "judged": [
+      "L-meta-707"
+    ],
+    "junk": [
+      "L-lib-182",
+      "L-lib-186",
+      "L-lib-187",
+      "L-meta-648"
+    ],
+    "just": [
+      "L-clb-040",
+      "L-gct-141"
+    ]
+  },
+  "unmapped_ids": []
+}

@@ -420,11 +420,12 @@
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_gct_223",
-  "observed_at": "2026-11-23T23:42:51Z",
+  "observed_at": "2026-11-23T23:44:07Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
   ],
+  "posted_restriction_markers": [],
   "public_research": {
     "artifact": null,
     "attempts": [],
@@ -442,7 +443,7 @@
     "status_at": "2026-11-23T22:08:46.809Z",
     "title": "Probe: a two-dimensional space of 6 x 6 circulant complex matrices keeps the permanent of the all-ones matrix plus it at 720"
   },
-  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "snapshot_sha256": "25154b482427343dd3b369349e8813f608a6309e1ea84263ad89ea67e52127d7",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∃ f g : Fin 6 → ℂ, f ≠ 0 ∧ (∀ c : ℂ, g ≠ c • f) ∧ ∀ s r : ℂ, Matrix.permanent (Matrix.of fun (i j : Fin 6) => (1 : ℂ) + s * f (j - i) + r * g (j - i)) = 720",
   "toolchain": "leanprover/lean4:v4.36.0",

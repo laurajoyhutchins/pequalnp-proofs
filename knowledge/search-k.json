@@ -1,0 +1,349 @@
+{
+  "source": "https://data.pequalnp.com/data/search/k.6c12b85051ad.json",
+  "source_sha256": "6c12b85051ad166a15b7af8c2e2e8f776873b232bbc768620e8c225465cc4b9f",
+  "tokens": {
+    "k1": [
+      "L-meta-540"
+    ],
+    "k2": [
+      "L-meta-540"
+    ],
+    "k3": [
+      "L-pcx-097",
+      "L-pcx-098"
+    ],
+    "k4": [
+      "L-gct-182",
+      "L-gct-200",
+      "L-meta-179",
+      "L-meta-655",
+      "L-meta-720"
+    ],
+    "ka": [
+      "L-meta-145"
+    ],
+    "kabanets": [
+      "L-meta-007",
+      "L-meta-008",
+      "L-meta-010",
+      "L-meta-021",
+      "L-meta-034",
+      "L-meta-037"
+    ],
+    "kamath": [
+      "L-alg-005"
+    ],
+    "kantor": [
+      "L-meta-453"
+    ],
+    "kappa": [
+      "L-meta-745",
+      "L-meta-766",
+      "L-meta-916",
+      "L-meta-918",
+      "L-meta-919"
+    ],
+    "karp": [
+      "L-lib-016",
+      "L-lib-017",
+      "L-lib-018",
+      "L-lib-020",
+      "L-lib-032",
+      "L-lib-041"
+    ],
+    "kautz": [
+      "L-lib-111",
+      "L-lib-112"
+    ],
+    "kb": [
+      "L-meta-145"
+    ],
+    "kc": [
+      "L-meta-145"
+    ],
+    "kd": [
+      "L-meta-145"
+    ],
+    "keep": [
+      "L-gct-221",
+      "L-lib-186",
+      "L-meta-197"
+    ],
+    "keeping": [
+      "L-meta-1016",
+      "L-meta-1346",
+      "L-meta-178",
+      "L-meta-192",
+      "L-meta-500",
+      "L-meta-622",
+      "L-meta-630",
+      "L-meta-707",
+      "L-meta-708",
+      "L-meta-977"
+    ],
+    "keeps": [
+      "L-gct-219",
+      "L-gct-220",
+      "L-gct-222",
+      "L-gct-223",
+      "L-gct-224",
+      "L-gct-225",
+      "L-gct-226",
+      "L-gct-227",
+      "L-gct-228",
+      "L-gct-229",
+      "L-gct-230",
+      "L-gct-231",
+      "L-gct-232",
+      "L-lib-139",
+      "L-lib-151",
+      "L-lib-182",
+      "L-lib-183",
+      "L-lib-185",
+      "L-lib-187",
+      "L-lib-188",
+      "L-lib-190",
+      "L-meta-052",
+      "L-meta-087",
+      "L-meta-1330",
+      "L-meta-1351",
+      "L-meta-1354",
+      "L-meta-1398",
+      "L-meta-1399",
+      "L-meta-1400",
+      "L-meta-1401",
+      "L-meta-1402",
+      "L-meta-1403",
+      "L-meta-1404",
+      "L-meta-1405",
+      "L-meta-202",
+      "L-meta-291",
+      "L-meta-297",
+      "L-meta-307",
+      "L-meta-364",
+      "L-meta-454",
+      "L-meta-468",
+      "L-meta-501"
+    ],
+    "kept": [
+      "L-meta-080",
+      "L-meta-083",
+      "L-meta-107",
+      "L-meta-1317",
+      "L-pcx-086"
+    ],
+    "ker": [
+      "L-meta-684"
+    ],
+    "kernel": [
+      "L-gct-016",
+      "L-gct-020",
+      "L-gct-032",
+      "L-gct-069",
+      "L-gct-092",
+      "L-gct-094",
+      "L-gct-156",
+      "L-meta-042",
+      "L-meta-066",
+      "L-meta-067",
+      "L-meta-684",
+      "L-meta-728",
+      "L-meta-730",
+      "L-meta-732",
+      "L-meta-904"
+    ],
+    "key": [
+      "L-gct-153",
+      "L-pcx-011"
+    ],
+    "kill": [
+      "L-lib-107",
+      "L-lib-109",
+      "L-lib-111",
+      "L-lib-113",
+      "L-meta-916",
+      "L-meta-918",
+      "L-meta-919"
+    ],
+    "killed": [
+      "L-gct-017",
+      "L-gct-019",
+      "L-meta-566"
+    ],
+    "killing": [
+      "L-gct-062",
+      "L-gct-063",
+      "L-gct-066",
+      "L-gct-115",
+      "L-gct-139",
+      "L-gct-169",
+      "L-gct-178"
+    ],
+    "kills": [
+      "L-alg-002",
+      "L-alg-004",
+      "L-gct-016",
+      "L-gct-020",
+      "L-gct-051",
+      "L-gct-124",
+      "L-gct-125",
+      "L-gct-151",
+      "L-lib-110",
+      "L-pcx-072"
+    ],
+    "kind": [
+      "L-clb-040",
+      "L-meta-120",
+      "L-meta-1322",
+      "L-meta-1332",
+      "L-meta-1333",
+      "L-meta-260",
+      "L-meta-721",
+      "L-meta-726",
+      "L-meta-751",
+      "L-meta-959",
+      "L-meta-960"
+    ],
+    "kinds": [
+      "L-meta-610"
+    ],
+    "kneser": [
+      "L-gct-064",
+      "L-gct-065",
+      "L-gct-066",
+      "L-gct-067",
+      "L-gct-079",
+      "L-gct-122",
+      "L-meta-147"
+    ],
+    "known": [
+      "L-alg-003",
+      "L-alg-004",
+      "L-alg-006",
+      "L-clb-011",
+      "L-clb-013",
+      "L-clb-014",
+      "L-clb-015",
+      "L-clb-018",
+      "L-clb-021",
+      "L-clb-022",
+      "L-clb-023",
+      "L-clb-024",
+      "L-clb-030",
+      "L-clb-032",
+      "L-clb-033",
+      "L-clb-035",
+      "L-clb-036",
+      "L-gct-011",
+      "L-gct-103",
+      "L-gct-104",
+      "L-gct-139",
+      "L-gct-140",
+      "L-gct-156",
+      "L-gct-179",
+      "L-gct-181",
+      "L-gct-182",
+      "L-gct-183",
+      "L-gct-184",
+      "L-gct-191",
+      "L-gct-193",
+      "L-gct-195",
+      "L-gct-196",
+      "L-gct-199",
+      "L-gct-202",
+      "L-gct-204",
+      "L-gct-205",
+      "L-gct-210",
+      "L-gct-214",
+      "L-gct-215",
+      "L-gct-223",
+      "L-lib-105",
+      "L-lib-106",
+      "L-lib-107",
+      "L-lib-111",
+      "L-lib-115",
+      "L-meta-012",
+      "L-meta-013",
+      "L-meta-027",
+      "L-meta-028",
+      "L-meta-034",
+      "L-meta-036",
+      "L-meta-037",
+      "L-meta-039",
+      "L-meta-043",
+      "L-meta-047",
+      "L-meta-048",
+      "L-meta-054",
+      "L-meta-055",
+      "L-meta-061",
+      "L-meta-094",
+      "L-meta-1082",
+      "L-meta-1088",
+      "L-meta-1101",
+      "L-meta-1105",
+      "L-meta-1106",
+      "L-meta-1107",
+      "L-meta-1196",
+      "L-meta-120",
+      "L-meta-144",
+      "L-meta-146",
+      "L-meta-147",
+      "L-meta-148",
+      "L-meta-151",
+      "L-meta-167",
+      "L-meta-219",
+      "L-meta-256",
+      "L-meta-260",
+      "L-meta-262",
+      "L-meta-266",
+      "L-meta-268",
+      "L-meta-317",
+      "L-meta-318",
+      "L-meta-319",
+      "L-meta-320",
+      "L-meta-321",
+      "L-meta-323",
+      "L-meta-324",
+      "L-meta-326",
+      "L-meta-327",
+      "L-meta-329",
+      "L-meta-450",
+      "L-meta-453",
+      "L-meta-458",
+      "L-meta-529",
+      "L-meta-581",
+      "L-meta-582",
+      "L-meta-583",
+      "L-meta-585",
+      "L-meta-586",
+      "L-meta-595",
+      "L-meta-617",
+      "L-meta-618",
+      "L-meta-619",
+      "L-meta-620",
+      "L-meta-621",
+      "L-meta-650",
+      "L-pcx-015",
+      "L-pcx-017",
+      "L-pcx-051",
+      "L-pcx-071"
+    ],
+    "knows": [
+      "L-gct-015"
+    ],
+    "komplexitaet": [
+      "L-meta-020",
+      "L-meta-025"
+    ],
+    "koszul": [
+      "L-gct-042"
+    ],
+    "krom": [
+      "L-lib-030"
+    ],
+    "kronecker": [
+      "L-gct-149"
+    ]
+  },
+  "unmapped_ids": []
+}

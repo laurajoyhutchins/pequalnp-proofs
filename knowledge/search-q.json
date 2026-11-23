@@ -1,0 +1,141 @@
+{
+  "source": "https://data.pequalnp.com/data/search/q.d6ba1d611a00.json",
+  "source_sha256": "d6ba1d611a003c2f45a714815591b3574dad1621e7e62cc9a8ba9d4042e24ce8",
+  "tokens": {
+    "q0": [
+      "L-meta-578",
+      "L-meta-579"
+    ],
+    "q1": [
+      "L-gct-204",
+      "L-meta-578",
+      "L-meta-579"
+    ],
+    "q2": [
+      "L-gct-204",
+      "L-meta-594",
+      "L-meta-596"
+    ],
+    "q4": [
+      "L-meta-578",
+      "L-meta-579",
+      "L-meta-594",
+      "L-meta-596"
+    ],
+    "q5": [
+      "L-meta-578",
+      "L-meta-579"
+    ],
+    "qm": [
+      "L-lib-122",
+      "L-lib-123"
+    ],
+    "quadratic": [
+      "L-gct-028",
+      "L-gct-051",
+      "L-gct-086",
+      "L-gct-101",
+      "L-lib-101",
+      "L-meta-664",
+      "L-meta-683",
+      "L-pcx-023",
+      "L-pcx-071",
+      "L-pcx-072",
+      "L-pcx-091"
+    ],
+    "quantified": [
+      "L-gct-085"
+    ],
+    "quantifies": [
+      "L-lib-116",
+      "L-pcx-030",
+      "L-pcx-050",
+      "L-pcx-055"
+    ],
+    "quantify": [
+      "L-pcx-039"
+    ],
+    "quantitative": [
+      "L-lib-073"
+    ],
+    "quarter": [
+      "L-pcx-020",
+      "L-pcx-080"
+    ],
+    "quartic": [
+      "L-gct-052"
+    ],
+    "quasi": [
+      "L-clb-010"
+    ],
+    "quasipolynomial": [
+      "L-clb-010"
+    ],
+    "queried": [
+      "L-lib-063",
+      "L-lib-064"
+    ],
+    "queries": [
+      "L-lib-058",
+      "L-lib-064",
+      "L-lib-065",
+      "L-meta-094"
+    ],
+    "query": [
+      "L-lib-063",
+      "L-lib-064",
+      "L-lib-067",
+      "L-lib-084",
+      "L-lib-117"
+    ],
+    "querylocal": [
+      "L-meta-029",
+      "L-meta-030",
+      "L-meta-032",
+      "L-meta-035",
+      "L-meta-038",
+      "L-meta-039",
+      "L-meta-040",
+      "L-meta-042",
+      "L-meta-044",
+      "L-meta-046"
+    ],
+    "question": [
+      "L-alg-005",
+      "L-gct-095",
+      "L-gct-142",
+      "L-gct-154",
+      "L-gct-228",
+      "L-meta-056",
+      "L-meta-212",
+      "L-meta-214",
+      "L-meta-413",
+      "L-meta-418",
+      "L-meta-420",
+      "L-meta-421",
+      "L-meta-424",
+      "L-meta-429",
+      "L-meta-432",
+      "L-meta-433",
+      "L-meta-434",
+      "L-meta-435",
+      "L-meta-436",
+      "L-meta-438",
+      "L-meta-440",
+      "L-meta-446",
+      "L-meta-493",
+      "L-meta-687"
+    ],
+    "quiet": [
+      "L-meta-781"
+    ],
+    "quoted": [
+      "L-meta-057",
+      "L-meta-058"
+    ],
+    "quotient": [
+      "L-gct-147"
+    ]
+  },
+  "unmapped_ids": []
+}

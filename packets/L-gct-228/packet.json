@@ -420,11 +420,12 @@
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_gct_228",
-  "observed_at": "2026-11-23T23:42:51Z",
+  "observed_at": "2026-11-23T23:44:07Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
   ],
+  "posted_restriction_markers": [],
   "public_research": {
     "artifact": null,
     "attempts": [],
@@ -442,7 +443,7 @@
     "status_at": "2026-11-23T22:13:06.200Z",
     "title": "Probe: over the field with 5 elements, a four-dimensional space of 3 x 3 matrices keeps the permanent of the all-ones matrix plus it at 6"
   },
-  "snapshot_sha256": "872949826217e4b7a2a7f0576d9545b9a4baabd151fc1a401fbc179117fd45fa",
+  "snapshot_sha256": "25154b482427343dd3b369349e8813f608a6309e1ea84263ad89ea67e52127d7",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∃ L : Submodule (ZMod 5) (Fin 3 × Fin 3 → ZMod 5), Module.finrank (ZMod 5) L = 4 ∧ ∀ t ∈ L, Matrix.permanent (Matrix.of fun (i j : Fin 3) => (1 : ZMod 5) + t (i, j)) = 6",
   "toolchain": "leanprover/lean4:v4.36.0",

@@ -1,0 +1,109 @@
+{
+  "source": "https://data.pequalnp.com/data/search/y.079a53be3535.json",
+  "source_sha256": "079a53be3535d075c035d5acb0b4da4a991d2b471f8c105698dc22eb713c0ea9",
+  "tokens": {
+    "y0": [
+      "L-meta-042",
+      "L-meta-1318",
+      "L-meta-654",
+      "L-pcx-073",
+      "L-pcx-074",
+      "L-pcx-081",
+      "L-pcx-082",
+      "L-pcx-084",
+      "L-pcx-085",
+      "L-pcx-086",
+      "L-pcx-090"
+    ],
+    "y1": [
+      "L-lib-177",
+      "L-lib-178",
+      "L-meta-042",
+      "L-meta-1318",
+      "L-meta-654",
+      "L-pcx-073",
+      "L-pcx-074",
+      "L-pcx-081",
+      "L-pcx-082",
+      "L-pcx-084",
+      "L-pcx-085",
+      "L-pcx-086",
+      "L-pcx-090"
+    ],
+    "y2": [
+      "L-lib-177",
+      "L-lib-178",
+      "L-meta-042",
+      "L-pcx-073",
+      "L-pcx-074",
+      "L-pcx-081",
+      "L-pcx-082",
+      "L-pcx-084",
+      "L-pcx-085",
+      "L-pcx-086",
+      "L-pcx-090"
+    ],
+    "y3": [
+      "L-lib-178",
+      "L-meta-042",
+      "L-pcx-073",
+      "L-pcx-074",
+      "L-pcx-081",
+      "L-pcx-082",
+      "L-pcx-084",
+      "L-pcx-085",
+      "L-pcx-086",
+      "L-pcx-090"
+    ],
+    "y7": [
+      "L-meta-1308"
+    ],
+    "y8": [
+      "L-meta-1308"
+    ],
+    "yabe": [
+      "L-gct-044"
+    ],
+    "yao": [
+      "L-clb-033"
+    ],
+    "yes": [
+      "L-lib-039",
+      "L-meta-017",
+      "L-meta-075",
+      "L-meta-077",
+      "L-meta-085",
+      "L-meta-087",
+      "L-meta-108",
+      "L-meta-352"
+    ],
+    "yet": [
+      "L-meta-1322",
+      "L-meta-1323",
+      "L-meta-1331",
+      "L-meta-1344",
+      "L-meta-1348",
+      "L-meta-1351",
+      "L-meta-1356",
+      "L-meta-1386",
+      "L-meta-674",
+      "L-meta-676",
+      "L-meta-688",
+      "L-meta-689",
+      "L-meta-698",
+      "L-meta-699",
+      "L-meta-726",
+      "L-meta-749",
+      "L-meta-781",
+      "L-meta-787"
+    ],
+    "yields": [
+      "L-lib-112",
+      "L-meta-075",
+      "L-meta-085",
+      "L-meta-388",
+      "L-pcx-034"
+    ]
+  },
+  "unmapped_ids": []
+}
