@@ -53,6 +53,13 @@ jobs:
           lake exe cache get
           test "$(git -C .lake/packages/mathlib rev-parse HEAD)" = fc4f59e577feb1a4956671bc04ac18aaaf8cd842
           test -f .lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean
+      - name: Compile research candidates and retain full diagnostics
+        working-directory: lean
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/evidence"
+          lake build +PEqualNP.Research.OneNotReservedBound +PEqualNP.Research.OneNotTruncatedBound 2>&1 | tee "$RUNNER_TEMP/evidence/build.log"
       - name: Provision checker memory
         shell: bash
         run: |
