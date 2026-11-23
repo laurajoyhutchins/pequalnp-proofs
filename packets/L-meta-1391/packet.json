@@ -1,0 +1,37 @@
+{
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "snapshot_sha256": "0df69a492444d525e4d0176b0cae1fa76d02f98f4904ef0fb4c1d366db44cff6",
+  "upstream_sha": "a6fb1ad3452be9050263f025e206582dc2f88295",
+  "observed_at": "2026-11-23T23:15:46Z",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "id": "L-meta-1391",
+  "file": "lean/PEqualNP/Outside/L_meta_1391.lean",
+  "module": "PEqualNP.Outside.L_meta_1391",
+  "statement": "∀ (N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (Ckt : PEqualNP.CircuitLowerBounds.Circuit), (∀ p p' l l' : Fin N, p ≠ p' → l ≠ l' → ¬ (I p l ∧ I p l' ∧ I p' l ∧ I p' l')) → PEqualNP.MetaComplexity.Monotone2 Ckt → PEqualNP.CircuitLowerBounds.HasLineDegree (N + N) (Finset.Ico N (N + N)) Ckt 3 → (∀ z : Fin (N + N) → Bool, PEqualNP.MetaComplexity.circuitFun (N + N) Ckt z = true → ∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true) → (Finset.univ.filter (fun e : Fin N × Fin N => I e.1 e.2 ∧ PEqualNP.MetaComplexity.circuitFun (N + N) Ckt (fun k => decide (k = Fin.castAdd N e.1 ∨ k = Fin.natAdd N e.2)) = true)).card ≤ 888 * Ckt.size + 9 * N + 444",
+  "permitted_project_imports": [
+    "PEqualNP.Defs",
+    "PEqualNP.Outside.L_meta_669",
+    "PEqualNP.Outside.L_meta_738",
+    "PEqualNP.Outside.L_meta_782",
+    "PEqualNP.Outside.L_meta_1020",
+    "PEqualNP.MetaComplexity.L1380"
+  ],
+  "context": {
+    "title": "Line-degree 3, unconditional, below the incidence function: a circuit true only at incident inputs accepts at most 888 size + 9N + 444 incident pairs",
+    "context": "SKETCH: a closing file on the public runner: the checked conditional row applied to the recorded statements it assumes; reserved for the closing run. No sorry, no new axiom. Own namespace for every declaration. Namespace: PEqualNP.MetaComplexity.",
+    "dead": [],
+    "unlocks": "Closes the line-degree-3 rung through the public runner."
+  },
+  "closure": null,
+  "closure_blocker": "the gap lists PEqualNP.MetaComplexity.L1380, which is not a plain file of the base tree",
+  "closure_sources": [],
+  "path_exists": false,
+  "explicit_dependencies": null,
+  "missing_dependency_ids": null,
+  "eligibility": "unknown: consult live desk; public posting does not confer ownership",
+  "local_verification": "not_run",
+  "authoritative_verdict": "not_reconciled"
+}

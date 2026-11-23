@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_gct_091 : ∀ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), (∀ t ∈ L, MvPolynomial.eval (fun p => 1 + t p) (PEqualNP.Gct.permPoly ℂ 4) = (Nat.factorial 4 : ℂ)) → Module.finrank ℂ L ≤ 5 := by
+  sorry

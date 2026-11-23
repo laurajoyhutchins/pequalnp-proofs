@@ -1,0 +1,12 @@
+∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+    (∀ a b c : Fin n, ¬ (G.Adj a b ∧ G.Adj b c ∧ G.Adj c a)) →
+    (∀ a b c d : Fin n, a ≠ c → b ≠ d → ¬ (G.Adj a b ∧ G.Adj b c ∧ G.Adj c d ∧ G.Adj d a)) →
+    ∀ u v : Fin n, G.Adj u v →
+      (∀ a ∈ Finset.univ.filter (fun w => G.Adj v w),
+        ∀ b ∈ Finset.univ.filter (fun w => G.Adj v w), ¬ G.Adj a b) ∧
+      (∀ a ∈ Finset.univ.filter (fun w => G.Adj u w),
+        ∀ b ∈ Finset.univ.filter (fun w => G.Adj u w), ¬ G.Adj a b) ∧
+      (∀ a ∈ Finset.univ.filter (fun w => G.Adj v w ∧ w ≠ u) ∪
+              Finset.univ.filter (fun w => G.Adj u w ∧ w ≠ v),
+        ∀ b ∈ Finset.univ.filter (fun w => G.Adj v w ∧ w ≠ u) ∪
+              Finset.univ.filter (fun w => G.Adj u w ∧ w ≠ v), ¬ G.Adj a b)

@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_260 : ∃ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (h p q : ℕ) (gp gq : PEqualNP.CircuitLowerBounds.Gate), PEqualNP.MetaComplexity.IsMinimalCircuit n C ∧ n ≤ h ∧ h < n + C.size ∧ h ≠ C.output ∧ (∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD h false = false → PEqualNP.MetaComplexity.circuitFun n C x = true) ∧ p ≠ q ∧ h < n + p ∧ h < n + q ∧ C.gates[p]? = some gp ∧ C.gates[q]? = some gq ∧ gp.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ gq.op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ h ∈ gp.inputs ∧ h ∈ gq.inputs ∧ (∀ (j : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[j]? = some g → h < n + j → h ∈ (PEqualNP.CircuitLowerBounds.GateOp.casesOn (motive := fun _ => List ℕ) g.op g.inputs g.inputs (g.inputs.take 1) (fun _ => g.inputs) g.inputs) → j = p ∨ j = q) := by
+  sorry

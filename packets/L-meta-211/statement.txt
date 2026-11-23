@@ -1,0 +1,1 @@
+PEqualNP.MetaComplexity.HasTypedRank 4 (fun x : Fin 4 → Bool => decide ((if x 0 = true then 1 else 0) + (if x 1 = true then 2 else 0) + (if x 2 = true then 4 else 0) + (if x 3 = true then 8 else 0) ∈ ({3, 4, 6, 7, 8, 9, 11, 12} : Finset ℕ))) 8

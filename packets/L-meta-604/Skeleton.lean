@@ -1,0 +1,7 @@
+import Mathlib
+import PEqualNP.Defs
+import PEqualNP.MetaComplexity.Helpers.Elim
+import PEqualNP.MetaComplexity.Helpers.ReadersExport
+
+theorem PEqualNP.Outside.L_meta_604 : ∀ (n s : ℕ) (g : (Fin n → Bool) → Bool), (∃ y y' : Fin n → Bool, g y ≠ g y') → (PEqualNP.MetaComplexity.HasCircuitSize (n + 1) (fun x : Fin (n + 1) → Bool => xor (x (Fin.last n)) (g (fun i : Fin n => x i.castSucc))) (s + 4) ↔ (PEqualNP.MetaComplexity.HasCircuitSize n g s ∨ PEqualNP.MetaComplexity.HasCircuitSize n (fun y : Fin n → Bool => !(g y)) s)) := by
+  sorry

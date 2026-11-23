@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_pcx_102 : ¬ ((∀ F1 : Set (PEqualNP.ProofComplexity.Clause (Fin 10)), F1 = {Ca1 | ∃ ea1 ∈ ([(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (0, 5), (1, 6), (2, 7), (3, 8), (4, 9), (5, 7), (7, 9), (9, 6), (6, 8), (8, 5)] : List (Fin 10 × Fin 10)), Ca1 = {(ea1.1, true), (ea1.2, true)}} ∪ {Cb1 | ∃ Sb1 : Finset (Fin 10), Sb1.card = 6 ∧ Cb1 = Sb1.image (fun vb1 : Fin 10 => (vb1, false))} → (∃ πa1, PEqualNP.ProofComplexity.IsRefutation F1 πa1 ∧ ∀ Da1 ∈ πa1, Da1.card ≤ 6) ∧ ¬ ∃ πb1, PEqualNP.ProofComplexity.IsRefutation F1 πb1 ∧ ∀ Db1 ∈ πb1, Db1.card ≤ 5) ∧ (∀ F2 : Set (PEqualNP.ProofComplexity.Clause (Fin 11)), F2 = {Ca2 | ∃ ea2 ∈ ([(0, 9), (0, 10), (1, 4), (1, 8), (2, 5), (2, 10), (3, 6), (3, 7), (4, 8), (4, 10), (5, 8), (5, 9), (6, 7), (6, 10), (7, 9), (8, 9)] : List (Fin 11 × Fin 11)), Ca2 = {(ea2.1, true), (ea2.2, true)}} ∪ {Cb2 | ∃ Sb2 : Finset (Fin 11), Sb2.card = 7 ∧ Cb2 = Sb2.image (fun vb2 : Fin 11 => (vb2, false))} → (∃ πa2, PEqualNP.ProofComplexity.IsRefutation F2 πa2 ∧ ∀ Da2 ∈ πa2, Da2.card ≤ 7) ∧ ¬ ∃ πb2, PEqualNP.ProofComplexity.IsRefutation F2 πb2 ∧ ∀ Db2 ∈ πb2, Db2.card ≤ 6)) := by
+  sorry

@@ -1,0 +1,1363 @@
+{
+  "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "snapshot_sha256": "0df69a492444d525e4d0176b0cae1fa76d02f98f4904ef0fb4c1d366db44cff6",
+  "upstream_sha": "a6fb1ad3452be9050263f025e206582dc2f88295",
+  "observed_at": "2026-11-23T23:15:46Z",
+  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "toolchain": "leanprover/lean4:v4.36.0",
+  "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+  "scope": "public posted gaps; explicit edges only; not a claim allocator",
+  "gaps": [
+    {
+      "id": "L-gct-086",
+      "file": "lean/PEqualNP/Outside/L_gct_086.lean",
+      "packet": "packets/L-gct-086/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-091",
+      "file": "lean/PEqualNP/Outside/L_gct_091.lean",
+      "packet": "packets/L-gct-091/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-122",
+      "file": "lean/PEqualNP/Outside/L_gct_122.lean",
+      "packet": "packets/L-gct-122/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-179",
+      "file": "lean/PEqualNP/Outside/L_gct_179.lean",
+      "packet": "packets/L-gct-179/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-181",
+      "file": "lean/PEqualNP/Outside/L_gct_181.lean",
+      "packet": "packets/L-gct-181/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-182",
+      "file": "lean/PEqualNP/Outside/L_gct_182.lean",
+      "packet": "packets/L-gct-182/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-185",
+      "file": "lean/PEqualNP/Outside/L_gct_185.lean",
+      "packet": "packets/L-gct-185/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-187",
+      "file": "lean/PEqualNP/Outside/L_gct_187.lean",
+      "packet": "packets/L-gct-187/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-190",
+      "file": "lean/PEqualNP/Outside/L_gct_190.lean",
+      "packet": "packets/L-gct-190/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-191",
+      "file": "lean/PEqualNP/Outside/L_gct_191.lean",
+      "packet": "packets/L-gct-191/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-194",
+      "file": "lean/PEqualNP/Outside/L_gct_194.lean",
+      "packet": "packets/L-gct-194/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-195",
+      "file": "lean/PEqualNP/Outside/L_gct_195.lean",
+      "packet": "packets/L-gct-195/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-196",
+      "file": "lean/PEqualNP/Outside/L_gct_196.lean",
+      "packet": "packets/L-gct-196/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-199",
+      "file": "lean/PEqualNP/Outside/L_gct_199.lean",
+      "packet": "packets/L-gct-199/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-210",
+      "file": "lean/PEqualNP/Outside/L_gct_210.lean",
+      "packet": "packets/L-gct-210/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-219",
+      "file": "lean/PEqualNP/Outside/L_gct_219.lean",
+      "packet": "packets/L-gct-219/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-223",
+      "file": "lean/PEqualNP/Outside/L_gct_223.lean",
+      "packet": "packets/L-gct-223/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-gct-228",
+      "file": "lean/PEqualNP/Outside/L_gct_228.lean",
+      "packet": "packets/L-gct-228/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-lib-123",
+      "file": "lean/PEqualNP/Outside/L_lib_123.lean",
+      "packet": "packets/L-lib-123/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1005",
+      "file": "lean/PEqualNP/Outside/L_meta_1005.lean",
+      "packet": "packets/L-meta-1005/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1008",
+      "file": "lean/PEqualNP/Outside/L_meta_1008.lean",
+      "packet": "packets/L-meta-1008/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1021",
+      "file": "lean/PEqualNP/Outside/L_meta_1021.lean",
+      "packet": "packets/L-meta-1021/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1023",
+      "file": "lean/PEqualNP/Outside/L_meta_1023.lean",
+      "packet": "packets/L-meta-1023/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1024",
+      "file": "lean/PEqualNP/Outside/L_meta_1024.lean",
+      "packet": "packets/L-meta-1024/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1025",
+      "file": "lean/PEqualNP/Outside/L_meta_1025.lean",
+      "packet": "packets/L-meta-1025/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1031",
+      "file": "lean/PEqualNP/Outside/L_meta_1031.lean",
+      "packet": "packets/L-meta-1031/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1035",
+      "file": "lean/PEqualNP/Outside/L_meta_1035.lean",
+      "packet": "packets/L-meta-1035/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1045",
+      "file": "lean/PEqualNP/Outside/L_meta_1045.lean",
+      "packet": "packets/L-meta-1045/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1207",
+      "file": "lean/PEqualNP/Outside/L_meta_1207.lean",
+      "packet": "packets/L-meta-1207/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1208",
+      "file": "lean/PEqualNP/Outside/L_meta_1208.lean",
+      "packet": "packets/L-meta-1208/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1324",
+      "file": "lean/PEqualNP/Outside/L_meta_1324.lean",
+      "packet": "packets/L-meta-1324/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1327",
+      "file": "lean/PEqualNP/Outside/L_meta_1327.lean",
+      "packet": "packets/L-meta-1327/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1338",
+      "file": "lean/PEqualNP/Outside/L_meta_1338.lean",
+      "packet": "packets/L-meta-1338/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": "the gap lists PEqualNP.MetaComplexity.L1341, which is not a plain file of the base tree",
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1342",
+      "file": "lean/PEqualNP/Outside/L_meta_1342.lean",
+      "packet": "packets/L-meta-1342/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1343",
+      "file": "lean/PEqualNP/Outside/L_meta_1343.lean",
+      "packet": "packets/L-meta-1343/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1385",
+      "file": "lean/PEqualNP/Outside/L_meta_1385.lean",
+      "packet": "packets/L-meta-1385/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1387",
+      "file": "lean/PEqualNP/Outside/L_meta_1387.lean",
+      "packet": "packets/L-meta-1387/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1389",
+      "file": "lean/PEqualNP/Outside/L_meta_1389.lean",
+      "packet": "packets/L-meta-1389/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": "the gap lists PEqualNP.MetaComplexity.L1352, which is not a plain file of the base tree",
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1390",
+      "file": "lean/PEqualNP/Outside/L_meta_1390.lean",
+      "packet": "packets/L-meta-1390/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": "the gap lists PEqualNP.MetaComplexity.L1341, which is not a plain file of the base tree",
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1391",
+      "file": "lean/PEqualNP/Outside/L_meta_1391.lean",
+      "packet": "packets/L-meta-1391/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": "the gap lists PEqualNP.MetaComplexity.L1380, which is not a plain file of the base tree",
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1393",
+      "file": "lean/PEqualNP/Outside/L_meta_1393.lean",
+      "packet": "packets/L-meta-1393/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1394",
+      "file": "lean/PEqualNP/Outside/L_meta_1394.lean",
+      "packet": "packets/L-meta-1394/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1397",
+      "file": "lean/PEqualNP/Outside/L_meta_1397.lean",
+      "packet": "packets/L-meta-1397/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1399",
+      "file": "lean/PEqualNP/Outside/L_meta_1399.lean",
+      "packet": "packets/L-meta-1399/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1401",
+      "file": "lean/PEqualNP/Outside/L_meta_1401.lean",
+      "packet": "packets/L-meta-1401/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1409",
+      "file": "lean/PEqualNP/Outside/L_meta_1409.lean",
+      "packet": "packets/L-meta-1409/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-141",
+      "file": "lean/PEqualNP/Outside/L_meta_141.lean",
+      "packet": "packets/L-meta-141/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1410",
+      "file": "lean/PEqualNP/Outside/L_meta_1410.lean",
+      "packet": "packets/L-meta-1410/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1411",
+      "file": "lean/PEqualNP/Outside/L_meta_1411.lean",
+      "packet": "packets/L-meta-1411/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1412",
+      "file": "lean/PEqualNP/Outside/L_meta_1412.lean",
+      "packet": "packets/L-meta-1412/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1413",
+      "file": "lean/PEqualNP/Outside/L_meta_1413.lean",
+      "packet": "packets/L-meta-1413/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-1414",
+      "file": "lean/PEqualNP/Outside/L_meta_1414.lean",
+      "packet": "packets/L-meta-1414/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-144",
+      "file": "lean/PEqualNP/Outside/L_meta_144.lean",
+      "packet": "packets/L-meta-144/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-148",
+      "file": "lean/PEqualNP/Outside/L_meta_148.lean",
+      "packet": "packets/L-meta-148/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-167",
+      "file": "lean/PEqualNP/Outside/L_meta_167.lean",
+      "packet": "packets/L-meta-167/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-211",
+      "file": "lean/PEqualNP/Outside/L_meta_211.lean",
+      "packet": "packets/L-meta-211/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-256",
+      "file": "lean/PEqualNP/Outside/L_meta_256.lean",
+      "packet": "packets/L-meta-256/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-260",
+      "file": "lean/PEqualNP/Outside/L_meta_260.lean",
+      "packet": "packets/L-meta-260/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-314",
+      "file": "lean/PEqualNP/Outside/L_meta_314.lean",
+      "packet": "packets/L-meta-314/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-448",
+      "file": "lean/PEqualNP/Outside/L_meta_448.lean",
+      "packet": "packets/L-meta-448/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-449",
+      "file": "lean/PEqualNP/Outside/L_meta_449.lean",
+      "packet": "packets/L-meta-449/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-451",
+      "file": "lean/PEqualNP/Outside/L_meta_451.lean",
+      "packet": "packets/L-meta-451/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-452",
+      "file": "lean/PEqualNP/Outside/L_meta_452.lean",
+      "packet": "packets/L-meta-452/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-455",
+      "file": "lean/PEqualNP/Outside/L_meta_455.lean",
+      "packet": "packets/L-meta-455/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-456",
+      "file": "lean/PEqualNP/Outside/L_meta_456.lean",
+      "packet": "packets/L-meta-456/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-457",
+      "file": "lean/PEqualNP/Outside/L_meta_457.lean",
+      "packet": "packets/L-meta-457/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-461",
+      "file": "lean/PEqualNP/Outside/L_meta_461.lean",
+      "packet": "packets/L-meta-461/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-462",
+      "file": "lean/PEqualNP/Outside/L_meta_462.lean",
+      "packet": "packets/L-meta-462/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-464",
+      "file": "lean/PEqualNP/Outside/L_meta_464.lean",
+      "packet": "packets/L-meta-464/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-467",
+      "file": "lean/PEqualNP/Outside/L_meta_467.lean",
+      "packet": "packets/L-meta-467/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-469",
+      "file": "lean/PEqualNP/Outside/L_meta_469.lean",
+      "packet": "packets/L-meta-469/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-472",
+      "file": "lean/PEqualNP/Outside/L_meta_472.lean",
+      "packet": "packets/L-meta-472/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-518",
+      "file": "lean/PEqualNP/Outside/L_meta_518.lean",
+      "packet": "packets/L-meta-518/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-519",
+      "file": "lean/PEqualNP/Outside/L_meta_519.lean",
+      "packet": "packets/L-meta-519/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-523",
+      "file": "lean/PEqualNP/Outside/L_meta_523.lean",
+      "packet": "packets/L-meta-523/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-541",
+      "file": "lean/PEqualNP/Outside/L_meta_541.lean",
+      "packet": "packets/L-meta-541/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-582",
+      "file": "lean/PEqualNP/Outside/L_meta_582.lean",
+      "packet": "packets/L-meta-582/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-583",
+      "file": "lean/PEqualNP/Outside/L_meta_583.lean",
+      "packet": "packets/L-meta-583/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-586",
+      "file": "lean/PEqualNP/Outside/L_meta_586.lean",
+      "packet": "packets/L-meta-586/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-595",
+      "file": "lean/PEqualNP/Outside/L_meta_595.lean",
+      "packet": "packets/L-meta-595/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-602",
+      "file": "lean/PEqualNP/Outside/L_meta_602.lean",
+      "packet": "packets/L-meta-602/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-604",
+      "file": "lean/PEqualNP/Outside/L_meta_604.lean",
+      "packet": "packets/L-meta-604/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-606",
+      "file": "lean/PEqualNP/Outside/L_meta_606.lean",
+      "packet": "packets/L-meta-606/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-608",
+      "file": "lean/PEqualNP/Outside/L_meta_608.lean",
+      "packet": "packets/L-meta-608/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-612",
+      "file": "lean/PEqualNP/Outside/L_meta_612.lean",
+      "packet": "packets/L-meta-612/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-618",
+      "file": "lean/PEqualNP/Outside/L_meta_618.lean",
+      "packet": "packets/L-meta-618/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-619",
+      "file": "lean/PEqualNP/Outside/L_meta_619.lean",
+      "packet": "packets/L-meta-619/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-636",
+      "file": "lean/PEqualNP/Outside/L_meta_636.lean",
+      "packet": "packets/L-meta-636/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-650",
+      "file": "lean/PEqualNP/Outside/L_meta_650.lean",
+      "packet": "packets/L-meta-650/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-651",
+      "file": "lean/PEqualNP/Outside/L_meta_651.lean",
+      "packet": "packets/L-meta-651/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-652",
+      "file": "lean/PEqualNP/Outside/L_meta_652.lean",
+      "packet": "packets/L-meta-652/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-670",
+      "file": "lean/PEqualNP/Outside/L_meta_670.lean",
+      "packet": "packets/L-meta-670/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-764",
+      "file": "lean/PEqualNP/Outside/L_meta_764.lean",
+      "packet": "packets/L-meta-764/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-765",
+      "file": "lean/PEqualNP/Outside/L_meta_765.lean",
+      "packet": "packets/L-meta-765/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-909",
+      "file": "lean/PEqualNP/Outside/L_meta_909.lean",
+      "packet": "packets/L-meta-909/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-911",
+      "file": "lean/PEqualNP/Outside/L_meta_911.lean",
+      "packet": "packets/L-meta-911/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-913",
+      "file": "lean/PEqualNP/Outside/L_meta_913.lean",
+      "packet": "packets/L-meta-913/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-915",
+      "file": "lean/PEqualNP/Outside/L_meta_915.lean",
+      "packet": "packets/L-meta-915/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-920",
+      "file": "lean/PEqualNP/Outside/L_meta_920.lean",
+      "packet": "packets/L-meta-920/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-921",
+      "file": "lean/PEqualNP/Outside/L_meta_921.lean",
+      "packet": "packets/L-meta-921/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-926",
+      "file": "lean/PEqualNP/Outside/L_meta_926.lean",
+      "packet": "packets/L-meta-926/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-949",
+      "file": "lean/PEqualNP/Outside/L_meta_949.lean",
+      "packet": "packets/L-meta-949/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-951",
+      "file": "lean/PEqualNP/Outside/L_meta_951.lean",
+      "packet": "packets/L-meta-951/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-952",
+      "file": "lean/PEqualNP/Outside/L_meta_952.lean",
+      "packet": "packets/L-meta-952/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-955",
+      "file": "lean/PEqualNP/Outside/L_meta_955.lean",
+      "packet": "packets/L-meta-955/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-956",
+      "file": "lean/PEqualNP/Outside/L_meta_956.lean",
+      "packet": "packets/L-meta-956/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-957",
+      "file": "lean/PEqualNP/Outside/L_meta_957.lean",
+      "packet": "packets/L-meta-957/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-969",
+      "file": "lean/PEqualNP/Outside/L_meta_969.lean",
+      "packet": "packets/L-meta-969/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-971",
+      "file": "lean/PEqualNP/Outside/L_meta_971.lean",
+      "packet": "packets/L-meta-971/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-972",
+      "file": "lean/PEqualNP/Outside/L_meta_972.lean",
+      "packet": "packets/L-meta-972/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-982",
+      "file": "lean/PEqualNP/Outside/L_meta_982.lean",
+      "packet": "packets/L-meta-982/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-984",
+      "file": "lean/PEqualNP/Outside/L_meta_984.lean",
+      "packet": "packets/L-meta-984/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-987",
+      "file": "lean/PEqualNP/Outside/L_meta_987.lean",
+      "packet": "packets/L-meta-987/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-991",
+      "file": "lean/PEqualNP/Outside/L_meta_991.lean",
+      "packet": "packets/L-meta-991/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-992",
+      "file": "lean/PEqualNP/Outside/L_meta_992.lean",
+      "packet": "packets/L-meta-992/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-997",
+      "file": "lean/PEqualNP/Outside/L_meta_997.lean",
+      "packet": "packets/L-meta-997/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-meta-999",
+      "file": "lean/PEqualNP/Outside/L_meta_999.lean",
+      "packet": "packets/L-meta-999/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-093",
+      "file": "lean/PEqualNP/Outside/L_pcx_093.lean",
+      "packet": "packets/L-pcx-093/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-094",
+      "file": "lean/PEqualNP/Outside/L_pcx_094.lean",
+      "packet": "packets/L-pcx-094/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-095",
+      "file": "lean/PEqualNP/Outside/L_pcx_095.lean",
+      "packet": "packets/L-pcx-095/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-096",
+      "file": "lean/PEqualNP/Outside/L_pcx_096.lean",
+      "packet": "packets/L-pcx-096/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-097",
+      "file": "lean/PEqualNP/Outside/L_pcx_097.lean",
+      "packet": "packets/L-pcx-097/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-098",
+      "file": "lean/PEqualNP/Outside/L_pcx_098.lean",
+      "packet": "packets/L-pcx-098/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-099",
+      "file": "lean/PEqualNP/Outside/L_pcx_099.lean",
+      "packet": "packets/L-pcx-099/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-100",
+      "file": "lean/PEqualNP/Outside/L_pcx_100.lean",
+      "packet": "packets/L-pcx-100/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-101",
+      "file": "lean/PEqualNP/Outside/L_pcx_101.lean",
+      "packet": "packets/L-pcx-101/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-102",
+      "file": "lean/PEqualNP/Outside/L_pcx_102.lean",
+      "packet": "packets/L-pcx-102/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-103",
+      "file": "lean/PEqualNP/Outside/L_pcx_103.lean",
+      "packet": "packets/L-pcx-103/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-104",
+      "file": "lean/PEqualNP/Outside/L_pcx_104.lean",
+      "packet": "packets/L-pcx-104/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-105",
+      "file": "lean/PEqualNP/Outside/L_pcx_105.lean",
+      "packet": "packets/L-pcx-105/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-106",
+      "file": "lean/PEqualNP/Outside/L_pcx_106.lean",
+      "packet": "packets/L-pcx-106/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-107",
+      "file": "lean/PEqualNP/Outside/L_pcx_107.lean",
+      "packet": "packets/L-pcx-107/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-108",
+      "file": "lean/PEqualNP/Outside/L_pcx_108.lean",
+      "packet": "packets/L-pcx-108/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-109",
+      "file": "lean/PEqualNP/Outside/L_pcx_109.lean",
+      "packet": "packets/L-pcx-109/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    },
+    {
+      "id": "L-pcx-110",
+      "file": "lean/PEqualNP/Outside/L_pcx_110.lean",
+      "packet": "packets/L-pcx-110/packet.json",
+      "status": null,
+      "depends_on": null,
+      "closure_blocker": null,
+      "path_exists": false,
+      "known_downstream": []
+    }
+  ]
+}

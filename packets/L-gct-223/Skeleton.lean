@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_gct_223 : ∃ f g : Fin 6 → ℂ, f ≠ 0 ∧ (∀ c : ℂ, g ≠ c • f) ∧ ∀ s r : ℂ, Matrix.permanent (Matrix.of fun (i j : Fin 6) => (1 : ℂ) + s * f (j - i) + r * g (j - i)) = 720 := by
+  sorry
