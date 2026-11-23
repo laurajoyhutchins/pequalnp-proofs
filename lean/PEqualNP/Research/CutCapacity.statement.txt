@@ -1,0 +1,7 @@
+∀ (r k m : ℕ)
+  (rows : Fin r → Fin m → Bool)
+  (encode : Fin r → Fin k → Bool)
+  (decode : (Fin k → Bool) → Fin m → Bool),
+  Function.Injective rows →
+  (∀ i, decode (encode i) = rows i) →
+  r ≤ 2 ^ k
