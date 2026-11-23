@@ -70,6 +70,27 @@ exit "${BUILD_EXIT:-0}"
         self.assertEqual(r.returncode, 3)
         self.assertEqual((self.receipt / "result.txt").read_text().strip(), "DIAGNOSTIC_INVALIDATED")
 
+    def test_warm_opt_in(self):
+        self.put("tools/build.sh", '''#!/bin/bash
+[[ "$1 $2 $3" == "--lake build +PEqualNP.Research.Example" ]] || exit 94
+[[ -n "$PEQUALNP_HOME" && -z "${LAKE_ARTIFACT_CACHE+x}" ]] || exit 95
+mkdir -p "$PEQUALNP_HOME/lake-cache"
+echo fixture > "$PEQUALNP_HOME/lake-cache/probe"
+echo upstream-queue
+''')
+        self.put("tools/bin/lake", "#!/bin/bash\nexit 0\n")
+        (self.root / "tools/bin/lake").chmod(0o755)
+        cache = pathlib.Path(self.tmp.name) / "warm"
+        r = self.run_diag(PNP_DIAGNOSTIC_CACHE_HOME=str(cache))
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual((self.receipt / "cache-mode.txt").read_text().strip(), "upstream-lake-cache")
+        self.assertTrue((cache / "lake-cache/probe").exists())
+        self.assertIn("upstream-queue", (self.receipt / "build.log").read_text())
+
+    def test_warm_rejects_checkout_cache(self):
+        r = self.run_diag(PNP_DIAGNOSTIC_CACHE_HOME=str(self.root / "cache"))
+        self.assertEqual(r.returncode, 2)
+
     def test_invalid_target(self):
         self.assertEqual(self.run_diag("lean/PEqualNP/../Bad.lean").returncode, 2)
 

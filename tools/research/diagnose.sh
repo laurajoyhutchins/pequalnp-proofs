@@ -30,11 +30,32 @@ for var in $(compgen -e); do
   case "$var" in LAKE|LAKE_*|LEAN_*|ELAN_TOOLCHAIN|PEQUALNP_IN_QUEUE) unset "$var";; esac
 done
 export LAKE_ARTIFACT_CACHE=false
+# Opt in to the upstream diagnostic artifact cache. Never use this mode for a full checker run.
+warm=${PNP_DIAGNOSTIC_CACHE_HOME:-}
+if [[ -n "$warm" ]]; then
+  [[ "$warm" = /* ]] || exit 2
+  mkdir -p "$warm"
+  warm=$(realpath "$warm")
+  [[ "$warm" != "$root" && "$warm" != "$root/"* ]] || exit 2
+  [[ "$warm" != "$receipt" && "$warm" != "$receipt/"* && "$receipt" != "$warm/"* ]] || exit 2
+  [[ -f "$root/tools/build.sh" && -x "$root/tools/bin/lake" ]] || exit 2
+  unset PEQUALNP_REAL_LAKE
+  export PEQUALNP_HOME="$warm" PEQUALNP_BUILD_SLOTS=1
+  unset LAKE_ARTIFACT_CACHE
+  echo upstream-lake-cache > "$receipt/cache-mode.txt"
+else
+  echo same-tree-only > "$receipt/cache-mode.txt"
+fi
 start=$SECONDS
 set +e
 (
   cd lean
-  lean --version && lake --version && lake build "+$module"
+  lean --version && lake --version || exit "$?"
+  if [[ -n "$warm" ]]; then
+    bash "$root/tools/build.sh" --lake build "+$module"
+  else
+    lake build "+$module"
+  fi
 ) 2>&1 | tee "$receipt/build.log"
 codes=("${PIPESTATUS[@]}")
 set -e

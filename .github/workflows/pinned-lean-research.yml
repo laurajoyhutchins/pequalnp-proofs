@@ -78,8 +78,19 @@ jobs:
           lake exe cache get
           test "$(git -C .lake/packages/mathlib rev-parse HEAD)" = fc4f59e577feb1a4956671bc04ac18aaaf8cd842
           test -f .lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean
+      - name: Restore branch-local diagnostic artifacts
+        if: ${{ startsWith(github.ref, 'refs/heads/research/diagnostic-') }}
+        id: warm-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/pnp-diagnostic-cache/lake-cache
+          key: diag-lake-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean/lean-toolchain', 'lean/lake-manifest.json', 'lean/lakefile.toml', 'tools/build.sh', 'tools/bin/lake') }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            diag-lake-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean/lean-toolchain', 'lean/lake-manifest.json', 'lean/lakefile.toml', 'tools/build.sh', 'tools/bin/lake') }}-${{ github.ref_name }}-
       - name: Target-only diagnostic (not a proof verdict)
         if: ${{ startsWith(github.ref, 'refs/heads/research/diagnostic-') }}
+        env:
+          PNP_DIAGNOSTIC_CACHE_HOME: ${{ runner.temp }}/pnp-diagnostic-cache
         shell: bash
         run: |
           set -euo pipefail
@@ -94,6 +105,40 @@ jobs:
           done < research/diagnostic-targets.txt
           test "$n" -gt 0
           exit "$rc"
+      - name: Measure warm incremental and artifact-restored smoke builds
+        if: ${{ github.ref == 'refs/heads/research/diagnostic-warm-smoke' }}
+        env:
+          PNP_DIAGNOSTIC_CACHE_HOME: ${{ runner.temp }}/pnp-diagnostic-cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          target=lean/PEqualNP/Research/DiagnosticSmoke.lean
+          test "$(cat research/diagnostic-targets.txt)" = "$target"
+          bash tools/research/diagnose.sh "$target" "$RUNNER_TEMP/evidence/warm-same-tree"
+          printf '\n-- Diagnostic edit\n' >> "$target"
+          bash tools/research/diagnose.sh "$target" "$RUNNER_TEMP/evidence/warm-edited"
+          git restore -- "$target"
+          # This disposable smoke job has no other project builds. Retain pinned package outputs.
+          rm -rf lean/.lake/build
+          bash tools/research/diagnose.sh "$target" "$RUNNER_TEMP/evidence/warm-restored"
+      - name: Limit diagnostic cache size
+        if: ${{ startsWith(github.ref, 'refs/heads/research/diagnostic-') }}
+        id: cache-budget
+        shell: bash
+        run: |
+          set -euo pipefail
+          p="$RUNNER_TEMP/pnp-diagnostic-cache/lake-cache"
+          if [[ -d "$p" ]]; then
+            bytes=$(du -sb "$p" | cut -f1)
+            echo "bytes=$bytes" | tee "$RUNNER_TEMP/evidence/diagnostic-cache-size.txt"
+            if [[ "$bytes" -le 1073741824 ]]; then echo "save=true" >> "$GITHUB_OUTPUT"; fi
+          fi
+      - name: Save bounded diagnostic artifacts
+        if: ${{ startsWith(github.ref, 'refs/heads/research/diagnostic-') && steps.cache-budget.outputs.save == 'true' && steps.warm-cache.outputs.cache-hit != 'true' }}
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/pnp-diagnostic-cache/lake-cache
+          key: ${{ steps.warm-cache.outputs.cache-primary-key }}
       - name: Provision checker memory
         if: ${{ !startsWith(github.ref, 'refs/heads/research/diagnostic-') }}
         shell: bash
