@@ -1,0 +1,446 @@
+name: Export pinned swarm Mathlib for offline VM
+on:
+  push:
+    branches: [toolchains/lean-v4.36.0-transfer]
+    paths: [.github/workflows/swarm-offline-mathlib.yml]
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: brilliant-hq/pequalnp-proofs
+          ref: a6fb1ad3452be9050263f025e206582dc2f88295
+          path: swarm
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Prepare disk and install exact Lean release
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo rm -rf /usr/local/lib/android /opt/ghc /usr/local/.ghcup /usr/share/swift /opt/hostedtoolcache/CodeQL
+          df -h .
+          curl -fL --retry 3 https://github.com/leanprover/lean4/releases/download/v4.36.0/lean-4.36.0-linux.tar.zst -o "$RUNNER_TEMP/lean.tar.zst"
+          echo "2b7ab1ed8b92d2e6abfaf41344823b510064dbc9c0260cac73eb496ab2dea6eb  $RUNNER_TEMP/lean.tar.zst" | sha256sum -c
+          tar --zstd -xf "$RUNNER_TEMP/lean.tar.zst" -C "$RUNNER_TEMP"
+          rm "$RUNNER_TEMP/lean.tar.zst"
+          echo "$RUNNER_TEMP/lean-4.36.0/bin" >> "$GITHUB_PATH"
+      - name: Fetch Mathlib and verify every manifest pin
+        working-directory: swarm/lean
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(cat lean-toolchain)" = leanprover/lean4:v4.36.0
+          lean --version
+          lake --version
+          lake exe cache get
+          python3 - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          m = json.loads(Path('lake-manifest.json').read_text())
+          for p in m['packages']:
+              d = Path(m['packagesDir']) / p['name']
+              rev = subprocess.check_output(['git','-C',str(d),'rev-parse','HEAD'],text=True).strip()
+              assert rev == p['rev'], (p['name'],rev,p['rev'])
+              assert not subprocess.check_output(['git','-C',str(d),'diff','HEAD','--'],text=True), p['name']
+              print(p['name'], rev)
+          assert next(p['rev'] for p in m['packages'] if p['name']=='mathlib') == 'fc4f59e577feb1a4956671bc04ac18aaaf8cd842'
+          PY
+          test -f .lake/packages/mathlib/.lake/build/lib/lean/Mathlib.olean
+          cat > "$RUNNER_TEMP/CacheSmoke.lean" <<'LEAN'
+          import Mathlib
+          theorem cacheSmoke (x y : ℂ) : (x+y)*(x-y) = x^2-y^2 := by ring
+          #print axioms cacheSmoke
+          LEAN
+          lake env lean "$RUNNER_TEMP/CacheSmoke.lean"
+          git diff --exit-code
+          du -sh .lake/packages
+      - name: Package exact source checkout and prebuilt dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p transfer
+          git -C swarm rev-parse HEAD > transfer/UPSTREAM_COMMIT
+          sha256sum swarm/lean/lean-toolchain swarm/lean/lake-manifest.json swarm/lean/lakefile.toml swarm/tools/check-lean.mjs > transfer/CONFIG.sha256
+          cp swarm/lean/lake-manifest.json transfer/lake-manifest.json
+          tar --exclude=swarm/lean/.lake/build --exclude=swarm/lean/.lake/check.lock -cf - swarm | zstd -T2 -3 | split -b 180M -d -a 3 - transfer/swarm-offline.tar.zst.part-
+          (cd transfer && sha256sum swarm-offline.tar.zst.part-* > PARTS.sha256)
+          cat transfer/swarm-offline.tar.zst.part-* | sha256sum | awk '{print $1 "  swarm-offline.tar.zst"}' > transfer/ARCHIVE.sha256
+          count=$(find transfer -name 'swarm-offline.tar.zst.part-*' | wc -l)
+          test "$count" -le 40
+          test "$count" -gt 0
+          ls -lh transfer
+      - name: Transfer manifest
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-manifest
+          path: |
+            transfer/*.sha256
+            transfer/UPSTREAM_COMMIT
+            transfer/lake-manifest.json
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 000
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-000') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-000
+          path: transfer/swarm-offline.tar.zst.part-000
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 001
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-001') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-001
+          path: transfer/swarm-offline.tar.zst.part-001
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 002
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-002') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-002
+          path: transfer/swarm-offline.tar.zst.part-002
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 003
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-003') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-003
+          path: transfer/swarm-offline.tar.zst.part-003
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 004
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-004') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-004
+          path: transfer/swarm-offline.tar.zst.part-004
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 005
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-005') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-005
+          path: transfer/swarm-offline.tar.zst.part-005
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 006
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-006') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-006
+          path: transfer/swarm-offline.tar.zst.part-006
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 007
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-007') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-007
+          path: transfer/swarm-offline.tar.zst.part-007
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 008
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-008') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-008
+          path: transfer/swarm-offline.tar.zst.part-008
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 009
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-009') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-009
+          path: transfer/swarm-offline.tar.zst.part-009
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 010
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-010') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-010
+          path: transfer/swarm-offline.tar.zst.part-010
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 011
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-011') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-011
+          path: transfer/swarm-offline.tar.zst.part-011
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 012
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-012') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-012
+          path: transfer/swarm-offline.tar.zst.part-012
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 013
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-013') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-013
+          path: transfer/swarm-offline.tar.zst.part-013
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 014
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-014') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-014
+          path: transfer/swarm-offline.tar.zst.part-014
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 015
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-015') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-015
+          path: transfer/swarm-offline.tar.zst.part-015
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 016
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-016') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-016
+          path: transfer/swarm-offline.tar.zst.part-016
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 017
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-017') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-017
+          path: transfer/swarm-offline.tar.zst.part-017
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 018
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-018') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-018
+          path: transfer/swarm-offline.tar.zst.part-018
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 019
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-019') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-019
+          path: transfer/swarm-offline.tar.zst.part-019
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 020
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-020') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-020
+          path: transfer/swarm-offline.tar.zst.part-020
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 021
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-021') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-021
+          path: transfer/swarm-offline.tar.zst.part-021
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 022
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-022') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-022
+          path: transfer/swarm-offline.tar.zst.part-022
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 023
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-023') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-023
+          path: transfer/swarm-offline.tar.zst.part-023
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 024
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-024') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-024
+          path: transfer/swarm-offline.tar.zst.part-024
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 025
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-025') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-025
+          path: transfer/swarm-offline.tar.zst.part-025
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 026
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-026') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-026
+          path: transfer/swarm-offline.tar.zst.part-026
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 027
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-027') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-027
+          path: transfer/swarm-offline.tar.zst.part-027
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 028
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-028') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-028
+          path: transfer/swarm-offline.tar.zst.part-028
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 029
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-029') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-029
+          path: transfer/swarm-offline.tar.zst.part-029
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 030
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-030') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-030
+          path: transfer/swarm-offline.tar.zst.part-030
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 031
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-031') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-031
+          path: transfer/swarm-offline.tar.zst.part-031
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 032
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-032') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-032
+          path: transfer/swarm-offline.tar.zst.part-032
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 033
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-033') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-033
+          path: transfer/swarm-offline.tar.zst.part-033
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 034
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-034') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-034
+          path: transfer/swarm-offline.tar.zst.part-034
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 035
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-035') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-035
+          path: transfer/swarm-offline.tar.zst.part-035
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 036
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-036') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-036
+          path: transfer/swarm-offline.tar.zst.part-036
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 037
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-037') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-037
+          path: transfer/swarm-offline.tar.zst.part-037
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 038
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-038') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-038
+          path: transfer/swarm-offline.tar.zst.part-038
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Transfer part 039
+        if: ${{ hashFiles('transfer/swarm-offline.tar.zst.part-039') != '' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: swarm-offline-part-039
+          path: transfer/swarm-offline.tar.zst.part-039
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
