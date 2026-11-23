@@ -3,14 +3,14 @@ name: Pinned Lean research verification
 on:
   push:
     branches:
-      - research/pinned-lean-verification
+      - research/one-not-parent-packing
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: pinned-lean-research
+  group: pinned-lean-one-not-parent-packing
   cancel-in-progress: false
 
 jobs:
