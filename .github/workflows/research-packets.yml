@@ -46,3 +46,72 @@ jobs:
           path: ${{ runner.temp }}/packets/
           if-no-files-found: error
           retention-days: 7
+
+  publish:
+    needs: ingest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: research-packets
+          path: ${{ runner.temp }}/packet-data
+      - name: Publish generated data, never execute it
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          data="$RUNNER_TEMP/packet-data"
+          # Only the known packet layout may enter the generated data branch.
+          python3 - "$data" <<'PY'
+          import json, pathlib, re, sys
+          root=pathlib.Path(sys.argv[1])
+          index=json.loads((root/'index.json').read_text())
+          expected={'index.json'}
+          for gap in index['gaps']:
+              gid=gap['id']
+              assert re.fullmatch(r'L-[a-z0-9]+(-[a-z0-9]+)*',gid)
+              expected.update(f'packets/{gid}/{name}' for name in ('packet.json','statement.txt','Skeleton.lean'))
+          actual=set()
+          for p in root.rglob('*'):
+              assert not p.is_symlink()
+              if p.is_dir(): continue
+              assert p.is_file()
+              actual.add(p.relative_to(root).as_posix())
+          assert actual==expected
+          PY
+          cd "$data"
+          git init -q
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git remote add origin https://github.com/laurajoyhutchins/pequalnp-proofs.git
+          gh auth setup-git --hostname github.com
+          old=$(git ls-remote origin refs/heads/research/frontier | cut -f1)
+          if [ -n "$old" ]; then
+            git fetch -q --depth 1 origin refs/heads/research/frontier
+            [ "$(git rev-parse FETCH_HEAD)" = "$old" ]
+            git show "$old:index.json" > "$RUNNER_TEMP/old-index.json"
+            if python3 - "$RUNNER_TEMP/old-index.json" index.json <<'PY'
+          import json,sys
+          a,b=(json.load(open(p)) for p in sys.argv[1:])
+          keys=('snapshot_sha256','upstream_sha','generator_sha256')
+          sys.exit(0 if all(a.get(k) is not None and a[k]==b.get(k) for k in keys) else 1)
+          PY
+            then
+              echo 'No change in source snapshot, upstream revision or generator.' >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+          fi
+          git add -- index.json packets/
+          tree=$(git write-tree)
+          if [ -n "$old" ]; then
+            commit=$(printf '%s\n' 'Refresh public swarm research packets' | git commit-tree "$tree" -p "$old")
+          else
+            commit=$(printf '%s\n' 'Initialize generated swarm research packets' | git commit-tree "$tree")
+          fi
+          # Non-forced push protects the existing branch against concurrent changes.
+          git push --porcelain origin "$commit:refs/heads/research/frontier"
+          echo "Published generated frontier: $commit" >> "$GITHUB_STEP_SUMMARY"

@@ -5,7 +5,7 @@ import { readFileSync, writeFileSync, mkdirSync, lstatSync, existsSync } from 'n
 import { resolve, join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { pathToFileURL } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
 export const SOURCE = 'https://data.pequalnp.com/data/desk/gaps.json';
 const hash = b => createHash('sha256').update(b).digest('hex');
 const save = (p, v) => writeFileSync(p, JSON.stringify(v, null, 2) + '\n', {flag:'wx'});
@@ -23,7 +23,7 @@ export async function compile(base, snapshot, out, observed) {
     ids.add(g.id);
   }
   const identity = {source:SOURCE, snapshot_sha256:hash(raw), upstream_sha:sha,
-    observed_at:observed, guard_sha256:hash(readFileSync(guardPath)),
+    observed_at:observed, generator_sha256:hash(readFileSync(fileURLToPath(import.meta.url))), guard_sha256:hash(readFileSync(guardPath)),
     toolchain:readFileSync(join(base,'lean/lean-toolchain'),'utf8').trim(),
     manifest_sha256:hash(readFileSync(join(base,'lean/lake-manifest.json')))};
   mkdirSync(out);
