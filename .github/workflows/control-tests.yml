@@ -14,3 +14,29 @@ jobs:
         with:
           persist-credentials: false
       - run: python3 -m unittest discover -s tools/control -p 'test_*.py' -v
+      - name: Historical real-proof export regression (no publication)
+        shell: bash
+        run: |
+          set -euo pipefail
+          base=a6fb1ad3452be9050263f025e206582dc2f88295
+          merged=fcb704adb1639e44aef1e8cc3b4bdd8cb7c31dce
+          git init -q "$RUNNER_TEMP/base"
+          git -C "$RUNNER_TEMP/base" fetch -q --depth 1 https://github.com/brilliant-hq/pequalnp-proofs.git "$base"
+          git -C "$RUNNER_TEMP/base" checkout -q --detach FETCH_HEAD
+          git -C "$RUNNER_TEMP/base" fetch -q --depth 1 https://github.com/brilliant-hq/pequalnp-proofs.git "$merged"
+          git -C "$RUNNER_TEMP/base" show "$merged:lean/PEqualNP/Outside/L_pcx_101.lean" > "$RUNNER_TEMP/proof.lean"
+          PYTHONPATH=tools/control python3 - "$RUNNER_TEMP/base" "$RUNNER_TEMP/proof.lean" <<'PY'
+          from pathlib import Path
+          import sys
+          from export_candidate import construct,digest,git
+          base,proof=map(Path,sys.argv[1:])
+          source=proof.read_bytes()
+          assert digest(source)=='c5aacf87b3e81fd3ac88b7534e37a9a76b4adc2798a270896f5328ed5b1f6c43'
+          rev='a6fb1ad3452be9050263f025e206582dc2f88295'
+          path='lean/PEqualNP/Outside/L_pcx_101.lean'
+          commit,blob=construct(base,rev,path,source,'L-pcx-101')
+          assert blob=='48abb85c391722eaaf6f10345ce4de646bed350f'
+          assert (commit,blob)==construct(base,rev,path,source,'L-pcx-101')
+          assert git(base,'rev-parse',commit+'^').decode().strip()==rev
+          print('HISTORICAL EXPORT CONTROL:',commit,blob,'one added plain file; not authorized; no push')
+          PY

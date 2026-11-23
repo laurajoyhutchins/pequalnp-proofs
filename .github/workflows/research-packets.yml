@@ -7,7 +7,7 @@ on:
   push:
     branches: [research/workstation]
     paths:
-      - 'tools/control/**'
+      - 'tools/control/packets.mjs'
       - '.github/workflows/research-packets.yml'
 
 permissions:
