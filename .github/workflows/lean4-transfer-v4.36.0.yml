@@ -1,0 +1,61 @@
+name: Transfer official Lean v4.36.0 Linux distribution
+
+on:
+  push:
+    branches:
+      - toolchains/lean-v4.36.0-transfer
+    paths:
+      - .github/workflows/lean4-transfer-v4.36.0.yml
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Acquire verify official SHA-256 and split
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p transfer
+          curl --fail --location --retry 3 --retry-all-errors \
+            'https://github.com/leanprover/lean4/releases/download/v4.36.0/lean-4.36.0-linux.tar.zst' \
+            --output transfer/lean-4.36.0-linux.tar.zst
+          printf '%s  %s\n' \
+            '2b7ab1ed8b92d2e6abfaf41344823b510064dbc9c0260cac73eb496ab2dea6eb' \
+            'transfer/lean-4.36.0-linux.tar.zst' | sha256sum --check
+          test "$(stat -c %s transfer/lean-4.36.0-linux.tar.zst)" -eq 607649028
+          split --bytes=200M transfer/lean-4.36.0-linux.tar.zst \
+            transfer/lean-4.36.0-linux.tar.zst.part-
+          rm transfer/lean-4.36.0-linux.tar.zst
+          (cd transfer && sha256sum lean-4.36.0-linux.tar.zst.part-* > PARTS.sha256)
+          test "$(find transfer -name 'lean-4.36.0-linux.tar.zst.part-*' | wc -l)" -eq 3
+          cat transfer/PARTS.sha256
+      - name: Transfer part aa and manifest
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: lean4-v4.36.0-linux-part-aa
+          path: |
+            transfer/lean-4.36.0-linux.tar.zst.part-aa
+            transfer/PARTS.sha256
+          compression-level: 0
+          retention-days: 2
+          if-no-files-found: error
+      - name: Transfer part ab
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: lean4-v4.36.0-linux-part-ab
+          path: transfer/lean-4.36.0-linux.tar.zst.part-ab
+          compression-level: 0
+          retention-days: 2
+          if-no-files-found: error
+      - name: Transfer part ac
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: lean4-v4.36.0-linux-part-ac
+          path: transfer/lean-4.36.0-linux.tar.zst.part-ac
+          compression-level: 0
+          retention-days: 2
+          if-no-files-found: error
