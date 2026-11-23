@@ -1,8 +1,8 @@
 {
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "snapshot_sha256": "c53716e44854e060a0db25c066e9a7eca5243c91ddad54114eb924b510adb2ff",
-  "upstream_sha": "e3b1828a4423909b34c8d8184be1e208451c631a",
-  "observed_at": "2026-11-23T23:38:06Z",
+  "snapshot_sha256": "89f5dfbd1edd3e12bfa60118b82c9f02ad5c379cbd15da243ee62f898afa51fa",
+  "upstream_sha": "228a791d1cd6ace5808ffa557f3cc6bfcc78ffb7",
+  "observed_at": "2026-11-23T23:40:07Z",
   "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
   "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
   "toolchain": "leanprover/lean4:v4.36.0",
@@ -836,7 +836,7 @@
       "status": null,
       "depends_on": null,
       "closure_blocker": null,
-      "path_exists": false,
+      "path_exists": true,
       "known_downstream": []
     },
     {
