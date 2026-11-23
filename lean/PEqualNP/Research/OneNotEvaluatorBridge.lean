@@ -98,7 +98,7 @@ private lemma pre_mono {n : ℕ} (C : Circuit) (q : ℕ)
           (if v < w then value C x v else false) = true →
           (if v < w then value C y v else false) = true := by
         by_cases hv : v < w
-        · simpa only [if_pos hv] using ih v hv (hv.trans hwq)
+        · simpa only [ite_eq_left hv] using ih v hv (hv.trans hwq)
         · simp [hv]
       have ex := gate_value C x w (by omega) hw
       have ey := gate_value C y w (by omega) hw
@@ -149,8 +149,8 @@ theorem notAntitone (n : ℕ) (gates : List Gate)
   let X (A : Finset (Fin n)) : Fin n → Bool := fun v => decide (v ∈ A)
   have hn : n ≤ w := by dsimp [w]; omega
   have hw : w < n + C.size := by
-    have := q.isLt
-    simp [w, C, Circuit.size]
+    change n + q.val < n + gates.length
+    exact Nat.add_lt_add_left q.isLt n
   have hj : w-n < gates.length := by
     change w < n + gates.length at hw
     omega
@@ -158,7 +158,8 @@ theorem notAntitone (n : ℕ) (gates : List Gate)
   let g := C.gates[w-n]'(by simpa [C] using hj)
   have hg : g.op = GateOp.not := by
     change (gates[w-n]'hj).op = GateOp.not
-    simpa only [hindex, List.get_eq_getElem] using hq
+    rw [hindex]
+    exact hq
   have hpre : ∀ u, n ≤ u → u < w → ∀ hu : u < n + C.size,
       let g' := C.gates[u-n]'(by unfold Circuit.size at hu; omega)
       g'.op = GateOp.and ∨ g'.op = GateOp.or := by
@@ -178,7 +179,7 @@ theorem notAntitone (n : ℕ) (gates : List Gate)
       (if t < w then value C (X x) t else false) = true →
       (if t < w then value C (X y) t else false) = true := by
     by_cases ht : t < w
-    · simp only [if_pos ht]
+    · simp only [ite_eq_left ht]
       apply pre_mono C w hpre _ _ _ t ht
       intro v hv
       simp [X] at hv ⊢
@@ -200,8 +201,7 @@ theorem notAntitone (n : ℕ) (gates : List Gate)
     | false => rfl
     | true =>
       have hyt := hread t hx
-      rw [hyt] at hy
-      contradiction
+      simp [hyt] at hy
 
 
 end PEqualNP.Research.OneNotEvaluatorBridge
@@ -308,44 +308,17 @@ theorem PEqualNP.Research.OneNotEvaluatorBridge : ∀ (n m : ℕ) (S : Fin m →
       intro hg
       let q : Fin gates.length := ⟨w-n, hj⟩
       have hq : (gates.get q).op = GateOp.not := hg
-      have hpre : ∀ u, n ≤ u → u < w → ∀ hu : u < n + C.size,
-          let g' := C.gates[u-n]'(by unfold Circuit.size at hu; omega)
-          g'.op = GateOp.and ∨ g'.op = GateOp.or := by
-        intro u hun huw hu
-        have hul : u-n < gates.length := by
-          change u < n + gates.length at hu
-          omega
-        let q' : Fin gates.length := ⟨u-n, hul⟩
-        have hm : gates.get q' ∈ gates := List.get_mem _ _
-        rcases (hG _ hm).1 with ha | ho' | hn'
-        · exact Or.inl ha
-        · exact Or.inr ho'
-        · have he := congrArg Fin.val (not_unique gates hnot q' q hn' hq)
-          change u-n = w-n at he
-          omega
-      have hread (t : ℕ) :
-          (if t < w then value C (X ∅) t else false) = true →
-          (if t < w then value C (X Finset.univ) t else false) = true := by
-        by_cases ht : t < w
-        · simp only [if_pos ht]
-          apply pre_mono C w hpre _ _ _ t ht
-          intro v _
-          simp [X]
-        · simp [ht]
-      have h0 : value C (X ∅) w = false := by
-        cases h : value C (X ∅) w
-        · rfl
-        · exact False.elim (hv0 h)
-      have h1 : value C (X Finset.univ) w = true := hv1
-      rw [hval, hg] at h0 h1
-      cases hins : g.inputs with
-      | nil => simp [hins, GateOp.eval] at h0
-      | cons t ts =>
-        simp only [hins, GateOp.eval, List.map_cons, List.headD_cons, Bool.not_eq_false] at h0
-        simp only [hins, GateOp.eval, List.map_cons, List.headD_cons, Bool.not_eq_true] at h1
-        have h := hread t h0
-        rw [h1] at h
-        contradiction
+      have hqwire : n + q.val = w := by
+        change n + (w-n) = w
+        omega
+      have hv : Circuit.eval ⟨gates, n + q.val⟩
+          (List.ofFn (fun v : Fin n => decide (v ∈ (Finset.univ : Finset (Fin n))))) = true := by
+        rw [hqwire]
+        exact hv1
+      have hz := notAntitone n gates hG hnot q hq
+        (∅ : Finset (Fin n)) Finset.univ (Finset.empty_subset _) hv
+      rw [hqwire] at hz
+      exact hv0 hz
     have hop' : g.op = GateOp.and ∨ g.op = GateOp.or := by
       rcases hop with h | h | h
       · exact Or.inl h
@@ -356,26 +329,23 @@ theorem PEqualNP.Research.OneNotEvaluatorBridge : ∀ (n m : ℕ) (S : Fin m →
       rcases hop' with hg | hg
       · exact False.elim (htrue (fun x => by
           change value C (X x) w = true
-          rw [hval, hg, hins]
-          rfl))
+          rw [hval x, hg, hins] <;> simp [GateOp.eval]))
       · exact False.elim (hfalse (fun x => by
           change ¬ value C (X x) w = true
-          rw [hval, hg, hins]
-          decide))
+          rw [hval x, hg, hins] <;> simp [GateOp.eval]))
     | cons t ts =>
       cases ts with
       | nil =>
         have hc (x : Finset (Fin n)) :
             value C (X x) w = if t < w then value C (X x) t else false := by
-          rcases hop' with hg | hg <;> simp [hval, hg, hins, GateOp.eval]
+          rcases hop' with hg | hg <;> rw [hval x, hg, hins] <;> simp [GateOp.eval]
         by_cases ht : t < w
         · exact False.elim (hcopy t ht (fun x => by
             change value C (X x) w = true ↔ value C (X x) t = true
-            rw [hc, if_pos ht]))
+            rw [hc, ite_eq_left ht]))
         · exact False.elim (hfalse (fun x => by
             change ¬ value C (X x) w = true
-            rw [hc, if_neg ht]
-            decide))
+            rw [hc, ite_eq_right ht] <;> simp))
       | cons u us =>
         have hus : us = [] := by
           simpa [hins] using hlen
@@ -386,30 +356,30 @@ theorem PEqualNP.Research.OneNotEvaluatorBridge : ∀ (n m : ℕ) (S : Fin m →
             intro _ x
             change value C (X x) w = true ↔
               value C (X x) t = true ∧ value C (X x) u = true
-            simp [hval, hg, hins, ht, hu, GateOp.eval, Bool.and_eq_true]
+            rw [hval x, hg, hins] <;> simp [ht, hu, GateOp.eval, Bool.and_eq_true]
           · refine ⟨t, u, false, ht, hu, by simp, ?_⟩
             intro _ x
             change value C (X x) w = true ↔
               value C (X x) t = true ∨ value C (X x) u = true
-            simp [hval, hg, hins, ht, hu, GateOp.eval, Bool.or_eq_true]
+            rw [hval x, hg, hins] <;> simp [ht, hu, GateOp.eval, Bool.or_eq_true]
         · rcases hop' with hg | hg
           · exact False.elim (hfalse (fun x => by
               change ¬ value C (X x) w = true
-              simp [hval, hg, hins, ht, hu, GateOp.eval]))
+              rw [hval x, hg, hins] <;> simp [ht, hu, GateOp.eval]))
           · exact False.elim (hcopy t ht (fun x => by
               change value C (X x) w = true ↔ value C (X x) t = true
-              simp [hval, hg, hins, ht, hu, GateOp.eval]))
+              rw [hval x, hg, hins] <;> simp [ht, hu, GateOp.eval]))
         · rcases hop' with hg | hg
           · exact False.elim (hfalse (fun x => by
               change ¬ value C (X x) w = true
-              simp [hval, hg, hins, ht, hu, GateOp.eval]))
+              rw [hval x, hg, hins] <;> simp [ht, hu, GateOp.eval]))
           · exact False.elim (hcopy u hu (fun x => by
               change value C (X x) w = true ↔ value C (X x) u = true
-              simp [hval, hg, hins, ht, hu, GateOp.eval]))
+              rw [hval x, hg, hins] <;> simp [ht, hu, GateOp.eval]))
         · exact False.elim (hfalse (fun x => by
             change ¬ value C (X x) w = true
             rcases hop' with hg | hg <;>
-              simp [hval, hg, hins, ht, hu, GateOp.eval]))
+              rw [hval x, hg, hins] <;> simp [ht, hu, GateOp.eval]))
   choose a b k hab using hshape
   refine ⟨o, a, b, k, hinput, ?_, fun i => ⟨(hab i).1, (hab i).2.1⟩,
     ho, hearly, fun i => (hab i).2.2.1, fun i => (hab i).2.2.2⟩
