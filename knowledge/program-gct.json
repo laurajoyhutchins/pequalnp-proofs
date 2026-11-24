@@ -258,11 +258,11 @@
       "depends_on": [
         "L-gct-020"
       ],
-      "detail_path": "data/lemma/L-gct-021.90b0cbc74bb3.json",
+      "detail_path": "data/lemma/L-gct-021.a35a51b12eba.json",
       "direct_users": [],
       "id": "L-gct-021",
       "program": "gct",
-      "source": "https://data.pequalnp.com/data/lemma/L-gct-021.90b0cbc74bb3.json",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-021.a35a51b12eba.json",
       "status_code": "c",
       "unmapped_dependencies": []
     },
@@ -541,11 +541,11 @@
     },
     {
       "depends_on": [],
-      "detail_path": "data/lemma/L-gct-042.21b2fe5e16bd.json",
+      "detail_path": "data/lemma/L-gct-042.db4d47a44110.json",
       "direct_users": [],
       "id": "L-gct-042",
       "program": "gct",
-      "source": "https://data.pequalnp.com/data/lemma/L-gct-042.21b2fe5e16bd.json",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-042.db4d47a44110.json",
       "status_code": "c",
       "unmapped_dependencies": []
     },
@@ -943,13 +943,13 @@
       "depends_on": [
         "L-gct-065"
       ],
-      "detail_path": "data/lemma/L-gct-067.f7e1f929f3ca.json",
+      "detail_path": "data/lemma/L-gct-067.21cc66b0d374.json",
       "direct_users": [],
       "graph_dependencies_agree": true,
       "graph_users_agree": true,
       "id": "L-gct-067",
       "program": "gct",
-      "source": "https://data.pequalnp.com/data/lemma/L-gct-067.f7e1f929f3ca.json",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-067.21cc66b0d374.json",
       "statement_hash": "sha256:0190b06b1b37dd2484359a62b193f9bb57aaba2c3f4b63420cc2a718c7a8e7de",
       "statement_hash_verified": true,
       "status": "checked",
@@ -1141,11 +1141,11 @@
     },
     {
       "depends_on": [],
-      "detail_path": "data/lemma/L-gct-080.be3516651bbb.json",
+      "detail_path": "data/lemma/L-gct-080.328f27c9f391.json",
       "direct_users": [],
       "id": "L-gct-080",
       "program": "gct",
-      "source": "https://data.pequalnp.com/data/lemma/L-gct-080.be3516651bbb.json",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-080.328f27c9f391.json",
       "status_code": "c",
       "unmapped_dependencies": []
     },
@@ -1537,11 +1537,11 @@
     },
     {
       "depends_on": [],
-      "detail_path": "data/lemma/L-gct-118.b99e64d10080.json",
+      "detail_path": "data/lemma/L-gct-118.943215e86a14.json",
       "direct_users": [],
       "id": "L-gct-118",
       "program": "gct",
-      "source": "https://data.pequalnp.com/data/lemma/L-gct-118.b99e64d10080.json",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-118.943215e86a14.json",
       "status_code": "c",
       "unmapped_dependencies": []
     },
@@ -2173,11 +2173,11 @@
       "depends_on": [
         "L-gct-157"
       ],
-      "detail_path": "data/lemma/L-gct-178.813899277b8f.json",
+      "detail_path": "data/lemma/L-gct-178.90d3310236d8.json",
       "direct_users": [],
       "id": "L-gct-178",
       "program": "gct",
-      "source": "https://data.pequalnp.com/data/lemma/L-gct-178.813899277b8f.json",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-178.90d3310236d8.json",
       "status_code": "c",
       "unmapped_dependencies": []
     },
@@ -2200,11 +2200,11 @@
     },
     {
       "depends_on": [],
-      "detail_path": "data/lemma/L-gct-180.d3a303e68b0b.json",
+      "detail_path": "data/lemma/L-gct-180.5ef447681b11.json",
       "direct_users": [],
       "id": "L-gct-180",
       "program": "gct",
-      "source": "https://data.pequalnp.com/data/lemma/L-gct-180.d3a303e68b0b.json",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-180.5ef447681b11.json",
       "status_code": "c",
       "unmapped_dependencies": []
     },
@@ -2659,11 +2659,11 @@
       "depends_on": [
         "L-gct-097"
       ],
-      "detail_path": "data/lemma/L-gct-218.041156fd2322.json",
+      "detail_path": "data/lemma/L-gct-218.9ecdead538ff.json",
       "direct_users": [],
       "id": "L-gct-218",
       "program": "gct",
-      "source": "https://data.pequalnp.com/data/lemma/L-gct-218.041156fd2322.json",
+      "source": "https://data.pequalnp.com/data/lemma/L-gct-218.9ecdead538ff.json",
       "status_code": "c",
       "unmapped_dependencies": []
     },
@@ -2789,43 +2789,71 @@
       "unmapped_dependencies": []
     },
     {
+      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-gct-229.a7d44fe52423.json",
       "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
       "id": "L-gct-229",
       "program": "gct",
       "source": "https://data.pequalnp.com/data/lemma/L-gct-229.a7d44fe52423.json",
+      "statement_hash": "sha256:eccb37f15ba79e354054f6158a844fcb5f7cb0dc970594c30977ae3b1ef0780f",
+      "statement_hash_verified": true,
+      "status": "conjecture",
       "status_code": "j",
+      "title": "Probe: at the 4 x 4 base point with 2 on the diagonal and 1 elsewhere, a six-dimensional level space keeps the permanent at 65",
       "unmapped_dependencies": []
     },
     {
+      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-gct-230.28621f526a51.json",
       "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
       "id": "L-gct-230",
       "program": "gct",
       "source": "https://data.pequalnp.com/data/lemma/L-gct-230.28621f526a51.json",
+      "statement_hash": "sha256:9fb8bf6db4960a52f721ff7c748f6a5ed5a1abb95df415d7d977a4b52972a318",
+      "statement_hash_verified": true,
+      "status": "conjecture",
       "status_code": "j",
+      "title": "Probe: at the 4 x 4 base point with 2 on the diagonal and 1 elsewhere, no six-dimensional level space keeps the permanent at 65",
       "unmapped_dependencies": []
     },
     {
+      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-gct-231.c93684f58e76.json",
       "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
       "id": "L-gct-231",
       "program": "gct",
       "source": "https://data.pequalnp.com/data/lemma/L-gct-231.c93684f58e76.json",
+      "statement_hash": "sha256:58f1ded4dad19cd82c5cbd6ecd86337b38f6d45765766cb2ffb0dd2673dffad0",
+      "statement_hash_verified": true,
+      "status": "conjecture",
       "status_code": "j",
+      "title": "Probe: a three-dimensional space of 4 x 4 complex symmetric matrices keeps the permanent of the all-ones matrix plus it at 24",
       "unmapped_dependencies": []
     },
     {
+      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-gct-232.00275f86a7fa.json",
       "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
       "id": "L-gct-232",
       "program": "gct",
       "source": "https://data.pequalnp.com/data/lemma/L-gct-232.00275f86a7fa.json",
+      "statement_hash": "sha256:591fee7ecdf50188d90b53c306ff0c1e054f56e54e8d626d59cecc0121b027cd",
+      "statement_hash_verified": true,
+      "status": "conjecture",
       "status_code": "j",
+      "title": "Probe: no three-dimensional space of 4 x 4 complex symmetric matrices keeps the permanent of the all-ones matrix plus it at 24",
       "unmapped_dependencies": []
     }
   ],

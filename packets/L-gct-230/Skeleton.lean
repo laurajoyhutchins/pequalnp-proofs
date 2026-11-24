@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_gct_230 : ¬ (∃ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), Module.finrank ℂ L = 6 ∧ ∀ t ∈ L, Matrix.permanent (Matrix.of fun (i j : Fin 4) => (if i = j then (2 : ℂ) else 1) + t (i, j)) = 65) := by
+  sorry

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj] (x4 : Fin x1), (0 : ℕ) < x2.degree x4 → x2.degree x4 ≤ (2 : ℕ) → ∀ (x7 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x7 → (PEqualNP.MetaComplexity.circuitFun x1 x7 = fun (x9 : Fin x1 → Bool) => Decidable.decide (∃ (x10 : Fin x1) (x11 : Fin x1), x2.Adj x10 x11 ∧ x9 x10 = Bool.true ∧ x9 x11 = Bool.true)) → ∃ (x10 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x10 ∧ x10.size < x7.size ∧ PEqualNP.MetaComplexity.circuitFun x1 x10 = fun (x11 : Fin x1 → Bool) => Decidable.decide (∃ (x12 : Fin x1) (x13 : Fin x1), (x2.deleteIncidenceSet x4).Adj x12 x13 ∧ x11 x12 = Bool.true ∧ x11 x13 = Bool.true))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1709",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: One of 2 statements that together prove: There is a constant c such that for every graph G with no cycle of length below 5, and every circuit of AND and OR gates only, each reading at most two wires, every gate counted, that is true exactly when both ends of some edge of G are true, the number of edges of G is at most c times (the number of gates + 1). The constant is fixed before the graph. It carries content only on dense graphs, such as point-line incidence graphs of projective planes. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1709.2d447c14a8f4.json",
+  "statement_hash": "sha256:436c2550f1f6fe315c94698e2e9cdd81cc09c420a232ebe66b907c1af6c82bd7",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T05:25:59.097Z",
+  "title": "It is false that: Part 1 of 2 of a proof of: Conjecture: circuits of AND and OR gates for the edge function of a graph with no cycle shorter than 5 have size li",
+  "used_by": []
+}

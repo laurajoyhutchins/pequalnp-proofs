@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) (A : Finset (Fin n)), (∀ v : Fin n, v ∉ A → (G.neighborSet v).ncard = 3) → (∀ (w : Fin n) (c : G.Walk w w), c.IsCycle → 7 ≤ c.length) → (∀ i j : Fin n, G.Adj i j → i ∉ A) → (∃ i1 j1 : Fin n, G.Adj i1 j1) → ∃ z : Fin n, z ∉ A ∧ ∀ s : ℕ, PEqualNP.MetaComplexity.HasCircuitSize n (fun x : Fin n → Bool => @decide ((∃ a ∈ A, x a = true) ∨ ∃ i2 j2 : Fin n, G.Adj i2 j2 ∧ x i2 = true ∧ x j2 = true) (Classical.propDecidable _)) s → ∃ t : ℕ, t + 4 ≤ s ∧ PEqualNP.MetaComplexity.HasCircuitSize n (fun x' : Fin n → Bool => @decide ((∃ a' ∈ A, x' a' = true) ∨ ∃ i3 j3 : Fin n, (G.deleteEdges (G.incidenceSet z)).Adj i3 j3 ∧ x' i3 = true ∧ x' j3 = true) (Classical.propDecidable _)) t",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1593",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let G be a graph with at least one edge, every cycle of length at least 7, A a set of vertices met by no edge, and every vertex outside A with exactly 3 neighbours. Write F(H) for the function true when a variable of A is true or both ends of an edge of H are true. Then some vertex v outside A has: whenever an AND, OR, NOT circuit of fan-in at most two (every gate counted) with s gates computes F(G), some such circuit with at most s - 4 gates computes F(G - v), where G - v is G with the edges at v deleted. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1593.4fe530ef98e5.json",
+  "statement_hash": "sha256:8f45acc791515e1c7206a05a2661c7950f2a2233d356a157e1e89e0b68d8a06e",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T02:19:00.971Z",
+  "title": "Cubic piece, cycles at least 7, edge function plus OR-variables: a vertex whose deletion lowers fan-in-two AND/OR/NOT size by at least 4",
+  "used_by": []
+}

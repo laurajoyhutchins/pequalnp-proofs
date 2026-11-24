@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x1 → (∀ (x3 : Fin (9 : ℕ) → Bool), (x1.wires (List.ofFn x3)).getD (9 : ℕ) Bool.false = (x3 (0 : Fin (9 : ℕ)) && x3 (4 : Fin (9 : ℕ)))) → ∃ (x4 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x4 ∧ x4.size + (1 : ℕ) = x1.size ∧ ∀ (x5 : Fin (9 : ℕ) → Bool), x4.eval (List.ofFn x5 ++ [x5 (0 : Fin (9 : ℕ)) && x5 (4 : Fin (9 : ℕ))]) = x1.eval (List.ofFn x5)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1926",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "A circuit of AND, OR (two-input) and NOT gates on 9 inputs whose first gate computes AND(x_0, x_4). Then a circuit of the same kind with one gate fewer, given the nine inputs and the wire AND(x_0, x_4), computes the same function.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1926.dc8aeb5fb604.json",
+  "statement_hash": "sha256:62ec6b12d0ba1b9c90eb4165698fa0c72b0333003e00ac5e82e2d0f83724d781",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T06:48:40.786Z",
+  "title": "A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate AND(x_0, x_4) computes its edge function",
+  "used_by": []
+}

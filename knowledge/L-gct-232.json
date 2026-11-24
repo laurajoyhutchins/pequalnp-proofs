@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∃ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), Module.finrank ℂ L = 3 ∧ (∀ t ∈ L, ∀ i j : Fin 4, t (i, j) = t (j, i)) ∧ ∀ t ∈ L, Matrix.permanent (Matrix.of fun (i j : Fin 4) => (1 : ℂ) + t (i, j)) = 24)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-232",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The negation, wrapped whole, of the statement that some 3-dimensional linear space L of symmetric 4 x 4 complex matrices keeps the permanent of the matrix with entries 1 + t(i, j) equal to 24 for every t in L. Equivalent to: every such symmetric space has dimension at most 2. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-232.00275f86a7fa.json",
+  "statement_hash": "sha256:591fee7ecdf50188d90b53c306ff0c1e054f56e54e8d626d59cecc0121b027cd",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T22:32:30.845Z",
+  "title": "Probe: no three-dimensional space of 4 x 4 complex symmetric matrices keeps the permanent of the all-ones matrix plus it at 24",
+  "used_by": []
+}

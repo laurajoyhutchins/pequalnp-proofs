@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), Module.finrank ℂ L = 6 ∧ ∀ t ∈ L, Matrix.permanent (Matrix.of fun (i j : Fin 4) => (if i = j then (2 : ℂ) else 1) + t (i, j)) = 65",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-229",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There is a 6-dimensional linear space L of 4 x 4 complex matrices such that for every t in L the permanent of the matrix with 2 + t(i, i) on the diagonal and 1 + t(i, j) elsewhere equals 65, its value at t = 0. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-229.a7d44fe52423.json",
+  "statement_hash": "sha256:eccb37f15ba79e354054f6158a844fcb5f7cb0dc970594c30977ae3b1ef0780f",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T22:13:27.447Z",
+  "title": "Probe: at the 4 x 4 base point with 2 on the diagonal and 1 elsewhere, a six-dimensional level space keeps the permanent at 65",
+  "used_by": []
+}

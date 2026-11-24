@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ s : ℕ, PEqualNP.MetaComplexity.HasCircuitSize 10 (fun x : Fin 10 → Bool => ([(0, 2), (2, 3), (3, 1), (0, 4), (4, 5), (5, 6), (6, 1), (0, 7), (7, 8), (8, 9), (9, 1)] : List (Fin 10 × Fin 10)).any (fun e => x e.1 && x e.2)) s → 15 ≤ s)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1551",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there a circuit of AND, OR and NOT gates of fan-in at most two, every gate counted, with at most 14 gates, computing the function true exactly when both ends of some edge are true, for the theta graph joining 0 and 1 by paths 0-2-3-1, 0-4-5-6-1, 0-7-8-9-1 (the term lists the edges; maximum degree 3, every cycle of length at least 7, cover number 5)? The negation, wrapped whole, of the at-least-15 statement. Conjecture that none exists.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1551.3847db6593d8.json",
+  "statement_hash": "sha256:97c7d3d9243cc14fa286bd990eb5f999242bacc39282fb9a1ea2f93adc560e36",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T02:09:33.029Z",
+  "title": "Search: a fan-in-two AND/OR/NOT circuit of at most 14 gates for the theta graph joining 0 and 1 by paths 0-2-3-1, 0-4-5-6-1, 0-7-8-9-1",
+  "used_by": []
+}

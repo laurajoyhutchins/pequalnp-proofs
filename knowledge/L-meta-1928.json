@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x1 → x1.size ≤ (14 : ℕ) → (∃ (x4 : Fin (9 : ℕ) → Bool), (x4 (0 : Fin (9 : ℕ)) && x4 (4 : Fin (9 : ℕ))) = Bool.false ∧ x1.eval (List.ofFn x4 ++ [Bool.false]) ≠ (fun (x5 : Fin (9 : ℕ) → Bool) => x5 (0 : Fin (9 : ℕ)) && x5 (1 : Fin (9 : ℕ)) || x5 (1 : Fin (9 : ℕ)) && x5 (2 : Fin (9 : ℕ)) || x5 (2 : Fin (9 : ℕ)) && x5 (3 : Fin (9 : ℕ)) || x5 (3 : Fin (9 : ℕ)) && x5 (4 : Fin (9 : ℕ)) || x5 (0 : Fin (9 : ℕ)) && x5 (5 : Fin (9 : ℕ)) || x5 (1 : Fin (9 : ℕ)) && x5 (6 : Fin (9 : ℕ)) || x5 (2 : Fin (9 : ℕ)) && x5 (7 : Fin (9 : ℕ)) || x5 (3 : Fin (9 : ℕ)) && x5 (8 : Fin (9 : ℕ)) || x5 (5 : Fin (9 : ℕ)) && x5 (7 : Fin (9 : ℕ)) || x5 (6 : Fin (9 : ℕ)) && x5 (8 : Fin (9 : ℕ)) || x5 (8 : Fin (9 : ℕ)) && x5 (5 : Fin (9 : ℕ))) x4) ∨ ∃ (x4 : Fin (9 : ℕ) → Bool), (x4 (0 : Fin (9 : ℕ)) && x4 (4 : Fin (9 : ℕ))) = Bool.true ∧ x1.eval (List.ofFn x4 ++ [Bool.true]) = Bool.false",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1928",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The edge function of the Petersen graph minus a vertex (9 inputs, 12 edges). Give a circuit of AND, OR (two-input) and NOT gates with at most 14 gates the nine inputs and a tenth wire. Then either at some input with x_0 or x_4 off it differs from the function when the tenth wire is false, or at some input with x_0 and x_4 on it is false when the tenth wire is true.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1928.7a417a885205.json",
+  "statement_hash": "sha256:5210ec6c0616233d64132e2f2632a68d147d9689a7632ca72927bb2d537b0e7d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T06:48:40.786Z",
+  "title": "A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate AND(x_0, x_4) computes its edge function",
+  "used_by": []
+}

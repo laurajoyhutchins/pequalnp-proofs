@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), Module.finrank ℂ L = 3 ∧ (∀ t ∈ L, ∀ i j : Fin 4, t (i, j) = t (j, i)) ∧ ∀ t ∈ L, Matrix.permanent (Matrix.of fun (i j : Fin 4) => (1 : ℂ) + t (i, j)) = 24",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-231",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There is a 3-dimensional linear space L of 4 x 4 complex matrices, each symmetric (t(i, j) = t(j, i)), such that for every t in L the permanent of the matrix with entries 1 + t(i, j) equals 24, its value at t = 0. Conjecture; the symmetric level spaces found by search have dimension at most 2 (computed, not checked).",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-231.c93684f58e76.json",
+  "statement_hash": "sha256:58f1ded4dad19cd82c5cbd6ecd86337b38f6d45765766cb2ffb0dd2673dffad0",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T22:32:20.961Z",
+  "title": "Probe: a three-dimensional space of 4 x 4 complex symmetric matrices keeps the permanent of the all-ones matrix plus it at 24",
+  "used_by": []
+}

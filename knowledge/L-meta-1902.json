@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) (x3 : Finset (PEqualNP.BicliqueBlockCost.Block x1)), PEqualNP.BicliqueBlockCost.IsBlockCover x2 x3 → (∀ x5 ∈ x3, x5.1.card ≤ (1 : ℕ) ∨ x5.2.card ≤ (1 : ℕ)) → ∃ (x6 : Finset (Fin x1)), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover x2 x6 ∧ x2.edgeSet.ncard + x6.card ≤ PEqualNP.BicliqueBlockCost.familyCost x3 + (1 : ℕ)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1902",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Any graph and any family of blocks covering every edge in which every block has a side with at most one vertex (a star). Then some vertex cover S has |E| + |S| at most the family's cost plus one, a block (A, B) costing |A| + |B| - 1 and the family its blocks' costs plus the number of blocks minus one.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1902.02b579a4f3ad.json",
+  "statement_hash": "sha256:45eef2afd0e32073a58f9ae4ca70fc932b5c4f76016fe188e657a954ac345ccb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T06:42:15.589Z",
+  "title": "A step toward: Graphs without a 4-cycle: every circuit of AND and OR gates for the edge function has at least |E| + tau - 1 gates",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 x2 : ℕ) (x3 : SimpleGraph (Fin x1)) (x4 : PEqualNP.CircuitLowerBounds.Circuit), (∃ (x5 : Fin x1) (x6 : Fin x1), x3.Adj x5 x6) → (∀ (x6 x7 x8 x9 : Fin x1), x6 ≠ x7 → x6 ≠ x8 → x6 ≠ x9 → x7 ≠ x8 → x7 ≠ x9 → x8 ≠ x9 → x3.Adj x6 x7 → x3.Adj x7 x8 → x3.Adj x8 x9 → ¬x3.Adj x9 x6) → (∃ (x7 : Finset (Fin x1)), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover x3 x7 ∧ x7.card = x2) → (∀ (x8 : Finset (Fin x1)), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover x3 x8 → x2 ≤ x8.card) → PEqualNP.MetaComplexity.Monotone2 x4 → (∀ (x10 : Fin x1 → Bool), x4.eval (List.ofFn x10) = Bool.true ↔ ∃ (x11 : Fin x1) (x12 : Fin x1), x3.Adj x11 x12 ∧ x10 x11 = Bool.true ∧ x10 x12 = Bool.true) → ¬x3.IsAcyclic → x3.edgeSet.ncard + x2 ≤ x4.size + (1 : ℕ)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1739",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "One of 2 statements that together prove: Let G be a graph on n vertices with at least one edge and no 4-cycle (no four distinct vertices a, b, c, d with ab, bc, cd, da all edges); triangles and every degree are allowed. Let t be its vertex cover number. Every circuit of AND and OR gates only, each reading at most two wires, every gate counted, that computes the edge function of G (true exactly when both ends of some edge are true) has at least |E| + t - 1 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1739.bf1acf1397da.json",
+  "statement_hash": "sha256:8db08291fe34ea44911214e37864a1a7b7cfe82a1c699b6685397ba5077c299e",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T05:41:09.121Z",
+  "title": "Part 2 of 2 of a proof of: Graphs without a 4-cycle: every circuit of AND and OR gates for the edge function has at least |E| + tau - 1 gates",
+  "used_by": []
+}

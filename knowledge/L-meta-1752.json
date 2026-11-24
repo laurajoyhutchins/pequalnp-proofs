@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (have x1 : Finset (Fin (13 : ℕ)) := {(0 : Fin (13 : ℕ)), (1 : Fin (13 : ℕ)), (3 : Fin (13 : ℕ)), (9 : Fin (13 : ℕ))}; have x2 : PEqualNP.CircuitLowerBounds.Circuit → Prop := fun (x2 : PEqualNP.CircuitLowerBounds.Circuit) => (∀ (x3 x4 : Fin (13 : ℕ)), x3 - x4 ∈ x1 → x2.eval ((List.ofFn fun (x6 : Fin (13 : ℕ)) => Decidable.decide (x6 = x3)) ++ List.ofFn fun (x6 : Fin (13 : ℕ)) => Decidable.decide (x6 = x4)) = Bool.true) ∧ ∀ (x3 : Finset (Fin (13 : ℕ))), x3.card = (4 : ℕ) → (∀ (x5 : Fin (13 : ℕ)), {x6 ∈ x3 | x6 - x5 ∈ x1}.card ≤ (2 : ℕ)) → x2.eval ((List.ofFn fun (x6 : Fin (13 : ℕ)) => Decidable.decide (x6 ∈ x3)) ++ List.ofFn fun (x6 : Fin (13 : ℕ)) => Decidable.decide (∀ x7 ∈ x3, x7 - x6 ∉ x1)) = Bool.false; have x3 : PEqualNP.CircuitLowerBounds.Circuit → Prop := fun (x3 : PEqualNP.CircuitLowerBounds.Circuit) => ∃ (x4 : ℕ) (x5 : ℕ), (PEqualNP.MetaComplexity.NestedCover.gateAt x3 x4).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt x3 x5).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ PEqualNP.EdgeOwnership.InCone (26 : ℕ) x3 x4 x5; ∀ (x4 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x4 → PEqualNP.MetaComplexity.NestedCover.ReadsBack (26 : ℕ) x4 → x2 x4 → ¬x3 x4 → (64 : ℕ) ≤ x4.size)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1752",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: One of 2 statements that together prove: Plane of order 3: inputs x_0..x_12 for points, then y_0..y_12 for lines, line l being {l, l+1, l+3, l+9} mod 13. An incident input sets exactly x_p and y_l true with p on l. A quadrangle input takes 4 points Q, no 3 on a line, sets x true exactly on Q and y true exactly on the lines meeting Q in no point. Every list of AND/OR gates of fan-in at most two, each gate reading only earlier wires, with a wire true on every incident input and false on every quadrangle input has at least 64 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1752.624ed400f2d8.json",
+  "statement_hash": "sha256:983423e4d5e4ad0ca353a2020c658baa146b8e099012da9f61907c000fe49eb2",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T05:47:14.550Z",
+  "title": "It is false that: Part 2 of 2 of a proof of: Plane of order 3: every AND/OR list of fan-in at most two accepting every incident point-line input and rejecting e",
+  "used_by": []
+}

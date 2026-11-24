@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n m : ℕ) (S : Fin m → Finset (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit) (o : Fin m → ℕ) (t : ℕ) (y : Finset (Fin n)), (∀ a1 a2 : Fin m, a1 ≠ a2 → (S a1 ∩ S a2).card ≤ 1) → (∀ e1 ∈ C.gates, (e1.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ e1.op = PEqualNP.CircuitLowerBounds.GateOp.or ∨ e1.op = PEqualNP.CircuitLowerBounds.GateOp.not) ∧ e1.inputs.length ≤ 2) → (∀ l1 : Fin C.gates.length, (C.gates.get l1).op = PEqualNP.CircuitLowerBounds.GateOp.not → (l1 : ℕ) = t) → (∀ (a3 : Fin m) (z1 : Fin n → Bool), (C.wires (List.ofFn z1)).getD (o a3) false = decide (∃ s1 ∈ S a3, z1 s1 = true)) → (∀ z2 : Fin n → Bool, (Finset.univ.filter (fun v1 : Fin n => z2 v1 = true)).card < y.card → (C.wires (List.ofFn z2)).getD (n + t) false = true) → (C.wires (List.ofFn (fun v2 : Fin n => decide (v2 ∈ y)))).getD (n + t) false = false → (2 ≤ y.card → ∀ i1 : Fin m, ¬ Disjoint (S i1) y → min y.card (S i1).card ≤ (Finset.univ.filter (fun g1 : Fin C.gates.length => (∀ p1 : Fin n, (C.wires (List.ofFn (fun v3 : Fin n => decide (v3 = p1)))).getD (n + g1) false = true → p1 ∈ S i1) ∧ 2 ≤ (Finset.univ.filter (fun p2 : Fin n => (C.wires (List.ofFn (fun v4 : Fin n => decide (v4 = p2)))).getD (n + g1) false = true)).card)).card + 1) → (∀ i2 : Fin m, Disjoint (S i2) y → (S i2).card ≤ (Finset.univ.filter (fun g2 : Fin C.gates.length => (∀ p3 : Fin n, p3 ∉ y → (C.wires (List.ofFn (fun v5 : Fin n => decide (v5 ∈ y ∨ v5 = p3)))).getD (n + g2) false = true → p3 ∈ S i2) ∧ 2 ≤ (Finset.univ.filter (fun p4 : Fin n => p4 ∉ y ∧ (C.wires (List.ofFn (fun v6 : Fin n => decide (v6 ∈ y ∨ v6 = p4)))).getD (n + g2) false = true)).card)).card + 1) → (∑ i0 : Fin m, if Disjoint (S i0) y then (S i0).card else min y.card (S i0).card) ≤ C.gates.length + (Finset.univ.filter (fun g0 : Fin C.gates.length => (∃ i5 : Fin m, ∀ p6 : Fin n, (C.wires (List.ofFn (fun v8 : Fin n => decide (v8 = p6)))).getD (n + g0) false = true ↔ p6 ∈ S i5) ∧ (∃ i6 : Fin m, Disjoint (S i6) y ∧ ∀ p7 : Fin n, p7 ∉ y → ((C.wires (List.ofFn (fun v9 : Fin n => decide (v9 ∈ y ∨ v9 = p7)))).getD (n + g0) false = true ↔ p7 ∈ S i6)))).card + m",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1596",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "m sets of n points, two sharing at most one point; AND, OR, NOT gates on at most two wires, all NOT at index t, computing each set's OR; gate t true below weight |y|, false on y. P(g): the p with gate g true when only p is on; P_y(g): p outside y with g true when y and p are on. Assume: if |y| > 1, each S meeting y has min(|y|, |S|) - 1 gates with P in S of size 2 or more; each S missing y, |S| - 1 such for P_y. Then the sum of min(|y|, |S|) over S meeting y and of |S| over S missing y is at most gates + m + the gates with P a set, P_y a set missing y. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1596.92602fdc04eb.json",
+  "statement_hash": "sha256:759e6ee0d86fccf302ebf0797ad619a7f0946d5cd2884b38bc4a4523b930bb74",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T02:21:18.714Z",
+  "title": "One-NOT AND/OR/NOT lists of fan-in two: the light and heavy per-set gate counts give the window sum bound with whole-set refunds",
+  "used_by": []
+}

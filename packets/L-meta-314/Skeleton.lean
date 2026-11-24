@@ -1,5 +1,0 @@
-import Mathlib
-import PEqualNP.Defs
-
-theorem PEqualNP.Outside.L_meta_314 : ∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit), 5 ≤ n → PEqualNP.MetaComplexity.IsMinimalCircuit n C → PEqualNP.MetaComplexity.circuitFun n C = (fun x : Fin n → Bool => decide (∃ i j : Fin n, (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) → (∀ g ∈ C.gates, g.op ≠ PEqualNP.CircuitLowerBounds.GateOp.not) ∧ ∀ t : ℕ, t < C.size → ((∃ S : Finset ℕ, S.Nonempty ∧ (∀ i ∈ S, i < n) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = decide (∃ i j : Fin n, i.val ∈ S ∧ (i.val + 1) % n = j.val ∧ x i = true ∧ x j = true)) ∨ (∃ a c b : Fin n, (a.val + 1) % n = c.val ∧ (c.val + 1) % n = b.val ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = (x a || x b)) ∨ (∃ i j k : Fin n, (i.val + 1) % n = j.val ∧ ((j.val + 1) % n = k.val ∨ (k.val + 1) % n = i.val) ∧ ∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD (n + t) false = ((x i && x j) || x k))) := by
-  sorry

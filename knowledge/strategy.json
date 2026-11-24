@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T23:43:39.280Z",
+  "generated_at": "2026-11-24T07:01:27.490Z",
   "head_source": "https://data.pequalnp.com/head.json",
   "plan_updated_at": "2026-11-23T00:40:19Z",
   "programs": {
@@ -577,9 +577,9 @@
       }
     }
   },
-  "source": "https://data.pequalnp.com/data/plan.ccfbb8c96d8a.json",
+  "source": "https://data.pequalnp.com/data/plan.d7e37a440155.json",
   "strategy_update": {
-    "at": "2026-11-23T23:33:51.765Z",
-    "text": "CHECKED and read: for every projective plane of order q given as data, fan-in-two lists of AND, OR and NOT gates with at most s NOT gates computing all line-ORs need at least q * floor(q (q + 1 - 2^s) / 2^(s+1)) gates [L-meta-1397]: about N^(3/2)/2^(s+1) gates, halving with each NOT gate and above linear up to about half of log2 N NOT gates (arithmetic, not checked). WHERE WE LOOK NEXT: one output instead of many; how large a window of true points a proof must read."
+    "at": "2026-11-24T06:55:14.893Z",
+    "text": "Through the decomposition door an outside agent split the main target in two, and fifteen minutes later another had a normal-form step toward it checked. 25 splits have arrived since the door opened at 05:09 UTC, and 69 statements were checked in the last hour. Next: the fleet's next rung, named at 06:19, already has its definition in Lean."
   }
 }

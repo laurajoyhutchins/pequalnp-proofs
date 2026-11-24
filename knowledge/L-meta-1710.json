@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (x1 : ℕ), ∀ (x2 : ℕ) (x3 : SimpleGraph (Fin x2)) [x4 : DecidableRel x3.Adj], (∀ (x5 : Fin x2), x3.degree x5 = (0 : ℕ) ∨ (3 : ℕ) ≤ x3.degree x5) → (∀ (x6 : Fin x2) (x7 : x3.Walk x6 x6), x7.IsCycle → (5 : ℕ) ≤ x7.length) → ∀ (x7 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x7 → (PEqualNP.MetaComplexity.circuitFun x2 x7 = fun (x9 : Fin x2 → Bool) => Decidable.decide (∃ (x10 : Fin x2) (x11 : Fin x2), x3.Adj x10 x11 ∧ x9 x10 = Bool.true ∧ x9 x11 = Bool.true)) → x3.edgeFinset.card ≤ x1 * (x7.size + (1 : ℕ))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1710",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "One of 2 statements that together prove: There is a constant c such that for every graph G with no cycle of length below 5, and every circuit of AND and OR gates only, each reading at most two wires, every gate counted, that is true exactly when both ends of some edge of G are true, the number of edges of G is at most c times (the number of gates + 1). The constant is fixed before the graph. It carries content only on dense graphs, such as point-line incidence graphs of projective planes. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1710.af6a9a544e1e.json",
+  "statement_hash": "sha256:b221e73fa7d2427b7da31c2dad0f815a4df9d1817712d762e72128973b938deb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T05:25:59.097Z",
+  "title": "Part 2 of 2 of a proof of: Conjecture: circuits of AND and OR gates for the edge function of a graph with no cycle shorter than 5 have size linear in the number",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ T : ℕ → Set ((Fin 15 → Bool) → Bool), (∀ i : Fin 15, (fun x : Fin 15 → Bool => x i) ∈ T 0) → (∀ (k : ℕ) (f : (Fin 15 → Bool) → Bool), f ∈ T k → f ∈ T (k + 1)) → (∀ (k : ℕ) (f g : (Fin 15 → Bool) → Bool), f ∈ T k → g ∈ T k → (fun y : Fin 15 → Bool => f y && g y) ∈ T (k + 1) ∧ (fun y : Fin 15 → Bool => f y || g y) ∈ T (k + 1)) → (fun z : Fin 15 → Bool => (((z 0 && z 5) || (z 0 && z 10) || (z 5 && z 10)) && ((z 1 && z 6) || (z 1 && z 11) || (z 6 && z 11))) || (((z 1 && z 6) || (z 1 && z 11) || (z 6 && z 11)) && ((z 2 && z 7) || (z 2 && z 12) || (z 7 && z 12))) || (((z 2 && z 7) || (z 2 && z 12) || (z 7 && z 12)) && ((z 3 && z 8) || (z 3 && z 13) || (z 8 && z 13))) || (((z 3 && z 8) || (z 3 && z 13) || (z 8 && z 13)) && ((z 4 && z 9) || (z 4 && z 14) || (z 9 && z 14))) || (((z 4 && z 9) || (z 4 && z 14) || (z 9 && z 14)) && ((z 0 && z 5) || (z 0 && z 10) || (z 5 && z 10)))) ∈ T 6",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1405",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there, on fifteen inputs a_v, b_v, c_v (inputs v, 5 + v, 10 + v), v = 0..4, a monotone formula of depth at most 6 for the OR over the 5-cycle's edges uv of (MAJ(a_u, b_u, c_u) AND MAJ(a_v, b_v, c_v)) (MAJ: at least two of three true)? A monotone formula: a tree of fan-in-two AND and OR gates over the inputs, no NOT, no constants; depth at most d is said as: the function lies in level d of every family of sets of functions that holds the inputs at level 0, keeps each level in the next, and puts the AND and the OR of two level-k functions in level k + 1. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1405.8bd2b16898be.json",
+  "statement_hash": "sha256:3e9d87a02ffe52b38fc1b223e667287816097408f249ce844b99a3db883b3a55",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T22:16:49.557Z",
+  "title": "Probe: Search: a monotone fan-in-two AND/OR formula of depth at most 6 for the 5-cycle with each input a majority of three inputs",
+  "used_by": []
+}

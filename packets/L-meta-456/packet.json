@@ -11,19 +11,23 @@
       "PEqualNP.Defs.BinaryCircuit",
       "PEqualNP.Defs.BlindGate",
       "PEqualNP.Defs.BorrowedCoverCircuit",
+      "PEqualNP.Defs.CarriedProduct",
       "PEqualNP.Defs.CircuitLowerBounds",
       "PEqualNP.Defs.CircuitMoves",
       "PEqualNP.Defs.Classes",
+      "PEqualNP.Defs.CleanedNonEdge",
       "PEqualNP.Defs.CoLevel",
       "PEqualNP.Defs.CoverPromise",
       "PEqualNP.Defs.DeMorganFormula",
       "PEqualNP.Defs.EdgeOwnership",
       "PEqualNP.Defs.Expanders",
       "PEqualNP.Defs.Gct",
+      "PEqualNP.Defs.HeptadCover",
       "PEqualNP.Defs.InvisibleWire",
       "PEqualNP.Defs.LineDegree",
       "PEqualNP.Defs.LiteralPartition",
       "PEqualNP.Defs.LowMerge",
+      "PEqualNP.Defs.MergeCost",
       "PEqualNP.Defs.MetaComplexity",
       "PEqualNP.Defs.MetaComplexityCoverCircuit",
       "PEqualNP.Defs.MetaComplexityLgp",
@@ -55,6 +59,7 @@
       "PEqualNP.Defs.ProofComplexityPC",
       "PEqualNP.Defs.ProofComplexityResK",
       "PEqualNP.Defs.ProofComplexityRestrict",
+      "PEqualNP.Defs.ReadK",
       "PEqualNP.Defs.RiffleRank",
       "PEqualNP.Defs.Search",
       "PEqualNP.Defs.SearchCP",
@@ -66,8 +71,12 @@
       "PEqualNP.Defs.SharedOr",
       "PEqualNP.Defs.SharingOrder",
       "PEqualNP.Defs.SingleLevel",
+      "PEqualNP.Defs.SplitCount",
       "PEqualNP.Defs.Subdivision",
-      "PEqualNP.Defs.TimeAlt"
+      "PEqualNP.Defs.SyntacticMultilinear",
+      "PEqualNP.Defs.TimeAlt",
+      "PEqualNP.Defs.TopForm",
+      "PEqualNP.Defs.TopFormNames"
     ],
     "outside": []
   },
@@ -76,7 +85,7 @@
     {
       "module": "PEqualNP.Defs",
       "path": "lean/PEqualNP/Defs.lean",
-      "sha256": "dfa7f0163772255a54145a2b79eb6573e2fa0952c7450da46b5609f599560157"
+      "sha256": "ac202b48462606142f3a786174912267fd5c9289fc5a07963eaddeea609017f2"
     },
     {
       "module": "PEqualNP.Defs.AffinePlane",
@@ -119,6 +128,11 @@
       "sha256": "5da8d25976b06d2a8bbaa4f1ab90ed5213b20ea2a4368fe9ce11c46f94a21a1a"
     },
     {
+      "module": "PEqualNP.Defs.CarriedProduct",
+      "path": "lean/PEqualNP/Defs/CarriedProduct.lean",
+      "sha256": "8cae3a5378c009b0c1f4baa661614641f4a12315199516fd82a2b8bc0736960d"
+    },
+    {
       "module": "PEqualNP.Defs.CircuitLowerBounds",
       "path": "lean/PEqualNP/Defs/CircuitLowerBounds.lean",
       "sha256": "695e454d3e424e2cae4fa4677741681eac11de0462d0d9bc087a0e6a6ba03f69"
@@ -132,6 +146,11 @@
       "module": "PEqualNP.Defs.Classes",
       "path": "lean/PEqualNP/Defs/Classes.lean",
       "sha256": "220a8ab751e1511cb25d116667b37f5d9b462158bbd29816239ffc8376942baf"
+    },
+    {
+      "module": "PEqualNP.Defs.CleanedNonEdge",
+      "path": "lean/PEqualNP/Defs/CleanedNonEdge.lean",
+      "sha256": "cb630025b0d4e63bd69e3fce4063920330c455bef9128795aeddab92b96b0f88"
     },
     {
       "module": "PEqualNP.Defs.CoLevel",
@@ -164,6 +183,11 @@
       "sha256": "d22dbd99d0ac0f2cda45ce451f76c9b566bcea76a1cea4d4329f22e604d1259d"
     },
     {
+      "module": "PEqualNP.Defs.HeptadCover",
+      "path": "lean/PEqualNP/Defs/HeptadCover.lean",
+      "sha256": "7f11f809d8bc6695203b6148f7ffdb611cf875126d8089b81bbb071f8f9979c3"
+    },
+    {
       "module": "PEqualNP.Defs.InvisibleWire",
       "path": "lean/PEqualNP/Defs/InvisibleWire.lean",
       "sha256": "1ae5ae6aab8fe392058177c399c08346b27d9c81dd8b7b48937fdfb3b8b4d133"
@@ -182,6 +206,11 @@
       "module": "PEqualNP.Defs.LowMerge",
       "path": "lean/PEqualNP/Defs/LowMerge.lean",
       "sha256": "b8e828a85f6f9cdb8b4990e842f68ea4fb63aaf14cf203174627de8ac1eb9d3b"
+    },
+    {
+      "module": "PEqualNP.Defs.MergeCost",
+      "path": "lean/PEqualNP/Defs/MergeCost.lean",
+      "sha256": "b7fe6f0890bd9fb410deffee1061c84136687d607a568a9c61cc0b0ab5375f1d"
     },
     {
       "module": "PEqualNP.Defs.MetaComplexity",
@@ -339,6 +368,11 @@
       "sha256": "715d5a762de5070e3f916a4a9f8ce56d00a1f4635ba53cceafdf2c2bf84d26fc"
     },
     {
+      "module": "PEqualNP.Defs.ReadK",
+      "path": "lean/PEqualNP/Defs/ReadK.lean",
+      "sha256": "52edcb3b9e53c25b50d0732d0a8bbfa414d48b74a3a26b6cf2dfb25b02fa4836"
+    },
+    {
       "module": "PEqualNP.Defs.RiffleRank",
       "path": "lean/PEqualNP/Defs/RiffleRank.lean",
       "sha256": "a43edc0c5d5e2fb75251499571cff0738a44ebb4976d1e2c8d4a3e7ebe856d02"
@@ -394,14 +428,34 @@
       "sha256": "1ff7e0b70672dada573be86883d773db03ef9ba186e9ef8cafd2b26a71e35ee8"
     },
     {
+      "module": "PEqualNP.Defs.SplitCount",
+      "path": "lean/PEqualNP/Defs/SplitCount.lean",
+      "sha256": "60ab3b235e5e2167086fc5848faabf6806bb4e9401035e890878531d0b393270"
+    },
+    {
       "module": "PEqualNP.Defs.Subdivision",
       "path": "lean/PEqualNP/Defs/Subdivision.lean",
       "sha256": "6f0a74735a03585203ce3ea9cbb775de1541e340402bb2fffec47a57628fb6fa"
     },
     {
+      "module": "PEqualNP.Defs.SyntacticMultilinear",
+      "path": "lean/PEqualNP/Defs/SyntacticMultilinear.lean",
+      "sha256": "877c72a533d80347c87172af97bdf5b9b44522ff412a98fa1254a1c2e4f52997"
+    },
+    {
       "module": "PEqualNP.Defs.TimeAlt",
       "path": "lean/PEqualNP/Defs/TimeAlt.lean",
       "sha256": "5d2da1d12e0a7d44c1c4407732fa508d1f43d0b4579bb183829c9b02c336fbc6"
+    },
+    {
+      "module": "PEqualNP.Defs.TopForm",
+      "path": "lean/PEqualNP/Defs/TopForm.lean",
+      "sha256": "8a8ddba048b66d46a1bdf0a3e8aaedfad821b582149544bfd1ff49f970ad7058"
+    },
+    {
+      "module": "PEqualNP.Defs.TopFormNames",
+      "path": "lean/PEqualNP/Defs/TopFormNames.lean",
+      "sha256": "da3fbcf03e2ed9c772ea58a955e4c902ce3b298b65a3cd3c730aca9da68486c3"
     }
   ],
   "context": {
@@ -414,13 +468,13 @@
   "explicit_dependencies": null,
   "file": "lean/PEqualNP/Outside/L_meta_456.lean",
   "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "89e13f561708e577bca39140b45c8c3ad09ce72f316e90f6b8182fcc687f31a7",
+  "guard_sha256": "4591b8ce64165d693c3f84f30e3b7f4172ecbcd462761b594dab4cbee2ffe652",
   "id": "L-meta-456",
   "local_verification": "not_run",
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_456",
-  "observed_at": "2026-11-23T23:44:07Z",
+  "observed_at": "2026-11-24T07:02:26Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
@@ -443,9 +497,9 @@
     "status_at": "2026-11-23T07:45:39.436Z",
     "title": "In the 2k-subdivision of H on Fin (m + 2k m^2), distinct vertices of H are joined only by walks of length at least 2k + 1"
   },
-  "snapshot_sha256": "25154b482427343dd3b369349e8813f608a6309e1ea84263ad89ea67e52127d7",
+  "snapshot_sha256": "df31141e3d88226e92cedbf052149b979bdf1d25c02df35353d3691e7b9d88f3",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∀ (m k : ℕ) (H : SimpleGraph (Fin m)) (Q : Fin m → Fin m → ℕ → Fin (m + 2 * k * (m * m)) → Prop) (S : SimpleGraph (Fin (m + 2 * k * (m * m)))), 1 ≤ k → (∀ (u v : Fin m) (p : ℕ) (x : Fin (m + 2 * k * (m * m))), Q u v p x ↔ (p = 0 ∧ x.val = u.val) ∨ (p = 2 * k + 1 ∧ x.val = v.val) ∨ (1 ≤ p ∧ p ≤ 2 * k ∧ x.val + 1 = m + 2 * k * (u.val * m + v.val) + p)) → (∀ x y : Fin (m + 2 * k * (m * m)), S.Adj x y ↔ ∃ u v : Fin m, u < v ∧ H.Adj u v ∧ ∃ p : ℕ, p ≤ 2 * k ∧ ((Q u v p x ∧ Q u v (p + 1) y) ∨ (Q u v p y ∧ Q u v (p + 1) x))) → ∀ x y : Fin (m + 2 * k * (m * m)), x.val < m → y.val < m → x ≠ y → ∀ p : S.Walk x y, 2 * k + 1 ≤ p.length",
   "toolchain": "leanprover/lean4:v4.36.0",
-  "upstream_sha": "9df1908fa90130edcd70d10c9ea1395c93d41020"
+  "upstream_sha": "3eb0c78ba6004cf194e4ac0b855c9677a1cddd46"
 }

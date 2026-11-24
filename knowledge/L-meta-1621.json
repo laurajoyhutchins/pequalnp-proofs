@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ T : ℕ → Set ((Fin 14 → Bool) → Bool), (∀ i : Fin 14, (fun x : Fin 14 → Bool => x i) ∈ T 0) → (∀ (k : ℕ) (f : (Fin 14 → Bool) → Bool), f ∈ T k → f ∈ T (k + 1)) → (∀ (k : ℕ) (f g : (Fin 14 → Bool) → Bool), f ∈ T k → g ∈ T k → (fun y : Fin 14 → Bool => f y && g y) ∈ T (k + 1) ∧ (fun y : Fin 14 → Bool => f y || g y) ∈ T (k + 1)) → (fun z : Fin 14 → Bool => (z 0 && z 7) || (z 0 && z 8) || (z 0 && z 10) || (z 1 && z 7) || (z 1 && z 9) || (z 1 && z 13) || (z 2 && z 8) || (z 2 && z 12) || (z 2 && z 13) || (z 3 && z 7) || (z 3 && z 11) || (z 3 && z 12) || (z 4 && z 10) || (z 4 && z 11) || (z 4 && z 13) || (z 5 && z 9) || (z 5 && z 10) || (z 5 && z 12) || (z 6 && z 8) || (z 6 && z 9) || (z 6 && z 11)) ∈ T 5",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1621",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Is there, for the Heawood graph (points 0..6, lines 7..13, point p joined to line 7 + l when p + l is 0, 1 or 3 mod 7), a monotone formula of depth at most 5 for the function true exactly when both ends of some edge are true? A monotone formula: a tree of fan-in-two AND and OR gates over the inputs, no NOT, no constants; depth at most d is said as: the function lies in level d of every family of sets of functions that holds the inputs at level 0, keeps each level in the next, and puts the AND and the OR of two level-k functions in level k + 1. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1621.1278d3c2f004.json",
+  "statement_hash": "sha256:31f7490e2aef75a6f6304d20c3699bc64857369da00212d77528ec4506b1a995",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T03:03:39.639Z",
+  "title": "Probe: Search: a monotone fan-in-two AND/OR formula of depth at most 5 for the edge function of the Heawood graph",
+  "used_by": []
+}

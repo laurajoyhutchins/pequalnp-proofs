@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.FanInTwo C → (∀ y : Fin 9 → Bool, (C.wires (List.ofFn y)).getD 9 false = (y 0 && y 2)) → PEqualNP.MetaComplexity.circuitFun 9 C = (fun x : Fin 9 → Bool => (x 0 && x 1) || (x 1 && x 2) || (x 2 && x 3) || (x 3 && x 4) || (x 4 && x 0) || (x 0 && x 5) || (x 1 && x 6) || (x 2 && x 7) || (x 3 && x 8) || (x 5 && x 7) || (x 6 && x 8) || (x 8 && x 5)) → 16 ≤ C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-1668",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Take the Petersen graph minus a vertex, inputs 0 to 8, edges 0-1, 1-2, 2-3, 3-4, 4-0, 0-5, 1-6, 2-7, 3-8, 5-7, 6-8, 8-5. Every circuit of AND, OR (fan-in at most two) and NOT gates, every gate counted, a gate may name a wire not yet produced (it reads false), whose first gate (wire 9) equals AND of inputs 0 and 2 (a non-edge) on every input and which is true exactly when both ends of some edge are true, has at least 16 gates. One of 14 shards covering, up to the graph's 12 symmetries, every first gate that negates an input or reads two distinct ones. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-1668.a0804d38c64d.json",
+  "statement_hash": "sha256:2394236042d4dd858afa61f7e18e4bb6bfb978b719b08d351684924f09a4dbe1",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T03:53:32.520Z",
+  "title": "Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate AND(x_0, x_2) computes its edge function",
+  "used_by": []
+}

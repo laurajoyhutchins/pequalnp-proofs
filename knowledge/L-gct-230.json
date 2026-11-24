@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∃ L : Submodule ℂ (Fin 4 × Fin 4 → ℂ), Module.finrank ℂ L = 6 ∧ ∀ t ∈ L, Matrix.permanent (Matrix.of fun (i j : Fin 4) => (if i = j then (2 : ℂ) else 1) + t (i, j)) = 65)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-gct-230",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "The negation, wrapped whole, of the statement that some 6-dimensional linear space L of 4 x 4 complex matrices keeps the permanent of the matrix with 2 + t(i, i) on the diagonal and 1 + t(i, j) elsewhere equal to 65 for every t in L. Equivalent to: every such space has dimension at most 5. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-gct-230.28621f526a51.json",
+  "statement_hash": "sha256:9fb8bf6db4960a52f721ff7c748f6a5ed5a1abb95df415d7d977a4b52972a318",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-23T22:13:48.938Z",
+  "title": "Probe: at the 4 x 4 base point with 2 on the diagonal and 1 elsewhere, no six-dimensional level space keeps the permanent at 65",
+  "used_by": []
+}
