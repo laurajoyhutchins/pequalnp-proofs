@@ -23,3 +23,17 @@ For GitHub-hosted diagnostics, create a branch under `research/diagnostic-<task>
 ## Warm diagnostic state
 
 An isolated persistent checkout can opt into the original upstream `tools/build.sh` artifact cache by setting `PNP_DIAGNOSTIC_CACHE_HOME` to an absolute directory outside the checkout and receipts. With no flag the diagnostic uses same-tree incremental outputs only. Hosted diagnostic branches now restore a branch-scoped, exact-pin Lake artifact cache and save at most 1 GiB. Cache reuse is advisory, not acceptance; full checker runs do not restore or read it. Keep one checkout per active worker; never share a mutable checkout. GitHub cache visibility is branch scoped, not a global warm runner. The Mathlib upstream download still occurs per hosted job. The warm smoke branch measures first build, unchanged rebuild, actual source edit, and cache restoration after dropping project outputs. No persistent host has been provisioned.
+
+## Full checker modes and submission quality
+
+The local wrapper defaults to ordinary proof mode. On a fresh isolated checkout of a current upstream revision with the mode-aware guard, use:
+
+```sh
+bash tools/research/check-candidate.sh --kind check BASE SNAPSHOT GAP FILE CANDIDATE RECEIPTS
+bash tools/research/check-candidate.sh --kind refute BASE SNAPSHOT GAP FILE CANDIDATE RECEIPTS
+bash tools/research/check-candidate.sh --kind reduce BASE SNAPSHOT GAP FILE CANDIDATE RECEIPTS
+```
+
+The upstream desk must authorize the selected mode. Reduction files have their prescribed R_ name; ordinary proof and refutation files have their prescribed L_ name. The guard's mode must match the request, and the actual checker verdict must name the same mode. Use `--diagnostic` only for iteration, not export. Older upstream guards that cannot validate the mode fail closed. Contract tests mock the command boundary and do not verify mathematical proofs.
+
+The hosted ordinary-proof verification/export pipeline is separate: it still pins the upstream sandbox workflow identity and accepts ordinary proof candidates only. If the upstream workflow changes, review the sandbox changes before adapting that pipeline; never relax the identity check just to get a run. A successful local reduction check is necessary but not sufficient for export: demonstrate a nontrivial solved child or case and reduced residual difficulty. A cross-fork PR needs authorized upstream access; the connector's HTTP 403 is not a checker verdict and no proxy may be used to evade it. See AGENTS.md for the quality ratchet.
