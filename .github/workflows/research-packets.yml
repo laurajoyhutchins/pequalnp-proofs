@@ -11,6 +11,7 @@ on:
     paths:
       - 'tools/control/packets.mjs'
       - 'tools/control/desk_screen.mjs'
+      - 'tools/control/shard_frontier.py'
       - 'tools/control/research_knowledge.py'
       - '.github/workflows/research-packets.yml'
 
@@ -48,6 +49,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/control/research_knowledge.py "$RUNNER_TEMP/packets"
+          python3 tools/control/shard_frontier.py "$RUNNER_TEMP/packets"
       - uses: actions/upload-artifact@v4
         with:
           name: research-packets
@@ -75,11 +77,26 @@ jobs:
           data="$RUNNER_TEMP/packet-data"
           # Only the known packet layout may enter the generated data branch.
           python3 - "$data" <<'PY'
-          import json, pathlib, re, sys
+          import json, pathlib, re, sys, hashlib
           root=pathlib.Path(sys.argv[1])
           index=json.loads((root/'index.json').read_text())
           expected={'index.json'}
-          for gap in index['gaps']:
+          rows=[]
+          assert index['schema']=='research-frontier/2'
+          for s in index['row_shards']+index['retired_shards']+index.get('shortlist_shards',[]):
+              path=s['path']
+              assert re.fullmatch(r'frontier/(?:rows|checked|withdrawn|paused|short)-[0-9]{4}\.json',path)
+              assert path not in expected
+              expected.add(path)
+              raw=(root/path).read_bytes()
+              assert len(raw)<=400000 and hashlib.sha256(raw).hexdigest()==s['sha256']
+              if path.startswith('frontier/rows-'):
+                  shard=json.loads(raw)
+                  assert shard['upstream_sha']==index['upstream_sha'] and shard['snapshot_sha256']==index['snapshot_sha256']
+                  assert len(shard['gaps'])==s['count']
+                  rows.extend(shard['gaps'])
+          assert len(rows)==index['gap_count']==len({g['id'] for g in rows})
+          for gap in rows:
               gid=gap['id']
               assert re.fullmatch(r'L-[a-z0-9]+(-[a-z0-9]+)*',gid)
               expected.update(f'packets/{gid}/{name}' for name in ('packet.json','statement.txt','Skeleton.lean'))
@@ -100,7 +117,7 @@ jobs:
           assert 0<=age<=1200, 'refusing stale publication'
           source_age=(datetime.now(timezone.utc)-datetime.fromisoformat(index['source_updated_at'].replace('Z','+00:00'))).total_seconds()
           assert -120<=source_age<=1200, 'refusing stale source snapshot'
-          assert all(g['screening']['state'] in ('excluded_from_local_shortlist','requires_live_desk_lease') for g in index['gaps'])
+          assert all(g['screening']['state'] in ('excluded_from_local_shortlist','requires_live_desk_lease') for g in rows)
           PY
           cd "$data"
           git init -q
@@ -124,7 +141,7 @@ jobs:
               exit 0
             fi
           fi
-          git add -- index.json packets/ knowledge/
+          git add -- index.json packets/ knowledge/ frontier/
           tree=$(git write-tree)
           if [ -n "$old" ]; then
             commit=$(printf '%s\n' 'Refresh public swarm research packets' | git commit-tree "$tree" -p "$old")
