@@ -32,6 +32,7 @@ theorem decode_mask (S : Finset (Fin 9)) :
 theorem mask_union (A B : Finset (Fin 9)) : mask (A ∪ B) = mask A ||| mask B := by
   apply PetersenMaskBridge.decode_inj PetersenGroupBFS.petersenNine (mask_lt (A ∪ B))
     (Nat.or_lt_two_pow (n:=9) (mask_lt A) (mask_lt B))
+  change PetersenMaskBridge.decode PetersenGroupBFS.petersenNine (mask (A ∪ B)) = PetersenMaskBridge.decode PetersenGroupBFS.petersenNine (Nat.lor (mask A) (mask B))
   rw [PetersenMaskBridge.decode_or, decode_mask, decode_mask, decode_mask]
 
 set_option maxHeartbeats 0 in
@@ -49,7 +50,7 @@ theorem residual_eq (m i : Nat) : res m i = PetersenGroupBFS.residualNeighbors P
 theorem residual_zero (M : Finset (Fin 9)) (i : Fin 9) :
     res (mask M) i.val = 0 ↔ neighborsAfter petersenGraph M i = ∅ := by
   rw [residual_eq]
-  have h := PetersenMaskBridge.residual_zero_iff PetersenGroupBFS.petersenNine petersenGraph
+  have h := @PetersenMaskBridge.residual_zero_iff PetersenGroupBFS.petersenNine petersenGraph petersenAdjDecidable
     petersen_graph_matches_mask (mask M) (mask_lt M) i
   rwa [decode_mask] at h
 
@@ -64,8 +65,9 @@ theorem good_of_twin (M S : Finset (Fin 9)) (h : TwinGroup petersenGraph M S) :
   apply PetersenMaskBridge.decode_inj PetersenGroupBFS.petersenNine
     (PetersenGroupBFS.neighbor_bounded _ _ _ (mask_lt M))
     (PetersenGroupBFS.neighbor_bounded _ _ _ (mask_lt M))
-  rw [PetersenMaskBridge.decode_neighbors _ _ petersen_graph_matches_mask,
-      PetersenMaskBridge.decode_neighbors _ _ petersen_graph_matches_mask, decode_mask]
+  have ei := @PetersenMaskBridge.decode_neighbors PetersenGroupBFS.petersenNine petersenGraph petersenAdjDecidable petersen_graph_matches_mask (mask M) i
+  have ej := @PetersenMaskBridge.decode_neighbors PetersenGroupBFS.petersenNine petersenGraph petersenAdjDecidable petersen_graph_matches_mask (mask M) j
+  rw [ei,ej,decode_mask]
   exact h i ((mask_test S i).mp hi) j ((mask_test S j).mp hj) ni nj
 
 theorem groups_valid (M : Finset (Fin 9)) (groups : List (Finset (Fin 9)))
@@ -135,8 +137,10 @@ theorem raw_prefix_budget {m : Nat} (label : Fin 9 → Fin m) (out : Fin m)
     refine ⟨List.sortedLT_iff_pairwise.mp (Finset.sortedLT_sort rawRoots),
       List.sortedLT_iff_pairwise.mp (Finset.sortedLT_sort innerRoots), ?_⟩
     intro a ha b hb
-    have ha' : a.val < 9 := (Finset.mem_filter.mp (Finset.mem_sort.mp ha)).2
-    have hb' : ¬ b.val < 9 := (Finset.mem_filter.mp (Finset.mem_sort.mp hb)).2
+    have haM : a ∈ rawRoots := by simpa only [done,Finset.mem_sort] using ha
+    have hbM : b ∈ innerRoots := by simpa only [pending,Finset.mem_sort] using hb
+    have ha' : a.val < 9 := (Finset.mem_filter.mp haM).2
+    have hb' : ¬ b.val < 9 := (Finset.mem_filter.mp hbM).2
     change a.val < b.val
     omega
   have covered : coveredBy label done = M := by
@@ -242,6 +246,8 @@ theorem least_raw_branch_budget (gs : List Gate) (out : Nat) (least : Least 9 pe
   change nonNotCount gs + notGateCount gs = gs.length at total
   omega
 
+set_option maxRecDepth 30000 in
+set_option maxHeartbeats 0 in
 theorem anchor02 (gs : List Gate) (out : Nat) (least : Least 9 petersenF gs out)
     (cost : nonNotCount gs ≤ 13)
     (h0 : (0 : Fin 9) ∈ rawBranches gs) (h2 : (2 : Fin 9) ∈ rawBranches gs) :
@@ -252,6 +258,8 @@ theorem anchor02 (gs : List Gate) (out : Nat) (least : Least 9 petersenF gs out)
   change pop (mask (rawBranches gs)) + potential (mask (rawBranches gs)) ≤ 5
   omega
 
+set_option maxRecDepth 30000 in
+set_option maxHeartbeats 0 in
 theorem anchor04 (gs : List Gate) (out : Nat) (least : Least 9 petersenF gs out)
     (h0 : (0 : Fin 9) ∈ rawBranches gs) (h4 : (4 : Fin 9) ∈ rawBranches gs) : 14 ≤ nonNotCount gs := by
   have hb := least_raw_branch_budget gs out least
@@ -259,6 +267,8 @@ theorem anchor04 (gs : List Gate) (out : Nat) (least : Least 9 petersenF gs out)
   change 6 ≤ pop (mask (rawBranches gs)) + potential (mask (rawBranches gs)) at h
   omega
 
+set_option maxRecDepth 30000 in
+set_option maxHeartbeats 0 in
 theorem anchor46 (gs : List Gate) (out : Nat) (least : Least 9 petersenF gs out)
     (h4 : (4 : Fin 9) ∈ rawBranches gs) (h6 : (6 : Fin 9) ∈ rawBranches gs) : 14 ≤ nonNotCount gs := by
   have hb := least_raw_branch_budget gs out least
