@@ -75,7 +75,7 @@ jobs:
           assert {p.name for p in pathlib.Path('.').iterdir()}=={'verdicts.json'}
           p=pathlib.Path('verdicts.json'); assert p.is_file() and not p.is_symlink()
           x=json.loads(p.read_bytes())
-          assert x['scope']=='account_pr_reconciliation' and x['source']=='brilliant-hq/pequalnp-proofs' and x['account']=='laurajoyhutchins'
+          assert x['scope']=='account_pr_reconciliation' and x['source']=='open-goat/pequalnp-proofs' and x['account']=='laurajoyhutchins'
           assert all(r['author']==x['account'] for r in x['prs'])
           PY
           git init -q

@@ -81,7 +81,7 @@ jobs:
               for name in required:
                   (root/name).write_bytes(z.read(name))
           PY
-          git clone -q --depth 1 --single-branch --branch main https://github.com/brilliant-hq/pequalnp-proofs.git "$RUNNER_TEMP/base"
+          git clone -q --depth 1 --single-branch --branch main https://github.com/open-goat/pequalnp-proofs.git "$RUNNER_TEMP/base"
           curl -fsS --proto '=https' --max-redirs 0 --max-filesize 5000000 --max-time 60 https://data.pequalnp.com/data/desk/gaps.json > "$RUNNER_TEMP/gaps.json"
           python3 tools/control/export_candidate.py "$RUNNER_TEMP/base" "$RUNNER_TEMP/receipt" "$RUNNER_TEMP/gaps.json" "$head" "$gap" "$RUNNER_TEMP/proof.lean" "$RUNNER_TEMP/export" "$RUN"
       - uses: actions/upload-artifact@v4
@@ -108,7 +108,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git clone -q --depth 1 --single-branch --branch main https://github.com/brilliant-hq/pequalnp-proofs.git "$RUNNER_TEMP/base"
+          git clone -q --depth 1 --single-branch --branch main https://github.com/open-goat/pequalnp-proofs.git "$RUNNER_TEMP/base"
           curl -fsS --proto '=https' --max-redirs 0 --max-filesize 5000000 --max-time 60 https://data.pequalnp.com/data/desk/gaps.json > "$RUNNER_TEMP/gaps.json"
           PYTHONPATH=tools/control python3 - "$RUNNER_TEMP/base" "$RUNNER_TEMP/export" "$RUNNER_TEMP/gaps.json" "$RUNNER_TEMP/ref.txt" <<'PY'
           import json,pathlib,re,sys

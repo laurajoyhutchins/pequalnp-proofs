@@ -31,7 +31,7 @@ jobs:
           cd "$work"
           git init --quiet
           git remote add origin https://github.com/laurajoyhutchins/pequalnp-proofs.git
-          git remote add upstream https://github.com/brilliant-hq/pequalnp-proofs.git
+          git remote add upstream https://github.com/open-goat/pequalnp-proofs.git
           # Fetch full history without checking out or executing repository code.
           git fetch --no-tags origin refs/heads/main:refs/remotes/origin/main
           git fetch --no-tags upstream refs/heads/main:refs/remotes/upstream/main

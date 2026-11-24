@@ -1,4 +1,4 @@
-# Fork-local candidate verification, derived from upstream authoritative.yml at a6fb1ad3452be9050263f025e206582dc2f88295.
+# Fork-local check adapter; reviewed upstream authoritative workflow blob c64c7c45158ac7d9ed7d5faccb3cb44f831b86ba.
 # The original checker, build queue and lake-locked.sh are used, not replaced.
 # This is a local preflight; no claim, PR, desk mutation or authoritative verdict.
 name: Shared candidate verification
@@ -37,9 +37,9 @@ jobs:
           echo "GAP=$GAP" >> "$GITHUB_ENV"
           sudo mkdir -p "$W" && sudo chown "$(id -u):$(id -g)" "$W"
           mkdir -p "$W/in"
-          git clone -q --depth 1 --branch main --single-branch https://github.com/brilliant-hq/pequalnp-proofs.git "$W/base"
+          git clone -q --depth 1 --branch main --single-branch https://github.com/open-goat/pequalnp-proofs.git "$W/base"
           # Refuse workflow/lock protocol drift; regenerate this adapter from new upstream workflow before running.
-          [ "$(git -C "$W/base" hash-object .github/workflows/authoritative.yml)" = "c7fe8aa141ec8bb4c16bd6932d30d5d282bd647d" ] || { echo 'FAULT: upstream sandbox workflow changed; review adapter'; exit 3; }
+          [ "$(git -C "$W/base" hash-object .github/workflows/authoritative.yml)" = "c64c7c45158ac7d9ed7d5faccb3cb44f831b86ba" ] || { echo 'FAULT: upstream sandbox workflow changed; review adapter'; exit 3; }
           git init -q "$W/candidate"
           git -C "$W/candidate" fetch -q --depth 1 https://github.com/laurajoyhutchins/pequalnp-proofs.git "$GITHUB_SHA"
           [ "$(git -C "$W/candidate" rev-parse FETCH_HEAD)" = "$GITHUB_SHA" ]
@@ -52,15 +52,16 @@ jobs:
           curl -sSf --proto '=https' --max-redirs 0 --max-filesize 5000000 -o "$W/in/gaps.json" "$GAPS_URL"
           file=$(node -e 'const g=JSON.parse(require("fs").readFileSync(process.argv[1])).gaps.filter(x=>x.id===process.argv[2]); if(g.length!==1||typeof g[0].file!=="string"||!/^lean\/PEqualNP\/Outside\/L_[a-z0-9_]+\.lean$/.test(g[0].file)) process.exit(1); process.stdout.write(g[0].file)' "$W/in/gaps.json" "$GAP") || { echo 'REFUSED: gap not posted or invalid'; exit 1; }
           guard="$W/base/.github/scripts/outside-guard.mjs"
-          node "$guard" gap "$W/in/gaps.json" "$GAP" "$file" "$W/in"
+          node "$guard" gap "$W/in/gaps.json" "$GAP" "$file" "$W/in" check
+          [ "$(cat "$W/in/gap.kind")" = check ]
           [ ! -e "$W/base/$file" ] && [ ! -L "$W/base/$file" ] || { echo 'REFUSED: gap file exists in upstream'; exit 1; }
           printf '%s\n' "$file" > "$W/in/pr.file"
           jq -cn --arg gap "$GAP" --arg candidate "$GITHUB_SHA" --arg upstream "$(git -C "$W/base" rev-parse HEAD)" --arg file "$file" --arg blob "$(git hash-object "$W/in/proof.lean")" --arg snapshot "$(sha256sum "$W/in/gaps.json" | cut -d' ' -f1)" --arg statement "$(sha256sum "$W/in/statement.txt" | cut -d' ' -f1)" '{scope:"fork_local_only",gap:$gap,candidate_sha:$candidate,upstream_sha:$upstream,file:$file,candidate_blob:$blob,snapshot_sha256:$snapshot,statement_sha256:$statement}' > "$RUNNER_TEMP/candidate.identity.json"
           stop="stop-$(od -An -N16 -tx1 /dev/urandom | tr -d ' \n')"
           echo "::stop-commands::$stop"
           trap 'echo "::$stop::"' EXIT
-          node "$guard" imports "$W/in/proof.lean" "$W/in/imports.json" "$file"
-          node "$guard" closure "$W/base" "$W/in/imports.json" "$file" "$W/in"
+          node "$guard" imports "$W/in/proof.lean" "$W/in/imports.json" "$file" check
+          node "$guard" closure "$W/base" "$W/in/imports.json" "$file" "$W/in" check
           trap - EXIT
           echo "::$stop::"
 
@@ -203,7 +204,8 @@ jobs:
           # to every other one: the locked account can neither list, read nor create files in it.
           mkdir -m 700 "$RUNNER_TEMP/builds"
           # The same command the project's own records are made with:
-          #   node tools/check-lean.mjs <lean file> <statement file> check
+          #   node tools/check-lean.mjs <lean file> <statement file> <check|refute|reduce>
+          # (the kind is in/gap.kind, written by the guard from the desk's row and the run's input).
           # The environment is emptied, so no credential of this run is in it. The checker and
           # the verifier run as this run's account. Every build goes through lake-locked.sh and
           # runs as `outsider` (see that file). The compile is another account than the checker,
@@ -211,21 +213,34 @@ jobs:
           # The checker and everything it starts, the locked compile included, run inside one
           # memory limit below the machine's memory. What they need beyond it goes to swap,
           # instead of starving the runner itself, which loses the log and leaves the run hanging.
-          # The same machine for every run, whatever runner GitHub hands out: two cores and at
-          # most 6.5 GB of memory (the rest goes to swap). That is the 2 core, 8 GB runner on
-          # which honest proofs that import all of Mathlib are accepted in about 7 minutes. On
-          # the 4 core, 16 GB runner a limit of the machine's memory less 1.5 GB starved the
-          # runner itself: the run lost contact with GitHub after 45 minutes and left no log.
-          cap=$(( $(awk '/^MemTotal:/{print $2}' /proc/meminfo) - 1572864 ))
-          [ "$cap" -le 6815744 ] || cap=6815744
+          # Two cores for every run; memory: the machine's memory less 3 GB, but never less than before.
+          # History: a fixed 6.5 GB ceiling (to make every runner look like the 2 core, 8 GB one)
+          # left about 8 GB of a 16 GB runner idle while heavy checks swapped at the ceiling until
+          # the time limit (seven FAULTs with exit 124 on 2026-11-24, 5 to 8 GB of swap in use,
+          # 7 to 8 GB still available). Earlier, a limit of the machine's memory less 1.5 GB starved
+          # the 16 GB runner itself (lost contact after 45 minutes, no log); 3 GB is left now, and
+          # the memory watch below ends the check as a FAULT, never a verdict, if the machine runs
+          # short anyway. A check that needs more than the limit still goes to swap.
+          # cap = max(min(MemTotal - 1.5 GB, 6.5 GB), MemTotal - 3 GB): 6.5 GB on an 8 GB runner (as before,
+          # where honest Mathlib-wide proofs pass in about 7 minutes), about 12.7 GB on a 16 GB one (red team).
+          mem=$(awk '/^MemTotal:/{print $2}' /proc/meminfo)
+          old=$(( mem - 1572864 )); [ "$old" -le 6815744 ] || old=6815744
+          cap=$(( mem - 3145728 )); [ "$cap" -ge "$old" ] || cap=$old
           echo "memory: $(awk '/^MemTotal:/{print $2}' /proc/meminfo) kB, limit for the checker: $cap kB"
           # Time: 20 minutes for the proof file, 4 more for each listed outside module the same
           # build compiles first, at most 45 minutes.
           limit=$(( 1200 + 240 * $(grep -c . "$W/in/outside-imports.txt" || true) ))
           [ "$limit" -le 2700 ] || limit=2700
+          # A REDUCTION's own proof only assembles its children, so it is short: of 110 accepted
+          # reduce runs (intake logs, 2026-11-24) the checker step took 58 s at the median and 251 s
+          # at most. Its limit is 600 s, whatever it imports; past it the work belongs in a child.
+          if [ "$(cat "$W/in/gap.kind")" = reduce ]; then limit=600; fi
           echo "time limit for the checker: $limit s"
           # THE MEMORY WATCH (2026-11-23: three public runs lost their machine in this step and left
-          # no log). Every 60 s ONE line goes to this step's own output, which GitHub shows live, so a
+          # no log; 2026-11-24: one more, L-meta-1690's closing, lost inside its 24-minute limit with
+          # no log, so the machine starved between two 60 s samples). It samples every 15 s, so two
+          # low samples in a row end the checker within about 30 s of the machine running short.
+          # Every 60 s (every fourth sample) ONE line goes to this step's own output, which GitHub shows live, so a
           # lost machine leaves its last numbers on the page: the machine's available memory, swap in
           # use, the checker's memory now and at its peak (its own cgroup, the scope named below).
           # And the machine is never lost silently: when the MACHINE itself runs short (available
@@ -235,41 +250,132 @@ jobs:
           # hard limit the checker works at its limit and swaps, which is how a heavy honest proof
           # passes; it is the machine running short that loses a runner.
           unit="pnp-check-$GITHUB_RUN_ID"
+          # The lines that DECIDE how this step ends (machine short, no progress, time limit) go to a
+          # file of their own, written only by this step's own watchers, never by the checker or the
+          # build (red team): checker.err gets a copy, for the reader.
+          MARK="$RUNNER_TEMP/sampler/markers"; : > "$MARK"
           cg="/sys/fs/cgroup/system.slice/$unit.scope"
-          ( low=0
-            while sleep 60; do
+          # The checker's last stage, printed ONLY as one of our own fixed stage names (red team: once
+          # Lean runs on the file, stderr can carry the author's text; nothing of it is printed).
+          stage_now() {
+            last=$(grep -a '^checker stage: ' "$RUNNER_TEMP/checker.err" 2>/dev/null | tail -n 1 | sed 's/^checker stage: //; s/ t=[0-9]*s$//')
+            case "$last" in
+              'started'|'build lock taken'|'building the verifier'|'building the file and the definitions root'|'verifier reading the built file') echo "stage: $last" ;;
+              '') echo "stage: none yet" ;;
+              *) echo "stage: (unrecognised line, not printed)" ;;
+            esac
+          }
+          # THE NO-PROGRESS WATCHDOG (2026-11-24: eleven runs hung for the whole limit). The scope's
+          # CPU time (cpu.stat usage_usec) must grow by at least 2 s in every 8 minutes; a check that
+          # waits on a lock or a queue uses none. Then the scope is ended: a FAULT with that line.
+          # It FAILS OPEN: when the scope's cpu.stat cannot be read, it is off for this run, said in one line.
+          ( low=0; tick=0; cpu0=0; still=0; dog=on
+            while sleep 15; do
+              [ -e "$RUNNER_TEMP/sampler/done" ] && break
+              tick=$((tick + 1))
+              cpu=""; while read -r ck cv; do [ "$ck" = usage_usec ] && cpu=$cv; done 2>/dev/null < "$cg/cpu.stat"
+              if [ "$dog" = on ] && ! printf '%s' "$cpu" | grep -Eqx '[0-9]+'; then dog=off; echo "no-progress watchdog: OFF for this run (the checker scope's cpu.stat cannot be read)"; fi
+              if [ "$dog" = on ]; then
+                if [ "$cpu" -ge $((cpu0 + 2000000)) ]; then cpu0=$cpu; still=0; else still=$((still + 1)); fi
+                echo "$still" > "$RUNNER_TEMP/sampler/still"
+              fi
+              if [ "$dog" = on ] && [ "$still" -ge 32 ]; then
+                echo "no progress: the check made no progress for 8 minutes (CPU time $((cpu / 1000000)) s; last: $(stage_now)); ending the whole checker scope" | tee -a "$RUNNER_TEMP/checker.err" "$MARK"
+                sudo systemctl kill --signal=KILL "$unit.scope" 2>/dev/null || true
+                break
+              fi
               total=$(awk '/^MemTotal:/{print $2}' /proc/meminfo); avail=$(awk '/^MemAvailable:/{print $2}' /proc/meminfo)
               swap=$(awk '/^SwapTotal:/{t=$2} /^SwapFree:/{f=$2} END{print t-f}' /proc/meminfo)
               now=$(cat "$cg/memory.current" 2>/dev/null || echo 0); peak=$(cat "$cg/memory.peak" 2>/dev/null || echo 0)
               full=$(awk '/^full/{for(i=1;i<=NF;i++) if($i ~ /^avg60=/){sub("avg60=","",$i); print int($i)}}' /proc/pressure/memory 2>/dev/null || echo 0)
-              echo "memory watch t=$(( $(date +%s) - t0 ))s: available $((avail / 1024)) MB of $((total / 1024)), swap used $((swap / 1024)) MB, checker now $((now / 1048576)) MB, peak $((peak / 1048576)) MB of $((cap / 1024)), pressure full $full%"
+              [ $((tick % 4)) -eq 0 ] || [ "$avail" -lt $((total / 10)) ] && echo "memory watch t=$(( $(date +%s) - t0 ))s: available $((avail / 1024)) MB of $((total / 1024)), swap used $((swap / 1024)) MB, checker now $((now / 1048576)) MB, peak $((peak / 1048576)) MB of $((cap / 1024)), pressure full $full%, $(stage_now)"
               if [ "$avail" -lt $((total / 20)) ]; then low=$((low + 1)); else low=0; fi
               if [ "$low" -ge 2 ] || [ "${full:-0}" -gt 40 ]; then
-                echo "memory watch: the MACHINE is running short (available $((avail / 1024)) MB, pressure full $full%): ending the checker before the runner is lost" | tee -a "$RUNNER_TEMP/checker.err"
+                echo "memory watch: the MACHINE is running short (available $((avail / 1024)) MB, pressure full $full%): ending the checker before the runner is lost" | tee -a "$RUNNER_TEMP/checker.err" "$MARK"
                 sudo systemctl kill --signal=KILL "$unit.scope" 2>/dev/null || true
                 break
               fi
             done ) &
           watch=$!
+          # THE TIME LIMIT ends the WHOLE checker scope at once (2026-11-24: eleven runs were lost at
+          # the moment the old limit fired, a TERM to node alone, each 45 minutes into the checker
+          # step). One line goes to the live log first, so even a lost machine shows that the limit
+          # was reached and when. `timeout` below stays as a backstop, 60 s later.
+          # It acts only if its full sleep ran out AND the check has not ended (2026-11-24: killing its
+          # sleep at cleanup let it act after a 47 s check). DONE is written the moment the check ends.
+          DONE="$RUNNER_TEMP/sampler/done"
+          ( sleep "$limit" </dev/null >/dev/null 2>&1 || exit 0
+            [ -e "$DONE" ] && exit 0
+            echo "time limit reached: ${limit} s; ending the whole checker scope now" | tee -a "$RUNNER_TEMP/checker.err" "$MARK"
+            sudo systemctl kill --signal=KILL "$unit.scope" 2>/dev/null || true ) &
+          limiter=$!
+          # ONE JOB PER MACHINE: no other check can hold the build queue or the build lock here, so a
+          # slot or a lock left by an earlier step can only block this check until its limit
+          # (2026-11-24: eleven runs hung 45 minutes in this step). Clear them, and say what was found.
+          stale_slots=$(ls -d "$W/queue/build-slots"/*/ 2>/dev/null | wc -l | tr -d ' ')
+          stale_lock=no; [ -e "$W/base/lean/.lake/check.lock" ] && stale_lock=yes
+          echo "before the check: build-queue slots held ${stale_slots}, build lock present ${stale_lock}; both cleared"
+          rm -rf "$W/queue/build-slots" "$W/base/lean/.lake/check.lock"
+          # Every file the judged build writes must be the locked account's (read below, after it).
+          touch "$RUNNER_TEMP/build.marker"
           sudo systemd-run --quiet --scope --collect --unit="$unit" -p MemoryMax="${cap}K" \
               --uid="$(id -u)" --gid="$(id -g)" \
           taskset -c 0,1 env -i HOME="$HOME" LANG=C.UTF-8 PATH="$TC_BIN:$node_bin:/usr/bin:/bin" \
               PEQUALNP_REAL_LAKE="$W/base/.github/scripts/lake-locked.sh" PEQUALNP_HOME="$W/queue" \
               PNP_TC_BIN="$TC_BIN" PNP_GITCONFIG="$W/in/gitconfig" PNP_BUILD_LOGS="$RUNNER_TEMP/builds" \
-            timeout -k 30 "$limit" node "$W/base/tools/check-lean.mjs" "$W/base/$file" "$W/in/statement.txt" check \
+            timeout -k 30 "$((limit + 60))" node "$W/base/tools/check-lean.mjs" "$W/base/$file" "$W/in/statement.txt" "$(cat "$W/in/gap.kind")" \
             > "$RUNNER_TEMP/checker.out" 2> "$RUNNER_TEMP/checker.err"
           code=$?
-          kill "$sampler" "$watch" 2>/dev/null
+          touch "$DONE"
+          # A check ENDED ON ITS OWN only if the checker wrote its own final line: an ACCEPTED or REJECTED
+          # last line on stdout, or a CHECKER FAULT line on stderr. Only then is a marker of ours ignored;
+          # with no such line the run is a FAULT, whatever exit code the wrapper returned (red team).
+          ended_own() {
+            case "$(tail -n 1 "$RUNNER_TEMP/checker.out" 2>/dev/null)" in ACCEPTED*|REJECTED*) return 0 ;; esac
+            grep -aq '^CHECKER FAULT: ' "$RUNNER_TEMP/checker.err" 2>/dev/null
+          }
+          kill "$limiter" "$watch" "$sampler" 2>/dev/null; pkill -P "$limiter" 2>/dev/null; pkill -P "$watch" 2>/dev/null
           # Ended by the memory watch: a FAULT of the machine, never a verdict on the proof.
-          if grep -q '^memory watch: the MACHINE is running short' "$RUNNER_TEMP/checker.err" 2>/dev/null; then
+          if grep -q '^memory watch: the MACHINE is running short' "$MARK" 2>/dev/null && ! ended_own; then
+            code=137
+          elif grep -q '^no progress: ' "$MARK" 2>/dev/null && ! ended_own; then
+            # Ended by the no-progress watchdog: a FAULT of the run, never a verdict on the proof.
             code=137
           else
             # 124 or 137: the time limit ended the checker. A FAULT, never a verdict on the proof.
+            # The time-limit marker counts only when the checker did not end on its own (no final line).
+            if grep -q '^time limit reached' "$MARK" 2>/dev/null && ! ended_own; then
+              code=124
+              # C3 (red team): a REDUCTION that reached its limit while making progress is the file's
+              # doing: REFUSED with one fixed sentence, never re-run. (A hang ends above, as no progress.)
+              # Only with progress in the last two minutes (fewer than 8 still samples); a reduction that
+              # worked and then hung is our fault: the no-progress FAULT, re-run (red team).
+              if [ "$(cat "$W/in/gap.kind")" = reduce ]; then
+                still_now=$(cat "$RUNNER_TEMP/sampler/still" 2>/dev/null || echo 99)
+                if printf '%s' "$still_now" | grep -Eqx '[0-9]+' && [ "$still_now" -lt 8 ]; then code=5
+                else echo "no progress: the reduction made no progress for the last $((still_now * 15)) s before its limit; a FAULT, not a refusal" | tee -a "$RUNNER_TEMP/checker.err" "$MARK"; code=137; fi
+              fi
+            fi
             case "$code" in 124|137) echo "the checker was stopped after $limit seconds" >> "$RUNNER_TEMP/checker.err" ;; esac
           fi
           # Nothing the compile started may outlive it, and neither may the verifier.
           sudo pkill -KILL -u outsider || true
           pkill -KILL -f "$W/base/lean/.lake/build/bin/checklemma" || true
+          # THE LOCKED BUILD, read from its side effect (red team, 2026-11-24): a compile that ran as
+          # this run's account instead of `outsider` would leave files of ours in the build tree.
+          # Any file written under lean/.lake/build during the check that the locked account does not
+          # own is a FAULT, whatever the checker said.
+          unlocked=$(find "$W/base/lean/.lake/build" -newer "$RUNNER_TEMP/build.marker" -type f ! -user outsider -print 2>/dev/null | head -5)
+          if [ -n "$unlocked" ]; then
+            echo "the judged build wrote files that are not the locked account's (an unlocked build): $(printf '%s' "$unlocked" | tr '\n' ' ' | tr -cd 'A-Za-z0-9_./ -' | cut -c1-400)" >> "$RUNNER_TEMP/checker.err"
+            code=3
+          fi
+          # And not vacuously: the judged file is compiled in this step, so the locked account must have
+          # written something under the build tree; a run where it wrote nothing is a FAULT too (red team).
+          if [ "$code" = 0 ] && [ -z "$(find "$W/base/lean/.lake/build" -newer "$RUNNER_TEMP/build.marker" -type f -user outsider -print -quit 2>/dev/null)" ]; then
+            echo "the judged build wrote nothing as the locked account (no file of outsider newer than the start of the check)" >> "$RUNNER_TEMP/checker.err"
+            code=3
+          fi
           echo "code=$code" >> "$GITHUB_OUTPUT"
 
       - name: Print the checker's last line, MANIFEST, and the verdict

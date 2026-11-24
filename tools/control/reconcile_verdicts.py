@@ -8,11 +8,11 @@ import re
 import subprocess
 from pathlib import Path
 
-UPSTREAM="brilliant-hq/pequalnp-proofs"
+UPSTREAM="open-goat/pequalnp-proofs"
 OWNER="laurajoyhutchins"
 HEAD=re.compile(r"[0-9a-f]{40}")
 HEX=re.compile(r"[0-9a-f]{64}")
-RUN=re.compile(r"^Run: https://github\.com/brilliant-hq/pequalnp-proofs/actions/runs/([1-9][0-9]*)$",re.M)
+RUN=re.compile(r"^Run: https://github\.com/open-goat/pequalnp-proofs/actions/runs/([1-9][0-9]*)$",re.M)
 COMMENT_HEAD=re.compile(r"^Checked on the base repository at commit " + chr(96) + r"([0-9a-f]{7,40})" + chr(96) + r"\.$",re.M)
 ANSI=re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 STAMP=re.compile(r"^\d{4}-\d{2}-\d{2}T\S+Z ")
@@ -92,7 +92,7 @@ def public_credit(detail, credit, pr, file, proof):
             a.get("content_hash")=="sha256:"+hashlib.sha256(proof).hexdigest() and
             isinstance(statement,str) and
             detail.get("statement_hash")=="sha256:"+hashlib.sha256(statement.encode()).hexdigest() and
-            re.fullmatch(r"https://github\.com/brilliant-hq/pequalnp-proofs/actions/runs/[1-9][0-9]*",run)):
+            re.fullmatch(r"https://github\.com/open-goat/pequalnp-proofs/actions/runs/[1-9][0-9]*",run)):
         return None
     return {"kind":"CHECKED_CREDIT","gap":detail["id"],"source":PUBLIC+"data/lemma/"+credit["id"]+"."+credit["ref"]+".json",
             "contributor":c["github"],"pr_url":c["pr_url"],"runner_url":run,"head_sha":pr["head"]["sha"],
