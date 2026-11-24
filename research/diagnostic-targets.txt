@@ -1,0 +1,1 @@
+lean/PEqualNP/Outside/L_gct_122.lean
