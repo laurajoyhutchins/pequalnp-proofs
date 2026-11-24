@@ -9,10 +9,18 @@ import subprocess
 from pathlib import Path
 
 UPSTREAM="open-goat/pequalnp-proofs"
+# This exact repository was renamed; historic credited records retain the old URL.
+REPO_URL=r"https://github\.com/(?:open-goat|brilliant-hq)/pequalnp-proofs"
+PR_URL=re.compile(REPO_URL+r"/pull/([1-9][0-9]*)")
+RUN_URL=re.compile(REPO_URL+r"/actions/runs/([1-9][0-9]*)")
+def same_pr(a,b):
+    if not isinstance(a,str) or not isinstance(b,str): return False
+    x,y=PR_URL.fullmatch(a),PR_URL.fullmatch(b)
+    return bool(x and y and x[1]==y[1])
 OWNER="laurajoyhutchins"
 HEAD=re.compile(r"[0-9a-f]{40}")
 HEX=re.compile(r"[0-9a-f]{64}")
-RUN=re.compile(r"^Run: https://github\.com/open-goat/pequalnp-proofs/actions/runs/([1-9][0-9]*)$",re.M)
+RUN=re.compile(r"^Run: "+RUN_URL.pattern+r"$",re.M)
 COMMENT_HEAD=re.compile(r"^Checked on the base repository at commit " + chr(96) + r"([0-9a-f]{7,40})" + chr(96) + r"\.$",re.M)
 ANSI=re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 STAMP=re.compile(r"^\d{4}-\d{2}-\d{2}T\S+Z ")
@@ -88,11 +96,11 @@ def public_credit(detail, credit, pr, file, proof):
     run=a.get("runner_url","")
     if not (pr.get("merged") is True and detail.get("id")==credit.get("id") and
             detail.get("status")=="checked" and c.get("github")==pr["user"]["login"] and
-            c.get("pr_url")==pr["html_url"] and a.get("lean_file")==file["filename"] and
+            same_pr(c.get("pr_url"),pr["html_url"]) and a.get("lean_file")==file["filename"] and
             a.get("content_hash")=="sha256:"+hashlib.sha256(proof).hexdigest() and
             isinstance(statement,str) and
             detail.get("statement_hash")=="sha256:"+hashlib.sha256(statement.encode()).hexdigest() and
-            re.fullmatch(r"https://github\.com/open-goat/pequalnp-proofs/actions/runs/[1-9][0-9]*",run)):
+            RUN_URL.fullmatch(run)):
         return None
     return {"kind":"CHECKED_CREDIT","gap":detail["id"],"source":PUBLIC+"data/lemma/"+credit["id"]+"."+credit["ref"]+".json",
             "contributor":c["github"],"pr_url":c["pr_url"],"runner_url":run,"head_sha":pr["head"]["sha"],

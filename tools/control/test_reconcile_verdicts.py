@@ -32,6 +32,10 @@ class VerdictTests(unittest.TestCase):
             "artifact":{"lean_file":f["filename"],"content_hash":h(b"proof"),
                         "runner_url":"https://github.com/"+UPSTREAM+"/actions/runs/8"}}
         self.assertEqual(public_credit(d,c,pr,f,b"proof")["kind"],"CHECKED_CREDIT")
+        legacy=dict(d,contributor=dict(d["contributor"],pr_url=d["contributor"]["pr_url"].replace("open-goat","brilliant-hq")),artifact=dict(d["artifact"],runner_url=d["artifact"]["runner_url"].replace("open-goat","brilliant-hq")))
+        self.assertEqual(public_credit(legacy,c,pr,f,b"proof")["kind"],"CHECKED_CREDIT")
+        self.assertIsNone(public_credit(dict(legacy,contributor=dict(legacy["contributor"],pr_url="https://github.com/other/pequalnp-proofs/pull/7")),c,pr,f,b"proof"))
+        self.assertIsNone(public_credit(dict(legacy,contributor=dict(legacy["contributor"],pr_url="https://github.com/brilliant-hq/pequalnp-proofs/pull/8")),c,pr,f,b"proof"))
         self.assertIsNone(public_credit(d,c,pr,f,b"changed"))
         self.assertIsNone(public_credit(d,c,dict(pr,merged=False),f,b"proof"))
         self.assertIsNone(public_credit(dict(d,status="conjecture"),c,pr,f,b"proof"))
