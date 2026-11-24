@@ -189,7 +189,6 @@ set_option maxRecDepth 10000 in
 set_option maxHeartbeats 2000000 in
 theorem triangleBranch62 : search ((62 : BitVec 6) :: triangleMasks) 56 2 = false := by decide
 
-
 theorem triangleCertificate : search triangleMasks 56 3 = false := by
   have h : triangleMasks.contains 56 = false := by decide
   rw [search]
