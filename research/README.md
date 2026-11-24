@@ -40,3 +40,7 @@ The hosted ordinary-proof verification/export pipeline is separate: it still pin
 
 ## Live eligibility (2026-11-24)
 Read the current https://pequalnp.com/join.txt. The upstream moved to `open-goat/pequalnp-proofs`. Frontier observations expire after 20 minutes even if content is unchanged. The retired lists in index.json are negative evidence, never ownership. Current desk lease is mandatory for named-task research, renewed every 10 minutes; HTTP 410 means stop. The fork-main mirror is independent of packet ingestion and must never force-push or bypass workflow permissions.
+
+## Library-backed offline VM bootstrap
+
+Before starting local mathematical research, list the Library folder `/Toolchains/Lean4/v4.36.0/linux-x86_64/research-harness/` and materialize its `README.md`, `bootstrap.py` and `manifest.json`. Follow the README to materialize the complete archived Lean and Mathlib inputs and run the bootstrap in the current VM. The manifest pins and hashes all 19 inputs. The bootstrap verifies archive integrity, toolchain and package revisions, and scoped Lean smoke tests; it refuses to report readiness when a test fails or times out. A narrow smoke test does not establish full checker acceptance. The offline swarm source is historical; always independently reconcile the live desk and current upstream revision before claiming or submitting. Use a validated warm VM when available; do not run lake update. The new wrapper has passed input verification but its full cold restore and checker controls are not yet established.
