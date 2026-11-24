@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (have x1 : List (ℕ × ℕ) := [((0 : ℕ), (7 : ℕ)), ((0 : ℕ), (8 : ℕ)), ((0 : ℕ), (10 : ℕ)), ((1 : ℕ), (7 : ℕ)), ((1 : ℕ), (9 : ℕ)), ((1 : ℕ), (13 : ℕ)), ((2 : ℕ), (8 : ℕ)), ((2 : ℕ), (12 : ℕ)), ((2 : ℕ), (13 : ℕ)), ((3 : ℕ), (7 : ℕ)), ((3 : ℕ), (11 : ℕ)), ((3 : ℕ), (12 : ℕ)), ((4 : ℕ), (10 : ℕ)), ((4 : ℕ), (11 : ℕ)), ((4 : ℕ), (13 : ℕ)), ((5 : ℕ), (9 : ℕ)), ((5 : ℕ), (10 : ℕ)), ((5 : ℕ), (12 : ℕ)), ((6 : ℕ), (8 : ℕ)), ((6 : ℕ), (9 : ℕ)), ((6 : ℕ), (11 : ℕ))]; have x2 : (Fin (14 : ℕ) → Bool) → Prop := fun (x2 : Fin (14 : ℕ) → Bool) => ∃ (x3 : Fin (14 : ℕ)) (x4 : Fin (14 : ℕ)), (↑x3, ↑x4) ∈ x1 ∧ x2 x3 = Bool.true ∧ x2 x4 = Bool.true; ∀ (x3 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x3 → (∀ (x5 : Fin (14 : ℕ) → Bool), x3.eval (List.ofFn x5) = Bool.true ↔ x2 x5) → ∃ (x6 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x6 ∧ (∀ (x7 : Fin (14 : ℕ) → Bool), x6.eval (List.ofFn x7) = Bool.true ↔ x2 x7) ∧ x6.size ≤ x3.size ∧ ∃ (x7 : PEqualNP.CircuitLowerBounds.GateOp) (x8 : List PEqualNP.CircuitLowerBounds.Gate) (x9 : ℕ) (x10 : ℕ), x6.gates = { op := x7, inputs := [x9, x10] : PEqualNP.CircuitLowerBounds.Gate } :: x8 ∧ x9 < (14 : ℕ) ∧ x10 < (14 : ℕ) ∧ x9 ≠ x10)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2649",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: The edge function of the Heawood graph (14 inputs, 21 edges). A circuit of AND and OR gates, at most two inputs a gate, for it has an equal circuit of that kind, no larger, whose first gate reads two different inputs.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2649.63133a616199.json",
+  "statement_hash": "sha256:a6be87e4794c80d39d088062ac90646ff29d32a65c8ab2be164e286f87f55ee7",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:11:06.318Z",
+  "title": "It is false that: A step toward: A step toward: Every circuit of AND and OR gates for the edge function of the Heawood graph has at least 27 gates",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "have x1 : Bool → (Fin (8 : ℕ) → Bool) → List Bool := fun (x1 : Bool) (x2 : Fin (8 : ℕ) → Bool) => [x2 (1 : Fin (8 : ℕ)), x2 (0 : Fin (8 : ℕ)), x2 (4 : Fin (8 : ℕ)), x2 (7 : Fin (8 : ℕ)), x2 (5 : Fin (8 : ℕ)), x2 (2 : Fin (8 : ℕ)), x1, x2 (6 : Fin (8 : ℕ)), x2 (3 : Fin (8 : ℕ)), x2 (1 : Fin (8 : ℕ)) || x1]; ∀ (x2 : PEqualNP.CircuitLowerBounds.Circuit) (x3 x4 : (Fin (8 : ℕ) → Bool) → Bool),   PEqualNP.MetaComplexity.FanInTwo x2 →     x2.size ≤ (14 : ℕ) →       (∀ (x7 : Bool) (x8 : Fin (8 : ℕ) → Bool), x2.eval (x1 x7 x8) = if x7 = Bool.true then x4 x8 else x3 x8) →         (∃ (x8 : Fin (8 : ℕ) → Bool), x8 (1 : Fin (8 : ℕ)) = Bool.true ∧ x3 x8 = Bool.false ∧ x4 x8 = Bool.true) →           PEqualNP.MetaComplexity.HasCircuitSize (8 : ℕ) x3 (12 : ℕ) ∨             ∃ (x9 : PEqualNP.CircuitLowerBounds.Circuit) (x10 : PEqualNP.CircuitLowerBounds.Circuit) (x11 : ℕ),               PEqualNP.MetaComplexity.FanInTwo x9 ∧                 PEqualNP.MetaComplexity.FanInTwo x10 ∧                   x9.size + x10.size ≤ (13 : ℕ) ∧                     have x12 : Bool → (Fin (8 : ℕ) → Bool) → List Bool := fun (x12 : Bool) (x13 : Fin (8 : ℕ) → Bool) => x9.wires (List.ofFn x13 ++ [x13 (1 : Fin (8 : ℕ)) || x12]);                     (∀ (x13 : Fin (8 : ℕ) → Bool), x10.eval (x12 Bool.false x13 ++ [(x12 Bool.false x13).getD x11 Bool.false]) = x3 x13) ∧ ∀ (x13 : Fin (8 : ℕ) → Bool), x10.eval (x12 Bool.true x13 ++ [Bool.true]) = x4 x13",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3102",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 3 of a checked cut of L-meta-2303.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3102.6d937bb88948.json",
+  "statement_hash": "sha256:91f641028bf351179db47906f21690369d52be9e018a5ad15f90897c38a14a8c",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T11:30:47.968Z",
+  "title": "A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_6) computes its",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ x1 ∈ [((0 : Fin (12 : ℕ)), (1 : Fin (12 : ℕ))), ((0 : Fin (12 : ℕ)), (2 : Fin (12 : ℕ))), ((0 : Fin (12 : ℕ)), (3 : Fin (12 : ℕ))), ((0 : Fin (12 : ℕ)), (4 : Fin (12 : ℕ))), ((0 : Fin (12 : ℕ)), (6 : Fin (12 : ℕ))), ((1 : Fin (12 : ℕ)), (2 : Fin (12 : ℕ))), ((1 : Fin (12 : ℕ)), (3 : Fin (12 : ℕ))), ((1 : Fin (12 : ℕ)), (4 : Fin (12 : ℕ))), ((1 : Fin (12 : ℕ)), (5 : Fin (12 : ℕ))), ((1 : Fin (12 : ℕ)), (6 : Fin (12 : ℕ))), ((1 : Fin (12 : ℕ)), (7 : Fin (12 : ℕ))), ((1 : Fin (12 : ℕ)), (8 : Fin (12 : ℕ))), ((2 : Fin (12 : ℕ)), (3 : Fin (12 : ℕ))), ((2 : Fin (12 : ℕ)), (4 : Fin (12 : ℕ))), ((2 : Fin (12 : ℕ)), (6 : Fin (12 : ℕ))), ((2 : Fin (12 : ℕ)), (7 : Fin (12 : ℕ))), ((2 : Fin (12 : ℕ)), (8 : Fin (12 : ℕ))), ((3 : Fin (12 : ℕ)), (4 : Fin (12 : ℕ))), ((3 : Fin (12 : ℕ)), (6 : Fin (12 : ℕ))), ((4 : Fin (12 : ℕ)), (6 : Fin (12 : ℕ))), ((6 : Fin (12 : ℕ)), (7 : Fin (12 : ℕ)))],   ∀ (x3 : PEqualNP.CircuitLowerBounds.Circuit),     PEqualNP.MetaComplexity.FanInTwo x3 →       x3.size ≤ (13 : ℕ) →         ∃ (x6 : Fin (9 : ℕ) → Bool),           have x7 : List Bool := List.ofFn x6 ++ [!x6 (0 : Fin (9 : ℕ))];           have x8 : Fin (12 : ℕ) → Bool := fun (x8 : Fin (12 : ℕ)) => if x8 = (11 : Fin (12 : ℕ)) then Bool.true else x7.getD (↑x8) Bool.false;           x3.eval (x7 ++ [x8 x1.1 && x8 x1.2]) ≠ (x6 (0 : Fin (9 : ℕ)) && x6 (1 : Fin (9 : ℕ)) || x6 (1 : Fin (9 : ℕ)) && x6 (2 : Fin (9 : ℕ)) || x6 (2 : Fin (9 : ℕ)) && x6 (3 : Fin (9 : ℕ)) || x6 (3 : Fin (9 : ℕ)) && x6 (4 : Fin (9 : ℕ)) || x6 (4 : Fin (9 : ℕ)) && x6 (0 : Fin (9 : ℕ)) || x6 (0 : Fin (9 : ℕ)) && x6 (5 : Fin (9 : ℕ)) || x6 (1 : Fin (9 : ℕ)) && x6 (6 : Fin (9 : ℕ)) || x6 (2 : Fin (9 : ℕ)) && x6 (7 : Fin (9 : ℕ)) || x6 (3 : Fin (9 : ℕ)) && x6 (8 : Fin (9 : ℕ)) || x6 (5 : Fin (9 : ℕ)) && x6 (7 : Fin (9 : ℕ)) || x6 (6 : Fin (9 : ℕ)) && x6 (8 : Fin (9 : ℕ)) || x6 (8 : Fin (9 : ℕ)) && x6 (5 : Fin (9 : ℕ)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3275",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 3 of a checked cut of L-meta-1936.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3275.64442c5dd676.json",
+  "statement_hash": "sha256:1826e23bdfa3dc52f5723a278e62d716057cab1f19e30f16fbbca9e7f136b412",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T12:20:44.072Z",
+  "title": "A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate NOT x_0 computes its edge",
+  "used_by": []
+}

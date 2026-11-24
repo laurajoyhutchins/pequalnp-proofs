@@ -17,11 +17,13 @@
       "PEqualNP.Defs.Classes",
       "PEqualNP.Defs.CleanedNonEdge",
       "PEqualNP.Defs.CoLevel",
+      "PEqualNP.Defs.Core",
       "PEqualNP.Defs.CoverPromise",
       "PEqualNP.Defs.CrossAnd",
       "PEqualNP.Defs.DeMorganFormula",
       "PEqualNP.Defs.EdgeOwnership",
       "PEqualNP.Defs.Expanders",
+      "PEqualNP.Defs.FactorSubst",
       "PEqualNP.Defs.Gct",
       "PEqualNP.Defs.GenericRejection",
       "PEqualNP.Defs.HeptadCover",
@@ -29,6 +31,7 @@
       "PEqualNP.Defs.LineDegree",
       "PEqualNP.Defs.LiteralPartition",
       "PEqualNP.Defs.LowMerge",
+      "PEqualNP.Defs.LratEncoding",
       "PEqualNP.Defs.MergeCost",
       "PEqualNP.Defs.MetaComplexity",
       "PEqualNP.Defs.MetaComplexityCoverCircuit",
@@ -50,6 +53,7 @@
       "PEqualNP.Defs.Peelable",
       "PEqualNP.Defs.PencilGate",
       "PEqualNP.Defs.PendantBit",
+      "PEqualNP.Defs.PointTypes",
       "PEqualNP.Defs.ProofComplexity",
       "PEqualNP.Defs.ProofComplexityBit",
       "PEqualNP.Defs.ProofComplexityChain",
@@ -63,6 +67,7 @@
       "PEqualNP.Defs.ProofComplexityRestrict",
       "PEqualNP.Defs.ReadK",
       "PEqualNP.Defs.ReadKJoin",
+      "PEqualNP.Defs.ReadTwo",
       "PEqualNP.Defs.RiffleRank",
       "PEqualNP.Defs.Search",
       "PEqualNP.Defs.SearchCP",
@@ -71,6 +76,7 @@
       "PEqualNP.Defs.SearchQTree",
       "PEqualNP.Defs.SearchRUP",
       "PEqualNP.Defs.SearchSoS",
+      "PEqualNP.Defs.SharedBlockCost",
       "PEqualNP.Defs.SharedOr",
       "PEqualNP.Defs.SharingOrder",
       "PEqualNP.Defs.SingleLevel",
@@ -88,7 +94,7 @@
     {
       "module": "PEqualNP.Defs",
       "path": "lean/PEqualNP/Defs.lean",
-      "sha256": "adca38c11b3d280659446bf9baddbcab5389d81d2b51e17e082e642f51353e71"
+      "sha256": "e47d963e1079aa123b054463f4e127bd756974e19e22a34067484e45bc2773d9"
     },
     {
       "module": "PEqualNP.Defs.AffinePlane",
@@ -161,6 +167,11 @@
       "sha256": "3328702382ce9669fb8ecaca328dede73e77841c79d03db3c72a84a4d536c7e0"
     },
     {
+      "module": "PEqualNP.Defs.Core",
+      "path": "lean/PEqualNP/Defs/Core.lean",
+      "sha256": "fa3d04a264f6fef9fd2424c4dc3d7dbb523f9ae84867402eaefb0c80d864f16c"
+    },
+    {
       "module": "PEqualNP.Defs.CoverPromise",
       "path": "lean/PEqualNP/Defs/CoverPromise.lean",
       "sha256": "4552f288f2ec1eb23c4fded9b5d553e5699b8bdea84a91868dc12aac33759772"
@@ -184,6 +195,11 @@
       "module": "PEqualNP.Defs.Expanders",
       "path": "lean/PEqualNP/Defs/Expanders.lean",
       "sha256": "345e1da8e8d1fda03b0a0220736f528b6567d83461309614c2793da3a2ac44e4"
+    },
+    {
+      "module": "PEqualNP.Defs.FactorSubst",
+      "path": "lean/PEqualNP/Defs/FactorSubst.lean",
+      "sha256": "5977313304a8bd0a6149b5835b8070e85c8881b10a12b7497d425f0dcc802451"
     },
     {
       "module": "PEqualNP.Defs.Gct",
@@ -219,6 +235,11 @@
       "module": "PEqualNP.Defs.LowMerge",
       "path": "lean/PEqualNP/Defs/LowMerge.lean",
       "sha256": "b8e828a85f6f9cdb8b4990e842f68ea4fb63aaf14cf203174627de8ac1eb9d3b"
+    },
+    {
+      "module": "PEqualNP.Defs.LratEncoding",
+      "path": "lean/PEqualNP/Defs/LratEncoding.lean",
+      "sha256": "ee92e1cb655165f235f1fd35a7e0deffdbdc25c51802a2f8c6f8accba684eb2e"
     },
     {
       "module": "PEqualNP.Defs.MergeCost",
@@ -326,6 +347,11 @@
       "sha256": "267f0b189b7bc05f3b5fe8a149bce6224a40228be906073d8980e6ccbe785683"
     },
     {
+      "module": "PEqualNP.Defs.PointTypes",
+      "path": "lean/PEqualNP/Defs/PointTypes.lean",
+      "sha256": "86c5d048b7f2611551aed82916216ea28dc456274246a84ebf76c7793c762721"
+    },
+    {
       "module": "PEqualNP.Defs.ProofComplexity",
       "path": "lean/PEqualNP/Defs/ProofComplexity.lean",
       "sha256": "c75fde5933550d478fe76a0e5d2153f886f1c919e2c2823b68a5426211797784"
@@ -391,6 +417,11 @@
       "sha256": "0ef2f950919d62b8170185169827db3c66a78a2fb4d5e0248028608478647e97"
     },
     {
+      "module": "PEqualNP.Defs.ReadTwo",
+      "path": "lean/PEqualNP/Defs/ReadTwo.lean",
+      "sha256": "ced8a72d035aaf3991c90a5146908b70c77c05a37fce02bb763b89d97aa26357"
+    },
+    {
       "module": "PEqualNP.Defs.RiffleRank",
       "path": "lean/PEqualNP/Defs/RiffleRank.lean",
       "sha256": "a43edc0c5d5e2fb75251499571cff0738a44ebb4976d1e2c8d4a3e7ebe856d02"
@@ -429,6 +460,11 @@
       "module": "PEqualNP.Defs.SearchSoS",
       "path": "lean/PEqualNP/Defs/SearchSoS.lean",
       "sha256": "f32e0efdba1c089bab61de243ad1a4a57450c2936765a3fbfcf490ceb126c796"
+    },
+    {
+      "module": "PEqualNP.Defs.SharedBlockCost",
+      "path": "lean/PEqualNP/Defs/SharedBlockCost.lean",
+      "sha256": "6ebd381ef32598778827dfa87bbd9bcd1f4aa93e8d9d94368b0d2d9a3b2dbc96"
     },
     {
       "module": "PEqualNP.Defs.SharedOr",
@@ -479,20 +515,21 @@
   "context": {
     "context": "The literal negation of a reduction's hypothesis.",
     "dead": [],
+    "sketch": "A proof is one explicit counterexample to the positive statement L-meta-2116; none is expected if that statement is true.",
     "title": "It is false that: a step toward: Petersen graph minus a vertex: no circuit of AND, OR (fan-in two) and NOT gates with at most 15 gates computes its edge function",
     "unlocks": "Proving it shows a hypothesis of a reduction is false."
   },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
   "explicit_dependencies": null,
   "file": "lean/PEqualNP/Outside/L_meta_2117.lean",
-  "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
+  "generator_sha256": "2f786f70770660daad884f1b3b321166689af9483b3fb8613fefb9b4f9083a71",
   "guard_sha256": "9eafc9dc2624504ac48e08517ef4215d851e9cb5f620be938b6410a564ee3cbb",
   "id": "L-meta-2117",
   "local_verification": "not_run",
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_2117",
-  "observed_at": "2026-11-24T08:04:03Z",
+  "observed_at": "2026-11-24T15:41:48Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
@@ -515,9 +552,10 @@
     "status_at": "2026-11-24T07:29:37.941Z",
     "title": "It is false that: A step toward: Petersen graph minus a vertex: no circuit of AND, OR (fan-in two) and NOT gates with at most 15 gates computes its edge functio"
   },
-  "snapshot_sha256": "abfaf5a77eb17b282649d05dbf5428f715df3000c14eff0b79704d715d6c3b80",
+  "snapshot_sha256": "311c12e1f59bbd8a4b12278620eca0a8e767c669136a82723eebe8f882ad7e13",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "¬ (have x1 : (Fin (9 : ℕ) → Bool) → Bool := fun (x1 : Fin (9 : ℕ) → Bool) => x1 (0 : Fin (9 : ℕ)) && x1 (1 : Fin (9 : ℕ)) || x1 (1 : Fin (9 : ℕ)) && x1 (2 : Fin (9 : ℕ)) || x1 (2 : Fin (9 : ℕ)) && x1 (3 : Fin (9 : ℕ)) || x1 (3 : Fin (9 : ℕ)) && x1 (4 : Fin (9 : ℕ)) || x1 (4 : Fin (9 : ℕ)) && x1 (0 : Fin (9 : ℕ)) || x1 (0 : Fin (9 : ℕ)) && x1 (5 : Fin (9 : ℕ)) || x1 (1 : Fin (9 : ℕ)) && x1 (6 : Fin (9 : ℕ)) || x1 (2 : Fin (9 : ℕ)) && x1 (7 : Fin (9 : ℕ)) || x1 (3 : Fin (9 : ℕ)) && x1 (8 : Fin (9 : ℕ)) || x1 (5 : Fin (9 : ℕ)) && x1 (7 : Fin (9 : ℕ)) || x1 (6 : Fin (9 : ℕ)) && x1 (8 : Fin (9 : ℕ)) || x1 (8 : Fin (9 : ℕ)) && x1 (5 : Fin (9 : ℕ)); have x2 : (x2 : PEqualNP.CircuitLowerBounds.Circuit) → Fin (9 : ℕ) → Finset (Fin x2.size) := fun (x2 : PEqualNP.CircuitLowerBounds.Circuit) (x3 : Fin (9 : ℕ)) => {x4 : Fin x2.size | ↑x3 ∈ (x2.gates.get x4).inputs}; have x3 : PEqualNP.CircuitLowerBounds.Circuit → Prop := fun (x3 : PEqualNP.CircuitLowerBounds.Circuit) =>   PEqualNP.MetaComplexity.IsMinimalCircuit (9 : ℕ) x3 ∧     x3.size ≤ (15 : ℕ) ∧       PEqualNP.MetaComplexity.circuitFun (9 : ℕ) x3 = x1 ∧         (∀ (x4 : Fin x3.size),             have x5 : PEqualNP.CircuitLowerBounds.Gate := x3.gates.get x4;             (∀ x6 ∈ x5.inputs, x6 < (9 : ℕ) + ↑x4) ∧ x5.inputs.Nodup ∧ (x5.op = PEqualNP.CircuitLowerBounds.GateOp.not ∧ x5.inputs.length = (1 : ℕ) ∨ x5.op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ x5.inputs.length = (2 : ℕ))) ∧           ∀ x4 ∈ [(4 : Fin (9 : ℕ)), (6 : Fin (9 : ℕ)), (7 : Fin (9 : ℕ))], (x2 x3 x4).Nonempty ∧ (x2 x3 x4).card ≤ (2 : ℕ) ∧ ((x2 x3 x4).card = (2 : ℕ) → ∀ x7 ∈ x2 x3 x4, (x3.gates.get x7).op = PEqualNP.CircuitLowerBounds.GateOp.or); ∀ (x4 : PEqualNP.CircuitLowerBounds.Circuit), x3 x4 → (∀ x6 ∈ [(4 : Fin (9 : ℕ)), (6 : Fin (9 : ℕ)), (7 : Fin (9 : ℕ))], (x2 x4 x6).card = (1 : ℕ) ∧ ∀ x8 ∈ x2 x4 x6, (x4.gates.get x8).op = PEqualNP.CircuitLowerBounds.GateOp.or) → False)",
   "toolchain": "leanprover/lean4:v4.36.0",
-  "upstream_sha": "04e3866162116fb0b95ee6e68c8814874a300e85"
+  "upstream_repository": "open-goat/pequalnp-proofs",
+  "upstream_sha": "0e8a5218eadf78a399c7d20d4a4298c262391b94"
 }

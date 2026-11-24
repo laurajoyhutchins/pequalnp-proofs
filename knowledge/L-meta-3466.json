@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (F : Finset ℕ), PEqualNP.TopForm.IsAO2 n C → (∀ g ∈ F, g < C.gates.length) → ((F.biUnion (fun g => (PEqualNP.MetaComplexity.NestedCover.gateAt C g).inputs.toFinset)).filter (fun w => w < n)).card + ((F.biUnion (fun g => (PEqualNP.MetaComplexity.NestedCover.gateAt C g).inputs.toFinset)).filter (fun w => n ≤ w ∧ w - n ∉ F)).card + (F.filter (fun g => n + g ∈ F.biUnion (fun g' => (PEqualNP.MetaComplexity.NestedCover.gateAt C g').inputs.toFinset))).card ≤ 2 * F.card)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3466",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: C is a circuit of AND and OR gates on n inputs, each reading exactly two earlier wires, and F a set of its gates. Let R be the set of wires read by gates of F. Then (the inputs in R) plus (the gates outside F whose wires are in R) plus (the gates of F whose wires are in R) is at most twice the size of F.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3466.3e18b1e36e23.json",
+  "statement_hash": "sha256:7f47a59d8dc025a7f61aace280aa22a22d282df7e267a693f6c80036d5d04fd7",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T13:44:10.295Z",
+  "title": "It is false that a set F of fan-in-two gates reads at most 2|F| distinct wires (exact fan-in-two AND/OR circuits)",
+  "used_by": []
+}

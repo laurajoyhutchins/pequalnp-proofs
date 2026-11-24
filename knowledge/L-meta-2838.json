@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (q N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (C : PEqualNP.CircuitLowerBounds.Circuit), 2 ≤ q → N = q ^ 2 + q + 1 → (∀ l : Fin N, (Finset.univ.filter (fun p => I p l)).card = q + 1) → (∀ p p' : Fin N, p ≠ p' → ∃! l : Fin N, I p l ∧ I p' l) → PEqualNP.MetaComplexity.Monotone2 C → PEqualNP.MetaComplexity.NestedCover.ReadsBack (N + N) C → (∀ p l : Fin N, I p l → PEqualNP.MetaComplexity.circuitFun (N + N) C (fun k => decide (k = Fin.castAdd N p ∨ k = Fin.natAdd N l)) = true) → (∀ z : Fin (N + N) → Bool, (Finset.univ.filter (fun l : Fin N => z (Fin.natAdd N l) = true)).card ≤ q → (¬ ∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true) → PEqualNP.MetaComplexity.circuitFun (N + N) C z = false) → {e : Fin N × Fin N | I e.1 e.2 ∧ ∃ j < C.gates.length, ∃ a c : ℕ, (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ ((PEqualNP.MetaComplexity.NestedCover.gateAt C j).inputs = [a, c] ∨ (PEqualNP.MetaComplexity.NestedCover.gateAt C j).inputs = [c, a]) ∧ (∀ z : Fin (N + N) → Bool, (C.wires (List.ofFn z)).getD (N + N + j) false = true → ∃ p0 l0 : Fin N, I p0 l0 ∧ z (Fin.castAdd N p0) = true ∧ z (Fin.natAdd N l0) = true) ∧ (C.wires (List.ofFn (fun k : Fin (N + N) => decide (k = Fin.castAdd N e.1)))).getD a false = true ∧ (C.wires (List.ofFn (fun k : Fin (N + N) => decide (k = Fin.natAdd N e.2)))).getD c false = true}.ncard ≤ 3 * C.size + 2 * N",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2838",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Plane of order q >= 2: N = q^2+q+1 points and lines, q+1 points per line, two points on one line; inputs points then lines. C: AND/OR gates of fan-in at most two, each reading only earlier wires, true at each input of one point and a line through it, false at every input with at most q lines on and no incident pair on. LL: the incident pairs (p, l) for which some AND gate of two wires a and c is true only where some incident pair is on, with a true at the input of x_p alone and c true at the input of y_l alone. Then |LL| <= 3 times the gates of C plus 2N.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2838.bf0f9b4e313e.json",
+  "statement_hash": "sha256:2bd233ed3da2edb1c8865bda036b72329caec9f381b7525a99355e756711badf",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:57:41.274Z",
+  "title": "Order-q plane, fan-in-two AND/OR circuits in the target class: incident pairs (p, l) with a sub-incidence AND of a p-wire and an l-wire are at most 3 size + 2N",
+  "used_by": []
+}

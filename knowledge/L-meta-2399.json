@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (t : ℕ), (∀ a b c d : Fin n, a ≠ c → b ≠ d → ¬ (G.Adj a b ∧ G.Adj b c ∧ G.Adj c d ∧ G.Adj d a)) → (∃ T : Finset (Fin n), (∀ u v : Fin n, G.Adj u v → u ∈ T ∨ v ∈ T) ∧ T.card = t) → (∀ T : Finset (Fin n), (∀ u v : Fin n, G.Adj u v → u ∈ T ∨ v ∈ T) → t ≤ T.card) → t ≤ 5 → ∀ (gates : List PEqualNP.CircuitLowerBounds.Gate) (out : ℕ), (∀ g ∈ gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length = 2) → (∀ (i : Fin gates.length), ∀ w ∈ (gates.get i).inputs, w < n + (i : ℕ)) → (∀ x : Fin n → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨gates, out⟩ (List.ofFn x) = decide (∃ u v : Fin n, G.Adj u v ∧ x u = true ∧ x v = true)) → ∀ I : Finset (Fin gates.length), (∀ i : Fin gates.length, (gates.get i).op = PEqualNP.CircuitLowerBounds.GateOp.and → i ∈ I) → t ≤ I.card",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2399",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let G be a finite simple graph with no cycle of length 4 whose least vertex cover has t vertices, t at most 5. Let C be a circuit whose gates are AND or OR gates each reading exactly two earlier wires, one input per vertex, whose output is true exactly on the inputs containing both ends of some edge of G. Then C has at least t AND gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2399.8b22687d7fb7.json",
+  "statement_hash": "sha256:b152223aa3bb6842935adfdfc03630e38f46cde6beae4589e8657b39367e9842",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T08:18:30.743Z",
+  "title": "No 4-cycle, vertex cover number t at most 5: every fan-in-two AND/OR circuit for the edge function, earlier wires only, has at least t AND gates",
+  "used_by": []
+}

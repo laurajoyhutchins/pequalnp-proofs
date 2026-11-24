@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (have x1 : List (ℕ × ℕ) := [((0 : ℕ), (7 : ℕ)), ((0 : ℕ), (8 : ℕ)), ((0 : ℕ), (10 : ℕ)), ((1 : ℕ), (7 : ℕ)), ((1 : ℕ), (9 : ℕ)), ((1 : ℕ), (13 : ℕ)), ((2 : ℕ), (8 : ℕ)), ((2 : ℕ), (12 : ℕ)), ((2 : ℕ), (13 : ℕ)), ((3 : ℕ), (7 : ℕ)), ((3 : ℕ), (11 : ℕ)), ((3 : ℕ), (12 : ℕ)), ((4 : ℕ), (10 : ℕ)), ((4 : ℕ), (11 : ℕ)), ((4 : ℕ), (13 : ℕ)), ((5 : ℕ), (9 : ℕ)), ((5 : ℕ), (10 : ℕ)), ((5 : ℕ), (12 : ℕ)), ((6 : ℕ), (8 : ℕ)), ((6 : ℕ), (9 : ℕ)), ((6 : ℕ), (11 : ℕ))]; have x2 : (Fin (14 : ℕ) → Bool) → Prop := fun (x2 : Fin (14 : ℕ) → Bool) => ∃ (x3 : Fin (14 : ℕ)) (x4 : Fin (14 : ℕ)), (↑x3, ↑x4) ∈ x1 ∧ x2 x3 = Bool.true ∧ x2 x4 = Bool.true; have x3 : PEqualNP.CircuitLowerBounds.Circuit → Prop := fun (x3 : PEqualNP.CircuitLowerBounds.Circuit) => (∀ (x4 : Fin (14 : ℕ) → Bool), x4 (0 : Fin (14 : ℕ)) = Bool.false ∨ x4 (7 : Fin (14 : ℕ)) = Bool.false → (x3.eval (List.ofFn x4) = Bool.true ↔ x2 x4)) ∧ x3.eval (List.ofFn fun (x4 : Fin (14 : ℕ)) => Decidable.decide (x4 = (0 : Fin (14 : ℕ)) ∨ x4 = (7 : Fin (14 : ℕ)))) = Bool.false; ∀ (x4 : PEqualNP.CircuitLowerBounds.Circuit) (x5 : List PEqualNP.CircuitLowerBounds.Gate) (x6 x7 : ℕ), x4.gates = { op := PEqualNP.CircuitLowerBounds.GateOp.and, inputs := [x6, x7] : PEqualNP.CircuitLowerBounds.Gate } :: x5 → (x6, x7) ∈ x1 ∨ (x7, x6) ∈ x1 → PEqualNP.MetaComplexity.Monotone2 x4 → (∀ (x11 : Fin (14 : ℕ) → Bool), x4.eval (List.ofFn x11) = Bool.true ↔ x2 x11) → ∃ (x12 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x12 ∧ (x12.size + (2 : ℕ) ≤ x4.size ∧ x3 x12 ∨ x12.size + (1 : ℕ) ≤ x4.size ∧ ∀ (x13 : Fin (14 : ℕ) → Bool), x12.eval (List.ofFn x13) = Bool.true ↔ x2 x13))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2653",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: The edge function of the Heawood graph (14 inputs, 21 edges). A circuit of AND and OR gates, at most two inputs a gate, for it whose first gate is the AND of the two ends of an edge gives either a circuit one gate smaller for the same function, or a circuit two gates smaller that agrees with the function wherever x_0 or x_7 is off and is false at the input with only x_0 and x_7 on.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2653.e2971a170d83.json",
+  "statement_hash": "sha256:91839f96589b1329f30584583923ef7da614a9fc9c233658029b2e3878811220",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:11:06.318Z",
+  "title": "It is false that: A step toward: A step toward: Every circuit of AND and OR gates for the edge function of the Heawood graph has at least 27 gates",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (g b w w' : ℕ),\n  (PEqualNP.TopForm.IsAO2 n C ∧ PEqualNP.MetaComplexity.NestedCover.ReadsBack n C ∧ g < C.gates.length ∧ b < 2 ∧\n  (PEqualNP.MetaComplexity.NestedCover.gateAt C g).inputs.getD b 0 = w ∧ w' < n + g ∧\n  (∀ x : Fin n → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨C.gates, w⟩ (List.ofFn x) = true →\n    PEqualNP.CircuitLowerBounds.Circuit.eval ⟨C.gates, w'⟩ (List.ofFn x) = true) ∧\n  (∀ x : Fin n → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨C.gates, w'⟩ (List.ofFn x) = true →\n    PEqualNP.MetaComplexity.circuitFun n C x = true)) →\n  PEqualNP.TopForm.IsAO2 n (⟨C.gates.set g ⟨(PEqualNP.MetaComplexity.NestedCover.gateAt C g).op, (PEqualNP.MetaComplexity.NestedCover.gateAt C g).inputs.set b w'⟩, C.output⟩ : PEqualNP.CircuitLowerBounds.Circuit) ∧\n  PEqualNP.MetaComplexity.circuitFun n (⟨C.gates.set g ⟨(PEqualNP.MetaComplexity.NestedCover.gateAt C g).op, (PEqualNP.MetaComplexity.NestedCover.gateAt C g).inputs.set b w'⟩, C.output⟩ : PEqualNP.CircuitLowerBounds.Circuit) = PEqualNP.MetaComplexity.circuitFun n C ∧\n  (⟨C.gates.set g ⟨(PEqualNP.MetaComplexity.NestedCover.gateAt C g).op, (PEqualNP.MetaComplexity.NestedCover.gateAt C g).inputs.set b w'⟩, C.output⟩ : PEqualNP.CircuitLowerBounds.Circuit).size = C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2772",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let C be a circuit of AND/OR gates, each gate reading exactly two earlier wires, computing f on n inputs. Let g be a gate, w the wire at position b (0 or 1) of g's input list, and w' a wire earlier than g such that on every input w <= w' <= f. Then the circuit obtained by replacing, at position b only, w by w' in g's input list is again a circuit of AND/OR gates each reading exactly two earlier wires, computes f, and has the same number of gates as C.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2772.7ae08336f2f9.json",
+  "statement_hash": "sha256:b18cb68843dd2cc568d1093c99f9b44076fbf70b1eca3dd07bf00ce240ee3b3d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:39:54.164Z",
+  "title": "Replacement rewrite: in an AND/OR circuit of fan-in two, a gate may read any larger earlier wire still below the computed function",
+  "used_by": []
+}

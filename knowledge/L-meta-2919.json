@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (j a b : ℕ) (op : PEqualNP.CircuitLowerBounds.GateOp),\n  (op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ op = PEqualNP.CircuitLowerBounds.GateOp.or) →\n  C.gates[j]? = some { op := op, inputs := [a, b] } →\n  a < n + j →\n  (∀ x : Fin n → Bool,\n      (C.wires (List.ofFn x)).getD a false = PEqualNP.CircuitLowerBounds.GateOp.eval op [] →\n      PEqualNP.MetaComplexity.circuitFun n\n          { gates := C.gates.set j { op := op, inputs := [] }, output := C.output } x =\n        PEqualNP.MetaComplexity.circuitFun n C x) →\n  PEqualNP.MetaComplexity.circuitFun n\n      { gates := C.gates.set j { op := PEqualNP.CircuitLowerBounds.GateOp.or, inputs := [a] },\n        output := C.output } =\n    PEqualNP.MetaComplexity.circuitFun n C ∧\n  (C.gates.set j { op := PEqualNP.CircuitLowerBounds.GateOp.or, inputs := [a] }).length =\n    C.gates.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2919",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "C is a circuit on n inputs whose gate j is an AND (or an OR) of wires a and b, with a an earlier wire (AND and OR of fan-in two; other gates may be of any operation); other gates may read any wires, and a forward read sees false. Suppose that on every input where wire a is true (for an OR: false), forcing gate j to the constant true (for an OR: false) leaves the circuit's output unchanged. Then replacing gate j by a copy of wire a leaves the function unchanged, and the circuit has as many gates as before.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2919.9c7c89f9a4ed.json",
+  "statement_hash": "sha256:b242b189d37f33592622e6693cf65ba9c56cb1c28f20531f44f9b2da5b1c8b0a",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T10:28:07.736Z",
+  "title": "Drop rewrite: in a fan-in-two AND/OR circuit, a gate whose second input is a don't-care may become a copy of its first input, same function and size",
+  "used_by": []
+}

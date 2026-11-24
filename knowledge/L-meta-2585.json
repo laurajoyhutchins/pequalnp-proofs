@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (P L : ℕ) (I : Fin P → Fin L → Prop) [DecidableRel I] (C : PEqualNP.CircuitLowerBounds.Circuit), (∀ p p' : Fin P, ∀ l l' : Fin L, p ≠ p' → l ≠ l' → ¬ (I p l ∧ I p l' ∧ I p' l ∧ I p' l')) → PEqualNP.TopForm.IsAO2 (P + L) C → (∀ z : Fin (P + L) → Bool, PEqualNP.MetaComplexity.circuitFun (P + L) C z = decide (∃ p : Fin P, ∃ l : Fin L, I p l ∧ z (Fin.castAdd L p) = true ∧ z (Fin.natAdd P l) = true)) → ∃ D : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.TopForm.IsAO2 (P + L) D ∧ (∀ y : Fin (P + L) → Bool, PEqualNP.MetaComplexity.circuitFun (P + L) D y = decide (∃ p : Fin P, ∃ l : Fin L, I p l ∧ y (Fin.castAdd L p) = true ∧ y (Fin.natAdd P l) = true)) ∧ D.size ≤ C.size ∧ PEqualNP.ReadK.IsReadK (P + L) D 1",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2585",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "P points, L lines, any incidence in which no two points share two lines; inputs the points then the lines. For every circuit C of AND/OR gates only, each reading exactly two earlier wires, no constants, true exactly when some incident point and line are both on, there is a circuit D of the same kind computing the same function, with at most as many gates as C, that is read-1: each incident pair {p, l} has a proof tree in the circuit (both inputs at an AND, one at an OR) reading x_p at most once and y_l at most once.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2585.a2d3910fe781.json",
+  "statement_hash": "sha256:7da4e6991d1e2bbbcb7dc276fa0f4f56d95867725675df5f6f5e6ea016f10893",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:00:58.791Z",
+  "title": "4-cycle-free incidence: every fan-in-two AND/OR circuit for it can be replaced by a read-1 one with at most as many gates",
+  "used_by": []
+}

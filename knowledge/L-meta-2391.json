@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : SimpleGraph (Fin (26 : ℕ))) [x2 : DecidableRel x1.Adj] (x3 : PEqualNP.CircuitLowerBounds.Circuit), (∀ (x4 x5 : Fin (26 : ℕ)), x1.Adj x4 x5 ↔ ∃ (x6 : Fin (13 : ℕ)) (x7 : Fin (13 : ℕ)), (x6 = x7 ∨ x6 = x7 + (1 : Fin (13 : ℕ)) ∨ x6 = x7 + (3 : Fin (13 : ℕ)) ∨ x6 = x7 + (9 : Fin (13 : ℕ))) ∧ (x4 = Fin.castAdd (13 : ℕ) x6 ∧ x5 = Fin.natAdd (13 : ℕ) x7 ∨ x5 = Fin.castAdd (13 : ℕ) x6 ∧ x4 = Fin.natAdd (13 : ℕ) x7)) → PEqualNP.TopForm.IsLeastAO x1 x3 → PEqualNP.TopForm.junk x1 x3 = ∅",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2391",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Plane of order 3, as a graph on its 13 points and 13 lines. A least circuit of AND and OR gates, each reading exactly two earlier wires, for its edge function has no AND gate that is true at an input where the function is false.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2391.8fb32c97af13.json",
+  "statement_hash": "sha256:0a049e7f02611e96e09f45dfaeede85faa3bf6c25bbb93c8ea6f3fa38d1cc86f",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T08:17:42.311Z",
+  "title": "A step toward: Order 3 plane: no circuit of at most 64 AND/OR gates of fan-in two (distinct earlier wires) computes incidence and has a double re-read incidence",
+  "used_by": []
+}

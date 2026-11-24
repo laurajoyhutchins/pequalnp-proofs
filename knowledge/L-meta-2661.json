@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj], (∀ (x4 : Fin x1) (x5 : x2.Walk x4 x4), x5.IsCycle → (5 : ℕ) ≤ x5.length) → ∀ (x5 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x5 → ∀ (x7 : ℕ), ∀ x8 ⊆ x2.edgeFinset, (∀ x10 ∈ x8, ∃ (x12 : Fin x1) (x13 : Fin x1), x10 = s(x12, x13) ∧ ∃ (x14 : Fin x5.gates.length), PEqualNP.EdgeOwnership.Owns x1 x5 (↑x14) x12 x13 ∧ ∃ (x15 : Finset (Fin x1)), x15.card ≤ x7 ∧ x12 ∉ x15 ∧ x13 ∉ x15 ∧ ∀ x16 ∉ x15, ∀ x18 ∉ x15, PEqualNP.EdgeOwnership.gateVal x1 x5 (↑x14) (PEqualNP.EdgeOwnership.pairInput x16 x18) = Bool.true → x2.Adj x16 x18) → x8.card ≤ (2 : ℕ) ^ (x7 + (2 : ℕ)) * x5.size)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2661",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: A graph with no cycle shorter than 5; a circuit of AND and OR gates, at most two inputs a gate; a number k. Take any set of edges each owned by an AND gate that, outside some set of at most k vertices not containing the edge's ends, is true at no non-adjacent pair. That set has at most 2^(k+2) times (number of gates) edges.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2661.f09412d495eb.json",
+  "statement_hash": "sha256:75cfa0ba6c088e2a810a991774ca98f8564acfc7a1bc013e59796c8a542f6e42",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:11:54.020Z",
+  "title": "It is false that: A step toward: A step toward: Part 2 of 2 of a proof of: Conjecture: circuits of AND and OR gates for the edge function of a graph with no cyc",
+  "used_by": []
+}

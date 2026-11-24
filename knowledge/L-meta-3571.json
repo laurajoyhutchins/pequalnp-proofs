@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj], (∃ c : Fin n → Bool, ∀ u v : Fin n, G.Adj u v → c u ≠ c v) → PEqualNP.TopForm.NoFourCycle G → 2 ≤ G.edgeFinset.card → ∀ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.TopForm.IsLeastAO G C → ∀ z : Fin n, (∃ j < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ (z : ℕ) ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C j).inputs) → ∃ D : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.TopForm.IsAO2 n D ∧ PEqualNP.MetaComplexity.circuitFun n D = (fun y : Fin n → Bool => @decide (∃ a b : Fin n, (G.deleteEdges (G.incidenceSet z)).Adj a b ∧ y a = true ∧ y b = true) (Classical.propDecidable _)) ∧ D.size + G.degree z ≤ C.size ∧ ((∃ p q : Fin n, (G.deleteEdges (G.incidenceSet z)).Adj p q) → (∃ S : Finset (Fin n), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover (G.deleteEdges (G.incidenceSet z)) S ∧ ∀ T : Finset (Fin n), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover G T → S.card < T.card) → D.size + G.degree z + 1 ≤ C.size))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3571",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: H is a bipartite graph on n vertices with no 4-cycle and at least two edges; f_H is true when both ends of some edge are true. A circuit here has AND and OR gates only, each reading exactly two earlier wires, every gate counted. If C is a least such circuit for f_H and some AND gate of C reads the input x_z directly, then f of H minus the edges at z has such a circuit with at most |C| - deg(z) gates, and with at most |C| - deg(z) - 1 gates when H minus those edges still has an edge and has a smaller least vertex cover than H.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3571.73e2aa388025.json",
+  "statement_hash": "sha256:dfd43bf872271c41649813f3893b99e5fe387a829b16cef066382afeeb49e20a",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T14:53:06.350Z",
+  "title": "It is false that in a least AND/OR fan-in-two circuit for a 4-cycle-free bipartite graph an AND-read input saves deg(z) gates (plus 1 if the cover drops)",
+  "used_by": []
+}

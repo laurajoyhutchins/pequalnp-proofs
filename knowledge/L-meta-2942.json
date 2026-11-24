@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (a b : Fin n), PEqualNP.TopForm.IsAO2 n C → (∀ a1 : Fin n, PEqualNP.MetaComplexity.circuitFun n C (fun k1 => decide (k1 = a1)) = false) → a < b → PEqualNP.ReadK.readsAtMost C n [a.val, b.val] 1 = true → ∃ j < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ PEqualNP.CleanedNonEdge.OrReaches n C C.output j ∧ ((a ∈ PEqualNP.TopForm.side (n := n) C j 0 ∧ b ∈ PEqualNP.TopForm.side (n := n) C j 1) ∨ (b ∈ PEqualNP.TopForm.side (n := n) C j 0 ∧ a ∈ PEqualNP.TopForm.side (n := n) C j 1)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2942",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: C is a circuit on n inputs of AND and OR gates, each reading exactly two earlier wires, false at every input with one true bit. Let a < b and let the read-1 test accept the pair: some proof tree (all inputs at an AND gate, one at an OR gate) with leaves among a and b has each as a leaf at most once. Then some AND gate reaches the output through OR gates only, and a and b lie one in each OR-shadow of its two inputs (the OR-shadow of a wire: the inputs reached from it going down through OR gates only).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2942.5530c0c57f02.json",
+  "statement_hash": "sha256:31b183aa59782781e3ba0af3ec255e1d207f37bc094c9b8e42d7d3117a5c19a0",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T10:38:32.174Z",
+  "title": "It is false that: AND/OR circuits, fan-in exactly two, false on weight one: a read-1 proof of a pair gives an AND with an OR-only path to the output, one end pe",
+  "used_by": []
+}

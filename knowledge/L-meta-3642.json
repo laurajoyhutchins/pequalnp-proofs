@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x1 → x1.size ≤ (14 : ℕ) → (∀ (x4 : Fin (9 : ℕ) → Bool), x1.eval (List.ofFn x4 ++ [x4 (0 : Fin (9 : ℕ)) || x4 (4 : Fin (9 : ℕ))]) = [((0 : Fin (9 : ℕ)), (1 : Fin (9 : ℕ))), ((1 : Fin (9 : ℕ)), (2 : Fin (9 : ℕ))), ((2 : Fin (9 : ℕ)), (3 : Fin (9 : ℕ))), ((0 : Fin (9 : ℕ)), (4 : Fin (9 : ℕ))), ((3 : Fin (9 : ℕ)), (4 : Fin (9 : ℕ))), ((0 : Fin (9 : ℕ)), (5 : Fin (9 : ℕ))), ((1 : Fin (9 : ℕ)), (6 : Fin (9 : ℕ))), ((2 : Fin (9 : ℕ)), (7 : Fin (9 : ℕ))), ((5 : Fin (9 : ℕ)), (7 : Fin (9 : ℕ))), ((3 : Fin (9 : ℕ)), (8 : Fin (9 : ℕ))), ((5 : Fin (9 : ℕ)), (8 : Fin (9 : ℕ))), ((6 : Fin (9 : ℕ)), (8 : Fin (9 : ℕ)))].any fun (x5 : Fin (9 : ℕ) × Fin (9 : ℕ)) => x4 x5.1 && x4 x5.2) → x1.eval ((List.ofFn fun (x5 : Fin (9 : ℕ)) => Nat.testBit (24 : ℕ) ↑x5) ++ [Bool.false]) = Bool.false ∧ (x1.eval ((List.ofFn fun (x5 : Fin (9 : ℕ)) => Nat.testBit (3 : ℕ) ↑x5) ++ [Bool.false]) = Bool.false ∨ x1.eval ((List.ofFn fun (x5 : Fin (9 : ℕ)) => Nat.testBit (33 : ℕ) ↑x5) ++ [Bool.false]) = Bool.false)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3642",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 1 of 3 of a checked cut of L-meta-2551.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3642.6a1d738f4792.json",
+  "statement_hash": "sha256:8d7ace8feb8ed362de945b12bd9176000f4eaa0ccbcc486adf1f1e639f88c3f0",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:14:47.193Z",
+  "title": "A step toward: A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_",
+  "used_by": []
+}

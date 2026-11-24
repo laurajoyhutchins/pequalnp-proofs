@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ) (x2 : Fin x1 → Bool) (x3 x4 : Fin x1 → ℕ × Bool) (x5 : ℕ) (x6 : (Fin (8 : ℕ) → Bool) → ℕ → Bool),   x1 ≤ (11 : ℕ) →     (∀ (x8 : Fin x1), (x3 x8).1 < (10 : ℕ) + ↑x8 ∧ (x4 x8).1 < (10 : ℕ) + ↑x8) →       x5 < (10 : ℕ) + x1 →         (∀ (x10 : Fin (8 : ℕ) → Bool) (x11 : Fin (8 : ℕ)), x6 x10 ↑x11 = x10 x11) →           (∀ (x11 : Fin (8 : ℕ) → Bool), x6 x11 (8 : ℕ) = Bool.false ∧ x6 x11 (9 : ℕ) = Bool.false) →             (∀ (x12 : Fin (8 : ℕ) → Bool) (x13 : Fin x1),                 have x14 : ℕ × Bool → Bool := fun (x14 : ℕ × Bool) => x6 x12 x14.1 ^^ x14.2;                 x6 x12 ((10 : ℕ) + ↑x13) = if x2 x13 = Bool.true then x14 (x3 x13) && x14 (x4 x13) else x14 (x3 x13) || x14 (x4 x13)) →               ∃ (x13 : Fin (8 : ℕ) → Bool), (!x6 x13 x5) ≠ (x13 (0 : Fin (8 : ℕ)) && x13 (1 : Fin (8 : ℕ)) || x13 (1 : Fin (8 : ℕ)) && x13 (2 : Fin (8 : ℕ)) || x13 (2 : Fin (8 : ℕ)) && x13 (3 : Fin (8 : ℕ)) || x13 (3 : Fin (8 : ℕ)) && x13 (4 : Fin (8 : ℕ)) || x13 (4 : Fin (8 : ℕ)) && x13 (0 : Fin (8 : ℕ)) || x13 (0 : Fin (8 : ℕ)) && x13 (5 : Fin (8 : ℕ)) || x13 (1 : Fin (8 : ℕ)) && x13 (6 : Fin (8 : ℕ)) || x13 (2 : Fin (8 : ℕ)) && x13 (7 : Fin (8 : ℕ)) || x13 (5 : Fin (8 : ℕ)) && x13 (7 : Fin (8 : ℕ)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3676",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 2 of a checked cut of L-meta-2964.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3676.19c3ca2218ac.json",
+  "statement_hash": "sha256:0e4b0de1a4696a6d088f69399da8d163a2de0a977606f68dc21e8191513462f7",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:21:35.119Z",
+  "title": "A step toward: A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate NOT x_0 co",
+  "used_by": []
+}

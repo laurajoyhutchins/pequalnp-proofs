@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_2661 : ¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj], (∀ (x4 : Fin x1) (x5 : x2.Walk x4 x4), x5.IsCycle → (5 : ℕ) ≤ x5.length) → ∀ (x5 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x5 → ∀ (x7 : ℕ), ∀ x8 ⊆ x2.edgeFinset, (∀ x10 ∈ x8, ∃ (x12 : Fin x1) (x13 : Fin x1), x10 = s(x12, x13) ∧ ∃ (x14 : Fin x5.gates.length), PEqualNP.EdgeOwnership.Owns x1 x5 (↑x14) x12 x13 ∧ ∃ (x15 : Finset (Fin x1)), x15.card ≤ x7 ∧ x12 ∉ x15 ∧ x13 ∉ x15 ∧ ∀ x16 ∉ x15, ∀ x18 ∉ x15, PEqualNP.EdgeOwnership.gateVal x1 x5 (↑x14) (PEqualNP.EdgeOwnership.pairInput x16 x18) = Bool.true → x2.Adj x16 x18) → x8.card ≤ (2 : ℕ) ^ (x7 + (2 : ℕ)) * x5.size) := by
+  sorry

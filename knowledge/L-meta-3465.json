@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (u : ℕ) (sigma : ℕ → ℕ) (x : Fin n → Bool), PEqualNP.TopForm.IsAO2 n C → u < C.gates.length → (∀ r : ℕ, sigma r < n + u) → ((∀ r < C.gates.length, n + u ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C r).inputs → (C.wires (List.ofFn x)).getD (sigma r) false = true → (C.wires (List.ofFn x)).getD (n + u) false = true) → ∀ i : ℕ, ((PEqualNP.FactorSubst.substReads C n u sigma).wires (List.ofFn x)).getD i false = true → (C.wires (List.ofFn x)).getD i false = true) ∧ ((∀ r < C.gates.length, n + u ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C r).inputs → (C.wires (List.ofFn x)).getD (sigma r) false = (C.wires (List.ofFn x)).getD (n + u) false) → (PEqualNP.FactorSubst.substReads C n u sigma).wires (List.ofFn x) = C.wires (List.ofFn x)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3465",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: C: AND/OR gates on n inputs, each reading exactly two earlier wires; u a gate; for each gate r, sigma r a wire earlier than gate u. Fix an input x. (a) If at x each wire sigma r, for r reading gate u, is true only if gate u's wire is, then after replacing every read of gate u by r with sigma r (nothing renumbered), every wire is true at x only if the same wire of C is. (b) If at x each such sigma r equals gate u's wire, every new wire equals the same wire of C at x.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3465.03ba223b0949.json",
+  "statement_hash": "sha256:7496cb231c286a2bb209b1f5cc28efc8eeab1f6b01de1ac4ff24e5403bc717b1",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T13:43:47.441Z",
+  "title": "It is false that replacing reads of a gate by earlier wires below (equal to) it keeps every wire below (equal) (exact fan-in-two AND/OR circuits)",
+  "used_by": []
+}

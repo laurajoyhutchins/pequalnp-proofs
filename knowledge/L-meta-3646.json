@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ x1 ∈ [(3 : ℕ), (33 : ℕ)], ¬PEqualNP.Defs.LratEncoding.FormulaSat (PEqualNP.Defs.LratEncoding.enc (10 : ℕ) (14 : ℕ) (fun (x3 : ℕ) => [(515 : ℕ), (6 : ℕ), (12 : ℕ), (529 : ℕ), (536 : ℕ), (545 : ℕ), (66 : ℕ), (132 : ℕ), (160 : ℕ), (264 : ℕ), (288 : ℕ), (320 : ℕ)].contains x3) [(24 : ℕ), x1, (515 : ℕ), (6 : ℕ), (12 : ℕ), (529 : ℕ), (536 : ℕ), (545 : ℕ), (42 : ℕ), (562 : ℕ), (66 : ℕ), (581 : ℕ), (104 : ℕ), (628 : ℕ), (132 : ℕ), (138 : ℕ), (160 : ℕ), (713 : ℕ), (720 : ℕ), (773 : ℕ), (264 : ℕ), (788 : ℕ), (288 : ℕ), (320 : ℕ), (897 : ℕ), (914 : ℕ)])",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3646",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 3 of 3 of a checked cut of L-meta-2551.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3646.6fc2e35aa8a4.json",
+  "statement_hash": "sha256:e1c561f1d16c6ad074f34b92b0db43091142c57cbcf54e78b281ecceece2b281",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:14:47.193Z",
+  "title": "A step toward: A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_",
+  "used_by": []
+}

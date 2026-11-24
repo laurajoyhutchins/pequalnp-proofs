@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj], (∀ (x4 : Fin x1) (x5 : x2.Walk x4 x4), x5.IsCycle → (5 : ℕ) ≤ x5.length) → ∀ (x5 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x5 → (∀ (x7 : Fin x1), PEqualNP.MetaComplexity.circuitFun x1 x5 (PEqualNP.EdgeOwnership.pairInput x7 x7) = Bool.false) → (∀ (x8 : ℕ), ¬((PEqualNP.MetaComplexity.NestedCover.gateAt x5 x8).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ ∃ (x9 : Fin x1) (x10 : Fin x1), ¬x2.Adj x9 x10 ∧ PEqualNP.EdgeOwnership.gateVal x1 x5 x8 (PEqualNP.EdgeOwnership.pairInput x9 x10) = Bool.true)) → {x9 ∈ x2.edgeFinset | (PEqualNP.MetaComplexity.circuitFun x1 x5 fun (x10 : Fin x1) => Decidable.decide (x10 ∈ x9)) = Bool.true}.card ≤ x5.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2432",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "A graph with no cycle shorter than 5; a circuit of AND and OR gates, at most two inputs a gate, that is false at every single vertex and has no AND gate true at a pair of non-adjacent vertices. Then the edges it accepts (true with just the two ends on) number at most its number of gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2432.fdd8363ee758.json",
+  "statement_hash": "sha256:e1641c643084c40fe7b3a881e198552ebf0a8eb086b9c7b6bec71a446c0f56fa",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T08:31:11.301Z",
+  "title": "A step toward: Part 2 of 2 of a proof of: Conjecture: circuits of AND and OR gates for the edge function of a graph with no cycle shorter than 5 have size linea",
+  "used_by": []
+}

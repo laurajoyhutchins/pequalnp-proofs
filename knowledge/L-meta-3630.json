@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit) (x2 : Finset (Fin (9 : ℕ))), PEqualNP.MetaComplexity.FanInTwo x1 → x2.card ≤ (2 : ℕ) → ∃ (x5 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x5 ∧ (x5.size ≤ x1.size + if x2.card ≤ (1 : ℕ) ∨ x2 = {(0 : Fin (9 : ℕ)), (4 : Fin (9 : ℕ))} then (1 : ℕ) else (2 : ℕ)) ∧ ∀ (x6 : Fin (9 : ℕ) → Bool), x5.eval (List.ofFn x6 ++ [Bool.false]) = x1.eval (List.ofFn x6 ++ [x6 (0 : Fin (9 : ℕ)) || x6 (4 : Fin (9 : ℕ)), Decidable.decide (∃ x7 ∈ x2, x6 x7 = Bool.true)])",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3630",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 4 of a checked cut of L-meta-2841.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3630.f661ee260cb0.json",
+  "statement_hash": "sha256:1efbfd07a68c1e5ee248901927a1ad85df9a315ba6fad51271b8453b8ce24d90",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:09:59.104Z",
+  "title": "A step toward: A step toward: A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first ",
+  "used_by": []
+}

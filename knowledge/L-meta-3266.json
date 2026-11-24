@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ) (x2 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x2 → ∃ (x4 : Finset ℕ), x4.card ≤ List.countP (fun (x5 : PEqualNP.CircuitLowerBounds.Gate) => !x5.op.eval [Bool.false]) x2.gates + (1 : ℕ) ∧ ∀ (x5 x6 : List Bool), x5.length = x1 → x6.length = x1 → (∀ x9 ∈ x4, x5.getD x9 Bool.false = x6.getD x9 Bool.false) → x2.eval x5 = x2.eval x6",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3266",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 1 of 2 of a checked cut of L-meta-2519.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3266.871b32312d9e.json",
+  "statement_hash": "sha256:daf998b0f45cea604e7168afabdad2a51809f07139a232b3f77cf4b5230337d7",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T12:19:33.824Z",
+  "title": "A step toward: A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_",
+  "used_by": []
+}

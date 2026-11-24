@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (C : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 C → PEqualNP.MetaComplexity.NestedCover.ReadsBack (N + N) C → (∀ z : Fin (N + N) → Bool, PEqualNP.MetaComplexity.circuitFun (N + N) C z = true ↔ ∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true) → ∃ D : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 D ∧ PEqualNP.MetaComplexity.NestedCover.ReadsBack (N + N) D ∧ D.size ≤ C.size ∧ (∀ z : Fin (N + N) → Bool, PEqualNP.MetaComplexity.circuitFun (N + N) D z = true ↔ ∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true) ∧ (∀ j < D.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt D j).op = PEqualNP.CircuitLowerBounds.GateOp.and → (∀ p : Fin N, (D.wires (List.ofFn (fun kc : Fin (N + N) => decide (kc = Fin.castAdd N p)))).getD (N + N + j) false = false) ∧ ∀ l : Fin N, (D.wires (List.ofFn (fun kd : Fin (N + N) => decide (kd = Fin.natAdd N l)))).getD (N + N + j) false = false))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3669",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Let I be any incidence between N points and N lines. Every AND/OR fan-in-two circuit computing its edge function (true exactly when some incident point and line are both on) has one no larger, also computing it, in which every AND gate is false at every input with exactly one input on.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3669.989793ed4ada.json",
+  "statement_hash": "sha256:d06facfcaeb5e0c74e9206d74a31fefa0fcfce1998248f6f769f2a46e849ed5d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:19:09.690Z",
+  "title": "It is false that every bipartite edge function's AND/OR fan-in-two circuits have a no-larger one with all ANDs false at single-input inputs",
+  "used_by": []
+}

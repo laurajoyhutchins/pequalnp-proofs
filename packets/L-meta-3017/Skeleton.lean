@@ -1,0 +1,29 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_3017 : ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (col : Fin n → Bool) (C C0 : PEqualNP.CircuitLowerBounds.Circuit) (T L : Finset ℕ) (c : ℕ) (s : Fin n),
+  (∀ u v : Fin n, G.Adj u v → col u ≠ col v) →
+  PEqualNP.TopForm.NoFourCycle G →
+  PEqualNP.TopForm.IsAO2 n C → PEqualNP.MetaComplexity.NestedCover.ReadsBack n C →
+  PEqualNP.MetaComplexity.circuitFun n C = PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ →
+  PEqualNP.MetaComplexity.NestedCover.IsOrTree n C T L C.output →
+  (∀ w ∈ L, n ≤ w ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt C (w - n)).op = PEqualNP.CircuitLowerBounds.GateOp.and) →
+  c < C.gates.length → PEqualNP.Core.InOutputCone n C c →
+  PEqualNP.SplitCount.singletonSet n C c = {s} →
+  (∀ k < C.gates.length, n + c ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs → (PEqualNP.MetaComplexity.NestedCover.gateAt C k).op = PEqualNP.CircuitLowerBounds.GateOp.or) →
+  (∀ k < C.gates.length, PEqualNP.EdgeOwnership.InCone n C c k → PEqualNP.Core.InOutputCone n C k →
+    k ∈ T ∨ n + k ∈ L ∨ ((PEqualNP.MetaComplexity.NestedCover.gateAt C k).op = PEqualNP.CircuitLowerBounds.GateOp.or ∧
+      ∃ w ∈ L, ∃ a ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C (w - n)).inputs, PEqualNP.CleanedNonEdge.OrReaches n C a k)) →
+  (∀ j < C.gates.length, PEqualNP.EdgeOwnership.InCone n C j c → ∀ k < C.gates.length,
+    n + j ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs → k = c ∨ PEqualNP.EdgeOwnership.InCone n C k c) →
+  C0 = ({ gates := C.gates.map (fun gg => ({ op := gg.op, inputs := gg.inputs.map (fun ww => if ww = n + c then (s : ℕ) else ww) } : PEqualNP.CircuitLowerBounds.Gate)), output := C.output } : PEqualNP.CircuitLowerBounds.Circuit) →
+  (∀ u v : Fin n, G.Adj u v → PEqualNP.MetaComplexity.circuitFun n C0 (PEqualNP.EdgeOwnership.pairInput u v) = false →
+    ∀ w ∈ L, PEqualNP.EdgeOwnership.gateVal n C (w - n) (PEqualNP.EdgeOwnership.pairInput u v) = true →
+      ∀ a b : ℕ, ((PEqualNP.MetaComplexity.NestedCover.gateAt C (w - n)).inputs = [a, b] ∨ (PEqualNP.MetaComplexity.NestedCover.gateAt C (w - n)).inputs = [b, a]) →
+        PEqualNP.CleanedNonEdge.OrReaches n C a c →
+          PEqualNP.CleanedNonEdge.wireVal n C b (PEqualNP.SplitCount.unitInput u) = true ∨ PEqualNP.CleanedNonEdge.wireVal n C b (PEqualNP.SplitCount.unitInput v) = true) →
+  (Finset.univ.filter fun y : Fin n => ∃ z : Fin n, G.Adj z y ∧ PEqualNP.MetaComplexity.circuitFun n C0 (PEqualNP.EdgeOwnership.pairInput z y) = false).card ≤ (PEqualNP.Core.coneSet n C c).card ∧
+  ∃ C' : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.TopForm.IsAO2 n C' ∧ PEqualNP.MetaComplexity.NestedCover.ReadsBack n C' ∧
+    PEqualNP.MetaComplexity.circuitFun n C' = PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ ∧
+    C'.size + (PEqualNP.Core.coneSet n C c).card ≤ C.size + (Finset.univ.filter fun y2 : Fin n => ∃ z2 : Fin n, G.Adj z2 y2 ∧ PEqualNP.MetaComplexity.circuitFun n C0 (PEqualNP.EdgeOwnership.pairInput z2 y2) = false).card := by
+  sorry

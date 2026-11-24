@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 x2 : ℕ) (x3 : Fin x2 → Fin x2 → Prop) [x4 : DecidableRel x3], (201 : ℕ) ≤ x1 → x2 = x1 ^ (2 : ℕ) + x1 + (1 : ℕ) → (∀ (x7 : Fin x2), Fintype.card { x8 : Fin x2 // x3 x8 x7 } = x1 + (1 : ℕ)) → (∀ (x8 x9 : Fin x2), x8 ≠ x9 → ∃! x11 : Fin x2, x3 x8 x11 ∧ x3 x9 x11) → ∃ (x9 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.TopForm.IsAO2 (x2 + x2) x9 ∧ (∀ (x10 : Fin (x2 + x2) → Bool), PEqualNP.MetaComplexity.circuitFun (x2 + x2) x9 x10 = Decidable.decide (∃ (x11 : Fin x2) (x12 : Fin x2), x3 x11 x12 ∧ x10 (Fin.castAdd x2 x11) = Bool.true ∧ x10 (Fin.natAdd x2 x12) = Bool.true)) ∧ PEqualNP.ReadK.IsReadK (x2 + x2) x9 (2 : ℕ) ∧ x9.size ≤ (2 : ℕ) * x2)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2461",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: For every projective plane of order q at least 201 (N points, N lines), some circuit of AND and OR gates, each reading exactly two earlier wires, computes its incidence function, is read-2, and has at most 2N gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2461.7d4cd6b79c54.json",
+  "statement_hash": "sha256:83529e772492f1360dcdfb72143cdb659c91a661226be1b2dd830c36cddf33c0",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T08:36:47.188Z",
+  "title": "It is false that: A step toward: It is false that: Plane of order q: fan-in-two AND/OR circuits computing incidence, each incident pair proved reading its point",
+  "used_by": []
+}

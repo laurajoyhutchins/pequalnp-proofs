@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (C : PEqualNP.CircuitLowerBounds.Circuit) (s : Fin n → Bool) (T' : Finset (Fin n)), (∀ u v : Fin n, G.Adj u v → s u ≠ s v) → PEqualNP.TopForm.NoFourCycle G → PEqualNP.TopForm.IsAO2 n C → PEqualNP.MetaComplexity.circuitFun n C = PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ → PEqualNP.Core.IsLiftFixedPoint G C → (∀ k < C.gates.length, PEqualNP.Core.InOutputCone n C k) → PEqualNP.MetaComplexity.NestedCover.IsMinCover (G.deleteEdges (((PEqualNP.Core.maximalCores G C).biUnion (PEqualNP.TopForm.gammaE G C) : Finset (Sym2 (Fin n))) : Set (Sym2 (Fin n)))) T' → (((PEqualNP.Core.maximalCores G C).biUnion (PEqualNP.Core.coneSet n C)).filter (fun w => w ∈ PEqualNP.Core.maximalCores G C ∨ ((PEqualNP.TopForm.readers n C w).filter (fun k => PEqualNP.Core.InOutputCone n C k)) ⊆ (PEqualNP.Core.maximalCores G C).biUnion (PEqualNP.Core.coneSet n C))).card + (G.edgeFinset \\ (PEqualNP.Core.maximalCores G C).biUnion (PEqualNP.TopForm.gammaE G C)).card + T'.card + (PEqualNP.Core.maximalCores G C).card ≤ C.size + 1)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3444",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: G is a bipartite graph with no 4-cycle. C has AND and OR gates only, each reading exactly two earlier wires (so it reads only earlier wires), computes the edge function of G, is a lift fixed point, and every gate lies in the output's cone (no dead gates). Let U be the union of the cones of the maximal cores, U0 the gates of U that are maximal cores or are read only by gates of U (readers counted among gates in the output's cone), D the edges the maximal cores accept, mc their number, tau the least vertex-cover size. Then |U0| + |E - D| + tau(G - D) + mc <= (gates of C) + 1.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3444.1eace6874234.json",
+  "statement_hash": "sha256:5b68c64da1437c08368fad17c7335d5bf73c3cefdae759c3867b3cd6baa2d511",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T13:06:55.308Z",
+  "title": "Rest bound for live circuits fails at some lift fixed point of a fan-in-two AND/OR circuit with no dead gate for a 4-cycle-free bipartite edge function",
+  "used_by": []
+}

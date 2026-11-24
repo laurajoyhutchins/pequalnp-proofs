@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (C : PEqualNP.CircuitLowerBounds.Circuit) (s : Fin n → Bool) (g : ℕ),\n  (∀ u v : Fin n, G.Adj u v → s u ≠ s v) → PEqualNP.TopForm.NoFourCycle G → PEqualNP.TopForm.IsAO2 n C →\n  PEqualNP.MetaComplexity.circuitFun n C = PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ → PEqualNP.Core.IsLiftFixedPoint G C →\n  (∀ k < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C k).op = PEqualNP.CircuitLowerBounds.GateOp.and → ∀ t ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs, ¬ (∀ x : Fin n → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨C.gates, t⟩ (List.ofFn x) = true → PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ x = true)) →\n  (∀ k < C.gates.length, PEqualNP.Core.InOutputCone n C k) →\n  g < C.gates.length → (PEqualNP.MetaComplexity.NestedCover.gateAt C g).op = PEqualNP.CircuitLowerBounds.GateOp.and → ¬ PEqualNP.TopForm.BelowF G C g →\n  (∀ k < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C k).op = PEqualNP.CircuitLowerBounds.GateOp.and → k ≠ g → PEqualNP.TopForm.BelowF G C k) →\n  (∃ v : Fin n, PEqualNP.EdgeOwnership.gateVal n C g (PEqualNP.SplitCount.unitInput v) = true) →\n  ∃ D : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.TopForm.IsAO2 n D ∧ D.size ≤ C.size ∧\n    PEqualNP.MetaComplexity.circuitFun n D = PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ ∧\n    ∀ k < D.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt D k).op = PEqualNP.CircuitLowerBounds.GateOp.and → PEqualNP.TopForm.BelowF G D k",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3653",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let G be a bipartite graph with no 4-cycle and C a circuit of AND and OR gates, each reading exactly two earlier wires (so it reads only earlier wires), computing G's edge function F, lift-fixed, with no AND reading a wire below F and every gate in the output's cone. If exactly one AND g of C is not below F, and g is true at some input with one variable on, then some circuit of the same kind (AND/OR, two earlier wires each) with at most as many gates computes F and has every AND below F.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3653.268518f153e9.json",
+  "statement_hash": "sha256:531ce39361508f10f943e71a6dccea2445b1cb173f35c5a55dc144771b34b214",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:15:41.794Z",
+  "title": "One dirty AND on at a one-hot input: a lift-fixed fan-in-two AND/OR circuit for a 4-cycle-free bipartite edge function has a no-larger one, every AND below F",
+  "used_by": []
+}

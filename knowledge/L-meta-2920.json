@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (j is iv iw a b c z : ℕ)\n    (op1 op2 : PEqualNP.CircuitLowerBounds.GateOp),\n  ((op1 = PEqualNP.CircuitLowerBounds.GateOp.and ∧ op2 = PEqualNP.CircuitLowerBounds.GateOp.or) ∨\n    (op1 = PEqualNP.CircuitLowerBounds.GateOp.or ∧ op2 = PEqualNP.CircuitLowerBounds.GateOp.and)) →\n  C.gates[is]? = some { op := op2, inputs := [a, b] } →\n  C.gates[iv]? = some { op := op2, inputs := [a, c] } →\n  C.gates[iw]? = some { op := op1, inputs := [n + iv, z] } →\n  (C.gates[j]? = some { op := op1, inputs := [n + is, n + iw] } ∨\n    C.gates[j]? = some { op := op1, inputs := [n + iw, n + is] }) →\n  is < j → iv < iw → iw < j →\n  a < n + is → b < n + is → a < n + iv → b < n + iv → c < n + iv →\n  z < n + iw → z ≠ n + iv →\n  (∀ (k : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[k]? = some g → k ≠ iw → n + iv ∉ g.inputs) →\n  (∀ (k : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[k]? = some g → k ≠ j → n + iw ∉ g.inputs) →\n  C.output ≠ n + iv → C.output ≠ n + iw →\n  PEqualNP.MetaComplexity.circuitFun n\n      { gates := ((C.gates.set iv { op := op1, inputs := [b, c] }).set iw\n            { op := op2, inputs := [a, n + iv] }).set j { op := op1, inputs := [n + iw, z] },\n        output := C.output } =\n    PEqualNP.MetaComplexity.circuitFun n C ∧\n  (((C.gates.set iv { op := op1, inputs := [b, c] }).set iw\n      { op := op2, inputs := [a, n + iv] }).set j { op := op1, inputs := [n + iw, z] }).length =\n    C.gates.length",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2920",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "C is a circuit on n inputs. Gate j is the AND of wires s and w, in either order; w is the AND of v and z; s is the OR of a and b; v is the OR of a and c (or dually with AND and OR exchanged). v and s come before j, v before w before j; a, b are earlier than s and v, c earlier than v, z earlier than w and not v; forward reads see false. v is read only by w, w only by j, and neither is the output. Overwrite v as the AND of b and c, w as the OR of a and v, and j as the AND of w and z: the function and the gate count are unchanged.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2920.586521774910.json",
+  "statement_hash": "sha256:b0e1a152cd0d844834168cede61add4afa41fe4a5c01b11e46fad5a02a3df158",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T10:28:57.944Z",
+  "title": "Rebracket-then-factor rewrite: in a fan-in-two AND/OR circuit, (a OR b) AND ((a OR c) AND z) becomes (a OR (b AND c)) AND z, and dually, same function and size",
+  "used_by": []
+}

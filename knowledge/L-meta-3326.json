@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "have x1 : List ℕ := [(95229015649943559 : ℕ), (63038587666488 : ℕ), (256462815680 : ℕ), (4292497062759936 : ℕ), (8521481482240 : ℕ), (14003410187812864 : ℕ), (55389823207997440 : ℕ), (189297016294081033 : ℕ), (155696362464477250 : ℕ), (218994303132270608 : ℕ), (183565875465490436 : ℕ), (229736628138025984 : ℕ), (270286071508633728 : ℕ), (288160007407550752 : ℕ)]; have x2 : List ℕ → ℕ → Prop := fun (x2 : List ℕ) (x3 : ℕ) => ∃ x4 ∈ x2, ∃ x5 ∈ x2, x3 = x4 &&& x5 ∨ x3 = x4 ||| x5; ∃ x3 ∈ [(17871361015808 : ℕ), (95274182876594239 : ℕ), (1 : ℕ), (284526031944024591 : ℕ), (72622777407897600 : ℕ), (241600541374316567 : ℕ)], ∃ (x4 : List ℕ), x4.length ≤ (24 : ℕ) ∧ (∀ (x5 : Fin x4.length), x2 (x3 :: x1 ++ List.take (↑x5) x4) (x4.get x5)) ∧ x2 (x3 :: x1 ++ x4) (2097151 : ℕ)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3326",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 1 of 2 of a checked cut of L-meta-3004.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3326.15ea84d41f91.json",
+  "statement_hash": "sha256:fdf5bc621e24a18534f8893356c6065fc63d0d126d9a15a7442b99380cb23a1e",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T12:36:12.305Z",
+  "title": "A step toward: A step toward: Search: a circuit of AND and OR gates with at most 26 gates for the edge function of the Heawood graph",
+  "used_by": []
+}

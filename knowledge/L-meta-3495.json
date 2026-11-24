@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 x2 : ℕ) (x3 : Fin x2 → Fin x2 → Prop) [x4 : DecidableRel x3], (∀ (x5 : Fin x2), Fintype.card { x6 : Fin x2 // x3 x6 x5 } = x1 + (1 : ℕ)) → (∀ (x6 x7 : Fin x2), x6 ≠ x7 → ∃! x9 : Fin x2, x3 x6 x9 ∧ x3 x7 x9) → ∀ (x7 : Finset (Fin x2)), x7.card ≤ x1 → ∀ (x9 x10 : Fin x2 → Prop), (∀ (x11 x12 : Fin x2), x3 x11 x12 → x9 x11 ∨ x10 x12) → (∀ (x12 : Fin x2), x9 x12 → ∃ x14 ∈ x7, x3 x12 x14) → (∀ x13 ∈ x7, ¬x10 x13) → (∀ (x14 : Fin x2), x9 x14 ↔ ∃ x15 ∈ x7, x3 x14 x15) ∧ ∀ (x14 : Fin x2), x10 x14 ↔ x14 ∉ x7",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3495",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 1 of 4 of a checked cut of L-meta-2870.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3495.138fbadc1777.json",
+  "statement_hash": "sha256:a0e1e2f66fb62bebf3044ac43bfa647452f25f106bd175224949df37b9f981d0",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T14:03:14.849Z",
+  "title": "A step toward: A step toward: A step toward: A step toward: Rung 0 target: on a plane of order q, fan-in-two AND/OR circuits accepting incident pairs, sound wit",
+  "used_by": []
+}

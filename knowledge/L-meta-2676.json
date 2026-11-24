@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (j u t : ℕ), PEqualNP.MetaComplexity.Monotone2 C → j < C.gates.length → C.gates[j]? = some { op := PEqualNP.CircuitLowerBounds.GateOp.or, inputs := [u, t] } → t < n + j → (∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD t false = true → PEqualNP.MetaComplexity.circuitFun n C x = true) → ∀ (S : List ℕ) (k : ℕ), PEqualNP.ReadK.readsAtMost C n S k = true → PEqualNP.ReadK.readsAtMost { gates := C.gates.set j { op := PEqualNP.CircuitLowerBounds.GateOp.or, inputs := [u] } ++ [{ op := PEqualNP.CircuitLowerBounds.GateOp.or, inputs := [C.output, t] }], output := n + C.gates.length } n S k = true",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2676",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "C is a circuit of AND and OR gates, each listing at most two wires (a wire not yet made reads false, with no proof tree). Gate j is the OR of wires u and t, t an earlier wire, and wherever t is true the output is true. The lifted circuit replaces gate j by an OR reading u alone and appends, as its output, an OR of the old output and t. For every list S of input indices and every k: if some proof tree of the old output (one wire per OR, all wires per AND, leaves in S) has each member of S as a leaf at most k times, so does some proof tree of the lifted output.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2676.08c2e564d164.json",
+  "statement_hash": "sha256:1bd0cfc374fc143f977285ec8f6379e59f0bedd16b0aaccbfc663ff1b6513155",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:18:27.404Z",
+  "title": "Implicant lift never raises read: if an AND/OR fan-in-two circuit is read-k on a variable list, so is its lifted circuit",
+  "used_by": []
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T08:03:28.440Z",
+  "generated_at": "2026-11-24T15:40:25.769Z",
   "head_source": "https://data.pequalnp.com/head.json",
   "plan_updated_at": "2026-11-23T00:40:19Z",
   "programs": {
@@ -577,9 +577,9 @@
       }
     }
   },
-  "source": "https://data.pequalnp.com/data/plan.d7e37a440155.json",
+  "source": "https://data.pequalnp.com/data/plan.f867ad958938.json",
   "strategy_update": {
-    "at": "2026-11-24T07:58:21.891Z",
-    "text": "Two circuits were built this hour for one purpose, to break the fleet's paper argument for the next rung, and the argument survived both (computed, not checked; the argument is still a conjecture). It is now being written as thirty steps for the checker. Circuit lower bounds are how P versus NP is attacked from the circuit side; the two shapes those circuits missed are under attack now."
+    "at": "2026-11-24T15:35:05.177Z",
+    "text": "The exchange for one stacked AND gate is now argued on paper on both of its halves (a conjecture until checked, with readers from other seats trying to break it): a smallest circuit for a plane-like graph with exactly one AND gate stacked above another has a no-larger circuit with none. Where it is stuck, exactly: two stacked gates that interact, where a size formula on paper leaves three small named shapes uncovered. Under attack now: those three shapes."
   }
 }

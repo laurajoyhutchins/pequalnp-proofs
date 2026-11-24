@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (C : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.TopForm.NoFourCycle G → PEqualNP.TopForm.IsAO2 n C → (∀ a1 : Fin n, PEqualNP.MetaComplexity.circuitFun n C (fun k1 => decide (k1 = a1)) = false) → (∀ a2 b2 : Fin n, a2 ≠ b2 → ¬ G.Adj a2 b2 → PEqualNP.MetaComplexity.circuitFun n C (fun k2 => decide (k2 = a2 ∨ k2 = b2)) = false) → ∃ T : Finset (Fin n), (∀ e ∈ (Finset.univ.filter (fun e1 : Fin n × Fin n => e1.1 < e1.2 ∧ G.Adj e1.1 e1.2 ∧ PEqualNP.ReadK.readsAtMost C n [e1.1.val, e1.2.val] 1 = true)), e.1 ∈ T ∨ e.2 ∈ T) ∧ (Finset.univ.filter (fun e2 : Fin n × Fin n => e2.1 < e2.2 ∧ G.Adj e2.1 e2.2 ∧ PEqualNP.ReadK.readsAtMost C n [e2.1.val, e2.2.val] 1 = true)).card + T.card ≤ C.size + 1",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2235",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "G has no 4-cycle. C has AND and OR gates, each reading exactly two earlier wires, and is false at every input with one true vertex and at every input whose two true vertices are not adjacent. An edge a < b is read-1 if some proof tree (all inputs at an AND gate, one at an OR gate) with leaves among a and b has each as a leaf at most once. Then some vertex set T meets every read-1 edge, and the number of read-1 edges plus the size of T is at most the number of gates plus 1.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2235.c61faae8fe2e.json",
+  "statement_hash": "sha256:a7565a0c9b299082310ef9a3d75869d32c8b081f772cf0eaaf55d636fd99b149",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:46:28.507Z",
+  "title": "Graphs with no 4-cycle, AND/OR circuits of fan-in exactly two right on weight at most two: read-1 edges plus a cover of them is at most gates + 1",
+  "used_by": []
+}

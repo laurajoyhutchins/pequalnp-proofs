@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (have x1 : (Fin (26 : ℕ) → Bool) → Fin (20 : ℕ) → Bool := fun (x1 : Fin (26 : ℕ) → Bool) (x2 : Fin (20 : ℕ)) => if ↑x2 < (17 : ℕ) then x1 (Fin.ofNat (26 : ℕ) (if ↑x2 < (5 : ℕ) then ↑x2 else if ↑x2 < (14 : ℕ) then ↑x2 + (8 : ℕ) else ↑x2 + (9 : ℕ))) else Decidable.decide (↑x2 ≠ (18 : ℕ)) && (x1 (16 : Fin (26 : ℕ)) || x1 (18 : Fin (26 : ℕ))) || Decidable.decide (↑x2 ≠ (17 : ℕ)) && (x1 (19 : Fin (26 : ℕ)) || x1 (23 : Fin (26 : ℕ))); have x2 : Fin (13 : ℕ) → Fin (13 : ℕ) → Prop := fun (x2 x3 : Fin (13 : ℕ)) => ∃ x4 ∈ [(0 : Fin (13 : ℕ)), (1 : Fin (13 : ℕ)), (3 : Fin (13 : ℕ)), (9 : Fin (13 : ℕ))], x2 = x3 + x4; ∃ (x3 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x3 ∧ x3.size ≤ (23 : ℕ) ∧ (∀ (x4 x5 : Fin (13 : ℕ)), ↑x4 < (5 : ℕ) → x2 x4 x5 → PEqualNP.MetaComplexity.circuitFun (20 : ℕ) x3 (x1 fun (x8 : Fin (26 : ℕ)) => Decidable.decide (x8 = Fin.castAdd (13 : ℕ) x4 ∨ x8 = Fin.natAdd (13 : ℕ) x5)) = Bool.true) ∧ ∀ (x4 : Fin (26 : ℕ) → Bool), (∀ (x5 x6 : Fin (13 : ℕ)), x4 (Fin.castAdd (13 : ℕ) x5) = Bool.true → x4 (Fin.natAdd (13 : ℕ) x6) = Bool.true → ¬x2 x5 x6) → ((∃ (x6 : Fin (13 : ℕ)), ∀ (x7 : Fin (13 : ℕ)), x4 (Fin.castAdd (13 : ℕ) x7) = Bool.true → x2 x7 x6) ∨ ∃ (x6 : Fin (13 : ℕ)), ∀ (x7 : Fin (13 : ℕ)), x4 (Fin.natAdd (13 : ℕ) x7) = Bool.true → x2 x6 x7) → PEqualNP.MetaComplexity.circuitFun (20 : ℕ) x3 (x1 x4) = Bool.false)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2713",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Plane of order 3 as in the parent. Feed a 20-input circuit from the 26 inputs: x0..x4, the lines other than y9, then y3 OR y5, y6 OR y10, and the OR of those four lines. Some AND/OR circuit of fan-in at most two with at most 23 gates on those 20 inputs is true, so fed, at every incident one-point-one-line input with a point below 5, and false at every input with no incident pair on whose on points all lie on one line or whose on lines all pass through one point.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2713.bf4e10261814.json",
+  "statement_hash": "sha256:8b1cb553ef0d41805ff2ea4766ad0f5b442fa7f5b2e243d9fa113a8484773401",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:27:17.709Z",
+  "title": "It is false that: A step toward: Search: an order-3 plane circuit of at most 63 fan-in-two AND/OR gates, true at incident pairs, false at every degenerate maxim",
+  "used_by": []
+}

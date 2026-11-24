@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_3644 : ∀ (x1 : List ℕ) (x2 : ℕ → Bool) (x3 : PEqualNP.CircuitLowerBounds.Circuit), (∀ x4 ∈ x1, x4 < (1024 : ℕ)) → PEqualNP.MetaComplexity.Monotone2 x3 → x3.size ≤ (14 : ℕ) → (∀ x7 ∈ x1, x3.eval (List.ofFn fun (x9 : Fin (10 : ℕ)) => x7.testBit ↑x9) = x2 x7) → PEqualNP.Defs.LratEncoding.FormulaSat (PEqualNP.Defs.LratEncoding.enc (10 : ℕ) (14 : ℕ) x2 x1) := by
+  sorry

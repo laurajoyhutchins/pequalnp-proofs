@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (j u t : ℕ),\n  j < C.gates.length →\n  C.gates[j]? = some { op := PEqualNP.CircuitLowerBounds.GateOp.and, inputs := [u, t] } →\n  u < n + j → t < n + j →\n  (∀ x : Fin n → Bool, (C.wires (List.ofFn x)).getD u false = true →\n      (C.wires (List.ofFn x)).getD t false = true) →\n  ∀ x : Fin n → Bool,\n    ({ gates := C.gates.set j { op := PEqualNP.CircuitLowerBounds.GateOp.or, inputs := [u] },\n       output := C.output } : PEqualNP.CircuitLowerBounds.Circuit).wires (List.ofFn x) =\n    C.wires (List.ofFn x)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2727",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "C is a circuit on n inputs, with gates of any kind the circuit type allows. Gate j is the AND of wires u and t, both earlier than gate j, and on every input, wherever wire u is true wire t is true. Replace gate j by a copy of u (an OR reading u alone) and keep every other gate and the output (forward reads allowed: other gates may read later wires, which read false as in the root model). On every input the new circuit's list of wire values equals C's, so in particular it computes the same function.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2727.86a14b24d379.json",
+  "statement_hash": "sha256:80c3f70e98d0d1b22d013d001421c5259d6a10c420db854d111ddca4eec5b04b",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:32:35.015Z",
+  "title": "Absorption: an AND gate whose first input implies its second may be replaced by a copy of the first, and no wire changes",
+  "used_by": []
+}

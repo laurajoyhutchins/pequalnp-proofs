@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (s : Fin n → Bool),\n  (∀ u v : Fin n, G.Adj u v → s u ≠ s v) →\n  (∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.TopForm.IsAO2 n C ∧\n    PEqualNP.MetaComplexity.circuitFun n C = PEqualNP.MetaComplexity.NestedCover.graphFun G ∅) →\n  ∃ D : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.TopForm.IsLeastAO G D ∧\n    ∀ i < D.gates.length, ∀ j < D.gates.length,\n      (PEqualNP.MetaComplexity.NestedCover.gateAt D i).op = PEqualNP.CircuitLowerBounds.GateOp.and →\n      (PEqualNP.MetaComplexity.NestedCover.gateAt D j).op = PEqualNP.CircuitLowerBounds.GateOp.and →\n      ¬ PEqualNP.EdgeOwnership.InCone n D i j)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3679",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that for every bipartite graph G whose edge function F has an AND/OR circuit with each gate reading exactly two earlier wires (so it reads only earlier wires), some least such circuit for F has AND-depth one: no AND gate lies in the cone of another AND gate.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3679.c843d19c0085.json",
+  "statement_hash": "sha256:0967b3007c480983da70aa317da5cb9189c6a3275ef87633c7c1c99d16818fb4",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:27:00.545Z",
+  "title": "AND-depth one fails: some bipartite edge function has no least fan-in-two AND/OR circuit in which no AND gate lies in another AND gate's cone",
+  "used_by": []
+}

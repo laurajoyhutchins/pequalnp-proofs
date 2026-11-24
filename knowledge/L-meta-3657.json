@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (C : PEqualNP.CircuitLowerBounds.Circuit),\n  PEqualNP.TopForm.IsAO2 n C → PEqualNP.MetaComplexity.circuitFun n C = PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ →\n  (∀ k < C.gates.length, PEqualNP.Core.InOutputCone n C k) → PEqualNP.Core.IsLiftFixedPoint G C →\n  (∀ k < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C k).op = PEqualNP.CircuitLowerBounds.GateOp.and → ∀ t ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs, ¬ (∀ x : Fin n → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨C.gates, t⟩ (List.ofFn x) = true → PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ x = true)) →\n  (∀ k < C.gates.length, ∃ x : Fin n → Bool, PEqualNP.EdgeOwnership.gateVal n C k x = true) →\n  ∀ h < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C h).op = PEqualNP.CircuitLowerBounds.GateOp.and →\n    (PEqualNP.TopForm.BelowF G C h ↔ ∀ k < C.gates.length, PEqualNP.EdgeOwnership.InCone n C h k → (PEqualNP.MetaComplexity.NestedCover.gateAt C k).op = PEqualNP.CircuitLowerBounds.GateOp.or)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3657",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let G be any graph, F its edge function, and C a circuit of AND and OR gates, each reading exactly two earlier wires (so it reads only earlier wires), computing F, with every gate in the output's cone, no gate false at every input, lift-fixed, and no AND reading a wire below F. Then an AND gate h of C is below F if and only if every gate that has h in its cone is an OR gate (every path from h to the output passes OR gates only).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3657.1d2b4357fa8d.json",
+  "statement_hash": "sha256:cbaa56fa3660d6fd33cb64b1fa305be72b2448d5f7a7c1b8e5cdeb5e1e5c23c7",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:16:25.639Z",
+  "title": "Normal-form top lemma: in a lift-fixed live fan-in-two AND/OR edge circuit with no AND reading a below-F wire, an AND is below F iff only ORs lie above it",
+  "used_by": []
+}

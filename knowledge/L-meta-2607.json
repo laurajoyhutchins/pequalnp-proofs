@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit) (x2 : ℕ), PEqualNP.TopForm.IsAO2 x2 x1 → (∀ (x4 : ℕ), Monotone fun (x5 : Fin x2 → Bool) => PEqualNP.BlindGate.wireValue x1 x2 x5 x4) ∧ ∀ (x4 x5 x6 : ℕ), x1.gates[x4]? = Option.some { op := PEqualNP.CircuitLowerBounds.GateOp.and, inputs := [x5, x6] : PEqualNP.CircuitLowerBounds.Gate } → ∀ (x8 : Fin x2 → Bool), PEqualNP.BlindGate.wireValue x1 x2 x8 (x2 + x4) = (PEqualNP.BlindGate.wireValue x1 x2 x8 x5 && PEqualNP.BlindGate.wireValue x1 x2 x8 x6))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2607",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: In every AND/OR circuit on n inputs with each gate reading exactly two earlier wires, every wire is a monotone function of the input, and every AND gate reading wires a and b is true exactly where both a and b are.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2607.d3189dfea31b.json",
+  "statement_hash": "sha256:37f218f88a4dd9bcc171aeca542721adf599b48191f15daf0fdbe0b8ec50c2e2",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:03:17.576Z",
+  "title": "It is false that: A step toward: Order 3 plane: a circuit of at most 64 AND/OR gates of fan-in two (distinct earlier wires) computes incidence and has a double",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C → PEqualNP.MetaComplexity.NestedCover.ReadsBack 4 C → (∀ x : Fin 4 → Bool, C.eval (List.ofFn x) = (fun z : Fin 4 → Bool => (z 0 && z 2) || (z 0 && z 3) || (z 1 && z 2) || (z 1 && z 3)) x) → 3 ≤ C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2121",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Take the bipartite graph with points x0 to x1 (inputs 0 to 1) and lines y0 to y1 (inputs 2 to 3) and the edges (point, line) 0-0, 0-1, 1-0, 1-1, and its edge function (true exactly when both ends of some edge are true). Every circuit of AND and OR gates, each reading at most two wires and only earlier wires, that equals it on every input has at least 3 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2121.1dba1214a161.json",
+  "statement_hash": "sha256:c3b3527b97407e070cbe978c6b76fc179bfc260e232e24384500c15834882db0",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:31:09.810Z",
+  "title": "Bipartite graph g2x2-f (2 points, 2 lines, 4 edges): every fan-in-two AND/OR circuit for its edge function has at least 3 gates",
+  "used_by": []
+}

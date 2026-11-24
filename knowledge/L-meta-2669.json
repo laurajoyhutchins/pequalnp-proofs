@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj] (x4 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.IsMinimalMonoCircuit x1 x4 → PEqualNP.MetaComplexity.circuitFun x1 x4 = PEqualNP.MetaComplexity.NestedCover.graphFun x2 ∅ → ∀ x7 < x4.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt x4 x7).op = PEqualNP.CircuitLowerBounds.GateOp.and → ∃ (x10 : Fin x1) (x11 : Fin x1), x2.Adj x10 x11 ∧ PEqualNP.EdgeOwnership.gateVal x1 x4 x7 (PEqualNP.EdgeOwnership.pairInput x10 x11) = Bool.true ∧ PEqualNP.MetaComplexity.circuitFun x1 (PEqualNP.CircuitMoves.eraseGate x1 x4 x7 (x1 + x4.gates.length)) (PEqualNP.EdgeOwnership.pairInput x10 x11) = Bool.false)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2669",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: In a least circuit of AND and OR gates (at most two inputs a gate) for a graph's edge function, every AND gate is true at the two-vertex input of some edge at which the circuit, with that gate replaced by false, is false.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2669.97ecc187efc7.json",
+  "statement_hash": "sha256:cb1b3e783863e4024f0a1741e7ba82c575013f0a45e013064fe6d02029830cb1",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:13:30.622Z",
+  "title": "It is false that: A step toward: A step toward: On graphs with no triangle and no 4-cycle, some least AND/OR circuit of fan-in two for the edge function has eve",
+  "used_by": []
+}

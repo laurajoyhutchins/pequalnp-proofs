@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit),   PEqualNP.MetaComplexity.FanInTwo x1 →     x1.size ≤ (14 : ℕ) →       have x4 : PEqualNP.CircuitLowerBounds.Gate → ℕ → Prop := fun (x4 : PEqualNP.CircuitLowerBounds.Gate) (x5 : ℕ) => x4.inputs[(0 : ℕ)]? = Option.some x5 ∨ x4.op ≠ PEqualNP.CircuitLowerBounds.GateOp.not ∧ x5 ∈ x4.inputs;       (∀ x5 ∈ [(4 : ℕ), (6 : ℕ)], ∃! x7 : Fin x1.gates.length, x4 (x1.gates.get x7) x5) →         ∀ (x6 : Finset (Fin x1.gates.length)),           x6.card + (11 : ℕ) ≤ x1.size →             (∀ x8 ∉ x6, ∀ x10 ∈ [(4 : ℕ), (6 : ℕ), (9 : ℕ)], ¬x4 (x1.gates.get x8) x10) →               (∀ x9 ∉ x6,                   ∀ x11 ∈ (x1.gates.get x9).inputs,                     x4 (x1.gates.get x9) x11 →                       have x14 : (Fin (7 : ℕ) → Bool) → Bool := fun (x14 : Fin (7 : ℕ) → Bool) => ({ gates := List.take (↑x9) x1.gates, output := (0 : ℕ) : PEqualNP.CircuitLowerBounds.Circuit }.wires [x14 (4 : Fin (7 : ℕ)), x14 (3 : Fin (7 : ℕ)), x14 (0 : Fin (7 : ℕ)), x14 (5 : Fin (7 : ℕ)), Bool.false, x14 (1 : Fin (7 : ℕ)), Bool.false, x14 (2 : Fin (7 : ℕ)), x14 (6 : Fin (7 : ℕ)), Bool.false]).getD x11 Bool.false;                       ∃ (x15 : Fin (7 : ℕ) → Bool) (x16 : Fin (7 : ℕ) → Bool), x14 x15 ≠ x14 x16) →                 ∃ (x10 : Fin (9 : ℕ) → Bool), x1.eval (List.ofFn x10 ++ [x10 (4 : Fin (9 : ℕ)) || x10 (6 : Fin (9 : ℕ))]) ≠ (fun (x11 : Fin (9 : ℕ) → Bool) => [(1 : ℕ), (12 : ℕ), (23 : ℕ), (34 : ℕ), (40 : ℕ), (5 : ℕ), (16 : ℕ), (27 : ℕ), (38 : ℕ), (57 : ℕ), (68 : ℕ), (85 : ℕ)].any fun (x12 : ℕ) => x11 (Fin.ofNat (9 : ℕ) (x12 / (10 : ℕ))) && x11 (Fin.ofNat (9 : ℕ) (x12 % (10 : ℕ)))) x10",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3130",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 3 of 3 of a checked cut of L-meta-1910.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3130.e8b9b4afc2cb.json",
+  "statement_hash": "sha256:ae0a945671993a9b54e936acc7b7260285ec87f8ffc313f7cafdf5eb9b99756d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T11:36:43.050Z",
+  "title": "A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_4, x_6) computes its",
+  "used_by": []
+}

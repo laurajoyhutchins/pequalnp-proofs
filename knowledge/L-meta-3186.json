@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : Fin (9 : ℕ) → BitVec (24 : ℕ)) (x2 x3 : BitVec (24 : ℕ)) (x4 : PEqualNP.CircuitLowerBounds.Circuit),   PEqualNP.MetaComplexity.Monotone2 x4 →     x3 ≠ (0 : BitVec (24 : ℕ)) →       x3 ≠ (-1 : BitVec (24 : ℕ)) →         (∀ (x8 : Fin (24 : ℕ)),             have x9 : Fin (9 : ℕ) → Bool := fun (x9 : Fin (9 : ℕ)) => (x1 x9).getLsbD ↑x8;             (x4.wires (List.ofFn x9)).getD (9 : ℕ) Bool.false = x2.getLsbD ↑x8 ∧ x4.eval (List.ofFn x9) = x3.getLsbD ↑x8) →           have x9 : List (BitVec (24 : ℕ)) := List.ofFn x1 ++ [x2];           ∃ (x10 : List (BitVec (24 : ℕ))),             x10.length ≤ x4.size - (1 : ℕ) ∧               x3 ∈ x9 ++ x10 ∧                 ∀ (x11 : Fin x10.length),                   have x12 : List (BitVec (24 : ℕ)) := x9 ++ List.take (↑x11) x10;                   x10.get x11 ∉ x12 ∧ x10.get x11 ≠ (0 : BitVec (24 : ℕ)) ∧ x10.get x11 ≠ (-1 : BitVec (24 : ℕ)) ∧ ∃ x13 ∈ x12, ∃ x14 ∈ x12, x10.get x11 = x13 &&& x14 ∨ x10.get x11 = x13 ||| x14",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3186",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 1 of 2 of a checked cut of L-meta-2159.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3186.77ecbe666429.json",
+  "statement_hash": "sha256:0c91f76b75a97dbce95e299b3826276832e9758bee665dfe71c1fa54b98224e4",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T12:04:10.468Z",
+  "title": "A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_2) computes its",
+  "used_by": []
+}

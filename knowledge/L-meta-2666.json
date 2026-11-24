@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj], ∃ (x4 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.IsMinimalMonoCircuit x1 x4 ∧ PEqualNP.MetaComplexity.circuitFun x1 x4 = PEqualNP.MetaComplexity.NestedCover.graphFun x2 ∅",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2666",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For every graph, some circuit of AND and OR gates, at most two inputs a gate, computes its edge function and is least among such circuits for it.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2666.e085c5b1179f.json",
+  "statement_hash": "sha256:f1f8574e656c3f723f712c0e05cf12ff9be1146f111bc4af9a6290c3a9494ac3",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:13:30.622Z",
+  "title": "A step toward: A step toward: On graphs with no triangle and no 4-cycle, some least AND/OR circuit of fan-in two for the edge function has every AND gate owning",
+  "used_by": []
+}

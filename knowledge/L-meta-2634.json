@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj] (x4 : Finset (Fin x1)) (x5 : PEqualNP.CircuitLowerBounds.Circuit),   have x6 : (Fin x1 → Bool) → Bool := PEqualNP.MetaComplexity.NestedCover.graphFun x2 x4;   have x7 : Fin x1 → List PEqualNP.CircuitLowerBounds.Gate := fun (x7 : Fin x1) => List.filter (fun (x8 : PEqualNP.CircuitLowerBounds.Gate) => (List.take (bif x8.op.eval [Bool.false] then (1 : ℕ) else (2 : ℕ)) x8.inputs).contains ↑x7) x5.gates;   (∀ x8 ∉ x4, (x2.neighborSet x8).ncard = (3 : ℕ)) → (∀ (x9 : Fin x1) (x10 : x2.Walk x9 x9), x10.IsCycle → (7 : ℕ) ≤ x10.length) → (∀ (x10 x11 : Fin x1), x2.Adj x10 x11 → x10 ∉ x4) → (∃ (x11 : Fin x1) (x12 : Fin x1), x2.Adj x11 x12) → PEqualNP.MetaComplexity.FanInTwo x5 → PEqualNP.MetaComplexity.circuitFun x1 x5 = x6 → (∀ (x14 : ℕ), PEqualNP.MetaComplexity.HasCircuitSize x1 x6 x14 → x5.size ≤ x14) → (∀ x15 ∉ x4, (2 : ℕ) ≤ (x7 x15).length ∧ (x7 x15).length ≤ (3 : ℕ) ∧ ((x7 x15).length = (3 : ℕ) → ∀ x18 ∈ x7 x15, x18.op = PEqualNP.CircuitLowerBounds.GateOp.or)) → (∀ x16 ∉ x4, ∀ x18 ∈ x7 x16, x18.op = PEqualNP.CircuitLowerBounds.GateOp.or) → (∃ x17 ∉ x4, (x7 x17).length = (2 : ℕ)) → ∃ x18 ∉ x4, ∃ (x19 : ℕ), x19 + (4 : ℕ) ≤ x5.size ∧ PEqualNP.MetaComplexity.HasCircuitSize x1 (fun (x20 : Fin x1 → Bool) => x6 (Function.update x20 x18 Bool.false)) x19)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2634",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Every vertex outside A has exactly three neighbours, A meets no edge, every cycle has length at least 7, there is an edge, f is true when an input of A is on or both ends of an edge are; C is a least AND/OR/NOT fan-in-two circuit for f in which every vertex outside A is read by two or three gates (a NOT only at its first input), all OR gates when three. If every gate reading a vertex outside A is an OR gate and some such vertex is read by exactly two gates, then for some vertex outside A, f with that input fixed false has a circuit at least 4 gates smaller.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2634.90fd76334b56.json",
+  "statement_hash": "sha256:fa3f3caad2fff15cf0654981c5e2bcdcf44a18a5ca8af7a1bdbd46afac00a597",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:08:13.948Z",
+  "title": "It is false that: A step toward: A step toward: Part 2 of 2 of a proof of: Cubic piece, cycles at least 7, edge function plus OR-variables: a vertex whose delet",
+  "used_by": []
+}

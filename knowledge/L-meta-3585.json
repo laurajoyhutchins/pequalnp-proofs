@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (have x1 : (Fin (9 : ℕ) → Bool) → Bool := fun (x1 : Fin (9 : ℕ) → Bool) => x1 (0 : Fin (9 : ℕ)) && x1 (1 : Fin (9 : ℕ)) || x1 (1 : Fin (9 : ℕ)) && x1 (2 : Fin (9 : ℕ)) || x1 (2 : Fin (9 : ℕ)) && x1 (3 : Fin (9 : ℕ)) || x1 (3 : Fin (9 : ℕ)) && x1 (4 : Fin (9 : ℕ)) || x1 (4 : Fin (9 : ℕ)) && x1 (0 : Fin (9 : ℕ)) || x1 (0 : Fin (9 : ℕ)) && x1 (5 : Fin (9 : ℕ)) || x1 (1 : Fin (9 : ℕ)) && x1 (6 : Fin (9 : ℕ)) || x1 (2 : Fin (9 : ℕ)) && x1 (7 : Fin (9 : ℕ)) || x1 (3 : Fin (9 : ℕ)) && x1 (8 : Fin (9 : ℕ)) || x1 (5 : Fin (9 : ℕ)) && x1 (7 : Fin (9 : ℕ)) || x1 (6 : Fin (9 : ℕ)) && x1 (8 : Fin (9 : ℕ)) || x1 (8 : Fin (9 : ℕ)) && x1 (5 : Fin (9 : ℕ)); ∀ (x2 : PEqualNP.CircuitLowerBounds.Circuit),   PEqualNP.MetaComplexity.FanInTwo x2 →     (∀ (x4 : Fin (9 : ℕ) → Bool), x2.eval (List.ofFn x4 ++ [x4 (0 : Fin (9 : ℕ)) || x4 (2 : Fin (9 : ℕ))]) = x1 x4) →       (have x5 : List ℕ := List.flatMap (fun (x5 : PEqualNP.CircuitLowerBounds.Gate) => List.take (bif x5.op.eval [Bool.false] then (1 : ℕ) else (2 : ℕ)) x5.inputs) x2.gates;         (∀ x6 < (10 : ℕ) + x2.size, x6 ≠ x2.output → x6 ∈ x5) ∧ (List.filter (fun (x6 : PEqualNP.CircuitLowerBounds.Gate) => x6.op.eval [Bool.false]) x2.gates).length + (x5.length - x5.toFinset.card) ≤ (5 : ℕ)) →         (∀ (x6 : Fin (9 : ℕ)) (x7 : Fin (10 : ℕ)), x6 ≠ (0 : Fin (9 : ℕ)) → x6 ≠ (2 : Fin (9 : ℕ)) → x6.castSucc ≠ x7 → ∀ x11 ∈ x2.gates, x11.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ x11.op = PEqualNP.CircuitLowerBounds.GateOp.or → x11.inputs = [↑x6, ↑x7] ∨ x11.inputs = [↑x7, ↑x6] → (2 : ℕ) ≤ (List.filter (fun (x15 : PEqualNP.CircuitLowerBounds.Gate) => (List.take (bif x15.op.eval [Bool.false] then (1 : ℕ) else (2 : ℕ)) x15.inputs).contains ↑x6) x2.gates).length) → (15 : ℕ) ≤ x2.size)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3585",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Petersen graph minus a vertex, ten wires (inputs 0 to 8 and x_0 OR x_2). A circuit of AND, OR (fan-in at most two) and NOT gates on them computing the edge function, in which every wire except the output is read, NOT gates plus repeated reads number at most 5, and every input other than x_0, x_2 combined directly with another of the ten wires is read at least twice, has at least 15 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3585.d1aa41b14e7c.json",
+  "statement_hash": "sha256:c69029574e1a610a6880c40df3ad76e8d4a0042390130686ed7d909eb2c0ffbd",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T14:57:12.402Z",
+  "title": "It is false that: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_2) computes",
+  "used_by": []
+}

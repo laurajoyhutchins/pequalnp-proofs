@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ) (x2 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.IsMinimalCircuit x1 x2 → (∃ (x4 : Fin x1 → Bool) (x5 : Fin x1 → Bool), PEqualNP.MetaComplexity.circuitFun x1 x2 x4 ≠ PEqualNP.MetaComplexity.circuitFun x1 x2 x5) → (∀ x5 ∈ x2.gates, x5.op = PEqualNP.CircuitLowerBounds.GateOp.not → x5.inputs.length ≤ (1 : ℕ)) → ∀ (x6 : ℕ) (x7 : PEqualNP.CircuitLowerBounds.Gate), x2.gates[x6]? = Option.some x7 → (∀ x9 ∈ x7.inputs, x9 < x1 + x6) ∧ x7.inputs.Nodup ∧ (x7.op = PEqualNP.CircuitLowerBounds.GateOp.not → x7.inputs.length = (1 : ℕ)) ∧ (x7.op ≠ PEqualNP.CircuitLowerBounds.GateOp.not → x7.inputs.length = (2 : ℕ))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3592",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 3 of a checked cut of L-meta-2768.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3592.60954dbd502f.json",
+  "statement_hash": "sha256:998b3287c768403de00d9f951bf8a13d8ed1ad7e3d082c918a343babb3e06463",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T14:59:37.327Z",
+  "title": "A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_3) computes its",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "have x1 : (Fin (9 : ℕ) → Bool) → Bool := fun (x1 : Fin (9 : ℕ) → Bool) => [(1 : ℕ), (12 : ℕ), (23 : ℕ), (34 : ℕ), (40 : ℕ), (5 : ℕ), (16 : ℕ), (27 : ℕ), (38 : ℕ), (57 : ℕ), (68 : ℕ), (85 : ℕ)].any fun (x2 : ℕ) => x1 (Fin.ofNat (9 : ℕ) (x2 / (10 : ℕ))) && x1 (Fin.ofNat (9 : ℕ) (x2 % (10 : ℕ))); ∀ (x2 x3 : List PEqualNP.CircuitLowerBounds.Gate) (x4 : PEqualNP.CircuitLowerBounds.Gate) (x5 : ℕ) (x6 : Fin (9 : ℕ)),   have x7 : PEqualNP.CircuitLowerBounds.Circuit := { gates := x2 ++ x4 :: x3, output := x5 : PEqualNP.CircuitLowerBounds.Circuit };   have x8 : (Fin (9 : ℕ) → Bool) → Bool := PEqualNP.MetaComplexity.circuitFun (9 : ℕ) { gates := x2 ++ { op := PEqualNP.CircuitLowerBounds.GateOp.or, inputs := [] : PEqualNP.CircuitLowerBounds.Gate } :: x3, output := x5 : PEqualNP.CircuitLowerBounds.Circuit };   have x9 : (Fin (8 : ℕ) → Bool) → Fin (9 : ℕ) → Bool := fun (x9 : Fin (8 : ℕ) → Bool) => x6.insertNth Bool.false x9;   PEqualNP.MetaComplexity.FanInTwo x7 → (∀ x11 ∈ x2 ++ x3, x11.op ≠ PEqualNP.CircuitLowerBounds.GateOp.not) → x4.op = PEqualNP.CircuitLowerBounds.GateOp.not → PEqualNP.MetaComplexity.circuitFun (9 : ℕ) x7 = x1 → x8 ≠ x1 → x8 ∘ x9 = x1 ∘ x9 → PEqualNP.MetaComplexity.HasCircuitSize (8 : ℕ) (x1 ∘ x9) (x7.size - (3 : ℕ))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3152",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 1 of 4 of a checked cut of L-meta-2161.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3152.993c004ed4c0.json",
+  "statement_hash": "sha256:af673099072397576d28bfd4f6b6f63546dd48f0914f0b14f59ef3e6bee3db4f",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T11:50:54.879Z",
+  "title": "A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_2) computes its",
+  "used_by": []
+}

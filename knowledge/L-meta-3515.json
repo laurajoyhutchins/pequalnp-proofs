@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ (x1 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.TopForm.IsAO2 (10 : ℕ) x1 ∧ (∀ x2 ∈ x1.gates, x2.inputs.Nodup) ∧ x1.size ≤ (14 : ℕ) ∧ ∀ (x2 : Fin (10 : ℕ) → Bool), x1.eval (List.ofFn x2) = Bool.true ↔ ∃ (x3 : Fin (10 : ℕ)) (x4 : Fin (10 : ℕ)), (↑x3, ↑x4) ∈ [((0 : ℕ), (6 : ℕ)), ((0 : ℕ), (7 : ℕ)), ((1 : ℕ), (6 : ℕ)), ((1 : ℕ), (8 : ℕ)), ((2 : ℕ), (7 : ℕ)), ((2 : ℕ), (9 : ℕ)), ((3 : ℕ), (6 : ℕ)), ((3 : ℕ), (9 : ℕ)), ((4 : ℕ), (8 : ℕ)), ((4 : ℕ), (9 : ℕ)), ((5 : ℕ), (7 : ℕ)), ((5 : ℕ), (8 : ℕ))] ∧ x2 x3 = Bool.true ∧ x2 x4 = Bool.true",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3515",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 1 of 2 of a checked cut of L-meta-3014.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3515.d24231975a8c.json",
+  "statement_hash": "sha256:d5b87e8ab8a0331896c655580a25b6ee720e4c158ca2474a13f6b64e43637472",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T14:08:14.942Z",
+  "title": "A step toward: A step toward: A step toward: Search: a circuit of AND and OR gates with at most 26 gates for the edge function of the Heawood graph",
+  "used_by": []
+}

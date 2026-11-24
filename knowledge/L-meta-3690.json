@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ) (x2 : Finset (Fin x1 × Fin x1)) (x3 : Equiv.Perm (Fin x1)) (x4 : PEqualNP.CircuitLowerBounds.Circuit), (∀ (x5 : Fin x1), (x5, x3 x5) ∈ x2) → PEqualNP.TopForm.IsAO2 (x1 + x1) x4 → (∀ (x7 : Fin (x1 + x1) → Bool), PEqualNP.MetaComplexity.circuitFun (x1 + x1) x4 x7 = Decidable.decide (∃ (x8 : Fin x1) (x9 : Fin x1), (x8, x9) ∈ x2 ∧ x7 (Fin.castAdd x1 x8) = Bool.true ∧ x7 (Fin.natAdd x1 x9) = Bool.true)) → (2 : ℕ) * x1 ≤ x4.size + (1 : ℕ)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3690",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 4 of a checked cut of L-meta-2976.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3690.a8e05165d371.json",
+  "statement_hash": "sha256:bab1093c19e10db20b6ef037a42de8f2616193c6ac7695251bc0ce266b82d4bb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:34:22.376Z",
+  "title": "A step toward: A step toward: 4-cycle-free bipartite incidence: every fan-in-two AND/OR circuit for it can be replaced by a two-level one (point ORs, line ORs, ",
+  "used_by": []
+}

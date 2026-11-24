@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_2569 : ∀ (x1 x2 : ℕ) (x3 x4 : Fin x1) (x5 : PEqualNP.CircuitLowerBounds.GateOp) (x6 : PEqualNP.CircuitLowerBounds.Circuit), x5 = PEqualNP.CircuitLowerBounds.GateOp.and ∨ x5 = PEqualNP.CircuitLowerBounds.GateOp.or → PEqualNP.MetaComplexity.Monotone2 x6 → x6.size ≤ x2 → ∃ (x10 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x10 ∧ x10.size ≤ x2 + (1 : ℕ) ∧ ∀ (x11 : Fin x1 → Bool), x10.eval (List.ofFn x11) = x6.eval (List.ofFn x11 ++ [x5.eval [x11 x3, x11 x4]]) := by
+  sorry

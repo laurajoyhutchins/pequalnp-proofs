@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C → PEqualNP.MetaComplexity.NestedCover.ReadsBack 5 C → (∀ x : Fin 5 → Bool, C.eval (List.ofFn x) = (fun z : Fin 5 → Bool => (z 0 && z 2) || (z 0 && z 3) || (z 0 && z 4) || (z 1 && z 2) || (z 1 && z 3) || (z 1 && z 4)) x) → 4 ≤ C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2135",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Take the bipartite graph with points x0 to x1 (inputs 0 to 1) and lines y0 to y2 (inputs 2 to 4) and the edges (point, line) 0-0, 0-1, 0-2, 1-0, 1-1, 1-2, and its edge function (true exactly when both ends of some edge are true). Every circuit of AND and OR gates, each reading at most two wires and only earlier wires, that equals it on every input has at least 4 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2135.961e91d7608e.json",
+  "statement_hash": "sha256:d1916f707e3fb4b14d4f0eb658c758afe9a12c971a633f543667d487b56a3396",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:35:13.508Z",
+  "title": "Bipartite graph g2x3-3f (2 points, 3 lines, 6 edges): every fan-in-two AND/OR circuit for its edge function has at least 4 gates",
+  "used_by": []
+}

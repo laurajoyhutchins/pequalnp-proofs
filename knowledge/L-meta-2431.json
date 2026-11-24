@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 x2 : ℕ) (x3 x4 : PEqualNP.CircuitLowerBounds.Circuit) (x5 : Fin x2 → Fin (x1 + x3.size)), x3.output < x1 + x3.size → PEqualNP.MetaComplexity.Monotone2 x3 → PEqualNP.MetaComplexity.Monotone2 x4 → ∃ (x9 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x9 ∧ x9.size ≤ x3.size + x4.size + (1 : ℕ) ∧ ∀ (x10 : Fin x1 → Bool), PEqualNP.MetaComplexity.circuitFun x1 x9 x10 = (PEqualNP.MetaComplexity.circuitFun x1 x3 x10 || PEqualNP.MetaComplexity.circuitFun x2 x4 fun (x11 : Fin x2) => (x3.wires (List.ofFn x10)).getD (↑(x5 x11)) Bool.false))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2431",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: For AND/OR fan-in-at-most-two circuits C on m inputs and D on k inputs and any map from D's inputs to wires of C (C's output a real wire), some such circuit with at most |C| + |D| + 1 gates computes C OR (D reading those wires of C).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2431.e468a4f4e1c9.json",
+  "statement_hash": "sha256:cd330aa2c4daef63a00a6e4097d062fd5ecabfa56e47fd09b4f258ee42239cfa",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T08:24:30.565Z",
+  "title": "It is false that: A step toward: Search: an order-3 plane circuit of at most 63 fan-in-two AND/OR gates, true at incident pairs, false at every degenerate maxim",
+  "used_by": []
+}

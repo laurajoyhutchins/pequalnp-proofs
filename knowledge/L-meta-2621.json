@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.TopForm.IsAO2 (26 : ℕ) x1 → ∀ (x3 : ℕ) (x4 : List Bool), ∃ (x5 : ℕ → Bool), (∀ x6 < (26 : ℕ), x5 x6 = Decidable.decide (x6 = x3)) ∧ ∀ (x6 : ℕ) (x7 : PEqualNP.CircuitLowerBounds.Gate) (x8 x9 : ℕ), x1.gates[x6]? = Option.some x7 → x7.inputs = [x8, x9] → (x7.op = PEqualNP.CircuitLowerBounds.GateOp.and → x5 ((26 : ℕ) + x6) = (x4.getD x8 Bool.false && x5 x9 || x5 x8 && x4.getD x9 Bool.false)) ∧ (x7.op = PEqualNP.CircuitLowerBounds.GateOp.or → x5 ((26 : ℕ) + x6) = (x5 x8 || x5 x9))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2621",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For every AND/OR circuit on 26 inputs with each gate reading exactly two earlier wires, every input index m and every list of base values, there is an assignment of a second bit to the wires that is 1 on input m only among the inputs, gives an AND of a, b the value (a0 and b1) or (a1 and b0) with a0, b0 from the list, and an OR the OR of the second bits.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2621.4951cea177ab.json",
+  "statement_hash": "sha256:a03a1621fe4dc6240edb0503358b78be8993523b899c27254e5437c2434b23e2",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:05:53.590Z",
+  "title": "A step toward: A step toward: Order 3 plane: a circuit of at most 64 AND/OR gates of fan-in two (distinct earlier wires) computes incidence and has a double re-",
+  "used_by": []
+}

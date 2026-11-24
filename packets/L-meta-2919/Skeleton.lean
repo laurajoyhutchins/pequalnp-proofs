@@ -1,0 +1,19 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_2919 : ∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (j a b : ℕ) (op : PEqualNP.CircuitLowerBounds.GateOp),
+  (op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ op = PEqualNP.CircuitLowerBounds.GateOp.or) →
+  C.gates[j]? = some { op := op, inputs := [a, b] } →
+  a < n + j →
+  (∀ x : Fin n → Bool,
+      (C.wires (List.ofFn x)).getD a false = PEqualNP.CircuitLowerBounds.GateOp.eval op [] →
+      PEqualNP.MetaComplexity.circuitFun n
+          { gates := C.gates.set j { op := op, inputs := [] }, output := C.output } x =
+        PEqualNP.MetaComplexity.circuitFun n C x) →
+  PEqualNP.MetaComplexity.circuitFun n
+      { gates := C.gates.set j { op := PEqualNP.CircuitLowerBounds.GateOp.or, inputs := [a] },
+        output := C.output } =
+    PEqualNP.MetaComplexity.circuitFun n C ∧
+  (C.gates.set j { op := PEqualNP.CircuitLowerBounds.GateOp.or, inputs := [a] }).length =
+    C.gates.length := by
+  sorry

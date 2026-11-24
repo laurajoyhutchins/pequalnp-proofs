@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (C : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.TopForm.NoFourCycle G → PEqualNP.TopForm.IsAO2 n C → (∀ x : Fin n → Bool, PEqualNP.MetaComplexity.circuitFun n C x = decide (∃ u v : Fin n, G.Adj u v ∧ x u = true ∧ x v = true)) → PEqualNP.ReadK.IsReadK n C 1 → ∃ T : Finset (Fin n), (∀ u2 v2 : Fin n, G.Adj u2 v2 → u2 ∈ T ∨ v2 ∈ T) ∧ G.edgeFinset.card + T.card ≤ C.size + 1",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2237",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "G has no 4-cycle. C has AND and OR gates, each reading exactly two earlier wires, and computes the edge function of G (true exactly when both ends of some edge are true). C is read-1: every minimal set of inputs whose truth makes C true has a proof tree (all inputs at an AND gate, one at an OR gate) with each of its inputs as a leaf at most once. Then some vertex cover T of G has (number of edges) + |T| at most the number of gates plus 1; so C has at least |E| + tau - 1 gates, tau the least size of a vertex cover.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2237.a3a1921b621f.json",
+  "statement_hash": "sha256:b93317cd6149bbc91adf81fdf745dd890ab2fd9810bedf3b7f5d84398f010392",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:46:39.286Z",
+  "title": "Read-1 AND/OR circuits of fan-in exactly two for the edge function of a 4-cycle-free graph: at least |E| + tau - 1 gates, the cover term included",
+  "used_by": []
+}

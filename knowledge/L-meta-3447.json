@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (C : PEqualNP.CircuitLowerBounds.Circuit), (∀ p p' l l' : Fin N, p ≠ p' → l ≠ l' → ¬ (I p l ∧ I p l' ∧ I p' l ∧ I p' l')) → PEqualNP.MetaComplexity.Monotone2 C → PEqualNP.MetaComplexity.NestedCover.ReadsBack (N + N) C → (∀ p1 l1 : Fin N, I p1 l1 → PEqualNP.MetaComplexity.circuitFun (N + N) C (fun k1 : Fin (N + N) => decide (k1 = Fin.castAdd N p1 ∨ k1 = Fin.natAdd N l1)) = true) → (∀ k2 : Fin (N + N), PEqualNP.MetaComplexity.circuitFun (N + N) C (fun k3 : Fin (N + N) => decide (k3 = k2)) = false) → (∀ j < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op = PEqualNP.CircuitLowerBounds.GateOp.and → ∀ p0 l0 : Fin N, ¬ I p0 l0 → (C.wires (List.ofFn (fun ke : Fin (N + N) => decide (ke = Fin.castAdd N p0 ∨ ke = Fin.natAdd N l0)))).getD (N + N + j) false = false) → (∀ j < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op = PEqualNP.CircuitLowerBounds.GateOp.and → (∀ p : Fin N, (C.wires (List.ofFn (fun kc : Fin (N + N) => decide (kc = Fin.castAdd N p)))).getD (N + N + j) false = false) ∧ ∀ l : Fin N, (C.wires (List.ofFn (fun kd : Fin (N + N) => decide (kd = Fin.natAdd N l)))).getD (N + N + j) false = false) → (Finset.univ.filter (fun e : Fin N × Fin N => I e.1 e.2)).card ≤ 5 * C.size + 1",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3447",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "N points, N lines, no two points on two common lines; inputs points then lines. C: AND/OR gates of fan-in at most two, each reading only earlier wires; true at every input of one point and a line through it, false at every input with one input on. Every AND gate is false at every input with exactly one input on, and at every input with exactly one point and one line on that are not incident. Then the number of incident pairs is at most 5 times the gates of C plus 1.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3447.40784b433730.json",
+  "statement_hash": "sha256:16e65264bf6084546761421a115aaa4b74f38f91fb707f77f032dcd8de67dcb7",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T13:27:53.261Z",
+  "title": "4-cycle-free incidence: fan-in-two AND/OR circuits accepting incident pairs, ANDs false at one-hot and non-incident pairs: at least (|E| - 1)/5 gates",
+  "used_by": []
+}

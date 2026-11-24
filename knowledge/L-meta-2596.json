@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ) (x2 : Fin x1) (x3 : Bool → Bool) (x4 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x4 → x4.output ≠ x1 → ∃ (x7 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x7 ∧ x7.size ≤ x4.size ∧ ∀ (x8 : Fin x1 → Bool), x7.eval (List.ofFn x8 ++ [!x8 x2]) = x4.eval (List.ofFn x8 ++ [x3 (x8 x2)])",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2596",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For a circuit of AND, OR (two-input) and NOT gates on n inputs and one extra wire, whose output is not the extra wire, and any function g of one bit: some circuit of the same kind, no larger, with the extra wire carrying NOT x_v, computes what the first computes when its extra wire carries g(x_v).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2596.fa7f46a78d08.json",
+  "statement_hash": "sha256:f891a99c5bec30fbf700d440546c2e02e46b3ea244de9d73cd6a7075d2ac7fd5",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:01:53.008Z",
+  "title": "A step toward: A step toward: Petersen graph: no circuit of AND, OR (fan-in two) and NOT gates with at most 19 gates computes its edge function",
+  "used_by": []
+}

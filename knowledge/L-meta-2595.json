@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : ℕ) (x2 : Fin x1 → Fin x1) (x3 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x3 → ∃ (x5 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x5 ∧ x5.size = x3.size ∧ ∀ (x6 : Fin x1 → Bool) (x7 : Bool), x5.eval (List.ofFn x6 ++ [x7]) = x3.eval (List.ofFn (x6 ∘ x2) ++ [x7]))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2595",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: For every circuit of AND, OR (two-input) and NOT gates on n inputs and one extra wire, and every map of the input indices to themselves, some circuit of the same kind with the same number of gates computes what the first computes when its inputs are fed through the map.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2595.450e89f391d4.json",
+  "statement_hash": "sha256:60bcb34dca4952257b2d9001bba3a55f3e3cf9e091e93aa68646cd9082054623",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:01:53.008Z",
+  "title": "It is false that: A step toward: A step toward: Petersen graph: no circuit of AND, OR (fan-in two) and NOT gates with at most 19 gates computes its edge functio",
+  "used_by": []
+}

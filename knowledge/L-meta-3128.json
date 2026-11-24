@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ), PEqualNP.MetaComplexity.HasCircuitSize (7 : ℕ) (fun (x2 : Fin (7 : ℕ) → Bool) => x2 (0 : Fin (7 : ℕ)) && x2 (2 : Fin (7 : ℕ)) || x2 (2 : Fin (7 : ℕ)) && x2 (1 : Fin (7 : ℕ)) || x2 (0 : Fin (7 : ℕ)) && x2 (3 : Fin (7 : ℕ)) || x2 (3 : Fin (7 : ℕ)) && x2 (4 : Fin (7 : ℕ)) || x2 (4 : Fin (7 : ℕ)) && x2 (1 : Fin (7 : ℕ)) || x2 (0 : Fin (7 : ℕ)) && x2 (5 : Fin (7 : ℕ)) || x2 (5 : Fin (7 : ℕ)) && x2 (6 : Fin (7 : ℕ)) || x2 (6 : Fin (7 : ℕ)) && x2 (1 : Fin (7 : ℕ))) x1 → (11 : ℕ) ≤ x1",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3128",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 3 of a checked cut of L-meta-1910.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3128.5f4bae52689a.json",
+  "statement_hash": "sha256:03c0614fabf568f040bf1e5dfb4abf1be037094f9369051225e05d34f951be65",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T11:36:43.050Z",
+  "title": "A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_4, x_6) computes its",
+  "used_by": []
+}

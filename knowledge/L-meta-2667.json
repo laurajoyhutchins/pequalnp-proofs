@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj], ∃ (x4 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.IsMinimalMonoCircuit x1 x4 ∧ PEqualNP.MetaComplexity.circuitFun x1 x4 = PEqualNP.MetaComplexity.NestedCover.graphFun x2 ∅)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2667",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: For every graph, some circuit of AND and OR gates, at most two inputs a gate, computes its edge function and is least among such circuits for it.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2667.d6f6ac228201.json",
+  "statement_hash": "sha256:9dc0bb1d8df1760a39347986a2063bdd1bcdd3c7e64eb394d31ae5c3c9440059",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:13:30.622Z",
+  "title": "It is false that: A step toward: A step toward: On graphs with no triangle and no 4-cycle, some least AND/OR circuit of fan-in two for the edge function has eve",
+  "used_by": []
+}

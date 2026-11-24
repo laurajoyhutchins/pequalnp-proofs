@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∃ (x1 : PEqualNP.CircuitLowerBounds.Circuit) (x2 : ℕ), PEqualNP.MetaComplexity.Monotone2 x1 ∧ x1.size ≤ (45 : ℕ) ∧ x1.output < (25 : ℕ) + x1.size ∧ x2 < (25 : ℕ) + x1.size ∧ ∀ (x3 : Fin (25 : ℕ) → Bool), (x1.eval (List.ofFn x3) = Bool.true ↔ ∃ (x4 : Fin (25 : ℕ)) (x5 : Fin (25 : ℕ)), ↑x4 < (12 : ℕ) ∧ (12 : ℕ) ≤ ↑x5 ∧ (↑x4 + ↑x5 + (2 : ℕ)) % (13 : ℕ) ∈ [(0 : ℕ), (1 : ℕ), (3 : ℕ), (9 : ℕ)] ∧ ↑x4 ∉ [(0 : ℕ), (2 : ℕ), (8 : ℕ)] ∧ x3 x4 = Bool.true ∧ x3 x5 = Bool.true) ∧ (x1.eval (List.ofFn x3) = Bool.false → (x1.wires (List.ofFn x3)).getD x2 Bool.false = (x3 (13 : Fin (25 : ℕ)) || x3 (15 : Fin (25 : ℕ)) || x3 (21 : Fin (25 : ℕ)))))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2572",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Order-3 plane minus a point as in the parent (points at inputs 0 to 11, lines at 12 to 24, the same incidence rule): some AND/OR circuit of fan-in at most two with at most 45 gates computes incidence restricted to the points other than 0, 2, 8, and has a wire equal to the OR of the line inputs 13, 15, 21 at every input where its output is false.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2572.cfa831a874e5.json",
+  "statement_hash": "sha256:f8bb59cc46d14a0d246e00cd5199e959bd102a2eaca1b7f803bd41e1961c9f65",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T08:57:27.838Z",
+  "title": "It is false that: A step toward: A step toward: Search: a circuit of AND and OR gates with at most 63 gates for the point-line graph of the projective plane of",
+  "used_by": []
+}

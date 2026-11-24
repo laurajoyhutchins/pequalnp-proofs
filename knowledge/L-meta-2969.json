@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (C : PEqualNP.CircuitLowerBounds.Circuit) (s : Fin n → Bool) (T' : Finset (Fin n)), (∀ u v : Fin n, G.Adj u v → s u ≠ s v) → PEqualNP.TopForm.NoFourCycle G → PEqualNP.TopForm.IsAO2 n C → PEqualNP.MetaComplexity.circuitFun n C = PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ → PEqualNP.Core.IsLiftFixedPoint G C → PEqualNP.MetaComplexity.NestedCover.IsMinCover (G.deleteEdges (((PEqualNP.Core.maximalCores G C).biUnion (PEqualNP.TopForm.gammaE G C) : Finset (Sym2 (Fin n))) : Set (Sym2 (Fin n)))) T' → ((PEqualNP.Core.maximalCores G C).biUnion (PEqualNP.Core.coneSet n C)).card + (G.edgeFinset \\ (PEqualNP.Core.maximalCores G C).biUnion (PEqualNP.TopForm.gammaE G C)).card + T'.card + (PEqualNP.Core.maximalCores G C).card ≤ C.size + 1)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2969",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: for every bipartite graph G with no 4-cycle and every circuit C of AND and OR gates, each reading exactly two earlier wires (so it reads only earlier wires), computing the edge function of G at a lift fixed point, with U the union of the cones of the maximal cores, D the edges accepted by some maximal core and mc their number, |U| + (edges of G not in D) + tau(G - D) + mc <= (gates of C) + 1.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2969.2a873993dd25.json",
+  "statement_hash": "sha256:4414b37daa49a759fda335d018c724db0d57e70fb8429261cd1f47ab713c3975",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T10:44:46.516Z",
+  "title": "The rest bound fails: some lift-fixed fan-in-two AND/OR circuit for a 4-cycle-free bipartite edge function has too few gates outside its maximal cores' cones",
+  "used_by": []
+}

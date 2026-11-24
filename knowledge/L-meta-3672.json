@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "have x1 : ℕ → BitVec (512 : ℕ) := fun (x1 : ℕ) => BitVec.ofNat (512 : ℕ) (((2 : ℕ) ^ (512 : ℕ) - (1 : ℕ)) / ((2 : ℕ) ^ (2 : ℕ) ^ x1 + (1 : ℕ)) * (2 : ℕ) ^ (2 : ℕ) ^ x1); have x2 : List (BitVec (512 : ℕ)) := List.map x1 (List.range (9 : ℕ)) ++ [~~~x1 (0 : ℕ), (0 : BitVec (512 : ℕ)), ~~~(0 : BitVec (512 : ℕ))]; have x3 : BitVec (512 : ℕ) := List.foldl (fun (x3 : BitVec (512 : ℕ)) (x4 : ℕ) => x3 ||| x1 (x4 / (10 : ℕ)) &&& x1 (x4 % (10 : ℕ))) (0 : BitVec (512 : ℕ)) [(1 : ℕ), (12 : ℕ), (23 : ℕ), (34 : ℕ), (40 : ℕ), (5 : ℕ), (16 : ℕ), (27 : ℕ), (38 : ℕ), (57 : ℕ), (68 : ℕ), (85 : ℕ)]; have x4 : List (BitVec (512 : ℕ)) → Fin (3 : ℕ) × BitVec (512 : ℕ) × BitVec (512 : ℕ) → List (BitVec (512 : ℕ)) := fun (x4 : List (BitVec (512 : ℕ))) (x5 : Fin (3 : ℕ) × BitVec (512 : ℕ) × BitVec (512 : ℕ)) =>   have x6 : BitVec (512 : ℕ) := x5.2.1;   have x7 : BitVec (512 : ℕ) := x5.2.2;   have x8 : BitVec (512 : ℕ) := if x5.1 = (0 : Fin (3 : ℕ)) then x6 &&& x7 else if x5.1 = (1 : Fin (3 : ℕ)) then x6 ||| x7 else ~~~x6;   if x6 ∈ x4 ∧ x7 ∈ x4 ∧ x8 ∉ x4 then x8 :: x4 else x4; ∀ x5 ∈ [(1 : ℕ), (2 : ℕ), (3 : ℕ), (4 : ℕ), (6 : ℕ), (13 : ℕ), (14 : ℕ), (15 : ℕ), (16 : ℕ), (17 : ℕ), (18 : ℕ), (19 : ℕ), (20 : ℕ), (25 : ℕ), (26 : ℕ), (28 : ℕ), (29 : ℕ), (30 : ℕ), (31 : ℕ), (37 : ℕ), (39 : ℕ), (42 : ℕ), (50 : ℕ), (53 : ℕ), (73 : ℕ), (75 : ℕ)], ∀ (x7 : List (Fin (3 : ℕ) × BitVec (512 : ℕ) × BitVec (512 : ℕ))), x7.length ≤ (13 : ℕ) → x3 ∉ List.foldl x4 ((x2.getD (x5 / (11 : ℕ)) (0 : BitVec (512 : ℕ)) ||| x2.getD (x5 % (11 : ℕ)) (0 : BitVec (512 : ℕ))) :: x2) x7",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3672",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 2 of a checked cut of L-meta-2928.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3672.c543243a8d99.json",
+  "statement_hash": "sha256:137760526a953236e9901b6495f5d53d60cfcdccc976cb787f2bbd2a7b7b22cb",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:21:12.061Z",
+  "title": "A step toward: A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate NOT x_0 co",
+  "used_by": []
+}

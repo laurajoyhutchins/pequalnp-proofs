@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_2647 : ¬ (∀ (x1 : ℕ) (x2 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x2 → ∀ (x4 : ℕ) (x5 : Fin x1 → Bool), (∀ (x6 : Fin x1), x5 x6 = Bool.true → x4.testBit ↑x6 = Bool.true) → (PEqualNP.MetaComplexity.circuitFun x1 x2 fun (x7 : Fin x1) => x4.testBit ↑x7) = Bool.false → PEqualNP.MetaComplexity.circuitFun x1 x2 x5 = Bool.false) := by
+  sorry

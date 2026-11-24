@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (F : Finset ℕ), PEqualNP.TopForm.IsAO2 n C → (∀ j ∈ F, j < C.gates.length ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ PEqualNP.CleanedNonEdge.OrReaches n C C.output j) → F.card ≤ Set.ncard {i : ℕ | i < C.gates.length ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt C i).op = PEqualNP.CircuitLowerBounds.GateOp.or ∧ PEqualNP.CleanedNonEdge.OrReaches n C C.output i} + 1",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2233",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "C has AND and OR gates, each reading exactly two earlier wires. If F is a set of m AND gates of C, each reaching the output wire through OR gates only (the gate may itself be the output), then the OR gates of C that reach the output wire through OR gates only number at least m - 1.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2233.294504b2376e.json",
+  "statement_hash": "sha256:da43d6d8e24c3a7f666724966d475e12be391071a51b1e89a695fda6fe7c8702",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:46:15.690Z",
+  "title": "AND/OR circuits, fan-in exactly two: m AND gates with OR-only paths to the output force at least m - 1 OR gates with OR-only paths to the output",
+  "used_by": []
+}

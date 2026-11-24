@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n m : ℕ) (k : Fin m → ℕ) (S : Fin m → Finset (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit) (o : Fin m → ℕ) (c : Fin m → ℕ), (∀ i j : Fin m, i ≠ j → (S i ∩ S j).card ≤ 1) → (∀ i : Fin m, 2 ≤ (S i).card) → (∀ g ∈ C.gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length = 2) → PEqualNP.MetaComplexity.NestedCover.ReadsBack n C → (∀ (i : Fin m) (p : Fin n), (C.wires (List.ofFn (fun q : Fin n => decide (q = p)))).getD (o i) false = true ↔ p ∈ S i) → (∀ (i : Fin m) (x : Fin n → Bool), (Finset.univ.filter (fun q : Fin n => x q = true)).card ≤ k i → (∀ q ∈ S i, x q = false) → (C.wires (List.ofFn x)).getD (o i) false = false) → (∀ i : Fin m, c i ≤ k i) → (∀ i : Fin m, c i + 1 ≤ (S i).card) → ∑ i : Fin m, c i ≤ C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2980",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Sets S_i (i < m) of the n inputs, each of at least 2 elements, any two sharing at most one. C: AND and OR gates, each reading exactly two earlier wires. Output o_i is true at a single input p exactly when p is in S_i, and false at every input with at most k_i true inputs and none in S_i; the level k_i may differ per output. If c_i <= k_i and c_i <= |S_i| - 1 for each i, then the sum of the c_i is at most the number of gates of C.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2980.b3236810c1eb.json",
+  "statement_hash": "sha256:e2be63f83a4e4d13d9270dc643f26473c047f62645c6a5454c4167c914401f1d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T10:48:51.972Z",
+  "title": "Graded Boolean-sums count: fan-in-two AND/OR circuits whose outputs are sound each at its own level k_i need at least the sum of the c_i <= k_i gates",
+  "used_by": []
+}

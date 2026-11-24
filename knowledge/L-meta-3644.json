@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : List ℕ) (x2 : ℕ → Bool) (x3 : PEqualNP.CircuitLowerBounds.Circuit), (∀ x4 ∈ x1, x4 < (1024 : ℕ)) → PEqualNP.MetaComplexity.Monotone2 x3 → x3.size ≤ (14 : ℕ) → (∀ x7 ∈ x1, x3.eval (List.ofFn fun (x9 : Fin (10 : ℕ)) => x7.testBit ↑x9) = x2 x7) → PEqualNP.Defs.LratEncoding.FormulaSat (PEqualNP.Defs.LratEncoding.enc (10 : ℕ) (14 : ℕ) x2 x1)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3644",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 3 of a checked cut of L-meta-2551.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3644.644de0a88311.json",
+  "statement_hash": "sha256:b4f72aec16e153296f76f30a50e346c2569e70b620bf7c3b6fdefd48dcce7b5f",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T15:14:47.193Z",
+  "title": "A step toward: A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_",
+  "used_by": []
+}

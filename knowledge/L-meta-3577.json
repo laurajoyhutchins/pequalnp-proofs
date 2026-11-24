@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (n k : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (side : Fin n → Bool) (I : Fin k → Finset (Fin n)), (∀ a b : Fin n, G.Adj a b → side a ≠ side b) → (∀ a b c d : Fin n, a ≠ c → b ≠ d → ¬ (G.Adj a b ∧ G.Adj b c ∧ G.Adj c d ∧ G.Adj d a)) → 2 ≤ k → (∀ j : Fin k, ∀ a ∈ I j, ∀ b ∈ I j, ¬ G.Adj a b) → (∀ v : Fin n, ∃ j : Fin k, v ∈ I j) → (∀ v : Fin n, ∃ j : Fin k, v ∉ I j) → (∀ j : Fin k, (I j).card + 2 ≤ n) → (∀ a b : Fin n, a ≠ b → ¬ G.Adj a b → ∃ j : Fin k, a ∈ I j ∧ b ∈ I j) → ∃ T : Finset (Fin n), (∀ a b : Fin n, G.Adj a b → a ∈ T ∨ b ∈ T) ∧ G.edgeFinset.card + T.card + 1 ≤ ∑ j : Fin k, (n - (I j).card))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3577",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: G is a bipartite graph on n vertices with no 4-cycle. I_1, ..., I_k (k at least 2) are independent sets of G such that every vertex lies in at least one of them and in not all of them, each leaves out at least two vertices, and every two distinct non-adjacent vertices lie together in at least one of them. Then for some vertex cover T of G, the number of edges plus |T| plus 1 is at most the sum over j of (n - |I_j|).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3577.8a0a75fdfc55.json",
+  "statement_hash": "sha256:049dd710b2663c7a3dba70b598eb291539ac712eb97ddb79f7e9407120ad8771",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T14:55:05.349Z",
+  "title": "It is false that independent sets covering all non-adjacent pairs of a 4-cycle-free bipartite graph always have total co-size >= edges + cover + 1",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "have x1 : (Fin (8 : ℕ) → Bool) → Bool := fun (x1 : Fin (8 : ℕ) → Bool) => x1 (0 : Fin (8 : ℕ)) && x1 (1 : Fin (8 : ℕ)) || x1 (1 : Fin (8 : ℕ)) && x1 (2 : Fin (8 : ℕ)) || x1 (2 : Fin (8 : ℕ)) && x1 (3 : Fin (8 : ℕ)) || x1 (0 : Fin (8 : ℕ)) && x1 (4 : Fin (8 : ℕ)) || x1 (1 : Fin (8 : ℕ)) && x1 (5 : Fin (8 : ℕ)) || x1 (2 : Fin (8 : ℕ)) && x1 (6 : Fin (8 : ℕ)) || x1 (3 : Fin (8 : ℕ)) && x1 (7 : Fin (8 : ℕ)) || x1 (4 : Fin (8 : ℕ)) && x1 (6 : Fin (8 : ℕ)) || x1 (5 : Fin (8 : ℕ)) && x1 (7 : Fin (8 : ℕ)) || x1 (7 : Fin (8 : ℕ)) && x1 (4 : Fin (8 : ℕ)); ∀ (x2 x3 : PEqualNP.CircuitLowerBounds.Circuit) (x4 : ℕ),   PEqualNP.MetaComplexity.FanInTwo x2 →     PEqualNP.MetaComplexity.FanInTwo x3 →       x2.size + x3.size ≤ (13 : ℕ) →         (8 : ℕ) ≤ x4 →           x4 < (8 : ℕ) + x2.size →             have x10 : (Fin (8 : ℕ) → Bool) → List Bool := fun (x10 : Fin (8 : ℕ) → Bool) => x2.wires (List.ofFn x10);             have x11 : (Fin (8 : ℕ) → Bool) → Bool := fun (x11 : Fin (8 : ℕ) → Bool) => (x10 x11).getD x4 Bool.false;             (∀ (x12 : Fin (8 : ℕ) → Bool), x1 x12 = Bool.false → (x12 (0 : Fin (8 : ℕ)) || x12 (3 : Fin (8 : ℕ))) = Bool.true → x11 x12 = Bool.true) → (∀ (x13 : Fin (8 : ℕ) → Bool), x3.eval (x10 x13 ++ [x11 x13]) = x1 x13) → ∃ (x14 : Fin (8 : ℕ) → Bool), x3.eval (x10 x14 ++ [Bool.false]) ≠ (x1 x14 || x14 (0 : Fin (8 : ℕ)) || x14 (3 : Fin (8 : ℕ)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3295",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 4 of 4 of a checked cut of L-meta-2040.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3295.747fee34417c.json",
+  "statement_hash": "sha256:ef279146861a616d007419c19c6244af0986932ae323b06106850f90bbe316f4",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T12:25:24.791Z",
+  "title": "A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate NOT x_4 computes its edge",
+  "used_by": []
+}

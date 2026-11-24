@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 x2 : ℕ) (x3 x4 : Fin x1) (x5 : PEqualNP.CircuitLowerBounds.GateOp) (x6 : PEqualNP.CircuitLowerBounds.Circuit), x5 = PEqualNP.CircuitLowerBounds.GateOp.and ∨ x5 = PEqualNP.CircuitLowerBounds.GateOp.or → PEqualNP.MetaComplexity.Monotone2 x6 → x6.size ≤ x2 → ∃ (x10 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x10 ∧ x10.size ≤ x2 + (1 : ℕ) ∧ ∀ (x11 : Fin x1 → Bool), x10.eval (List.ofFn x11) = x6.eval (List.ofFn x11 ++ [x5.eval [x11 x3, x11 x4]])",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2569",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For a circuit of AND and OR gates, at most two inputs a gate, with at most s gates on n inputs and one extra wire, and any two inputs u, v: some such circuit with at most s + 1 gates on the n inputs alone computes what the first does when the extra wire carries the AND (or the OR) of u and v.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2569.97fb1458cc40.json",
+  "statement_hash": "sha256:3eaf69a49e122d1365f883878308cad2c52d2ba9c4d0dd6a79de9d814f55a7a1",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T08:57:05.885Z",
+  "title": "A step toward: A step toward: Search: a circuit of AND and OR gates with at most 63 gates for the point-line graph of the projective plane of order 3",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (T L : Finset ℕ) (i₁ i₂ a b c : ℕ),\n  (PEqualNP.TopForm.IsAO2 n C ∧ PEqualNP.MetaComplexity.NestedCover.ReadsBack n C ∧ PEqualNP.MetaComplexity.NestedCover.IsOrTree n C T L C.output ∧\n  n + i₁ ∈ L ∧ n + i₂ ∈ L ∧ i₁ ≠ i₂ ∧\n  (PEqualNP.MetaComplexity.NestedCover.gateAt C i₁).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ ((PEqualNP.MetaComplexity.NestedCover.gateAt C i₁).inputs = [a, b] ∨ (PEqualNP.MetaComplexity.NestedCover.gateAt C i₁).inputs = [b, a]) ∧\n  (PEqualNP.MetaComplexity.NestedCover.gateAt C i₂).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ ((PEqualNP.MetaComplexity.NestedCover.gateAt C i₂).inputs = [a, c] ∨ (PEqualNP.MetaComplexity.NestedCover.gateAt C i₂).inputs = [c, a]) ∧\n  (∀ k < C.gates.length, k ∉ T → n + i₁ ∉ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs ∧ n + i₂ ∉ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs ∧\n    ∀ j ∈ T, n + j ∉ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs)) →\n  ∃ D : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.TopForm.IsAO2 n D ∧\n  PEqualNP.MetaComplexity.circuitFun n D = PEqualNP.MetaComplexity.circuitFun n C ∧ D.size + 1 ≤ C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2774",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let C be a circuit of AND/OR gates, each gate reading exactly two earlier wires, whose output is the root of a binary tree of OR gates with leaf set L, each leaf read once in the tree, no tree gate read outside the tree. Suppose two distinct gates t_1 = a AND b and t_2 = a AND c (operands in either order) are leaves of L that no gate outside the tree reads. Then some circuit of AND/OR gates, each gate reading exactly two earlier wires, computes the same function as C with at least one gate fewer.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2774.14f73714fbff.json",
+  "statement_hash": "sha256:890815c0d06f4f674e06d967d2d6364a8eddc36d116a29390737a04dcc9908b7",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:41:12.299Z",
+  "title": "Distributive-law rewrite: in an AND/OR circuit of fan-in two, two output terms sharing an AND input merge into one, saving at least one gate",
+  "used_by": []
+}

@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_2854 : ∀ (n : ℕ) (C C' : PEqualNP.CircuitLowerBounds.Circuit) (σ : ℕ → ℕ) (m : ℕ) (x : Fin n → Bool), PEqualNP.MetaComplexity.Monotone2 C → PEqualNP.MetaComplexity.NestedCover.ReadsBack n C → PEqualNP.MetaComplexity.NestedCover.ReadsBack n C' → (∀ i < n, σ i = i) → (∀ j < C.gates.length, n ≤ σ (n + j) ∧ σ (n + j) < n + C'.gates.length) → (∀ j < C.gates.length, j ≠ m → (PEqualNP.MetaComplexity.NestedCover.gateAt C' (σ (n + j) - n)).op = (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt C' (σ (n + j) - n)).inputs = (PEqualNP.MetaComplexity.NestedCover.gateAt C j).inputs.map σ) → (((C'.wires (List.ofFn x)).getD (σ (n + m)) false = true → (C.wires (List.ofFn x)).getD (n + m) false = true) → ∀ j < C.gates.length, (C'.wires (List.ofFn x)).getD (σ (n + j)) false = true → (C.wires (List.ofFn x)).getD (n + j) false = true) ∧ ((C'.wires (List.ofFn x)).getD (σ (n + m)) false = (C.wires (List.ofFn x)).getD (n + m) false → ∀ j < C.gates.length, (C'.wires (List.ofFn x)).getD (σ (n + j)) false = (C.wires (List.ofFn x)).getD (n + j) false) := by
+  sorry

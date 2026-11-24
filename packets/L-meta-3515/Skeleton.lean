@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_3515 : ∃ (x1 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.TopForm.IsAO2 (10 : ℕ) x1 ∧ (∀ x2 ∈ x1.gates, x2.inputs.Nodup) ∧ x1.size ≤ (14 : ℕ) ∧ ∀ (x2 : Fin (10 : ℕ) → Bool), x1.eval (List.ofFn x2) = Bool.true ↔ ∃ (x3 : Fin (10 : ℕ)) (x4 : Fin (10 : ℕ)), (↑x3, ↑x4) ∈ [((0 : ℕ), (6 : ℕ)), ((0 : ℕ), (7 : ℕ)), ((1 : ℕ), (6 : ℕ)), ((1 : ℕ), (8 : ℕ)), ((2 : ℕ), (7 : ℕ)), ((2 : ℕ), (9 : ℕ)), ((3 : ℕ), (6 : ℕ)), ((3 : ℕ), (9 : ℕ)), ((4 : ℕ), (8 : ℕ)), ((4 : ℕ), (9 : ℕ)), ((5 : ℕ), (7 : ℕ)), ((5 : ℕ), (8 : ℕ))] ∧ x2 x3 = Bool.true ∧ x2 x4 = Bool.true := by
+  sorry

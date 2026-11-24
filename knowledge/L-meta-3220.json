@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬∃ (x1 : ℕ), ∀ (x2 : ℕ), x1 ≤ x2",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-3220",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Step 2 of 2 of a checked cut of L-meta-2016.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-3220.cfccc1064c6f.json",
+  "statement_hash": "sha256:f803c78efcd120566f153345ac06cbd5f211fbd14eae21062c44d046645aca6c",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T12:11:38.297Z",
+  "title": "A step toward: A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate OR(x_0, x_4) computes its",
+  "used_by": []
+}

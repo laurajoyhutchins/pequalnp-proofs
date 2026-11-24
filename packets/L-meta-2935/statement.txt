@@ -1,0 +1,23 @@
+¬ (∀ (n : ℕ) (C : PEqualNP.CircuitLowerBounds.Circuit) (j is iv iw a b c z : ℕ)
+    (op1 op2 : PEqualNP.CircuitLowerBounds.GateOp),
+  ((op1 = PEqualNP.CircuitLowerBounds.GateOp.and ∧ op2 = PEqualNP.CircuitLowerBounds.GateOp.or) ∨
+    (op1 = PEqualNP.CircuitLowerBounds.GateOp.or ∧ op2 = PEqualNP.CircuitLowerBounds.GateOp.and)) →
+  C.gates[is]? = some { op := op2, inputs := [a, b] } →
+  C.gates[iv]? = some { op := op2, inputs := [a, c] } →
+  C.gates[iw]? = some { op := op1, inputs := [n + iv, z] } →
+  (C.gates[j]? = some { op := op1, inputs := [n + is, n + iw] } ∨
+    C.gates[j]? = some { op := op1, inputs := [n + iw, n + is] }) →
+  is < j → iv < iw → iw < j →
+  a < n + is → b < n + is → a < n + iv → b < n + iv → c < n + iv →
+  z < n + iw → z ≠ n + iv →
+  (∀ (k : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[k]? = some g → k ≠ iw → n + iv ∉ g.inputs) →
+  (∀ (k : ℕ) (g : PEqualNP.CircuitLowerBounds.Gate), C.gates[k]? = some g → k ≠ j → n + iw ∉ g.inputs) →
+  C.output ≠ n + iv → C.output ≠ n + iw →
+  PEqualNP.MetaComplexity.circuitFun n
+      { gates := ((C.gates.set iv { op := op1, inputs := [b, c] }).set iw
+            { op := op2, inputs := [a, n + iv] }).set j { op := op1, inputs := [n + iw, z] },
+        output := C.output } =
+    PEqualNP.MetaComplexity.circuitFun n C ∧
+  (((C.gates.set iv { op := op1, inputs := [b, c] }).set iw
+      { op := op2, inputs := [a, n + iv] }).set j { op := op1, inputs := [n + iw, z] }).length =
+    C.gates.length)

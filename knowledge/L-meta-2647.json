@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : ℕ) (x2 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x2 → ∀ (x4 : ℕ) (x5 : Fin x1 → Bool), (∀ (x6 : Fin x1), x5 x6 = Bool.true → x4.testBit ↑x6 = Bool.true) → (PEqualNP.MetaComplexity.circuitFun x1 x2 fun (x7 : Fin x1) => x4.testBit ↑x7) = Bool.false → PEqualNP.MetaComplexity.circuitFun x1 x2 x5 = Bool.false)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2647",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: For every AND/OR circuit of fan-in at most two on n inputs and every bit mask m: if the circuit is false at the input whose true bits are those of m, it is false at every input whose true bits all lie in m.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2647.565e070f035f.json",
+  "statement_hash": "sha256:517db8af9e50c0203506cd4994696bc56fd0a7846c54cbdd221585af51c54fd5",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T09:10:10.156Z",
+  "title": "It is false that: A step toward: A step toward: Search: an order-3 plane circuit of at most 63 fan-in-two AND/OR gates, true at incident pairs, false at every d",
+  "used_by": []
+}

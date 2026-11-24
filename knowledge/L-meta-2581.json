@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∃ c : ℕ, ∀ (q N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (C : PEqualNP.CircuitLowerBounds.Circuit), 2 ≤ q → N = q ^ 2 + q + 1 → (∀ l : Fin N, (Finset.univ.filter (fun p => I p l)).card = q + 1) → (∀ p p' : Fin N, p ≠ p' → ∃! l : Fin N, I p l ∧ I p' l) → PEqualNP.TopForm.IsAO2 (N + N) C → (∀ z : Fin (N + N) → Bool, PEqualNP.MetaComplexity.circuitFun (N + N) C z = decide (∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true)) → PEqualNP.ReadK.IsReadK (N + N) C 3 → N * q ≤ c * C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2581",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "There is one constant c such that for every plane: A plane of order q >= 2: N = q^2+q+1 points and lines, q+1 points on each line, two points on exactly one line; inputs the N points then the N lines. Every circuit of AND/OR gates only, each reading exactly two earlier wires, no constants, true exactly on inputs with some incident point and line both on, and read-3: each incident pair {p, l} has a proof tree in the circuit (both inputs at an AND, one at an OR) reading x_p at most three times and y_l at most three times, has N q <= c times its gates. c is fixed before the plane.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2581.e804a29f8d73.json",
+  "statement_hash": "sha256:0fab48d039ef728c61bda179e88e7b125c5ff4c30d1f17856384538d8f463f8d",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T08:59:56.195Z",
+  "title": "Some constant c: on every plane of order q, fan-in-two AND/OR circuits computing incidence that are read-3 have at least N q / c gates",
+  "used_by": []
+}

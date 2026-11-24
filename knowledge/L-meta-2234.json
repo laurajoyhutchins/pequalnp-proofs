@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (C : PEqualNP.CircuitLowerBounds.Circuit) (F : Finset ℕ) (ctr : ℕ → Fin n) (lf : ℕ → ℕ), PEqualNP.TopForm.NoFourCycle G → PEqualNP.TopForm.IsAO2 n C → (∀ a1 : Fin n, PEqualNP.MetaComplexity.circuitFun n C (fun k1 => decide (k1 = a1)) = false) → (∀ j ∈ F, ∀ b : Fin n, b ∈ PEqualNP.TopForm.orIn n C (lf j) → G.Adj (ctr j) b) → (∀ i < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C i).op = PEqualNP.CircuitLowerBounds.GateOp.or → 2 ≤ (PEqualNP.TopForm.orIn n C (n + i)).card → (∃ j1 ∈ F, PEqualNP.CleanedNonEdge.OrReaches n C (lf j1) i) → ¬ PEqualNP.CleanedNonEdge.OrReaches n C C.output i) ∧ ∑ c : Fin n, (Finset.univ.filter (fun b2 : Fin n => ∃ j2 ∈ F, ctr j2 = c ∧ b2 ∈ PEqualNP.TopForm.orIn n C (lf j2))).card ≤ Set.ncard {i2 : ℕ | i2 < C.gates.length ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt C i2).op = PEqualNP.CircuitLowerBounds.GateOp.or ∧ 2 ≤ (PEqualNP.TopForm.orIn n C (n + i2)).card ∧ ∃ j3 ∈ F, PEqualNP.CleanedNonEdge.OrReaches n C (lf j3) i2} + F.card",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2234",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "G has no 4-cycle; C has AND and OR gates, each reading exactly two earlier wires, false when one vertex is true. Shadow of a wire: the inputs reached from it downward through ORs only. Each j in a finite set F has a centre ctr(j) and a wire lf(j) with shadow inside the neighbours of ctr(j). An OR gate serves if its shadow has two or more vertices and it reaches some lf(j) through ORs only. No serving gate reaches the output through ORs only; summing over vertices c the size of the union of the shadows of lf(j) with ctr(j) = c is at most the serving count plus |F|.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2234.7b7de3d17b1d.json",
+  "statement_hash": "sha256:ccbb9aedcfb1edd8db3a1f598b98896de6176e627cda8cabc870b96bf53c2891",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:46:21.477Z",
+  "title": "Graphs with no 4-cycle, AND/OR circuits of fan-in exactly two false on weight one: serving OR gates avoid the output and pay for the leaf sets",
+  "used_by": []
+}

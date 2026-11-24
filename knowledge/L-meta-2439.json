@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : Fin (42 : ℕ)) (x2 x3 : Fin (43 : ℕ)) (x4 : PEqualNP.CircuitLowerBounds.Circuit),   PEqualNP.MetaComplexity.Monotone2 x4 →     PEqualNP.MetaComplexity.NestedCover.ReadsBack (44 : ℕ) x4 →       ∃ (x7 : PEqualNP.CircuitLowerBounds.Circuit),         PEqualNP.MetaComplexity.Monotone2 x7 ∧           x7.size ≤ x4.size + (2 : ℕ) ∧             ∀ (x8 : Fin (42 : ℕ) → Bool),               have x9 : Fin (43 : ℕ) → Bool := fun (x9 : Fin ((42 : ℕ) + (1 : ℕ))) => Fin.lastCases (x8 (0 : Fin (42 : ℕ)) || x8 x1) x8 x9;               x7.eval (List.ofFn x8) = x4.eval (List.ofFn fun (x10 : Fin ((43 : ℕ) + (1 : ℕ))) => Fin.lastCases (x9 x2 || x9 x3) x9 x10))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2439",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: For any input w among 42 and any two wires a, b among the 42 inputs and x0 OR w: every AND/OR fan-in-at-most-two circuit on 44 inputs reading only earlier wires gives one on the 42 inputs with at most 2 more gates computing its function with input 43 fed x0 OR w and input 44 fed a OR b.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2439.e72340a2b102.json",
+  "statement_hash": "sha256:d46a4663b6711d9fce192ef7cfd7191430c95ecbf285d3e4a441ccdf0ddbfbd6",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T08:31:32.167Z",
+  "title": "It is false that: A step toward: Search: a circuit of fan-in-two AND/OR gates with at most 124 gates for the incidence function of the projective plane of order",
+  "used_by": []
+}

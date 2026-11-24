@@ -1,5 +1,0 @@
-import Mathlib
-import PEqualNP.Defs
-
-theorem PEqualNP.Outside.L_meta_2086 : ∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) (x3 x4 : Finset (Fin x1)) (x5 : (Fin x1 → Bool) → Bool) (x6 : ℕ), (x3.Nonempty ∨ ∃ (x7 : Fin x1) (x8 : Fin x1), x2.Adj x7 x8) → (∀ (x8 x9 : Fin x1), x2.Adj x8 x9 → x8 ∈ x4 ∨ x9 ∈ x4) → x6 + (1 : ℕ) = x3.card + x2.edgeSet.ncard + x4.card → (∀ (x10 : Fin x1 → Bool), x5 x10 = Bool.true ↔ (∃ x11 ∈ x3, x10 x11 = Bool.true) ∨ ∃ (x11 : Fin x1) (x12 : Fin x1), x2.Adj x11 x12 ∧ x10 x11 = Bool.true ∧ x10 x12 = Bool.true) → PEqualNP.MetaComplexity.HasCircuitSize x1 x5 x6 := by
-  sorry

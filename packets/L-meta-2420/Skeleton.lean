@@ -1,0 +1,5 @@
+import Mathlib
+import PEqualNP.Defs
+
+theorem PEqualNP.Outside.L_meta_2420 : have x1 : Finset (Fin (13 : ℕ)) := {(0 : Fin (13 : ℕ)), (1 : Fin (13 : ℕ)), (3 : Fin (13 : ℕ)), (9 : Fin (13 : ℕ))}; have x2 : (Fin (26 : ℕ) → Bool) → Prop := fun (x2 : Fin (26 : ℕ) → Bool) => ∃ (x3 : Fin (13 : ℕ)), ∀ (x4 : Fin (13 : ℕ)), x2 (Fin.natAdd (13 : ℕ) x4) = Bool.true → x4 = x3; have x3 : (Fin (26 : ℕ) → Bool) → Prop := fun (x3 : Fin (26 : ℕ) → Bool) => ∃ (x4 : Fin (13 : ℕ)) (x5 : Fin (13 : ℕ)), (∃ x6 ∈ x1, x4 = x5 + x6) ∧ x3 (Fin.castAdd (13 : ℕ) x4) = Bool.true ∧ x3 (Fin.natAdd (13 : ℕ) x5) = Bool.true; ∀ (x4 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x4 → PEqualNP.CircuitLowerBounds.HasLineDegree (26 : ℕ) (Finset.Ico (13 : ℕ) (26 : ℕ)) x4 (1 : ℕ) → (∀ (x7 : Fin (26 : ℕ) → Bool), x2 x7 → (PEqualNP.MetaComplexity.circuitFun (26 : ℕ) x4 x7 = Bool.true ↔ x3 x7)) → (64 : ℕ) ≤ x4.size := by
+  sorry
