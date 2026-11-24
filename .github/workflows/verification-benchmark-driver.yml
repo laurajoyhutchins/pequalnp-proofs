@@ -1,0 +1,17 @@
+name: Verification benchmark driver
+on:
+  pull_request:
+    branches: [research/workstation]
+    paths:
+      - tools/bench-verification.py
+      - .github/workflows/verification-benchmark-driver.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  self-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/bench-verification.py --self-test
