@@ -1,11 +1,11 @@
 # Fork-local check adapter; reviewed upstream authoritative workflow blob c64c7c45158ac7d9ed7d5faccb3cb44f831b86ba.
 # The original checker, build queue and lake-locked.sh are used, not replaced.
 # This is a local preflight; no claim, PR, desk mutation or authoritative verdict.
-name: Shared candidate verification
+name: Current checker adapter regression
 
 on:
   push:
-    branches: ['research/candidate-L-*']
+    branches: ['research/regression-current-checker']
     paths: ['research/candidates/*.lean']
 
 permissions:
@@ -24,20 +24,23 @@ jobs:
       W: /opt/pnp
       GAPS_URL: https://data.pequalnp.com/data/desk/gaps.json
     steps:
-      - name: Read immutable candidate bytes and current public statement
+      - name: Read synthetic non-submittable regression fixture
         shell: bash
         run: |
           set -euo pipefail
           ( umask 077; : > "$RUNNER_TEMP/steps.log" )
           exec > >(tee -a "$RUNNER_TEMP/steps.log") 2>&1
-          GAP="${GITHUB_REF#refs/heads/research/candidate-}"
+          GAP=L-regression-20261124
           printf '%s' "$GAP" | grep -Eqx 'L-[a-z0-9]+(-[a-z0-9]+)*' || { echo 'REFUSED: malformed candidate branch'; exit 1; }
           [ "${#GAP}" -le 64 ]
           printf '%s' "$GITHUB_SHA" | grep -Eqx '[0-9a-f]{40}'
           echo "GAP=$GAP" >> "$GITHUB_ENV"
           sudo mkdir -p "$W" && sudo chown "$(id -u):$(id -g)" "$W"
           mkdir -p "$W/in"
-          git clone -q --depth 1 --branch main --single-branch https://github.com/open-goat/pequalnp-proofs.git "$W/base"
+          git init -q "$W/base"
+          git -C "$W/base" fetch -q --depth 1 https://github.com/open-goat/pequalnp-proofs.git 90319d08620de25fd68e4b9a7f58d23289654c2e
+          git -C "$W/base" checkout -q --detach FETCH_HEAD
+          [ "$(git -C "$W/base" rev-parse HEAD)" = "90319d08620de25fd68e4b9a7f58d23289654c2e" ]
           # Refuse workflow/lock protocol drift; regenerate this adapter from new upstream workflow before running.
           [ "$(git -C "$W/base" hash-object .github/workflows/authoritative.yml)" = "c64c7c45158ac7d9ed7d5faccb3cb44f831b86ba" ] || { echo 'FAULT: upstream sandbox workflow changed; review adapter'; exit 3; }
           git init -q "$W/candidate"
@@ -49,15 +52,15 @@ jobs:
           [ "$(git -C "$W/candidate" cat-file -s "$GITHUB_SHA:$path")" -le 524288 ] || { echo 'REFUSED: candidate too large'; exit 1; }
           git -C "$W/candidate" show "$GITHUB_SHA:$path" > "$W/in/proof.lean"
           [ -s "$W/in/proof.lean" ] || { echo 'REFUSED: empty candidate'; exit 1; }
-          curl -sSf -H 'Cache-Control: no-cache' --proto '=https' --max-redirs 0 --max-filesize 32000000 --max-time 60 -o "$W/in/gaps.json" "$GAPS_URL"
-          node -e 'const j=JSON.parse(require("fs").readFileSync(process.argv[1])); const age=Date.now()-Date.parse(j.updated_at); if(j.repo!=="https://github.com/open-goat/pequalnp-proofs"||!Number.isFinite(age)||age< -120000||age>1200000)process.exit(1)' "$W/in/gaps.json" || { echo 'FAULT: stale or wrong desk source'; exit 3; }
+          # Synthetic fixture, never a live desk assignment; exercises exactly the same checker.
+          jq -cn --arg id "$GAP" '{gaps:[{id:$id,file:"lean/PEqualNP/Outside/L_regression_20261124.lean",module:"PEqualNP.Outside.L_regression_20261124",statement:"∀ n : Nat, n + 0 = n",imports:[],kind:"check"}]}' > "$W/in/gaps.json"
           file=$(node -e 'const g=JSON.parse(require("fs").readFileSync(process.argv[1])).gaps.filter(x=>x.id===process.argv[2]); if(g.length!==1||typeof g[0].file!=="string"||!/^lean\/PEqualNP\/Outside\/L_[a-z0-9_]+\.lean$/.test(g[0].file)) process.exit(1); process.stdout.write(g[0].file)' "$W/in/gaps.json" "$GAP") || { echo 'REFUSED: gap not posted or invalid'; exit 1; }
           guard="$W/base/.github/scripts/outside-guard.mjs"
           node "$guard" gap "$W/in/gaps.json" "$GAP" "$file" "$W/in" check
           [ "$(cat "$W/in/gap.kind")" = check ]
           [ ! -e "$W/base/$file" ] && [ ! -L "$W/base/$file" ] || { echo 'REFUSED: gap file exists in upstream'; exit 1; }
           printf '%s\n' "$file" > "$W/in/pr.file"
-          jq -cn --arg gap "$GAP" --arg candidate "$GITHUB_SHA" --arg upstream "$(git -C "$W/base" rev-parse HEAD)" --arg file "$file" --arg blob "$(git hash-object "$W/in/proof.lean")" --arg snapshot "$(sha256sum "$W/in/gaps.json" | cut -d' ' -f1)" --arg statement "$(sha256sum "$W/in/statement.txt" | cut -d' ' -f1)" '{scope:"fork_local_only",gap:$gap,candidate_sha:$candidate,upstream_sha:$upstream,file:$file,candidate_blob:$blob,snapshot_sha256:$snapshot,statement_sha256:$statement}' > "$RUNNER_TEMP/candidate.identity.json"
+          jq -cn --arg gap "$GAP" --arg candidate "$GITHUB_SHA" --arg upstream "$(git -C "$W/base" rev-parse HEAD)" --arg file "$file" --arg blob "$(git hash-object "$W/in/proof.lean")" --arg snapshot "$(sha256sum "$W/in/gaps.json" | cut -d' ' -f1)" --arg statement "$(sha256sum "$W/in/statement.txt" | cut -d' ' -f1)" '{scope:"synthetic_regression_only",gap:$gap,candidate_sha:$candidate,upstream_sha:$upstream,file:$file,candidate_blob:$blob,snapshot_sha256:$snapshot,statement_sha256:$statement}' > "$RUNNER_TEMP/candidate.identity.json"
           stop="stop-$(od -An -N16 -tx1 /dev/urandom | tr -d ' \n')"
           echo "::stop-commands::$stop"
           trap 'echo "::$stop::"' EXIT
@@ -474,7 +477,7 @@ jobs:
           echo "local candidate only; gap: $GAP"
           echo "candidate commit: $GITHUB_SHA   file: $file   content hash: $(git hash-object "$W/in/proof.lean")"
           echo "base commit: $(git -C "$W/base" rev-parse HEAD)   statement sha256: $(sha256sum "$W/in/statement.txt" | cut -d' ' -f1)"
-          echo "Local preflight is not upstream acceptance or authorization to submit."
+          echo "Synthetic regression only; never export, claim or submit."
           if [ -s "$W/in/outside-imports.txt" ]; then
             # Printed by this step from paths the guard wrote; no text of a pull request.
             echo "----- listed outside modules -----"
@@ -506,7 +509,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: candidate-verification-receipt
+          name: checker-migration-regression-receipt
           path: |
             ${{ runner.temp }}/candidate.identity.json
             ${{ runner.temp }}/local-verdict.txt
