@@ -1,9 +1,9 @@
 {
   "account": "laurajoyhutchins",
-  "observed_at": "2026-11-24T07:06:42.694421+00:00",
+  "observed_at": "2026-11-24T15:42:46.030604+00:00",
   "prs": [],
-  "public_contributors_source": "https://data.pequalnp.com/data/contributors.c688f6fff3f8.json",
-  "public_generated_at": "2026-11-24T07:03:43.060Z",
+  "public_contributors_source": "https://data.pequalnp.com/data/contributors.4d7f9688f7d6.json",
+  "public_generated_at": "2026-11-24T15:41:23.127Z",
   "scope": "account_pr_reconciliation",
-  "source": "brilliant-hq/pequalnp-proofs"
+  "source": "open-goat/pequalnp-proofs"
 }
