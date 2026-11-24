@@ -23,13 +23,15 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def capture(args, cwd):
-    return subprocess.check_output(args, cwd=cwd, text=True).strip()
+def capture(args, cwd, env=None):
+    return subprocess.check_output(args, cwd=cwd, env=env, text=True).strip()
 
 
 def verdict(code, output):
     lines = output.splitlines()
-    if code == 0 and lines and lines[-1].startswith("ACCEPTED ("):
+    if (code == 0 and lines and lines[-1].startswith("ACCEPTED (")
+            and any(x.startswith("MANIFEST ") for x in lines)
+            and not any(x.startswith("REJECTED (") for x in lines)):
         return "accepted"
     if code == 1 and any(x.startswith("REJECTED (") for x in lines):
         return "rejected"
@@ -93,13 +95,15 @@ def run(args):
     env = {k: v for k, v in os.environ.items()
            if not re.match(r"^(LAKE($|_)|LEAN_|ELAN_TOOLCHAIN$|PEQUALNP_)", k)}
     env["PATH"] = str(root / "tools/bin") + os.pathsep + env.get("PATH", "")
-    env["PEQUALNP_HOME"] = str(out / "queue")
+    # Retain the workstation-wide queue; never introduce a second queue on a shared host.
+    if "PEQUALNP_HOME" in os.environ:
+        env["PEQUALNP_HOME"] = os.environ["PEQUALNP_HOME"]
     lean_dir = root / "lean"
     # Official artifacts only. A named experimental distribution needs its own
     # separate benchmark mode and compatibility evidence, not this baseline.
     pin = (lean_dir / "lean-toolchain").read_text().strip()
-    version = capture(["elan", "run", pin, "lean", "--version"], lean_dir)
-    sysroot = Path(capture(["elan", "run", pin, "lean", "--print-prefix"], lean_dir))
+    version = capture(["elan", "run", pin, "lean", "--version"], lean_dir, env)
+    sysroot = Path(capture(["elan", "run", pin, "lean", "--print-prefix"], lean_dir, env))
     real_lake = sysroot / "bin/lake"
     env["PEQUALNP_REAL_LAKE"] = str(real_lake)
     meta = {"schema": 1, "revision": revision, "initial_git_status": status,
@@ -127,9 +131,8 @@ def run(args):
                     command = ["node", str(root / "tools/check-lean.mjs"),
                                str(source), str(stmt), kind]
                 else:
-                    # Direct research elaboration, no shared artifact restoration,
-                    # no acceptance claim. Bypass queue only in this isolated serial run.
-                    command = [str(real_lake), "env", str(sysroot / "bin/lean"),
+                    # Direct research elaboration via the existing queue, not acceptance.
+                    command = [str(root / "tools/bin/lake"), "env", str(sysroot / "bin/lean"),
                                str(source)]
                 sample = measure(command, root if args.mode == "official" else lean_dir,
                                  env, out, tag)
@@ -176,6 +179,7 @@ class DriverTests(unittest.TestCase):
         self.assertEqual(verdict(3, "CHECKER FAULT: x"), "fault")
         self.assertEqual(verdict(0, "ACCEPTED (check): x\ntrailer"), "fault")
         self.assertEqual(verdict(1, "ACCEPTED (check): x"), "fault")
+        self.assertEqual(verdict(0, "ACCEPTED (check): x"), "fault")
 
     def test_percentile(self):
         self.assertEqual(percentile([4, 1, 3, 2], .95), 4)
