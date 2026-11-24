@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - run: node --test tools/control/test_desk_screen.mjs
       - run: python3 -m unittest discover -s tools/control -p 'test_*.py' -v
       - name: Historical real-proof export regression (no publication)
         shell: bash

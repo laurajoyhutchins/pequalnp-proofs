@@ -49,7 +49,8 @@ jobs:
           [ "$(git -C "$W/candidate" cat-file -s "$GITHUB_SHA:$path")" -le 524288 ] || { echo 'REFUSED: candidate too large'; exit 1; }
           git -C "$W/candidate" show "$GITHUB_SHA:$path" > "$W/in/proof.lean"
           [ -s "$W/in/proof.lean" ] || { echo 'REFUSED: empty candidate'; exit 1; }
-          curl -sSf --proto '=https' --max-redirs 0 --max-filesize 5000000 -o "$W/in/gaps.json" "$GAPS_URL"
+          curl -sSf -H 'Cache-Control: no-cache' --proto '=https' --max-redirs 0 --max-filesize 32000000 --max-time 60 -o "$W/in/gaps.json" "$GAPS_URL"
+          node -e 'const j=JSON.parse(require("fs").readFileSync(process.argv[1])); const age=Date.now()-Date.parse(j.updated_at); if(j.repo!=="https://github.com/open-goat/pequalnp-proofs"||!Number.isFinite(age)||age< -120000||age>1200000)process.exit(1)' "$W/in/gaps.json" || { echo 'FAULT: stale or wrong desk source'; exit 3; }
           file=$(node -e 'const g=JSON.parse(require("fs").readFileSync(process.argv[1])).gaps.filter(x=>x.id===process.argv[2]); if(g.length!==1||typeof g[0].file!=="string"||!/^lean\/PEqualNP\/Outside\/L_[a-z0-9_]+\.lean$/.test(g[0].file)) process.exit(1); process.stdout.write(g[0].file)' "$W/in/gaps.json" "$GAP") || { echo 'REFUSED: gap not posted or invalid'; exit 1; }
           guard="$W/base/.github/scripts/outside-guard.mjs"
           node "$guard" gap "$W/in/gaps.json" "$GAP" "$file" "$W/in" check

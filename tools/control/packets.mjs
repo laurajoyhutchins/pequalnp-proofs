@@ -6,6 +6,7 @@ import { resolve, join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { pathToFileURL, fileURLToPath } from 'node:url';
+import { readDesk } from './desk_screen.mjs';
 export const SOURCE = 'https://data.pequalnp.com/data/desk/gaps.json';
 const hash = b => createHash('sha256').update(b).digest('hex');
 const save = (p, v) => writeFileSync(p, JSON.stringify(v, null, 2) + '\n', {flag:'wx'});
@@ -14,7 +15,7 @@ export async function compile(base, snapshot, out, observed) {
   if (!/^[0-9a-f]{40}$/.test(sha)) throw Error('invalid upstream revision');
   const raw = readFileSync(snapshot);
   const all = JSON.parse(raw);
-  if (!Array.isArray(all.gaps)) throw Error('missing gaps array');
+  const desk=readDesk(all,observed);
   const guardPath = join(base,'.github/scripts/outside-guard.mjs');
   const guard = await import(pathToFileURL(guardPath).href);
   const ids = new Set();
@@ -22,8 +23,8 @@ export async function compile(base, snapshot, out, observed) {
     if (!g || typeof g.id !== 'string' || ids.has(g.id) || !guard.GAP_RE.test(g.id)) throw Error('invalid or duplicate gap ID');
     ids.add(g.id);
   }
-  const identity = {source:SOURCE, upstream_repository:'open-goat/pequalnp-proofs', snapshot_sha256:hash(raw), upstream_sha:sha,
-    observed_at:observed, generator_sha256:hash(readFileSync(fileURLToPath(import.meta.url))), guard_sha256:hash(readFileSync(guardPath)),
+  const identity = {source:SOURCE, upstream_repository:desk.summary.upstream_repository, source_updated_at:desk.summary.source_updated_at, snapshot_sha256:hash(raw), upstream_sha:sha,
+    observed_at:observed, generator_sha256:hash(Buffer.concat([readFileSync(fileURLToPath(import.meta.url)),readFileSync(new URL('./desk_screen.mjs',import.meta.url))])), guard_sha256:hash(readFileSync(guardPath)),
     toolchain:readFileSync(join(base,'lean/lean-toolchain'),'utf8').trim(),
     manifest_sha256:hash(readFileSync(join(base,'lean/lake-manifest.json')))};
   mkdirSync(out);
@@ -42,6 +43,7 @@ export async function compile(base, snapshot, out, observed) {
     try { closure = guard.importClosure(info.imports,readModule,g.module); }
     catch(e) { blocker=String(e.message); }
     const pathExists = existsSync(join(base,g.file));
+    const screening=desk.screen(g,{pathExists,closureBlocker:blocker});
     const context = {};
     // Copy only documented research fields, not arbitrary desk metadata.
     for (const key of ['title','context','sketch','refutation','shard_spec','dead','unlocks','depends_on','status']) {
@@ -52,7 +54,7 @@ export async function compile(base, snapshot, out, observed) {
     const sources = closure ? [...closure.base,...closure.outside].map(module=>({
       module, path:'lean/'+module.replaceAll('.','/')+'.lean', sha256:hash(readModule(module))
     })) : [];
-    const packet={...identity, id:info.id, file:g.file, module:g.module, statement:info.statement,
+    const packet={...identity, id:info.id, file:g.file, module:g.module, kind:info.kind, reductions:g.reductions===true, statement:info.statement, screening,
       permitted_project_imports:info.imports, context, closure, closure_blocker:blocker,
       closure_sources:sources, path_exists:pathExists, explicit_dependencies:deps,
       missing_dependency_ids:deps===null?null:deps.filter(d=>!ids.has(d)),
@@ -63,7 +65,7 @@ export async function compile(base, snapshot, out, observed) {
     writeFileSync(join(dir,'Skeleton.lean'),['import Mathlib',...info.imports.map(m=>'import '+m),'',
       'theorem '+g.module+' : '+(info.kind==='refute'?'¬ ('+info.statement+')':info.statement)+' := by','  sorry',''].join('\n'),{flag:'wx'});
     rows.push({id:info.id,file:g.file,packet:'packets/'+info.id+'/packet.json',
-      kind:info.kind, reductions:g.reductions===true, status:typeof g.status==='string'?g.status:null, depends_on:deps, closure_blocker:blocker,path_exists:pathExists});
+      kind:info.kind, reductions:g.reductions===true, screening, status:typeof g.status==='string'?g.status:null, depends_on:deps, closure_blocker:blocker,path_exists:pathExists});
   }
   // Unknown dependency lists and non-open statuses are not silently treated as open.
   const reverse=new Map(rows.map(row=>[row.id,[]]));
@@ -74,7 +76,7 @@ export async function compile(base, snapshot, out, observed) {
     seen.delete(row.id);
     row.known_downstream=[...seen].sort();
   }
-  save(join(out,'index.json'),{...identity,scope:'public posted gaps; explicit edges only; not a claim allocator', retired:{checked:(Array.isArray(all.checked)?all.checked:[]).map(x=>x?.id).filter(x=>typeof x==='string'&&guard.GAP_RE.test(x)).sort(),withdrawn:Object.keys(all.withdrawn??{}).filter(x=>guard.GAP_RE.test(x)).sort()},gaps:rows});
+  save(join(out,'index.json'),{...identity,scope:'public posted gaps; explicit edges only; not a claim allocator', retired:desk.summary.retired, allocation_summary:desk.summary, gaps:rows});
   return rows.length;
 }
 if (process.argv[1] && import.meta.url===pathToFileURL(resolve(process.argv[1])).href) {
