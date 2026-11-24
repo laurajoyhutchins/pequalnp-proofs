@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj] (x4 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.TopForm.IsLeastAO x2 x4 → x2.support.ncard ≤ x4.size + (1 : ℕ))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2075",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: For every graph G, a least circuit of AND and OR gates each reading exactly two earlier wires computing G's edge function has at least (number of vertices with an edge) - 1 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2075.73046a859074.json",
+  "statement_hash": "sha256:426fe537570cbcaa4e73d995faf13ab2819dc7d6f5da21e7921ffab6b1386a62",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:25:12.337Z",
+  "title": "It is false that: A step toward: Part 2 of 2 of a proof of: Conjecture: circuits of AND and OR gates for the edge function of a graph with no cycle shorter than",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (n t : ℕ) (G : SimpleGraph (Fin n)) (C : PEqualNP.CircuitLowerBounds.Circuit), (∃ u v : Fin n, G.Adj u v) → (∀ a b c d : Fin n, a ≠ b → a ≠ c → a ≠ d → b ≠ c → b ≠ d → c ≠ d → G.Adj a b → G.Adj b c → G.Adj c d → ¬ G.Adj d a) → (∃ S : Finset (Fin n), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover G S ∧ S.card = t) → (∀ S : Finset (Fin n), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover G S → t ≤ S.card) → PEqualNP.MetaComplexity.Monotone2 C → (∀ x : Fin n → Bool, (C.eval (List.ofFn x) = true ↔ ∃ u v : Fin n, G.Adj u v ∧ x u = true ∧ x v = true)) → G.edgeSet.ncard + t ≤ C.size + 1)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2028",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Let G be a graph on n vertices with at least one edge and no 4-cycle (no four distinct vertices a, b, c, d with ab, bc, cd, da all edges); triangles and every degree are allowed. Let t be its vertex cover number. Every circuit of AND and OR gates only, each reading at most two wires, every gate counted, that computes the edge function of G (true exactly when both ends of some edge are true) has at least |E| + t - 1 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2028.0e06adc98443.json",
+  "statement_hash": "sha256:c33a14e99d4eccbe14e359a910d5a89fe30c7f20398205d6ebeee72f712add95",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:10:45.941Z",
+  "title": "It is false that: Graphs without a 4-cycle: every circuit of AND and OR gates for the edge function has at least |E| + tau - 1 gates",
+  "used_by": []
+}

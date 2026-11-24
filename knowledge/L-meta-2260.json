@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : SimpleGraph (Fin (11 : ℕ))) [x2 : DecidableRel x1.Adj] (x3 : PEqualNP.CircuitLowerBounds.Circuit) (x4 x5 : ℕ),   x1 = PEqualNP.EdgeOwnership.edgeGraph (11 : ℕ) [((0 : ℕ), (9 : ℕ)), ((0 : ℕ), (10 : ℕ)), ((1 : ℕ), (4 : ℕ)), ((1 : ℕ), (8 : ℕ)), ((2 : ℕ), (5 : ℕ)), ((2 : ℕ), (10 : ℕ)), ((3 : ℕ), (6 : ℕ)), ((3 : ℕ), (7 : ℕ)), ((4 : ℕ), (8 : ℕ)), ((4 : ℕ), (10 : ℕ)), ((5 : ℕ), (8 : ℕ)), ((5 : ℕ), (9 : ℕ)), ((6 : ℕ), (7 : ℕ)), ((6 : ℕ), (10 : ℕ)), ((7 : ℕ), (9 : ℕ)), ((8 : ℕ), (9 : ℕ))] →     PEqualNP.TopForm.IsLeastAO x1 x3 →       PEqualNP.TopForm.TopForm x1 x3 →         have x9 : Finset ℕ := PEqualNP.TopForm.tops x1 x3;         have x10 : Finset ℕ := PEqualNP.TopForm.centreless x1 x3;         have x11 : Finset (Sym2 (Fin (11 : ℕ))) := PEqualNP.TopForm.Ustar x1 x3;         (∀ x12 ∈ x9,             have x14 : Fin (2 : ℕ) → Finset (Fin (11 : ℕ)) := PEqualNP.TopForm.side x3 x12;             (∀ x15 ∈ x14 (0 : Fin (2 : ℕ)), ∀ x17 ∈ x14 (1 : Fin (2 : ℕ)), x1.Adj x15 x17) ∧ ((x14 (0 : Fin (2 : ℕ))).card ≤ (1 : ℕ) ∨ (x14 (1 : Fin (2 : ℕ))).card ≤ (1 : ℕ))) →           (∀ (x13 x14 : Fin (11 : ℕ)), s(x13, x14) ∈ x11 → ∃ x16 ∈ x9, ∃ (x17 : Fin (2 : ℕ)) (x18 : ℕ), (x18 = x4 ∨ x18 = x5) ∧ PEqualNP.EdgeOwnership.gateVal (11 : ℕ) x3 x16 (PEqualNP.EdgeOwnership.pairInput x13 x14) = Bool.true ∧ PEqualNP.CleanedNonEdge.OrReaches (11 : ℕ) x3 (PEqualNP.TopForm.opnd x3 x16 x17) x18 ∧ PEqualNP.EdgeOwnership.gateVal (11 : ℕ) x3 x18 (PEqualNP.EdgeOwnership.pairInput x13 x14) = Bool.true) → (17 : ℕ) + (x9 \\ x10).card + (2 : ℕ) * x10.card + (PEqualNP.TopForm.orN x1 x3 \\ PEqualNP.TopForm.lam x1 x3).card ≤ x3.size + x11.card → (∀ (x15 : Finset (Fin (11 : ℕ))), PEqualNP.MetaComplexity.NestedCover.IsMinCover (x1.deleteEdges ↑x11) x15 → x15.card ≤ (x9 \\ x10).card) → PEqualNP.TopForm.junk x1 x3 = {x4, x5} → PEqualNP.EdgeOwnership.InCone (11 : ℕ) x3 x4 x5 → (22 : ℕ) ≤ x3.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2260",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "G11 (edges 0-9, 0-10, 1-4, 1-8, 2-5, 2-10, 3-6, 3-7, 4-8, 4-10, 5-8, 5-9, 6-7, 6-10, 7-9, 8-9): every least top-form fan-in-exactly-two AND/OR circuit for its edge function, whose tops have fully adjacent sides with one side of size <= 1, whose U* edges are each true at a top and at a junk AND OR-reached from one of its operands, and whose min cover of G minus U* is at most the tops with a centre, with 17 + (tops with centre) + 2 (centreless) + (orN minus lam) <= size + |U*|, and exactly two junk ANDs a, b with a in the cone of b, has at least 22 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2260.cddf279f2798.json",
+  "statement_hash": "sha256:bca436d6c69941f269d7d51f45734324e391d315a40eebea733f8c78d1225c26",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:51:22.403Z",
+  "title": "A step toward: The 11-vertex graph G11 (no 4-cycle, cover number 7): least top-form fan-in-exactly-two AND/OR circuits with 2+ junk ANDs have at least 22 gates",
+  "used_by": []
+}

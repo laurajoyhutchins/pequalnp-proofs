@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : ℕ) (x2 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x2 → (∃ (x4 : Fin x1 → Bool) (x5 : Fin x1 → Bool), x2.eval (List.ofFn x4 ++ [Bool.false]) ≠ x2.eval (List.ofFn x5 ++ [Bool.false])) → (∃ (x5 : Fin x1 → Bool), x2.eval (List.ofFn x5 ++ [Bool.true]) ≠ x2.eval (List.ofFn x5 ++ [Bool.false])) → ∃ (x6 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x6 ∧ x6.size < x2.size ∧ ∀ (x7 : Fin x1 → Bool), x6.eval (List.ofFn x7 ++ [Bool.false]) = x2.eval (List.ofFn x7 ++ [Bool.false])",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2315",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "For any n: if an AND/OR/NOT fan-in-two circuit on n + 1 inputs is not constant with its last input fed false, and its value changes with its last input at some input, then a strictly smaller such circuit has the same function with the last input fed false.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2315.d40a12f34fd7.json",
+  "statement_hash": "sha256:9e75fbd4fd373a8fdabba03bd66e8baa143c968135ec7b10971c41793f000dec",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:58:42.401Z",
+  "title": "A step toward: Petersen graph minus a vertex: no AND, OR (fan-in two), NOT circuit with at most 15 gates and first gate AND(x_0, x_1) computes its edge function",
+  "used_by": []
+}

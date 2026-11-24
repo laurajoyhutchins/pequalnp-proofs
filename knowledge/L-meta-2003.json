@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (q N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (C : PEqualNP.CircuitLowerBounds.Circuit), 2 ≤ q → N = q ^ 2 + q + 1 → (∀ l : Fin N, (Finset.univ.filter (fun p => I p l)).card = q + 1) → (∀ p p' : Fin N, p ≠ p' → ∃! l : Fin N, I p l ∧ I p' l) → PEqualNP.MetaComplexity.Monotone2 C → (∀ p l : Fin N, I p l → PEqualNP.MetaComplexity.circuitFun (N + N) C (fun k => decide (k = Fin.castAdd N p ∨ k = Fin.natAdd N l)) = true) → (∀ z : Fin (N + N) → Bool, (Finset.univ.filter (fun l : Fin N => z (Fin.natAdd N l) = true)).card ≤ q → (¬ ∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true) → PEqualNP.MetaComplexity.circuitFun (N + N) C z = false) → N * q ≤ 100 * C.size)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2003",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: On PG(2, q) (N = q^2 + q + 1 points and lines; chosen over a general incidence with no two points on two common lines, which can be sparse, so N q would mean nothing): every fan-in-two AND/OR circuit, each gate reading only earlier wires, that accepts every input of one point and one line through it, and rejects every input with at most q lines on and no incident pair on, has at least c N q gates, for an absolute c > 0 (c = 1/100 below). Conjecture, on paper.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2003.c73f4a0adfc8.json",
+  "statement_hash": "sha256:e9d77f8dfb344660e78df9fde19c6894619279bb9ba55a365edb8a2ff726201c",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:06:56.504Z",
+  "title": "It is false that: Rung 0 target: on a plane of order q, fan-in-two AND/OR circuits accepting incident pairs, sound with at most q lines on, need at least Nq/100",
+  "used_by": []
+}

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 x2 : ℕ) (x3 : SimpleGraph (Fin x1)) (x4 : Finset (Fin x1)) (x5 : (Fin x1 → Bool) → Bool), (∀ x6 ∉ x4, (x3.neighborSet x6).ncard = (3 : ℕ)) → (∀ (x7 : Fin x1) (x8 : x3.Walk x7 x7), x8.IsCycle → (7 : ℕ) ≤ x8.length) → (∀ (x8 x9 : Fin x1), x3.Adj x8 x9 → x8 ∉ x4) → (∃ (x9 : Fin x1) (x10 : Fin x1), x3.Adj x9 x10) → (∀ (x10 : Finset (Fin x1)), (∀ (x11 x12 : Fin x1), x3.Adj x11 x12 → x11 ∈ x10 ∨ x12 ∈ x10) → x2 ≤ x10.card) → (∀ (x11 : Fin x1 → Bool), x5 x11 = Bool.true ↔ (∃ x12 ∈ x4, x11 x12 = Bool.true) ∨ ∃ (x12 : Fin x1) (x13 : Fin x1), x3.Adj x12 x13 ∧ x11 x12 = Bool.true ∧ x11 x13 = Bool.true) → ∀ (x12 : ℕ), PEqualNP.MetaComplexity.HasCircuitSize x1 x5 x12 → x4.card + x3.edgeSet.ncard + x2 ≤ x12 + (1 : ℕ)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2084",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Let G have an edge, no cycle shorter than 7, A a set of vertices met by no edge, every vertex outside A with exactly 3 neighbours, and k at most the size of every vertex cover. Let F be true when a variable of A is true or both ends of an edge are true. Every circuit of AND, OR and NOT gates of fan-in at most two computing F has at least |A| + |E| + k - 1 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2084.cbab4f85531d.json",
+  "statement_hash": "sha256:77e7aab3ba81023d63b43e8aa5df62b001607f102d8acd5969c8d45a77d66069",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:25:56.951Z",
+  "title": "A step toward: Cubic piece, cycles at least 7, edge function plus OR-variables: a vertex whose deletion lowers fan-in-two AND/OR/NOT size by at least 4",
+  "used_by": []
+}

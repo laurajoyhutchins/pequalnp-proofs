@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∃ c : ℕ, ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj], (∀ (v : Fin n) (p : G.Walk v v), p.IsCycle → 5 ≤ p.length) → ∀ D : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 D → PEqualNP.MetaComplexity.circuitFun n D = (fun x : Fin n → Bool => decide (∃ i j : Fin n, G.Adj i j ∧ x i = true ∧ x j = true)) → G.edgeFinset.card ≤ c * (D.size + 1))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2029",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: There is a constant c such that for every graph G with no cycle of length below 5, and every circuit of AND and OR gates only, each reading at most two wires, every gate counted, that is true exactly when both ends of some edge of G are true, the number of edges of G is at most c times (the number of gates + 1). The constant is fixed before the graph. It carries content only on dense graphs, such as point-line incidence graphs of projective planes. Conjecture.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2029.dba7e5abc4ce.json",
+  "statement_hash": "sha256:2b5bababa86f6a26314f49090a2aebeab2b9564f6f997075b6d0646093f9f742",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:10:52.586Z",
+  "title": "It is false that: Conjecture: circuits of AND and OR gates for the edge function of a graph with no cycle shorter than 5 have size linear in the number of edges",
+  "used_by": []
+}

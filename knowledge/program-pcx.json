@@ -1204,20 +1204,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-pcx-094.362263e990f9.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-pcx-094",
       "program": "proof_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-pcx-094.362263e990f9.json",
-      "statement_hash": "sha256:6d8c9ccf7e0cc63eec57a65709b7fb093433f56fe91683eeaa28ecef3aa30ceb",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: NOT (the covering formula CS has least resolution width 3 on the 5-cycle with 3 labels and 4 on two disjoint triangles with 4 labels)",
       "unmapped_dependencies": []
     },
     {
@@ -1231,20 +1224,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-pcx-096.f4955f7f111a.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-pcx-096",
       "program": "proof_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-pcx-096.f4955f7f111a.json",
-      "statement_hash": "sha256:c747af4582515973c1da61cb89eea993721957e7f44a42dccba627aa1ae01241",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: NOT (the covering formula CS on two disjoint triangles with 3 labels has least resolution width 4, one above its widest axiom)",
       "unmapped_dependencies": []
     },
     {
@@ -1258,37 +1244,23 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-pcx-098.544abe473044.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-pcx-098",
       "program": "proof_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-pcx-098.544abe473044.json",
-      "statement_hash": "sha256:6a9d4cb890eb730f379a0680693d439fa30db8577abd6f7c642ac2739dd546bc",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: NOT (the CNF for an AND-count circuit with tau - 1 gates fitting the partial function has least resolution width 3 on K3 and 4 on P4)",
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-pcx-099.8324fd100f97.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-pcx-099",
       "program": "proof_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-pcx-099.8324fd100f97.json",
-      "statement_hash": "sha256:8c2947d1acb050b78cb9840a467b91d6fb8e9c7d5acd07de0559558c2efd45f2",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: on the 5-cycle with 2 gates, the AND-count CNF with every output-vertex variable set to 0 has least resolution width 4",
       "unmapped_dependencies": []
     },
     {
@@ -1312,20 +1284,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-pcx-102.c301137277df.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-pcx-102",
       "program": "proof_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-pcx-102.c301137277df.json",
-      "statement_hash": "sha256:8c92528e6d66f58a1756bca3c7890746f1139afd4920db0b9beeb85b25b6f5e0",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: NOT (the formula 'vertex cover of size tau - 1' has least resolution width tau on the Petersen graph (6) and on an 11-vertex graph W (7))",
       "unmapped_dependencies": []
     },
     {
@@ -1339,20 +1304,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-pcx-104.25eec0901c13.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-pcx-104",
       "program": "proof_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-pcx-104.25eec0901c13.json",
-      "statement_hash": "sha256:be7d45399c754ee695da2369e6fbe3f8888350727622b5ad833d062a56b97158",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: NOT (the counter-encoded cover formula has least width 3 and F2 degree 3 on Petersen, width 3 and degree 4 on K_(4,4) side by side)",
       "unmapped_dependencies": []
     },
     {
@@ -1366,20 +1324,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-pcx-106.dc08cb4b3406.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-pcx-106",
       "program": "proof_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-pcx-106.dc08cb4b3406.json",
-      "statement_hash": "sha256:5b1a466ca5564a8e1a24a97e9512574fc2c4f1c78d707fa2c3e67cb1c1fc41e7",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: NOT (counter-encoded cover formula: F2 degree 3 on K_(4,4) interleaved; degree 4 and a width-3 refutation on K_(6,6) side by side)",
       "unmapped_dependencies": []
     },
     {
@@ -1393,20 +1344,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-pcx-108.df975606f809.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-pcx-108",
       "program": "proof_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-pcx-108.df975606f809.json",
-      "statement_hash": "sha256:36a21504ed77f6a1b63d880607fcd677fb069f89846a46191dae759b6763acc6",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: NOT (decision-tree leaf count of 'cover of size tau - 1': F(tau + 4) - 2 on paths and cycles, 2^k + k on spiders, at most 2^(tau + 1) - 1)",
       "unmapped_dependencies": []
     },
     {
@@ -1420,20 +1364,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-pcx-110.e3da031a8abd.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-pcx-110",
       "program": "proof_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-pcx-110.e3da031a8abd.json",
-      "statement_hash": "sha256:cfab651d789d3644b61bcd95651f1a60dc45dd04a51bce140b53f8ac9e3b4180",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: NOT (decision-tree leaf count of 'cover of size tau - 1' lies between C(tau + 2, 2) and 2^(tau + 1) - 1, with both equality cases named)",
       "unmapped_dependencies": []
     }
   ],

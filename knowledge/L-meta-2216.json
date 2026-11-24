@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∃ (x1 : PEqualNP.CircuitLowerBounds.Circuit) (x2 : ℕ),   PEqualNP.MetaComplexity.Monotone2 x1 ∧     x1.size ≤ (61 : ℕ) ∧       x1.output < (25 : ℕ) + x1.size ∧         x2 < (25 : ℕ) + x1.size ∧           ∀ (x3 : Fin (25 : ℕ) → Bool),             have x4 : Fin (25 : ℕ) → Fin (25 : ℕ) → Prop := fun (x4 x5 : Fin (25 : ℕ)) => ↑x4 < (12 : ℕ) ∧ (12 : ℕ) ≤ ↑x5 ∧ (↑x4 + ↑x5 + (2 : ℕ)) % (13 : ℕ) ∈ [(0 : ℕ), (1 : ℕ), (3 : ℕ), (9 : ℕ)];             have x5 : Bool := x1.eval (List.ofFn x3);             (x5 = Bool.true ↔ ∃ (x6 : Fin (25 : ℕ)) (x7 : Fin (25 : ℕ)), x4 x6 x7 ∧ x3 x6 = Bool.true ∧ x3 x7 = Bool.true) ∧ (x5 = Bool.false → (x1.wires (List.ofFn x3)).getD x2 Bool.false = (x3 (12 : Fin (25 : ℕ)) || x3 (13 : Fin (25 : ℕ)) || x3 (15 : Fin (25 : ℕ)) || x3 (21 : Fin (25 : ℕ)))))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2216",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Plane of order 3 with one point removed (12 point inputs, 13 line inputs). Some circuit of AND and OR gates, at most two inputs a gate, with at most 61 gates computes its incidence function and has a wire that, at every input where the function is false, equals the OR of four listed line inputs (the lines through the removed point).",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2216.a841e16ef517.json",
+  "statement_hash": "sha256:06cd278d2dfa0675356c55abe4da9c6e795f4d6a8db1893fa265d11a775040bf",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:44:01.560Z",
+  "title": "It is false that: A step toward: Search: a circuit of AND and OR gates with at most 63 gates for the point-line graph of the projective plane of order 3",
+  "used_by": []
+}

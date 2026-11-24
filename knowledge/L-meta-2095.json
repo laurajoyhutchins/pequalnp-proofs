@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (q271 N271 : ℕ) (I271 : Fin N271 → Fin N271 → Prop) [DecidableRel I271], 2 ≤ q271 → N271 = q271 ^ 2 + q271 + 1 → (∀ l271 : Fin N271, (Finset.univ.filter (fun p271 => I271 p271 l271)).card = q271 + 1) → (∀ pa271 pb271 : Fin N271, pa271 ≠ pb271 → ∃! lb271 : Fin N271, I271 pa271 lb271 ∧ I271 pb271 lb271) → ∃ C271 : PEqualNP.CircuitLowerBounds.Circuit, ((∀ g271 ∈ C271.gates, (g271.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g271.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g271.inputs.length = 2) ∧ PEqualNP.MetaComplexity.NestedCover.ReadsBack (N271 + N271) C271) ∧ (∀ j271 < C271.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C271 j271).op = PEqualNP.CircuitLowerBounds.GateOp.and → (∃ i271 ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C271 j271).inputs, (C271.lineDegrees (N271 + N271) (Finset.Ico N271 (N271 + N271))).getD i271 0 = 0) ∨ (∀ h271 ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C271 j271).inputs, (C271.lineDegrees (N271 + N271) (Finset.range N271)).getD h271 0 = 0)) ∧ C271.size + 1 = (q271 + 2) * N271 ∧ (∀ x271 y271 : Fin N271 → Bool, PEqualNP.MetaComplexity.circuitFun (N271 + N271) C271 (Fin.append x271 y271) = decide (∃ p271x1 w271 : Fin N271, I271 p271x1 w271 ∧ x271 p271x1 = true ∧ y271 w271 = true)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2095",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: On a plane of order q (N = q^2 + q + 1 points and lines, q + 1 points per line, two points on exactly one line), with inputs N points then N lines, there is a circuit of AND/OR gates, each listing two earlier wires, every AND gate KM0 (it has an input reading no line, or two inputs reading no point), of exactly N(q + 2) - 1 gates, true exactly when some point and a line through it are on.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2095.c10cace67989.json",
+  "statement_hash": "sha256:1f037641f2cf418db1f3ec8e873673d50d628150f4655cc9d854da0d521df105",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:26:59.007Z",
+  "title": "It is false that: The line star: on a plane of order q, an AND/OR fan-in-2 KM0 circuit of exactly N(q + 2) - 1 gates computes the incidence function",
+  "used_by": []
+}

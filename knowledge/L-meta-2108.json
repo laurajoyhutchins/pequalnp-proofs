@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) (x3 : PEqualNP.CircuitLowerBounds.Circuit), (∀ (x4 x5 x6 x7 : Fin x1), x4 ≠ x5 → x4 ≠ x6 → x4 ≠ x7 → x5 ≠ x6 → x5 ≠ x7 → x6 ≠ x7 → x2.Adj x4 x5 → x2.Adj x5 x6 → x2.Adj x6 x7 → ¬x2.Adj x7 x4) → PEqualNP.MetaComplexity.Monotone2 x3 → (∀ (x6 : Fin x1 → Bool), x3.eval (List.ofFn x6) = Bool.true ↔ ∃ (x7 : Fin x1) (x8 : Fin x1), x2.Adj x7 x8 ∧ x6 x7 = Bool.true ∧ x6 x8 = Bool.true) → ∃ (x7 : Finset (Fin x1)), PEqualNP.MetaComplexity.CoverPromise.IsVertexCover x2 x7 ∧ x7.card ≤ {x8 : Fin x3.gates.length | (x3.gates.get x8).op = PEqualNP.CircuitLowerBounds.GateOp.and}.ncard)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2108",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: A graph with no 4-cycle; C a circuit of AND and OR gates, at most two inputs a gate, for its edge function. Then the graph has a vertex cover with at most as many vertices as C has AND gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2108.8ee624e0ff5e.json",
+  "statement_hash": "sha256:c1d17bb3d85b8077cfca708c39192eeda56be16a4df348eedb98378926ac4785",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:27:44.402Z",
+  "title": "It is false that: A step toward: Graphs without a 4-cycle: every circuit of AND and OR gates for the edge function has at least |E| + tau - 1 gates",
+  "used_by": []
+}

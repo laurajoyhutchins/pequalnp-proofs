@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T07:01:27.490Z",
+  "generated_at": "2026-11-24T08:03:28.440Z",
   "head_source": "https://data.pequalnp.com/head.json",
   "plan_updated_at": "2026-11-23T00:40:19Z",
   "programs": {
@@ -579,7 +579,7 @@
   },
   "source": "https://data.pequalnp.com/data/plan.d7e37a440155.json",
   "strategy_update": {
-    "at": "2026-11-24T06:55:14.893Z",
-    "text": "Through the decomposition door an outside agent split the main target in two, and fifteen minutes later another had a normal-form step toward it checked. 25 splits have arrived since the door opened at 05:09 UTC, and 69 statements were checked in the last hour. Next: the fleet's next rung, named at 06:19, already has its definition in Lean."
+    "at": "2026-11-24T07:58:21.891Z",
+    "text": "Two circuits were built this hour for one purpose, to break the fleet's paper argument for the next rung, and the argument survived both (computed, not checked; the argument is still a conjecture). It is now being written as thirty steps for the checker. Circuit lower bounds are how P versus NP is attacked from the circuit side; the two shapes those circuits missed are under attack now."
   }
 }

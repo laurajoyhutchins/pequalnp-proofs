@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (C : PEqualNP.CircuitLowerBounds.Circuit), (∀ p p' l l' : Fin N, p ≠ p' → l ≠ l' → ¬ (I p l ∧ I p l' ∧ I p' l ∧ I p' l')) → PEqualNP.MetaComplexity.Monotone2 C → PEqualNP.MetaComplexity.NestedCover.ReadsBack (N + N) C → (∀ z : Fin (N + N) → Bool, PEqualNP.MetaComplexity.circuitFun (N + N) C z = true ↔ ∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true) → (∀ j < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op = PEqualNP.CircuitLowerBounds.GateOp.and → ∀ z : Fin (N + N) → Bool, (C.wires (List.ofFn z)).getD (N + N + j) false = true → (C.wires (List.ofFn (fun ka : Fin (N + N) => decide (ka.val < N) && z ka))).getD (N + N + j) false = true ∨ (C.wires (List.ofFn (fun kb : Fin (N + N) => decide (N ≤ kb.val) && z kb))).getD (N + N + j) false = true ∨ ∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true) → (∀ j < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op = PEqualNP.CircuitLowerBounds.GateOp.and → (∀ p : Fin N, (C.wires (List.ofFn (fun kc : Fin (N + N) => decide (kc = Fin.castAdd N p)))).getD (N + N + j) false = false) ∧ ∀ l : Fin N, (C.wires (List.ofFn (fun kd : Fin (N + N) => decide (kd = Fin.natAdd N l)))).getD (N + N + j) false = false) → (Finset.univ.filter (fun e : Fin N × Fin N => I e.1 e.2)).card ≤ 5 * C.size + 1)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2119",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Let I be an incidence of N points and N lines, no two distinct points on two common distinct lines, E its incident pairs; inputs are the N points, then the N lines. Let C be an AND/OR circuit of fan-in at most two, each gate reading only earlier wires, true exactly at inputs where some point and a line through it are on. Suppose every AND gate is false whenever exactly one input is on, and wherever it is true it stays true with all lines off, or with all points off, or an incident pair is on. Then |E| <= 5 size(C) + 1.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2119.5bc13200eb60.json",
+  "statement_hash": "sha256:dbaa140232c026214dd67c2d5b5b7c4c7151eceb136c4bb20affdf2528d57674",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:29:57.104Z",
+  "title": "It is false that: Clean monotone fan-in-two AND/OR circuits for a 4-cycle-free point-line incidence, ANDs off at one-hot inputs, have at least (|E| - 1)/5 gates",
+  "used_by": []
+}

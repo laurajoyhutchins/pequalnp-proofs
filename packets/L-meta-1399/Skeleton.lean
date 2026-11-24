@@ -1,5 +1,0 @@
-import Mathlib
-import PEqualNP.Defs
-
-theorem PEqualNP.Outside.L_meta_1399 : ∀ T : ℕ → Set ((Fin 5 → Bool) → Bool), (∀ i : Fin 5, (fun x : Fin 5 → Bool => x i) ∈ T 0) → (∀ (k : ℕ) (f : (Fin 5 → Bool) → Bool), f ∈ T k → f ∈ T (k + 1)) → (∀ (k : ℕ) (f g : (Fin 5 → Bool) → Bool), f ∈ T k → g ∈ T k → (fun y : Fin 5 → Bool => f y && g y) ∈ T (k + 1) ∧ (fun y : Fin 5 → Bool => f y || g y) ∈ T (k + 1)) → (fun z : Fin 5 → Bool => (z 0 && z 1) || (z 1 && z 2) || (z 2 && z 3) || (z 3 && z 4) || (z 4 && z 0)) ∈ T 3 := by
-  sorry

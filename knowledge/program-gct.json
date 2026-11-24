@@ -2715,20 +2715,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-gct-223.c66211704da8.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-gct-223",
       "program": "gct",
       "source": "https://data.pequalnp.com/data/lemma/L-gct-223.c66211704da8.json",
-      "statement_hash": "sha256:df576d8b89fd9b9eec5dc6112a7188077d9429e81bf9002cf2384b1778ea5e4d",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: a two-dimensional space of 6 x 6 circulant complex matrices keeps the permanent of the all-ones matrix plus it at 720",
       "unmapped_dependencies": []
     },
     {
@@ -2772,20 +2765,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-gct-228.e335a2903dfa.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-gct-228",
       "program": "gct",
       "source": "https://data.pequalnp.com/data/lemma/L-gct-228.e335a2903dfa.json",
-      "statement_hash": "sha256:8c8222d228f4a15610f94c774d535e8396a4353b51d97f692f75156fd7f6d201",
-      "statement_hash_verified": true,
-      "status": "conjecture",
       "status_code": "j",
-      "title": "Probe: over the field with 5 elements, a four-dimensional space of 3 x 3 matrices keeps the permanent of the all-ones matrix plus it at 6",
       "unmapped_dependencies": []
     },
     {

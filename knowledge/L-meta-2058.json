@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (q N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (C : PEqualNP.CircuitLowerBounds.Circuit), 2 ≤ q → N = q ^ 2 + q + 1 → (∀ l : Fin N, (Finset.univ.filter (fun p => I p l)).card = q + 1) → (∀ p p' : Fin N, p ≠ p' → ∃! l : Fin N, I p l ∧ I p' l) → PEqualNP.TopForm.IsAO2 (N + N) C → (∀ z : Fin (N + N) → Bool, PEqualNP.MetaComplexity.circuitFun (N + N) C z = decide (∃ p l : Fin N, I p l ∧ z (Fin.castAdd N p) = true ∧ z (Fin.natAdd N l) = true)) → PEqualNP.ReadK.IsReadK (N + N) C 2 → N * (q + 1) ≤ 112 * C.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2058",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "A plane of order q >= 2: N = q^2+q+1 points and lines, q+1 points on each line, two points on exactly one line; inputs the N points then the N lines. C has AND and OR gates only, each reading exactly two earlier wires, no constants, and is true exactly on inputs with some incident point and line both on. It is read-2: each incident pair {p, l} has a proof tree in C (both inputs at an AND, one at an OR) reading x_p at most twice and y_l at most twice. Then N (q + 1) <= 112 times the gates of C. Reading all 2N inputs already gives this for q <= 222.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2058.709f4a21d481.json",
+  "statement_hash": "sha256:b14e6b5f4ade8d8f5f2d1e62903b0a19f87f8b497fa0f2525da7604cb0b16555",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:21:30.719Z",
+  "title": "Order-q plane: fan-in-two AND/OR circuits computing incidence, each incident pair proved reading its point and line at most twice: at least N(q+1)/112 gates",
+  "used_by": []
+}

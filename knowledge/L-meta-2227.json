@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit) (x2 : Fin (14 : ℕ)) (x3 : Fin (14 : ℕ) → Bool) (x4 : ℕ → Bool), (∀ (x5 : ℕ) (x6 : PEqualNP.CircuitLowerBounds.Gate), x1.gates[x5]? = Option.some x6 → (x6.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ x6.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ ∃ (x8 : ℕ) (x9 : ℕ), x6.inputs = [x8, x9] ∧ x8 ≠ x9 ∧ x8 < (14 : ℕ) + x5 ∧ x9 < (14 : ℕ) + x5) → (∀ (x6 : Fin (14 : ℕ)), x4 ↑x6 = Decidable.decide (x2 = x6)) → (∀ (x7 : ℕ) (x8 : PEqualNP.CircuitLowerBounds.Gate) (x9 x10 : ℕ), x1.gates[x7]? = Option.some x8 → x8.inputs = [x9, x10] → (x8.op = PEqualNP.CircuitLowerBounds.GateOp.and → x4 ((14 : ℕ) + x7) = ((x1.wires (List.ofFn x3)).getD x9 Bool.false && x4 x10 || x4 x9 && (x1.wires (List.ofFn x3)).getD x10 Bool.false)) ∧ (x8.op = PEqualNP.CircuitLowerBounds.GateOp.or → x4 ((14 : ℕ) + x7) = (x4 x9 || x4 x10))) → x1.eval (List.ofFn x3) = Bool.false → x1.eval (List.ofFn fun (x9 : Fin (14 : ℕ)) => if x2 = x9 then Bool.true else x3 x9) = Bool.true → x4 x1.output = Bool.false → (2 : ℕ) ≤ x1.lineDeg (14 : ℕ) {↑x2}",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2227",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "A circuit of AND and OR gates, each reading two different earlier wires, on 14 inputs; an input v and an assignment x. If the circuit is false at x and true at x with v turned on, and its part with exactly one leaf v (computed with the other values taken at x) is false at the output, then the circuit has degree at least 2 in v.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2227.d2f6fa110bb3.json",
+  "statement_hash": "sha256:13b9c9540ea64076738adfba0ef0c7986ff511b32a60f95de28016c065edcd7e",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:45:57.196Z",
+  "title": "A step toward: Fano plane: no circuit of at most 27 AND/OR gates of fan-in two (distinct earlier wires) computes incidence and has a double re-read incidence",
+  "used_by": []
+}

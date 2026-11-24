@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "have x1 : Fin (13 : ℕ) → Bool := fun (x1 : Fin (13 : ℕ)) => Decidable.decide (x1 = (0 : Fin (13 : ℕ)) ∨ x1 = (1 : Fin (13 : ℕ)) ∨ x1 = (3 : Fin (13 : ℕ)) ∨ x1 = (9 : Fin (13 : ℕ))); have x2 : PEqualNP.CircuitLowerBounds.Circuit → Prop := fun (x2 : PEqualNP.CircuitLowerBounds.Circuit) => (∀ (x3 x4 : Fin (13 : ℕ)), x1 (x3 - x4) = Bool.true → x2.eval ((List.ofFn fun (x6 : Fin (13 : ℕ)) => Decidable.decide (x6 = x3)) ++ List.ofFn fun (x6 : Fin (13 : ℕ)) => Decidable.decide (x6 = x4)) = Bool.true) ∧ ∀ (x3 : Finset (Fin (13 : ℕ))), x3.card = (4 : ℕ) → (∀ (x5 : Fin (13 : ℕ)), {x6 ∈ x3 | x1 (x6 - x5) = Bool.true}.card ≤ (2 : ℕ)) → x2.eval ((List.ofFn fun (x6 : Fin (13 : ℕ)) => Decidable.decide (x6 ∈ x3)) ++ List.ofFn fun (x6 : Fin (13 : ℕ)) => Decidable.decide (∀ x7 ∈ x3, x1 (x7 - x6) = Bool.false)) = Bool.false; ∀ (x3 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x3 → PEqualNP.MetaComplexity.NestedCover.ReadsBack (26 : ℕ) x3 → x2 x3 → (¬∃ (x7 : ℕ) (x8 : ℕ), (PEqualNP.MetaComplexity.NestedCover.gateAt x3 x7).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt x3 x8).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ PEqualNP.EdgeOwnership.InCone (26 : ℕ) x3 x7 x8) → (64 : ℕ) ≤ x3.size",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2059",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "Plane of order 3 (line l = {l, l+1, l+3, l+9} mod 13; points then lines as 26 inputs). A fan-in-two AND/OR list reading earlier wires is good if it is true at every incident point-line input and false at every quadrangle input (4 points, at most 2 on any line, exactly the lines missing them on). Every good list in which no AND gate lies inside the cone of another AND gate has at least 64 gates.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2059.16c6ed024d70.json",
+  "statement_hash": "sha256:cfe0dfc86c84feff10bbb5d269003c27f528e8a5219ae4b404050f850e98859f",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:23:02.229Z",
+  "title": "A step toward: Part 1 of 2 of a proof of: Plane of order 3: every AND/OR list of fan-in at most two accepting every incident point-line input and rejecting ever",
+  "used_by": []
+}

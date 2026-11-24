@@ -18,10 +18,12 @@
       "PEqualNP.Defs.CleanedNonEdge",
       "PEqualNP.Defs.CoLevel",
       "PEqualNP.Defs.CoverPromise",
+      "PEqualNP.Defs.CrossAnd",
       "PEqualNP.Defs.DeMorganFormula",
       "PEqualNP.Defs.EdgeOwnership",
       "PEqualNP.Defs.Expanders",
       "PEqualNP.Defs.Gct",
+      "PEqualNP.Defs.GenericRejection",
       "PEqualNP.Defs.HeptadCover",
       "PEqualNP.Defs.InvisibleWire",
       "PEqualNP.Defs.LineDegree",
@@ -60,6 +62,7 @@
       "PEqualNP.Defs.ProofComplexityResK",
       "PEqualNP.Defs.ProofComplexityRestrict",
       "PEqualNP.Defs.ReadK",
+      "PEqualNP.Defs.ReadKJoin",
       "PEqualNP.Defs.RiffleRank",
       "PEqualNP.Defs.Search",
       "PEqualNP.Defs.SearchCP",
@@ -85,7 +88,7 @@
     {
       "module": "PEqualNP.Defs",
       "path": "lean/PEqualNP/Defs.lean",
-      "sha256": "ac202b48462606142f3a786174912267fd5c9289fc5a07963eaddeea609017f2"
+      "sha256": "adca38c11b3d280659446bf9baddbcab5389d81d2b51e17e082e642f51353e71"
     },
     {
       "module": "PEqualNP.Defs.AffinePlane",
@@ -163,6 +166,11 @@
       "sha256": "4552f288f2ec1eb23c4fded9b5d553e5699b8bdea84a91868dc12aac33759772"
     },
     {
+      "module": "PEqualNP.Defs.CrossAnd",
+      "path": "lean/PEqualNP/Defs/CrossAnd.lean",
+      "sha256": "42618dd3243df22ba55704dc34e60aca23613c36f5fedde8e7fb95e7ef3c8fa7"
+    },
+    {
       "module": "PEqualNP.Defs.DeMorganFormula",
       "path": "lean/PEqualNP/Defs/DeMorganFormula.lean",
       "sha256": "b90d4e2b0289f04d29dc060aae514a81fb84933e88727b24ee0b8a45ddd0b100"
@@ -181,6 +189,11 @@
       "module": "PEqualNP.Defs.Gct",
       "path": "lean/PEqualNP/Defs/Gct.lean",
       "sha256": "d22dbd99d0ac0f2cda45ce451f76c9b566bcea76a1cea4d4329f22e604d1259d"
+    },
+    {
+      "module": "PEqualNP.Defs.GenericRejection",
+      "path": "lean/PEqualNP/Defs/GenericRejection.lean",
+      "sha256": "08330877bdc826b9916f129c06f0a510c6f41bb14f884afc5af1079ac05ba338"
     },
     {
       "module": "PEqualNP.Defs.HeptadCover",
@@ -370,7 +383,12 @@
     {
       "module": "PEqualNP.Defs.ReadK",
       "path": "lean/PEqualNP/Defs/ReadK.lean",
-      "sha256": "52edcb3b9e53c25b50d0732d0a8bbfa414d48b74a3a26b6cf2dfb25b02fa4836"
+      "sha256": "2705c69e7dc26e5811d2851b02d710bbf70a1f3d7f6bc2cee678055d623863f3"
+    },
+    {
+      "module": "PEqualNP.Defs.ReadKJoin",
+      "path": "lean/PEqualNP/Defs/ReadKJoin.lean",
+      "sha256": "0ef2f950919d62b8170185169827db3c66a78a2fb4d5e0248028608478647e97"
     },
     {
       "module": "PEqualNP.Defs.RiffleRank",
@@ -468,13 +486,13 @@
   "explicit_dependencies": null,
   "file": "lean/PEqualNP/Outside/L_meta_1896.lean",
   "generator_sha256": "42e52662bd8eee501faf7d30aefb12ff751bbc9b55fef7fc4258a289adfc59f7",
-  "guard_sha256": "4591b8ce64165d693c3f84f30e3b7f4172ecbcd462761b594dab4cbee2ffe652",
+  "guard_sha256": "9eafc9dc2624504ac48e08517ef4215d851e9cb5f620be938b6410a564ee3cbb",
   "id": "L-meta-1896",
   "local_verification": "not_run",
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_1896",
-  "observed_at": "2026-11-24T07:02:26Z",
+  "observed_at": "2026-11-24T08:04:03Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
@@ -497,9 +515,9 @@
     "status_at": "2026-11-24T06:41:01.910Z",
     "title": "A step toward: Order-3 plane: every fan-in-two AND/OR circuit true at incident pairs and false at all generic maximal false inputs has at least 64 gates"
   },
-  "snapshot_sha256": "df31141e3d88226e92cedbf052149b979bdf1d25c02df35353d3691e7b9d88f3",
+  "snapshot_sha256": "abfaf5a77eb17b282649d05dbf5428f715df3000c14eff0b79704d715d6c3b80",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
   "statement": "∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x1 → (∀ (x3 x4 : Fin (13 : ℕ)), x3 = x4 ∨ x3 = x4 + (1 : Fin (13 : ℕ)) ∨ x3 = x4 + (3 : Fin (13 : ℕ)) ∨ x3 = x4 + (9 : Fin (13 : ℕ)) → (PEqualNP.MetaComplexity.circuitFun ((13 : ℕ) + (13 : ℕ)) x1 fun (x6 : Fin ((13 : ℕ) + (13 : ℕ))) => Decidable.decide (x6 = Fin.castAdd (13 : ℕ) x3 ∨ x6 = Fin.natAdd (13 : ℕ) x4)) = Bool.true) → (∀ (x4 : Finset (Fin (13 : ℕ))), (∀ x5 ∉ x4, ∃ (x7 : Fin (13 : ℕ)), (∀ x8 ∈ x4, ¬(x8 = x7 ∨ x8 = x7 + (1 : Fin (13 : ℕ)) ∨ x8 = x7 + (3 : Fin (13 : ℕ)) ∨ x8 = x7 + (9 : Fin (13 : ℕ)))) ∧ (x5 = x7 ∨ x5 = x7 + (1 : Fin (13 : ℕ)) ∨ x5 = x7 + (3 : Fin (13 : ℕ)) ∨ x5 = x7 + (9 : Fin (13 : ℕ)))) → ((¬∃ (x6 : Fin (13 : ℕ)), ∀ x7 ∈ x4, x7 = x6 ∨ x7 = x6 + (1 : Fin (13 : ℕ)) ∨ x7 = x6 + (3 : Fin (13 : ℕ)) ∨ x7 = x6 + (9 : Fin (13 : ℕ))) ∧ ¬∃ (x6 : Fin (13 : ℕ)), ∀ (x7 : Fin (13 : ℕ)), (∀ x8 ∈ x4, ¬(x8 = x7 ∨ x8 = x7 + (1 : Fin (13 : ℕ)) ∨ x8 = x7 + (3 : Fin (13 : ℕ)) ∨ x8 = x7 + (9 : Fin (13 : ℕ)))) → x6 = x7 ∨ x6 = x7 + (1 : Fin (13 : ℕ)) ∨ x6 = x7 + (3 : Fin (13 : ℕ)) ∨ x6 = x7 + (9 : Fin (13 : ℕ))) → (PEqualNP.MetaComplexity.circuitFun ((13 : ℕ) + (13 : ℕ)) x1 fun (x7 : Fin ((13 : ℕ) + (13 : ℕ))) => Decidable.decide ((∃ x8 ∈ x4, x7 = Fin.castAdd (13 : ℕ) x8) ∨ ∃ (x8 : Fin (13 : ℕ)), x7 = Fin.natAdd (13 : ℕ) x8 ∧ ∀ x9 ∈ x4, ¬(x9 = x8 ∨ x9 = x8 + (1 : Fin (13 : ℕ)) ∨ x9 = x8 + (3 : Fin (13 : ℕ)) ∨ x9 = x8 + (9 : Fin (13 : ℕ))))) = Bool.false) → (51 : ℕ) ≤ {x5 : Fin x1.gates.length | (x1.gates.get x5).op = PEqualNP.CircuitLowerBounds.GateOp.or}.ncard",
   "toolchain": "leanprover/lean4:v4.36.0",
-  "upstream_sha": "3eb0c78ba6004cf194e4ac0b855c9677a1cddd46"
+  "upstream_sha": "04e3866162116fb0b95ee6e68c8814874a300e85"
 }

@@ -1,5 +1,0 @@
-import Mathlib
-import PEqualNP.Defs
-
-theorem PEqualNP.Outside.L_meta_1734 : ¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) [x3 : DecidableRel x2.Adj], (∀ (x4 : Fin x1) (x5 : x2.Walk x4 x4), x5.IsCycle → (5 : ℕ) ≤ x5.length) → x2.edgeFinset.Nonempty → ∀ (x6 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x6 → (PEqualNP.MetaComplexity.circuitFun x1 x6 = fun (x8 : Fin x1 → Bool) => Decidable.decide (∃ (x9 : Fin x1) (x10 : Fin x1), x2.Adj x9 x10 ∧ x8 x9 = Bool.true ∧ x8 x10 = Bool.true)) → ∃ (x9 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.TopForm.IsLeastAO x2 x9 ∧ PEqualNP.TopForm.TopForm x2 x9 ∧ x9.size ≤ x6.size ∧ (x2.edgeFinset \ PEqualNP.TopForm.Ustar x2 x9).card ≤ x9.size + (1 : ℕ)) := by
-  sorry

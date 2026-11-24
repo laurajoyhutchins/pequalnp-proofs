@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∀ (N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (D : PEqualNP.CircuitLowerBounds.Circuit) (P L : Finset ℕ), (∀ p p' l l' : Fin N, p ≠ p' → l ≠ l' → ¬ (I p l ∧ I p l' ∧ I p' l ∧ I p' l')) → PEqualNP.MetaComplexity.Monotone2 D → PEqualNP.MetaComplexity.NestedCover.ReadsBack (N + N) D → (∀ y : Fin (N + N) → Bool, PEqualNP.MetaComplexity.circuitFun (N + N) D y = true ↔ ∃ p l : Fin N, I p l ∧ y (Fin.castAdd N p) = true ∧ y (Fin.natAdd N l) = true) → (∀ w ∈ P, w < N ∨ ∃ i < D.gates.length, w = N + N + i ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt D i).op = PEqualNP.CircuitLowerBounds.GateOp.or ∧ ∀ u ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt D i).inputs, u ∈ P) → (∀ w ∈ L, (N ≤ w ∧ w < N + N) ∨ ∃ i < D.gates.length, w = N + N + i ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt D i).op = PEqualNP.CircuitLowerBounds.GateOp.or ∧ ∀ u ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt D i).inputs, u ∈ L) → (∀ i < D.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt D i).op = PEqualNP.CircuitLowerBounds.GateOp.and → ∃ a b : ℕ, (PEqualNP.MetaComplexity.NestedCover.gateAt D i).inputs = [a, b] ∧ ((a ∈ P ∧ b ∈ L) ∨ (a ∈ L ∧ b ∈ P))) → (Finset.univ.filter (fun e : Fin N × Fin N => I e.1 e.2)).card ≤ D.size + 1)",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2109",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Let I be an incidence of N points and N lines, no two distinct points on two common distinct lines, E its incident pairs; inputs the N points, then the N lines. Let D be an AND/OR circuit of fan-in at most two, each gate reading only earlier wires, true exactly when some point and a line through it are on, with two label sets: a point-side wire is a point input or an OR gate reading only point-side wires, a line-side wire likewise with line inputs, and every AND gate reads exactly two wires, one of each side. Then |E| <= size(D) + 1.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2109.d7f9a4fda9ba.json",
+  "statement_hash": "sha256:df74d131cea31a4758f4562b5324307ca577909a90f4925ca2e34017257ef2a4",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:29:25.637Z",
+  "title": "It is false that: 4-cycle-free incidence: fan-in-two AND/OR circuits whose every AND reads one point-OR wire and one line-OR wire have at least |E| - 1 gates",
+  "used_by": []
+}

@@ -1,5 +1,0 @@
-import Mathlib
-import PEqualNP.Defs
-
-theorem PEqualNP.Outside.L_meta_1926 : ∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x1 → (∀ (x3 : Fin (9 : ℕ) → Bool), (x1.wires (List.ofFn x3)).getD (9 : ℕ) Bool.false = (x3 (0 : Fin (9 : ℕ)) && x3 (4 : Fin (9 : ℕ)))) → ∃ (x4 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.FanInTwo x4 ∧ x4.size + (1 : ℕ) = x1.size ∧ ∀ (x5 : Fin (9 : ℕ) → Bool), x4.eval (List.ofFn x5 ++ [x5 (0 : Fin (9 : ℕ)) && x5 (4 : Fin (9 : ℕ))]) = x1.eval (List.ofFn x5) := by
-  sorry

@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (have x1 : List (ℕ × ℕ) := [((0 : ℕ), (7 : ℕ)), ((0 : ℕ), (8 : ℕ)), ((0 : ℕ), (10 : ℕ)), ((1 : ℕ), (7 : ℕ)), ((1 : ℕ), (9 : ℕ)), ((1 : ℕ), (13 : ℕ)), ((2 : ℕ), (8 : ℕ)), ((2 : ℕ), (12 : ℕ)), ((2 : ℕ), (13 : ℕ)), ((3 : ℕ), (7 : ℕ)), ((3 : ℕ), (11 : ℕ)), ((3 : ℕ), (12 : ℕ)), ((4 : ℕ), (10 : ℕ)), ((4 : ℕ), (11 : ℕ)), ((4 : ℕ), (13 : ℕ)), ((5 : ℕ), (9 : ℕ)), ((5 : ℕ), (10 : ℕ)), ((5 : ℕ), (12 : ℕ)), ((6 : ℕ), (8 : ℕ)), ((6 : ℕ), (9 : ℕ)), ((6 : ℕ), (11 : ℕ))]; have x2 : (Fin (14 : ℕ) → Bool) → Prop := fun (x2 : Fin (14 : ℕ) → Bool) => ∃ (x3 : Fin (14 : ℕ)) (x4 : Fin (14 : ℕ)), (↑x3, ↑x4) ∈ x1 ∧ x2 x3 = Bool.true ∧ x2 x4 = Bool.true; have x3 : PEqualNP.CircuitLowerBounds.Circuit → Fin (14 : ℕ) → Prop := fun (x3 : PEqualNP.CircuitLowerBounds.Circuit) (x4 : Fin (14 : ℕ)) => ∀ (x5 : Fin (14 : ℕ) → Bool), x3.eval (List.ofFn x5 ++ [PEqualNP.CircuitLowerBounds.GateOp.or.eval [x5 (0 : Fin (14 : ℕ)), x5 x4]]) = Bool.true ↔ x2 x5; have x4 : PEqualNP.CircuitLowerBounds.Circuit → Prop := fun (x4 : PEqualNP.CircuitLowerBounds.Circuit) => (∀ (x5 : Fin (14 : ℕ) → Bool), x5 (0 : Fin (14 : ℕ)) = Bool.false ∨ x5 (7 : Fin (14 : ℕ)) = Bool.false → (x4.eval (List.ofFn x5) = Bool.true ↔ x2 x5)) ∧ x4.eval (List.ofFn fun (x5 : Fin (14 : ℕ)) => Decidable.decide (x5 = (0 : Fin (14 : ℕ)) ∨ x5 = (7 : Fin (14 : ℕ)))) = Bool.false; ∀ (x5 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x5 → (∀ (x7 : Fin (14 : ℕ) → Bool), x5.eval (List.ofFn x7) = Bool.true ↔ x2 x7) → ∃ (x8 : PEqualNP.CircuitLowerBounds.Circuit), PEqualNP.MetaComplexity.Monotone2 x8 ∧ (x8.size + (2 : ℕ) ≤ x5.size ∧ x4 x8 ∨ x8.size + (1 : ℕ) ≤ x5.size ∧ (x3 x8 (1 : Fin (14 : ℕ)) ∨ x3 x8 (7 : Fin (14 : ℕ)) ∨ x3 x8 (9 : Fin (14 : ℕ)))))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2275",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: Heawood graph as in the parent (21 edges, F its edge function on 14 inputs): every AND/OR fan-in-at-most-two circuit computing F gives one with at least 2 fewer gates that agrees with F wherever x0 or x7 is false and is false when exactly x0 and x7 are true, or one with at least 1 fewer gate on 15 inputs that computes F when its last input is fed x0 OR xv, for some v in {1, 7, 9}.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2275.cf2ee52230de.json",
+  "statement_hash": "sha256:b69a34a3246dabfdd3ba63ac88db8417f391042e80572484f3c095e70cc7c579",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:53:02.992Z",
+  "title": "It is false that: A step toward: Every circuit of AND and OR gates for the edge function of the Heawood graph has at least 27 gates",
+  "used_by": []
+}

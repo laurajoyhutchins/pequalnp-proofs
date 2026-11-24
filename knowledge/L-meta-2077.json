@@ -1,0 +1,19 @@
+{
+  "attempts": [],
+  "barrier": null,
+  "depends_on": [],
+  "formal_statement": "¬ (∃ (x1 : ℕ), ∀ (x2 : ℕ) (x3 : SimpleGraph (Fin x2)) [x4 : DecidableRel x3.Adj], (∀ (x5 : Fin x2) (x6 : x3.Walk x5 x5), x6.IsCycle → (5 : ℕ) ≤ x6.length) → x3.edgeFinset.Nonempty → ∀ (x7 : PEqualNP.CircuitLowerBounds.Circuit) (x8 : SimpleGraph (Fin x2)), PEqualNP.TopForm.IsLeastAO x3 x7 → PEqualNP.TopForm.TopForm x3 x7 → x8 ≤ x3.deleteEdges ↑(PEqualNP.TopForm.starEdges x3 x7) → (∀ (x12 : Fin x2), (x8.neighborSet x12).ncard = (0 : ℕ) ∨ (3 : ℕ) ≤ (x8.neighborSet x12).ncard) → x8.edgeSet.ncard ≤ x1 * (x7.size + (1 : ℕ)))",
+  "graph_dependencies_agree": true,
+  "graph_users_agree": true,
+  "id": "L-meta-2077",
+  "kind": "helper",
+  "layer": 0,
+  "plain_statement": "It is false that: There is a constant c such that: if G has an edge and no cycle shorter than 5, C is a least top-form circuit of AND and OR gates each reading exactly two earlier wires computing G's edge function, and H is a subgraph of G whose edges are no top's cross pair and whose every vertex has degree 0 or at least 3, then H has at most c times (size of C + 1) edges.",
+  "source": "https://data.pequalnp.com/data/lemma/L-meta-2077.9b88b0a85977.json",
+  "statement_hash": "sha256:eebe8020a3c777254cf8d929774a0811e762f40476729980448120e459ce81fd",
+  "statement_hash_verified": true,
+  "status": "conjecture",
+  "status_at": "2026-11-24T07:25:12.337Z",
+  "title": "It is false that: A step toward: Part 2 of 2 of a proof of: Conjecture: circuits of AND and OR gates for the edge function of a graph with no cycle shorter than",
+  "used_by": []
+}
