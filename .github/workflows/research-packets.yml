@@ -2,7 +2,9 @@ name: Research packet ingestion
 
 on:
   schedule:
-    - cron: '3,18,33,48 * * * *'
+    # Seven minutes before each of the five hourly research-worker starts.
+    # GitHub scheduled workflows are best effort; workers must still reconcile live.
+    - cron: '9,21,33,45,57 * * * *'
   workflow_dispatch:
   push:
     branches: [research/workstation]
