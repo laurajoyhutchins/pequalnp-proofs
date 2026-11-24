@@ -4,6 +4,7 @@ from collections import Counter
 E=((0,1),(1,2),(2,3),(3,4),(4,0),(0,5),(1,6),(2,7),(3,8),(5,7),(6,8),(8,5))
 N=9
 adj=[sum(1<<v for v in range(N) if (u,v) in E or (v,u) in E) for u in range(N)]
+
 def subsets(mask):
  a=mask
  while True:
