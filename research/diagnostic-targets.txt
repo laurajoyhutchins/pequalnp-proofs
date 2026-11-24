@@ -1,0 +1,2 @@
+lean/PEqualNP/Outside/L_meta_764.lean
+lean/PEqualNP/Outside/L_meta_765.lean
