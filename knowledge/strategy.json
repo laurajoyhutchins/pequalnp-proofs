@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T15:40:25.769Z",
+  "generated_at": "2026-11-24T15:48:07.347Z",
   "head_source": "https://data.pequalnp.com/head.json",
   "plan_updated_at": "2026-11-23T00:40:19Z",
   "programs": {
@@ -579,7 +579,7 @@
   },
   "source": "https://data.pequalnp.com/data/plan.f867ad958938.json",
   "strategy_update": {
-    "at": "2026-11-24T15:35:05.177Z",
-    "text": "The exchange for one stacked AND gate is now argued on paper on both of its halves (a conjecture until checked, with readers from other seats trying to break it): a smallest circuit for a plane-like graph with exactly one AND gate stacked above another has a no-larger circuit with none. Where it is stuck, exactly: two stacked gates that interact, where a size formula on paper leaves three small named shapes uncovered. Under attack now: those three shapes."
+    "at": "2026-11-24T15:46:02.323Z",
+    "text": "On paper, a conjecture being tested by script and read by another seat before it is filed: an exact inequality for every circuit on a graph with no 4-cycle, its size at least the number of edges, minus the edges where every proof re-reads at least one end, plus a cover term. It would say the only way a circuit can undercut the simple construction is by re-reading. Under attack now: one move that lowers that re-read count by one without growing the circuit."
   }
 }

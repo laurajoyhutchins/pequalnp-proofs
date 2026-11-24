@@ -522,14 +522,15 @@
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
   "explicit_dependencies": null,
   "file": "lean/PEqualNP/Outside/L_meta_2072.lean",
-  "generator_sha256": "2f786f70770660daad884f1b3b321166689af9483b3fb8613fefb9b4f9083a71",
+  "generator_sha256": "3d668933e015f264f8fc571dff1a31253ca13ed12356b4c1bf881831f7e391b3",
   "guard_sha256": "9eafc9dc2624504ac48e08517ef4215d851e9cb5f620be938b6410a564ee3cbb",
   "id": "L-meta-2072",
+  "kind": "check",
   "local_verification": "not_run",
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_2072",
-  "observed_at": "2026-11-24T15:41:48Z",
+  "observed_at": "2026-11-24T15:49:58Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
@@ -552,10 +553,20 @@
     "status_at": "2026-11-24T07:24:46.713Z",
     "title": "It is false that: A step toward: Order 3 plane: no circuit of at most 64 AND/OR gates of fan-in two (distinct earlier wires) computes incidence and has a double"
   },
-  "snapshot_sha256": "311c12e1f59bbd8a4b12278620eca0a8e767c669136a82723eebe8f882ad7e13",
+  "reductions": false,
+  "screening": {
+    "lane": "main",
+    "parallel": 1,
+    "pr_open": 0,
+    "reasons": [],
+    "state": "requires_live_desk_lease",
+    "weight": 5
+  },
+  "snapshot_sha256": "e8bbe105ce2da02631c835003ab4d54ed1736591ceed300f79b0b3535207a0a6",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "source_updated_at": "2026-11-24T15:47:09.666Z",
   "statement": "¬ (have x1 : Finset (Fin (13 : ℕ)) := {(0 : Fin (13 : ℕ)), (1 : Fin (13 : ℕ)), (3 : Fin (13 : ℕ)), (9 : Fin (13 : ℕ))}; have x2 : PEqualNP.CircuitLowerBounds.GateOp := PEqualNP.CircuitLowerBounds.GateOp.and; have x3 : PEqualNP.CircuitLowerBounds.GateOp := PEqualNP.CircuitLowerBounds.GateOp.or; ∀ (x4 : PEqualNP.CircuitLowerBounds.Circuit) (x5 x6 : Fin (13 : ℕ)) (x7 x8 : ℕ → Bool),   have x9 : Fin (26 : ℕ) → ℕ → (ℕ → Bool) → Prop := fun (x9 : Fin (26 : ℕ)) (x10 : ℕ) (x11 : ℕ → Bool) =>     (∀ x12 < (26 : ℕ), x11 x12 = Decidable.decide (x12 = x10)) ∧       have x12 : List Bool := x4.wires (List.ofFn fun (x12 : Fin (26 : ℕ)) => Decidable.decide (x12 = x9));       ∀ (x13 : ℕ) (x14 : PEqualNP.CircuitLowerBounds.Gate) (x15 x16 : ℕ), x4.gates[x13]? = Option.some x14 → x14.inputs = [x15, x16] → (x14.op = x2 → x11 ((26 : ℕ) + x13) = (x12.getD x15 Bool.false && x11 x16 || x11 x15 && x12.getD x16 Bool.false)) ∧ (x14.op = x3 → x11 ((26 : ℕ) + x13) = (x11 x15 || x11 x16));   x4.size ≤ (64 : ℕ) → (∀ (x11 : ℕ) (x12 : PEqualNP.CircuitLowerBounds.Gate), x4.gates[x11]? = Option.some x12 → (x12.op = x2 ∨ x12.op = x3) ∧ ∃ (x14 : ℕ) (x15 : ℕ), x12.inputs = [x14, x15] ∧ x14 ≠ x15 ∧ x14 < (26 : ℕ) + x11 ∧ x15 < (26 : ℕ) + x11) → (∀ (x12 : Fin (26 : ℕ) → Bool), x4.eval (List.ofFn x12) = Bool.true ↔ ∃ (x13 : Fin (13 : ℕ)) (x14 : Fin (13 : ℕ)), x13 - x14 ∈ x1 ∧ x12 (Fin.castAdd (13 : ℕ) x13) = Bool.true ∧ x12 (Fin.natAdd (13 : ℕ) x14) = Bool.true) → (0 : ℕ) < PEqualNP.TopForm.andPairs (26 : ℕ) x4 → (∃ x14 < x4.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt x4 x14).op = x2 ∧ ∃ (x15 : Fin (26 : ℕ) → Bool), (x4.wires (List.ofFn x15)).getD ((26 : ℕ) + x14) Bool.false = Bool.true ∧ x4.eval (List.ofFn x15) = Bool.false) → x5 - x6 ∈ x1 → x9 (Fin.castAdd (13 : ℕ) x5) ((13 : ℕ) + ↑x6) x7 → x9 (Fin.natAdd (13 : ℕ) x6) (↑x5) x8 → x7 x4.output = Bool.true ∨ x8 x4.output = Bool.true)",
   "toolchain": "leanprover/lean4:v4.36.0",
   "upstream_repository": "open-goat/pequalnp-proofs",
-  "upstream_sha": "0e8a5218eadf78a399c7d20d4a4298c262391b94"
+  "upstream_sha": "90319d08620de25fd68e4b9a7f58d23289654c2e"
 }

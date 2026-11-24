@@ -522,14 +522,15 @@
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
   "explicit_dependencies": null,
   "file": "lean/PEqualNP/Outside/L_meta_3550.lean",
-  "generator_sha256": "2f786f70770660daad884f1b3b321166689af9483b3fb8613fefb9b4f9083a71",
+  "generator_sha256": "3d668933e015f264f8fc571dff1a31253ca13ed12356b4c1bf881831f7e391b3",
   "guard_sha256": "9eafc9dc2624504ac48e08517ef4215d851e9cb5f620be938b6410a564ee3cbb",
   "id": "L-meta-3550",
+  "kind": "check",
   "local_verification": "not_run",
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_3550",
-  "observed_at": "2026-11-24T15:41:48Z",
+  "observed_at": "2026-11-24T15:49:58Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
@@ -552,10 +553,20 @@
     "status_at": "2026-11-24T14:31:55.326Z",
     "title": "It is false that: narrow move, live side: a gate of C with a read path to the output (replaced reads removed, reuse reads added) stays live in the..."
   },
-  "snapshot_sha256": "311c12e1f59bbd8a4b12278620eca0a8e767c669136a82723eebe8f882ad7e13",
+  "reductions": false,
+  "screening": {
+    "lane": "main",
+    "parallel": 2,
+    "pr_open": 0,
+    "reasons": [],
+    "state": "requires_live_desk_lease",
+    "weight": 5
+  },
+  "snapshot_sha256": "e8bbe105ce2da02631c835003ab4d54ed1736591ceed300f79b0b3535207a0a6",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "source_updated_at": "2026-11-24T15:47:09.666Z",
   "statement": "¬ (∀ (n : ℕ) (H : SimpleGraph (Fin n)) (qH : (Fin n → Bool) → Bool) (C : PEqualNP.CircuitLowerBounds.Circuit) (m : ℕ) (u T W z : ℕ → ℕ) (NR : ℕ → ℕ → Prop) (P : ℕ → (Fin n → Bool) → Bool) (G0 : List PEqualNP.CircuitLowerBounds.Gate) (rho : ℕ → ℕ → ℕ) (D : PEqualNP.CircuitLowerBounds.Circuit), (∀ y0 : Fin n → Bool, qH y0 = true ↔ ∃ a0 b0 : Fin n, H.Adj a0 b0 ∧ y0 a0 = true ∧ y0 b0 = true) → PEqualNP.TopForm.IsAO2 n C → (∀ y1 : Fin n → Bool, C.eval (List.ofFn y1) = qH y1) → (∀ k0 r0 : ℕ, NR k0 r0 ↔ r0 < C.gates.length ∧ n + u k0 ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C r0).inputs ∧ (r0 = T k0 ∨ (PEqualNP.CleanedNonEdge.OrReaches n C (W k0) r0 ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt C r0).op = PEqualNP.CircuitLowerBounds.GateOp.or))) → (∀ (k1 : ℕ) (y2 : Fin n → Bool), P k1 y2 = decide (∃ w1 : Fin n, y2 w1 = true ∧ PEqualNP.CleanedNonEdge.wireVal n C (n + u k1) (fun j1 : Fin n => decide (j1 = w1 ∨ (j1 : ℕ) = z k1)) = true)) → (∀ k2 < m, u k2 < C.gates.length ∧ T k2 < C.gates.length ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt C (T k2)).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧ z k2 < n ∧ ((PEqualNP.MetaComplexity.NestedCover.gateAt C (T k2)).inputs = [W k2, z k2] ∨ (PEqualNP.MetaComplexity.NestedCover.gateAt C (T k2)).inputs = [z k2, W k2]) ∧ (∀ y3 : Fin n → Bool, PEqualNP.CleanedNonEdge.wireVal n C (n + T k2) y3 = true → qH y3 = true) ∧ ∀ g2 < C.gates.length, PEqualNP.EdgeOwnership.InCone n C (T k2) g2 → (PEqualNP.MetaComplexity.NestedCover.gateAt C g2).op = PEqualNP.CircuitLowerBounds.GateOp.or) → (∀ k3 < m, ∀ g3 < C.gates.length, PEqualNP.CleanedNonEdge.OrReaches n C (W k3) g3 → (PEqualNP.MetaComplexity.NestedCover.gateAt C g3).op = PEqualNP.CircuitLowerBounds.GateOp.or → PEqualNP.EdgeOwnership.InCone n C (u k3) g3 → C.output ≠ n + g3 ∧ ∀ r3 < C.gates.length, n + g3 ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C r3).inputs → r3 = T k3 ∨ (PEqualNP.CleanedNonEdge.OrReaches n C (W k3) r3 ∧ (PEqualNP.MetaComplexity.NestedCover.gateAt C r3).op = PEqualNP.CircuitLowerBounds.GateOp.or)) → (∀ k4 < m, ∀ k5 < m, ∀ r4 : ℕ, NR k5 r4 → r4 ≠ u k4 ∧ ¬ PEqualNP.EdgeOwnership.InCone n C r4 (u k4)) → (∀ i6 < G0.length, ∀ w6 ∈ (G0.getD i6 ⟨PEqualNP.CircuitLowerBounds.GateOp.or, []⟩).inputs, w6 < n + i6) → D = ⟨G0 ++ C.gates.mapIdx (fun r7 g7 => ({ op := g7.op, inputs := g7.inputs.map (fun i7 => rho r7 i7) } : PEqualNP.CircuitLowerBounds.Gate)), if C.output < n then C.output else C.output + G0.length⟩ → (∀ r8 < C.gates.length, ∀ i8 ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C r8).inputs, (∀ k8 < m, ¬ (NR k8 r8 ∧ i8 = n + u k8)) → rho r8 i8 = if i8 < n then i8 else i8 + G0.length) → (∀ r9 : ℕ, ∀ k9 < m, NR k9 r9 → (rho r9 (n + u k9) < n + G0.length ∧ ∀ y9 : Fin n → Bool, PEqualNP.CleanedNonEdge.wireVal n (⟨G0, 0⟩ : PEqualNP.CircuitLowerBounds.Circuit) (rho r9 (n + u k9)) y9 = P k9 y9) ∨ (∃ g9 < r9, rho r9 (n + u k9) = n + G0.length + g9 ∧ (∀ y10 : Fin n → Bool, PEqualNP.CleanedNonEdge.wireVal n C (n + g9) y10 = P k9 y10) ∧ ∀ k10 < m, ∀ r10 : ℕ, NR k10 r10 → r10 ≠ g9 ∧ ¬ PEqualNP.EdgeOwnership.InCone n C r10 g9) ∨ ((∀ y11 : Fin n → Bool, P k9 y11 = false) ∧ n + G0.length + r9 ≤ rho r9 (n + u k9))) → ∀ g15 o15 : ℕ, C.output = n + o15 → g15 < C.gates.length → Relation.ReflTransGen (fun a13 b13 : ℕ => a13 < b13 ∧ b13 < C.gates.length ∧ ((n + a13 ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C b13).inputs ∧ ¬ ∃ k13 < m, a13 = u k13 ∧ NR k13 b13) ∨ ∃ k14 < m, NR k14 b13 ∧ rho b13 (n + u k14) = n + G0.length + a13)) g15 o15 → G0.length + g15 ∈ PEqualNP.FactorSubst.liveGates n D)",
   "toolchain": "leanprover/lean4:v4.36.0",
   "upstream_repository": "open-goat/pequalnp-proofs",
-  "upstream_sha": "0e8a5218eadf78a399c7d20d4a4298c262391b94"
+  "upstream_sha": "90319d08620de25fd68e4b9a7f58d23289654c2e"
 }

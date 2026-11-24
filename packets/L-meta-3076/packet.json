@@ -522,14 +522,15 @@
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
   "explicit_dependencies": null,
   "file": "lean/PEqualNP/Outside/L_meta_3076.lean",
-  "generator_sha256": "2f786f70770660daad884f1b3b321166689af9483b3fb8613fefb9b4f9083a71",
+  "generator_sha256": "3d668933e015f264f8fc571dff1a31253ca13ed12356b4c1bf881831f7e391b3",
   "guard_sha256": "9eafc9dc2624504ac48e08517ef4215d851e9cb5f620be938b6410a564ee3cbb",
   "id": "L-meta-3076",
+  "kind": "check",
   "local_verification": "not_run",
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_3076",
-  "observed_at": "2026-11-24T15:41:48Z",
+  "observed_at": "2026-11-24T15:49:58Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
@@ -552,10 +553,20 @@
     "status_at": "2026-11-24T11:23:36.409Z",
     "title": "It is false that: Fan-in-two AND/OR threshold two of rectangles with shared OR sides, rejecting light flag-free inputs, accepts at most s + k + d incident pairs"
   },
-  "snapshot_sha256": "311c12e1f59bbd8a4b12278620eca0a8e767c669136a82723eebe8f882ad7e13",
+  "reductions": false,
+  "screening": {
+    "lane": "main",
+    "parallel": 4,
+    "pr_open": 0,
+    "reasons": [],
+    "state": "requires_live_desk_lease",
+    "weight": 5
+  },
+  "snapshot_sha256": "e8bbe105ce2da02631c835003ab4d54ed1736591ceed300f79b0b3535207a0a6",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "source_updated_at": "2026-11-24T15:47:09.666Z",
   "statement": "¬ (∀ (n m : ℕ) (inc : Fin n → Fin m → Bool) (C : PEqualNP.CircuitLowerBounds.Circuit) (s k T : ℕ)\n  (a b : Fin k → ℕ) (A : Fin k → Finset (Fin n)) (B : Fin k → Finset (Fin m)),\n  (∀ p p' : Fin n, ∀ l l' : Fin m, p ≠ p' → l ≠ l' → inc p l = true → inc p' l = true →\n    inc p l' = true → inc p' l' = true → False) →\n  PEqualNP.MetaComplexity.Monotone2 C → PEqualNP.MetaComplexity.NestedCover.ReadsBack (n + m) C →\n  C.size = s + k + T → 1 ≤ k →\n  (∀ j < s, (PEqualNP.MetaComplexity.NestedCover.gateAt C j).op = PEqualNP.CircuitLowerBounds.GateOp.or ∧\n    (PEqualNP.MetaComplexity.NestedCover.gateAt C j).inputs.length = 2) →\n  (∀ i : Fin k, (A i).Nonempty ∧ (B i).Nonempty ∧ a i < n + m + s ∧ b i < n + m + s ∧\n    (PEqualNP.MetaComplexity.NestedCover.gateAt C (s + i.val)).op = PEqualNP.CircuitLowerBounds.GateOp.and ∧\n    (PEqualNP.MetaComplexity.NestedCover.gateAt C (s + i.val)).inputs = [a i, b i] ∧\n    ∀ x : List Bool, x.length = n + m →\n      ((C.wires x).getD (a i) false = decide (∃ pa ∈ A i, x.getD pa.val false = true) ∧\n       (C.wires x).getD (b i) false = decide (∃ lb ∈ B i, x.getD (n + lb.val) false = true))) →\n  (∀ x : List Bool, x.length = n + m →\n    C.eval x = decide (∃ i1 j1 : Fin k, i1 < j1 ∧ (C.wires x).getD (n + m + s + i1.val) false = true ∧\n      (C.wires x).getD (n + m + s + j1.val) false = true)) →\n  (∀ (P : Finset (Fin n)) (L : Finset (Fin m)),\n    ((P.card = 1 ∧ L.card ≤ 2) ∨ (P.card ≤ 2 ∧ L.card = 1)) →\n    (∀ p ∈ P, ∀ l ∈ L, inc p l = false) →\n    C.eval (List.ofFn (fun u : Fin n => decide (u ∈ P)) ++ List.ofFn (fun v : Fin m => decide (v ∈ L))) = false) →\n  ((Finset.univ : Finset (Fin n × Fin m)).filter (fun q => inc q.1 q.2 = true ∧\n      C.eval (List.ofFn (fun u : Fin n => decide (u = q.1)) ++ List.ofFn (fun v : Fin m => decide (v = q.2))) = true)).card\n    ≤ s + k + ((Finset.univ : Finset (Fin k)).filter (fun t =>\n        (∃ c : Fin n, 2 ≤ (B t).card ∧ ∀ e ∈ B t, inc c e = true) ∧\n        (∃ f ∈ B t, 2 ≤ (A t).card ∧ ∀ g ∈ A t, inc g f = true))).card ∧\n  (k ≤ T + 1 →\n    ((Finset.univ : Finset (Fin n × Fin m)).filter (fun r => inc r.1 r.2 = true ∧\n      C.eval (List.ofFn (fun u : Fin n => decide (u = r.1)) ++ List.ofFn (fun v : Fin m => decide (v = r.2))) = true)).card\n    ≤ C.size + 1))",
   "toolchain": "leanprover/lean4:v4.36.0",
   "upstream_repository": "open-goat/pequalnp-proofs",
-  "upstream_sha": "0e8a5218eadf78a399c7d20d4a4298c262391b94"
+  "upstream_sha": "90319d08620de25fd68e4b9a7f58d23289654c2e"
 }

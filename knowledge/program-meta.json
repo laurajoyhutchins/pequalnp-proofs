@@ -16438,20 +16438,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
-      "detail_path": "data/lemma/L-meta-2240.3cece28933c9.json",
+      "detail_path": "data/lemma/L-meta-2240.a16256935f3b.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-meta-2240",
       "program": "meta_complexity",
-      "source": "https://data.pequalnp.com/data/lemma/L-meta-2240.3cece28933c9.json",
-      "statement_hash": "sha256:6e81bc181b6c791202aa0fa5b4e8bc4a5a976e079cb4e104325cc85d84f7d553",
-      "statement_hash_verified": true,
-      "status": "conjecture",
-      "status_code": "j",
-      "title": "Plane of order q: AND/OR circuits of fan-in at most two computing incidence with no doubly re-read incidence have at least N(q - 3)/32 gates",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-2240.a16256935f3b.json",
+      "status_code": "c",
       "unmapped_dependencies": []
     },
     {
@@ -21666,20 +21659,13 @@
       "unmapped_dependencies": []
     },
     {
-      "artifact": null,
       "depends_on": [],
-      "detail_path": "data/lemma/L-meta-2605.a94529ebbd82.json",
+      "detail_path": "data/lemma/L-meta-2605.58f1c7323989.json",
       "direct_users": [],
-      "graph_dependencies_agree": true,
-      "graph_users_agree": true,
       "id": "L-meta-2605",
       "program": "meta_complexity",
-      "source": "https://data.pequalnp.com/data/lemma/L-meta-2605.a94529ebbd82.json",
-      "statement_hash": "sha256:196c2c786dbc79df2a76e4e844e149eed5c4eed9450c736e0d8165d917ecdf21",
-      "statement_hash_verified": true,
-      "status": "conjecture",
-      "status_code": "j",
-      "title": "It is false that: Plane of order q: AND/OR circuits of fan-in at most two computing incidence with no doubly re-read incidence have at least N(q - 3)/32 gates",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-2605.58f1c7323989.json",
+      "status_code": "r",
       "unmapped_dependencies": []
     },
     {
@@ -34214,13 +34200,20 @@
       "unmapped_dependencies": []
     },
     {
+      "artifact": null,
       "depends_on": [],
       "detail_path": "data/lemma/L-meta-3700.c54ea533a1c8.json",
       "direct_users": [],
+      "graph_dependencies_agree": true,
+      "graph_users_agree": true,
       "id": "L-meta-3700",
       "program": "meta_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-meta-3700.c54ea533a1c8.json",
+      "statement_hash": "sha256:cb2b5ce321eea5fef794475dcf48c880dc535400d583e55712bedaa757053944",
+      "statement_hash_verified": true,
+      "status": "conjecture",
       "status_code": "j",
+      "title": "One stacked AND (G2): a least lift-fixed fan-in-two AND/OR circuit for a 4-cycle-free bipartite edge function, one dirty AND, has a no-larger AND-depth-one one",
       "unmapped_dependencies": []
     },
     {
@@ -34230,6 +34223,86 @@
       "id": "L-meta-3701",
       "program": "meta_complexity",
       "source": "https://data.pequalnp.com/data/lemma/L-meta-3701.2d97e6f5becc.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-meta-3702.77c97028e76e.json",
+      "direct_users": [],
+      "id": "L-meta-3702",
+      "program": "meta_complexity",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-3702.77c97028e76e.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-meta-3703.1718703148d3.json",
+      "direct_users": [],
+      "id": "L-meta-3703",
+      "program": "meta_complexity",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-3703.1718703148d3.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-meta-3704.d097d0b61146.json",
+      "direct_users": [],
+      "id": "L-meta-3704",
+      "program": "meta_complexity",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-3704.d097d0b61146.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-meta-3705.ce7aea3981f5.json",
+      "direct_users": [],
+      "id": "L-meta-3705",
+      "program": "meta_complexity",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-3705.ce7aea3981f5.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-meta-3706.6bd3ed1a9200.json",
+      "direct_users": [],
+      "id": "L-meta-3706",
+      "program": "meta_complexity",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-3706.6bd3ed1a9200.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-meta-3707.c2426171b252.json",
+      "direct_users": [],
+      "id": "L-meta-3707",
+      "program": "meta_complexity",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-3707.c2426171b252.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-meta-3708.bae37f8b7785.json",
+      "direct_users": [],
+      "id": "L-meta-3708",
+      "program": "meta_complexity",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-3708.bae37f8b7785.json",
+      "status_code": "j",
+      "unmapped_dependencies": []
+    },
+    {
+      "depends_on": [],
+      "detail_path": "data/lemma/L-meta-3709.dd4815622c91.json",
+      "direct_users": [],
+      "id": "L-meta-3709",
+      "program": "meta_complexity",
+      "source": "https://data.pequalnp.com/data/lemma/L-meta-3709.dd4815622c91.json",
       "status_code": "j",
       "unmapped_dependencies": []
     },

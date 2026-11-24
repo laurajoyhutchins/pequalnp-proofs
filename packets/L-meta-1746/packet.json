@@ -522,14 +522,15 @@
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
   "explicit_dependencies": null,
   "file": "lean/PEqualNP/Outside/L_meta_1746.lean",
-  "generator_sha256": "2f786f70770660daad884f1b3b321166689af9483b3fb8613fefb9b4f9083a71",
+  "generator_sha256": "3d668933e015f264f8fc571dff1a31253ca13ed12356b4c1bf881831f7e391b3",
   "guard_sha256": "9eafc9dc2624504ac48e08517ef4215d851e9cb5f620be938b6410a564ee3cbb",
   "id": "L-meta-1746",
+  "kind": "check",
   "local_verification": "not_run",
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_1746",
-  "observed_at": "2026-11-24T15:41:48Z",
+  "observed_at": "2026-11-24T15:49:58Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
@@ -552,10 +553,20 @@
     "status_at": "2026-11-24T05:44:55.209Z",
     "title": "It is false that: Part 2 of 2 of a proof of: Cubic piece, cycles at least 7, edge function plus OR-variables: a vertex whose deletion lowers fan-in-two AND/OR/N"
   },
-  "snapshot_sha256": "311c12e1f59bbd8a4b12278620eca0a8e767c669136a82723eebe8f882ad7e13",
+  "reductions": false,
+  "screening": {
+    "lane": "main",
+    "parallel": 1,
+    "pr_open": 0,
+    "reasons": [],
+    "state": "requires_live_desk_lease",
+    "weight": 5
+  },
+  "snapshot_sha256": "e8bbe105ce2da02631c835003ab4d54ed1736591ceed300f79b0b3535207a0a6",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "source_updated_at": "2026-11-24T15:47:09.666Z",
   "statement": "¬ (∀ (x1 : ℕ) (x2 : SimpleGraph (Fin x1)) (x3 : Finset (Fin x1)) (x4 : (Fin x1 → Bool) → Bool) (x5 : PEqualNP.CircuitLowerBounds.Circuit),   (∀ x6 ∉ x3, (x2.neighborSet x6).ncard = (3 : ℕ)) →     (∀ (x7 : Fin x1) (x8 : x2.Walk x7 x7), x8.IsCycle → (7 : ℕ) ≤ x8.length) →       (∀ (x8 x9 : Fin x1), x2.Adj x8 x9 → x8 ∉ x3) →         (∃ (x9 : Fin x1) (x10 : Fin x1), x2.Adj x9 x10) →           (∀ (x10 : Fin x1 → Bool), x4 x10 = Bool.true ↔ (∃ x11 ∈ x3, x10 x11 = Bool.true) ∨ ∃ (x11 : Fin x1) (x12 : Fin x1), x2.Adj x11 x12 ∧ x10 x11 = Bool.true ∧ x10 x12 = Bool.true) →             PEqualNP.MetaComplexity.FanInTwo x5 →               PEqualNP.MetaComplexity.circuitFun x1 x5 = x4 →                 (∀ (x13 : ℕ), PEqualNP.MetaComplexity.HasCircuitSize x1 x4 x13 → x5.size ≤ x13) →                   (∀ x14 ∉ x3,                       have x16 : List PEqualNP.CircuitLowerBounds.Gate := List.filter (fun (x16 : PEqualNP.CircuitLowerBounds.Gate) => (List.take (bif x16.op.eval [Bool.false] then (1 : ℕ) else (2 : ℕ)) x16.inputs).contains ↑x14) x5.gates;                       x16.length ≤ (3 : ℕ) ∧ (x16.length = (3 : ℕ) → ∀ x18 ∈ x16, x18.op = PEqualNP.CircuitLowerBounds.GateOp.or)) →                     ∃ x15 ∉ x3, ∃ (x16 : ℕ), x16 + (4 : ℕ) ≤ x5.size ∧ PEqualNP.MetaComplexity.HasCircuitSize x1 (fun (x17 : Fin x1 → Bool) => x4 (Function.update x17 x15 Bool.false)) x16)",
   "toolchain": "leanprover/lean4:v4.36.0",
   "upstream_repository": "open-goat/pequalnp-proofs",
-  "upstream_sha": "0e8a5218eadf78a399c7d20d4a4298c262391b94"
+  "upstream_sha": "90319d08620de25fd68e4b9a7f58d23289654c2e"
 }

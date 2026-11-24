@@ -522,14 +522,15 @@
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
   "explicit_dependencies": null,
   "file": "lean/PEqualNP/Outside/L_meta_3140.lean",
-  "generator_sha256": "2f786f70770660daad884f1b3b321166689af9483b3fb8613fefb9b4f9083a71",
+  "generator_sha256": "3d668933e015f264f8fc571dff1a31253ca13ed12356b4c1bf881831f7e391b3",
   "guard_sha256": "9eafc9dc2624504ac48e08517ef4215d851e9cb5f620be938b6410a564ee3cbb",
   "id": "L-meta-3140",
+  "kind": "check",
   "local_verification": "not_run",
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
   "module": "PEqualNP.Outside.L_meta_3140",
-  "observed_at": "2026-11-24T15:41:48Z",
+  "observed_at": "2026-11-24T15:49:58Z",
   "path_exists": false,
   "permitted_project_imports": [
     "PEqualNP.Defs"
@@ -552,10 +553,22 @@
     "status_at": "2026-11-24T11:45:05.812Z",
     "title": "AND/OR fan-in-two circuit for a 4-cycle-free incidence: a gate off at one-hot inputs, read twice, private cone, star-forest lost set, can be removed"
   },
-  "snapshot_sha256": "311c12e1f59bbd8a4b12278620eca0a8e767c669136a82723eebe8f882ad7e13",
+  "reductions": false,
+  "screening": {
+    "lane": "main",
+    "parallel": 4,
+    "pr_open": 3,
+    "reasons": [
+      "pr_already_open"
+    ],
+    "state": "excluded_from_local_shortlist",
+    "weight": 60
+  },
+  "snapshot_sha256": "e8bbe105ce2da02631c835003ab4d54ed1736591ceed300f79b0b3535207a0a6",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
+  "source_updated_at": "2026-11-24T15:47:09.666Z",
   "statement": "∀ (a b : ℕ) (I : Fin a → Fin b → Prop) (C : PEqualNP.CircuitLowerBounds.Circuit) (j : ℕ) (K : Finset ℕ), (∀ (p p' : Fin a) (l l' : Fin b), p ≠ p' → l ≠ l' → ¬ (I p l ∧ I p l' ∧ I p' l ∧ I p' l')) → (∀ g ∈ C.gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length = 2) → PEqualNP.MetaComplexity.NestedCover.ReadsBack (a + b) C → (∀ z : Fin (a + b) → Bool, PEqualNP.MetaComplexity.circuitFun (a + b) C z = true ↔ ∃ (p : Fin a) (l : Fin b), I p l ∧ z (Fin.castAdd b p) = true ∧ z (Fin.natAdd a l) = true) → j < C.gates.length → (∀ v : Fin (a + b), (C.wires (List.ofFn (fun u : Fin (a + b) => decide (u = v)))).getD (a + b + j) false = false) → (∃ k k' : ℕ, k ≠ k' ∧ k < C.gates.length ∧ k' < C.gates.length ∧ a + b + j ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs ∧ a + b + j ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C k').inputs) → j ∈ K → (∀ i ∈ K, i ≤ j) → (∀ i ∈ K, ∀ w ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C i).inputs, a + b ≤ w → w - (a + b) ∈ K) → (∀ i ∈ K, i ≠ j → ∃ k ∈ K, a + b + i ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs) → (∀ k < C.gates.length, k ∉ K → ∀ w ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs, a + b ≤ w → w - (a + b) ∈ K → w = a + b + j) → ¬ (a + b ≤ C.output ∧ C.output - (a + b) ∈ K) → (∀ (p p' : Fin a) (l l' : Fin b), (I p l ∧ PEqualNP.MetaComplexity.circuitFun (a + b) (PEqualNP.CircuitLowerBounds.Circuit.mk (C.gates.set j (PEqualNP.CircuitLowerBounds.Gate.mk PEqualNP.CircuitLowerBounds.GateOp.or [])) C.output) (fun e1 : Fin (a + b) => decide (e1 = Fin.castAdd b p ∨ e1 = Fin.natAdd a l)) = false) → (I p' l ∧ PEqualNP.MetaComplexity.circuitFun (a + b) (PEqualNP.CircuitLowerBounds.Circuit.mk (C.gates.set j (PEqualNP.CircuitLowerBounds.Gate.mk PEqualNP.CircuitLowerBounds.GateOp.or [])) C.output) (fun e2 : Fin (a + b) => decide (e2 = Fin.castAdd b p' ∨ e2 = Fin.natAdd a l)) = false) → (I p l' ∧ PEqualNP.MetaComplexity.circuitFun (a + b) (PEqualNP.CircuitLowerBounds.Circuit.mk (C.gates.set j (PEqualNP.CircuitLowerBounds.Gate.mk PEqualNP.CircuitLowerBounds.GateOp.or [])) C.output) (fun e3 : Fin (a + b) => decide (e3 = Fin.castAdd b p ∨ e3 = Fin.natAdd a l')) = false) → p' = p ∨ l' = l) → ∃ C' : PEqualNP.CircuitLowerBounds.Circuit, (∀ g ∈ C'.gates, (g.op = PEqualNP.CircuitLowerBounds.GateOp.and ∨ g.op = PEqualNP.CircuitLowerBounds.GateOp.or) ∧ g.inputs.length = 2) ∧ PEqualNP.MetaComplexity.NestedCover.ReadsBack (a + b) C' ∧ C'.size < C.size ∧ (∀ z : Fin (a + b) → Bool, PEqualNP.MetaComplexity.circuitFun (a + b) C' z = true ↔ ∃ (p : Fin a) (l : Fin b), I p l ∧ z (Fin.castAdd b p) = true ∧ z (Fin.natAdd a l) = true)",
   "toolchain": "leanprover/lean4:v4.36.0",
   "upstream_repository": "open-goat/pequalnp-proofs",
-  "upstream_sha": "0e8a5218eadf78a399c7d20d4a4298c262391b94"
+  "upstream_sha": "90319d08620de25fd68e4b9a7f58d23289654c2e"
 }

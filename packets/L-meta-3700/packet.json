@@ -85,12 +85,9 @@
       "PEqualNP.Defs.SyntacticMultilinear",
       "PEqualNP.Defs.TimeAlt",
       "PEqualNP.Defs.TopForm",
-      "PEqualNP.Defs.TopFormNames",
-      "PEqualNP.MetaComplexity.L3557"
+      "PEqualNP.Defs.TopFormNames"
     ],
-    "outside": [
-      "PEqualNP.Outside.L_meta_2672"
-    ]
+    "outside": []
   },
   "closure_blocker": null,
   "closure_sources": [
@@ -513,41 +510,30 @@
       "module": "PEqualNP.Defs.TopFormNames",
       "path": "lean/PEqualNP/Defs/TopFormNames.lean",
       "sha256": "da3fbcf03e2ed9c772ea58a955e4c902ce3b298b65a3cd3c730aca9da68486c3"
-    },
-    {
-      "module": "PEqualNP.MetaComplexity.L3557",
-      "path": "lean/PEqualNP/MetaComplexity/L3557.lean",
-      "sha256": "7e8f03666549c4ee1aab963f4104ca09379be1067ae19aef87cd5f9aefa26287"
-    },
-    {
-      "module": "PEqualNP.Outside.L_meta_2672",
-      "path": "lean/PEqualNP/Outside/L_meta_2672.lean",
-      "sha256": "34d7fcc585738ff6bcc90689c04fb22d14ebff4f4ae04ca1f033b7ca3a4902af"
     }
   ],
   "context": {
-    "context": "SKETCH: Four steps. (1) The part of the circuit linear in the line inputs has at most 4 times the gates. (2) Differentiate the circuit in reverse mode over the OR/AND semiring: one pass gives every partial output for a constant factor in gates. (3) The same on the dual side. (4) Apply the known count for circuits computing all the line sums at once (a checked row of this project) to those partial outputs. The constant comes from the counts 4, 4 and N. Content starts at q = 67. Size: three to five hours; No sorry, no new axiom. Own namespace for every declaration.",
+    "context": "SKETCH: The one AND g that is not below F is OR(A) AND OR(B), off at every one-hot input, so A and B are disjoint and g accepts the pairs of A times B that are not edges (junk). A top reading a wire through g is flattened: old top = new top OR (g AND OR(S2)), and the second term is moved to the output OR, which lowers ANDs only and stacks nothing. Cases by how many tops read through g and by the common neighbours of A and B; no 4-cycle bounds those by one in two of the cases. Size: 3 hours. No sorry, no new axiom. Own namespace for every declaration.",
     "dead": [],
-    "sketch": "Four steps. (1) The part of the circuit linear in the line inputs has at most 4 times the gates. (2) Differentiate the circuit in reverse mode over the OR/AND semiring: one pass gives every partial output for a constant factor in gates. (3) The same on the dual side. (4) Apply the known count for circuits computing all the line sums at once (a checked row of this project) to those partial outputs. The constant comes from the counts 4, 4 and N. Content starts at q = 67. Size: three to five hours; No sorry, no new axiom. Own namespace for every declaration.",
-    "title": "Plane of order q: AND/OR circuits of fan-in at most two computing incidence with no doubly re-read incidence have at least N(q - 3)/32 gates",
-    "unlocks": "A bound of order N q for circuits that read one side of each incident pair once, the other side freely: a class the checked read-2 row does not cover, and the class a least circuit would land in if it lifts to a single-read one."
+    "sketch": "The one AND g that is not below F is OR(A) AND OR(B), off at every one-hot input, so A and B are disjoint and g accepts the pairs of A times B that are not edges (junk). A top reading a wire through g is flattened: old top = new top OR (g AND OR(S2)), and the second term is moved to the output OR, which lowers ANDs only and stacks nothing. Cases by how many tops read through g and by the common neighbours of A and B; no 4-cycle bounds those by one in two of the cases. Size: 3 hours. No sorry, no new axiom. Own namespace for every declaration.",
+    "title": "One stacked AND (G2): a least lift-fixed fan-in-two AND/OR circuit for a 4-cycle-free bipartite edge function, one dirty AND, has a no-larger AND-depth-one one",
+    "unlocks": "the second half of the one-gate exchange: one AND stacked above another can be removed at no larger size"
   },
   "eligibility": "unknown: consult live desk; public posting does not confer ownership",
   "explicit_dependencies": null,
-  "file": "lean/PEqualNP/Outside/L_meta_2240.lean",
-  "generator_sha256": "2f786f70770660daad884f1b3b321166689af9483b3fb8613fefb9b4f9083a71",
+  "file": "lean/PEqualNP/Outside/L_meta_3700.lean",
+  "generator_sha256": "3d668933e015f264f8fc571dff1a31253ca13ed12356b4c1bf881831f7e391b3",
   "guard_sha256": "9eafc9dc2624504ac48e08517ef4215d851e9cb5f620be938b6410a564ee3cbb",
-  "id": "L-meta-2240",
+  "id": "L-meta-3700",
+  "kind": "check",
   "local_verification": "not_run",
   "manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
   "missing_dependency_ids": null,
-  "module": "PEqualNP.Outside.L_meta_2240",
-  "observed_at": "2026-11-24T15:41:48Z",
+  "module": "PEqualNP.Outside.L_meta_3700",
+  "observed_at": "2026-11-24T15:49:58Z",
   "path_exists": false,
   "permitted_project_imports": [
-    "PEqualNP.Defs",
-    "PEqualNP.Outside.L_meta_2672",
-    "PEqualNP.MetaComplexity.L3557"
+    "PEqualNP.Defs"
   ],
   "posted_restriction_markers": [],
   "public_research": {
@@ -559,18 +545,28 @@
     "direct_users": [],
     "join": "exact_statement",
     "kind": "helper",
-    "plain_statement": "A plane of order q >= 2: N = q^2+q+1 points and lines, q+1 points on each line, two distinct points on exactly one line; inputs x_p (points), then y_l (lines). C has AND and OR gates of fan-in at most two, each reading earlier wires, and computes incidence (true when some point and a line through it are both true). C is single-read: each incident pair p, l has a proof tree (all inputs at an AND, one at an OR) with leaves among x_p, y_l and y_l once, or one with x_p once. Then N q <= 32 times the gates of C plus 3N.",
+    "plain_statement": "Let G be a bipartite graph with no 4-cycle and C a least AND/OR circuit computing G's edge function F, each gate reading exactly two earlier wires (so it reads only earlier wires), lift-fixed, with no AND reading a wire below F, every gate in the output's cone, and every AND false at every input with one variable on. If exactly one AND of C is not below F, then some AND/OR circuit with at most as many gates, each reading exactly two earlier wires, computes F and has no AND in the strict cone of another AND.",
     "prerequisites": [],
     "recorded_downstream": [],
-    "source": "https://data.pequalnp.com/data/lemma/L-meta-2240.3cece28933c9.json",
+    "source": "https://data.pequalnp.com/data/lemma/L-meta-3700.c54ea533a1c8.json",
     "status": "conjecture",
-    "status_at": "2026-11-24T07:46:59.203Z",
-    "title": "Plane of order q: AND/OR circuits of fan-in at most two computing incidence with no doubly re-read incidence have at least N(q - 3)/32 gates"
+    "status_at": "2026-11-24T15:39:36.402Z",
+    "title": "One stacked AND (G2): a least lift-fixed fan-in-two AND/OR circuit for a 4-cycle-free bipartite edge function, one dirty AND, has a no-larger AND-depth-one one"
   },
-  "snapshot_sha256": "311c12e1f59bbd8a4b12278620eca0a8e767c669136a82723eebe8f882ad7e13",
+  "reductions": false,
+  "screening": {
+    "lane": "main",
+    "parallel": 6,
+    "pr_open": 0,
+    "reasons": [],
+    "state": "requires_live_desk_lease",
+    "weight": 80
+  },
+  "snapshot_sha256": "e8bbe105ce2da02631c835003ab4d54ed1736591ceed300f79b0b3535207a0a6",
   "source": "https://data.pequalnp.com/data/desk/gaps.json",
-  "statement": "∀ (q N : ℕ) (I : Fin N → Fin N → Prop) [DecidableRel I] (C : PEqualNP.CircuitLowerBounds.Circuit), 2 ≤ q → N = q ^ 2 + q + 1 → (∀ l : Fin N, (Finset.univ.filter (fun p => I p l)).card = q + 1) → (∀ p1 p2 : Fin N, p1 ≠ p2 → ∃! l1 : Fin N, I p1 l1 ∧ I p2 l1) → PEqualNP.ReadK.AndOrFanInTwo C → PEqualNP.MetaComplexity.NestedCover.ReadsBack (N + N) C → (∀ z : Fin (N + N) → Bool, PEqualNP.MetaComplexity.circuitFun (N + N) C z = decide (∃ p3 l3 : Fin N, I p3 l3 ∧ z (Fin.castAdd N p3) = true ∧ z (Fin.natAdd N l3) = true)) → PEqualNP.ReadK.IsSingleRead C (N + N) (fun w => decide (N ≤ w)) ((List.finRange N).flatMap (fun p5 => ((List.finRange N).filter (fun l5 => decide (I p5 l5))).map (fun l6 => (p5.val, N + l6.val)))) → N * q ≤ 32 * C.size + 3 * N",
+  "source_updated_at": "2026-11-24T15:47:09.666Z",
+  "statement": "∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (C : PEqualNP.CircuitLowerBounds.Circuit) (s : Fin n → Bool) (g : ℕ),\n  (∀ u v : Fin n, G.Adj u v → s u ≠ s v) → PEqualNP.TopForm.NoFourCycle G → PEqualNP.TopForm.IsLeastAO G C →\n  PEqualNP.Core.IsLiftFixedPoint G C →\n  (∀ k < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C k).op = PEqualNP.CircuitLowerBounds.GateOp.and → ∀ t ∈ (PEqualNP.MetaComplexity.NestedCover.gateAt C k).inputs, ¬ (∀ x : Fin n → Bool, PEqualNP.CircuitLowerBounds.Circuit.eval ⟨C.gates, t⟩ (List.ofFn x) = true → PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ x = true)) →\n  (∀ k < C.gates.length, PEqualNP.Core.InOutputCone n C k) →\n  (∀ k < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C k).op = PEqualNP.CircuitLowerBounds.GateOp.and → ∀ v : Fin n, PEqualNP.EdgeOwnership.gateVal n C k (PEqualNP.SplitCount.unitInput v) = false) →\n  g < C.gates.length → (PEqualNP.MetaComplexity.NestedCover.gateAt C g).op = PEqualNP.CircuitLowerBounds.GateOp.and → ¬ PEqualNP.TopForm.BelowF G C g →\n  (∀ k < C.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt C k).op = PEqualNP.CircuitLowerBounds.GateOp.and → k ≠ g → PEqualNP.TopForm.BelowF G C k) →\n  ∃ D : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.TopForm.IsAO2 n D ∧ D.size ≤ C.size ∧\n    PEqualNP.MetaComplexity.circuitFun n D = PEqualNP.MetaComplexity.NestedCover.graphFun G ∅ ∧\n    ∀ i < D.gates.length, ∀ j < D.gates.length, (PEqualNP.MetaComplexity.NestedCover.gateAt D i).op = PEqualNP.CircuitLowerBounds.GateOp.and → (PEqualNP.MetaComplexity.NestedCover.gateAt D j).op = PEqualNP.CircuitLowerBounds.GateOp.and →\n      ¬ PEqualNP.EdgeOwnership.InCone n D i j",
   "toolchain": "leanprover/lean4:v4.36.0",
   "upstream_repository": "open-goat/pequalnp-proofs",
-  "upstream_sha": "0e8a5218eadf78a399c7d20d4a4298c262391b94"
+  "upstream_sha": "90319d08620de25fd68e4b9a7f58d23289654c2e"
 }
